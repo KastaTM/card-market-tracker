@@ -4,10 +4,10 @@
 
 | Identity | Current evidence |
 | --- | --- |
-| Repository | Local `C:\Projects\card-market-tracker`; remote `https://github.com/KastaTM/card-market-tracker.git` remains empty |
+| Repository | Local `C:\Projects\card-market-tracker`; published remote `https://github.com/KastaTM/card-market-tracker.git` |
 | Branch | Local `chore/p0-foundation` |
-| PR | None; remote publication was rejected by automatic approval review |
-| Commit | Implementation and independent re-review: `b3cdc892beabac08a0aae0e15605308441520f97`; bootstrap local `main`: `30d4666e0e0e4d342c2d5246bc586dcc2c79e109` |
+| PR | [#1](https://github.com/KastaTM/card-market-tracker/pull/1), open draft against `main`; no merge |
+| Commit | Implementation and independent re-review: `b3cdc892beabac08a0aae0e15605308441520f97`; published bootstrap `main`: `30d4666e0e0e4d342c2d5246bc586dcc2c79e109`; first hosted PR CI: `12cc2c0a6be08108388858f5fa316000ea337692` |
 | Pre-edit state | Local target had no Git repository or project files. The remote returned zero branches and `This repository is empty.` The initial SHA was nonexistent. Bootstrap commit `30d4666e0e0e4d342c2d5246bc586dcc2c79e109` contains only README, context, and contract. |
 
 ## Model profile used
@@ -36,7 +36,7 @@ None. P0 contains no business schema, migration, or database recovery behavior.
 
 ## Threat model changes and technical debt
 
-The initial [threat model](../threat-model/THREAT_MODEL.md) covers secrets, CI/dependencies, future external-input poisoning, Pi access/storage, DB corruption, and resource exhaustion. The exact-`b3cdc892` tracked-file secret scan found no candidates; frozen all-groups `pip-audit` found no known vulnerabilities. Docker smoke confirmed UID 10001 and no published Compose ports. [TD-001 and TD-002](../TECHNICAL_DEBT.md) record the local-only diagnostic and emulated ARM64 limitations.
+The initial [threat model](../threat-model/THREAT_MODEL.md) covers secrets, CI/dependencies, future external-input poisoning, Pi access/storage, DB corruption, and resource exhaustion. The exact-`b3cdc892` tracked-file secret scan found no candidates; frozen all-groups `pip-audit` found no known vulnerabilities. Before the authorized public push, SHA-256 comparison confirmed that `context.md` and `P0_FOUNDATION_CONTRACT.md` matched the user's source attachments byte for byte (`D928877646BD7B22139A702AFFBDCBFB5585F6362D5F7A65BA53138E5BC9F367` and `719B6E6F0565DCD9A5DBA851C33DCA8A657DE0BCC2B40378A5EAFEB3569B900F`, respectively). A tracked-file scan and `detect-secrets` found zero candidates in those documents; content review and pattern checks for email, phone, user path, private key, IP address, and IBAN found no apparent personal data unrelated to the project. Docker smoke confirmed UID 10001 and no published Compose ports. [TD-001 and TD-002](../TECHNICAL_DEBT.md) record the local-only diagnostic and emulated ARM64 limitations.
 
 ## Observability
 
@@ -50,9 +50,11 @@ The CLI emits JSON stderr with UTC timestamps, allowlisted events, run_id, and e
 
 **Container smoke:** Docker Desktop 29.7.2 on an x86_64 host ran the exact smoke script against `b3cdc892` for `linux/amd64` and `linux/arm64` through QEMU. Each build and command passed: version, valid diagnose, invalid config exit 2 with safe JSON error/category, and effective UID 10001. Both Compose version/diagnose commands passed as one-shot processes with no published ports. Emulation is not physical Raspberry Pi evidence.
 
+**Hosted PR CI:** GitHub Actions [run 37595922006](https://github.com/KastaTM/card-market-tracker/actions/runs/37595922006), triggered by draft PR #1 on 2026-10-07, completed `success` for exact head `12cc2c0a6be08108388858f5fa316000ea337692`. All four jobs passed: [quality](https://github.com/KastaTM/card-market-tracker/actions/runs/37595922006/job/112708400724), [container AMD64](https://github.com/KastaTM/card-market-tracker/actions/runs/37595922006/job/112708400588), [container ARM64 under QEMU](https://github.com/KastaTM/card-market-tracker/actions/runs/37595922006/job/112708400568), and [Compose](https://github.com/KastaTM/card-market-tracker/actions/runs/37595922006/job/112708400279). GitHub's job steps show frozen sync, lint/type checks, tests/coverage, build/outside-tree smoke, audit, secret scan, both platform smoke scripts, and both Compose commands passed. This is PR evidence; no `main` workflow run exists. Check [PR #1](https://github.com/KastaTM/card-market-tracker/pull/1) for the exact-head run of any subsequent report-only commit.
+
 ## Quality gates
 
-PASS means evidence at reviewed `b3cdc892` unless otherwise stated. The PR and main CI gate remains FAIL because the remote is empty and no run URLs exist. The local workflow checks are evidence of implementation, not a substitute for hosted CI.
+PASS means evidence at reviewed `b3cdc892` unless otherwise stated. PR CI passed at `12cc2c0`; the combined PR and `main` CI gate remains FAIL because `main` has no workflow run. Local checks and the PR run do not substitute for `main` evidence.
 
 | Gate | Status | Evidence / blocker |
 | --- | --- | --- |
@@ -72,7 +74,7 @@ PASS means evidence at reviewed `b3cdc892` unless otherwise stated. The PR and m
 | Security review | PASS | Threat model plus independent re-review and exact-SHA secret/audit/container controls. |
 | Documentation review | PASS | Independent REVIEWER re-reviewed corrected `b3cdc892` without new documentation blockers. |
 | Independent QA/reviewer | PASS | QA exact-SHA 20/20; REVIEWER independently re-reviewed `b3cdc892` and resolved RW-01–RW-03. |
-| CI on PR and main | FAIL | No cited passing PR/main runs; publishing context/contract was rejected by automatic approval review. |
+| CI on PR and main | FAIL | [PR run 37595922006](https://github.com/KastaTM/card-market-tracker/actions/runs/37595922006) passed all four jobs at `12cc2c0`; `main` has no run. Confirm any newer head against its own PR checks. |
 
 Commercial provider contract tests, DB recovery, Telegram, scheduler, and continuous operation on physical Pi are **not applicable to P0**. This does not excuse unrun mandatory P0 gates.
 
@@ -80,7 +82,7 @@ Commercial provider contract tests, DB recovery, Telegram, scheduler, and contin
 
 | Criterion | Status | Evidence / blocker |
 | --- | --- | --- |
-| AC-01 identity and traceability | PASS | Local `main` bootstrap `30d4666e0e0e4d342c2d5246bc586dcc2c79e109`, `chore/p0-foundation` reviewed `b3cdc892beabac08a0aae0e15605308441520f97`; `git diff --stat main..chore/p0-foundation`: 42 files, 1991 insertions, 1 deletion. Remote empty, PR none. |
+| AC-01 identity and traceability | PASS | Published `main` bootstrap `30d4666e0e0e4d342c2d5246bc586dcc2c79e109`; `chore/p0-foundation` reviewed implementation `b3cdc892beabac08a0aae0e15605308441520f97`; [PR #1](https://github.com/KastaTM/card-market-tracker/pull/1) records the full diff and first CI SHA `12cc2c0a6be08108388858f5fa316000ea337692`. |
 | AC-02 reproducible installation | PASS | Exact-SHA clean-clone two-step `uv sync --frozen`; lock hash unchanged. |
 | AC-03 executable package | PASS | Exact-SHA wheel/sdist, outside-tree wheel install, version and diagnose. |
 | AC-04 configuration | PASS | Exact-SHA 20-test suite includes defaults, precedence, invalid settings, and redaction. |
@@ -89,11 +91,11 @@ Commercial provider contract tests, DB recovery, Telegram, scheduler, and contin
 | AC-07 automated quality | PASS | Exact-SHA formatting/Ruff/mypy, 20 tests, 94.56% lines, 81.25% branches. |
 | AC-08 container | PASS | Exact-SHA AMD64 and QEMU ARM64 build/smoke, invalid exit 2 plus safe JSON, UID 10001. |
 | AC-09 Compose | PASS | Exact-SHA one-shot version and diagnose, no published ports. |
-| AC-10 CI | FAIL | No PR and main CI runs tied to proposed SHA. |
+| AC-10 CI | FAIL | PR [run 37595922006](https://github.com/KastaTM/card-market-tracker/actions/runs/37595922006) passed at `12cc2c0`; `main` has no workflow run, and any later PR head needs its own run. |
 | AC-11 security | PASS | Threat model, exact-SHA tracked-file scan with no candidates, dependency audit with no known vulnerabilities, non-root/no-port container, independent re-review. |
 | AC-12 documentation | PASS | Substantive docs and independent corrected-SHA review with no new blockers. |
 | AC-13 independent review | PASS | QA's clean-clone exact-SHA 20/20 plus separate REVIEWER re-review of `b3cdc892`, all RW items resolved. |
-| AC-14 reproducible report | FAIL | Local evidence is tied to `b3cdc892`, but PR/main CI URLs and commit-backed hosted results do not exist. |
+| AC-14 reproducible report | FAIL | Local evidence is tied to `b3cdc892` and the first PR run to `12cc2c0`; required `main` CI evidence is absent. |
 
 ## Independent review and rework
 
@@ -113,8 +115,8 @@ The local diagnostic proves only configuration and work-directory access. ARM64 
 
 ## Open issues
 
-The remote `KastaTM/card-market-tracker` remains empty. Automatic approval review rejected publishing `context.md` and `P0_FOUNDATION_CONTRACT.md` because explicit trusted export authorization was not established; this prevented a PR and hosted PR/main CI runs. No merge was performed. Main CI would require an Orchestrator-authorized merge or coordinated mechanism after publication. The two unresolved acceptance criteria are AC-10 and AC-14.
+The user explicitly authorized publication of the full `context.md` and `P0_FOUNDATION_CONTRACT.md` after the initial automatic approval rejection; verified copies were pushed with the minimal bootstrap and Foundation branch. [Draft PR #1](https://github.com/KastaTM/card-market-tracker/pull/1) and its first exact-SHA CI run exist. No merge was performed. `main` CI requires an Orchestrator-authorized merge or coordinated mechanism. The two unresolved acceptance criteria are AC-10 and AC-14.
 
 ## Recommendation
 
-Remain blocked from Orchestrator acceptance because CI and AC-10/AC-14 are FAIL. Resolve publication authorization, run the workflow on the proposed commit in PR and main, add run URLs, then submit a new report for Orchestrator review. Do not infer authorization from this report.
+Remain blocked from Orchestrator acceptance because the combined CI gate and AC-10/AC-14 are FAIL. Include exact-head PR CI evidence from [PR #1](https://github.com/KastaTM/card-market-tracker/pull/1), coordinate `main` CI with the Orchestrator without merging Foundation solely to force evidence, then submit a new report for Orchestrator review. Do not infer phase acceptance from this report.
