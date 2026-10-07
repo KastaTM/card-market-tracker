@@ -2,6 +2,8 @@
 
 This order is set by the Orchestrator and preserves the original phase IDs. A subphase limits scope; it does not renumber a phase.
 
+The P0.5 Engineering Brief relays the Orchestrator's 2026-10-07 decision that P0 was `ACCEPTED` and `PHASE CLOSED`; the Engineering Lead verified integrated `main` at `5175d5b09e8d412e11b2ddf4c24bff41df133843` and successful [push CI 37649030624](https://github.com/KastaTM/card-market-tracker/actions/runs/37649030624). P0.5 is the active feasibility investigation; no later phase is opened by this note.
+
 | Order | Phase | Intended outcome |
 | --- | --- | --- |
 | 1 | P0 Foundation | Installable, observable local baseline and quality process |
@@ -21,3 +23,7 @@ This order is set by the Orchestrator and preserves the original phase IDs. A su
 | Later | Extensions | Broader markets, portfolio, advanced analytics when justified |
 
 Each subsequent phase needs its own contract and acceptance gates. Source legality and feasibility remain open until P0.5. Graded valuation, automated trading, native mobile, Kubernetes, Kafka, and speculative forecasting are outside the initial plan.
+
+## P0.5 feasibility dependency (candidate; Orchestrator decision pending)
+
+The dated [P0.5 selection](sources/SOURCE_SELECTION.md) supports TCGdex as a bounded singles/set catalog seed; Scrydex documents sealed products and sold listings but has no verified access, Spanish/EUR coverage or reuse rights. No currently qualified EUR market-history feed or authorized retail monitoring route was found. P1a still requires coverage, variant and field-rights checks. P2 needs a compatible market-data license and explicit price semantics. P6a and retail P4 discovery need written retailer or feed access and a lawful bounded probe; P4 may study new card/set candidates from TCGdex while Scrydex sealed candidates remain conditional. The Orchestrator must decide any schedule or product-scope change. This note neither opens those phases nor changes their acceptance criteria.

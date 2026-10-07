@@ -131,3 +131,7 @@ No unresolved implementation or CI issue is known for the integrated Foundation 
 ## Recommendation
 
 Submit this report with the final documentation commit's independent review, PR CI, merge object and integrated `main` CI to the Orchestrator for an acceptance decision. Do not declare phase closure or begin P0.5.
+
+## Subsequent Orchestrator decision and integration evidence
+
+The P0.5 Engineering Brief relays the Orchestrator's 2026-10-07 decision: P0 was `ACCEPTED` and `PHASE CLOSED`. This records that external decision; neither the Phase Lead nor the Engineering Lead made it. The completion-report [PR #2](https://github.com/KastaTM/card-market-tracker/pull/2) merged as `5175d5b09e8d412e11b2ddf4c24bff41df133843`, with parents `117565f9d23ae0a958388a7799266152508c20b1` and `9dbe338cb6bd33fb96e21417bb66248ce9de45ba`, and tree `7d2dc5e112c316f9eddcffc3b366d08e1ea549fb`. Exact-head [PR CI 37648642241](https://github.com/KastaTM/card-market-tracker/actions/runs/37648642241) and integrated [main push CI 37649030624](https://github.com/KastaTM/card-market-tracker/actions/runs/37649030624) each completed success with quality, Compose, AMD64 and QEMU ARM64 jobs. This section preserves the original report as a historical submission and supplies the later verified Git/CI evidence.
