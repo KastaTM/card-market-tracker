@@ -1,0 +1,7 @@
+services:
+  diagnose:
+    build: .
+    command: ["diagnose"]
+  version:
+    build: .
+    command: ["--version"]
