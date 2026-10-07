@@ -1,9 +1,10 @@
 # Local development runbook
 
-Use Python 3.13 and uv 0.12.10. Begin from a clean checkout at a recorded commit. `uv sync --frozen` installs from `uv.lock` without resolving or changing it. Dependency updates are explicit (`uv lock` after an intentional `pyproject.toml` change) and require review.
+Use Python 3.13 and uv 0.12.10. Begin from a clean checkout at a recorded commit. First install the locked development dependencies without the project, then install the project with build isolation disabled so Hatchling and its transitive dependencies come from `uv.lock`. Both commands use `--frozen` and leave the lockfile unchanged. Dependency updates are explicit (`uv lock` after an intentional `pyproject.toml` change) and require review.
 
 ```sh
-uv sync --frozen
+uv sync --frozen --no-install-project
+uv sync --frozen --no-build-isolation
 uv run --frozen cmt --version
 uv run --frozen cmt diagnose
 uv run --frozen ruff format --check .

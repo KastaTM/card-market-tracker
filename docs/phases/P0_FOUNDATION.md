@@ -12,11 +12,11 @@
 
 ## Model profile used
 
-The runtime identifies the Engineering Lead as based on GPT-6; exact variant and reasoning level are not exposed. No model override or reasoning escalation was executed. The external Phase Lead's actual model/reasoning is not exposed here. The contract's recommendations are not evidence of use.
+The runtime identifies the Engineering Lead as based on GPT-6; exact variant and reasoning level are not exposed. ARQ, QA, and DOCS inherited the Lead's runtime profile, whose exact variant/reasoning is likewise not exposed. The independent REVIEWER was explicitly launched with GPT-6.1 Sol / High. No other model override or reasoning escalation was executed. The external Phase Lead's actual model/reasoning is not exposed here. The contract's recommendations are not evidence of use.
 
 ## Specialists and independence
 
-Engineering Lead owned runtime, dependencies, Docker, CI, integration, and Git. ARQ performed read-only boundary and multiarch analysis. QA independently authored `tests/**` and reported 20/20 passing tests after logging hardening. DOCS authored README, AGENTS, `.env.example`, and `docs/**`. A separate final reviewer and reviewed SHA remain to be recorded. An author cannot provide independent review of their own work.
+Engineering Lead owned runtime, dependencies, Docker, CI, integration, and Git. ARQ performed read-only boundary and multiarch analysis. QA independently authored `tests/**` and reported 20/20 passing tests after logging hardening. DOCS authored README, AGENTS, `.env.example`, and `docs/**`. REVIEWER performed read-only review of `ec52aa70ef6593d98f96005fcb8d2dc3131f5b31` and raised three findings below. Re-review of the corrected SHA remains pending. An author cannot provide independent review of their own work.
 
 ## Objectives and implementation
 
@@ -77,6 +77,18 @@ Commercial provider contract tests, DB recovery, Telegram, scheduler, and contin
 | AC-13 independent review | FAIL | Current-revision QA and independent final reviewer evidence outstanding. |
 | AC-14 reproducible report | FAIL | Final SHA, command transcripts, CI URLs, and review evidence incomplete. |
 
+## Independent review and rework
+
+REVIEWER (separate from Engineering Lead, QA, and DOCS) reviewed commit `ec52aa70ef6593d98f96005fcb8d2dc3131f5b31` read-only. The review found three P2 issues:
+
+| ID | Finding | Correction in progress | Revalidation needed |
+| --- | --- | --- | --- |
+| RW-01 | CI did not run Compose, allowing a broken Compose file to pass. | Add a failing CI Compose job for both documented commands. | New-SHA workflow review and actual PR/main CI runs. |
+| RW-02 | Isolated package builds could resolve Hatchling/build dependencies outside `uv.lock`. | Install locked build dependencies first; build/install with `--no-build-isolation` locally and in Docker; pin build backend and editable helper. | Clean checkout frozen install, wheel and multiarch rebuild, audit, reviewer re-check. |
+| RW-03 | Container smoke treated any nonzero invalid-config exit as success. | Require exit 2 and safe JSON failure event/category. | Run the exact smoke script on AMD64 and emulated ARM64; reviewer re-check. |
+
+The reviewer found no additional blocking Foundation scope, runtime security, or documentation defects at that SHA. These corrections are not accepted until the new candidate SHA is reviewed and affected checks are repeated.
+
 ## Known limitations, open issues, and recommendation
 
-Current blockers: the automatic approval review rejected publishing the source context/contract to GitHub, so PR/main CI evidence is unavailable; final tracked-file secret scan, independent architecture/security/documentation review, and exact reviewed SHA remain outstanding. P0 diagnostic proves only local configuration and work-directory access. Emulated ARM64 does not prove physical Pi operations. **Recommendation:** do not submit for Orchestrator acceptance while mandatory gates remain FAIL. The Engineering Lead should append exact commands/results and commit, resolve or clearly report the publication blocker, and seek independent review before proposing readiness.
+Current blockers: the automatic approval review rejected publishing the source context/contract to GitHub, so PR/main CI evidence is unavailable; the final tracked-file secret scan, re-review of RW-01–RW-03, and exact reviewed SHA remain outstanding. P0 diagnostic proves only local configuration and work-directory access. Emulated ARM64 does not prove physical Pi operations. **Recommendation:** do not submit for Orchestrator acceptance while mandatory gates remain FAIL. The Engineering Lead should append exact commands/results and commit, resolve or clearly report the publication blocker, and seek re-review before proposing readiness.

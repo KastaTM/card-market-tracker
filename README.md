@@ -9,7 +9,8 @@ P0 supplies an installable Python package, validated local configuration, a one-
 Requires Python 3.13 and uv 0.12.10. From the repository root:
 
 ```sh
-uv sync --frozen
+uv sync --frozen --no-install-project
+uv sync --frozen --no-build-isolation
 uv run --frozen cmt --version
 uv run --frozen cmt diagnose
 ```

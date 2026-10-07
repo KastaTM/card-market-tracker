@@ -5,7 +5,7 @@ For P0, an applicable mandatory gate is PASS only with a reproducible result tie
 | Gate | Evidence required |
 | --- | --- |
 | AC-01 identity | Repository, initial state, branch, reviewed commit, and pre-edit changes |
-| AC-02 reproducibility | Clean checkout plus `uv sync --frozen`; lockfile unchanged |
+| AC-02 reproducibility | Clean checkout plus `uv sync --frozen --no-install-project` then `uv sync --frozen --no-build-isolation`; lockfile unchanged |
 | AC-03 package | `uv build --no-build-isolation`, `sh scripts/wheel_smoke.sh` on Linux or equivalent outside-tree Windows install, version and diagnose |
 | AC-04 configuration | Tests for defaults, explicit file, environment precedence, invalid and redacted values |
 | AC-05 logging | JSON contract, UTC, run_id, redaction, and handler tests |
