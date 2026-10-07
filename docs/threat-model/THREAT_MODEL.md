@@ -20,3 +20,17 @@ The local CLI is callable by anyone with host access; host authorization is outs
 ## Review rule
 
 Treat a relevant scanner finding as a failed gate until corrected or documented in a narrow, reviewable exception with owner and expiry/revisit trigger. Broad ignores are not an acceptable substitute. Revisit this threat model when a phase adds secrets, providers, persistence, delivery, or a long-running service.
+
+## P0.5 external-source assessment (2026-10-07)
+
+P0.5 performed only bounded research and five unauthenticated TCGdex GETs; no production source adapter, credential, database, periodic job, or external-data display was added. The [source matrix](../sources/SOURCE_MATRIX.md) and [preliminary ingestion requirements](../data-contracts/SOURCE_INGESTION_V0.md) record future boundaries. A documented requirement below is **not** an implemented protection.
+
+| Future boundary | Threat | Required later control and evidence |
+| --- | --- | --- |
+| Provider URL and redirect to network | Source-controlled links or unexpected redirects reach local/private services, leak headers, or leave approved hosts. | Approved HTTPS host list, controlled redirect chain, DNS/IP checks, no credential forwarding, timeout and response-size limits; test hostile URLs in the implementing phase. |
+| Provider payload to normalized ingestion | Malformed JSON/HTML, huge responses, ambiguous currencies, poisoned prices, variant mismatch, and partial fields corrupt domain observations. | Bounded parsing, versioned validation, quarantine of unknown candidates, explicit nulls and price semantics, decimal bounds, provenance and incompatible-change tests. |
+| API access and secrets | Tokens leak in URLs, logs, fixtures, CI, or a redirected request; access terms are exceeded. | Approved secret injection, least scope, redaction, rotation plan, per-source request budgets and rate-limit handling. P0.5 acquired no tokens. |
+| License and durable history | Technically reachable listings are stored, combined, analyzed, or displayed beyond the provider's grant. | Per-source permission record covering access, storage duration, deletion, derived analytics and display before production retention. Unknown rights block persistence. |
+| Discovery to identity and alerts | An unfamiliar SKU is forced onto a known product, or a stale/false stock state triggers a market alert. | Preserve unknown candidates and seller/offer distinctions; require identity review and time-scoped stock evidence. Market Alerts belong to later product phases; System Alerts for source failures belong to later operations. P0.5 records probe outcomes only. |
+
+The three retailers' published or unreadable conditions did not establish permission for automated monitoring, so no direct retail probe was made. Cardmarket and eBay API endpoints were not probed without authorized production access. These abstentions are part of the evidence, not a claim of operational source health.
