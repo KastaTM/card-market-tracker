@@ -1,11 +1,12 @@
 # PHASE COMPLETION REPORT — P0 Foundation
 
-**Phase:** P0 — Foundation. **Contract version:** v1. **Evidence date:** 2026-10-07, Europe/Madrid. **Proposed status:** Pending publication and validation of this report commit. The Orchestrator alone accepts or closes P0. Reviewed implementation: `b3cdc892beabac08a0aae0e15605308441520f97`. Authorized PR head: `49dc0792d210bbc56e164587319186c75e04a631`. Integrated merge: `117565f9d23ae0a958388a7799266152508c20b1`, tree `f52d39492c3611501d33d386471a658fd542994d`.
+**Phase:** P0 — Foundation. **Contract version:** v1. **Evidence date:** 2026-10-07, Europe/Madrid. **Proposed status:** Final report content independently reviewed; exact-head PR CI and integrated `main` CI for this revision must be verified in the delivery handoff before readiness. Only the Orchestrator may accept or close P0. Reviewed implementation: `b3cdc892beabac08a0aae0e15605308441520f97`. Authorized Foundation PR head: `49dc0792d210bbc56e164587319186c75e04a631`. Integrated Foundation merge: `117565f9d23ae0a958388a7799266152508c20b1`, tree `f52d39492c3611501d33d386471a658fd542994d`.
 
 | Identity | Evidence |
 | --- | --- |
 | Repository | `C:\Projects\card-market-tracker`; https://github.com/KastaTM/card-market-tracker |
 | Branch and PR | `chore/p0-foundation` into `main`; [PR #1](https://github.com/KastaTM/card-market-tracker/pull/1), marked ready and merged 2026-10-07 15:27:25 UTC |
+| Completion report | [PR #2](https://github.com/KastaTM/card-market-tracker/pull/2), `docs/p0-completion-report` into `main`; published, independently reviewed report head `5bd358a6ce0423c534b01d73f901f820842d2f7d` passed [PR run 37646238804](https://github.com/KastaTM/card-market-tracker/actions/runs/37646238804). This later content revision requires its own review and exact-head CI before integration. |
 | Commits | Bootstrap/base `30d4666e0e0e4d342c2d5246bc586dcc2c79e109`; reviewed implementation `b3cdc892beabac08a0aae0e15605308441520f97`; final head `49dc0792d210bbc56e164587319186c75e04a631`; merge `117565f9d23ae0a958388a7799266152508c20b1` |
 | Merge verification | Merge commit method with expected head. Parents, in order: `30d4666e0e0e4d342c2d5246bc586dcc2c79e109`, `49dc0792d210bbc56e164587319186c75e04a631`. Tree `f52d39492c3611501d33d386471a658fd542994d` matches the authorized candidate. |
 | Pre-edit state | Local target had no Git repository or files; remote was empty. Bootstrap contained README, context and contract. |
@@ -54,9 +55,11 @@ The CLI emits JSON stderr with UTC timestamps, allowlisted events, run_id, and e
 
 **Integrated main:** [Push run 37644064821](https://github.com/KastaTM/card-market-tracker/actions/runs/37644064821), `head_branch=main`, `head_sha=117565f9d23ae0a958388a7799266152508c20b1`, completed success. [Quality](https://github.com/KastaTM/card-market-tracker/actions/runs/37644064821/job/112870107924) logged 20 passed, 94.56% runtime lines, 81.25% branches, wheel smoke, no known vulnerabilities in the audit and no secret-scan candidates. Formatting, Ruff and mypy steps succeeded. [Compose](https://github.com/KastaTM/card-market-tracker/actions/runs/37644064821/job/112870107940) executed version and diagnose. [AMD64](https://github.com/KastaTM/card-market-tracker/actions/runs/37644064821/job/112870107841) and [ARM64 under QEMU](https://github.com/KastaTM/card-market-tracker/actions/runs/37644064821/job/112870107515) logs show version, diagnose, invalid configuration checks, and `smoke PASS; uid=10001`. This is emulated ARM64 evidence, not physical Pi operation.
 
+**Completion report PR:** [Run 37646238804](https://github.com/KastaTM/card-market-tracker/actions/runs/37646238804), event `pull_request`, head `5bd358a6ce0423c534b01d73f901f820842d2f7d`, completed success. [Quality](https://github.com/KastaTM/card-market-tracker/actions/runs/37646238804/job/112877629541), [Compose](https://github.com/KastaTM/card-market-tracker/actions/runs/37646238804/job/112877629421), [AMD64](https://github.com/KastaTM/card-market-tracker/actions/runs/37646238804/job/112877629262), and [ARM64 under QEMU](https://github.com/KastaTM/card-market-tracker/actions/runs/37646238804/job/112877629094) passed. Quality logged 20 passed, 94.56% lines, 81.25% branches, no known vulnerabilities in that audit, and no secret-scan candidates. PR #2 changed only `docs/phases/P0_FOUNDATION.md` relative to the integrated Foundation tree. A later final-content commit must receive its own exact-head CI; the delivery handoff will cite that result once it exists.
+
 ## Quality gates
 
-PASS is supported by clean-clone independent QA and reviewer evidence at `b3cdc892`, final PR CI at `49dc0792`, and push CI at integrated `117565f9`. The merge and head have identical source trees. This report's publication commit must also pass CI before the Orchestrator's review.
+PASS is supported by clean-clone independent QA and reviewer evidence at `b3cdc892`, Foundation PR CI at `49dc0792`, push CI at integrated `117565f9`, and the published report PR CI at `5bd358a6`. The Foundation merge and head have identical source trees. Before this later report revision is delivered, its own exact-head PR CI and integrated `main` CI must pass; the delivery handoff will cite those later runs externally to avoid a self-referential commit.
 
 | Gate | Status | Evidence / blocker |
 | --- | --- | --- |
@@ -76,7 +79,7 @@ PASS is supported by clean-clone independent QA and reviewer evidence at `b3cdc8
 | Security review | PASS | Threat model plus independent re-review and exact-SHA secret/audit/container controls. |
 | Documentation review | PASS | Independent REVIEWER re-reviewed corrected `b3cdc892` without new documentation blockers. |
 | Independent QA/reviewer | PASS | QA exact-SHA 20/20; REVIEWER independently re-reviewed `b3cdc892` and resolved RW-01–RW-03. |
-| CI on PR and main | PASS | [PR run 37598325588](https://github.com/KastaTM/card-market-tracker/actions/runs/37598325588) and [main push run 37644064821](https://github.com/KastaTM/card-market-tracker/actions/runs/37644064821), four successful jobs each, matching authorized tree. Revalidate report commit. |
+| CI on PR and main | PASS | Foundation [PR run 37598325588](https://github.com/KastaTM/card-market-tracker/actions/runs/37598325588) and [main push run 37644064821](https://github.com/KastaTM/card-market-tracker/actions/runs/37644064821) passed four jobs each; report [PR run 37646238804](https://github.com/KastaTM/card-market-tracker/actions/runs/37646238804) passed four jobs at published head `5bd358a6`. This later revision's PR and `main` results must be checked before delivery. |
 
 Commercial provider contract tests, DB recovery, Telegram, scheduler, and continuous operation on physical Pi are **not applicable to P0**. This does not excuse unrun mandatory P0 gates.
 
@@ -95,9 +98,9 @@ Commercial provider contract tests, DB recovery, Telegram, scheduler, and contin
 | AC-09 Compose | PASS | Exact-SHA one-shot version and diagnose, no published ports. |
 | AC-10 CI | PASS | Final-head [PR run 37598325588](https://github.com/KastaTM/card-market-tracker/actions/runs/37598325588) and exact-merge [main push run 37644064821](https://github.com/KastaTM/card-market-tracker/actions/runs/37644064821), four jobs each. |
 | AC-11 security | PASS | Threat model, exact-SHA tracked-file scan with no candidates, dependency audit with no known vulnerabilities, non-root/no-port container, independent re-review. |
-| AC-12 documentation | PASS | Substantive docs and independent corrected-SHA review with no new blockers. |
+| AC-12 documentation | PASS | Substantive docs, independently reviewed completion-report content, and [PR #2](https://github.com/KastaTM/card-market-tracker/pull/2) changing only this report. |
 | AC-13 independent review | PASS | QA's clean-clone exact-SHA 20/20 plus separate REVIEWER re-review of `b3cdc892`, all RW items resolved. |
-| AC-14 reproducible report | FAIL pending final report commit | This ledger ties each criterion to commands, source, reviewed SHA and cited PR/main logs; the final documentary commit must be published, independently reviewed and checked in CI before submission. |
+| AC-14 reproducible report | PASS | This ledger ties each criterion to commands, tests, files, independent review, SHAs and cited PR/main logs. The published report at `5bd358a6ce0423c534b01d73f901f820842d2f7d` was independently reviewed and passed [PR run 37646238804](https://github.com/KastaTM/card-market-tracker/actions/runs/37646238804). This content revision's own review, CI and merge evidence must be supplied before the readiness handoff. |
 
 ## Independent review and rework
 
@@ -115,14 +118,16 @@ The Phase Lead's 2026-10-07 interim review reports a further separate read-only 
 
 A separate GPT-6.1 Sol / High reviewer checked this completion-report draft against the contract, the merge object, both final CI runs and their logs. It found a premature readiness marker and conditional AC-14 PASS; those were removed, with AC-14 set to FAIL pending publication. A read-only re-review found no remaining content blocker. This is review of the draft's content, not a claim that its eventual repository commit or CI has already been validated.
 
+For the later final-content revision, the separate REVIEWER first found that a readiness marker and language about this revision's future CI/merge were premature (P2). The Engineering Lead removed the marker and changed those claims to explicit prerequisites. On read-only re-review against published head `5bd358a6ce0423c534b01d73f901f820842d2f7d`, the reviewer found no remaining content blocker and judged AC-14 PASS defensible only for the already published, reviewed and CI-tested report at `5bd358a6`. This is prepublication content review; the new commit's SHA, PR checks and integrated `main` checks must still be verified before handoff.
+
 ## Known limitations
 
 The local diagnostic proves only configuration and work-directory access. ARM64 emulation does not prove physical Pi operation. P0 has no sources, database, Telegram delivery, scheduler, or continuous service; their health and recovery cannot be claimed.
 
 ## Open issues
 
-No unresolved implementation or CI issue is known for the integrated source tree. Publish this draft in the repository, confirm that the published content matches the independently reviewed draft, and validate CI for that repository commit. If its required CI fails, P0 remains open. The Orchestrator has not accepted or closed P0.
+No unresolved implementation or CI issue is known for the integrated Foundation tree or the published completion-report head. Acceptance and closure remain decisions for the Orchestrator. If exact-head PR or integrated `main` CI for this final documentation revision fails, the report must be corrected and revalidated before delivery.
 
 ## Recommendation
 
-Submit this report and the final documentary commit's green CI to the Orchestrator for an acceptance decision. Do not declare PHASE CLOSED or begin P0.5.
+Submit this report with the final documentation commit's independent review, PR CI, merge object and integrated `main` CI to the Orchestrator for an acceptance decision. Do not declare phase closure or begin P0.5.
