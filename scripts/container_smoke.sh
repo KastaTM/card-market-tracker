@@ -19,4 +19,5 @@ printf '%s\n' "$invalid_output" | grep -q '"event":"config.invalid"'
 printf '%s\n' "$invalid_output" | grep -q '"error_category":"configuration"'
 uid="$(docker run --rm --platform "$platform" --entrypoint id "$image" -u)"
 test "$uid" != "0"
+python3 scripts/catalog_smoke.py --mode docker --image "$image" --platform "$platform" --fixtures tests/fixtures
 echo "$platform smoke PASS; uid=$uid"

@@ -1,5 +1,21 @@
 # PHASE COMPLETION REPORT — P0.5 Source Feasibility
 
+## Subsequent Orchestrator acceptance — 2026-10-09
+
+The [authorized P1a contract](P1A_CATALOG_CORE_CONTRACT.md) records P0.5 as
+`ACCEPTED` and `PHASE CLOSED` by the Orchestrator. This is the Orchestrator's
+decision, not an acceptance by the Engineering Lead. PR #4 integrated as
+`af573f04586024e7666a8999526e0aaab238c0dc`, tree
+`878cba9cfadfea47beaf0b6727469c3926dc25c9`, ordered parents
+`1dc890c7410e3d9c718654e9f64380f9e5026042` and
+`253a5354d8645fa8c72cbd7038e213832ab8ce18`.
+[Main push CI 37956251863](https://github.com/KastaTM/card-market-tracker/actions/runs/37956251863)
+completed successfully in quality, Compose, AMD64 and QEMU ARM64. Those Git
+objects and run were checked locally before P1a. Earlier pending labels below
+are preserved as historical report state. TCGdex remains provisional;
+enumeration does not prove temporal novelty, sellable sealed, retail stock or
+preorders. Market and retail access dependencies remain unresolved.
+
 **Proposed status:** P0.5 integrated under the Orchestrator's exact-candidate authorization; phase acceptance and closure remain pending. `AC-F05 PASS` is limited to exploratory ES set-discovery access; retail and market-access decisions remain open. **Contract:** P0.5 Source Feasibility v1 and the 2026-10-07 Phase Lead rework RW-01–RW-03. **Record date:** 2026-10-08, Europe/Madrid. **Repository:** `KastaTM/card-market-tracker`, [PR #3](https://github.com/KastaTM/card-market-tracker/pull/3), reviewed head `61ab2fcb630e2504869b68c97ea8cd1385e4ee00`, authorized base `5175d5b09e8d412e11b2ddf4c24bff41df133843`, integrated merge `1dc890c7410e3d9c718654e9f64380f9e5026042`. This post-integration record is authored separately on `docs/p0-5-integration-record`; its own committed review and CI are supplied in its documentary PR ledger and delivery, without treating earlier CI as certification of the new document revision. No later phase is opened.
 
 ## Baseline, ownership and method

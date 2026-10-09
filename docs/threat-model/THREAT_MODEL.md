@@ -1,5 +1,32 @@
 # Initial threat model
 
+## P1a implemented local catalog controls
+
+Untrusted UTF-8 regular files are read with a 1 MiB limit. Strict parsing rejects
+duplicate keys, malformed encodings, nonfinite numbers and excessive nesting;
+structure, strings, batch size and manifest counts are bounded. No content is
+executed and no URL is followed. JSON shape validation precedes normalization.
+Only allowlisted metadata reaches generic observations, and output omits names,
+images, price data and arbitrary provider extras. Minimal candidate references
+are intentional stdout data; callers should treat stdout as untrusted metadata.
+
+Canonical UUIDv4 IDs and typed relationships are validated in an explicit
+read-only manifest. Contextual bindings must agree with entity kind, language,
+variant and relationships; contradictions fail instead of merging. Unknowns
+remain candidates and cannot promote themselves. No name-based matching exists.
+This preserves deterministic replay without database mutation. A host user can
+edit the manifest; its authorization is a local curator trust boundary, not a
+cryptographic signature or multi-user approval workflow.
+
+Logs allow only fixed categories, operation UUID/duration and bounded counts;
+errors never serialize exception text, paths, raw input or arbitrary names.
+There is no output-file option, credential, listener, production collector or
+database. Compose and container catalog smoke have networking disabled and
+read-only fixture mounts. Fixture retention is synthetic only; field-specific
+real-data rights remain governed by the [policy](../sources/TCGDEX_P1A_FIELDS.md).
+Dependency/secret scanning and independent exact-SHA QA/security review remain
+mandatory gates. Physical Pi resource and interruption behavior stays unverified.
+
 ## Scope and assets
 
 P0 handles local configuration, CLI output, build dependencies, CI, and a non-root one-shot container. It has no external source integration, business database, Telegram token, HTTP listener, or continuous service. Future valuable assets include credentials, historical observations, product identity, and notification channels.

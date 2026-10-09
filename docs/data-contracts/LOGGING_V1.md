@@ -1,6 +1,23 @@
 # Logging contract v1
 
-**Producer:** `card_market_tracker.logging_json`. **Consumer:** local stderr reader or future log collector. Each event is a single JSON object on one stderr line. The CLI writes human-readable success text to stdout; stderr JSON is the machine-facing stream.
+## Compatible P1a extension (2026-10-09)
+
+Existing P0 events and semantics remain valid. `catalog.completed` is added for
+one offline batch operation, with `component=cli`, a per-operation UUID
+`run_id`, nonnegative `duration_ms` and `result=ok|empty|mixed|error`.
+Optional integer fields `input_count`, `accepted_count`, `candidate_count`,
+`rejected_count` are bounded to 0..10000; bools and malformed values are omitted.
+Error categories add `invalid_json`, `duplicate_key`, `input_io`, `input_limit`,
+`invalid_shape`, `unsupported_version`, `invalid_field`, `duplicate_id`,
+`broken_relation`, `contradictory_binding`, `duplicate_identity`, `identity_conflict`,
+`missing_binding`, `unknown_variant`, `unknown_language`, `ambiguous_reference`.
+Only fixed categories are emitted; arbitrary parser messages,
+paths, references, names, raw input and exception text never enter stderr.
+Additional categories/counts require explicit contract and test review.
+This is additive within v1: consumers must tolerate new allowlisted events and
+optional keys. P0's original event inventory below describes its own producer.
+
+**Producer:** `card_market_tracker.logging_json`. **Consumer:** local stderr reader or future log collector. Each event is a single JSON object on one stderr line. P0 version/diagnose write human-readable success text to stdout; P1a catalog writes structured JSON results. Stderr JSON is the operation event stream.
 
 | Field | Type | Rule |
 | --- | --- | --- |

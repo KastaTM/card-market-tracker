@@ -9,7 +9,7 @@ from datetime import UTC, datetime
 from uuid import UUID, uuid4
 
 _LOGGER_NAME = "card_market_tracker"
-_EVENTS = frozenset({"cli.version", "diagnose.completed", "config.invalid"})
+_EVENTS = frozenset({"cli.version", "diagnose.completed", "config.invalid", "catalog.completed"})
 
 
 class JsonFormatter(logging.Formatter):
@@ -32,14 +32,34 @@ class JsonFormatter(logging.Formatter):
             "configuration",
             "local_execution",
             "logging",
+            "duplicate_key",
+            "invalid_json",
+            "input_io",
+            "input_limit",
+            "invalid_shape",
+            "unsupported_version",
+            "invalid_field",
+            "duplicate_id",
+            "broken_relation",
+            "contradictory_binding",
+            "duplicate_identity",
+            "identity_conflict",
+            "missing_binding",
+            "unknown_variant",
+            "unknown_language",
+            "ambiguous_reference",
         }:
             payload["error_category"] = category
         result = getattr(record, "result", None)
-        if isinstance(result, str) and result in {"ok", "error"}:
+        if isinstance(result, str) and result in {"ok", "error", "mixed", "empty"}:
             payload["result"] = result
         duration = getattr(record, "duration_ms", None)
         if isinstance(duration, int) and not isinstance(duration, bool) and duration >= 0:
             payload["duration_ms"] = duration
+        for field in ("input_count", "accepted_count", "candidate_count", "rejected_count"):
+            value = getattr(record, field, None)
+            if isinstance(value, int) and not isinstance(value, bool) and 0 <= value <= 10000:
+                payload[field] = value
         return json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
 
 

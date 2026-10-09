@@ -1,5 +1,18 @@
 # Roadmap
 
+## Subsequent Orchestrator decision — 2026-10-09
+
+The authorized [P1a contract](phases/P1A_CATALOG_CORE_CONTRACT.md) records the
+Orchestrator's acceptance and closure of P0.5 after PR #4 and
+[main push CI 37956251863](https://github.com/KastaTM/card-market-tracker/actions/runs/37956251863).
+Baseline `af573f04586024e7666a8999526e0aaab238c0dc`, tree
+`878cba9cfadfea47beaf0b6727469c3926dc25c9`, has ordered parents
+`1dc890c7410e3d9c718654e9f64380f9e5026042` and
+`253a5354d8645fa8c72cbd7038e213832ab8ce18`. Local fetch and Git objects were
+verified before P1a edits. P1a is now authorized for an offline catalog core.
+P3a is not opened; P2 and P6a/retail Discovery remain blocked by source access,
+retention and semantics. Historical statements below describe earlier decisions.
+
 This order is set by the Orchestrator and preserves the original phase IDs. A subphase limits scope; it does not renumber a phase.
 
 The P0.5 Engineering Brief relays the Orchestrator's 2026-10-07 decision that P0 was `ACCEPTED` and `PHASE CLOSED`; the Engineering Lead verified integrated `main` at `5175d5b09e8d412e11b2ddf4c24bff41df133843` and successful [push CI 37649030624](https://github.com/KastaTM/card-market-tracker/actions/runs/37649030624). P0.5 is the active feasibility investigation; no later phase is opened by this note.
