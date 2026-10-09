@@ -5,3 +5,9 @@ services:
   version:
     build: .
     command: ["--version"]
+  catalog:
+    build: .
+    network_mode: none
+    volumes:
+      - ./tests/fixtures:/fixtures:ro
+    command: ["catalog", "--input", "/fixtures/synthetic_tcgdex_valid.json", "--manifest", "/fixtures/synthetic_manifest.json"]

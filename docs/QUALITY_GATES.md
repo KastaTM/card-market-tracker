@@ -1,5 +1,20 @@
 # Quality gates
 
+## P1a mandatory gates
+
+The [P1a contract](phases/P1A_CATALOG_CORE_CONTRACT.md) adds AC-C01–AC-C12.
+Maintain all frozen installation, Ruff, strict mypy, pytest, coverage >=85% lines
+and >=80% branches, wheel, secret and dependency audit gates below.
+Wheel, Compose, AMD64 and QEMU ARM64 must additionally run the five catalog
+smokes in `scripts/catalog_smoke.py`, including valid/mixed/empty/invalid/candidate
+input and deterministic replay. Independent QA and REVIEWER review the exact
+final SHA. CI has four jobs: quality, compose and two container matrix jobs.
+Every applicable result must refer to the final candidate or its identical tree;
+the PR ledger records published SHA/checks without a circular SHA-only commit.
+Unexecuted mandatory gates are FAIL with reason. Main push evidence after merge
+requires a later Orchestrator integration decision; no merge is authorized in P1a
+engineering delivery. Synthetic compatibility does not certify live coverage.
+
 For P0, an applicable mandatory gate is PASS only with a reproducible result tied to the reviewed commit. The [phase report](phases/P0_FOUNDATION.md) records mandatory gates as PASS or FAIL. A blocked or unexecuted gate is FAIL with its reason stated. A command in this table is an evidence recipe, not a claim that it ran.
 
 | Gate | Evidence required |

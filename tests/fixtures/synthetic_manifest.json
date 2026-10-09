@@ -1,0 +1,219 @@
+{
+  "version": 1,
+  "entities": [
+    {
+      "cmt_id": "f9743b79-20e3-4815-98d3-bb06f0c8195f",
+      "kind": "set",
+      "names": {
+        "es": "Expansion de prueba",
+        "en": "Synthetic Expansion"
+      },
+      "release_date": "2025-01-01"
+    },
+    {
+      "cmt_id": "74105a60-375c-4780-a355-88e241982944",
+      "kind": "set",
+      "names": {
+        "es": "Expansion de prueba",
+        "en": "Synthetic Expansion"
+      }
+    },
+    {
+      "cmt_id": "70bf03c9-a465-4299-a4fc-adfb70de757d",
+      "kind": "card",
+      "set_id": "f9743b79-20e3-4815-98d3-bb06f0c8195f",
+      "card_number": "001",
+      "names": {
+        "es": "Carta de prueba",
+        "en": "Synthetic Card"
+      }
+    },
+    {
+      "cmt_id": "f5e3ca1c-f1ba-49c6-a3dd-1126a1d695af",
+      "kind": "card",
+      "set_id": "f9743b79-20e3-4815-98d3-bb06f0c8195f",
+      "card_number": "TG01"
+    },
+    {
+      "cmt_id": "d237123f-329e-46a2-b70a-b33176780511",
+      "kind": "card",
+      "set_id": "74105a60-375c-4780-a355-88e241982944",
+      "card_number": "SVP-001"
+    },
+    {
+      "cmt_id": "541b9d13-9669-4973-8413-397bea14c045",
+      "kind": "printing",
+      "card_id": "70bf03c9-a465-4299-a4fc-adfb70de757d",
+      "language": "es",
+      "variant": "normal"
+    },
+    {
+      "cmt_id": "b980e1f7-9bae-432e-b02a-182dbcca478d",
+      "kind": "printing",
+      "card_id": "70bf03c9-a465-4299-a4fc-adfb70de757d",
+      "language": "es",
+      "variant": "holo"
+    },
+    {
+      "cmt_id": "5e72b926-2e89-4305-b93e-e9b0ba3437d5",
+      "kind": "printing",
+      "card_id": "70bf03c9-a465-4299-a4fc-adfb70de757d",
+      "language": "es",
+      "variant": "reverse"
+    },
+    {
+      "cmt_id": "4eb24fea-4c89-4249-95dd-ab254d253ce7",
+      "kind": "printing",
+      "card_id": "70bf03c9-a465-4299-a4fc-adfb70de757d",
+      "language": "en",
+      "variant": "normal"
+    },
+    {
+      "cmt_id": "7e4f8593-eb33-4426-9f34-85cb4eb7e1ab",
+      "kind": "printing",
+      "card_id": "f5e3ca1c-f1ba-49c6-a3dd-1126a1d695af",
+      "language": "es",
+      "variant": "normal"
+    },
+    {
+      "cmt_id": "c817e58a-6c28-4a57-a109-71432e11dcf5",
+      "kind": "printing",
+      "card_id": "d237123f-329e-46a2-b70a-b33176780511",
+      "language": "es",
+      "variant": "normal"
+    },
+    {
+      "cmt_id": "79b79554-edd4-4bdc-8120-859974c3df62",
+      "kind": "sealed",
+      "set_id": "f9743b79-20e3-4815-98d3-bb06f0c8195f",
+      "language": "es",
+      "sealed_type": "box",
+      "names": {
+        "es": "Caja sintetica"
+      }
+    }
+  ],
+  "bindings": [
+    {
+      "reference": {
+        "namespace": "tcgdex",
+        "kind": "set",
+        "external_id": "synthetic-set",
+        "language": "es",
+        "variant": "unknown"
+      },
+      "cmt_id": "f9743b79-20e3-4815-98d3-bb06f0c8195f",
+      "reason": "Explicit synthetic curator decision; no provider equivalence inferred."
+    },
+    {
+      "reference": {
+        "namespace": "tcgdex",
+        "kind": "set",
+        "external_id": "synthetic-set",
+        "language": "en",
+        "variant": "unknown"
+      },
+      "cmt_id": "f9743b79-20e3-4815-98d3-bb06f0c8195f",
+      "reason": "Explicit synthetic curator decision; no provider equivalence inferred."
+    },
+    {
+      "reference": {
+        "namespace": "tcgdex",
+        "kind": "set",
+        "external_id": "synthetic-other-set",
+        "language": "es",
+        "variant": "unknown"
+      },
+      "cmt_id": "74105a60-375c-4780-a355-88e241982944",
+      "reason": "Explicit synthetic curator decision; no provider equivalence inferred."
+    },
+    {
+      "reference": {
+        "namespace": "tcgdex",
+        "kind": "card",
+        "external_id": "synthetic-card-001",
+        "language": "es",
+        "variant": "normal"
+      },
+      "cmt_id": "541b9d13-9669-4973-8413-397bea14c045",
+      "reason": "Explicit synthetic curator decision; no provider equivalence inferred."
+    },
+    {
+      "reference": {
+        "namespace": "tcgdex",
+        "kind": "card",
+        "external_id": "synthetic-card-001",
+        "language": "es",
+        "variant": "holo"
+      },
+      "cmt_id": "b980e1f7-9bae-432e-b02a-182dbcca478d",
+      "reason": "Explicit synthetic curator decision; no provider equivalence inferred."
+    },
+    {
+      "reference": {
+        "namespace": "tcgdex",
+        "kind": "card",
+        "external_id": "synthetic-card-001",
+        "language": "es",
+        "variant": "reverse"
+      },
+      "cmt_id": "5e72b926-2e89-4305-b93e-e9b0ba3437d5",
+      "reason": "Explicit synthetic curator decision; no provider equivalence inferred."
+    },
+    {
+      "reference": {
+        "namespace": "tcgdex",
+        "kind": "card",
+        "external_id": "synthetic-card-001",
+        "language": "en",
+        "variant": "normal"
+      },
+      "cmt_id": "4eb24fea-4c89-4249-95dd-ab254d253ce7",
+      "reason": "Explicit synthetic curator decision; no provider equivalence inferred."
+    },
+    {
+      "reference": {
+        "namespace": "tcgdex",
+        "kind": "card",
+        "external_id": "synthetic-card-TG01",
+        "language": "es",
+        "variant": "normal"
+      },
+      "cmt_id": "7e4f8593-eb33-4426-9f34-85cb4eb7e1ab",
+      "reason": "Explicit synthetic curator decision; no provider equivalence inferred."
+    },
+    {
+      "reference": {
+        "namespace": "tcgdex",
+        "kind": "card",
+        "external_id": "synthetic-card-SVP-001",
+        "language": "es",
+        "variant": "normal"
+      },
+      "cmt_id": "c817e58a-6c28-4a57-a109-71432e11dcf5",
+      "reason": "Explicit synthetic curator decision; no provider equivalence inferred."
+    },
+    {
+      "reference": {
+        "namespace": "curated",
+        "kind": "card",
+        "external_id": "synthetic-alias",
+        "language": "es",
+        "variant": "normal"
+      },
+      "cmt_id": "541b9d13-9669-4973-8413-397bea14c045",
+      "reason": "Explicit synthetic curator decision; no provider equivalence inferred."
+    },
+    {
+      "reference": {
+        "namespace": "curated",
+        "kind": "sealed",
+        "external_id": "synthetic-box",
+        "language": "es",
+        "variant": "unknown"
+      },
+      "cmt_id": "79b79554-edd4-4bdc-8120-859974c3df62",
+      "reason": "Explicit synthetic curator decision; no provider equivalence inferred."
+    }
+  ]
+}

@@ -1,5 +1,16 @@
 # Risk register
 
+## P1a controls and remaining limits
+
+R-03 identity/metadata poisoning is mitigated for the offline slice by strict validation, explicit contextual
+bindings, unknown candidates and contradiction rejection; curator mistakes remain
+possible and require manifest review. R-04 uses additive allowlisted logs and
+sanitized errors. R-06 uses byte/depth/node/string/record bounds and no network.
+R-09 has no network path in this implementation. R-10 remains open for real data:
+fixtures are synthetic; modeled metadata and MIT documentation do not approve
+third-party images, brands or pricing. R-07 remains QEMU-only pending native Pi.
+These controls do not unblock market, retail or temporal Discovery phases.
+
 Status reflects what P0 can address. P0 controls are described in the [threat model](threat-model/THREAT_MODEL.md); future controls are not represented as implemented.
 
 | ID | Risk / effect | P0 response | Owner / next review |

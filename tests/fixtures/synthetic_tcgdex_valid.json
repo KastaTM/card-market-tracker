@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "provenance": "synthetic",
+  "records": [
+    {"kind": "set", "language": "es", "data": {"id": "synthetic-set", "name": "Conjunto sintético", "releaseDate": "2025-01-01"}},
+    {"kind": "set", "language": "en", "data": {"id": "synthetic-set", "name": "Synthetic set", "releaseDate": "2025-01-01"}},
+    {"kind": "card", "language": "es", "variant": "normal", "data": {"id": "synthetic-card-001", "localId": "001", "name": "Carta sintética", "set": {"id": "synthetic-set"}, "variants": {"normal": true, "holo": true, "reverse": true}}},
+    {"kind": "card", "language": "es", "variant": "holo", "data": {"id": "synthetic-card-001", "localId": "001", "name": "Carta sintética", "set": {"id": "synthetic-set"}, "variants": {"normal": true, "holo": true, "reverse": true}}},
+    {"kind": "card", "language": "es", "variant": "reverse", "data": {"id": "synthetic-card-001", "localId": "001", "name": "Carta sintética", "set": {"id": "synthetic-set"}, "variants": {"normal": true, "holo": true, "reverse": true}}},
+    {"kind": "card", "language": "en", "variant": "normal", "data": {"id": "synthetic-card-001", "localId": "001", "name": "Synthetic card", "set": {"id": "synthetic-set"}}},
+    {"kind": "card", "language": "es", "variant": "normal", "data": {"id": "synthetic-card-TG01", "localId": "TG01", "name": "Carta prefijada", "set": {"id": "synthetic-set"}}}
+  ]
+}

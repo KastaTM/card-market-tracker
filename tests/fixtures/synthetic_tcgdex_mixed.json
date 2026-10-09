@@ -1,0 +1,7 @@
+{
+ "version": 1, "provenance": "synthetic", "records": [
+  {"kind": "set", "language": "es", "data": {"id": "synthetic-set", "name": "Conjunto sintético"}},
+  {"kind": "card", "language": "es", "data": {"id": "synthetic-card-001", "localId": "001", "name": "Carta ambigua", "set": {"id": "synthetic-set"}, "variants": {"normal": true, "holo": true, "reverse": true}}},
+  {"kind": "card", "language": "es", "data": {"id": "synthetic-broken", "localId": null, "name": "Dato rechazado", "set": {"id": "synthetic-set"}}}
+ ]
+}

@@ -1,0 +1,6 @@
+{
+ "version": 1, "provenance": "synthetic", "records": [
+  {"kind": "set", "language": "es", "data": {"id": "synthetic-unmapped-set", "name": "Conjunto sin correspondencia"}},
+  {"kind": "card", "language": "es", "data": {"id": "synthetic-card-001", "localId": "001", "name": "Carta ambigua", "set": {"id": "synthetic-set"}, "variants": {"normal": true, "holo": true, "reverse": true}}}
+ ]
+}
