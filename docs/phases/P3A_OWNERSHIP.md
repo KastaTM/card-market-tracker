@@ -35,3 +35,31 @@ daemon was not running at baseline. Historical P1a PR5/main push CI37965128340
 is verified, with four successful jobs; it is not P3a gate evidence.
 
 No merge, real-source retention, P2 opening or phase acceptance is authorized.
+
+## Executed selections and review isolation
+
+The tool accepted explicit `gpt-6.1-sol/high` requests for storage_author
+(ARQ/DB-OWNER/storage), boundary_author (BE/DATA), security_operations (SEC/SRE),
+qa_final and reviewer_final. Effective backend/root reasoning are not exposed;
+no client-setting change is inferred. Supplementary roles are not final reviewers.
+Earlier qa/reviewer attempts ended at a client usage limit; no review is credited.
+
+Final QA/REVIEWER are distinct from authors/each other, with clean detached
+read-only source worktrees `.p3a-evidence/qa` and `.p3a-evidence/reviewer`.
+QA independent wheel/harness lives outside source in `.p3a-evidence/qa-outside`;
+REVIEWER uses separate temporary probes. Lead alone changes their refs after
+checking tracked cleanliness. No source mutation by either final reviewer.
+
+Implementation SHA `4d8702ccfb4d3a93b6a1ae69ea5e164fe8602658`, tree
+`ec8d37434409c57823fffe07ed3b815f6e4e6d8e`: QA411 passed/one Windows symlink
+privilege skip, 97.54% lines/94.14% branches, frozen quality/wheel/audit/scan plus
+fourteen independent risk groups; REVIEWER117 risk tests/same skip plus separate
+forgery/candidate-history/read-only/copy/sidecar/deadline probes. No blockers.
+Junction/hardlink tests pass on Windows; Linux CI supplies symlink coverage.
+
+Run38088571440 four jobs/log bodies PASS; temporary PR merge96fcef3 has the same
+implementation tree. Final documentary successor SHA/reviews/CI bodies belong to
+PR6's external ledger. No circular self-SHA commit. Runtime/packaging/workflow
+unchanged from parentf43ce4b; only one synthetic nested test key changed in4d8702c,
+without scanner suppression. Docker client/daemon29.7.2, container Python3.13.16/
+SQLite3.46.1 UID10001 /data0700 observed; CI QEMU10.2.3. No dependency/lock changes.
