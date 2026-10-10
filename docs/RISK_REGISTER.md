@@ -1,5 +1,25 @@
 # Risk register
 
+## P3a persistence update (2026-10-10)
+
+These entries refine the offline synthetic scope; none closes the wider source,
+market or physical Pi risk. Executed gate results belong to the exact-SHA phase
+report/PR ledger. The earlier P1a/P0/P0.5 entries remain historical evidence.
+
+| ID | P3a control or explicit limitation | Remaining impact / owner and review |
+| --- | --- | --- |
+| R-03 | Independently validated batches reparse curated manifests and recompute resolver snapshots/parents. UUID relationships are immutable projections; candidates have no target and invalid rows retain safe summaries only. Replay binds normalized evidence and manifest context, with a stable producer token. | Curator/producer claims and rejected categories remain locally trusted; a lost token permits a new batch. No price/anomaly protection or candidate promotion is delivered. SEC + DB-OWNER, each identity/contract change; market controls P2/P9. |
+| R-04 | Fixed additive logs redact raw evidence, tokens, paths, references, SQL and exceptions; failure counts are unknown. Contracted query stdout intentionally exposes synthetic metadata and must be protected if saved. | Host access/ACLs and backup access are operator responsibilities; SQLite/hash checks do not authenticate an administrator. SEC + SRE, every storage/logging change; future credentials in their owning phase. |
+| R-05 | Recovery is scoped to process-safe atomic batches and verified new-destination backup/restore; DELETE/FULL is the adopted local design. Journals must be preserved, and corruption/incompatibility must never be reset as empty data. | Filesystem/device flush honesty, physical power loss and native Pi interruption remain unqualified. SRE + DB-OWNER, backup drills and P9.5; retain TD-002. |
+| R-06 | P1a complexity bounds and encoded in-memory limits protect ingestion; reads are capped at 1000 rows. SQL/lock/backup work uses a finite default two-second budget, with unresponsive device/OS calls outside that bound. | Append-only history has no disk quota/retention automation; growing history can exhaust disk or exceed a practical operation budget. Operator capacity/backups and TD-004 remain required. SRE, before continuous collection/P9.5. |
+| R-10 | Only explicitly synthetic provenance passes the write boundary; documented/observed claims do not authorize storage. No live provider request or real commercial feed is added. | Synthetic is a producer assertion, not proof of origin/rights. Per-source access, storage, deletion, derived analytics and display approval remain blockers for real retention and P2/P6a. SEC + source owner before real input. |
+
+Storage path confinement depends on trusted private directories. A new backup or
+restore must never replace an existing file, alias, link, directory or another
+user's journal. Portable path checks cannot defeat a hostile administrator racing
+ancestor replacement; TD-003 records this boundary. The
+[runbook](runbooks/OBSERVATION_STORAGE.md) describes operator response and scope.
+
 ## P1a controls and remaining limits
 
 R-03 identity/metadata poisoning is mitigated for the offline slice by strict validation, explicit contextual

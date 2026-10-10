@@ -1,5 +1,31 @@
 # Logging contract v1
 
+## Compatible P3a extension (2026-10-10)
+
+P3a adds `persistence.completed` with `operation` restricted to
+`init|persist|read|verify|backup|restore`. One invocation has one UUID `run_id`,
+independent of the producer's stable batch token. Results extend the existing
+allowlist with `replay`; `ok`, `empty`, `mixed`, `error` retain their meanings.
+Every completed operation has nonnegative `duration_ms`. Processing counts use
+the P1a integer fields. Confirmed storage changes use additional integer fields
+`new_batch_count`, `new_entity_count`, `new_observation_count`, each 0..10000,
+never bool. Replays report zero newly committed rows; storage failures omit these
+counts, and stdout uses null, because attempted counts are not confirmed writes.
+Read operations may emit bounded `observation_count`. No batch token is logged.
+
+P3a fixed categories add `capture_required`, `capture_conflict`, `synthetic_only`,
+`replay_conflict`, `storage_schema`, `storage_locked`, `storage_io`, `storage_corrupt`,
+`storage_timeout`, `unsafe_destination`, and `resolution_mismatch`. Existing input and
+identity categories remain valid. Errors contain categories only; logs never
+contain payloads, observed names, SQL/values, paths, external references, batch
+tokens, arbitrary messages or exception text. Unknown operations/categories and
+malformed counts are omitted. These additions require executable formatter and
+CLI redaction tests on the P3a candidate; this contract records the interface,
+not a claim that the candidate gates have passed.
+
+DB verification describes only compatibility/integrity in the storage contract;
+no source or physical Pi health state is emitted.
+
 ## Compatible P1a extension (2026-10-09)
 
 Existing P0 events and semantics remain valid. `catalog.completed` is added for

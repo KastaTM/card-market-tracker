@@ -1,5 +1,24 @@
 # Quality gates
 
+## P3a mandatory gates
+
+The [P3a contract](phases/P3A_OBSERVATION_PERSISTENCE_CONTRACT.md) adds AC-O01–O15
+without reducing the existing recipes. Require frozen lock/install, Ruff format
+and lint, strict mypy, all unit/contract/SQLite/integration/regression tests,
+coverage >=85% lines/>=80% branches across all own runtime (including storage
+failures), sdist/wheel build and outside-source installed smokes, audit/secret
+scan, ARQ/DB/SEC/SRE/documentation review and distinct isolated exact-SHA QA and
+REVIEWER. Compose and linux/amd64 + linux/arm64 QEMU execute both catalog and
+persistence harnesses, proving durable DB content across separate containers.
+CI retains exactly four jobs: quality, compose and two platform matrix jobs.
+
+Report every mandatory gate PASS/FAIL with command, environment, reviewed SHA/tree
+and result. Unexecuted means FAIL with reason. Working-tree results are not exact
+candidate evidence until object identity is established. The PR's external ledger
+records postpublication checks/reviews, avoiding self-referential hash commits.
+No merge or phase acceptance follows from a green engineering gate; only the
+Orchestrator decides. Main-push evidence belongs to a later authorized integration.
+
 ## P1a mandatory gates
 
 The [P1a contract](phases/P1A_CATALOG_CORE_CONTRACT.md) adds AC-C01–AC-C12.

@@ -1,5 +1,31 @@
 # Testing strategy
 
+## P3a requirements
+
+Boundary tests cover explicit UTC capture/offset equivalence/conflicts, provenance,
+full dataclass/manifest/resolution revalidation, safe indexed rejections, sealed
+generic observations, version/null/order/duplicate/replay context and input bounds.
+Real temporary SQLite integration covers reopen/history/identity closure,
+foreign-key/check/uniqueness constraints, intermediate write failure rollback,
+process exit before/after commit, atomic initial DDL rollback/current no-op,
+foreign/future/altered schemas, finite contention, simulated IO/full failures,
+corruption, permissions and consistent backup/restore including unsafe paths,
+links, existing files and sidecar collisions. Drills touch only temporary DBs.
+
+CLI/logging tests assert separate data/local exit codes, error null counters,
+confirmed-versus-attempted rows, no-network processing, redaction and P0/P1a
+compatibility. The [persistence smoke](../scripts/observation_persistence_smoke.py)
+checks durable content, candidates, later capture, stable replay and recovery via
+separate invocations of installed wheel, Compose and each architecture container.
+Container cases assert UID10001 and mounted private data directory, use a unique
+named volume and read-only fixtures with networking disabled, and remove only
+their own test volume. Existing five P1a and Foundation smokes remain mandatory.
+
+Independent QA and REVIEWER are different agents from authors and each other;
+each checks an isolated checkout of the committed candidate. Working-tree tests
+are provisional until tied to exact reviewed SHA/tree and published CI. QEMU and
+process interruption do not establish physical Pi power-loss durability.
+
 ## P1a requirements
 
 Core and adapter unit/contract tests cover UUID and relationship constraints,

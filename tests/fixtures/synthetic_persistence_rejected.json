@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "batch_id": "1d266dce-5870-4093-8c16-08e1bcd68324",
+  "captured_at": "2026-10-10T09:00:00.000000Z",
+  "ingestion": {
+    "version": 1,
+    "provenance": "synthetic",
+    "records": [
+      null,
+      {
+        "kind": "card",
+        "language": "es",
+        "data": {
+          "id": "synthetic-invalid",
+          "name": "Rejected invented sentinel",
+          "localId": null
+        }
+      }
+    ]
+  }
+}
