@@ -30,7 +30,7 @@ def test_storage_metrics_redact_identifiers_and_exceptions(capsys):
                 "path": "sentinel-private-path",
                 "sql": "sentinel-private-sql",
                 "reference": "sentinel-private-reference",
-                "payload": {"secret": "sentinel-private-payload"},
+                "payload": {"nested": "sentinel-private-payload"},
             },
         )
     raw = capsys.readouterr().err
