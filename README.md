@@ -90,6 +90,77 @@ exercise the same cases; CI requires both AMD64 and QEMU ARM64, Compose,
 quality, coverage and security. See [P1a report](docs/phases/P1A_CATALOG_CORE.md)
 and the PR evidence ledger for exact SHA results.
 
+## P3a offline observation persistence
+
+P1a is accepted and closed by the Orchestrator; the
+[P3a contract](docs/phases/P3A_OBSERVATION_PERSISTENCE_CONTRACT.md) authorizes
+only synthetic offline metadata history. The curated manifest remains the
+identity authority. SQLite stores immutable accepted/candidate evidence,
+resolution snapshots and safe rejection summaries; candidates have no CMT ID.
+No real feed, price/stock data, promotion or commercial retention is authorized.
+
+For a new disposable database in an existing private directory:
+
+```sh
+uv run --frozen cmt db init --db demo.sqlite3
+uv run --frozen cmt persist --db demo.sqlite3 --input tests/fixtures/synthetic_persistence_valid.json --manifest tests/fixtures/synthetic_manifest.json
+uv run --frozen cmt observations --db demo.sqlite3 --limit 100
+uv run --frozen cmt persist --db demo.sqlite3 --input tests/fixtures/synthetic_persistence_valid.json --manifest tests/fixtures/synthetic_manifest.json
+uv run --frozen cmt persist --db demo.sqlite3 --input tests/fixtures/synthetic_persistence_later.json --manifest tests/fixtures/synthetic_manifest.json
+uv run --frozen cmt db verify --db demo.sqlite3
+uv run --frozen cmt db backup --db demo.sqlite3 --destination demo-backup.sqlite3
+uv run --frozen cmt db restore --db demo-backup.sqlite3 --destination demo-restored.sqlite3
+```
+
+The first batch commits seven observations and their curated parent identities.
+Retrying the same producer UUID with equivalent normalized input/manifest context
+returns `replay`, zero new rows and the original first-persistence timestamp.
+The later capture adds another seven observations even with equal metadata.
+Changed evidence/context under the old token fails without overwriting history.
+Use a new token for each new capture and preserve it during retry; a lost token
+cannot be deduplicated automatically. Capture is required explicitly at this new
+write boundary and remains separate from release, provider update and first local
+persistence. Existing `cmt catalog` semantics remain read-only and unchanged.
+
+`observations` accepts at most one of `--batch-id UUID`, `--cmt-id UUID` or
+`--candidate-reference PATH` (an exact INGESTION_V1 reference JSON object), with
+limit 1..1000 and deterministic capture/batch/index order. Missing DB reads create
+nothing. Successful stdout contains normalized metadata, including observed names
+and contextual references; stderr logs only operation, run UUID, outcome, duration,
+fixed category and safe counts. Errors report `counts=null, committed=null`.
+Exit 0 means completed/empty/replay, 3 newly committed incomplete batch, 2 input
+or replay/identity conflict, 1 local/storage failure. Backup/restore only accept
+a new destination and verify schema, SQLite integrity and foreign keys.
+
+Docker data commands run as UID/GID 10001 with private `/data`, a named volume,
+read-only fixture mount and networking disabled. With Linux Docker Desktop:
+
+```sh
+docker compose build persistence
+docker volume create cmt-p3a-local
+docker compose run --rm persistence persist --db /data/history.sqlite3 --input /fixtures/synthetic_persistence_valid.json --manifest /fixtures/synthetic_manifest.json
+docker compose run --rm persistence observations --db /data/history.sqlite3 --limit 100
+```
+
+These are distinct containers using the same data volume. A custom external
+volume is selected with `CMT_PERSISTENCE_VOLUME`; existing volumes must already
+have appropriate ownership. The smoke harness creates its own disposable volume,
+checks actual mounted UID/mode and content, and cleans up only that volume:
+
+```sh
+uv run --frozen python scripts/observation_persistence_smoke.py --mode compose --fixtures tests/fixtures
+```
+
+See [ADR-0004](docs/adr/0004-offline-observation-persistence.md),
+[persistible input](docs/data-contracts/PERSISTENCE_V1.md),
+[storage/read contract](docs/data-contracts/STORAGE_V1.md),
+[storage runbook](docs/runbooks/OBSERVATION_STORAGE.md) and
+[P3a report](docs/phases/P3A_OBSERVATION_PERSISTENCE.md) for exact evidence and
+Windows/permissions/recovery recipes. SQLite uses DELETE journal, FULL sync,
+explicit transactions and a two-second SQL/lock budget. Trusted local directories
+are required; OS/device stalls, hostile administrator path replacement, native Pi
+power loss and unlimited history growth remain operational limits.
+
 ## Repository map
 
 - [Architecture](docs/ARCHITECTURE.md), [standards](docs/CODING_STANDARDS.md), [tests](docs/TESTING_STRATEGY.md), and [quality gates](docs/QUALITY_GATES.md).

@@ -11,7 +11,8 @@ RUN uv sync --frozen --no-install-project \
     && uv pip install --python /app/runtime/bin/python --no-deps /wheels/*.whl
 
 FROM python:3.13-slim@sha256:bf44cdfcb76cd3b41e879bc058fc37ec5872002ccfde7fcb765e218cde0cd79c
-RUN groupadd --gid 10001 cmt && useradd --uid 10001 --gid 10001 --create-home cmt
+RUN groupadd --gid 10001 cmt && useradd --uid 10001 --gid 10001 --create-home cmt \
+    && install -d -m 0700 -o 10001 -g 10001 /data
 WORKDIR /app
 COPY --from=build /app/runtime /app/runtime
 ENV PATH="/app/runtime/bin:$PATH" CMT_WORK_DIR=/tmp

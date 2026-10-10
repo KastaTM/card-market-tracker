@@ -6,3 +6,6 @@ Copy [the template](TEMPLATE.md). Current decisions: [ADR-0001](0001-modular-app
 
 P1a adds [ADR-0003](0003-catalog-identity.md): explicit curated catalog identity,
 printing/language/variant granularity and conservative contextual resolution.
+
+P3a adds [ADR-0004](0004-offline-observation-persistence.md): atomic offline
+SQLite snapshots, versioned schema, conservative replay and safe recovery.

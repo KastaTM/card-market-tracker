@@ -1,4 +1,4 @@
-name: Foundation and Catalog Core
+name: Foundation, Catalog and Observation Persistence
 
 on:
   pull_request:
@@ -49,5 +49,6 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - run: docker compose run --build --rm version
       - run: docker compose run --build --rm diagnose
-      - run: docker compose build catalog
+      - run: docker compose build catalog persistence
       - run: python3 scripts/catalog_smoke.py --mode compose --fixtures tests/fixtures
+      - run: python3 scripts/observation_persistence_smoke.py --mode compose --fixtures tests/fixtures

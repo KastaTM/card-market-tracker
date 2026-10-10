@@ -9,7 +9,15 @@ from datetime import UTC, datetime
 from uuid import UUID, uuid4
 
 _LOGGER_NAME = "card_market_tracker"
-_EVENTS = frozenset({"cli.version", "diagnose.completed", "config.invalid", "catalog.completed"})
+_EVENTS = frozenset(
+    {
+        "cli.version",
+        "diagnose.completed",
+        "config.invalid",
+        "catalog.completed",
+        "persistence.completed",
+    }
+)
 
 
 class JsonFormatter(logging.Formatter):
@@ -48,15 +56,45 @@ class JsonFormatter(logging.Formatter):
             "unknown_variant",
             "unknown_language",
             "ambiguous_reference",
+            "capture_required",
+            "capture_conflict",
+            "synthetic_only",
+            "replay_conflict",
+            "storage_schema",
+            "storage_locked",
+            "storage_io",
+            "storage_corrupt",
+            "storage_timeout",
+            "unsafe_destination",
+            "resolution_mismatch",
         }:
             payload["error_category"] = category
         result = getattr(record, "result", None)
-        if isinstance(result, str) and result in {"ok", "error", "mixed", "empty"}:
+        if isinstance(result, str) and result in {"ok", "error", "mixed", "empty", "replay"}:
             payload["result"] = result
+        operation = getattr(record, "operation", None)
+        if isinstance(operation, str) and operation in {
+            "init",
+            "persist",
+            "read",
+            "verify",
+            "backup",
+            "restore",
+        }:
+            payload["operation"] = operation
         duration = getattr(record, "duration_ms", None)
         if isinstance(duration, int) and not isinstance(duration, bool) and duration >= 0:
             payload["duration_ms"] = duration
-        for field in ("input_count", "accepted_count", "candidate_count", "rejected_count"):
+        for field in (
+            "input_count",
+            "accepted_count",
+            "candidate_count",
+            "rejected_count",
+            "new_batch_count",
+            "new_entity_count",
+            "new_observation_count",
+            "observation_count",
+        ):
             value = getattr(record, field, None)
             if isinstance(value, int) and not isinstance(value, bool) and 0 <= value <= 10000:
                 payload[field] = value

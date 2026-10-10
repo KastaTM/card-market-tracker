@@ -1,5 +1,94 @@
 # Initial threat model
 
+## P3a synthetic persistence boundaries (2026-10-10)
+
+P3a adds a local SQLite asset: immutable synthetic observation/resolution history,
+curated identity projections, stable batch tokens and recovery copies. It adds no
+credential, provider connection, exposed endpoint, scheduler or commercial feed.
+The [persistence input](../data-contracts/PERSISTENCE_V1.md),
+[storage contract](../data-contracts/STORAGE_V1.md) and
+[runbook](../runbooks/OBSERVATION_STORAGE.md) define the boundaries. The phase
+report/PR ledger supplies reproducible gate evidence tied to the reviewed SHA;
+this description does not itself certify a gate or native Pi durability.
+
+The public batch boundary reparses the full manifest and revalidates normalized
+values, indexes and resolver correspondence before storage. A caller-created
+dataclass or resolution ID is not authority. Exact contextual bindings determine
+accepted targets and complete parents; candidates retain a reference and category
+without a CMT ID. Rejections carry only indexed fixed categories, not raw evidence.
+Programmatic `RecordError` values are categorical assertions by the local producer;
+the discarded invalid payload cannot be independently reconstructed from them.
+
+Synthetic provenance is checked before an observation can become a rejection.
+`documented` and `observed` do not authorize retention. The synthetic label itself
+is a local claim, so fixture review remains necessary. No images, prices, stock,
+personal data, long provider text or ignored extras belong to retained snapshots.
+The P1a byte/depth/node/string/record bounds are reused; P3a also bounds encoded
+in-memory JSON and requires explicit zoned capture with UTC normalization and
+capture disagreement errors. Capture, release, provider update and local first
+batch persistence have separate meanings.
+
+Replay binds ordered normalized evidence, duplicates, nulls, versions, targets,
+safe rejection categories and sorted resolver context. Localization names and
+binding audit reasons are excluded because they do not affect resolution;
+unrelated identity/binding edits conservatively change context. A SHA256 digest
+tests equivalence, creates no product identity and authenticates neither producer
+nor curator. Changing a rejected raw payload while keeping its safe category is
+equivalent because that payload is intentionally not retained. The producer must
+preserve the UUIDv4 batch token to recognize a retry; a new token adds history.
+
+Logs extend the existing fixed event/category/field allowlist. Names, input values,
+references, SQL, paths, tokens, arbitrary extras and raw exception text stay out of
+stderr. Failed operation counts are unknown, not a successful zero. Query stdout
+intentionally carries normalized names/references; callers must treat it as
+untrusted data and protect retained output. No SQL from input, dump execution or
+extension loading is permitted by the storage boundary.
+
+Host access remains the authorization boundary. A user who can modify the
+manifest/database is a trusted administrator; neither integrity checks nor hashes
+prove that history was authored honestly. Use private operator-controlled local
+directories and owner-only data access. Portable pathname checks cannot confine
+SQLite against a hostile concurrent ancestor replacement; Windows ACLs remain
+the operator's responsibility. These limits and append-only capacity growth are
+tracked as TD-003/TD-004. Native interruption/storage testing remains TD-002.
+
+SQLite values use parameters and all query/ordering/schema fragments are internal
+constants; no input SQL/dump or extension is executed. Owned application/version
+markers and exact schema inventory prevent opening another/future/altered schema
+as an empty CMT database. Connections explicitly enable/check foreign keys;
+writes use explicit SQL transactions under Python 3.13 `autocommit=True`, with
+DELETE journal and FULL synchronization. Rollback covers batch metadata,
+identities and record snapshots; attempted counts are reported only after commit.
+Process-failure and simulated-IO evidence must remain distinct from physical
+power-loss evidence.
+
+Reads open existing files in read-only/query-only mode and cannot create missing
+databases. Limits are strict integers 1..1000 with fixed deterministic order.
+The default two-second SQL/lock budget and VM interruption bound ordinary work;
+the backup progress callback checks a shared budget between bounded page steps.
+Unresponsive OS/device calls remain outside this deadline guarantee. Large
+append-only history may require a later measured capacity/budget decision.
+
+Path checks reject links, junctions/reparse points, linked ancestors, directories,
+special files, unsafe local path forms and multiply-linked database files. New
+database/copy destinations reserve a file exclusively with requested mode 0600.
+Existing destination or sidecar collisions are rejected; existing valid journals
+are preserved for SQLite recovery, with linked/nonregular sidecars rejected.
+Copy failures clean only the reserved destination under the trusted-directory
+assumption. Backup/restore use SQLite's consistent backup API into a new target,
+checking source/result schema, integrity and FKs and reopening the result.
+Integrity does not authenticate history or assess provider/host health.
+
+Container data lives at explicit `/data`, built with UID/GID 10001 and mode 0700,
+and uses a selected named volume. Data processing disables networking and mounts
+fixtures read-only; the product still runs as UID 10001. Persistence evidence must
+span distinct container invocations and verify actual mounted ownership. Existing
+volume permissions are an operator responsibility and must not be bypassed with
+root product execution, mode 777 or a writable whole-project mount.
+
+The sections below preserve the P1a, P0 and P0.5 scopes as historical boundaries;
+their statements that those slices have no database do not describe P3a.
+
 ## P1a implemented local catalog controls
 
 Untrusted UTF-8 regular files are read with a 1 MiB limit. Strict parsing rejects
