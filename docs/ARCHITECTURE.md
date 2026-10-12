@@ -1,5 +1,34 @@
 # Architecture
 
+## P3a observation persistence
+
+```text
+strict local persistence wrapper + read-only manifest
+  -> existing P1a adapter/normalized evidence
+  -> persistence.input + application validation/UTC capture/resolution binding
+  -> immutable PersistenceBatch
+  -> SQLite repository (independent validation again)
+  -> atomic identity projection + batch + accepted/candidate/rejection snapshots
+CLI persist / observations / db operations -> JSON stdout + allowlisted stderr
+```
+
+`persistence.application` composes P1a without importing SQLite; P1a domain and
+resolver remain unchanged and independent of persistence/adapters. The repository
+depends inward on validated values and uses standard-library SQLite. The curated
+manifest remains the canonical identity/binding authority. DB entity projections
+preserve UUIDs and required parents; snapshots never promote candidates or reassign
+old decisions after manifest edits. Storage never consumes P1a stdout as the sole
+evidence source because that serialization omits normalized timestamps/metadata.
+
+[ADR-0004](adr/0004-offline-observation-persistence.md) and
+[input](data-contracts/PERSISTENCE_V1.md)/[storage](data-contracts/STORAGE_V1.md)
+define initial schema1, DELETE/FULL, explicit transaction lifecycle, validated
+producer tokens/replay context, safe summaries, bounded read/lock/backup and new
+restore destinations. Separate commands make writes explicit; `catalog` remains
+read-only. Fixtures are exclusively synthetic. There is no network collector,
+market/retail schema, scheduler, promotion workflow, analytic query or server.
+The sections below describe their original phase implementations.
+
 ## P1a catalog core
 
 ```text

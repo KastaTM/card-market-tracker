@@ -11,3 +11,15 @@ services:
     volumes:
       - ./tests/fixtures:/fixtures:ro
     command: ["catalog", "--input", "/fixtures/synthetic_tcgdex_valid.json", "--manifest", "/fixtures/synthetic_manifest.json"]
+  persistence:
+    build: .
+    network_mode: none
+    volumes:
+      - ./tests/fixtures:/fixtures:ro
+      - observation_data:/data
+    command: ["db", "verify", "--db", "/data/history.sqlite3"]
+
+volumes:
+  observation_data:
+    external: true
+    name: ${CMT_PERSISTENCE_VOLUME:-cmt-p3a-local}

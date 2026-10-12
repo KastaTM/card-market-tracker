@@ -1,5 +1,23 @@
 # Engineering Completion Report — P1a Catalog Core
 
+## Later Orchestrator decision — 2026-10-10
+
+The [P3a opening contract](P3A_OBSERVATION_PERSISTENCE_CONTRACT.md) attributes
+**ACCEPTED / PHASE CLOSED** for P1a to the Orchestrator after integration and
+postmerge review. [PR5](https://github.com/KastaTM/card-market-tracker/pull/5)
+merged as `c6e66a2aba469d02f0ca63fde3b81ecc5eea41bc`, tree
+`a9717922736a6220d3ff05293bec4cb222644269`, ordered parents
+`af573f04586024e7666a8999526e0aaab238c0dc` and
+`93a17711cb75f91816e41279fe76069055391e50`. Local fetch and objects were verified
+at P3a start; [push CI37965128340](https://github.com/KastaTM/card-market-tracker/actions/runs/37965128340)
+and its four job logs were inspected. The PR's external ledger supplies the final
+exact-head reviews and integration evidence. P3a is now open for synthetic offline
+observation persistence; P2 and P6a/retail Discovery remain blocked. The original
+prepublication report below is preserved as historical evidence, including its
+then-pending labels, and is not rewritten as a later execution.
+
+## Original engineering report — 2026-10-09
+
 Phase: P1a, contract v1, evidence date 2026-10-09 Europe/Madrid.
 Proposed status: engineering candidate for independent Orchestrator review;
 publication of this report requires its own exact-head reviews and CI ledger.

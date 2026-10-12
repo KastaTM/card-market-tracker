@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "batch_id": "382c217a-6b1c-451c-9c49-ea8b29c9c2e6",
+  "captured_at": "2026-10-10T09:00:00.000000Z",
+  "ingestion": {
+    "version": 1,
+    "provenance": "synthetic",
+    "records": []
+  }
+}

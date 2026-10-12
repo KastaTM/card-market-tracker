@@ -20,3 +20,10 @@ build/
 *.pem
 *.key
 *.sqlite3
+*.sqlite
+*.db
+*-journal
+*-wal
+*-shm
+*.sqlite3.backup
+.p3a-evidence/

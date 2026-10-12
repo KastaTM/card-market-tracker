@@ -14,11 +14,21 @@ from uuid import uuid4
 
 from card_market_tracker import __version__
 from card_market_tracker.catalog.adapters.tcgdex import translate_batch
-from card_market_tracker.catalog.manifest import parse_manifest
+from card_market_tracker.catalog.manifest import parse_manifest, parse_reference
 from card_market_tracker.catalog.resolver import resolve
 from card_market_tracker.catalog.validation import CatalogError, read_json
 from card_market_tracker.config import ConfigurationError, load_config
 from card_market_tracker.logging_json import configure_logging
+from card_market_tracker.persistence.errors import PersistenceError
+from card_market_tracker.persistence.input import read_persistence
+from card_market_tracker.persistence.sqlite_repository import (
+    backup,
+    initialize,
+    persist,
+    query,
+    restore,
+    verify,
+)
 
 
 class _Parser(argparse.ArgumentParser):
@@ -36,6 +46,24 @@ def _parser() -> _Parser:
     catalog = commands.add_parser("catalog")
     catalog.add_argument("--input", type=Path, required=True)
     catalog.add_argument("--manifest", type=Path, required=True)
+    persistence = commands.add_parser("persist")
+    persistence.add_argument("--db", type=Path, required=True)
+    persistence.add_argument("--input", type=Path, required=True)
+    persistence.add_argument("--manifest", type=Path, required=True)
+    observations = commands.add_parser("observations")
+    observations.add_argument("--db", type=Path, required=True)
+    selector = observations.add_mutually_exclusive_group()
+    selector.add_argument("--batch-id")
+    selector.add_argument("--cmt-id")
+    selector.add_argument("--candidate-reference", type=Path)
+    observations.add_argument("--limit", type=int, default=100)
+    database = commands.add_parser("db")
+    operations = database.add_subparsers(dest="db_operation", required=True, parser_class=_Parser)
+    for operation in ("init", "verify", "backup", "restore"):
+        command = operations.add_parser(operation)
+        command.add_argument("--db", type=Path, required=True)
+        if operation in ("backup", "restore"):
+            command.add_argument("--destination", type=Path, required=True)
     return parser
 
 
@@ -106,18 +134,115 @@ def _catalog(input_path: Path, manifest_path: Path, started: float) -> int:
     return exit_code
 
 
+def _persistence_error(category: str) -> dict[str, object]:
+    return {
+        "version": 1,
+        "result": "error",
+        "error_category": category,
+        "counts": None,
+        "committed": None,
+    }
+
+
+def _report_persistence(
+    payload: dict[str, object], operation: str, started: float, exit_code: int
+) -> int:
+    metrics: dict[str, object] = {
+        "event": "persistence.completed",
+        "operation": operation,
+        "component": "cli",
+        "result": payload["result"],
+        "duration_ms": max(0, round((time.perf_counter() - started) * 1000)),
+    }
+    if "error_category" in payload:
+        metrics["error_category"] = payload["error_category"]
+    counts = payload.get("counts")
+    if isinstance(counts, dict):
+        for name, field in (
+            ("input", "input_count"),
+            ("accepted", "accepted_count"),
+            ("candidates", "candidate_count"),
+            ("rejected", "rejected_count"),
+        ):
+            metrics[field] = counts[name]
+    committed = payload.get("committed")
+    if isinstance(committed, dict):
+        metrics["new_observation_count"] = committed["observations"]
+        metrics["new_entity_count"] = committed["entities"]
+        metrics["new_batch_count"] = 0 if payload["result"] == "replay" else 1
+    records = payload.get("records")
+    if operation == "read" and isinstance(records, list):
+        metrics["observation_count"] = sum(
+            isinstance(row, dict) and row.get("observation") is not None for row in records
+        )
+    logging.getLogger("card_market_tracker").log(
+        logging.ERROR if exit_code else logging.INFO, "", extra=metrics
+    )
+    print(json.dumps(payload, ensure_ascii=True, sort_keys=True, separators=(",", ":")))
+    return exit_code
+
+
+def _persistence(args: argparse.Namespace, started: float) -> int:
+    operation = (
+        "persist"
+        if args.command == "persist"
+        else "read"
+        if args.command == "observations"
+        else args.db_operation
+    )
+    try:
+        if operation == "persist":
+            batch = read_persistence(args.input, args.manifest)
+            payload = persist(args.db, batch).to_dict()
+        elif operation == "read":
+            reference = (
+                None
+                if args.candidate_reference is None
+                else parse_reference(read_json(args.candidate_reference))
+            )
+            payload = query(
+                args.db,
+                batch_id=args.batch_id,
+                cmt_id=args.cmt_id,
+                candidate_reference=reference,
+                limit=args.limit,
+            )
+        elif operation == "init":
+            payload = initialize(args.db)
+        elif operation == "verify":
+            payload = verify(args.db)
+        elif operation == "backup":
+            payload = backup(args.db, args.destination)
+        else:
+            payload = restore(args.db, args.destination)
+        exit_code = 3 if payload["result"] == "mixed" else 0
+    except PersistenceError as error:
+        payload = _persistence_error(error.category)
+        exit_code = error.exit_code
+    except CatalogError as error:
+        payload = _persistence_error(error.category)
+        exit_code = 1 if error.category == "input_io" else 2
+    except Exception:
+        payload = _persistence_error("local_execution")
+        exit_code = 1
+    return _report_persistence(payload, operation, started, exit_code)
+
+
 def main(argv: list[str] | None = None) -> int:
     started = time.perf_counter()
     run_id = str(uuid4())
     logger = configure_logging(run_id)
+    actual_argv = sys.argv[1:] if argv is None else argv
     try:
-        args = _parser().parse_args(argv)
+        args = _parser().parse_args(actual_argv)
         if args.version:
             print(f"cmt {__version__}")
             logger.info("", extra={"event": "cli.version", "component": "cli"})
             return 0
         if args.command == "catalog":
             return _catalog(args.input, args.manifest, started)
+        if args.command in ("persist", "observations", "db"):
+            return _persistence(args, started)
         if args.command != "diagnose":
             raise ConfigurationError("arguments: expected diagnose or --version")
         config = load_config(env_file=args.env_file)
@@ -136,6 +261,15 @@ def main(argv: list[str] | None = None) -> int:
         print("diagnose: ok (configuration, local work directory)")
         return 0
     except ConfigurationError:
+        if actual_argv and actual_argv[0] in ("persist", "observations", "db"):
+            operation = {"persist": "persist", "observations": "read", "db": "init"}[actual_argv[0]]
+            if (
+                actual_argv[0] == "db"
+                and len(actual_argv) > 1
+                and actual_argv[1] in ("init", "verify", "backup", "restore")
+            ):
+                operation = actual_argv[1]
+            return _report_persistence(_persistence_error("invalid_field"), operation, started, 2)
         logger.error(
             "",
             extra={

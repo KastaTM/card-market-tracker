@@ -1,5 +1,10 @@
 # Data contract conventions
 
+P3a adds [persistible synthetic input v1](PERSISTENCE_V1.md) and
+[SQLite storage/read v1](STORAGE_V1.md), plus an additive allowlisted logging
+extension. Required capture/synthetic-only retention apply at the new write
+boundary; P1a's optional capture and read-only catalog contracts are unchanged.
+
 P1a implements [catalog v1](CATALOG_V1.md), [ingestion v1](INGESTION_V1.md)
 and [manifest v1](MANIFEST_V1.md), alongside the additive logging v1 extension.
 Source ingestion v0 remains historical preliminary requirements for later

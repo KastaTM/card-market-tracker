@@ -1,5 +1,20 @@
 # Roadmap
 
+## P1a closure and P3a opening — Orchestrator decision, 2026-10-10
+
+The [P3a contract](phases/P3A_OBSERVATION_PERSISTENCE_CONTRACT.md) records the
+Orchestrator's **ACCEPTED / PHASE CLOSED** decision for P1a and opens **P3a
+Observation Persistence** for offline synthetic metadata only. Local `git fetch
+origin` verified main `c6e66a2aba469d02f0ca63fde3b81ecc5eea41bc`, tree
+`a9717922736a6220d3ff05293bec4cb222644269`, with ordered parents
+`af573f04586024e7666a8999526e0aaab238c0dc` then
+`93a17711cb75f91816e41279fe76069055391e50`. [PR5](https://github.com/KastaTM/card-market-tracker/pull/5)
+is merged; its exact-main [push CI37965128340](https://github.com/KastaTM/card-market-tracker/actions/runs/37965128340)
+has four successful jobs, whose execution logs were inspected. These are historical
+P1a results, not P3a gates. P3a requires its own candidate, independent reviews and
+CI; merge is not authorized. P2 and P6a/retail Discovery remain **BLOCKED** for
+source access, retention rights and semantics. Earlier entries below are historical.
+
 ## Subsequent Orchestrator decision — 2026-10-09
 
 The authorized [P1a contract](phases/P1A_CATALOG_CORE_CONTRACT.md) records the

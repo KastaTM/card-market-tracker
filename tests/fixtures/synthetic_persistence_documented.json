@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "batch_id": "2d7f6a02-3418-4d18-b5aa-fbb39834deef",
+  "captured_at": "2026-10-10T09:00:00.000000Z",
+  "ingestion": {
+    "version": 1,
+    "provenance": "documented",
+    "records": []
+  }
+}
