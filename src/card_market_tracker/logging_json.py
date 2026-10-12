@@ -16,6 +16,7 @@ _EVENTS = frozenset(
         "config.invalid",
         "catalog.completed",
         "persistence.completed",
+        "discovery.completed",
     }
 )
 
@@ -67,10 +68,24 @@ class JsonFormatter(logging.Formatter):
             "storage_timeout",
             "unsafe_destination",
             "resolution_mismatch",
+            "batch_missing",
+            "incomplete_evidence",
+            "context_mismatch",
+            "chronology",
+            "contradictory_snapshot",
         }:
             payload["error_category"] = category
         result = getattr(record, "result", None)
-        if isinstance(result, str) and result in {"ok", "error", "mixed", "empty", "replay"}:
+        if isinstance(result, str) and result in {
+            "ok",
+            "error",
+            "mixed",
+            "empty",
+            "replay",
+            "baseline",
+            "no_discoveries",
+            "discoveries",
+        }:
             payload["result"] = result
         operation = getattr(record, "operation", None)
         if isinstance(operation, str) and operation in {
@@ -97,6 +112,14 @@ class JsonFormatter(logging.Formatter):
         ):
             value = getattr(record, field, None)
             if isinstance(value, int) and not isinstance(value, bool) and 0 <= value <= 10000:
+                payload[field] = value
+        for field, maximum in (
+            ("batch_count", 33),
+            ("discovery_observation_count", 33000),
+            ("event_count", 1000),
+        ):
+            value = getattr(record, field, None)
+            if type(value) is int and 0 <= value <= maximum:
                 payload[field] = value
         return json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
 

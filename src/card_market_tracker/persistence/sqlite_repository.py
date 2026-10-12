@@ -9,11 +9,14 @@ from contextlib import contextmanager, suppress
 from datetime import UTC, datetime
 from pathlib import Path
 
-from card_market_tracker.catalog.ingestion import ExternalReference
-from card_market_tracker.catalog.manifest import parse_reference
+from card_market_tracker.catalog.ingestion import ExternalReference, Observation
+from card_market_tracker.catalog.manifest import parse_manifest, parse_reference
 from card_market_tracker.catalog.models import Entity
 from card_market_tracker.catalog.resolver import reference_dict
 from card_market_tracker.catalog.validation import CatalogError, uuid_value
+from card_market_tracker.discovery.errors import DiscoveryError
+from card_market_tracker.discovery.models import BatchSnapshot, SnapshotRecord
+from card_market_tracker.discovery.validation import validate_snapshot
 
 from . import schema
 from .application import context_fingerprint, fingerprint, validate_batch
@@ -508,6 +511,147 @@ def verify(path: Path, *, timeout: float = DEFAULT_TIMEOUT) -> dict[str, object]
     with _connection(path, writable=False, timeout=timeout) as (connection, budget):
         _verify(connection, budget)
     return _ok()
+
+
+def _snapshot_record(row: sqlite3.Row) -> SnapshotRecord:
+    observation = None
+    if row["status"] != "rejected":
+        parent = None
+        if row["set_namespace"] is not None:
+            parent = ExternalReference(
+                row["set_namespace"], "set", row["set_external_id"], row["set_language"]
+            )
+        observation = Observation(
+            row["kind"],
+            ExternalReference(
+                row["namespace"], row["kind"], row["external_id"], row["language"], row["variant"]
+            ),
+            row["name"],
+            parent,
+            row["card_number"],
+            row["release_date"],
+            row["provider_updated_at"],
+            row["captured_at"],
+            provenance=row["provenance"],
+        )
+    return SnapshotRecord(
+        row["record_index"], row["status"], row["category"], row["cmt_id"], observation
+    )
+
+
+_IDENTITY_FIELDS = tuple(_ENTITY_COLUMNS.split(","))
+_SNAPSHOT_JOIN = (
+    "SELECT r.*,"
+    + ",".join(
+        f"{alias}.{field} AS {alias}_{field}"
+        for alias in ("e", "c", "s")
+        for field in _IDENTITY_FIELDS
+    )
+    + " FROM records r LEFT JOIN entities e ON e.cmt_id=r.cmt_id"
+    + " LEFT JOIN entities c ON c.cmt_id=e.card_id"
+    + " LEFT JOIN entities s ON s.cmt_id=COALESCE(c.set_id,e.set_id)"
+    + " WHERE r.batch_id=? ORDER BY r.record_index LIMIT 1001"
+)
+
+
+def _snapshot_target(row: sqlite3.Row, cache: dict[str, tuple[Entity, Entity | None]]) -> None:
+    """Check stored identity closure, without consulting or recreating bindings."""
+    if row["status"] != "accepted":
+        return
+    target_id = row["cmt_id"]
+    if target_id not in cache:
+        projections = [
+            {field: row[f"{alias}_{field}"] for field in _IDENTITY_FIELDS}
+            for alias in ("e", "c", "s")
+            if row[f"{alias}_cmt_id"] is not None
+        ]
+        try:
+            identities = parse_manifest({"version": 1, "entities": projections, "bindings": []})
+        except CatalogError:
+            raise DiscoveryError("storage_corrupt") from None
+        by_id = {entity.cmt_id: entity for entity in identities.entities}
+        target = by_id.get(target_id)
+        if target is None:
+            raise DiscoveryError("storage_corrupt")
+        cache[target_id] = target, by_id.get(target.card_id or "")
+    target, card = cache[target_id]
+    expected_kind = "printing" if row["kind"] == "card" else row["kind"]
+    if target.kind != expected_kind:
+        raise DiscoveryError("storage_corrupt")
+    if row["kind"] in ("card", "sealed") and target.language != row["language"]:
+        raise DiscoveryError("storage_corrupt")
+    if row["kind"] == "card" and (
+        target.variant != row["variant"] or card is None or card.card_number != row["card_number"]
+    ):
+        raise DiscoveryError("storage_corrupt")
+
+
+def read_snapshots(
+    path: Path, batch_ids: tuple[str, ...], *, timeout: float = DEFAULT_TIMEOUT
+) -> tuple[BatchSnapshot, ...]:
+    """Read complete selected batch evidence in one owned, bounded read transaction."""
+    if not isinstance(batch_ids, tuple):
+        raise DiscoveryError("invalid_shape")
+    if not 1 <= len(batch_ids) <= 33:
+        raise DiscoveryError("input_limit")
+    try:
+        tokens = tuple(uuid_value(value) for value in batch_ids)
+    except CatalogError as error:
+        raise DiscoveryError(error.category) from None
+    if len(set(tokens)) != len(tokens):
+        raise DiscoveryError("invalid_field")
+    snapshots: list[BatchSnapshot] = []
+    with _connection(path, writable=False, timeout=timeout) as (connection, budget):
+        _execute(connection, budget, "BEGIN")
+        try:
+            _require_schema(connection, budget)
+            # One error is sufficient; do not materialize a hostile FK error inventory.
+            integrity = _execute(connection, budget, "PRAGMA integrity_check(1)").fetchone()
+            foreign_key = _execute(connection, budget, "PRAGMA foreign_key_check").fetchone()
+            if integrity is None or tuple(integrity) != ("ok",) or foreign_key is not None:
+                raise DiscoveryError("storage_corrupt")
+            total = 0
+            identities: dict[str, tuple[Entity, Entity | None]] = {}
+            for token in sorted(tokens):
+                metadata = _execute(
+                    connection, budget, "SELECT * FROM batches WHERE batch_id=?", (token,)
+                ).fetchone()
+                if metadata is None:
+                    raise DiscoveryError("batch_missing")
+                rows = _execute(connection, budget, _SNAPSHOT_JOIN, (token,)).fetchall()
+                total += len(rows)
+                if len(rows) > MAX_LIMIT or total > 33000:
+                    raise DiscoveryError("input_limit")
+                for row in rows:
+                    budget.remaining()
+                    _snapshot_target(row, identities)
+                snapshot = BatchSnapshot(
+                    version=1,
+                    input_version=metadata["input_version"],
+                    resolver_version=metadata["resolver_version"],
+                    batch_id=metadata["batch_id"],
+                    captured_at=metadata["captured_at"],
+                    first_persisted_at=metadata["first_persisted_at"],
+                    fingerprint=metadata["fingerprint"],
+                    context_fingerprint=metadata["context_fingerprint"],
+                    input_count=metadata["input_count"],
+                    accepted_count=metadata["accepted_count"],
+                    candidate_count=metadata["candidate_count"],
+                    rejected_count=metadata["rejected_count"],
+                    result=metadata["result"],
+                    records=tuple(_snapshot_record(row) for row in rows),
+                )
+                snapshots.append(validate_snapshot(snapshot))
+                budget.remaining()
+            budget.remaining()
+        finally:
+            # Cleanup works even when the deadline/VM progress callback has expired.
+            connection.set_progress_handler(None, 0)
+            connection.execute("PRAGMA busy_timeout=0")
+            if connection.in_transaction:
+                connection.execute("ROLLBACK")
+        budget.remaining()
+    return tuple(snapshots)
 
 
 def _remove_owned(path: Path, identity: tuple[int, int]) -> None:

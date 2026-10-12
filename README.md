@@ -1,5 +1,46 @@
 # Card Market Tracker
 
+## P4a offline temporal discovery
+
+Compare explicit synthetic persisted captures in one exact context:
+
+```sh
+cmt persist --db history.sqlite3 --input tests/fixtures/synthetic_discovery_history.json --manifest tests/fixtures/synthetic_discovery_manifest.json
+cmt persist --db history.sqlite3 --input tests/fixtures/synthetic_discovery_empty.json --manifest tests/fixtures/synthetic_discovery_manifest.json
+cmt persist --db history.sqlite3 --input tests/fixtures/synthetic_discovery_current.json --manifest tests/fixtures/synthetic_discovery_manifest.json
+cmt discover --db history.sqlite3 --request tests/fixtures/synthetic_discovery_request.json
+```
+
+The current fixture returns P3a code3 because it commits accepted records and a
+candidate. Discovery returns code0 with one new accepted set reference and one
+targetless set candidate. The alias targets an already known CMT UUID: novelty
+is relative to the explicitly selected history, never a launch/new canonical product.
+Requests contain exactly version/current_batch_id/history_batch_ids/context, with
+at most32 unique prior batches, all strictly earlier than current. Exact namespace/
+kind/language (including null) applies to every selected row; variant is part of
+reference identity. No history yields `baseline`; existing empty history is an
+explicit window. Missing, rejected, contradictory or failed evidence is an error.
+
+Schema1 does not store empty capture scope. Submitting request context attests on
+behalf of the local producer that selected empty captures belong to it. Output
+labels `request_attested_empty`; nonempty `records_verified` means every row
+matched. Neither authenticates the producer or proves source health. See
+[DISCOVERY_V1](docs/data-contracts/DISCOVERY_V1.md) and
+[the runbook](docs/runbooks/OFFLINE_TEMPORAL_DISCOVERY.md).
+
+One bounded read transaction changes no business data/schema. stdout contains
+JSON evidence; stderr contains safe correlation/result/duration/category/counts.
+Codes0/2/1 distinguish success/invalid input or evidence/local storage failure.
+Missing request is code2; missing DB code1. Redirect stdout to retain output.
+Replay preserves results and IDs, without durable deduplication or delivery.
+All samples are invented. Sources/retail/price/stock/scheduler/promotion/UI/API/
+alerts remain outside this phase; P2/P6a remain blocked.
+
+`scripts/discovery_smoke.py` runs installed, Compose and architecture cases after
+P3a persistence in separate processes, verifying logical DB content, schema/
+versions and backup/restore equality. Compose discovery uses UID10001, network
+disabled and read-only fixtures with a private data volume. ARM64 QEMU is emulation.
+
 Card Market Tracker (CMT) is a personal market intelligence project for collectibles. The initial domain is Pokémon TCG in Spain and Europe, using EUR. This repository starts with the [project context](context.md) and the [P0 Foundation contract](P0_FOUNDATION_CONTRACT.md).
 
 P0 supplies an installable Python package, validated local configuration, a one-shot CLI diagnostic, structured logs, and container/CI scaffolding. It does not collect market data or run a service.

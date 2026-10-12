@@ -12,5 +12,8 @@ Read [context.md](context.md) and [P0_FOUNDATION_CONTRACT.md](P0_FOUNDATION_CONT
 - [P3a contract](docs/phases/P3A_OBSERVATION_PERSISTENCE_CONTRACT.md),
   [ownership](docs/phases/P3A_OWNERSHIP.md) and
   [P3a report](docs/phases/P3A_OBSERVATION_PERSISTENCE.md): synthetic-only SQLite scope and evidence.
+- [P4a contract](docs/phases/P4A_OFFLINE_TEMPORAL_DISCOVERY_CONTRACT.md),
+  [ownership](docs/phases/P4A_OWNERSHIP.md) and
+  [P4a report](docs/phases/P4A_OFFLINE_TEMPORAL_DISCOVERY.md): bounded synthetic offline comparison and evidence.
 
 Do not assert a gate passes without a reproducible result tied to the reviewed commit. Record scope proposals for the Orchestrator instead of adding commercial features to P0.

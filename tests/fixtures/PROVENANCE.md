@@ -1,5 +1,19 @@
 ﻿# P1a fixture provenance
 
+## P4a synthetic temporal fixtures — 2026-10-12
+
+Every `synthetic_discovery_*.json` is invented local evidence, not a source capture.
+The Discovery manifest reuses curated synthetic P1a identities and adds an explicit
+set alias to a known UUID. Homogeneous ES set history/current model repeated set,
+new alias and targetless candidate. Fixed Jan2026 capture times and once-chosen
+UUIDv4 batch tokens model temporal ordering, without implying a real launch.
+Empty/rejected captures and main/baseline/empty/no-discoveries/rejected/context
+requests exercise explicit windows and safe failure. The request context attests
+the empty producer's intended scope; STORAGE_V1 proves no independently stored
+empty namespace/kind/language. No real metadata/price/stock/image/name/SKU is retained.
+
+## Original P1a provenance
+
 All `synthetic_*` files in this directory are authored examples, not captured API
 responses or commercial records. Date: 2026-10-09. Source shape:
 [TCGdex REST card](https://tcgdex.dev/rest/card),

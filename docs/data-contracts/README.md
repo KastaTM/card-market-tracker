@@ -1,5 +1,9 @@
 # Data contract conventions
 
+P4a adds [Discovery v1](DISCOVERY_V1.md), compatible STORAGE_V1 read snapshots
+and allowlisted LOGGING_V1 fields. Schema1 remains unchanged. Empty scope is an
+explicit caller/producer declaration, separated from stored existence/counts.
+
 P3a adds [persistible synthetic input v1](PERSISTENCE_V1.md) and
 [SQLite storage/read v1](STORAGE_V1.md), plus an additive allowlisted logging
 extension. Required capture/synthetic-only retention apply at the new write

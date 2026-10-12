@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "current_batch_id": "22222222-2222-4222-8222-222222222222",
+  "history_batch_ids": [
+    "44444444-4444-4444-8444-444444444444"
+  ],
+  "context": {
+    "namespace": "tcgdex",
+    "kind": "set",
+    "language": "es"
+  }
+}

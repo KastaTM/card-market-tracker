@@ -121,6 +121,51 @@ process rollback/restart and QEMU evidence do not certify physical Pi power loss
 
 ## Evolution
 
+### Compatible P4a snapshot read extension
+
+`read_snapshots(path: Path, batch_ids: tuple[str,...], *, timeout=2.0)
+-> tuple[BatchSnapshot,...]` is additive. Schema1 and existing operations,
+serialization and error categories remain unchanged. Snapshots use frozen generic
+DTOs from [DISCOVERY_V1](DISCOVERY_V1.md), which has no SQLite/provider dependency.
+Strictly validate a tuple of 1..33 unique canonical UUIDv4s before opening a DB.
+The returned tuple is ordered by batch ID, each record tuple by input index.
+
+One checked `mode=ro`/`query_only` connection and explicit deferred `BEGIN`
+encompasses ownership/schema/integrity/FK validation and metadata plus complete
+rows for every selected batch, including accepted target identity/parent closure.
+Explicit rollback and closing release the read transaction on success/failure;
+cleanup remains possible after deadline interruption. Missing DB creates nothing.
+Missing batch is `batch_missing`; existing empty batch has validated metadata
+and zero rows. Neither missing nor rejected evidence becomes a successful empty
+capture. Rejections are retained as safe DTO summaries for the consumer to reject
+as incomplete Discovery evidence, rather than filtered away by the reader.
+
+LIMIT 1001 per batch detects an overrun; no truncation succeeds. The reader limits
+selected evidence to 33,000 rows, checks per-row/index/count/capture/provenance
+invariants and the accepted target's immutable kind, language/variant, card number
+and parent relations. Frozen observations are not re-resolved with a new manifest.
+Stored input/context hashes receive grammar checks; absent original full manifest
+context prevents independent hash recomputation/authentication. Those hashes
+remain replay metadata, not capture-scope proof.
+
+SQLite integrity checks validate engine/CHECK/FK invariants. Generic snapshot
+validation additionally checks business consistency and canonical bounded values.
+Whole-file integrity traversal can depend on total DB size and shares the global
+finite 2-second default/max5-second budget, including Python validation checkpoints.
+The selected-row limit bounds returned business evidence, not all engine work.
+One integrity/FK error is sufficient to fail without materializing an unbounded
+error list. Storage failures keep safe existing categories; generic snapshot
+incoherence is `storage_corrupt`, budget violations `input_limit`.
+
+Schema1 does not retain an empty capture's namespace/kind/language scope. The
+request explicitly attests this scope on behalf of the local producer; Discovery
+labels it `request_attested_empty`. DB-verified existence/capture/counts must never
+be called stored scope proof. Nonempty `records_verified` validates exact context
+for all admitted rows. Both trust boundaries and residual false-attestation risk
+are documented in ADR-0005. A read transaction can block a DELETE-journal writer
+commit until released; it never uses writer `BEGIN IMMEDIATE`. A hot journal may
+require writable recovery, so the reader can fail safely without repair/deletion.
+
 Only initial schema version 1 exists. No fabricated migration is shipped.
 A future contract must define tested migrations before another version opens;
 current software rejects it conservatively. Historical snapshots remain frozen

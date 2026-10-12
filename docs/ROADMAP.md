@@ -1,5 +1,25 @@
 # Roadmap
 
+## P3a closure and P4a opening — Orchestrator decision, 2026-10-12
+
+The archived [P4a contract](phases/P4A_OFFLINE_TEMPORAL_DISCOVERY_CONTRACT.md)
+records the Orchestrator's **ACCEPTED / PHASE CLOSED** decision for P3a and opens
+**P4a Offline Temporal Discovery** ahead of P2/P6a. Local fetch verified baseline
+`734641a7ef920688677cdea6bc82f908a2856927`, tree
+`ae61fe57e6f874b138c98ecdaaa8cbd830406354`, ordered parents
+`c6e66a2aba469d02f0ca63fde3b81ecc5eea41bc` then
+`e9c5f02e7f093dedff55b67f137c4446f22e8735`. Historical [PR6 integration ledger](https://github.com/KastaTM/card-market-tracker/pull/6#issuecomment-6131957615)
+and [exact-main CI](https://github.com/KastaTM/card-market-tracker/actions/runs/38302824438)
+support the opening; they do not prove P4a gates. The contract reports the
+Orchestrator's closure comment publication failed with403; its decision was issued
+in chat. No successfully published closure comment is asserted here.
+
+P4a compares explicit bounded synthetic capture windows, without sources,
+schema migration, delivery or promotion. It does not implement all of P4 or
+prove launch/global novelty/source health. P2 and P6a/retail Discovery remain
+**BLOCKED**; TCGdex remains provisional and TD-001–TD-004 remain open. Phase IDs
+retain their meaning; earlier scheduling and status entries below are historical.
+
 ## P1a closure and P3a opening — Orchestrator decision, 2026-10-10
 
 The [P3a contract](phases/P3A_OBSERVATION_PERSISTENCE_CONTRACT.md) records the

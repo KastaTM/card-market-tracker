@@ -21,4 +21,5 @@ uid="$(docker run --rm --platform "$platform" --entrypoint id "$image" -u)"
 test "$uid" != "0"
 python3 scripts/catalog_smoke.py --mode docker --image "$image" --platform "$platform" --fixtures tests/fixtures
 python3 scripts/observation_persistence_smoke.py --mode docker --image "$image" --platform "$platform" --fixtures tests/fixtures
+python3 scripts/discovery_smoke.py --mode docker --image "$image" --platform "$platform" --fixtures tests/fixtures
 echo "$platform smoke PASS; uid=$uid"

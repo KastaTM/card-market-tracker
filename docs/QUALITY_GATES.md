@@ -1,5 +1,23 @@
 # Quality gates
 
+## P4a mandatory gates
+
+[P4a](phases/P4A_OFFLINE_TEMPORAL_DISCOVERY_CONTRACT.md) adds AC-D01–D15,
+preserving all earlier recipes/smokes. Require frozen install/unchanged lock,
+Ruff format/check, strict mypy, unit/contract/real SQLite concurrency/negative/
+CLI regression, coverage>=85% lines/>=80% branches of all own runtime,
+sdist/wheel/outside-source installation, audit/secret scan and ARQ/DB/SEC/SRE/docs
+review. Distinct QA and REVIEWER inspect detached exact final-SHA worktrees.
+
+`scripts/discovery_smoke.py` joins catalog/persistence harnesses in wheel,
+Compose, AMD64 and ARM64 QEMU. It seeds through P3a then compares in separate
+invocations, asserting events, full logical content/schema/version nonmutation
+and backup/restore equality. Containers remain UID10001, network disabled and
+fixtures read-only. CI retains four jobs: quality/Compose/two architecture jobs.
+Final identities/job bodies/reviews belong in the external PR ledger. Unexecuted
+mandatory gates are FAIL; historical results cannot certify P4a. Only Orchestrator
+authorizes integration. QEMU cannot qualify physical Pi durability.
+
 ## P3a mandatory gates
 
 The [P3a contract](phases/P3A_OBSERVATION_PERSISTENCE_CONTRACT.md) adds AC-O01–O15
