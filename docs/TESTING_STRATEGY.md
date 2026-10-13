@@ -1,5 +1,25 @@
 # Testing strategy
 
+## P4a requirements
+
+Unit/contracts test full reference keys, historical accepted/candidate union,
+candidate->accepted, reappearance, existing UUID/new alias, accepted non-set kinds,
+name/date changes, exact null/language/variant, duplicates/contradictions,
+deterministic IDs/order/window changes, bootstrap and attested empty history.
+Strict request/Python boundaries cover forgery, duplicate keys, version and
+byte/depth/node/string/history budgets without silently truncated success.
+
+Temporary SQLite tests distinguish empty/missing; metadata+rows share one
+snapshot against a concurrent writer. Test ownership/schema/integrity/target
+closure/counters/provenance/index tampering, lock/deadline/IO and noncreation/
+nonmutation. Empty scope attestation is distinguished from stored existence.
+No drill touches user databases. CLI tests check codes0/2/1, redaction and no
+network. Installed/container harnesses seed through P3a in another process,
+repeat and backup/restore while checking full logical content/schema/version.
+Preserve every P0/P1a/P3a smoke and include all new runtime in coverage.
+Independent QA/REVIEWER derive extra risks and inspect exact final SHA/four CI
+bodies. Working-tree checks remain provisional until tied to Git objects.
+
 ## P3a requirements
 
 Boundary tests cover explicit UTC capture/offset equivalence/conflicts, provenance,

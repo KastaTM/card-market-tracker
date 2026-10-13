@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "batch_id": "22222222-2222-4222-8222-222222222222",
+  "captured_at": "2026-01-03T00:00:00.000000Z",
+  "ingestion": {
+    "version": 1,
+    "provenance": "synthetic",
+    "records": [
+      {
+        "kind": "set",
+        "language": "es",
+        "data": {
+          "id": "synthetic-set",
+          "name": "Invented Discovery set",
+          "releaseDate": "2025-01-01"
+        }
+      },
+      {
+        "kind": "set",
+        "language": "es",
+        "data": {
+          "id": "synthetic-discovery-alias",
+          "name": "Invented Discovery set",
+          "releaseDate": "2025-01-01"
+        }
+      },
+      {
+        "kind": "set",
+        "language": "es",
+        "data": {
+          "id": "synthetic-discovery-candidate",
+          "name": "Invented Discovery set",
+          "releaseDate": "2025-01-01"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "batch_id": "44444444-4444-4444-8444-444444444444",
+  "captured_at": "2026-01-02T00:00:00.000000Z",
+  "ingestion": {
+    "version": 1,
+    "provenance": "synthetic",
+    "records": [
+      {
+        "kind": "set",
+        "language": "es",
+        "data": {
+          "id": "synthetic-rejected"
+        }
+      }
+    ]
+  }
+}

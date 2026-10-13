@@ -1,5 +1,26 @@
 # Logging contract v1
 
+## Compatible P4a extension (2026-10-12)
+
+`discovery.completed` describes one explicit offline comparison. Existing events,
+codes and field bounds remain unchanged. Results add `baseline`, `no_discoveries`
+and `discoveries`; `error` means no comparison result. UUID `run_id` and nonnegative
+`duration_ms` correlate execution only, never event/comparison identity.
+
+New strict integer optional fields: `batch_count`0..33,
+`discovery_observation_count`0..33000 and `event_count`0..1000. Boolean/invalid
+values are omitted. Existing `observation_count` retains its0..10000 bound.
+Successful counters describe selected validated snapshots; on error, counts are
+unknown and omitted from logs (`counts:null` on stdout). Bootstrap has a distinct
+`baseline` result even though its event count is zero.
+
+Fixed categories add `batch_missing`, `incomplete_evidence`, `context_mismatch`,
+`chronology`, `contradictory_snapshot`; existing input/storage categories apply.
+No paths, batch IDs, contextual references, arbitrary names, request/payload,
+SQL or raw exception text are log fields. stdout intentionally contains the
+minimal contracted synthetic discovery evidence. This interface requires tests
+and exact-candidate evidence; the document alone establishes no gate PASS.
+
 ## Compatible P3a extension (2026-10-10)
 
 P3a adds `persistence.completed` with `operation` restricted to

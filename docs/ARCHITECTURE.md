@@ -1,5 +1,27 @@
 # Architecture
 
+## P4a offline temporal discovery
+
+```text
+strict request -> one P3a consistent read transaction -> generic snapshots
+  -> revalidation -> pure window/reference comparison -> typed result
+  -> JSON stdout + allowlisted correlated execution logging
+```
+
+`discovery` depends on generic P1a evidence/validators, without SQLite, adapters,
+CLI, current manifest or resolver execution. Public constructors are revalidated.
+`persistence.sqlite_repository.read_snapshots` reads selected metadata/complete
+rows/identity closure in one mode=ro/query_only snapshot. It consumes no query
+stdout, creates no missing DB and changes no schema or business data.
+
+[ADR-0005](adr/0005-offline-temporal-discovery.md) and
+[DISCOVERY_V1](data-contracts/DISCOVERY_V1.md) define exact contexts, explicit
+historical union, bootstrap, bounds, frozen states and deterministic hashes.
+Empty capture scope is explicitly caller/producer-attested and labeled
+`request_attested_empty`; schema1 cannot prove it. Nonempty batches require every
+row to match. Reference novelty implies neither launch/global/product novelty
+nor disappearance/source health/delivery. No event tables or migration exist.
+
 ## P3a observation persistence
 
 ```text

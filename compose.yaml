@@ -18,6 +18,13 @@ services:
       - ./tests/fixtures:/fixtures:ro
       - observation_data:/data
     command: ["db", "verify", "--db", "/data/history.sqlite3"]
+  discovery:
+    build: .
+    network_mode: none
+    volumes:
+      - ./tests/fixtures:/fixtures:ro
+      - observation_data:/data
+    command: ["discover", "--db", "/data/discovery.sqlite3", "--request", "/fixtures/synthetic_discovery_request.json"]
 
 volumes:
   observation_data:

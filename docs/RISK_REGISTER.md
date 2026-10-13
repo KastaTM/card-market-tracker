@@ -1,5 +1,25 @@
 # Risk register
 
+## P4a Discovery update (2026-10-12)
+
+The controls below are review requirements/design limits until linked executable
+evidence at the exact candidate SHA appears in the phase report/PR ledger. No
+risk is closed by this document. Earlier entries remain historical.
+
+| ID | P4a required control or limitation | Remaining impact / owner and review |
+| --- | --- | --- |
+| R-03 | Revalidate request/Python DTOs and all snapshot records; exact context and chronology, frozen resolution, union of accepted/candidate references, fail contradictory duplicates and rejected/inconsistent evidence. Report only window-relative new references. | Local producer/curator claims are trusted. A selected empty batch uses request scope attestation; wrong scope can create false novelty because schema1 stores none. `context_fingerprint` proves manifest identity only. SEC + DATA + DB-OWNER, each contract change; TD-005 before independent/multi-producer empty-scope use. |
+| R-04 | Minimal contracted stdout plus fixed correlated stderr allowlist; no raw names/payloads, references, batch IDs, paths, SQL or exceptions in logs, failure counts unknown. | Host administrators and saved stdout remain access boundaries; hashes do not authenticate them. SEC + SRE, each CLI/log/output change. |
+| R-05 | One noncreating read-only/query-only consistent transaction; ownership/schema/integrity and business evidence checks; missing/corrupt/failed reads never become empty snapshots. No repair or journal deletion. | Hot journals can need authorized writable recovery; physical storage durability is unqualified and Discovery cannot fix it. SRE + DB-OWNER, each storage change; preserve TD-002/TD-003. |
+| R-06 | Hard request bounds, 32 histories/1,000 rows per batch/33,000 total/1,000 events, finite global SQL/lock deadline; no truncated success or unbounded retry. | Whole-DB integrity work and growing history can exceed budgets; unresponsive OS/device calls escape deadlines, no disk quota/retention is added. SRE + DB-OWNER, capacity review before continuous collection; TD-004. |
+| R-07 | Installed wheel, offline Compose/AMD64/ARM64 smokes must run across distinct seed/compare processes, UID10001/read-only fixtures and named volumes; verify logical DB nonmutation and restored equality. | QEMU and simulated/process failures do not certify a native Pi or electrical outage recovery. SRE, P9.5; TD-002 remains open. |
+| R-10 | Synthetic-only fixtures and operation; no runtime provider requests, prices, stock, licensing or source-health inference. | Synthetic remains a producer assertion, not proof of origin/rights. Real source and commercial retention dependencies remain blocked. SEC + source owner before any real input. |
+
+See the [Discovery runbook](runbooks/OFFLINE_TEMPORAL_DISCOVERY.md) for empty
+attestation, failure interpretation and disposable-volume discipline. Independent
+stored empty scope would require a new authorized persistence contract; P4a must
+not silently add schema/request fields or omit inconvenient historical batches.
+
 ## P3a persistence update (2026-10-10)
 
 These entries refine the offline synthetic scope; none closes the wider source,

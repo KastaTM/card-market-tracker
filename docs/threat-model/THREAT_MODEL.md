@@ -1,5 +1,69 @@
 # Initial threat model
 
+## P4a offline temporal Discovery boundaries (2026-10-12)
+
+P4a proposes a bounded read-only comparison of synthetic P3a batches. The
+[Discovery contract](../data-contracts/DISCOVERY_V1.md) and
+[runbook](../runbooks/OFFLINE_TEMPORAL_DISCOVERY.md) define its intended controls.
+These design statements are conditional until the exact-SHA phase report/PR
+ledger supplies executable evidence; this section does not certify a gate.
+No schema migration, stored event/cursor, live feed, scheduler or delivery is
+authorized. Prior P0/P1a/P3a boundaries remain unchanged.
+
+The strict request and public Python DTO boundaries must independently validate
+all values; typed/frozen constructors confer no authority. Required limits are
+1 MiB, depth16, nodes20,000, strings/keys1,024, at most32 unique earlier batches,
+1,000 rows per batch, 33,000 total rows and 1,000 events. Booleans cannot stand
+in for integer versions/counts. Duplicate keys, malformed IDs, wrong types,
+unknown fields and excessive input must fail without partial/truncated success.
+Exact namespace/kind/language, including null, must match every nonempty record;
+variant remains part of the full reference. No name-based identity or SQL/URL
+from input is permitted.
+
+STORAGE_V1 has no independently persisted scope for empty batches. Their DB
+metadata proves existence, counts and capture only. The four-field request's
+exact context is the caller/producer attestation for each selected empty batch,
+reported as `request_attested_empty`; nonempty evidence is `records_verified`
+only after every record matches. The manifest/resolver `context_fingerprint`
+is not a capture-scope proof. Wrong empty-scope declarations can generate false
+novelty and cannot be detected from schema1 alone. Neither label, integrity check
+nor hash authenticates an administrator or producer. This local trust compromise
+is TD-005; durable independent scope needs a later Orchestrator decision.
+
+One noncreating `mode=ro`/`query_only` SQLite connection and an explicit consistent
+read transaction must cover schema/integrity, metadata and rows for all selected
+batches. Parameterized SQL, path guards, one finite global budget, VM interruption,
+lock deadlines and close/rollback protect ordinary work. OS/device calls that do
+not return remain outside the deadline guarantee. Missing/foreign/future/corrupt
+DBs, missing batches, invalid versions/enums/provenance, rejection counts,
+metadata/row/index contradictions and timeouts are categorized failures, never
+empty snapshots. Hot-journal recovery may require a separate authorized writable
+operation; Discovery must neither repair nor delete journals.
+
+The comparator must revalidate generic snapshots, freeze stored resolutions and
+union accepted/candidate references across all selected history. Accepted other
+kinds also suppress later candidate novelty. Identical within-batch duplicates
+collapse; contradictory same-reference rows fail the whole operation even on a
+baseline. Legitimate across-capture evolution remains historical evidence. No
+re-resolution, automatic promotion, implicit latest lookup or global novelty is
+allowed. No-history baseline, valid zero discoveries and failure stay distinct;
+window-relative event hashes create no CMT identity and guarantee no delivery.
+
+Stdout is minimal contracted untrusted evidence, without observation names/raw
+payloads. Logs must allow only fixed categories/results, run ID/duration and
+bounded counts, with failure counts unknown. Batch IDs, contextual references,
+paths, SQL, payloads and raw exceptions stay out of stderr. Protected host access
+and saved-output access remain operator responsibilities. Only authored synthetic
+fixtures are admitted; the label proves neither provenance nor retention rights.
+
+The container design retains UID/GID10001, checked private named-volume ownership,
+offline data invocations and read-only fixture mounts. Evidence must seed and
+compare in distinct invocations and verify full DB logical content, inventory,
+version and backup/restore equivalence. These controls require executed wheel,
+Compose and both architecture smokes; ARM64 QEMU is not native Pi/storage evidence.
+Trusted-directory races, native interruption and append-only capacity remain
+TD-003, TD-002 and TD-004 respectively; TD-001 diagnostic limits also remain.
+
 ## P3a synthetic persistence boundaries (2026-10-10)
 
 P3a adds a local SQLite asset: immutable synthetic observation/resolution history,

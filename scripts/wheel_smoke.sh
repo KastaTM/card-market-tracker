@@ -10,3 +10,4 @@ env -u PYTHONPATH "$outside/venv/bin/cmt" --version
 env -u PYTHONPATH "$outside/venv/bin/cmt" diagnose
 env -u PYTHONPATH "$outside/venv/bin/python" "$repo/scripts/catalog_smoke.py" --mode installed --executable "$outside/venv/bin/cmt" --fixtures "$repo/tests/fixtures"
 env -u PYTHONPATH "$outside/venv/bin/python" "$repo/scripts/observation_persistence_smoke.py" --mode installed --executable "$outside/venv/bin/cmt" --fixtures "$repo/tests/fixtures"
+env -u PYTHONPATH "$outside/venv/bin/python" "$repo/scripts/discovery_smoke.py" --mode installed --executable "$outside/venv/bin/cmt" --fixtures "$repo/tests/fixtures"

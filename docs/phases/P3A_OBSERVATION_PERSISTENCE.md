@@ -1,5 +1,23 @@
 # Phase Completion Report — P3a Observation Persistence
 
+## Later Orchestrator decision — 2026-10-12
+
+The [P4a opening contract](P4A_OFFLINE_TEMPORAL_DISCOVERY_CONTRACT.md) attributes
+**ACCEPTED / PHASE CLOSED** for P3a to the Orchestrator after integration and
+exact-main CI. PR6 merged as `734641a7ef920688677cdea6bc82f908a2856927`, tree
+`ae61fe57e6f874b138c98ecdaaa8cbd830406354`, ordered parents
+`c6e66a2aba469d02f0ca63fde3b81ecc5eea41bc` then
+`e9c5f02e7f093dedff55b67f137c4446f22e8735`. Local P4a preflight verified these
+Git objects. [Integration ledger](https://github.com/KastaTM/card-market-tracker/pull/6#issuecomment-6131957615)
+and [main-push run38302824438](https://github.com/KastaTM/card-market-tracker/actions/runs/38302824438)
+are historical P3a evidence. Closure was issued in Orchestrator chat; its connector
+publication failed with403 according to the opening contract. This note does not
+invent a published closure comment or rewrite the original prepublication results.
+P4a is now authorized for synthetic offline temporal comparison, without merge
+authorization; P2/P6a/retail Discovery remain blocked.
+
+## Original prepublication engineering report
+
 Phase: P3a, contract v1, opened 2026-10-10 Europe/Madrid by the Orchestrator.
 Proposed status at this committed snapshot: implementation complete; final
 publication/review gates pending in the external delivery ledger. Only the

@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "batch_id": "11111111-1111-4111-8111-111111111111",
+  "captured_at": "2026-01-01T00:00:00.000000Z",
+  "ingestion": {
+    "version": 1,
+    "provenance": "synthetic",
+    "records": [
+      {
+        "kind": "set",
+        "language": "es",
+        "data": {
+          "id": "synthetic-set",
+          "name": "Invented Discovery set",
+          "releaseDate": "2025-01-01"
+        }
+      }
+    ]
+  }
+}
