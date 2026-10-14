@@ -2,6 +2,12 @@
 
 Entries describe a known compromise, not a planned feature. New significant debt needs ID, reason, impact, module/owner, exit condition, and review horizon.
 
+P0.5b (2026-10-14) preserves all five entries below. Its documentary
+[capture proposal](sources/P0_5B_FIELD_USE_CAPTURE_POLICY.md) addresses TD-005's
+future independent/multi-producer scope questions without changing schema1,
+authenticating producer claims or closing the debt. No new deliberate runtime
+compromise was introduced, so no artificial debt item is added.
+
 | ID | Reason and impact | Module / owner | Exit condition | Review horizon |
 | --- | --- | --- | --- | --- |
 | TD-001 | P0 uses only a local work-directory probe; it cannot establish source or long-running service health. Operators must not infer those states from `diagnose`. | CLI / future SRE owner | Service and source-specific health states defined and tested when components exist | P6a and P9.5 |

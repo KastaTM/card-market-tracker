@@ -1,5 +1,9 @@
 # GAME España — ficha de viabilidad retail
 
+**Revisión posterior P0.5b, 2026-10-14:** [condiciones y límites](GAME_ES_P0_5B_QUALIFICATION.md).
+Sin nuevo crawl/probe de productos ni permiso que resuelva el bloqueo. Los valores
+observados abajo conservan su fecha histórica; no se presentan como stock actual.
+
 **Consulta:** 2026-10-07 (Europe/Madrid). **Clase:** `CONDITIONAL` para integración; catálogo público solo como evidencia documental. **Método:** lectura de páginas oficiales mediante navegador/buscador, sin GET exploratorio directo ni extracción automatizada. **Probe:** 0/5 solicitudes; no se obtuvo autorización inequívoca para monitorización automatizada.
 
 ## Referencias primarias y hechos

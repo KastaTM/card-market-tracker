@@ -1,5 +1,17 @@
 # Architecture
 
+## P0.5b source qualification — documentation only
+
+[Field/capture proposal](sources/P0_5B_FIELD_USE_CAPTURE_POLICY.md) names the future
+boundary `External Source -> Validated Source Model -> Normalized Ingestion ->
+CMT Domain`. Validated source model describes existing adapter responsibility;
+no new runtime class, source collector, schema or dependency is added. Per-field
+rights precede retention, and producer provenance is not rights/authenticity.
+P1a curated identity, P3a frozen history/replay and P4a selected-window semantics
+remain unchanged. Persistence/Discovery remain synthetic-only. Independent
+capture context for empty/multiple producers is a later-contract proposal;
+TD-005 is not resolved. Existing ADR-0003–0005 suffice; no new adopted ADR.
+
 ## P4a offline temporal discovery
 
 ```text

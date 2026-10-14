@@ -1,5 +1,9 @@
 # eBay Browse — P0.5 source feasibility
 
+**Later P0.5b review, 2026-10-14:** [narrow ES/EUR qualification](EBAY_BROWSE_P0_5B_QUALIFICATION.md).
+Current rights/production restrictions remain conditional; no new data request.
+The assessment below retains its historical consultation date and scope.
+
 **Consulted:** 2026-10-07 (Europe/Madrid). **Classification:** `CONDITIONAL` for active-listing discovery, subject to eBay production approval and a written license compatible with the exact CMT use. It is **not** a verified sold-price or durable historical market-data feed. **Evidence level:** `DOCUMENTED_ONLY`; no token, API response, or real listing was accessed. API requests used: **0/5**.
 
 ## Primary sources and method

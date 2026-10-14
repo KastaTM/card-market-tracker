@@ -1,5 +1,31 @@
 # P0.5 source matrix
 
+## P0.5b current route decisions — 2026-10-14
+
+The [P0.5b contract](../phases/P0_5B_REAL_SOURCE_QUALIFICATION_CONTRACT.md) limits
+this complementary review to TCGdex, two market routes and two retail/feed routes.
+Awin is the sole new provider. No earlier evidence is erased or upgraded.
+Each dated fiche contains exact field groups, five action decisions, primary
+sections, retention/deletion/attribution and evidence class. `CONDITIONAL` grants
+no present operational/retention entitlement. No route is fully qualified.
+
+| Route / verdict / fiche | ACCESS | RETENTION | SEMANTICS | COVERAGE | OPERATIONAL_LIMITS |
+| --- | --- | --- | --- | --- | --- |
+| Catalog [TCGdex](TCGDEX_P0_5B_QUALIFICATION.md) **CONDITIONAL** | Public no-key,6 serial point reads200 | MIT identified source copies; general REST/deployed transformation rights conditional; notice retained | External catalog facts; generated total/IDs, date/update defaults, availability not observed printing | One set/card ES/EN; completeness/regional release unknown, no commercial sealed |6/6 provider used; considerate caching, no atomic paging/SLA |
+| M1 [eBay Browse](EBAY_BROWSE_P0_5B_QUALIFICATION.md) **CONDITIONAL** | Production approval/token/license absent | Necessary intermediate copies/deletion; private history/derived-use permission absent | Active asks/bids, not sales; shipping/taxes/condition separate | EBAY_ES documented, real EUR/Pokémon/delivery unknown | Quota figures provisional indexed locator only; pagination method not newly verified;0 probes |
+| M2 [Scrydex](SCRYDEX_P0_5B_QUALIFICATION.md) **REJECTED_FOR_PROPOSED_USE** EUR | Normal team/key/plan; reduced anonymous route unobserved | Local historical-chart guidance positive; indefinite/upstream/publication unresolved | Aggregate/daily-history/sold-listing classes distinct | USD/JPY current docs, EUR future; ES/EU unknown | Current plan/credits/rate docs,0 probes |
+| R1 [GAME ES](GAME_ES_P0_5B_QUALIFICATION.md) **CONDITIONAL** | No compatible automated grant | Field/history license absent; no legal material change resolves it | Historical sealed/assorted/coming-soon caveats; no current stock claim |2026-10-07 item only; no fresh product crawl | API/quota/paging unknown;0 probes |
+| R2 [Awin feeds](AWIN_PRODUCT_FEEDS.md) **CONDITIONAL** | Publisher/programme/key or token required | Guide use cases only, applicable license/private-history grant unknown | Legacy/enhanced formats differ; advertiser not necessarily seller; partial200 possible | Concrete Pokémon ES/EU/EUR feed unknown, schema is not population | Enhanced5/min/serial advertiser feed; full terms403, indexed locator not substitute;0 probes |
+
+[Research/probe ledger](P0_5B_EVIDENCE_LEDGER.md):6/12 total direct requests,
+all TCGdex, raw bodies discarded. No requests repeated for QA/REVIEWER.
+Source upstream prices returned through two APIs are not two independent markets.
+Current runtime/DB/Discovery remain synthetic-only. Primary eBay/Awin documents
+that could not be fully read stay explicit evidence gaps; indexed excerpts never
+substitute for full applicable terms. No P2/P6a/retail unblock is implied.
+
+## Historical P0.5 matrix — 2026-10-07
+
 **As of:** 2026-10-07 (Europe/Madrid). Eight independent providers; three catalog candidates, two market candidates, and three Spanish retailers. A derived Cardmarket price inside TCGdex or the legacy API is **not** an independent Cardmarket feed. `VERIFIED` means only the specific bounded response observed in a fiche, never continuous operation, completeness, or permission for every use. All official references, method, unknowns, and probe counts are in the linked dated fiches.
 
 | Provider / fiche | Role and classification | Access, cost, limits, rights | Singles; sealed; ES/EU, language, EUR | Price, stock, dates, freshness, discovery limits |
