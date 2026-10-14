@@ -1,5 +1,12 @@
 # Technical debt register
 
+P1b (2026-10-14) adds reviewed local pinned capture context in schema2 under the
+Orchestrator contract. This addresses new supported captures, not TD-005 legacy
+empties or independent/multiple producers, and does not authenticate source
+completeness. TD-001–TD-005 remain open. Fixed two-artifact scope is intentional,
+not an unimplemented full-catalog feature added as debt. Earlier entries preserve
+historical phase boundaries. No quotas, retention or native Pi qualification is claimed.
+
 Entries describe a known compromise, not a planned feature. New significant debt needs ID, reason, impact, module/owner, exit condition, and review horizon.
 
 P0.5b (2026-10-14) preserves all five entries below. Its documentary

@@ -1,4 +1,4 @@
-"""Bounded, atomic, synthetic-only SQLite persistence and consistent local copies."""
+"""Bounded SQLite history, explicit migration and consistent verified local copies."""
 
 import os
 import sqlite3
@@ -201,14 +201,14 @@ def _check_schema(connection: sqlite3.Connection, budget: _Budget) -> bool:
     version = _execute(connection, budget, "PRAGMA user_version").fetchone()[0]
     if not objects and application == 0 and version == 0:
         return False
-    if application != schema.APPLICATION_ID or version != schema.SCHEMA_VERSION:
+    if application != schema.APPLICATION_ID or version not in (1, 2):
         raise PersistenceError("storage_schema")
-    if objects != schema.expected_inventory():
+    if objects != schema.expected_inventory(version):
         raise PersistenceError("storage_schema")
     metadata = _execute(
         connection, budget, "SELECT singleton,owner,schema_version FROM storage_metadata"
     ).fetchall()
-    if [tuple(row) for row in metadata] != [(1, schema.OWNER, schema.SCHEMA_VERSION)]:
+    if [tuple(row) for row in metadata] != [(1, schema.OWNER, version)]:
         raise PersistenceError("storage_schema")
     journal = _execute(connection, budget, "PRAGMA journal_mode").fetchone()[0]
     if journal != "delete":
@@ -246,14 +246,15 @@ def _initialize(connection: sqlite3.Connection, budget: _Budget) -> None:
         _execute(connection, budget, f"PRAGMA user_version={schema.SCHEMA_VERSION}")
 
 
-def _ok() -> dict[str, object]:
-    return {"version": 1, "result": "ok", "schema_version": schema.SCHEMA_VERSION}
+def _ok(version: int = schema.SCHEMA_VERSION) -> dict[str, object]:
+    return {"version": 1, "result": "ok", "schema_version": version}
 
 
 def initialize(path: Path, *, timeout: float = DEFAULT_TIMEOUT) -> dict[str, object]:
     with _connection(path, writable=True, create=True, timeout=timeout) as (connection, budget):
         _initialize(connection, budget)
-    return _ok()
+        version = _execute(connection, budget, "PRAGMA user_version").fetchone()[0]
+    return _ok(version)
 
 
 def _entity_values(entity: Entity) -> tuple[object, ...]:
@@ -394,6 +395,10 @@ def persist(
                         + ")",
                         _record_values(admitted.batch_id, record),
                     )
+                if _execute(connection, budget, "PRAGMA user_version").fetchone()[0] == 2:
+                    from .capture import store_legacy
+
+                    store_legacy(connection, budget, admitted.batch_id)
                 stored = _execute(
                     connection,
                     budget,
@@ -475,7 +480,13 @@ def query(
     except CatalogError as error:
         raise PersistenceError(error.category) from None
     with _connection(path, writable=False, timeout=timeout) as (connection, budget):
+        _execute(connection, budget, "BEGIN")
         _require_schema(connection, budget)
+        _check_integrity(connection, budget)
+        if _execute(connection, budget, "PRAGMA user_version").fetchone()[0] == 2:
+            from .capture import verify_captures
+
+            verify_captures(connection, budget)
         rows = _execute(
             connection,
             budget,
@@ -499,18 +510,27 @@ def query(
     return {"version": 1, "result": "ok" if records else "empty", "records": records}
 
 
+def _check_integrity(connection: sqlite3.Connection, budget: _Budget) -> None:
+    integrity = _execute(connection, budget, "PRAGMA integrity_check(1)").fetchone()
+    foreign_key = _execute(connection, budget, "PRAGMA foreign_key_check").fetchone()
+    if integrity is None or tuple(integrity) != ("ok",) or foreign_key is not None:
+        raise PersistenceError("storage_corrupt")
+
+
 def _verify(connection: sqlite3.Connection, budget: _Budget) -> None:
     _require_schema(connection, budget)
-    integrity = _execute(connection, budget, "PRAGMA integrity_check").fetchall()
-    foreign_keys = _execute(connection, budget, "PRAGMA foreign_key_check").fetchall()
-    if [tuple(row) for row in integrity] != [("ok",)] or foreign_keys:
-        raise PersistenceError("storage_corrupt")
+    _check_integrity(connection, budget)
+    if _execute(connection, budget, "PRAGMA user_version").fetchone()[0] == 2:
+        from .capture import verify_captures
+
+        verify_captures(connection, budget)
 
 
 def verify(path: Path, *, timeout: float = DEFAULT_TIMEOUT) -> dict[str, object]:
     with _connection(path, writable=False, timeout=timeout) as (connection, budget):
         _verify(connection, budget)
-    return _ok()
+        version = _execute(connection, budget, "PRAGMA user_version").fetchone()[0]
+    return _ok(version)
 
 
 def _snapshot_record(row: sqlite3.Row) -> SnapshotRecord:
@@ -618,10 +638,33 @@ def read_snapshots(
                 ).fetchone()
                 if metadata is None:
                     raise DiscoveryError("batch_missing")
+                admission = None
+                if _execute(connection, budget, "PRAGMA user_version").fetchone()[0] == 2:
+                    admission = _execute(
+                        connection, budget, "SELECT mode FROM captures WHERE batch_id=?", (token,)
+                    ).fetchone()
+                    if admission is None:
+                        raise DiscoveryError("storage_corrupt")
+                    if admission["mode"] == "pinned":
+                        raise DiscoveryError("synthetic_only")
                 rows = _execute(connection, budget, _SNAPSHOT_JOIN, (token,)).fetchall()
                 total += len(rows)
                 if len(rows) > MAX_LIMIT or total > 33000:
                     raise DiscoveryError("input_limit")
+                if any(row["provenance"] not in (None, "synthetic") for row in rows):
+                    raise DiscoveryError("synthetic_only")
+                if admission is not None:
+                    from .capture import _capture_row, _check_capture
+
+                    # Validate retained v2 evidence within this same selected snapshot.
+                    # Only stored resolver context is consulted; no current manifest.
+                    try:
+                        capture = _capture_row(connection, budget, token)
+                        if capture is None:
+                            raise DiscoveryError("storage_corrupt")
+                        _check_capture(connection, budget, metadata, capture)
+                    except PersistenceError as error:
+                        raise DiscoveryError(error.category) from None
                 for row in rows:
                     budget.remaining()
                     _snapshot_target(row, identities)
@@ -674,6 +717,7 @@ def _copy(source: Path, destination: Path, *, timeout: float) -> dict[str, objec
     try:
         with _connection(source, writable=False, timeout=timeout) as (connection, budget):
             _verify(connection, budget)
+            version = _execute(connection, budget, "PRAGMA user_version").fetchone()[0]
             target = _checked_path(destination)
             if _exists(target):
                 raise PersistenceError("unsafe_destination")
@@ -701,7 +745,7 @@ def _copy(source: Path, destination: Path, *, timeout: float) -> dict[str, objec
             ):
                 _verify(reopened, again)
         completed = True
-        return _ok()
+        return _ok(version)
     except OSError:
         raise PersistenceError("storage_io") from None
     finally:
@@ -720,3 +764,101 @@ def restore(
     source: Path, destination: Path, *, timeout: float = DEFAULT_TIMEOUT
 ) -> dict[str, object]:
     return _copy(source, destination, timeout=timeout)
+
+
+def migrate(
+    path: Path, destination: Path, *, timeout: float = DEFAULT_TIMEOUT
+) -> dict[str, object]:
+    """Explicit atomic v1->v2, with an exclusively reserved verified v1 backup."""
+    target: Path | None = None
+    owned: tuple[int, int] | None = None
+    verified_backup = False
+    try:
+        with _connection(path, writable=True, timeout=timeout) as (connection, budget):
+            _require_schema(connection, budget)
+            if _execute(connection, budget, "PRAGMA user_version").fetchone()[0] != 1:
+                raise PersistenceError("storage_schema")
+            _execute(connection, budget, "PRAGMA synchronous=FULL")
+            _execute(connection, budget, "BEGIN EXCLUSIVE")
+            try:
+                _verify(connection, budget)
+                target = _checked_path(destination)
+                if _exists(target):
+                    raise PersistenceError("unsafe_destination")
+                owned = _reserve(target)
+                information = _unsafe_stat(target, file=True)
+                if (information.st_dev, information.st_ino) != owned:
+                    raise PersistenceError("unsafe_destination")
+                # BEGIN EXCLUSIVE + DELETE journal keeps main bytes stable before DDL.
+                with path.open("rb") as source, target.open("r+b") as backup_file:
+                    while chunk := source.read(1024 * 1024):
+                        budget.remaining()
+                        backup_file.write(chunk)
+                    backup_file.flush()
+                    os.fsync(backup_file.fileno())
+                with _connection(target, writable=False, timeout=budget.remaining()) as (
+                    copy,
+                    remaining,
+                ):
+                    _verify(copy, remaining)
+                    if _execute(copy, remaining, "PRAGMA user_version").fetchone()[0] != 1:
+                        raise PersistenceError("storage_corrupt")
+                verified_backup = True
+                # Rebuild only the provenance CHECK; copied rows/fingerprints are unchanged.
+                for name in (
+                    "record_context",
+                    "record_order",
+                    "record_target",
+                    "candidate_context",
+                ):
+                    kind = "TRIGGER" if name == "record_context" else "INDEX"
+                    _execute(connection, budget, f"DROP {kind} {name}")
+                _execute(connection, budget, "ALTER TABLE records RENAME TO records_v1")
+                record_sql = next(
+                    statement
+                    for statement in schema.STATEMENTS
+                    if statement.startswith("CREATE TABLE records")
+                )
+                _execute(connection, budget, record_sql)
+                _execute(connection, budget, "INSERT INTO records SELECT * FROM records_v1")
+                _execute(connection, budget, "DROP TABLE records_v1")
+                for statement in schema.STATEMENTS:
+                    if (
+                        statement.startswith("CREATE TRIGGER record_context")
+                        or statement.startswith("CREATE INDEX record_")
+                        or statement.startswith("CREATE INDEX candidate_context")
+                        or statement.startswith("CREATE TABLE captures")
+                        or statement.startswith("CREATE TRIGGER capture_")
+                    ):
+                        _execute(connection, budget, statement)
+                _execute(connection, budget, "DROP TABLE storage_metadata")
+                _execute(connection, budget, schema.STATEMENTS[0])
+                _execute(
+                    connection,
+                    budget,
+                    "INSERT INTO storage_metadata VALUES (?,?,?)",
+                    (1, schema.OWNER, 2),
+                )
+                from .capture import store_legacy
+
+                cursor = _execute(
+                    connection, budget, "SELECT batch_id FROM batches ORDER BY batch_id"
+                )
+                for row in cursor:
+                    store_legacy(connection, budget, row[0])
+                _execute(connection, budget, "PRAGMA user_version=2")
+                _verify(connection, budget)
+                _execute(connection, budget, "COMMIT")
+            except BaseException:
+                connection.set_progress_handler(None, 0)
+                connection.execute("PRAGMA busy_timeout=0")
+                if connection.in_transaction:
+                    connection.execute("ROLLBACK")
+                raise
+        return _ok(2)
+    except OSError:
+        raise PersistenceError("storage_io") from None
+    finally:
+        # A verified original backup survives any migration failure.
+        if not verified_backup and target is not None and owned is not None:
+            _remove_owned(target, owned)

@@ -1,5 +1,24 @@
 # Testing strategy
 
+## P1b requirements
+
+Test exact minimum field/path/commit/blob/projection lock, non-executable grammar,
+duplicate/decoy fields, required ES/EN/import relationships, bounds, Unicode,
+forged objects and self-attested policies. Real fixtures contain only the approved
+licensed minimum; adversarial mutated inputs are temporary synthetic scenarios.
+Independently contrast original fixed bytes and full MIT notice, not just author output.
+Test conservative curated identity, unknown finish and no automatic promotion.
+
+Real SQLite tests cover explicit v1 backup/migration, populated/empty history,
+exact original fingerprints/rows, no auto-upgrade, fault/interrupt rollback,
+legacy scope, capture immutability, empty/partial/rejected distinctions,
+replay/context conflict, bounded snapshots, schema/FK/count/policy tampering,
+locks/IO and verified v1/v2 restore. Discovery observed/mixed selections must fail.
+CLI/process harness checks offline import, reopen, query, replay and recovery
+through installed wheel, Compose, AMD64 and ARM64 QEMU. Preserve every earlier
+regression/harness; legitimate future-version test advances 2→3 with schema2.
+QA/REVIEWER are distinct nonauthors and inspect detached final SHA/tree.
+
 ## P4a requirements
 
 Unit/contracts test full reference keys, historical accepted/candidate union,

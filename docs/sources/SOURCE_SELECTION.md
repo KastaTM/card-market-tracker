@@ -1,5 +1,19 @@
 # P0.5 source selection and gaps
 
+## P1b narrow repository permission — 2026-10-14
+
+The Orchestrator's [contract](../phases/P1B_PINNED_METADATA_INGESTION_CONTRACT.md)
+authorizes only `tcgdex/cards-database` revision
+`4199850a6af49665db0080fa2bb9ef751750a406`, the specified set/card files,
+LICENSE and README. The permitted minimum ES/EN metadata can be retained,
+published with the full MIT notice and persisted through the dedicated reviewed
+bundle boundary. [Field ledger](P1B_FIELD_LEDGER.md) documents transformations
+and exclusions; [request ledger](P1B_REQUEST_LEDGER.json) accounts for acquisition.
+This is a narrow authorization, subject to P1b engineering gates, rather than
+qualification of TCGdex REST, full corpus, current availability or printing finish.
+P2/P6a/retail Discovery remain BLOCKED; other route decisions are unchanged.
+The P0.5b recommendations below retain their historical status.
+
 ## P0.5b recommendation — 2026-10-14
 
 No `QUALIFIED_FOR_NARROW_USE` route is established for future live ingestion.

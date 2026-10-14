@@ -1,5 +1,11 @@
 # Card Market Tracker
 
+P1b adds offline import of a reviewed minimum pinned repository package, explicit
+capture queries and safe SQLite v1→v2 migration. See the
+[runbook](docs/runbooks/PINNED_METADATA.md) and [phase contract](docs/phases/P1B_PINNED_METADATA_INGESTION_CONTRACT.md).
+Only the exact two-file/four-projection ES/EN metadata is authorized. Original
+TypeScript is never executed; no REST fetcher, market data or real Discovery is added.
+
 ## P4a offline temporal discovery
 
 Compare explicit synthetic persisted captures in one exact context:

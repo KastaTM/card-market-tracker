@@ -1,5 +1,10 @@
 # Agent map
 
+- [P1b contract](docs/phases/P1B_PINNED_METADATA_INGESTION_CONTRACT.md),
+  [ownership](docs/phases/P1B_OWNERSHIP.md) and
+  [P1b report](docs/phases/P1B_PINNED_METADATA_INGESTION.md): pinned minimum
+  metadata, separate real admission and explicit schema1→2 migration; no real Discovery.
+
 Read [context.md](context.md) and [P0_FOUNDATION_CONTRACT.md](P0_FOUNDATION_CONTRACT.md) before changing P0. Keep P0 limited to Foundation capabilities. The Orchestrator alone accepts or closes phases.
 
 - [Operating model](docs/ENGINEERING_OPERATING_MODEL.md): ownership, review, and phase decisions.

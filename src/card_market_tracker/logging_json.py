@@ -73,6 +73,16 @@ class JsonFormatter(logging.Formatter):
             "context_mismatch",
             "chronology",
             "contradictory_snapshot",
+            "invalid_encoding",
+            "unsupported_syntax",
+            "invalid_import",
+            "duplicate_field",
+            "invalid_selection",
+            "missing_field",
+            "missing_translation",
+            "invalid_relation",
+            "unapproved_bundle",
+            "approved_package_io",
         }:
             payload["error_category"] = category
         result = getattr(record, "result", None)
@@ -95,6 +105,10 @@ class JsonFormatter(logging.Formatter):
             "verify",
             "backup",
             "restore",
+            "migrate",
+            "bundle_verify",
+            "bundle_import",
+            "capture_read",
         }:
             payload["operation"] = operation
         duration = getattr(record, "duration_ms", None)

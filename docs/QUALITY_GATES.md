@@ -1,5 +1,19 @@
 # Quality gates
 
+## P1b mandatory evidence
+
+[P1b](phases/P1B_PINNED_METADATA_INGESTION_CONTRACT.md) adds AC-I01–I16,
+preserving all earlier gates and four CI jobs. Require bounded deterministic
+non-executable extraction, independent artifact/projection/MIT contrast and
+eight-request ledger; separate real admission and preserved synthetic guards;
+SQLite migration/rollback/history/replay/scopes/integrity/recovery tests. Add
+`scripts/pinned_repository_smoke.py` to outside-tree wheel, Compose, AMD64 and
+QEMU ARM64, with separate processes, no data network, readonly fixtures and UID10001.
+Frozen lock, Ruff/mypy, full suite, coverage85/80, build/install, audit/scan and
+independent QA/REVIEWER exact candidate checks remain mandatory. Unexecuted gates
+are FAIL. External PR evidence binds SHA/tree/base/job bodies/reviews without
+circular identity-only commits. Only Orchestrator accepts/integrates/closes.
+
 ## P0.5b mandatory evidence
 
 [P0.5b](phases/P0_5B_REAL_SOURCE_QUALIFICATION_CONTRACT.md) is documentary source

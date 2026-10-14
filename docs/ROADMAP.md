@@ -1,5 +1,25 @@
 # Roadmap
 
+## P0.5b closure and P1b opening — Orchestrator decision, 2026-10-14
+
+The supplied [P1b contract](phases/P1B_PINNED_METADATA_INGESTION_CONTRACT.md)
+records P0.5b **ACCEPTED / PHASE CLOSED** and opens P1b Pinned Metadata
+Ingestion & Capture Scope. Codex verified fetched baseline
+`acca10e406dac8809edc289c3077a6ec8785a622`, tree
+`26011d0375f3716a7fffb31956665eb97567a0df`, ordered parents
+`6385c952a9f2024c8b7bdb33d37fa21017029bd5` then
+`302e8d3f3155c14091d26841b8a230791109f220`. [PR8](https://github.com/KastaTM/card-market-tracker/pull/8)
+and its [main CI](https://github.com/KastaTM/card-market-tracker/actions/runs/38595222923)
+are historical P0.5b evidence. This note attributes the decision to Orchestrator;
+it does not invent a published closure comment or certify P1b gates.
+
+P1b permits only the pinned two-artifact/four-projection repository route,
+explicit capture context and SQLite v1→v2 migration. TCGdex REST and all broader
+source grants retain their conditions; P2/P6a/retail Discovery remain BLOCKED.
+P4a stays synthetic-only. No merge or later phase opening is authorized.
+TD-001–TD-005 remain open; new local scope cannot authenticate legacy or
+independent producers. Entries below are dated historical snapshots.
+
 ## P4a closure and P0.5b opening — Orchestrator decision, 2026-10-13
 
 The user-supplied [P0.5b contract](phases/P0_5B_REAL_SOURCE_QUALIFICATION_CONTRACT.md)

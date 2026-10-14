@@ -1,5 +1,29 @@
 # Initial threat model
 
+## P1b reviewed bundle and capture migration
+
+Public source/storage APIs independently validate canonical bundle bytes against
+a review-controlled digest shipped with the package. Forged objects, observed
+strings, self-computed hashes or replacement JSON policies confer no admission.
+A bounded structural non-executable TS grammar rejects ambiguity/duplicates and
+unexpected imports. Runtime never executes upstream code or follows payload
+paths/URLs. Originals stay transient; retained output is the exact minimum
+projection, extraction evidence and full MIT notice. Namespace differs from REST.
+
+Capture envelope and rows are atomic, immutable through supported APIs and
+verified by reconstruction against frozen local policy/manifest context. Explicit
+migration verifies schema/integrity and an exclusive original backup before DDL;
+faults must leave intact v1 or v2. Reads/verify never migrate. Missing/partial
+source cannot become complete empty evidence. Acquisition/capture/insertion
+clocks differ; Discovery rejects selected observed or mixed batches.
+
+Digest checks establish equivalence to reviewed local bytes, not producer truth,
+physical authenticity or independent completeness. Trusted package/host review
+and private operator directories remain authorization boundaries. TD-003 ancestor
+races/ACLs, TD-004 capacity, TD-005 legacy/independent scope and TD-002 native Pi
+durability remain open. Logs expose fixed categories/run ID/duration/counts;
+explicit query stdout contains bounded untrusted metadata and needs operator protection.
+
 ## P0.5b research and future source-policy boundary (2026-10-14)
 
 Current product controls are unchanged. This phase added documentation and bounded
