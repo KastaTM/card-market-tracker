@@ -1,5 +1,23 @@
 # Phase Completion Report — P4a Offline Temporal Discovery
 
+## Later Orchestrator decision — 2026-10-13
+
+The [P0.5b opening contract](P0_5B_REAL_SOURCE_QUALIFICATION_CONTRACT.md), supplied
+by the user, records P4a **ACCEPTED / PHASE CLOSED** by the Orchestrator after
+actual integration and exact-main CI. [PR7](https://github.com/KastaTM/card-market-tracker/pull/7)
+merged as `6385c952a9f2024c8b7bdb33d37fa21017029bd5`, tree
+`8fa2abeb9f4e8991bab1b2895fc397f64bb39a19`, ordered parents
+`734641a7ef920688677cdea6bc82f908a2856927` then
+`c5ed228af831a2a6ed8a12c7072777d3908296a5`. Local fetch/objects/PR metadata
+were verified at P0.5b start. Historical [integration ledger](https://github.com/KastaTM/card-market-tracker/pull/7#issuecomment-6155836622)
+and [push CI38471731980](https://github.com/KastaTM/card-market-tracker/actions/runs/38471731980)
+support that contract's baseline. They are not newly executed P0.5b gates.
+This note attributes the decision to the Orchestrator, invents no closure comment
+and preserves the original prepublication snapshot below. P0.5b is now open for
+source qualification; P2/P6a/retail remain blocked, synthetic-only unchanged.
+
+## Original prepublication snapshot
+
 Phase: P4a, contract issued by the Orchestrator on 2026-10-12 Europe/Madrid.
 Proposed status at this publication snapshot: implementation complete; final
 exact-candidate QA/REVIEWER and hosted CI evidence pending in the external ledger.

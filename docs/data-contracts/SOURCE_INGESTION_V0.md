@@ -1,6 +1,10 @@
 # Source ingestion requirements v0
 
-**Status:** preliminary P0.5 requirements; no provider contract, runtime model, or persistence schema is active.
+**Status:** preliminary P0.5 v0 requirements, not an active runtime/provider/storage
+contract. The catalog portion is superseded by implemented [INGESTION_V1](INGESTION_V1.md);
+P3a/P4a contracts govern current synthetic persistence/Discovery. Market/retail
+sections below remain future proposals. P0.5b adds only a
+[field/capture policy proposal](../sources/P0_5B_FIELD_USE_CAPTURE_POLICY.md).
 
 **Future producer:** an isolated, authorized source adapter. **Future consumer:** validation, then normalized ingestion, then the provider-independent domain. The boundary is `External Source → Validation → Normalized Ingestion → Domain`. [The source matrix](../sources/SOURCE_MATRIX.md) and individual dated fiches record which providers could eventually supply each field. Their documented behavior is not an implemented guarantee.
 

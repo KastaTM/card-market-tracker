@@ -1,5 +1,11 @@
 # TCGdex P1a: minimum offline field policy
 
+**Later P0.5b research, 2026-10-14:** [field/artifact qualification](TCGDEX_P0_5B_QUALIFICATION.md)
+narrows evidenced REST flags to five; jumbo/preRelease were absent in both sampled
+responses and unprojected by the inspected compiler. This does not remove the
+existing adapter's supported synthetic shape or grant real persistence rights.
+The P1a policy below remains its dated implementation record.
+
 Review date: 2026-10-09 (Europe/Madrid). Roles: INTEGRATIONS author and SEC read review.
 This policy covers the offline adapter in `catalog/adapters/tcgdex.py`; no network
 collector is implemented. New live TCGdex API requests in P1a: **0 of 5**.

@@ -1,5 +1,29 @@
 # P0.5 source selection and gaps
 
+## P0.5b recommendation — 2026-10-14
+
+No `QUALIFIED_FOR_NARROW_USE` route is established for future live ingestion.
+Keep **P2/P6a/retail Discovery BLOCKED** and TCGdex provisional. This is a
+completed research outcome when exact-candidate gates/reviews pass, not a reason
+to invent permission, rebuild synthetic components or reduce gates. See the
+[current matrix](SOURCE_MATRIX.md), [field/capture proposal](P0_5B_FIELD_USE_CAPTURE_POLICY.md)
+and [ledger](P0_5B_EVIDENCE_LEDGER.md). No new phase opens here.
+
+| Priority / possible future route | Concrete resolution before phase decision | Exact potential scope / excluded uses |
+| --- | --- | --- |
+|1 TCGdex artifact-backed catalog | Pin/review remaining transform/license lineage, establish field/deployed correspondence and bounded ES/EN coverage; use current six-request diagnostics without more TCGdex requests. Written clarification only if independent rights remain ambiguous | Set/card short IDs/names/number/parent/date + separately claimed update/count/5 flags. No images/prices/sealed/observed finish. Once qualified, propose **P1b Licensed Metadata Ingestion & Capture Scope**, revised observed-source/capture/empty-scope contracts and tests; do not implement now |
+|2 Awin authorized feed | Human eligibility choice, full applicable terms/advertiser grant for private storage/history and one concrete Pokémon ES/EU/EUR feed. Registration/contact/token actions remain unexecuted | One advertiser/feed, SKU/GTIN, offer price/currency/logistics/lifecycle and complete capture; seller/paging/partial semantics. Only then reconsider P6a, no generic raw redistribution |
+|3 eBay bounded active view / GAME permission | Human production/exact-use permission (eBay) or written automated/retention scope (GAME); no accounts/contacts here | eBay active offers are not sold history; GAME coming-soon not preorder/stock. Each needs explicit rights before probes or consumer phases |
+| Scrydex EUR | Revisit only when operational EUR/European provenance appears and exact history rights/access are established | USD/JPY conversion cannot satisfy the requested market. Operational local charts documented, but current EUR route rejected |
+
+Only one new provider (Awin) was investigated. M2 adds daily/history/local-storage
+guidance absent from M1 active-listing rights; R2 licensed-feed access differs
+materially from R1 HTML. Those alternatives resolve different possible gaps.
+No additional vendors assessed. Private display, publication and commercial reuse
+remain separate decisions in every fiche; narrow permission never implies all.
+
+## Historical selection — P0.5
+
 **Decision state:** recommendation to the Phase Lead and Orchestrator, 2026-10-07; no provider integration or product-scope change is approved by this document. [Matrix](SOURCE_MATRIX.md) and dated source fiches contain primary references and method. A source classified `CONDITIONAL` is not operationally validated.
 
 | Dependent phase | Primary route | Alternative / gap | Impact and release condition |

@@ -1,5 +1,25 @@
 # Roadmap
 
+## P4a closure and P0.5b opening — Orchestrator decision, 2026-10-13
+
+The user-supplied [P0.5b contract](phases/P0_5B_REAL_SOURCE_QUALIFICATION_CONTRACT.md)
+records **ACCEPTED / PHASE CLOSED** for P4a and opens **P0.5b Real Source
+Qualification**. These are Orchestrator decisions, not Codex acceptance. Local
+fetch verified main `6385c952a9f2024c8b7bdb33d37fa21017029bd5`, tree
+`8fa2abeb9f4e8991bab1b2895fc397f64bb39a19`, ordered parents
+`734641a7ef920688677cdea6bc82f908a2856927` and
+`c5ed228af831a2a6ed8a12c7072777d3908296a5`. [PR7 integration ledger](https://github.com/KastaTM/card-market-tracker/pull/7#issuecomment-6155836622)
+and [main push CI38471731980](https://github.com/KastaTM/card-market-tracker/actions/runs/38471731980)
+are historical P4a evidence. No published closure comment is invented and no
+historical tests are credited as P0.5b execution.
+
+P0.5b investigates exact source fields/rights/access and proposes capture policy;
+it changes no runtime, schema, identity or synthetic-only control. Its current
+[selection](sources/SOURCE_SELECTION.md) leaves TCGdex/eBay/GAME/Awin conditional
+and rejects Scrydex for the requested EUR route. P2/P6a/retail Discovery stay
+**BLOCKED**; no P1b or other phase is opened. TD-001–TD-005 remain open. Earlier
+entries below retain their historical dates and phase state.
+
 ## P3a closure and P4a opening — Orchestrator decision, 2026-10-12
 
 The archived [P4a contract](phases/P4A_OFFLINE_TEMPORAL_DISCOVERY_CONTRACT.md)

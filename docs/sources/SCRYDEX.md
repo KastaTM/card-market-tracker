@@ -1,5 +1,10 @@
 # Scrydex — ficha de viabilidad P0.5
 
+**Revisión posterior P0.5b, 2026-10-14:** [EUR/histórico/derechos](SCRYDEX_P0_5B_QUALIFICATION.md).
+EUR sigue anunciado para el futuro. La guía actual sí recomienda almacenamiento
+local de gráficos históricos; retención indefinida/publicación siguen pendientes.
+Cero llamadas nuevas. El informe histórico abajo conserva su fecha.
+
 **Consulta:** 2026-10-07 (UTC). **Clasificación:** `CONDITIONAL` como alternativa documentada de catálogo **singles y sealed** EN/JA y de ventas realizadas de cartas, sujeta a acceso, licencia y comprobación de cobertura; `REJECTED` por ahora como referencia primaria de precio EUR para España/Europa. **Cero probes:** no se creó cuenta, equipo ni clave y no se contrató plan. El acceso anónimo se describe como posible con límite muy reducido, pero sus condiciones de volumen/uso no están cuantificadas; no se infiere viabilidad operativa.
 
 ## Fuentes primarias, acceso y coste

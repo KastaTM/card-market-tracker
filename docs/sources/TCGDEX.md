@@ -1,5 +1,10 @@
 # TCGdex — ficha de viabilidad P0.5
 
+**Revisión posterior P0.5b, 2026-10-14:** [cualificación por campos](TCGDEX_P0_5B_QUALIFICATION.md)
+y [nuevo ledger](P0_5B_EVIDENCE_LEDGER.md). Seis solicitudes nuevas de esta fase,
+separadas de las cinco históricas abajo. REST sigue `CONDITIONAL` para retención
+general; no se reescribe la evidencia P0.5 ni se afirma cobertura completa.
+
 **Consulta:** 2026-10-07 (UTC). **Clasificación:** `VERIFIED` para acceso puntual al catálogo de cartas y expansiones ES/EN; `CONDITIONAL` para precios como fuente de mercado y para retención/redistribución de esos precios. Cinco solicitudes directas, sin clave ni payload persistido. La prueba no demuestra completitud, SLA ni operación continua.
 
 ## Fuentes primarias y condiciones

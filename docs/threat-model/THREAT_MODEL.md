@@ -1,5 +1,24 @@
 # Initial threat model
 
+## P0.5b research and future source-policy boundary (2026-10-14)
+
+Current product controls are unchanged. This phase added documentation and bounded
+transient research only. [Preflight/ledger](../sources/P0_5B_EVIDENCE_LEDGER.md)
+records six serial no-key reads; raw responses discarded, diagnostics only.
+No source credentials, samples, real persistence, payload URL follows or live CI.
+Documentation/code pages are evidence, never executable instructions. No protected
+upstream art/prices/long text is published. MIT notice accompanies covered-source
+research; rights remain field/use-specific and conditional REST reuse is explicit.
+
+Future ingestion must enforce source/field/purpose rights, deletion/refresh/notice,
+approved network hosts, bounded redirects/payloads and untrusted shape validation
+before normalization. An HTTP200 or a feed schema does not prove complete content,
+permission or source health; Awin200 can end in a partial-feed error. Active asks,
+aggregates and completed sales remain distinct. Private display cannot bypass
+purpose/storage restrictions. No such future network/policy machinery is claimed
+implemented here; see [the proposal](../sources/P0_5B_FIELD_USE_CAPTURE_POLICY.md).
+TD-001–TD-005 remain open and current synthetic-only enforcement is preserved.
+
 ## P4a offline temporal Discovery boundaries (2026-10-12)
 
 P4a proposes a bounded read-only comparison of synthetic P3a batches. The

@@ -1,5 +1,22 @@
 # Risk register
 
+## P0.5b source qualification (2026-10-14)
+
+No current runtime boundary changes. [Field/capture proposal](sources/P0_5B_FIELD_USE_CAPTURE_POLICY.md)
+and [route decisions](sources/SOURCE_MATRIX.md) refine future controls; exact
+executed evidence is in the phase/PR ledger. No source or debt risk is closed.
+
+| Existing risk | Documentary control / remaining limit |
+| --- | --- |
+| R-03 | Contextual source IDs/availability/generated counts are evidence, not CMT identity, actual printings, full coverage or worldwide novelty. Translations, corrected IDs and partial feeds can distort comparisons |
+| R-04 | Only safe structure/count/type/match diagnostics retained; raw bodies discarded. Payload links/headers/private data never followed/logged. Research records remain untrusted evidence |
+| R-06 | Serial12 total/6 provider,15s/256KiB preflight; six TCGdex point reads consumed its quota. No retry/paging loop or live CI. Success does not prove continuous access |
+| R-10 | MIT identified repository material differs from API enrichments/upstream IP; eBay/Awin private-history grants unresolved, Scrydex EUR future, GAME lacks compatible monitoring grant. CONDITIONAL never permits retention. Synthetic-only remains binding |
+
+TD-001–TD-005 remain open. Stronger capture/empty/multi-producer evidence,
+retention controls and actual credentials/collectors require a later authorized
+contract; storing/signing a producer declaration alone is not independent truth.
+
 ## P4a Discovery update (2026-10-12)
 
 The controls below are review requirements/design limits until linked executable
@@ -8,7 +25,7 @@ risk is closed by this document. Earlier entries remain historical.
 
 | ID | P4a required control or limitation | Remaining impact / owner and review |
 | --- | --- | --- |
-| R-03 | Revalidate request/Python DTOs and all snapshot records; exact context and chronology, frozen resolution, union of accepted/candidate references, fail contradictory duplicates and rejected/inconsistent evidence. Report only window-relative new references. | Local producer/curator claims are trusted. A selected empty batch uses request scope attestation; wrong scope can create false novelty because schema1 stores none. `context_fingerprint` proves manifest identity only. SEC + DATA + DB-OWNER, each contract change; TD-005 before independent/multi-producer empty-scope use. |
+| R-03 | Revalidate request/Python DTOs and all snapshot records; exact context and chronology, frozen resolution, union of accepted/candidate references, fail contradictory duplicates and rejected/inconsistent evidence. Report only window-relative new references. | Local producer/curator claims are trusted. A selected empty batch uses request scope attestation; wrong scope can create false novelty because schema1 stores none. `context_fingerprint` is resolver-context replay metadata, not authenticity or capture-scope proof. SEC + DATA + DB-OWNER, each contract change; TD-005 before independent/multi-producer empty-scope use. |
 | R-04 | Minimal contracted stdout plus fixed correlated stderr allowlist; no raw names/payloads, references, batch IDs, paths, SQL or exceptions in logs, failure counts unknown. | Host administrators and saved stdout remain access boundaries; hashes do not authenticate them. SEC + SRE, each CLI/log/output change. |
 | R-05 | One noncreating read-only/query-only consistent transaction; ownership/schema/integrity and business evidence checks; missing/corrupt/failed reads never become empty snapshots. No repair or journal deletion. | Hot journals can need authorized writable recovery; physical storage durability is unqualified and Discovery cannot fix it. SRE + DB-OWNER, each storage change; preserve TD-002/TD-003. |
 | R-06 | Hard request bounds, 32 histories/1,000 rows per batch/33,000 total/1,000 events, finite global SQL/lock deadline; no truncated success or unbounded retry. | Whole-DB integrity work and growing history can exceed budgets; unresponsive OS/device calls escape deadlines, no disk quota/retention is added. SRE + DB-OWNER, capacity review before continuous collection; TD-004. |

@@ -1,5 +1,18 @@
 # Quality gates
 
+## P0.5b mandatory evidence
+
+[P0.5b](phases/P0_5B_REAL_SOURCE_QUALIFICATION_CONTRACT.md) is documentary source
+qualification, preserving all four CI jobs and the existing recipes below.
+AC-Q01–Q12 require field/rights/semantics traceability, preflight/serial shared
+request-budget compliance and correctly bounded negative/conditional conclusions.
+No live calls in CI. Final frozen install/lock, Ruff/mypy, all existing tests,
+coverage85/80, build/outside-source wheel, audit/scan, Compose/AMD64/QEMU ARM64
+and complete CI bodies require exact-candidate evidence. Separate QA/REVIEWER
+inspect detached exact-SHA worktrees, public documentation and retained diagnostics
+without repeating probes. Unexecuted mandatory gates are FAIL. External PR ledger
+binds final head/base/tree/reviews/logs, avoiding circular SHA-only commits.
+
 ## P4a mandatory gates
 
 [P4a](phases/P4A_OFFLINE_TEMPORAL_DISCOVERY_CONTRACT.md) adds AC-D01–D15,
