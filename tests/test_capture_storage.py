@@ -529,3 +529,28 @@ def test_capture_scope_and_rows_share_one_concurrent_snapshot(tmp_path, monkeypa
             assert not writer_thread.is_alive()
     assert not errors and committed.is_set()
     assert query_capture(path, batch.batch_id) == replacement
+
+
+def test_synthetic_path_bound_is_per_unit_with_combined_json_limits(tmp_path):
+    from copy import deepcopy
+
+    batch = synthetic_batch()
+    evidence = scope(batch)
+    first = evidence["units"][0]
+    first["selected"] = [f"synthetic/a/{index}" for index in range(501)]
+    first["completed"] = list(first["selected"])
+    second = deepcopy(first)
+    second["selector"] = "second explicit selection"
+    second["selected"] = [f"synthetic/b/{index}" for index in range(501)]
+    second["completed"] = list(second["selected"])
+    evidence["units"].append(second)
+    path = tmp_path / "two-units.db"
+    persist_capture(path, batch, evidence)
+    units = query_capture(path, batch.batch_id)["capture"]["scope"]["units"]
+    assert len({selected for unit in units for selected in unit["selected"]}) == 1002
+    oversized = deepcopy(evidence)
+    oversized["units"][0]["selected"] = [f"synthetic/oversized/{index}" for index in range(1001)]
+    oversized["units"][0]["completed"] = list(oversized["units"][0]["selected"])
+    with pytest.raises(PersistenceError, match="invalid_field"):
+        persist_capture(tmp_path / "never.db", batch, oversized)
+    assert not (tmp_path / "never.db").exists()

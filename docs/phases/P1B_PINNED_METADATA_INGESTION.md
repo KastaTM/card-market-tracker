@@ -96,6 +96,13 @@ Logs use existing allowlisted event with fixed new operations/categories,
 run ID/duration/confirmed counters; no names/paths/URLs/SQL/tokens/raw exceptions.
 Explicit query stdout is bounded untrusted metadata.
 
+The tracked secret scan identified only fixed public cryptographic identifiers.
+[Scanner exception record](../runbooks/SECURITY_SCANNING.md) limits dismissals to
+exact path/detector/SHA1-of-reviewed-public-value matches, with owner/revisit and
+adversarial scanner regressions. Unknown/replaced values remain FAIL. No detector,
+path glob or high-entropy category is globally disabled. Final reviewer checks
+this correction on the revised candidate; earlier failed scan is retained.
+
 TD-001–TD-005 remain open, with TD-005 improved for new reviewed local captures
 only. Legacy/independent producer authentication, total catalog coverage, source
 health, capacity automation, hostile administrator path races and physical Pi

@@ -51,9 +51,12 @@ It revalidates PERSISTENCE_V1 batches and requires this exact scope document:
 
 Units never mix namespace/kind/language. Each input index occurs exactly once;
 nonrejected observations must match its unit. Rejected indexes are explicit local
-producer assertions whose original invalid payload is not retained. At most 32
-units, 1000 unique indexes/paths, selector/path strings 256, namespace 128, and
-existing generic JSON byte/depth/node bounds apply. Completed paths must be a
+producer assertions whose original invalid payload is not retained. Bounds are
+32 units and 1000 input indexes total; each unit's selected and completed lists
+may each contain at most 1000 unique paths. The path limit is per unit list, so
+two units can contain 1002 distinct selected paths. Selector/path strings are
+limited to 256 characters and namespace to 128. Combined JSON bytes, depth and
+nodes remain bounded by the existing generic limits. Completed paths must be a
 subset of nonempty selected paths. Lists canonicalize for replay; selectors and
 contexts are exact. Outcomes are complete, partial, failed. Complete requires
 all selected paths completed; partial never becomes complete. Failed has zero
