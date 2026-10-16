@@ -1,5 +1,12 @@
 # Data contract conventions
 
+P1b adds [reviewed pinned bundle v1](PINNED_REPOSITORY_BUNDLE_V1.md),
+[capture scope v1](CAPTURE_SCOPE_V1.md) and [storage v2](STORAGE_V2.md).
+Only the dedicated independently validated minimum package can admit observed
+evidence; PERSISTENCE_V1 and Discovery remain synthetic-only. Explicit schema
+migration preserves historical rows/fingerprints and marks old scope unverified.
+Historical v1 boundaries and dated evolution notes below remain snapshots.
+
 P4a adds [Discovery v1](DISCOVERY_V1.md), compatible STORAGE_V1 read snapshots
 and allowlisted LOGGING_V1 fields. Schema1 remains unchanged. Empty scope is an
 explicit caller/producer declaration, separated from stored existence/counts.

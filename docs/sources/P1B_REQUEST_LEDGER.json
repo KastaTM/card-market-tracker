@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "budget": 8,
+  "revision": "4199850a6af49665db0080fa2bb9ef751750a406",
+  "repository": "tcgdex/cards-database",
+  "requests": [
+    {
+      "number": 1,
+      "role": "engineering_extraction",
+      "path": "data/Sword & Shield/Darkness Ablaze.ts",
+      "expected_git_blob_sha1": "db48bc4a054b3b1c5bd2b6956257f20ba251c79c",
+      "started_at": "2026-10-14T17:53:07.752790+00:00",
+      "result": "verified",
+      "redirects_followed": 0,
+      "retries": 0,
+      "http_status": 200,
+      "bytes": 536,
+      "sha256": "4bed34217397bcfeee8925868b50816051022d1bbdb60b63eac702ae6f6bd70a",
+      "git_blob_sha1": "db48bc4a054b3b1c5bd2b6956257f20ba251c79c",
+      "duration_ms": 551,
+      "completed_at": "2026-10-14T17:53:08.304471+00:00"
+    },
+    {
+      "number": 2,
+      "role": "engineering_extraction",
+      "path": "data/Sword & Shield/Darkness Ablaze/136.ts",
+      "expected_git_blob_sha1": "6db89c69b56552fa4e09f26e0e90d14e97466411",
+      "started_at": "2026-10-14T17:53:08.304930+00:00",
+      "result": "verified",
+      "redirects_followed": 0,
+      "retries": 0,
+      "http_status": 200,
+      "bytes": 2028,
+      "sha256": "bd5ab2a350fe4b453d468f8b89aa904d26b4b57c4c2d62d330111a28a92a4be6",
+      "git_blob_sha1": "6db89c69b56552fa4e09f26e0e90d14e97466411",
+      "duration_ms": 289,
+      "completed_at": "2026-10-14T17:53:08.594654+00:00"
+    },
+    {
+      "number": 3,
+      "role": "engineering_extraction",
+      "path": "LICENSE",
+      "expected_git_blob_sha1": "c67ded0d5f0abc77b4fbdbfd37312f2a88de1b55",
+      "started_at": "2026-10-14T17:53:08.595037+00:00",
+      "result": "verified",
+      "redirects_followed": 0,
+      "retries": 0,
+      "http_status": 200,
+      "bytes": 1063,
+      "sha256": "12e7dd2d018848b9997d0226c4632f01da86ec4bf6ebe0c8b19953d5e5eeb6ff",
+      "git_blob_sha1": "c67ded0d5f0abc77b4fbdbfd37312f2a88de1b55",
+      "duration_ms": 267,
+      "completed_at": "2026-10-14T17:53:08.862701+00:00"
+    },
+    {
+      "number": 4,
+      "role": "engineering_extraction",
+      "path": "README.md",
+      "expected_git_blob_sha1": "77bc8108c2cdb54c663e1fdf8c4502ac65f88734",
+      "started_at": "2026-10-14T17:53:08.863146+00:00",
+      "result": "verified",
+      "redirects_followed": 0,
+      "retries": 0,
+      "http_status": 200,
+      "bytes": 6809,
+      "sha256": "82ab33624f52569fd3b45991d90c840e8b7d77969a1b5d52071a6782cd791de5",
+      "git_blob_sha1": "77bc8108c2cdb54c663e1fdf8c4502ac65f88734",
+      "duration_ms": 255,
+      "completed_at": "2026-10-14T17:53:09.118954+00:00"
+    }
+  ]
+}

@@ -1,5 +1,33 @@
 # Architecture
 
+## P1b pinned repository ingestion and capture
+
+Engineering acquires four exact pinned files once under a shared eight-request
+budget. A bounded non-executing structural TypeScript parser extracts only the
+approved fields with byte spans. Original source bodies stay transient. The
+distribution contains a reviewed minimal package, field ledger and full MIT
+notice; runtime and CI use it offline.
+
+`pinned_repository` owns source grammar, namespace, reviewed digest anchor and
+translation to generic observations. `persistence.capture` independently
+revalidates package and manifest, freezes resolution and scopes, and writes
+through SQLite v2. The domain and Discovery import no source model. Curated
+UUIDs and exact contextual bindings remain the only identity authority.
+
+See [ADR0006](adr/0006-pinned-capture-storage.md),
+[bundle v1](data-contracts/PINNED_REPOSITORY_BUNDLE_V1.md),
+[capture v1](data-contracts/CAPTURE_SCOPE_V1.md) and
+[storage v2](data-contracts/STORAGE_V2.md). Reads support exact v1/v2 inventories;
+migration is explicit, transactional and preceded by a verified exclusive
+backup. History and v1 fingerprints remain unchanged, with legacy scope marked
+unverified. New initialization uses v2. PERSISTENCE_V1 remains synthetic-only;
+Discovery explicitly rejects selected observed or mixed batches.
+
+The reviewed digest proves equivalence to the locally reviewed minimum package,
+not independent producer authenticity, current availability, total catalog
+coverage or physical product truth. Acquisition/capture/local insertion clocks
+remain distinct. The historical sections below describe their original scope.
+
 ## P0.5b source qualification — documentation only
 
 [Field/capture proposal](sources/P0_5B_FIELD_USE_CAPTURE_POLICY.md) names the future

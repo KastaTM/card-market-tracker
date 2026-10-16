@@ -1,4 +1,4 @@
-"""The single initial owned SQLite schema; no speculative migrations."""
+"""Exact owned SQLite v1/v2 schemas and deterministic inventory validation."""
 
 import sqlite3
 from functools import lru_cache
@@ -6,13 +6,13 @@ from functools import lru_cache
 from card_market_tracker.catalog.validation import ERROR_CATEGORIES
 
 APPLICATION_ID = 0x434D5431
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 OWNER = "card-market-tracker"
 
 _CATEGORIES = ",".join("'" + value + "'" for value in sorted(ERROR_CATEGORIES))
 _CANDIDATES = "'missing_binding','unknown_variant','unknown_language'"
 
-STATEMENTS = (
+V1_STATEMENTS = (
     """CREATE TABLE storage_metadata (
         singleton INTEGER PRIMARY KEY CHECK (singleton = 1),
         owner TEXT NOT NULL CHECK (owner = 'card-market-tracker'),
@@ -140,6 +140,33 @@ STATEMENTS = (
 )
 
 
+_CAPTURE_TABLE = """CREATE TABLE captures (
+    batch_id TEXT PRIMARY KEY NOT NULL REFERENCES batches(batch_id),
+    mode TEXT NOT NULL CHECK (mode IN ('legacy','synthetic','pinned')),
+    evidence_state TEXT NOT NULL CHECK
+        (evidence_state IN
+            ('legacy_unverified','producer_declared','verified_local_pinned_bundle')),
+    envelope TEXT NOT NULL CHECK (length(envelope) BETWEEN 2 AND 1000000),
+    capture_fingerprint TEXT NOT NULL CHECK (length(capture_fingerprint)=64),
+    CHECK ((mode='legacy' AND evidence_state='legacy_unverified')
+        OR (mode='synthetic' AND evidence_state='producer_declared')
+        OR (mode='pinned' AND evidence_state='verified_local_pinned_bundle'))
+) STRICT"""
+
+STATEMENTS = tuple(
+    statement.replace("schema_version = 1", "schema_version = 2").replace(
+        "provenance='synthetic'", "provenance IN ('synthetic','observed')"
+    )
+    for statement in V1_STATEMENTS
+) + (
+    _CAPTURE_TABLE,
+    """CREATE TRIGGER capture_immutable_update BEFORE UPDATE ON captures BEGIN
+        SELECT RAISE(ABORT,'immutable_capture'); END""",
+    """CREATE TRIGGER capture_immutable_delete BEFORE DELETE ON captures BEGIN
+        SELECT RAISE(ABORT,'immutable_capture'); END""",
+)
+
+
 def inventory(connection: sqlite3.Connection) -> tuple[tuple[str, str, str, str | None], ...]:
     """Exact owned objects, including SQLite-generated constraint indexes."""
     rows = connection.execute(
@@ -148,11 +175,13 @@ def inventory(connection: sqlite3.Connection) -> tuple[tuple[str, str, str, str 
     return tuple((str(row[0]), str(row[1]), str(row[2]), row[3]) for row in rows)
 
 
-@lru_cache(maxsize=1)
-def expected_inventory() -> tuple[tuple[str, str, str, str | None], ...]:
+@lru_cache(maxsize=2)
+def expected_inventory(
+    version: int = SCHEMA_VERSION,
+) -> tuple[tuple[str, str, str, str | None], ...]:
     connection = sqlite3.connect(":memory:", autocommit=True)
     try:
-        for statement in STATEMENTS:
+        for statement in V1_STATEMENTS if version == 1 else STATEMENTS:
             connection.execute(statement)
         return inventory(connection)
     finally:

@@ -1,5 +1,17 @@
 # Logging contract v1
 
+## Compatible P1b extension (2026-10-14)
+
+`persistence.completed` adds operation `migrate`, `bundle_verify`, `bundle_import`
+and `capture_read`, with unchanged run ID, duration, result and bounded counts.
+Source categories add `invalid_encoding`, `unsupported_syntax`, `invalid_import`,
+`duplicate_field`, `invalid_selection`, `missing_field`, `missing_translation`,
+`invalid_relation`, `unapproved_bundle`, `approved_package_io`. Every value is fixed;
+unknown values remain omitted. No source body/name/path/URL/token/SQL or raw exception
+is logged. Query stdout intentionally contains contracted bounded scope/evidence.
+CLI returns 0 for verification/replay, 3 newly committed mixed evidence, 2 invalid
+policy/data/context and 1 local IO/storage failure. Failed counters remain null.
+
 ## Compatible P4a extension (2026-10-12)
 
 `discovery.completed` describes one explicit offline comparison. Existing events,

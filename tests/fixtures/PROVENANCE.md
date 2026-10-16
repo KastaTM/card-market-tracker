@@ -1,5 +1,19 @@
 ﻿# P1a fixture provenance
 
+## P1b permitted minimum real bundle — 2026-10-14
+
+`pinned_repository_bundle_v1.json` is the exact reviewed minimum real package;
+`pinned_repository_MIT_NOTICE.txt` preserves the complete pinned MIT notice.
+The [P1b contract](../../docs/phases/P1B_PINNED_METADATA_INGESTION_CONTRACT.md)
+authorizes this narrow retention/publication. Repository is tcgdex/cards-database,
+revision 4199850a6af49665db0080fa2bb9ef751750a406. Acquisition/capture UTC,
+original digests, field byte spans, projections and transformations appear in
+the package and [field ledger](../../docs/sources/P1B_FIELD_LEDGER.md).
+Only specified set/card fields in ES/EN and required context/MIT evidence remain;
+no original bodies, images, attacks, prices, stock or variant availability retained.
+Adversarial alterations are temporary synthetic scenarios, never published as
+real captures. Every existing synthetic fixture remains synthetic.
+
 ## P4a synthetic temporal fixtures — 2026-10-12
 
 Every `synthetic_discovery_*.json` is invented local evidence, not a source capture.

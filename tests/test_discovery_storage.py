@@ -164,7 +164,7 @@ def test_foreign_future_corrupt_and_fk_damage_never_become_empty(tmp_path):
             original = seed(path)
             with closing(sqlite3.connect(path, autocommit=True)) as connection:
                 connection.execute(
-                    "PRAGMA user_version=2" if case == "future" else "DELETE FROM batches"
+                    "PRAGMA user_version=3" if case == "future" else "DELETE FROM batches"
                 )
             token = original.batch_id
         before = path.read_bytes()

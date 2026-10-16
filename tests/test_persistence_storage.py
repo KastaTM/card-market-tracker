@@ -256,7 +256,7 @@ def test_initialization_ddl_version_metadata_rollback_and_current_noop(tmp_path,
 @pytest.mark.parametrize(
     "alteration",
     [
-        "PRAGMA user_version=2",
+        "PRAGMA user_version=3",
         "PRAGMA application_id=0",
         "DROP INDEX candidate_context",
         "CREATE TABLE unrelated(x)",

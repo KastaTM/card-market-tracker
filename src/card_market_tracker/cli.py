@@ -64,12 +64,26 @@ def _parser() -> _Parser:
     selector.add_argument("--cmt-id")
     selector.add_argument("--candidate-reference", type=Path)
     observations.add_argument("--limit", type=int, default=100)
+    bundle = commands.add_parser("bundle")
+    bundle_operations = bundle.add_subparsers(
+        dest="bundle_operation", required=True, parser_class=_Parser
+    )
+    for operation in ("verify", "import"):
+        command = bundle_operations.add_parser(operation)
+        command.add_argument("--input", type=Path, required=True)
+        if operation == "import":
+            command.add_argument("--db", type=Path, required=True)
+            command.add_argument("--manifest", type=Path, required=True)
+            command.add_argument("--batch-id", required=True)
+    captures = commands.add_parser("captures")
+    captures.add_argument("--db", type=Path, required=True)
+    captures.add_argument("--batch-id", required=True)
     database = commands.add_parser("db")
     operations = database.add_subparsers(dest="db_operation", required=True, parser_class=_Parser)
-    for operation in ("init", "verify", "backup", "restore"):
+    for operation in ("init", "verify", "backup", "restore", "migrate"):
         command = operations.add_parser(operation)
         command.add_argument("--db", type=Path, required=True)
-        if operation in ("backup", "restore"):
+        if operation in ("backup", "restore", "migrate"):
             command.add_argument("--destination", type=Path, required=True)
     return parser
 
@@ -276,9 +290,44 @@ def _persistence(args: argparse.Namespace, started: float) -> int:
             payload = verify(args.db)
         elif operation == "backup":
             payload = backup(args.db, args.destination)
+        elif operation == "migrate":
+            from card_market_tracker.persistence.sqlite_repository import migrate
+
+            payload = migrate(args.db, args.destination)
         else:
             payload = restore(args.db, args.destination)
         exit_code = 3 if payload["result"] == "mixed" else 0
+    except PersistenceError as error:
+        payload = _persistence_error(error.category)
+        exit_code = error.exit_code
+    except CatalogError as error:
+        payload = _persistence_error(error.category)
+        exit_code = 1 if error.category == "input_io" else 2
+    except Exception:
+        payload = _persistence_error("local_execution")
+        exit_code = 1
+    return _report_persistence(payload, operation, started, exit_code)
+
+
+def _pinned(args: argparse.Namespace, started: float) -> int:
+    from card_market_tracker.persistence.capture import persist_bundle, query_capture
+    from card_market_tracker.pinned_repository import BundleError, validate_bundle
+
+    operation = "capture_read" if args.command == "captures" else "bundle_" + args.bundle_operation
+    try:
+        if args.command == "captures":
+            payload = query_capture(args.db, args.batch_id)
+        else:
+            bundle = validate_bundle(read_json(args.input))
+            if args.bundle_operation == "verify":
+                payload = {"version": 1, "result": "ok", "evidence": "verified_local_pinned_bundle"}
+            else:
+                manifest = parse_manifest(read_json(args.manifest))
+                payload = persist_bundle(args.db, bundle, args.batch_id, manifest).to_dict()
+        exit_code = 3 if payload["result"] == "mixed" else 0
+    except BundleError as error:
+        payload = _persistence_error(error.category)
+        exit_code = 1 if error.category == "approved_package_io" else 2
     except PersistenceError as error:
         payload = _persistence_error(error.category)
         exit_code = error.exit_code
@@ -306,6 +355,8 @@ def main(argv: list[str] | None = None) -> int:
             return _catalog(args.input, args.manifest, started)
         if args.command == "discover":
             return _discover(args.db, args.request, started)
+        if args.command in ("bundle", "captures"):
+            return _pinned(args, started)
         if args.command in ("persist", "observations", "db"):
             return _persistence(args, started)
         if args.command != "diagnose":
@@ -328,12 +379,26 @@ def main(argv: list[str] | None = None) -> int:
     except ConfigurationError:
         if actual_argv and actual_argv[0] == "discover":
             return _report_discovery(_discovery_error("invalid_field"), started, 2)
-        if actual_argv and actual_argv[0] in ("persist", "observations", "db"):
-            operation = {"persist": "persist", "observations": "read", "db": "init"}[actual_argv[0]]
+        if actual_argv and actual_argv[0] in (
+            "persist",
+            "observations",
+            "db",
+            "bundle",
+            "captures",
+        ):
+            operation = {
+                "persist": "persist",
+                "observations": "read",
+                "db": "init",
+                "bundle": "bundle_verify",
+                "captures": "capture_read",
+            }[actual_argv[0]]
+            if actual_argv[0] == "bundle" and len(actual_argv) > 1 and actual_argv[1] == "import":
+                operation = "bundle_import"
             if (
                 actual_argv[0] == "db"
                 and len(actual_argv) > 1
-                and actual_argv[1] in ("init", "verify", "backup", "restore")
+                and actual_argv[1] in ("init", "verify", "backup", "restore", "migrate")
             ):
                 operation = actual_argv[1]
             return _report_persistence(_persistence_error("invalid_field"), operation, started, 2)

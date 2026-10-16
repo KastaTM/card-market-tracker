@@ -1,5 +1,17 @@
 # P0.5 source matrix
 
+## P1b exact repository route — 2026-10-14
+
+Only the [P1b contract](../phases/P1B_PINNED_METADATA_INGESTION_CONTRACT.md)
+authorizes the pinned two-artifact/four-projection repository minimum and MIT
+notice. ACCESS/RETENTION are granted for that exact local/published projection;
+SEMANTICS are contextual IDs, unknown finish and declared calendar date;
+COVERAGE is two files in ES/EN; OPERATIONAL_LIMITS are eight engineering
+requests and offline bounded import. [Field ledger](P1B_FIELD_LEDGER.md) and
+[request ledger](P1B_REQUEST_LEDGER.json) supply evidence. This grant does not
+qualify TCGdex REST/current coverage or alter eBay/GAME/Awin/Scrydex decisions.
+P2/P6a/retail Discovery remain BLOCKED. Earlier rows are historical research.
+
 ## P0.5b current route decisions — 2026-10-14
 
 The [P0.5b contract](../phases/P0_5B_REAL_SOURCE_QUALIFICATION_CONTRACT.md) limits

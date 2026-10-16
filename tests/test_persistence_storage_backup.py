@@ -43,7 +43,7 @@ def test_backup_restore_reopen_exact_content_ids_candidates_replay(source, tmp_p
     assert storage.restore(backup, restored)["result"] == "ok"
     assert storage.query(backup) == storage.query(restored) == original
     for path in (backup, restored):
-        assert storage.verify(path)["schema_version"] == 1
+        assert storage.verify(path)["schema_version"] == 2
         replay = storage.persist(path, admitted())
         assert replay.result == "replay"
         assert replay.committed_entities == replay.committed_observations == 0
