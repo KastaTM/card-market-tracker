@@ -1,5 +1,21 @@
 ﻿# P1a fixture provenance
 
+## P4b synthetic scoped window — 2026-10-16
+
+`synthetic_scoped_discovery_request.json` selects invented P4a history/current
+and empty fixtures, under exact `offline-demo` scope. The process harness persists
+these authored records with `persist_capture`, explicit original fixture times,
+selected/completed metadata path `synthetic/sets` and the complete original index
+partition. Outcome is complete and evidence is `producer_declared`; the namespace
+on these adapter-shaped examples does not assert a provider acquisition.
+The rejected fixture remains incomplete Discovery evidence. In-memory test
+fixtures likewise remain synthetic; no real bundle is redated or changed.
+
+The unchanged licensed P1b package separately proves four unit baselines and
+equal-time reimport rejection. These are four projections of one capture, not
+four acquisitions or a demonstrated real temporal transition. The harness opens
+no selected path and acquires no external source.
+
 ## P1b permitted minimum real bundle — 2026-10-14
 
 `pinned_repository_bundle_v1.json` is the exact reviewed minimum real package;

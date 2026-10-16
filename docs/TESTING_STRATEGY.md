@@ -1,5 +1,26 @@
 # Testing strategy
 
+## P4b requirements
+
+Strict v2 requests and Python constructors, exact unit/paths/context/null,
+full envelope/partition/count validation, unsupported/forged/mixed provenance,
+partial/failed/rejected/missing evidence and chronology require negative tests.
+Persist synthetic scopes through persist_capture; test accepted/candidate union,
+aliases, metadata/binding evolution, duplicates/contradictions, empty/reappearance,
+stable cmp2/evt2/order/replay/backup restore and global versus selected counts.
+The unchanged real package supplies all four baselines with empty and curated
+set bindings, original indexes and equal-time reimport rejection. No synthetic
+positive is represented as a real provider change. V1 guards/hashes regressions
+stay intact. Real temporary SQLite tests include corruption in unselected units,
+byte/lexical guards, parent closure, locks/deadline and interleaved writer snapshots.
+
+The new scoped_capture_discovery_smoke joins every prior harness in outside-tree
+wheel, Compose and both architecture jobs. It seeds/closes/reopens in separate
+offline processes, verifies installed import, UID10001/fixtures ro and complete
+logical/schema/content nonmutation plus restore equality. Separate QA and final
+REVIEWER inspect exact frozen SHA/tree and all four CI job bodies. Unexecuted
+mandatory gates are FAIL; QEMU never qualifies physical Pi power loss.
+
 ## P1b requirements
 
 Test exact minimum field/path/commit/blob/projection lock, non-executable grammar,

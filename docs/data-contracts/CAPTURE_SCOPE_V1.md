@@ -1,5 +1,14 @@
 ﻿# Capture scope and dedicated admission v1
 
+## P4b consumption
+
+[DISCOVERY_V2](DISCOVERY_V2.md) consumes persisted scope after full P1b
+reconstruction in one window-wide read snapshot. Exactly one unit per batch,
+original indexes, producer_declared versus verified_local_pinned_bundle retained.
+Legacy/partial/failed/mixed and selected rejections fail, including baseline.
+No capture/schema/admission writer change. Four real units remain one fixed
+capture instant; reimport tokens cannot create temporal history.
+
 Status: P1b implementation candidate; Orchestrator acceptance pending.
 
 `persistence.capture.persist_bundle(path, bundle, batch_id, manifest)` is the new

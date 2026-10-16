@@ -6,6 +6,20 @@ capture queries and safe SQLite v1→v2 migration. See the
 Only the exact two-file/four-projection ES/EN metadata is authorized. Original
 TypeScript is never executed; no REST fetcher, market data or real Discovery is added.
 
+## P4b scoped capture Discovery
+
+`cmt discover-scoped --db PATH --request REQUEST_JSON` compares one exact persisted
+unit per capture in a bounded explicit window. Requires SQLite v2 and durable
+capture scope; no schema change, source acquisition or DB mutation. See
+[DISCOVERY_V2](docs/data-contracts/DISCOVERY_V2.md),
+[runbook](docs/runbooks/SCOPED_CAPTURE_DISCOVERY.md) and
+[P4b contract](docs/phases/P4B_SCOPED_CAPTURE_DISCOVERY_CONTRACT.md).
+The fixed licensed P1b bundle demonstrates four unit baselines without events;
+reimporting it cannot create a later capture. Positive temporal demonstrations
+are synthetic producer declarations. No real provider transition, launch or stock
+change is claimed. V1 remains synthetic-only and unchanged. The new installed/
+Compose/AMD64/ARM64 harness preserves prior smokes; ARM64 uses QEMU.
+
 ## P4a offline temporal discovery
 
 Compare explicit synthetic persisted captures in one exact context:

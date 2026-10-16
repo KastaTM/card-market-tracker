@@ -1,5 +1,32 @@
 # Initial threat model
 
+## P4b scoped read boundaries (2026-10-16)
+
+Scope spoofing, false completeness by filtering, provenance-family mixing,
+reimport redating, forged Python DTOs and divergent validation can create false
+novelty. The v2 route uses strict bounded request parsing, one explicit read-only
+transaction, P1b byte/lexical/envelope reconstruction and complete batch/identity
+validation before selecting original unit indexes. Mode/evidence/provenance must
+agree for every record, including units excluded from comparison. Legacy,
+partial/failed, unsupported/mixed and selected rejected evidence fail safely.
+
+Content-bound private storage receipts prevent ordinary constructor/replacement
+claims of DB verification; this is a module boundary, not protection against
+arbitrary code/administrators inside the process. The comparator independently
+validates request/snapshot/scope and actual provenance without altering the v1
+synthetic-only guard. Exact paths/family/method/policy and original captured_at
+bound comparison. A new token cannot redate the single fixed real capture.
+cmp2/evt2 include scope and evidence/content and authenticate no external truth.
+
+Output and logs preserve distinct validated/selected counters; errors have null
+counts/empty events and fixed categories. No source network, path follows,
+DB/schema/cache writes, repair, migration or journal deletion. Socket-denied
+installed process smokes and offline UID10001/read-only-fixture containers must
+verify nonmutation and restored semantic equality. Full integrity work remains
+budgeted; OS/device stalls remain outside bounds. All earlier risks and
+TD-001–TD-005 stay open. Real baselines do not prove a real temporal transition;
+synthetic producer declarations never become independently authenticated scope.
+
 ## P1b reviewed bundle and capture migration
 
 Public source/storage APIs independently validate canonical bundle bytes against

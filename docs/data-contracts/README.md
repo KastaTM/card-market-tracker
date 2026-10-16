@@ -1,5 +1,10 @@
 # Data contract conventions
 
+P4b adds [Discovery v2](DISCOVERY_V2.md) as a separate read-only unit-selection
+route over schema2 capture evidence, with compatible storage/capture read and
+logging extensions. V1 remains synthetic-only. No schema or writer change.
+Only the fixed P1b package is observed; positive temporal examples are synthetic.
+
 P1b adds [reviewed pinned bundle v1](PINNED_REPOSITORY_BUNDLE_V1.md),
 [capture scope v1](CAPTURE_SCOPE_V1.md) and [storage v2](STORAGE_V2.md).
 Only the dedicated independently validated minimum package can admit observed

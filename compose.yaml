@@ -33,6 +33,14 @@ services:
       - observation_data:/data
     command: ["bundle", "verify", "--input", "/fixtures/pinned_repository_bundle_v1.json"]
 
+  scoped:
+    build: .
+    network_mode: none
+    volumes:
+      - ./tests/fixtures:/fixtures:ro
+      - observation_data:/data
+    command: ["discover-scoped", "--db", "/data/scoped.sqlite3", "--request", "/fixtures/synthetic_scoped_discovery_request.json"]
+
 volumes:
   observation_data:
     external: true

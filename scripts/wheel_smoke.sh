@@ -12,3 +12,4 @@ env -u PYTHONPATH "$outside/venv/bin/python" "$repo/scripts/catalog_smoke.py" --
 env -u PYTHONPATH "$outside/venv/bin/python" "$repo/scripts/observation_persistence_smoke.py" --mode installed --executable "$outside/venv/bin/cmt" --fixtures "$repo/tests/fixtures"
 env -u PYTHONPATH "$outside/venv/bin/python" "$repo/scripts/discovery_smoke.py" --mode installed --executable "$outside/venv/bin/cmt" --fixtures "$repo/tests/fixtures"
 env -u PYTHONPATH "$outside/venv/bin/python" "$repo/scripts/pinned_repository_smoke.py" --mode installed --executable "$outside/venv/bin/cmt" --fixtures "$repo/tests/fixtures"
+env -u PYTHONPATH "$outside/venv/bin/python" "$repo/scripts/scoped_capture_discovery_smoke.py" --mode installed --executable "$outside/venv/bin/cmt" --fixtures "$repo/tests/fixtures"

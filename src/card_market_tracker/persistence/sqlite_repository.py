@@ -16,6 +16,7 @@ from card_market_tracker.catalog.resolver import reference_dict
 from card_market_tracker.catalog.validation import CatalogError, uuid_value
 from card_market_tracker.discovery.errors import DiscoveryError
 from card_market_tracker.discovery.models import BatchSnapshot, SnapshotRecord
+from card_market_tracker.discovery.scoped_models import ScopedCapture, ScopedDiscoveryRequest
 from card_market_tracker.discovery.validation import validate_snapshot
 
 from . import schema
@@ -695,6 +696,110 @@ def read_snapshots(
                 connection.execute("ROLLBACK")
         budget.remaining()
     return tuple(snapshots)
+
+
+def read_scoped_snapshots(
+    path: Path, request: ScopedDiscoveryRequest, *, timeout: float = DEFAULT_TIMEOUT
+) -> tuple[ScopedCapture, ...]:
+    """Reconstruct complete v2 captures in one owned read-only SQLite snapshot.
+
+    Scope selection belongs to the pure comparator, after every row and unit in
+    every requested capture has passed retained-admission validation here.
+    """
+    from ..discovery.scoped_errors import ScopedDiscoveryError
+    from ..discovery.scoped_input import validate_request
+    from ..discovery.scoped_models import _validated_storage_capture
+    from ..discovery.scoped_snapshot import validate_scoped_snapshot
+    from .capture import _capture_row, _check_capture
+    from .input import canonical_json
+
+    validated = validate_request(request)
+    tokens = tuple(sorted((validated.current.batch_id, *(s.batch_id for s in validated.history))))
+    captures: list[ScopedCapture] = []
+    with _connection(path, writable=False, timeout=timeout) as (connection, budget):
+        _execute(connection, budget, "BEGIN")
+        try:
+            _require_schema(connection, budget)
+            if _execute(connection, budget, "PRAGMA user_version").fetchone()[0] != 2:
+                raise ScopedDiscoveryError("unsupported_evidence")
+            _check_integrity(connection, budget)
+            total = 0
+            identities: dict[str, tuple[Entity, Entity | None]] = {}
+            for token in tokens:
+                metadata = _execute(
+                    connection, budget, "SELECT * FROM batches WHERE batch_id=?", (token,)
+                ).fetchone()
+                if metadata is None:
+                    raise DiscoveryError("batch_missing")
+                capture = _capture_row(connection, budget, token)
+                if capture is None:
+                    raise DiscoveryError("storage_corrupt")
+                mode, state = capture["mode"], capture["evidence_state"]
+                states = {
+                    "legacy": "legacy_unverified",
+                    "synthetic": "producer_declared",
+                    "pinned": "verified_local_pinned_bundle",
+                }
+                if mode not in states or state != states[mode]:
+                    raise DiscoveryError("storage_corrupt")
+                if mode == "legacy":
+                    raise ScopedDiscoveryError("unsupported_evidence")
+                rows = _execute(connection, budget, _SNAPSHOT_JOIN, (token,)).fetchall()
+                total += len(rows)
+                if len(rows) > MAX_LIMIT or total > 33_000:
+                    raise DiscoveryError("input_limit")
+                provenance = "observed" if mode == "pinned" else "synthetic"
+                if any(
+                    row["provenance"] != (None if row["status"] == "rejected" else provenance)
+                    for row in rows
+                ):
+                    raise DiscoveryError("storage_corrupt")
+                # This independently rebuilds the admitted pinned package or
+                # synthetic scope, resolution, partition, counters and snapshots.
+                envelope = _check_capture(connection, budget, metadata, capture)
+                for row in rows:
+                    budget.remaining()
+                    _snapshot_target(row, identities)
+                snapshot = BatchSnapshot(
+                    version=1,
+                    records=tuple(_snapshot_record(row) for row in rows),
+                    **{
+                        field: metadata[field]
+                        for field in (
+                            "input_version",
+                            "resolver_version",
+                            "batch_id",
+                            "captured_at",
+                            "first_persisted_at",
+                            "fingerprint",
+                            "context_fingerprint",
+                            "input_count",
+                            "accepted_count",
+                            "candidate_count",
+                            "rejected_count",
+                            "result",
+                        )
+                    },
+                )
+                snapshot = validate_scoped_snapshot(snapshot, provenance=provenance)
+                captures.append(
+                    _validated_storage_capture(
+                        snapshot,
+                        mode,
+                        state,
+                        canonical_json(envelope["scope"]),
+                        capture["capture_fingerprint"],
+                    )
+                )
+                budget.remaining()
+        finally:
+            # Cleanup remains possible after an expired deadline/progress callback.
+            connection.set_progress_handler(None, 0)
+            connection.execute("PRAGMA busy_timeout=0")
+            if connection.in_transaction:
+                connection.execute("ROLLBACK")
+        budget.remaining()
+    return tuple(captures)
 
 
 def _remove_owned(path: Path, identity: tuple[int, int]) -> None:
