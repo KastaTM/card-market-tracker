@@ -85,6 +85,20 @@ c.close()
 print(json.dumps(payload, sort_keys=True))
 """
 
+COPY = """
+import json
+from card_market_tracker.persistence.sqlite_repository import DEFAULT_TIMEOUT, backup, restore
+assert DEFAULT_TIMEOUT == 2.0
+operation, source, destination = sys.argv[1:]
+# Reconstructing all six captures repeatedly during verified copy costs more
+# under QEMU. Exercise the already supported explicit maximum, without changing
+# CLI/reader defaults, retrying failures or skipping any verification.
+result = {'backup': backup, 'restore': restore}[operation](
+    Path(source), Path(destination), timeout=5.0)
+assert result['result'] == 'ok' and result['schema_version'] == 2
+print(json.dumps(result))
+"""
+
 
 def main() -> int:
     parser = argparse.ArgumentParser()
@@ -232,8 +246,13 @@ def main() -> int:
             )
             assert json.loads(execute(INSPECT, database)) == before
             backup, restored = f"{data}/backup.sqlite3", f"{data}/restored.sqlite3"
-            call(["db", "backup", "--db", database, "--destination", backup])
-            call(["db", "restore", "--db", backup, "--destination", restored])
+            for operation, origin, destination in (
+                ("backup", database, backup),
+                ("restore", backup, restored),
+            ):
+                copied = json.loads(execute(COPY, operation, origin, destination))
+                assert copied["result"] == "ok" and copied["schema_version"] == 2
+            print("verified backup/restore: explicit 5s budget; CLI/read default remains 2s")
             assert discover("main", target=restored) == result
             assert json.loads(execute(INSPECT, restored)) == before
             assert json.loads(execute(INSPECT, database)) == before

@@ -11,6 +11,8 @@ No merge or phase acceptance is authorized.
 | `/root/be_discovery` | BE / DISCOVERY; new `discovery/scoped_*.py`, CLI/logging, separate input/core/CLI/logging tests |
 | `/root/sec_sre` | SEC / SRE; read-only boundary/operational review; no authorship |
 | `/root/qa` | Independent QA; only `tests/test_scoped_discovery_qa.py`; final frozen-tree validation without edits |
+| `/root/qa_final` | Resumed independent final QA after the interrupted session; read-only implementation review and final gates |
+| `/root/reviewer_final` | Resumed independent final REVIEWER; distinct from QA/authors; read-only exact-candidate and four-job review |
 
 QA and final REVIEWER are reserved for separate nonauthor agents, distinct from
 each other. Their actual identifiers, reviewed SHA/tree, findings and commands

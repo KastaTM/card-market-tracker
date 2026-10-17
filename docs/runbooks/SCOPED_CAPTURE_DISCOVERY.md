@@ -53,6 +53,13 @@ The harness checks installed import, socket denial, distinct seed/compare
 processes, synthetic transitions, real baselines/equal-time error, v1 guard,
 complete logical/schema nonmutation and backup/restore equivalence.
 
+Verified backup/restore in this harness uses the existing public Python storage
+API with an explicit5-second budget in separate isolated processes, in every
+execution mode. Revalidating all six captures repeatedly during copy exceeded
+the default2 seconds under ARM64/QEMU. No retry, skipped verification or runtime
+budget change is introduced: CLI/Discovery reads retain2s defaults/max5s. Earlier
+CLI backup/restore harnesses remain required unchanged.
+
 Compose uses `--mode compose`; Docker uses `--mode docker --image IMAGE --platform
 linux/amd64` or linux/arm64 after the respective build. Fixtures are readonly,
 network disabled, UID/GID10001, /data0700 and unique disposable volumes. Only the

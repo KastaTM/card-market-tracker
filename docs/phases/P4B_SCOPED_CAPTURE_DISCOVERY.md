@@ -35,6 +35,13 @@ failures; BE added complete-unit contradiction validation. QA rechecked its
 25 cases successfully on the provisional working tree. Final exact-SHA recheck
 and disposition belong to the external ledger; this note alone certifies no gate.
 
+CI finding SRE-01: the original ARM64/QEMU job completed prior harnesses and new
+Discovery checks, then its six-capture verified backup hit the default2-second
+budget. The new harness invokes the existing public backup/restore API with an
+explicit5-second budget in separate offline processes, consistently in all modes.
+Runtime/CLI/read defaults and maximum remain unchanged; no retries or integrity
+checks are removed. Final exact-candidate four-job evidence is required again.
+
 ## Acceptance evidence map
 
 Run `uv run --frozen pytest -q tests/test_scoped_discovery_*.py` on shells expanding
