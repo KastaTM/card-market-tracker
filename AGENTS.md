@@ -1,5 +1,10 @@
 # Agent map
 
+- [P4b contract](docs/phases/P4B_SCOPED_CAPTURE_DISCOVERY_CONTRACT.md) and
+  [ownership](docs/phases/P4B_OWNERSHIP.md),
+  [evidence map](docs/phases/P4B_SCOPED_CAPTURE_DISCOVERY.md): explicit SQLite v2 capture units,
+  separate read-only Discovery v2, no new source/schema or v1 guard changes.
+
 - [P1b contract](docs/phases/P1B_PINNED_METADATA_INGESTION_CONTRACT.md),
   [ownership](docs/phases/P1B_OWNERSHIP.md) and
   [P1b report](docs/phases/P1B_PINNED_METADATA_INGESTION.md): pinned minimum

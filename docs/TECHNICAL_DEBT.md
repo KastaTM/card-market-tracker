@@ -1,5 +1,11 @@
 # Technical debt register
 
+P4b (2026-10-16) consumes supported persisted scope through separate read-only v2
+Discovery. It does not authenticate independent producers or recover legacy empty
+scope, so TD-001–TD-005 remain open. The one approved real capture cannot prove
+a provider transition; synthetic positive demonstrations are intentional scope,
+not a future commercial feature recorded as new debt.
+
 P1b (2026-10-14) adds reviewed local pinned capture context in schema2 under the
 Orchestrator contract. This addresses new supported captures, not TD-005 legacy
 empties or independent/multiple producers, and does not authenticate source

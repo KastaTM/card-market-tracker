@@ -1,5 +1,16 @@
 # Logging contract v1
 
+## Compatible P4b extension (2026-10-16)
+
+`discovery.scoped.completed` with operation `discover_scoped` identifies one v2
+comparison. Fixed error categories add unsupported_evidence, scope_mismatch,
+unit_missing and ambiguous_unit. UUID run_id, duration_ms and result retain their
+existing semantics. New strict integer fields scoped_validated_record_count and
+scoped_selected_record_count range0..33000; batch_count0..33 and event_count0..1000
+remain. Failed counts are unknown/omitted (stdout counts null/events empty).
+No names/references/selectors/paths/batch tokens/SQL/payloads/raw exceptions.
+No v1 output or previous count bound changes.
+
 ## Compatible P1b extension (2026-10-14)
 
 `persistence.completed` adds operation `migrate`, `bundle_verify`, `bundle_import`

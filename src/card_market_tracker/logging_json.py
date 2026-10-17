@@ -17,6 +17,7 @@ _EVENTS = frozenset(
         "catalog.completed",
         "persistence.completed",
         "discovery.completed",
+        "discovery.scoped.completed",
     }
 )
 
@@ -83,6 +84,10 @@ class JsonFormatter(logging.Formatter):
             "invalid_relation",
             "unapproved_bundle",
             "approved_package_io",
+            "unsupported_evidence",
+            "scope_mismatch",
+            "unit_missing",
+            "ambiguous_unit",
         }:
             payload["error_category"] = category
         result = getattr(record, "result", None)
@@ -109,6 +114,7 @@ class JsonFormatter(logging.Formatter):
             "bundle_verify",
             "bundle_import",
             "capture_read",
+            "discover_scoped",
         }:
             payload["operation"] = operation
         duration = getattr(record, "duration_ms", None)
@@ -131,6 +137,8 @@ class JsonFormatter(logging.Formatter):
             ("batch_count", 33),
             ("discovery_observation_count", 33000),
             ("event_count", 1000),
+            ("scoped_validated_record_count", 33000),
+            ("scoped_selected_record_count", 33000),
         ):
             value = getattr(record, field, None)
             if type(value) is int and 0 <= value <= maximum:

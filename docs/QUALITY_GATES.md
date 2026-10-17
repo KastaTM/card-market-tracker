@@ -1,5 +1,21 @@
 # Quality gates
 
+## P4b mandatory evidence
+
+[P4b](phases/P4B_SCOPED_CAPTURE_DISCOVERY_CONTRACT.md) adds AC-S01–S15 with all
+earlier gates preserved. Require frozen installs/unchanged lock, Ruff format/lint,
+strict mypy, full suite including independent negative/concurrency tests, coverage
+>=85% lines/>=80% branches of own runtime, sdist/wheel/outside-checkout install,
+dependency audit/secret scan and ARQ/DB/SEC/SRE/docs reviews. The new scoped capture
+process harness runs alongside all old smokes in installed wheel, Compose,
+linux/amd64 and linux/arm64-QEMU, offline with readonly fixtures and UID10001.
+Keep exactly four CI jobs: quality, compose and the two container architectures.
+Independent QA and REVIEWER are distinct nonauthors, inspecting the exact final
+SHA/tree and complete four job logs. External PR ledger records immutable objects,
+commands/logs/results/limitations without circular SHA-only commits. Unexecuted
+mandatory gates are FAIL; historical P1b results cannot certify P4b. No merge or
+phase closure follows from engineering readiness.
+
 ## P1b mandatory evidence
 
 [P1b](phases/P1B_PINNED_METADATA_INGESTION_CONTRACT.md) adds AC-I01–I16,

@@ -1,5 +1,22 @@
 # Architecture
 
+## P4b scoped capture Discovery
+
+Strict request v2 -> one schema2 read-only transaction -> complete retained
+capture reconstruction and generic storage-issued DTOs -> pure unit selection/
+comparison -> version2 JSON and correlated allowlisted logs. Storage owns pinned
+verification. Discovery imports no provider/SQLite/current manifest and has no
+I/O. Constructors grant no evidence authority. Original indexes and frozen
+resolution survive selection. No schema or writer admission changes.
+
+[ADR0007](adr/0007-scoped-capture-discovery.md),
+[DISCOVERY_V2](data-contracts/DISCOVERY_V2.md) and the
+[runbook](runbooks/SCOPED_CAPTURE_DISCOVERY.md) define scope/family/completeness/time
+checks. Four units of the fixed real package are one acquisition; real baselines
+prove no temporal transition. Positive evidence is synthetic/producer_declared.
+Discovery v1 and cmp1/evt1 remain synthetic-only and unchanged. Earlier sections
+below preserve their original phase scope.
+
 ## P1b pinned repository ingestion and capture
 
 Engineering acquires four exact pinned files once under a shared eight-request

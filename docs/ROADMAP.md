@@ -1,5 +1,26 @@
 # Roadmap
 
+## P1b closure and P4b opening — Orchestrator decision, 2026-10-16
+
+The user-supplied [P4b contract](phases/P4B_SCOPED_CAPTURE_DISCOVERY_CONTRACT.md)
+records the Orchestrator's **P1b ACCEPTED / PHASE CLOSED** decision in chat and
+opens **P4b Scoped Capture Discovery**. No published closure comment is invented.
+[PR9](https://github.com/KastaTM/card-market-tracker/pull/9), its
+[integration record](https://github.com/KastaTM/card-market-tracker/pull/9#issuecomment-6212185019)
+and [main CI38877640587](https://github.com/KastaTM/card-market-tracker/actions/runs/38877640587)
+are historical evidence. Fetched main is `430e2049c9ffdffb68508329df6556bfed62baa2`,
+tree `c3988a86cedf525cce364bd9cc4709689c510053`, parents base
+`acca10e406dac8809edc289c3077a6ec8785a622` then head
+`252c394141948e3ab77a54bcf628e4290ba69652`.
+
+P4b authorizes a separate read-only v2 route over persisted capture units,
+without a schema change or further source acquisition. The fixed P1b package
+has one acquisition/capture instant: four unit baselines are real evidence;
+positive temporal events use explicitly synthetic persisted captures only.
+Discovery v1 remains synthetic-only. P2/P6a/retail Discovery remain BLOCKED,
+TD-001–TD-005 remain open, and merge/phase closure require Orchestrator decisions.
+Earlier entries below remain historical snapshots.
+
 ## P0.5b closure and P1b opening — Orchestrator decision, 2026-10-14
 
 The supplied [P1b contract](phases/P1B_PINNED_METADATA_INGESTION_CONTRACT.md)

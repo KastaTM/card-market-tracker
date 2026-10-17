@@ -1,5 +1,18 @@
 ﻿# Offline SQLite storage v2
 
+## Compatible P4b read extension
+
+`read_scoped_snapshots(path,request,timeout=2.0)` reads explicit current/history
+in one ro/query_only connection and BEGIN/ROLLBACK. Requires schema2 and nonlegacy
+capture scope. Complete rows/envelopes/partitions/counters/retained resolver
+snapshots/identity closure validate before selection, reusing P1b byte/lexical/
+reconstruction helpers. All rows must have coherent mode/evidence/provenance.
+At most33 batches/33000 rows, per-batch1000; 2s default/max5s and safe errors.
+Generic content-bound storage-issued DTOs feed the pure DISCOVERY_V2 comparator;
+constructors grant no verification. No table/trigger/schema/fingerprint/writer/
+migration/replay/backup change. V1 reads remain synthetic-only.
+See [DISCOVERY_V2](DISCOVERY_V2.md). Historical P1b details follow.
+
 Status: P1b implementation candidate; supplements historical STORAGE_V1 without
 rewriting its accepted evidence. Standard-library sqlite3, no ORM/dependencies.
 

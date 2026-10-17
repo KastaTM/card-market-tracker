@@ -1,5 +1,18 @@
 # Risk register
 
+## P4b scoped capture read (2026-10-16)
+
+R-03: exact persisted units/paths/families and original capture chronology prevent
+scope changes or new import tokens from masquerading as novelty. Full capture
+validation precedes selection; producer_declared remains locally trusted.
+R-04: allowlisted v2 operation/counts and safe errors omit payload/token/path data.
+R-05/R-06: one ro/query_only transaction, full retained reconstruction/identity
+checks, resource budgets and cleanup; growing integrity work and stalled hardware
+remain limits. R-07: outside-tree/process/Compose/AMD64/ARM64-QEMU smokes are
+required, never native Pi evidence. R-10: no new source requests or permissions;
+only fixed approved real baselines, synthetic temporal positives, v1 guard intact.
+No risk or TD-001–TD-005 is closed; exact-candidate evidence belongs to PR ledger.
+
 ## P0.5b source qualification (2026-10-14)
 
 No current runtime boundary changes. [Field/capture proposal](sources/P0_5B_FIELD_USE_CAPTURE_POLICY.md)

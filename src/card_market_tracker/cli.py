@@ -21,6 +21,8 @@ from card_market_tracker.config import ConfigurationError, load_config
 from card_market_tracker.discovery.comparison import compare
 from card_market_tracker.discovery.errors import DiscoveryError
 from card_market_tracker.discovery.input import read_request
+from card_market_tracker.discovery.scoped_comparison import compare as compare_scoped
+from card_market_tracker.discovery.scoped_input import read_request as read_scoped_request
 from card_market_tracker.logging_json import configure_logging
 from card_market_tracker.persistence.errors import PersistenceError
 from card_market_tracker.persistence.input import read_persistence
@@ -50,6 +52,9 @@ def _parser() -> _Parser:
     catalog = commands.add_parser("catalog")
     catalog.add_argument("--input", type=Path, required=True)
     catalog.add_argument("--manifest", type=Path, required=True)
+    scoped = commands.add_parser("discover-scoped")
+    scoped.add_argument("--db", type=Path, required=True)
+    scoped.add_argument("--request", type=Path, required=True)
     discover = commands.add_parser("discover")
     discover.add_argument("--db", type=Path, required=True)
     discover.add_argument("--request", type=Path, required=True)
@@ -211,6 +216,60 @@ def _discover(database: Path, request_path: Path, started: float) -> int:
     return _report_discovery(payload, started, exit_code)
 
 
+def _scoped_error(category: str) -> dict[str, object]:
+    return {
+        "version": 2,
+        "result": "error",
+        "error_category": category,
+        "counts": None,
+        "events": [],
+    }
+
+
+def _report_scoped(payload: dict[str, object], started: float, exit_code: int) -> int:
+    metrics: dict[str, object] = {
+        "event": "discovery.scoped.completed",
+        "component": "cli",
+        "operation": "discover_scoped",
+        "result": payload["result"],
+        "duration_ms": max(0, round((time.perf_counter() - started) * 1000)),
+    }
+    if "error_category" in payload:
+        metrics["error_category"] = payload["error_category"]
+    counts = payload.get("counts")
+    if isinstance(counts, dict):
+        metrics.update(
+            {
+                "batch_count": counts["validated_batches"],
+                "scoped_validated_record_count": counts["validated_records"],
+                "scoped_selected_record_count": counts["current_selected_records"]
+                + counts["historical_selected_records"],
+                "event_count": counts["events"],
+            }
+        )
+    logging.getLogger("card_market_tracker").log(
+        logging.ERROR if exit_code else logging.INFO, "", extra=metrics
+    )
+    print(json.dumps(payload, ensure_ascii=True, sort_keys=True, separators=(",", ":")))
+    return exit_code
+
+
+def _discover_scoped(database: Path, request_path: Path, started: float) -> int:
+    from card_market_tracker.persistence.sqlite_repository import read_scoped_snapshots
+
+    try:
+        request = read_scoped_request(request_path)
+        payload = compare_scoped(request, read_scoped_snapshots(database, request)).to_dict()
+        exit_code = 0
+    except (DiscoveryError, PersistenceError) as error:
+        payload, exit_code = _scoped_error(error.category), error.exit_code
+    except CatalogError as error:
+        payload, exit_code = _scoped_error(error.category), 2
+    except Exception:
+        payload, exit_code = _scoped_error("local_execution"), 1
+    return _report_scoped(payload, started, exit_code)
+
+
 def _persistence_error(category: str) -> dict[str, object]:
     return {
         "version": 1,
@@ -353,6 +412,8 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         if args.command == "catalog":
             return _catalog(args.input, args.manifest, started)
+        if args.command == "discover-scoped":
+            return _discover_scoped(args.db, args.request, started)
         if args.command == "discover":
             return _discover(args.db, args.request, started)
         if args.command in ("bundle", "captures"):
@@ -377,6 +438,8 @@ def main(argv: list[str] | None = None) -> int:
         print("diagnose: ok (configuration, local work directory)")
         return 0
     except ConfigurationError:
+        if actual_argv and actual_argv[0] == "discover-scoped":
+            return _report_scoped(_scoped_error("invalid_field"), started, 2)
         if actual_argv and actual_argv[0] == "discover":
             return _report_discovery(_discovery_error("invalid_field"), started, 2)
         if actual_argv and actual_argv[0] in (
