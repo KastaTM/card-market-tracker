@@ -41,7 +41,9 @@ cmp3/evt3 identities, profiles, outputs/bounds/errors and compatibility. Generic
 pure comparison imports neither provider nor SQLite. Stored profile receipts
 bind complete reconstructed package evidence; ordinary objects cannot manufacture
 membership. Public v3 output retains original revisions/digests/artifact locks/
-acquisition times while compatibility normalizes only approved differences.
+acquisition times while compatibility normalizes only approved differences. The reviewed eight-span
+extraction_proof is receipt-bound and preserved in v3 output/cmp3/evt3; source
+package locks, historical envelopes and replay remain unchanged.
 
 DB stays schema2 and exactly five tables, with no new migration. R0 envelope1 and
 historical fingerprints are preserved; R1 uses envelope2/scope2. Query, verify,
@@ -56,7 +58,7 @@ explicit BEGIN. Every envelope/unit/row, including unselected units, is checked.
 Exact profiles distinguish the reviewed real pair from explicit synthetic tests;
 unknown/mixed/partial/legacy/forged scope fails. Budgets remain 32 histories,
 33 batches, 33000 rows, 1000 events, existing JSON limits, 2s default/5s max.
-Cronology is strictly original captured_at; reverse/equal-time history fails.
+Chronology is strictly original captured_at; reverse/equal-time history fails.
 
 ## Source, rights and immutable clocks
 
@@ -175,3 +177,11 @@ acquisition evidence; dedicated v3 serialization fixed it while v2 stayed intact
 Recommendation: Phase Lead/Orchestrator evaluate only the final immutable PR
 candidate with the external gate/AC/review ledger. No acceptance or merge is
 implied by this implementation map or historical P4b evidence.
+
+A pre-freeze candidate d3dbd96 independently passed1054 tests/1 inherited Windows
+symlink skip, coverage95.70%/90.91%. REVIEWER identified ?7 span-output wording;
+a follow-up adds the bounded registry-issued extraction descriptor to v3 receipt,
+output and identity. That supersedes the first candidate and requires new exact
+reviews/full gates/CI. Prior source contrast remains valid because approved
+source packages/digests/times and original disposal are unchanged. Final identities
+and results are the external ledger, not the superseded candidate observations.

@@ -116,3 +116,11 @@ Remove only harness-owned volumes. ARM64/QEMU is emulation and does not certify
 physical Raspberry Pi or electrical power-loss durability. Record actual
 candidate SHA/tree, commands and results; these instructions alone establish no
 gate PASS.
+
+The v3 storage profile receipt additionally binds a reviewed extraction_proof:
+version1/extractor/eight exact UTF8 field spans (path, field, start, end,
+exact_literal transformation). Same approved blobs give identical R0/R1 proof.
+`extraction_evidence_v2` independently revalidates the exact package before issuing
+this code-controlled descriptor. V3 outputs/hashes include it; synthetic proof
+is explicitly null. Neither historical envelopes/source package hashes nor v1/v2
+outputs/fingerprints change. See Discovery v3 for strict generic proof bounds.

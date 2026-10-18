@@ -7,7 +7,8 @@ packages, fake caller registries, self-asserted observed values and false clocks
 Every reader revalidates retained manifest/resolution/scope/rows against approved
 package bytes before returning. Replay keeps acquisition identity; only the
 profile-authorized compatibility key permits R0/R1 differences. V3 emits those
-revisions/digests/times explicitly and hashes full evidence. Producer engineering
+revisions/digests/times and the registry-reviewed eight-span extraction proof
+explicitly, binds proof to the profile receipt and hashes full evidence. Producer engineering
 timestamps remain local declarations, never externally authenticated timestamps.
 
 Storage issues content-bound profile receipts only after complete reconstruction

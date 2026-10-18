@@ -4,8 +4,9 @@ from dataclasses import replace
 
 from .multi_input import validate_request
 from .multi_models import MultiRevisionRequest, ProfiledCapture
-from .multi_validation import validate_capture
-from .scoped_comparison import _group, _hash, _identity, _key
+from .multi_validation import ProfileSelectedCapture, validate_capture
+from .scoped_comparison import _group, _hash, _key
+from .scoped_comparison import _identity as _scoped_identity
 from .scoped_errors import ScopedDiscoveryError
 from .scoped_models import ScopedDiscoveryResult
 from .validation import (
@@ -15,6 +16,16 @@ from .validation import (
     record_dict,
     reference_dict,
 )
+
+
+def _identity(selected: ProfileSelectedCapture) -> dict[str, object]:
+    import json
+
+    return {
+        **_scoped_identity(selected),
+        "profile": selected.profile,
+        "extraction_proof": json.loads(selected.extraction_json),
+    }
 
 
 def compare(

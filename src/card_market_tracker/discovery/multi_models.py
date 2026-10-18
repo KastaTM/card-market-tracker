@@ -32,18 +32,23 @@ class MultiRevisionRequest:
 class ProfiledCapture:
     capture: ScopedCapture
     profile: str
+    extraction_json: str = "null"
     _authority: object = field(default=None, init=False, repr=False, compare=False)
 
 
 def _content(value: ProfiledCapture) -> str:
     return hashlib.sha256(
-        canonical_json([_receipt_content(value.capture), value.profile]).encode("ascii")
+        canonical_json(
+            [_receipt_content(value.capture), value.profile, value.extraction_json]
+        ).encode("ascii")
     ).hexdigest()
 
 
-def _validated_profile_capture(capture: ScopedCapture, profile: str) -> ProfiledCapture:
+def _validated_profile_capture(
+    capture: ScopedCapture, profile: str, extraction_proof: object = None
+) -> ProfiledCapture:
     """Issued only after storage verifies the complete package's profile membership."""
-    value = ProfiledCapture(capture, profile)
+    value = ProfiledCapture(capture, profile, canonical_json(extraction_proof))
     object.__setattr__(value, "_authority", (_PROFILE_AUTHORITY, _content(value)))
     return value
 

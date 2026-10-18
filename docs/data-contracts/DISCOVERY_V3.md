@@ -37,7 +37,7 @@ before selection. SQL byte guards precede envelope materialization; lexical
 bounds precede JSON decoding. Per-batch1000, total33000 rows and 33 batches apply.
 The shared operation budget defaults2 seconds and is at most5 seconds.
 
-Storage issues content-bound `ProfiledCapture(ScopedCapture,profile)` receipts
+Storage issues content-bound `ProfiledCapture(ScopedCapture,profile,extraction_json)` receipts
 inside that transaction after actual registry/family checks. The pure comparator
 rechecks the profile receipt and underlying storage receipt, validates complete
 snapshot/scope and selects exactly one matching unit per batch. Public
@@ -82,12 +82,24 @@ remain distinct counts.
 
 Current/history evidence contains batch_id, selector, captured_at, mode,
 evidence_state, selected unit scope with original indexes, normalized
-scope_semantics, profile and bounded acquisition. Acquisition retains available
+scope_semantics, profile, bounded acquisition and extraction_proof. Acquisition retains available
 version/source/method/revision/namespace/policy_version/extractor_version,
 acquired_at/captured_at/timestamp_convention, artifact locks, complete path sets,
 evidence_status, bundle/projection hashes, and synthetic outcome. It contains no
 full package, manifest, names or raw upstream bodies. History is canonically
 ordered. Both real revisions/digests/times remain visible even with zero events.
+
+Real extraction_proof has exactly version1, extractor and fields. The reviewed
+registry supplies exactly eight UTF8 zero-based half-open span records, each
+with exact path/field/start/end/transformation. Both approved packages use the
+same reviewed spans because their blobs and extractor are identical. The generic
+validator requires exact keys, nonempty <=32 fields, unique(path,field), path<=256,
+field<=128, integer(nonbool) 0<=start<end<=65536 and transformation exact_literal.
+Existing JSON byte/lexical limits apply before decoding. The synthetic profile
+requires extraction_proof null. The content-bound profile receipt covers the
+canonical proof, so a copied receipt cannot authorize changed spans. Registry
+proof is an adjunct to v3 evidence; source bundles, envelopes and replay remain
+unchanged. Complete proof participates in cmp3 and evt3 current-capture identity.
 
 Events retain the v2 event fields with evt3 IDs: type/reference/status/category,
 frozen cmt_id, current_batch_id/captured_at/first_observed_in_window_at and
@@ -99,7 +111,7 @@ physical product introduction, launch, price, stock or source health.
 
 Use ASCII-escaped sorted-key compact finite JSON and lowercase SHA256. Complete
 capture identity is `{snapshot,mode,evidence_state,scope,capture_fingerprint,
-selection}` as in v2: all frozen ordered rows and complete normalized scopes
+selection,profile,extraction_proof}`: all frozen ordered rows and complete normalized scopes
 participate, excluding first_persisted_at. The insertion time is bound by private
 receipts only, never semantic identity.
 

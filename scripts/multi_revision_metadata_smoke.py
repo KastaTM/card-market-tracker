@@ -186,6 +186,11 @@ def main() -> int:
                 for language in ("es", "en"):
                     pair = discover(f"{kind}-{language}")
                     assert pair["result"] == "no_discoveries" and pair["events"] == []
+                    assert len(pair["current"]["extraction_proof"]["fields"]) == 8
+                    assert (
+                        pair["current"]["extraction_proof"]
+                        == pair["history"][0]["extraction_proof"]
+                    )
                     assert (
                         pair["current"]["acquisition"]["revision"]
                         != pair["history"][0]["acquisition"]["revision"]

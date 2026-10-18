@@ -18,6 +18,7 @@ from test_scoped_discovery_core import (
     request as scoped_request,
 )
 
+from card_market_tracker.catalog.validation import CatalogError
 from card_market_tracker.discovery.errors import DiscoveryError
 from card_market_tracker.discovery.multi_comparison import compare
 from card_market_tracker.discovery.multi_input import parse_request, validate_request
@@ -85,6 +86,16 @@ def test_real_pair_four_no_change_units(tmp_path, monkeypatch, kind, selector, l
     assert payload["result"] == "no_discoveries" and payload["events"] == []
     assert payload["counts"]["validated_records"] == 8
     assert payload["counts"]["current_selected_records"] == 1
+    proof = payload["current"]["extraction_proof"]
+    assert proof == payload["history"][0]["extraction_proof"]
+    assert proof["extractor"] == "pinned_ts_literals_v1" and len(proof["fields"]) == 8
+    assert next(field for field in proof["fields"] if field["field"] == "id") == {
+        "path": "data/Sword & Shield/Darkness Ablaze.ts",
+        "field": "id",
+        "start": 104,
+        "end": 111,
+        "transformation": "exact_literal",
+    }
     captures = read_multi_revision_snapshots(path, req)
     scopes = [json.loads(item.capture.scope_json) for item in captures]
     assert {scope["revision"] for scope in scopes} == {
@@ -170,6 +181,9 @@ def test_equal_time_foreign_family_paths_and_forged_receipts(tmp_path):
     object.__setattr__(copied, "_authority", issued._authority)
     object.__setattr__(copied, "capture", replace(issued.capture, capture_fingerprint="0" * 64))
     fail("unsupported_evidence", lambda: compare(baseline, (copied,)))
+    altered_proof = replace(issued, extraction_json='{"version":1}')
+    object.__setattr__(altered_proof, "_authority", issued._authority)
+    fail("unsupported_evidence", lambda: compare(baseline, (altered_proof,)))
     fail(
         "unsupported_evidence",
         lambda: result(path, replace(baseline, profile=REVIEWED_PAIR_PROFILE)),
@@ -209,3 +223,63 @@ def test_missing_extra_batches_and_historical_bound(tmp_path):
     document = req.to_dict()
     document["history"] = [{"batch_id": str(uuid4()), "selector": "unit"} for _ in range(33)]
     fail("input_limit", lambda: parse_request(document))
+
+
+@pytest.mark.parametrize(
+    "attack",
+    [
+        "extra",
+        "version",
+        "empty",
+        "duplicate",
+        "overflow",
+        "bool",
+        "reverse",
+        "negative",
+        "transform",
+        "path",
+        "field",
+        "many",
+        "json",
+        "depth",
+    ],
+)
+def test_generic_extraction_decoder_strict_bounds(tmp_path, attack):
+    from card_market_tracker.discovery.multi_validation import _extraction_proof
+
+    path, token = tmp_path / "proof.db", str(uuid4())
+    persist_bundle_v2(path, approved_bundle_document_v2(), token, EMPTY_MANIFEST)
+    req = request(
+        token, profile=REVIEWED_PAIR_PROFILE, namespace="tcgdex_repository", selector="swsh3"
+    )
+    (issued,) = read_multi_revision_snapshots(path, req)
+    proof = json.loads(issued.extraction_json)
+    field = proof["fields"][0]
+    if attack == "extra":
+        proof["unreviewed"] = "payload"
+    elif attack == "version":
+        proof["version"] = True
+    elif attack == "empty":
+        proof["fields"] = []
+    elif attack == "duplicate":
+        proof["fields"].append(dict(field))
+    elif attack in ("overflow", "bool", "reverse", "negative"):
+        field["start"], field["end"] = {
+            "overflow": (0, 65537),
+            "bool": (False, 1),
+            "reverse": (2, 1),
+            "negative": (-1, 1),
+        }[attack]
+    elif attack == "transform":
+        field["transformation"] = "execute"
+    elif attack in ("path", "field"):
+        field[attack] = "x" * 257
+    elif attack == "many":
+        proof["fields"] *= 5
+    raw = json.dumps(proof)
+    if attack == "json":
+        raw = '{"version":1,"version":1}'
+    elif attack == "depth":
+        raw = "[" * 17 + "0" + "]" * 17
+    with pytest.raises((CatalogError, DiscoveryError)):
+        _extraction_proof(replace(issued, extraction_json=raw))

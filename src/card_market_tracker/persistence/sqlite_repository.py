@@ -790,6 +790,7 @@ def _read_scoped_window(
                 # This independently rebuilds the admitted pinned package or
                 # synthetic scope, resolution, partition, counters and snapshots.
                 envelope = _check_capture(connection, budget, metadata, capture)
+                extraction_proof: object = None
                 if profile is None:
                     if envelope["version"] != 1:
                         raise ScopedDiscoveryError("unsupported_evidence")
@@ -798,9 +799,14 @@ def _read_scoped_window(
                         raise ScopedDiscoveryError("unsupported_evidence")
                     # Full package membership is checked from the reconstructed
                     # envelope, never from requested profile or claimed scope hash.
-                    from ..pinned_repository.bundle_v2 import validate_bundle_v2
+                    from ..pinned_repository.bundle_v2 import (
+                        extraction_evidence_v2,
+                        validate_bundle_v2,
+                    )
 
-                    validate_bundle_v2(envelope["bundle"])
+                    extraction_proof = extraction_evidence_v2(
+                        validate_bundle_v2(envelope["bundle"])
+                    )
                 elif profile == SYNTHETIC_PROFILE:
                     if mode != "synthetic":
                         raise ScopedDiscoveryError("unsupported_evidence")
@@ -841,7 +847,7 @@ def _read_scoped_window(
                 captures.append(
                     validated_capture
                     if profile is None
-                    else _validated_profile_capture(validated_capture, profile)
+                    else _validated_profile_capture(validated_capture, profile, extraction_proof)
                 )
                 budget.remaining()
         finally:

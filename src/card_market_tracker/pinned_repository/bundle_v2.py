@@ -145,3 +145,70 @@ def capture_evidence_v2(bundle: VerifiedBundleV2) -> dict[str, object]:
         "bundle_sha256": APPROVED_BUNDLE_V2_SHA256,
         "projection_sha256": document["projection_sha256"],
     }
+
+
+def extraction_evidence_v2(bundle: VerifiedBundleV2) -> dict[str, object]:
+    """Reviewed extraction proof, bound to either exact package without rewriting history."""
+    document = bundle_document_v2(bundle)
+    return {
+        "version": 1,
+        "extractor": document["extractor_version"],
+        "fields": [
+            {
+                "path": "data/Sword & Shield/Darkness Ablaze.ts",
+                "field": "id",
+                "start": 104,
+                "end": 111,
+                "transformation": "exact_literal",
+            },
+            {
+                "path": "data/Sword & Shield/Darkness Ablaze.ts",
+                "field": "name.es",
+                "start": 185,
+                "end": 210,
+                "transformation": "exact_literal",
+            },
+            {
+                "path": "data/Sword & Shield/Darkness Ablaze.ts",
+                "field": "name.en",
+                "start": 129,
+                "end": 146,
+                "transformation": "exact_literal",
+            },
+            {
+                "path": "data/Sword & Shield/Darkness Ablaze.ts",
+                "field": "releaseDate",
+                "start": 387,
+                "end": 399,
+                "transformation": "exact_literal",
+            },
+            {
+                "path": "data/Sword & Shield/Darkness Ablaze/136.ts",
+                "field": "name.es",
+                "start": 166,
+                "end": 174,
+                "transformation": "exact_literal",
+            },
+            {
+                "path": "data/Sword & Shield/Darkness Ablaze/136.ts",
+                "field": "name.en",
+                "start": 133,
+                "end": 141,
+                "transformation": "exact_literal",
+            },
+            {
+                "path": "data/Sword & Shield/Darkness Ablaze/136.ts",
+                "field": "set",
+                "start": 313,
+                "end": 316,
+                "transformation": "exact_literal",
+            },
+            {
+                "path": "data/Sword & Shield/Darkness Ablaze/136.ts",
+                "field": "$parent_import",
+                "start": 59,
+                "end": 79,
+                "transformation": "exact_literal",
+            },
+        ],
+    }

@@ -84,3 +84,11 @@ A third package/revision, different corpus or policy, authenticated producers,
 larger windows, continuous acquisition, schema/event persistence or retail
 behavior requires a new Orchestrator decision and explicit contract. No input
 parameter extends this registry or these profiles.
+
+The v3 storage profile receipt additionally binds a reviewed extraction_proof:
+version1/extractor/eight exact UTF8 field spans (path, field, start, end,
+exact_literal transformation). Same approved blobs give identical R0/R1 proof.
+`extraction_evidence_v2` independently revalidates the exact package before issuing
+this code-controlled descriptor. V3 outputs/hashes include it; synthetic proof
+is explicitly null. Neither historical envelopes/source package hashes nor v1/v2
+outputs/fingerprints change. See Discovery v3 for strict generic proof bounds.
