@@ -1,5 +1,12 @@
 # Technical debt register
 
+P1c (2026-10-18) separates exact-package replay from a reviewed pair's semantic
+comparability. It authenticates neither independent producers nor provider time,
+and does not recover legacy scope, add retention quotas or qualify power loss.
+TD-001?TD-005 remain open with their existing owners/exit conditions. Exactly two
+packages and unchanged real projections are intentional scope; no excluded
+commercial feature is recorded as artificial implementation debt.
+
 P4b (2026-10-16) consumes supported persisted scope through separate read-only v2
 Discovery. It does not authenticate independent producers or recover legacy empty
 scope, so TD-001–TD-005 remain open. The one approved real capture cannot prove

@@ -1,5 +1,27 @@
 # Roadmap
 
+## P4b closure and P1c opening ? Orchestrator decision, 2026-10-17
+
+The supplied [P1c contract](phases/P1C_MULTI_REVISION_METADATA_CAPTURE_CONTRACT.md)
+records the Orchestrator's P4b **ACCEPTED / PHASE CLOSED** decision in chat and
+opens **P1c Multi-Revision Metadata Capture**. No published closure comment is
+invented. [PR10](https://github.com/KastaTM/card-market-tracker/pull/10),
+[integration record](https://github.com/KastaTM/card-market-tracker/pull/10#issuecomment-6235092935)
+and [historical main CI39040138813](https://github.com/KastaTM/card-market-tracker/actions/runs/39040138813)
+remain historical P4b evidence. Fetched baseline/main is
+`112916382ce02486ca38eb14487220dbb24196e7`, tree
+`c79edde3f13c5983d11505f5917f91559265b506`, ordered parents
+`430e2049c9ffdffb68508329df6556bfed62baa2` and
+`ab5e0fa7d4225c2ce137ce2261cd9686ef765a32`.
+
+P1c permits exactly R0/R1 minimum packages and a separate profile-authorized v3
+comparison in schema2. Four real units must compare with no_discoveries/zero
+events because the approved projections are equal. Positive tests are synthetic.
+No third capture, source, corpus expansion, schema3 or commercial operation is
+authorized. P2/P6a/retail Discovery remain BLOCKED, TD-001?TD-005 remain open.
+P1c acceptance/closure/integration remain Orchestrator decisions; earlier entries
+preserve historical scope.
+
 ## P1b closure and P4b opening — Orchestrator decision, 2026-10-16
 
 The user-supplied [P4b contract](phases/P4B_SCOPED_CAPTURE_DISCOVERY_CONTRACT.md)

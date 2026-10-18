@@ -1,5 +1,19 @@
 # Quality gates
 
+## P1c mandatory evidence
+
+[AC-M01?M16](phases/P1C_MULTI_REVISION_METADATA_CAPTURE_CONTRACT.md) preserve all
+earlier gates: frozen install, Ruff format/check, strict mypy, full pytest and
+runtime coverage >=85% lines/>=80% branches, audit/secret scan, sdist/wheel and
+outside-checkout installation. The sixth harness `multi_revision_metadata_smoke.py`
+joins the existing five in wheel, Compose, AMD64 and QEMU ARM64 with separate
+processes, no runtime network, readonly fixtures and UID10001/private data.
+Retain exactly four CI jobs. QA and REVIEWER must be distinct nonauthors,
+contrast R1 before freeze and inspect final immutable SHA/tree and full four-job
+logs. Record commands/results in phase report and external PR ledger; unrun
+mandatory evidence is FAIL/BLOCKED. Do not substitute historical CI or QEMU for
+new candidate execution or native Raspberry Pi tests.
+
 ## P4b mandatory evidence
 
 [P4b](phases/P4B_SCOPED_CAPTURE_DISCOVERY_CONTRACT.md) adds AC-S01–S15 with all

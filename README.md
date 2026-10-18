@@ -1,5 +1,13 @@
 # Card Market Tracker
 
+P1c adds explicit offline `bundle-v2 verify/import` and
+`discover-multi-revision --db PATH --request REQUEST.json` for exactly two reviewed
+TCGdex repository captures. Their four selected units compare without changes or
+events. [Runbook](docs/runbooks/MULTI_REVISION_METADATA.md),
+[contract](docs/data-contracts/DISCOVERY_V3.md) and
+[phase evidence](docs/phases/P1C_MULTI_REVISION_METADATA_CAPTURE.md) describe the
+scope. Existing bundle/v1/v2 commands and schema2 remain supported.
+
 P1b adds offline import of a reviewed minimum pinned repository package, explicit
 capture queries and safe SQLite v1→v2 migration. See the
 [runbook](docs/runbooks/PINNED_METADATA.md) and [phase contract](docs/phases/P1B_PINNED_METADATA_INGESTION_CONTRACT.md).

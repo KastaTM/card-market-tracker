@@ -28,6 +28,25 @@ def test_exact_path_detector_and_public_value_only():
     assert not reviewed(path, candidate(SCANNER["_BUNDLE"]))
 
 
+@pytest.mark.parametrize(
+    "path,value",
+    [
+        ("docs/sources/P1C_REQUEST_LEDGER.json", "_R1"),
+        ("src/card_market_tracker/pinned_repository/approved_bundle_v2.json", "_PROJECTION"),
+        ("tests/fixtures/pinned_repository_bundle_v2.json", "_R1"),
+        ("src/card_market_tracker/pinned_repository/bundle_v2.py", "_BUNDLE_V2"),
+    ],
+)
+def test_p1c_exceptions_are_exact_path_detector_value(path, value):
+    reviewed = SCANNER["_reviewed_public_candidate"]
+    digest = SCANNER[value]
+    assert reviewed(path, candidate(digest))
+    assert not reviewed("other/" + path, candidate(digest))
+    assert not reviewed(path, candidate(digest, "Secret Keyword"))
+    assert not reviewed(path, candidate(digest[:-1] + ("0" if digest[-1] != "0" else "1")))
+    assert not reviewed("docs/sources/P1B_REQUEST_LEDGER.json", candidate(SCANNER["_R1"]))
+
+
 @pytest.mark.parametrize("unknown", [False, True])
 def test_scan_keeps_unknown_findings_failing_and_never_prints_values(monkeypatch, capsys, unknown):
     report = {

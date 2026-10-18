@@ -8,6 +8,7 @@ from collections.abc import Iterator
 from contextlib import contextmanager, suppress
 from datetime import UTC, datetime
 from pathlib import Path
+from typing import cast
 
 from card_market_tracker.catalog.ingestion import ExternalReference, Observation
 from card_market_tracker.catalog.manifest import parse_manifest, parse_reference
@@ -16,6 +17,7 @@ from card_market_tracker.catalog.resolver import reference_dict
 from card_market_tracker.catalog.validation import CatalogError, uuid_value
 from card_market_tracker.discovery.errors import DiscoveryError
 from card_market_tracker.discovery.models import BatchSnapshot, SnapshotRecord
+from card_market_tracker.discovery.multi_models import MultiRevisionRequest, ProfiledCapture
 from card_market_tracker.discovery.scoped_models import ScopedCapture, ScopedDiscoveryRequest
 from card_market_tracker.discovery.validation import validate_snapshot
 
@@ -701,11 +703,42 @@ def read_snapshots(
 def read_scoped_snapshots(
     path: Path, request: ScopedDiscoveryRequest, *, timeout: float = DEFAULT_TIMEOUT
 ) -> tuple[ScopedCapture, ...]:
+    """Version2 preserves its original R0-only pinned admission."""
+    return cast(tuple[ScopedCapture, ...], _read_scoped_window(path, request, timeout=timeout))
+
+
+def read_multi_revision_snapshots(
+    path: Path, request: MultiRevisionRequest, *, timeout: float = DEFAULT_TIMEOUT
+) -> tuple[ProfiledCapture, ...]:
+    """Read and profile-authorize the complete window in one read transaction."""
+    from ..discovery.multi_input import validate_request
+
+    validated = validate_request(request)
+    return cast(
+        tuple[ProfiledCapture, ...],
+        _read_scoped_window(
+            path, validated.scoped_request(), timeout=timeout, profile=validated.profile
+        ),
+    )
+
+
+def _read_scoped_window(
+    path: Path,
+    request: ScopedDiscoveryRequest,
+    *,
+    timeout: float,
+    profile: str | None = None,
+) -> tuple[ScopedCapture | ProfiledCapture, ...]:
     """Reconstruct complete v2 captures in one owned read-only SQLite snapshot.
 
     Scope selection belongs to the pure comparator, after every row and unit in
     every requested capture has passed retained-admission validation here.
     """
+    from ..discovery.multi_models import (
+        REVIEWED_PAIR_PROFILE,
+        SYNTHETIC_PROFILE,
+        _validated_profile_capture,
+    )
     from ..discovery.scoped_errors import ScopedDiscoveryError
     from ..discovery.scoped_input import validate_request
     from ..discovery.scoped_models import _validated_storage_capture
@@ -715,7 +748,7 @@ def read_scoped_snapshots(
 
     validated = validate_request(request)
     tokens = tuple(sorted((validated.current.batch_id, *(s.batch_id for s in validated.history))))
-    captures: list[ScopedCapture] = []
+    captures: list[ScopedCapture | ProfiledCapture] = []
     with _connection(path, writable=False, timeout=timeout) as (connection, budget):
         _execute(connection, budget, "BEGIN")
         try:
@@ -757,6 +790,22 @@ def read_scoped_snapshots(
                 # This independently rebuilds the admitted pinned package or
                 # synthetic scope, resolution, partition, counters and snapshots.
                 envelope = _check_capture(connection, budget, metadata, capture)
+                if profile is None:
+                    if envelope["version"] != 1:
+                        raise ScopedDiscoveryError("unsupported_evidence")
+                elif profile == REVIEWED_PAIR_PROFILE:
+                    if mode != "pinned":
+                        raise ScopedDiscoveryError("unsupported_evidence")
+                    # Full package membership is checked from the reconstructed
+                    # envelope, never from requested profile or claimed scope hash.
+                    from ..pinned_repository.bundle_v2 import validate_bundle_v2
+
+                    validate_bundle_v2(envelope["bundle"])
+                elif profile == SYNTHETIC_PROFILE:
+                    if mode != "synthetic":
+                        raise ScopedDiscoveryError("unsupported_evidence")
+                else:
+                    raise ScopedDiscoveryError("unsupported_evidence")
                 for row in rows:
                     budget.remaining()
                     _snapshot_target(row, identities)
@@ -782,14 +831,17 @@ def read_scoped_snapshots(
                     },
                 )
                 snapshot = validate_scoped_snapshot(snapshot, provenance=provenance)
+                validated_capture = _validated_storage_capture(
+                    snapshot,
+                    mode,
+                    state,
+                    canonical_json(envelope["scope"]),
+                    capture["capture_fingerprint"],
+                )
                 captures.append(
-                    _validated_storage_capture(
-                        snapshot,
-                        mode,
-                        state,
-                        canonical_json(envelope["scope"]),
-                        capture["capture_fingerprint"],
-                    )
+                    validated_capture
+                    if profile is None
+                    else _validated_profile_capture(validated_capture, profile)
                 )
                 budget.remaining()
         finally:

@@ -137,7 +137,7 @@ def store_legacy(connection: sqlite3.Connection, budget: db._Budget, token: str)
 
 
 def _bundle_batch(
-    bundle: object, batch_id: object, manifest: object
+    bundle: object, batch_id: object, manifest: object, *, multi_revision: bool = False
 ) -> tuple[PersistenceBatch, dict[str, object]]:
     from ..pinned_repository import (
         VerifiedBundle,
@@ -147,14 +147,36 @@ def _bundle_batch(
         validate_bundle,
     )
 
-    verified = validate_bundle(
-        bundle_document(bundle) if isinstance(bundle, VerifiedBundle) else bundle
-    )
+    if multi_revision:
+        from ..pinned_repository.bundle_v2 import (
+            VerifiedBundleV2,
+            bundle_document_v2,
+            capture_evidence_v2,
+            observations_v2,
+            validate_bundle_v2,
+        )
+
+        raw = (
+            bundle_document_v2(bundle)
+            if isinstance(bundle, VerifiedBundleV2)
+            else bundle_document(bundle)
+            if isinstance(bundle, VerifiedBundle)
+            else bundle
+        )
+        verified_v2 = validate_bundle_v2(raw)
+        document = bundle_document_v2(verified_v2)
+        items = observations_v2(verified_v2)
+        evidence = capture_evidence_v2(verified_v2)
+    else:
+        verified = validate_bundle(
+            bundle_document(bundle) if isinstance(bundle, VerifiedBundle) else bundle
+        )
+        document = bundle_document(verified)
+        items = observations(verified)
+        evidence = capture_evidence(verified)
     token = uuid_value(batch_id)
     curated = validated_manifest(manifest)
-    items = observations(verified)
-    evidence = capture_evidence(verified)
-    captured_at = utc_timestamp(bundle_document(verified)["captured_at"], required=True)
+    captured_at = utc_timestamp(document["captured_at"], required=True)
     assert captured_at is not None
     result = resolve(items, curated)
     evidence = dict(evidence)
@@ -195,8 +217,8 @@ def _bundle_batch(
     )
     batch = PersistenceBatch(1, token, captured_at, curated, records, result.entities)
     envelope = {
-        "version": 1,
-        "bundle": bundle_document(verified),
+        "version": document["version"],
+        "bundle": document,
         "scope": evidence,
         "manifest": _manifest(curated),
     }
@@ -422,6 +444,22 @@ def persist_bundle(
         raise PersistenceError(error.category) from None
 
 
+def persist_bundle_v2(
+    path: Path,
+    bundle: object,
+    batch_id: object,
+    manifest: object,
+    *,
+    timeout: float = db.DEFAULT_TIMEOUT,
+) -> WriteResult:
+    """Explicit exact-pair admission; R0 retains its original envelope and replay."""
+    try:
+        batch, envelope = _bundle_batch(bundle, batch_id, manifest, multi_revision=True)
+        return _write(path, batch, envelope, "pinned", timeout)
+    except CatalogError as error:
+        raise PersistenceError(error.category) from None
+
+
 def persist_capture(
     path: Path, batch: PersistenceBatch, scope: object, *, timeout: float = db.DEFAULT_TIMEOUT
 ) -> WriteResult:
@@ -495,8 +533,13 @@ def _check_capture(
                 raise PersistenceError("storage_corrupt") from None
             return cast(dict[str, object], envelope)
         if capture["mode"] == "pinned":
+            if type(envelope.get("version")) is not int or envelope["version"] not in (1, 2):
+                raise PersistenceError("storage_corrupt")
             batch, prepared = _bundle_batch(
-                envelope["bundle"], metadata["batch_id"], envelope["manifest"]
+                envelope["bundle"],
+                metadata["batch_id"],
+                envelope["manifest"],
+                multi_revision=envelope["version"] == 2,
             )
         else:
             from ..catalog.ingestion import RecordError

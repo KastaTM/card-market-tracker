@@ -24,4 +24,5 @@ python3 scripts/observation_persistence_smoke.py --mode docker --image "$image" 
 python3 scripts/discovery_smoke.py --mode docker --image "$image" --platform "$platform" --fixtures tests/fixtures
 python3 scripts/pinned_repository_smoke.py --mode docker --image "$image" --platform "$platform" --fixtures tests/fixtures
 python3 scripts/scoped_capture_discovery_smoke.py --mode docker --image "$image" --platform "$platform" --fixtures tests/fixtures
+python3 scripts/multi_revision_metadata_smoke.py --mode docker --image "$image" --platform "$platform" --fixtures tests/fixtures
 echo "$platform smoke PASS; uid=$uid"

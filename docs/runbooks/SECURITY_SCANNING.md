@@ -1,5 +1,16 @@
 # Narrow reviewed public-digest scanner exceptions
 
+P1c extends the same exact detector/path/value mechanism to four additional paths:
+`docs/sources/P1C_REQUEST_LEDGER.json` (R1 revision + original blob/content digests),
+`src/card_market_tracker/pinned_repository/approved_bundle_v2.json` and
+`tests/fixtures/pinned_repository_bundle_v2.json` (same plus projection), and
+`src/card_market_tracker/pinned_repository/bundle_v2.py` (R1 revision + exact
+R1 package anchor). These public locks were independently recalculated by QA and
+REVIEWER from the original approved bytes before freeze; see the
+[P1c field ledger](../sources/P1C_FIELD_LEDGER.md). Unknown replacements, wrong
+paths or detectors still fail. Added regression tests cover every new path.
+Owner remains Engineering Lead/SEC; revisit upon any path/value/detector change.
+
 Owner: Engineering Lead / SEC, P1b 2026-10-14. Independent REVIEWER checks the
 exception implementation on the final candidate. Revisit when any allowed path,
 source revision, artifact/package digest or scanner detector semantics changes.

@@ -13,3 +13,5 @@ printing/language/variant granularity and conservative contextual resolution.
 
 P3a adds [ADR-0004](0004-offline-observation-persistence.md): atomic offline
 SQLite snapshots, versioned schema, conservative replay and safe recovery.
+
+P1c: [ADR0008](0008-multi-revision-metadata-capture.md) separates acquisition identity, replay equivalence and reviewed semantic comparability.
