@@ -87,6 +87,13 @@ discover/discover-scoped/discover-multi-revision output/codes/effects stay intac
 ## Executed development evidence and final gate recipes
 
 Development runs are provisional until repeated/bound to final immutable objects.
+The first frozen candidate's full local suite passed1166 tests with one inherited
+skip,95.54% lines/90.86% branches; all seven external wheel harnesses, lock/audit,
+Ruff/mypy/secret scan passed. QA derived15 passing independent probes, including
+an actual22.99MB valid v3 result rejected before persistence. REVIEWER found two
+local grammar gaps (impossible category/reference and per-batch count), prompting
+regressions/corrections and renewed exact-candidate review. Those historical
+results do not certify a later revision; final evidence belongs in the PR ledger.
 Author application/storage tests passed, including four real unit comparisons,
 synthetic positives, same-event two-window preservation, replay/conflict, forged
 and mutated receipts, nested invalid grammar, bounds, hostile SQL cells,1005-row

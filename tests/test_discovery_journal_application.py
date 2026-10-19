@@ -205,6 +205,10 @@ def test_coherent_tamper_needs_original_recompute(admitted):
         "target",
         "nested_bool",
         "semantics_bool",
+        "impossible_variant",
+        "impossible_language",
+        "impossible_batch_count",
+        "impossible_reference_count",
     ],
 )
 def test_complete_result_grammar(admitted, attack):
@@ -251,6 +255,14 @@ def test_complete_result_grammar(admitted, attack):
         event["evidence"]["current"]["acquisition"]["version"] = True
     elif attack == "semantics_bool":
         payload["current"]["scope_semantics"]["semantics"]["version"] = True
+    elif attack == "impossible_variant":
+        event["category"] = "unknown_variant"
+    elif attack == "impossible_language":
+        event["category"] = "unknown_language"
+    elif attack == "impossible_batch_count":
+        payload["counts"]["validated_records"] = 33000
+    elif attack == "impossible_reference_count":
+        payload["counts"]["current_selected_references"] = 0
     with pytest.raises(JournalError):
         validate_pair(req.to_dict(), payload)
 

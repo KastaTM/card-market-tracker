@@ -379,8 +379,11 @@ def validate_pair(
             and counts["historical_selected_records"] == historical_count
         )
         _require(_int(counts["validated_records"]) >= len(current_indexes) + historical_count)
+        _require(_int(counts["validated_records"]) <= (1 + len(history)) * 1000)
         _require(_int(counts["current_selected_references"], 1000) <= len(current_indexes))
         _require(_int(counts["historical_selected_references"], 32000) <= historical_count)
+        _require(bool(counts["current_selected_references"]) == bool(current_indexes))
+        _require(bool(counts["historical_selected_references"]) == bool(historical_count))
         events = array_value(payload["events"], 1000)
         _require(
             counts["events"] == len(events)
@@ -436,6 +439,16 @@ def validate_pair(
                     and type(event["category"]) is str
                     and event["category"] in CANDIDATE_CATEGORIES
                 )
+                unknown_variant = reference.kind == "card" and reference.variant == "unknown"
+                unknown_language = (
+                    reference.kind in ("card", "sealed") and reference.language is None
+                )
+                if event["category"] == "unknown_variant":
+                    _require(unknown_variant)
+                elif event["category"] == "unknown_language":
+                    _require(unknown_language and not unknown_variant)
+                else:
+                    _require(not unknown_variant and not unknown_language)
             else:
                 _require(
                     event["status"] == "accepted"
