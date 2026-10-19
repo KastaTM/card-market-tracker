@@ -1,5 +1,10 @@
 # Agent map
 
+- [P4c contract](docs/phases/P4C_DISCOVERY_RESULT_JOURNAL_CONTRACT.md),
+  [ownership](docs/phases/P4C_OWNERSHIP.md), [evidence](docs/phases/P4C_DISCOVERY_RESULT_JOURNAL.md):
+  separate journal v1, verified v3 request/captures only, comparison/event
+  occurrences, no capture-schema/comparator/source or delivery changes.
+
 - [P1c contract](docs/phases/P1C_MULTI_REVISION_METADATA_CAPTURE_CONTRACT.md), [ownership](docs/phases/P1C_OWNERSHIP.md), [evidence](docs/phases/P1C_MULTI_REVISION_METADATA_CAPTURE.md): exact R0/R1 registry, separate Discovery v3; preserve R0/v1/v2 and schema2.
 
 - [P4b contract](docs/phases/P4B_SCOPED_CAPTURE_DISCOVERY_CONTRACT.md) and

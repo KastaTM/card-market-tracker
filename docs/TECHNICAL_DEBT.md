@@ -1,5 +1,13 @@
 # Technical debt register
 
+P4c (2026-10-19) adds a separate bounded append-only journal, local integrity and
+explicit source recompute. It does not authenticate independent producers or an
+administrator controlling both files, establish native Pi durability, confine
+hostile ancestor replacement, add global quotas/retention, or recover legacy
+empty scope. TD-001 through TD-005 remain OPEN with existing owners/exits. The
+16MiB result and finite verification budgets are explicit contract limits; event
+delivery and other excluded features are not artificial implementation debt.
+
 P1c (2026-10-18) separates exact-package replay from a reviewed pair's semantic
 comparability. It authenticates neither independent producers nor provider time,
 and does not recover legacy scope, add retention quotas or qualify power loss.

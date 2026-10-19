@@ -1,5 +1,21 @@
 # Roadmap
 
+## Orchestrator chat decision: P1c closed, P4c open (2026-10-19)
+
+The supplied [P4c contract](phases/P4C_DISCOVERY_RESULT_JOURNAL_CONTRACT.md)
+records P1c ACCEPTED / PHASE CLOSED and opens P4c Discovery Result & Event Journal.
+This attributes the decision to the Orchestrator chat; no GitHub closure comment
+is asserted. P1c PR11 merge/base is de63457bd6de26874a30d2afd688dcd8901e01ff,
+tree41c0f758c8a4bf09cc719a1ce16073245a5aadda, ordered parents
+112916382ce02486ca38eb14487220dbb24196e7 and
+8af647697dd67859b38fc007d493a54642a1d62f. Host fetch verified those objects.
+
+P4c adds only a separate journal for verified v3 results and event occurrences,
+bounded queries, replay, verification/recompute and recovery. No new acquisition.
+P2/P6a and retail Discovery stay BLOCKED; P5/P8a are not opened. P4c engineering
+readiness, merge, acceptance and closure remain distinct decisions. Existing
+sections below preserve historical snapshots.
+
 ## P4b closure and P1c opening ? Orchestrator decision, 2026-10-17
 
 The supplied [P1c contract](phases/P1C_MULTI_REVISION_METADATA_CAPTURE_CONTRACT.md)

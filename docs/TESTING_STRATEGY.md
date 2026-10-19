@@ -1,5 +1,25 @@
 # Testing strategy
 
+## P4c journal requirements
+
+Test the public request+verified-captures admission, not manufactured result JSON.
+Cover real four-unit R0/R1 zero-event comparisons, baseline/no_discoveries and
+explicit synthetic positives. Preserve source bytes/schema and v1/v2/v3 goldens.
+Two different windows sharing evt3 must retain distinct parent evidence. Check
+independent canonical SHA recipe, first-insertion clock, replay and conflict,
+full nested grammar including bool/int, duplicate/nonfinite/deep JSON, hostile
+SQLite scalar/payload sizes, owner/schema/foreign keys/counts/ordinals, safe paths,
+finite locks/deadlines, paging and local versus origin-backed verification.
+
+Storage integration exercises fault-injected rollback, simultaneous real processes,
+process kill before commit/reopen, recovery and validated backup/restore. External
+wheel/container seventh harness joins the previous six and runs all operations
+between independent offline processes. Author tests are not independent QA.
+Nonauthor QA derives additional probes and independent identity/digest expectations;
+REVIEWER independently audits the exact frozen SHA/tree and four complete CI logs.
+Changed candidates require renewed attestations. QEMU/process failure is not
+native Pi/electrical power-loss certification.
+
 ## P1c requirements
 
 Test exact two-package registry membership, tampered revision/times/policy/license/
