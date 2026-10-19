@@ -18,6 +18,7 @@ _EVENTS = frozenset(
         "persistence.completed",
         "discovery.completed",
         "discovery.scoped.completed",
+        "discovery.multi.completed",
     }
 )
 
@@ -115,6 +116,9 @@ class JsonFormatter(logging.Formatter):
             "bundle_import",
             "capture_read",
             "discover_scoped",
+            "discover_multi_revision",
+            "bundle_v2_verify",
+            "bundle_v2_import",
         }:
             payload["operation"] = operation
         duration = getattr(record, "duration_ms", None)

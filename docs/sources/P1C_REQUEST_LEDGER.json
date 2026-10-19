@@ -1,0 +1,85 @@
+{
+  "repository": "tcgdex/cards-database",
+  "revision": "af57972e8f784c2507ab9e573c99bf02ae2e5e42",
+  "budget": {
+    "total": 12,
+    "content": 8,
+    "metadata_recovery": 4
+  },
+  "requests": [
+    {
+      "number": 1,
+      "role": "engineering",
+      "purpose": "authorized_R1_content",
+      "path": "data/Sword & Shield/Darkness Ablaze.ts",
+      "revision": "af57972e8f784c2507ab9e573c99bf02ae2e5e42",
+      "started_at": "2026-10-18T12:18:49.369229Z",
+      "result": "verified",
+      "redirect_followed": false,
+      "finished_at": "2026-10-18T12:18:49.654621Z",
+      "bytes": 536,
+      "git_blob_sha1": "db48bc4a054b3b1c5bd2b6956257f20ba251c79c",
+      "sha256": "4bed34217397bcfeee8925868b50816051022d1bbdb60b63eac702ae6f6bd70a"
+    },
+    {
+      "number": 2,
+      "role": "engineering",
+      "purpose": "authorized_R1_content",
+      "path": "data/Sword & Shield/Darkness Ablaze/136.ts",
+      "revision": "af57972e8f784c2507ab9e573c99bf02ae2e5e42",
+      "started_at": "2026-10-18T12:18:49.655660Z",
+      "result": "verified",
+      "redirect_followed": false,
+      "finished_at": "2026-10-18T12:18:49.912617Z",
+      "bytes": 2028,
+      "git_blob_sha1": "6db89c69b56552fa4e09f26e0e90d14e97466411",
+      "sha256": "bd5ab2a350fe4b453d468f8b89aa904d26b4b57c4c2d62d330111a28a92a4be6"
+    },
+    {
+      "number": 3,
+      "role": "engineering",
+      "purpose": "authorized_R1_content",
+      "path": "LICENSE",
+      "revision": "af57972e8f784c2507ab9e573c99bf02ae2e5e42",
+      "started_at": "2026-10-18T12:18:49.913699Z",
+      "result": "verified",
+      "redirect_followed": false,
+      "finished_at": "2026-10-18T12:18:50.149341Z",
+      "bytes": 1063,
+      "git_blob_sha1": "c67ded0d5f0abc77b4fbdbfd37312f2a88de1b55",
+      "sha256": "12e7dd2d018848b9997d0226c4632f01da86ec4bf6ebe0c8b19953d5e5eeb6ff"
+    },
+    {
+      "number": 4,
+      "role": "engineering",
+      "purpose": "authorized_R1_content",
+      "path": "README.md",
+      "revision": "af57972e8f784c2507ab9e573c99bf02ae2e5e42",
+      "started_at": "2026-10-18T12:18:50.150520Z",
+      "result": "verified",
+      "redirect_followed": false,
+      "finished_at": "2026-10-18T12:18:50.379756Z",
+      "bytes": 6809,
+      "git_blob_sha1": "77bc8108c2cdb54c663e1fdf8c4502ac65f88734",
+      "sha256": "82ab33624f52569fd3b45991d90c840e8b7d77969a1b5d52071a6782cd791de5"
+    }
+  ],
+  "original_disposition": {
+    "state": "deleted_after_independent_QA_and_REVIEWER_contrast",
+    "disposed_at": "2026-10-18T12:22:33.662193Z",
+    "temporary_artifact_count": 4,
+    "retained": "minimum_projection_full_MIT_digests_spans_ledger_only"
+  },
+  "independent_contrast": {
+    "QA": {
+      "time": "2026-10-18T12:20:23.695769Z",
+      "method": "independent_stdlib_byte_lexer_regex_and_direct_slices",
+      "network_requests": 0
+    },
+    "REVIEWER": {
+      "time": "2026-10-18T12:21:54.170321Z",
+      "method": "independent_stdlib_regex_and_direct_byte_extraction",
+      "network_requests": 0
+    }
+  }
+}

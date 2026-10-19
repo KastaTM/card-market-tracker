@@ -1,0 +1,92 @@
+{
+  "version": 2,
+  "repository": "tcgdex/cards-database",
+  "revision": "af57972e8f784c2507ab9e573c99bf02ae2e5e42",
+  "namespace": "tcgdex_repository",
+  "policy_version": "tcgdex_two_artifacts_es_en_v1",
+  "extractor_version": "pinned_ts_literals_v1",
+  "acquired_at": "2026-10-18T12:18:50.379756Z",
+  "captured_at": "2026-10-18T12:18:50.379756Z",
+  "artifacts": [
+    {
+      "path": "data/Sword & Shield/Darkness Ablaze.ts",
+      "git_blob_sha1": "db48bc4a054b3b1c5bd2b6956257f20ba251c79c",
+      "sha256": "4bed34217397bcfeee8925868b50816051022d1bbdb60b63eac702ae6f6bd70a",
+      "bytes": 536,
+      "acquired_at": "2026-10-18T12:18:49.654621Z"
+    },
+    {
+      "path": "data/Sword & Shield/Darkness Ablaze/136.ts",
+      "git_blob_sha1": "6db89c69b56552fa4e09f26e0e90d14e97466411",
+      "sha256": "bd5ab2a350fe4b453d468f8b89aa904d26b4b57c4c2d62d330111a28a92a4be6",
+      "bytes": 2028,
+      "acquired_at": "2026-10-18T12:18:49.912617Z"
+    },
+    {
+      "path": "LICENSE",
+      "git_blob_sha1": "c67ded0d5f0abc77b4fbdbfd37312f2a88de1b55",
+      "sha256": "12e7dd2d018848b9997d0226c4632f01da86ec4bf6ebe0c8b19953d5e5eeb6ff",
+      "bytes": 1063,
+      "acquired_at": "2026-10-18T12:18:50.149341Z"
+    },
+    {
+      "path": "README.md",
+      "git_blob_sha1": "77bc8108c2cdb54c663e1fdf8c4502ac65f88734",
+      "sha256": "82ab33624f52569fd3b45991d90c840e8b7d77969a1b5d52071a6782cd791de5",
+      "bytes": 6809,
+      "acquired_at": "2026-10-18T12:18:50.379756Z"
+    }
+  ],
+  "projection": [
+    {
+      "kind": "set",
+      "language": "es",
+      "external_id": "swsh3",
+      "name": "Oscuridad Incandescente",
+      "set_external_id": null,
+      "card_number": null,
+      "release_date": "2020-08-14"
+    },
+    {
+      "kind": "set",
+      "language": "en",
+      "external_id": "swsh3",
+      "name": "Darkness Ablaze",
+      "set_external_id": null,
+      "card_number": null,
+      "release_date": "2020-08-14"
+    },
+    {
+      "kind": "card",
+      "language": "es",
+      "external_id": "swsh3-136",
+      "name": "Furret",
+      "set_external_id": "swsh3",
+      "card_number": "136",
+      "release_date": null
+    },
+    {
+      "kind": "card",
+      "language": "en",
+      "external_id": "swsh3-136",
+      "name": "Furret",
+      "set_external_id": "swsh3",
+      "card_number": "136",
+      "release_date": null
+    }
+  ],
+  "projection_sha256": "53100248a987378fb3ca2273b7ec219747b876b515f57087faf6becdd0caa479",
+  "license_lines": [
+    "MIT License",
+    "",
+    "Copyright (c) 2021 TCGdex",
+    "",
+    "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:",
+    "",
+    "The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.",
+    "",
+    "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+  ],
+  "license_declaration": "The Database is licensed under the MIT License.",
+  "timestamp_convention": "engineering_completed_utc"
+}

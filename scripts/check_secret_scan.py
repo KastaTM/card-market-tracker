@@ -30,12 +30,22 @@ _ARTIFACTS = {
 }
 _ORIGINALS = _ARTIFACTS | {_REVISION}
 _PACKAGE = _ORIGINALS | {_PROJECTION}
+_R1 = "af57972e8f784c2507ab9e573c99bf02ae2e5e42"  # pragma: allowlist secret
+_BUNDLE_V2 = (
+    "e3b6ec38358a8fc089e65a365fe2f5566459df441e67c3e8ad51b3b5352b50c0"  # pragma: allowlist secret
+)
+_R1_ORIGINALS = _ARTIFACTS | {_R1}
+_R1_PACKAGE = _R1_ORIGINALS | {_PROJECTION}
 _PUBLIC_DIGESTS = {
     "docs/sources/P1B_REQUEST_LEDGER.json": _ORIGINALS,
     "src/card_market_tracker/pinned_repository/approved_bundle_v1.json": _PACKAGE,
     "tests/fixtures/pinned_repository_bundle_v1.json": _PACKAGE,
     "src/card_market_tracker/pinned_repository/bundle.py": {_REVISION, _BUNDLE},
     "tests/test_pinned_repository.py": {_MIT},
+    "docs/sources/P1C_REQUEST_LEDGER.json": _R1_ORIGINALS,
+    "src/card_market_tracker/pinned_repository/approved_bundle_v2.json": _R1_PACKAGE,
+    "tests/fixtures/pinned_repository_bundle_v2.json": _R1_PACKAGE,
+    "src/card_market_tracker/pinned_repository/bundle_v2.py": {_R1, _BUNDLE_V2},
 }
 
 

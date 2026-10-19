@@ -1,5 +1,22 @@
 # Testing strategy
 
+## P1c requirements
+
+Test exact two-package registry membership, tampered revision/times/policy/license/
+projection/hashes, caller registries and forged Python values before retention.
+Keep R0 bytes/fingerprints and v1/v2 goldens; verify R1 rejection by old routes.
+Exercise schema2 new/migrated DBs, replay versus cross-revision conflict, rollback,
+all envelope/row/parent validation including unselected units, one ro snapshot
+with an interleaved writer, deadlines/locks, copy/reopen and recovery identity.
+
+Eight real scenarios (four units, empty/coherent-set manifest) must return
+no_discoveries with zero events and both packages' acquisition evidence. Reverse
+and equal capture times fail. Explicit synthetic profile tests novelty/aliases,
+metadata-only and candidate-to-accepted suppression, historical union/reappearance,
+duplicates/contradictions, incomplete evidence, mixed scopes and receipt forgeries.
+The sixth process harness joins every previous one; CI runtime is offline.
+Independent reviews bind final SHA/tree and all four complete job logs.
+
 ## P4b requirements
 
 Strict v2 requests and Python constructors, exact unit/paths/context/null,

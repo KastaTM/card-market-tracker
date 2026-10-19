@@ -1,5 +1,31 @@
 # Initial threat model
 
+## P1c reviewed pair boundaries (2026-10-18)
+
+Exact whole-package registry locks resist third revisions, poisoned/minimized
+packages, fake caller registries, self-asserted observed values and false clocks.
+Every reader revalidates retained manifest/resolution/scope/rows against approved
+package bytes before returning. Replay keeps acquisition identity; only the
+profile-authorized compatibility key permits R0/R1 differences. V3 emits those
+revisions/digests/times and the registry-reviewed eight-span extraction proof
+explicitly, binds proof to the profile receipt and hashes full evidence. Producer engineering
+timestamps remain local declarations, never externally authenticated timestamps.
+
+Storage issues content-bound profile receipts only after complete reconstruction
+inside one read-only transaction; dataclass construction/replacement grants no
+authority. This boundary does not defend against arbitrary privileged Python
+already executing in-process. Complete unselected-unit checks, lexical/byte limits,
+33-batch/33000-row/1000-event limits and 2s/default5s/max budgets resist hidden
+corruption, snapshot mixing and resource exhaustion. Failed evidence returns
+error/counts null/events empty; zero discoveries says nothing about source health.
+
+Preserve private trusted directories, journal handling, atomic writes, verified
+new-destination recovery, owner UID10001, runtime network denial and strict log
+allowlists. Logs contain fixed operations/categories/counts/duration/run ID, never
+payload/names/paths/tokens/SQL/raw exceptions. Source bodies were temporary and
+removed after independent QA and REVIEWER contrast; only licensed minimum/MIT,
+locks/spans and ledger remain. No new credentials, endpoints or collector exist.
+
 ## P4b scoped read boundaries (2026-10-16)
 
 Scope spoofing, false completeness by filtering, provenance-family mixing,

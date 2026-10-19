@@ -55,6 +55,9 @@ def _parser() -> _Parser:
     scoped = commands.add_parser("discover-scoped")
     scoped.add_argument("--db", type=Path, required=True)
     scoped.add_argument("--request", type=Path, required=True)
+    multi = commands.add_parser("discover-multi-revision")
+    multi.add_argument("--db", type=Path, required=True)
+    multi.add_argument("--request", type=Path, required=True)
     discover = commands.add_parser("discover")
     discover.add_argument("--db", type=Path, required=True)
     discover.add_argument("--request", type=Path, required=True)
@@ -75,6 +78,17 @@ def _parser() -> _Parser:
     )
     for operation in ("verify", "import"):
         command = bundle_operations.add_parser(operation)
+        command.add_argument("--input", type=Path, required=True)
+        if operation == "import":
+            command.add_argument("--db", type=Path, required=True)
+            command.add_argument("--manifest", type=Path, required=True)
+            command.add_argument("--batch-id", required=True)
+    bundle_v2 = commands.add_parser("bundle-v2")
+    multi_operations = bundle_v2.add_subparsers(
+        dest="bundle_operation", required=True, parser_class=_Parser
+    )
+    for operation in ("verify", "import"):
+        command = multi_operations.add_parser(operation)
         command.add_argument("--input", type=Path, required=True)
         if operation == "import":
             command.add_argument("--db", type=Path, required=True)
@@ -227,10 +241,11 @@ def _scoped_error(category: str) -> dict[str, object]:
 
 
 def _report_scoped(payload: dict[str, object], started: float, exit_code: int) -> int:
+    multi = payload["version"] == 3
     metrics: dict[str, object] = {
-        "event": "discovery.scoped.completed",
+        "event": "discovery.multi.completed" if multi else "discovery.scoped.completed",
         "component": "cli",
-        "operation": "discover_scoped",
+        "operation": "discover_multi_revision" if multi else "discover_scoped",
         "result": payload["result"],
         "duration_ms": max(0, round((time.perf_counter() - started) * 1000)),
     }
@@ -267,6 +282,25 @@ def _discover_scoped(database: Path, request_path: Path, started: float) -> int:
         payload, exit_code = _scoped_error(error.category), 2
     except Exception:
         payload, exit_code = _scoped_error("local_execution"), 1
+    return _report_scoped(payload, started, exit_code)
+
+
+def _discover_multi(database: Path, request_path: Path, started: float) -> int:
+    from card_market_tracker.discovery.multi_comparison import compare as compare_multi
+    from card_market_tracker.discovery.multi_input import read_request as read_multi
+    from card_market_tracker.persistence.sqlite_repository import read_multi_revision_snapshots
+
+    try:
+        request = read_multi(request_path)
+        payload = compare_multi(request, read_multi_revision_snapshots(database, request)).to_dict()
+        exit_code = 0
+    except (DiscoveryError, PersistenceError) as error:
+        payload, exit_code = _scoped_error(error.category), error.exit_code
+    except CatalogError as error:
+        payload, exit_code = _scoped_error(error.category), 2
+    except Exception:
+        payload, exit_code = _scoped_error("local_execution"), 1
+    payload["version"] = 3
     return _report_scoped(payload, started, exit_code)
 
 
@@ -399,6 +433,34 @@ def _pinned(args: argparse.Namespace, started: float) -> int:
     return _report_persistence(payload, operation, started, exit_code)
 
 
+def _pinned_multi(args: argparse.Namespace, started: float) -> int:
+    from card_market_tracker.persistence.capture import persist_bundle_v2
+    from card_market_tracker.pinned_repository.bundle_v2 import validate_bundle_v2
+    from card_market_tracker.pinned_repository.errors import BundleError
+
+    operation = "bundle_v2_" + args.bundle_operation
+    try:
+        bundle = validate_bundle_v2(read_json(args.input))
+        if args.bundle_operation == "verify":
+            payload = {"version": 2, "result": "ok", "evidence": "verified_local_pinned_bundle"}
+        else:
+            manifest = parse_manifest(read_json(args.manifest))
+            payload = persist_bundle_v2(args.db, bundle, args.batch_id, manifest).to_dict()
+        exit_code = 3 if payload["result"] == "mixed" else 0
+    except BundleError as error:
+        payload = _persistence_error(error.category)
+        exit_code = 1 if error.category == "approved_package_io" else 2
+    except PersistenceError as error:
+        payload, exit_code = _persistence_error(error.category), error.exit_code
+    except CatalogError as error:
+        payload = _persistence_error(error.category)
+        exit_code = 1 if error.category == "input_io" else 2
+    except Exception:
+        payload, exit_code = _persistence_error("local_execution"), 1
+    payload["version"] = 2
+    return _report_persistence(payload, operation, started, exit_code)
+
+
 def main(argv: list[str] | None = None) -> int:
     started = time.perf_counter()
     run_id = str(uuid4())
@@ -414,10 +476,14 @@ def main(argv: list[str] | None = None) -> int:
             return _catalog(args.input, args.manifest, started)
         if args.command == "discover-scoped":
             return _discover_scoped(args.db, args.request, started)
+        if args.command == "discover-multi-revision":
+            return _discover_multi(args.db, args.request, started)
         if args.command == "discover":
             return _discover(args.db, args.request, started)
         if args.command in ("bundle", "captures"):
             return _pinned(args, started)
+        if args.command == "bundle-v2":
+            return _pinned_multi(args, started)
         if args.command in ("persist", "observations", "db"):
             return _persistence(args, started)
         if args.command != "diagnose":
@@ -438,6 +504,17 @@ def main(argv: list[str] | None = None) -> int:
         print("diagnose: ok (configuration, local work directory)")
         return 0
     except ConfigurationError:
+        if actual_argv and actual_argv[0] == "discover-multi-revision":
+            return _report_scoped({**_scoped_error("invalid_field"), "version": 3}, started, 2)
+        if actual_argv and actual_argv[0] == "bundle-v2":
+            operation = (
+                "bundle_v2_import"
+                if len(actual_argv) > 1 and actual_argv[1] == "import"
+                else "bundle_v2_verify"
+            )
+            return _report_persistence(
+                {**_persistence_error("invalid_field"), "version": 2}, operation, started, 2
+            )
         if actual_argv and actual_argv[0] == "discover-scoped":
             return _report_scoped(_scoped_error("invalid_field"), started, 2)
         if actual_argv and actual_argv[0] == "discover":

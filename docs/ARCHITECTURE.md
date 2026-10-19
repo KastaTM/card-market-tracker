@@ -1,5 +1,23 @@
 # Architecture
 
+## P1c multi-revision capture
+
+Strict bundle-v2 admission -> code-controlled exact R0/R1 registry -> independent
+retained envelope/resolution reconstruction -> schema2 five-table store. R0 uses
+unchanged envelope1 and fingerprints; R1 uses envelope2/scope2. All readers,
+verify and recovery reconstruct the correct version before returning evidence.
+
+Strict v3 request -> one bounded ro/query_only BEGIN snapshot -> complete window
+reconstruction and profile membership -> content-bound generic profile receipts
+-> pure comparator -> cmp3/evt3 output retaining per-capture acquisition evidence.
+Only the compatibility key normalizes reviewed acquisition differences. Replay
+and comparison identities still bind full evidence. Provider logic remains in
+admission/storage; Discovery imports neither provider nor SQLite. Separate
+synthetic profile never grants real admission. V1/v2 semantics stay unchanged;
+v2 explicitly rejects R1. See [ADR0008](adr/0008-multi-revision-metadata-capture.md),
+[bundle v2](data-contracts/PINNED_REPOSITORY_BUNDLE_V2.md) and
+[Discovery v3](data-contracts/DISCOVERY_V3.md).
+
 ## P4b scoped capture Discovery
 
 Strict request v2 -> one schema2 read-only transaction -> complete retained

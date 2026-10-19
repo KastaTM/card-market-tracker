@@ -1,5 +1,18 @@
 # P0.5 source matrix
 
+## P1c exact second repository capture ? 2026-10-18
+
+The [P1c contract](../phases/P1C_MULTI_REVISION_METADATA_CAPTURE_CONTRACT.md)
+authorizes exactly R1 `af57972e8f784c2507ab9e573c99bf02ae2e5e42` and the same four
+R0 paths. Four sequential source reads of twelve maximum were used, with no
+redirect/retry; QA/REVIEWER reused and independently contrasted originals without
+new requests. [Ledger](P1C_REQUEST_LEDGER.json) and [fields](P1C_FIELD_LEDGER.md)
+record acquisition/rights/disposition. Full MIT notice and minimum projection
+retention/publication remain authorized for these bytes only; no additional
+artwork/brand/third-party rights are inferred. Source blobs/projected fields are
+unchanged; comparison proves a valid real unchanged pair, not product novelty.
+REST, third revisions, EUR markets and retail keep prior decisions/blocks.
+
 ## P1b exact repository route — 2026-10-14
 
 Only the [P1b contract](../phases/P1B_PINNED_METADATA_INGESTION_CONTRACT.md)

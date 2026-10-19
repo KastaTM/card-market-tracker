@@ -98,6 +98,16 @@ def _integer(value: object) -> int:
 def validate_capture(
     capture: object, request: ScopedDiscoveryRequest, selection: ScopedSelection
 ) -> SelectedCapture:
+    return _validate_capture(capture, request, selection)
+
+
+def _validate_capture(
+    capture: object,
+    request: ScopedDiscoveryRequest,
+    selection: ScopedSelection,
+    *,
+    multi_revision: bool = False,
+) -> SelectedCapture:
     """No Python constructor, enum or self-attested digest grants DB verification."""
     try:
         if not isinstance(capture, ScopedCapture):
@@ -126,7 +136,8 @@ def validate_capture(
             raise ScopedDiscoveryError("unsupported_evidence")
         if set(scope) != (_PINNED_KEYS if pinned else _SYNTHETIC_KEYS):
             raise CatalogError("invalid_shape")
-        if type(scope["version"]) is not int or scope["version"] != 1:
+        versions = (1, 2) if pinned and multi_revision else (1,)
+        if type(scope["version"]) is not int or scope["version"] not in versions:
             raise CatalogError("unsupported_version")
         if canonical_timestamp(scope["captured_at"]) != batch.captured_at:
             raise CatalogError("invalid_field")
@@ -266,6 +277,22 @@ def validate_capture(
                     "artifacts",
                 )
             }
+            if multi_revision:
+                # Storage's content-bound profile receipt authorizes this exact
+                # pair. Acquisition evidence stays intact in scope/identity;
+                # only the compatibility key omits per-capture differences.
+                semantics = {
+                    key: scope[key]
+                    for key in (
+                        "source",
+                        "method",
+                        "namespace",
+                        "policy_version",
+                        "extractor_version",
+                        "timestamp_convention",
+                        "evidence_status",
+                    )
+                }
             scope["selected_paths"] = _paths(scope["selected_paths"])
             scope["completed_paths"] = _paths(scope["completed_paths"])
         else:
