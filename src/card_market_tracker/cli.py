@@ -13,6 +13,7 @@ from typing import Never
 from uuid import uuid4
 
 from card_market_tracker import __version__
+from card_market_tracker.alerts import cli as outbox_cli
 from card_market_tracker.catalog.adapters.tcgdex import translate_batch
 from card_market_tracker.catalog.manifest import parse_manifest, parse_reference
 from card_market_tracker.catalog.resolver import resolve
@@ -106,6 +107,7 @@ def _parser() -> _Parser:
         if operation in ("backup", "restore", "migrate"):
             command.add_argument("--destination", type=Path, required=True)
     journal_cli.register(commands)
+    outbox_cli.register(commands)
     return parser
 
 
@@ -478,6 +480,8 @@ def main(argv: list[str] | None = None) -> int:
             return _catalog(args.input, args.manifest, started)
         if args.command == "discovery-journal":
             return journal_cli.dispatch(args, started)
+        if args.command == "alert-outbox":
+            return outbox_cli.dispatch(args, started)
         if args.command == "discover-scoped":
             return _discover_scoped(args.db, args.request, started)
         if args.command == "discover-multi-revision":
@@ -508,6 +512,8 @@ def main(argv: list[str] | None = None) -> int:
         print("diagnose: ok (configuration, local work directory)")
         return 0
     except ConfigurationError:
+        if actual_argv and actual_argv[0] == "alert-outbox":
+            return outbox_cli.invalid_arguments(started)
         if actual_argv and actual_argv[0] == "discovery-journal":
             return journal_cli.invalid_arguments(started)
         if actual_argv and actual_argv[0] == "discover-multi-revision":

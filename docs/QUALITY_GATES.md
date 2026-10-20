@@ -1,5 +1,28 @@
 # Quality gates
 
+## P8a mandatory gates
+
+[AC-A01 through AC-A16](phases/P8A_OFFLINE_ALERT_OUTBOX_CONTRACT.md) add
+original-capture admission, shared-event/window evidence, safe renderer,
+pending-only independent storage, strict read/byte/deadline guards, concurrency,
+real process termination/reopen and recovery. Keep all frozen install, Ruff,
+strict mypy, complete pytest, line coverage >=85% and branch coverage >=80%,
+sdist/wheel, dependency audit and secret scan gates unchanged.
+
+`scripts/alert_outbox_smoke.py` is the eighth harness. All eight run in an
+installed wheel outside checkout, Compose and Linux AMD64/ARM64 images; ARM64
+uses QEMU. Runtime networking is disabled, fixtures are mounted read-only,
+container product UID is10001 and persistent data is private. CI retains four
+jobs: quality, compose and two architecture matrix jobs. All four complete logs
+must be inspected against the final candidate/tree. Local daemon absence is
+reported as unexecuted, never inferred PASS from a historical phase.
+
+Nonauthor QA and a different nonauthor REVIEWER must attest the final SHA/tree.
+Follow-up edits renew affected checks and reviews. Record exact reproducible
+commands/results in [the report](phases/P8A_OFFLINE_ALERT_OUTBOX.md) and PR ledger.
+No gate is certified by this requirements section. Missing mandatory evidence
+fails readiness. Merge and phase acceptance remain separate Orchestrator actions.
+
 ## P4c mandatory evidence
 
 [AC-J01 to J16](phases/P4C_DISCOVERY_RESULT_JOURNAL_CONTRACT.md) preserve frozen

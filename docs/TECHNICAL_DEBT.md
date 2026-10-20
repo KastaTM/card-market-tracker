@@ -1,5 +1,16 @@
 # Technical debt register
 
+P8a (2026-10-20) adds an independent bounded append-only pending outbox and
+per-window evidence. TD-001 through TD-005 remain OPEN with their existing
+owners, exits and review horizons. Local consistency and source recomputation
+do not authenticate a privileged administrator controlling all three files.
+Pathname checks still assume trusted ancestors (TD-003); operators must monitor
+capacity and recovery headroom (TD-004). Process termination and ARM64 emulation
+do not qualify native Pi electrical durability (TD-002). No producer-authentication
+or legacy-scope fix is claimed. The finite whole-file verification budget can
+reject large histories; partial verification is never success. Transport and
+automatic retention are excluded scope, not invented implementation debt.
+
 P4c (2026-10-19) adds a separate bounded append-only journal, local integrity and
 explicit source recompute. It does not authenticate independent producers or an
 administrator controlling both files, establish native Pi durability, confine

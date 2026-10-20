@@ -20,6 +20,7 @@ _EVENTS = frozenset(
         "discovery.scoped.completed",
         "discovery.multi.completed",
         "discovery.journal.completed",
+        "alert.outbox.completed",
     }
 )
 
@@ -135,6 +136,18 @@ class JsonFormatter(logging.Formatter):
             "discovery_journal_recompute",
             "discovery_journal_backup",
             "discovery_journal_restore",
+            "alert_outbox_arguments",
+            "alert_outbox_init",
+            "alert_outbox_enqueue",
+            "alert_outbox_get",
+            "alert_outbox_list",
+            "alert_outbox_evidence_list",
+            "alert_outbox_evidence_get",
+            "alert_outbox_preview",
+            "alert_outbox_verify",
+            "alert_outbox_recompute",
+            "alert_outbox_backup",
+            "alert_outbox_restore",
         }:
             payload["operation"] = operation
         duration = getattr(record, "duration_ms", None)
@@ -161,6 +174,9 @@ class JsonFormatter(logging.Formatter):
             ("scoped_selected_record_count", 33000),
             ("journal_comparisons_count", 100000000),
             ("journal_occurrences_count", 100000000),
+            ("outbox_alerts_count", 100000000),
+            ("outbox_associations_count", 100000000),
+            ("outbox_events_count", 1000),
         ):
             value = getattr(record, field, None)
             if type(value) is int and 0 <= value <= maximum:

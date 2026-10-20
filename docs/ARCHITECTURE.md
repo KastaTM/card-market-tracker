@@ -1,5 +1,37 @@
 # Architecture
 
+## P8a offline alert outbox
+
+Three explicit independent database paths and one cmp3 plus local destination
+alias enter `alerts.application`. It retains one complete journal pair, reads
+original verified captures through the existing reader, runs the unchanged v3
+comparator and requires complete canonical equality plus comparison identity.
+The same frozen content drives pure policy and renderer functions. A private
+content-bound receipt admits only that content to the independent outbox writer.
+The receipt is an application boundary, not a signature against privileged code.
+
+`alerts` owns SQLite application CMTA/schema1 with ownership metadata, immutable
+pending intentions and per-comparison evidence associations. alt1 hashes the
+canonical destination/event preimage; it excludes window, renderer and clocks.
+One event in two windows keeps one alert per destination and two full evidence
+rows. BEGIN IMMEDIATE commits all additions atomically; replay preserves bytes
+and initial preparation time, and intrinsic conflicts roll back everything.
+
+Captures, journal and outbox have separate snapshots and backups. Origin checking
+precedes the outbox commit and relies on contracted source immutability; no
+distributed transaction is claimed. Local verify checks file consistency;
+explicit association recompute checks it against original capture evidence.
+Preview is read-only. Query pages are bounded keyset snapshots, with no shared
+snapshot across successive pages. One cooperative deadline covers enqueue.
+
+The package adds no dependency or transport. Earlier Discovery/capture APIs,
+algorithms, schemas and source bytes are preserved. See
+[ADR0010](adr/0010-offline-alert-outbox.md),
+[API](data-contracts/ALERT_OUTBOX_V1.md),
+[storage](data-contracts/ALERT_OUTBOX_STORAGE_V1.md) and
+[recovery](runbooks/ALERT_OUTBOX_RECOVERY.md). Earlier sections describe their
+own phase scope.
+
 ## P4c Discovery result and event journal
 
 Strict v3 request + existing capture DB -> unchanged verified snapshot reader ->

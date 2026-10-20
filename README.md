@@ -1,5 +1,14 @@
 # Card Market Tracker
 
+P8a adds `cmt alert-outbox`: an independent offline SQLite outbox that prepares
+pending alerts from an explicit journal comparison after recomputing it against
+original captures. One event/destination keeps one immutable message and full
+evidence for every comparison window. Preview is read-only. See the
+[API](docs/data-contracts/ALERT_OUTBOX_V1.md),
+[recovery runbook](docs/runbooks/ALERT_OUTBOX_RECOVERY.md) and
+[phase evidence](docs/phases/P8A_OFFLINE_ALERT_OUTBOX.md). No transport,
+credentials, scheduler or new source acquisition is included.
+
 P1c adds explicit offline `bundle-v2 verify/import` and
 `discover-multi-revision --db PATH --request REQUEST.json` for exactly two reviewed
 TCGdex repository captures. Their four selected units compare without changes or

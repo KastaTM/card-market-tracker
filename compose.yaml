@@ -1,9 +1,11 @@
 services:
   diagnose:
     build: .
+    network_mode: none
     command: ["diagnose"]
   version:
     build: .
+    network_mode: none
     command: ["--version"]
   catalog:
     build: .
