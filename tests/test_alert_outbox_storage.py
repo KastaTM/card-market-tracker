@@ -7,7 +7,7 @@ import sqlite3
 import subprocess
 import sys
 import time
-from contextlib import closing
+from contextlib import closing, contextmanager
 from copy import deepcopy
 
 import pytest
@@ -564,3 +564,36 @@ def test_hostile_numeric_cells_are_guarded_before_materialization(
     monkeypatch.setattr(storage, "_execute", observe)
     failure(category, lambda: storage.get(path, aid))
     assert max(loaded_sizes, default=0) < 64 * 1024
+
+
+@pytest.mark.parametrize("operation", ("init", "backup", "restore"))
+@pytest.mark.parametrize("suffix", ("-journal", "-wal", "-shm"))
+def test_failure_cleanup_preserves_sidecars_and_reserved_main(
+    outbox, tmp_path, monkeypatch, operation, suffix
+):
+    source = outbox[2]
+    source_bytes = source.read_bytes()
+    target = tmp_path / "failed-destination.db"
+    sidecar = tmp_path / (target.name + suffix)
+    original_connect = storage._connect
+    sentinel = b"unrelated recovery evidence must survive"
+
+    @contextmanager
+    def fail_reserved_target(path, budget, *, writable=False):
+        if path == target:
+            assert target.exists()
+            sidecar.write_bytes(sentinel)
+            raise OutboxError("storage_io")
+        with original_connect(path, budget, writable=writable) as db:
+            yield db
+
+    monkeypatch.setattr(storage, "_connect", fail_reserved_target)
+    call = (
+        (lambda: storage.initialize(target))
+        if operation == "init"
+        else lambda: getattr(storage, operation)(source, target)
+    )
+    failure("storage_io", call)
+    assert sidecar.read_bytes() == sentinel
+    assert target.exists()
+    assert source.read_bytes() == source_bytes

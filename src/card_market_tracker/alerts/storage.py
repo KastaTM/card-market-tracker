@@ -716,6 +716,19 @@ def evidence_list(
     )
 
 
+def _cleanup_reserved(path: Path, identity: tuple[int, int]) -> None:
+    """Remove only our unused inode; preserve SQLite sidecars and recovery evidence."""
+    with suppress(OSError, PersistenceError):
+        information = paths._unsafe_stat(path, file=True)
+        if (information.st_dev, information.st_ino) != identity:
+            return
+        # SQLite owns recovery/sidecar removal. If anything remains after close,
+        # retain the main file as well for recovery or operator investigation.
+        if any(paths._exists(sidecar) for sidecar in paths._sidecars(path)):
+            return
+        path.unlink()
+
+
 def initialize(path: Path, *, timeout: float = DEFAULT_TIMEOUT) -> dict[str, object]:
     budget = Budget(timeout)
     target = _path(path, new=True)
@@ -745,7 +758,7 @@ def initialize(path: Path, *, timeout: float = DEFAULT_TIMEOUT) -> dict[str, obj
         raise OutboxError("storage_io") from None
     finally:
         if not completed and identity is not None:
-            paths._remove_owned(target, identity)
+            _cleanup_reserved(target, identity)
 
 
 def _copy(source: Path, destination: Path, operation: str, timeout: float) -> dict[str, object]:
@@ -789,7 +802,7 @@ def _copy(source: Path, destination: Path, operation: str, timeout: float) -> di
         raise OutboxError("storage_io") from None
     finally:
         if not completed and identity is not None and target is not None:
-            paths._remove_owned(target, identity)
+            _cleanup_reserved(target, identity)
 
 
 def backup(

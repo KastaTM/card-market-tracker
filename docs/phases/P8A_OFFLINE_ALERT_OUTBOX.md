@@ -146,7 +146,7 @@ logs and immutable job URLs are linked from the final PR report.
 Initial complete integration:1244passed/1historicalWindowsSkip, lines92.87% and
 branches85.66%, above unchanged85%/80% thresholds. This preceded the remaining
 author boundary tests; final exact-head suite/counts/coverage are recorded in
-the PR ledger. Final author subsets: storage55passed; application/policy/CLI
+the PR ledger. Final author subsets: storage64passed; application/policy/CLI
 106passed; logging21passed. Root integrated the final numeric-cell guard and
 two storage regressions after independent QA reproduced the issue. Initial
 installed wheel and all eight local Compose/AMD64/ARM64 harnesses passed;
@@ -161,6 +161,15 @@ correctly returning storage_timeout before lock acquisition. The public lock
 probe now supplies1s while retaining its existing under2s elapsed bound and
 exact storage_locked expectation; explicit early-deadline tests remain. This
 distinguishes source-verification timeout from an actual SQLite busy timeout.
+
+Independent final review also found the inherited persistence cleanup helper
+manually removed sidecars after failed init/copy. The outbox now has its own
+cleanup: it removes only the unchanged reserved main inode when no sidecar
+remains; otherwise it preserves main and sidecars for recovery/investigation.
+The existing persistence/journal modules remain unchanged. Nine author cases
+cover init/backup/restore crossed with journal/wal/shm sentinels; the reviewer's
+independent failure-after-close reproduction is rerun on the corrected candidate.
+Any earlier SHA-specific QA/CI/review evidence is historical until renewed.
 
 ## Acceptance and final gate evidence map
 

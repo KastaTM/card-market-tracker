@@ -19,6 +19,11 @@ needed for a copy or full verify. Timeout is failure and must not be described
 as a partially verified database. Budgets cooperate with SQLite/application
 work and cannot guarantee a deadline against blocked kernel/device calls.
 Inspect capacity before copies: no global quota or automatic retention exists.
+After a failed init/copy, a reserved destination with any remaining SQLite
+sidecar is preserved together with its sidecars. Treat these as recovery evidence;
+choose a fresh destination for another attempt and investigate without manually
+deleting sidecars. Cleanup only removes its unchanged reserved main inode when
+no sidecar remains after SQLite closes.
 
 Safe preview of a selected retained alert:
 

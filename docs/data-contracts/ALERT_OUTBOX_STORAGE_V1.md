@@ -126,7 +126,9 @@ Windows ACL limitations remain TD-003.
 
 Only explicit init reserves a new private file. Init, backup and restore never
 overwrite an existing destination or existing destination sidecar. Failure cleanup
-removes only its own exclusively reserved inode; sidecars are never manually
+removes only its own exclusively reserved inode when no sidecar remains after
+SQLite closes. If any sidecar remains, both it and the main file are preserved
+for SQLite recovery or operator investigation; sidecars are never manually
 deleted. Backup holds a validated source read transaction, uses SQLite backup,
 validates the destination and reopens/validates it before success. Restore uses
 the same rules with a new destination. Both preserve messages, versions, digests,
