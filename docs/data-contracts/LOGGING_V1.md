@@ -1,5 +1,19 @@
 # Logging contract v1
 
+## Compatible P4c extension (2026-10-19)
+
+`discovery.journal.completed` identifies the separate journal CLI. Component
+remains cli. Fixed operations are discovery_journal_arguments/init/record/get/
+list/event_occurrences/verify/recompute/backup/restore (each with the full
+discovery_journal_ prefix). Result additionally permits inserted; replay/ok/error
+retain their meanings. New fixed error categories are conflict, invalid_profile,
+storage_missing and recompute_mismatch. Existing input/storage categories remain.
+Strict integer journal_comparisons_count and journal_occurrences_count are
+bounded0..100000000. Unknown/out-of-bound fields are omitted, never serialized raw.
+Run correlation and duration retain existing semantics. No payload, reference,
+selector, path, SQL, credentials or raw exception text enters logs. Explicit
+journal stdout carries contracted evidence and requires local protection.
+
 ## Compatible P4b extension (2026-10-16)
 
 `discovery.scoped.completed` with operation `discover_scoped` identifies one v2

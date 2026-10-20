@@ -1,5 +1,45 @@
 # Initial threat model
 
+## P4c journal boundaries (2026-10-19)
+
+Public admission accepts only strict v3 requests plus original verified capture
+DB and independent journal paths. The application seals bounded canonical bytes
+only after the unchanged snapshot reader/comparator path. Storage revalidates
+the receipt and full semantic grammar. This resists ordinary constructor/flag/
+JSON admission forgery, not privileged code in the same process. The comparator
+and source registry/guards remain unchanged; acquisition budget is zero.
+
+The journal's own owner/application_id/schema1/exact inventory prevents accidental
+capture DB conversion. Atomic comparison+occurrences, composite occurrence keys,
+content comparison on replay/conflict and preserved first insertion prevent
+partial or falsely globally deduplicated evidence. DELETE/FULL and rollback
+recovery do not authenticate hardware or establish physical power-loss resistance.
+
+SQL type/byte guards cover schema/scalar/payload fields before materialization.
+Strict finite/duplicate-aware bounded JSON and full nested grammar protect local
+verification from coherently hashed invalid input; ASCII canonical comparison
+distinguishes bool from int. A coherent valid rewrite can still pass local verify;
+source recompute is a separate read-only check against original captures. Neither
+can authenticate an administrator controlling both files.
+
+Per-result16MiB before copying, page1MiB/keyset100 default1000 max, original
+request/history/event limits and one shared2s/default5s/max budget bound ordinary
+work. Busy/progress and encoding/scan loops share the deadline. OS/device stalls
+are outside cooperative bounds. Append-only growth still needs capacity monitoring
+(TD-004); no retention/quota is introduced. A timed-out scan never means PASS.
+
+Existing trusted-directory/link/hardlink/sidecar checks apply separately to both
+files and recovery targets. New files are exclusively reserved; no existing
+destination is overwritten. Backup holds a verified snapshot, copies via SQLite,
+validates and reopens destination. No atomic two-file backup is claimed. Preserve
+sidecars for engine recovery; never delete them to force success. TD-003 hostile
+administrator/ancestor replacement and Windows ACL limits remain unchanged.
+
+Logs contain only fixed operation/category/result, run ID, duration and bounded
+counts; explicit stdout may contain sensitive local evidence. Protect it along
+with DB/backups. Runtime remains offline, nonroot UID10001 in containers, with
+readonly fixtures. TD-001 through TD-005 remain open with existing owners/exits.
+
 ## P1c reviewed pair boundaries (2026-10-18)
 
 Exact whole-package registry locks resist third revisions, poisoned/minimized

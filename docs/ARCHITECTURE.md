@@ -1,5 +1,33 @@
 # Architecture
 
+## P4c Discovery result and event journal
+
+Strict v3 request + existing capture DB -> unchanged verified snapshot reader ->
+unchanged pure comparator -> bounded canonical content-bound application receipt
+-> independently validated journal writer -> atomic comparison + occurrences.
+The capture snapshot and journal commit are separate transactions; immutable
+verified capture evidence bridges them. No distributed commit is claimed.
+
+The separate SQLite journal has its own application_id/owner/version1 and exactly
+three tables. Captures retain schema2/five tables. PK(comparison_id,event_id)
+preserves distinct window evidence sharing evt3. Replay compares complete bytes,
+not just a digest, and preserves first_recorded_at. No overwrites or auto-init.
+
+Local verify checks exact schema/JSON/digest/relational consistency; explicit
+source recompute rereads captures and compares the full result. Privileged
+coherent tampering is not authenticated by local verify. Keyset summary queries
+are bounded and live across pages. Online backup copies a verified snapshot to a
+new safe file and reopens it. The two DBs need separate backup/recovery workflows.
+
+Application, journal storage and journal CLI are orchestration/IO modules under
+discovery; multi_comparison and all existing pure algorithms remain independent
+of SQLite/provider/IO. Standard-library dependencies only. No source acquisition,
+delivery/outbox, scheduler, commercial metadata or API/frontend is introduced.
+See [ADR0009](adr/0009-discovery-result-event-journal.md),
+[journal API](data-contracts/DISCOVERY_JOURNAL_V1.md),
+[storage](data-contracts/DISCOVERY_JOURNAL_STORAGE_V1.md) and
+[recovery](runbooks/DISCOVERY_JOURNAL_RECOVERY.md).
+
 ## P1c multi-revision capture
 
 Strict bundle-v2 admission -> code-controlled exact R0/R1 registry -> independent

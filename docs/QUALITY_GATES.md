@@ -1,5 +1,23 @@
 # Quality gates
 
+## P4c mandatory evidence
+
+[AC-J01 to J16](phases/P4C_DISCOVERY_RESULT_JOURNAL_CONTRACT.md) preserve frozen
+install/lock, Ruff format/lint, strict mypy, full pytest with runtime coverage
+>=85% lines/>=80% branches, build/external wheel, audit and secret scan. The
+seventh discovery_journal_smoke.py runs alongside all six existing harnesses in
+outside-checkout wheel, Compose, AMD64 and ARM64/QEMU: separate offline processes,
+readonly fixtures, UID10001/private data and verified recovery. Keep four CI jobs.
+
+Require independent nonauthor QA and REVIEWER, distinct from each other, on the
+exact frozen SHA/tree; risks include dual-window/same-event evidence, forged
+admission, hostile SQL/JSON, bounds, rollback, process interruption and concurrent
+writers. Full four-job logs and postpublication review evidence belong in the PR
+ledger, read back after publishing. Unexecuted evidence is FAIL/BLOCKED; historical
+P1c or prototype success cannot certify P4c. Local Docker unavailability does not
+constitute a container pass; exact-candidate CI must execute those gates. No merge
+or phase closure follows from engineering readiness.
+
 ## P1c mandatory evidence
 
 [AC-M01?M16](phases/P1C_MULTI_REVISION_METADATA_CAPTURE_CONTRACT.md) preserve all

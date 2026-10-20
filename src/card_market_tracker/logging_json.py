@@ -19,6 +19,7 @@ _EVENTS = frozenset(
         "discovery.completed",
         "discovery.scoped.completed",
         "discovery.multi.completed",
+        "discovery.journal.completed",
     }
 )
 
@@ -89,6 +90,10 @@ class JsonFormatter(logging.Formatter):
             "scope_mismatch",
             "unit_missing",
             "ambiguous_unit",
+            "conflict",
+            "invalid_profile",
+            "storage_missing",
+            "recompute_mismatch",
         }:
             payload["error_category"] = category
         result = getattr(record, "result", None)
@@ -101,6 +106,7 @@ class JsonFormatter(logging.Formatter):
             "baseline",
             "no_discoveries",
             "discoveries",
+            "inserted",
         }:
             payload["result"] = result
         operation = getattr(record, "operation", None)
@@ -119,6 +125,16 @@ class JsonFormatter(logging.Formatter):
             "discover_multi_revision",
             "bundle_v2_verify",
             "bundle_v2_import",
+            "discovery_journal_arguments",
+            "discovery_journal_init",
+            "discovery_journal_record",
+            "discovery_journal_get",
+            "discovery_journal_list",
+            "discovery_journal_event_occurrences",
+            "discovery_journal_verify",
+            "discovery_journal_recompute",
+            "discovery_journal_backup",
+            "discovery_journal_restore",
         }:
             payload["operation"] = operation
         duration = getattr(record, "duration_ms", None)
@@ -143,6 +159,8 @@ class JsonFormatter(logging.Formatter):
             ("event_count", 1000),
             ("scoped_validated_record_count", 33000),
             ("scoped_selected_record_count", 33000),
+            ("journal_comparisons_count", 100000000),
+            ("journal_occurrences_count", 100000000),
         ):
             value = getattr(record, field, None)
             if type(value) is int and 0 <= value <= maximum:

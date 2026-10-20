@@ -18,6 +18,7 @@ from card_market_tracker.catalog.manifest import parse_manifest, parse_reference
 from card_market_tracker.catalog.resolver import resolve
 from card_market_tracker.catalog.validation import CatalogError, read_json
 from card_market_tracker.config import ConfigurationError, load_config
+from card_market_tracker.discovery import journal_cli
 from card_market_tracker.discovery.comparison import compare
 from card_market_tracker.discovery.errors import DiscoveryError
 from card_market_tracker.discovery.input import read_request
@@ -104,6 +105,7 @@ def _parser() -> _Parser:
         command.add_argument("--db", type=Path, required=True)
         if operation in ("backup", "restore", "migrate"):
             command.add_argument("--destination", type=Path, required=True)
+    journal_cli.register(commands)
     return parser
 
 
@@ -474,6 +476,8 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         if args.command == "catalog":
             return _catalog(args.input, args.manifest, started)
+        if args.command == "discovery-journal":
+            return journal_cli.dispatch(args, started)
         if args.command == "discover-scoped":
             return _discover_scoped(args.db, args.request, started)
         if args.command == "discover-multi-revision":
@@ -504,6 +508,8 @@ def main(argv: list[str] | None = None) -> int:
         print("diagnose: ok (configuration, local work directory)")
         return 0
     except ConfigurationError:
+        if actual_argv and actual_argv[0] == "discovery-journal":
+            return journal_cli.invalid_arguments(started)
         if actual_argv and actual_argv[0] == "discover-multi-revision":
             return _report_scoped({**_scoped_error("invalid_field"), "version": 3}, started, 2)
         if actual_argv and actual_argv[0] == "bundle-v2":
