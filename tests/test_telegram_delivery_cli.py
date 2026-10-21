@@ -40,6 +40,8 @@ def test_all_public_operations_json_and_redaction(prepared, tmp_path, capsys, mo
         assert log["event"] == "telegram.delivery.completed"
         assert log["run_id"] and log["duration_ms"] >= 0
         assert log["result"] == payload["result"]
+        if "previous_state" in payload:
+            assert log["previous_state"] == payload["previous_state"]
         assert output.out.strip() == json.dumps(
             payload, ensure_ascii=True, sort_keys=True, separators=(",", ":")
         )
@@ -66,6 +68,17 @@ def test_all_public_operations_json_and_redaction(prepared, tmp_path, capsys, mo
         "--operator-private-owned",
     )
     invoke("destination-validate", "--alias", "private-operator")
+    invoke(
+        "destination-add",
+        "--alias",
+        "new-private",
+        "--bot-id",
+        123,
+        "--chat-id",
+        456,
+        "--operator-private-owned",
+    )
+    assert invoke("destination-validate", "--alias", "new-private")["result"] == "ok"
     source = ("--captures-db", captures, "--journal-db", journal, "--outbox-db", outbox)
     invoke(
         "prepare", *source, "--alert-id", aid, "--comparison-id", cid, "--alias", "private-operator"

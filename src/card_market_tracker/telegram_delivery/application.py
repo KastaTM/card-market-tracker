@@ -360,6 +360,7 @@ def send(
     return {
         **finished,
         "operation": "send",
+        "previous_state": delivery["state"],
         "result": "ok" if finished["state"] == "confirmed" else "error",
         **(
             {"error_category": finished.get("error_category", result.error_category)}

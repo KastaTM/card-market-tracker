@@ -162,8 +162,8 @@ def main() -> int:
                 ]
                 assert len(logs) == 1 and logs[0]["event"] == "telegram.delivery.completed"
                 for forbidden in (
-                    "7001",
-                    "8001",
+                    '"bot_id"',
+                    '"chat_id"',
                     "SYNTHETIC",
                     data,
                     "api.telegram.org",

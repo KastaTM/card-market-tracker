@@ -107,7 +107,7 @@ def test_identity_oracle_and_immutable_route_attestation_validation(tmp_path):
     storage.destination_add(path, "local", 101, 202, operator_private_owned=True)
     failure("not_validated", lambda: storage._prepare_verified(path, sealed(binding())))
     failure("conflict", lambda: storage.destination_validated(path, "local", 102, 202))
-    storage.destination_validated(path, "local", 101, 202)
+    assert storage.destination_validated(path, "local", 101, 202)["result"] == "ok"
     before = storage.load_destination(path, "local")
     assert storage.destination_validated(path, "local", 101, 202)["result"] == "replay"
     assert (

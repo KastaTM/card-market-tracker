@@ -90,7 +90,7 @@ def _report(payload: dict[str, object], operation: str, started: float, code: in
         extra["error_category"] = payload["error_category"]
     nested = payload.get("delivery")
     delivery = nested if isinstance(nested, dict) else {}
-    for key in ("delivery_id", "attempt_id", "state", "attempt_count"):
+    for key in ("delivery_id", "attempt_id", "state", "previous_state", "attempt_count"):
         if key in payload:
             extra[key] = payload[key]
         elif key in delivery:

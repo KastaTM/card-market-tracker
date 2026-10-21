@@ -16,7 +16,7 @@ alert for qualification. The fixed alias is operator-private.
 ```powershell
 uv build --no-build-isolation
 uv venv --python 3.13 .p8b-evidence/wheel
-uv pip install --python .p8b-evidence/wheel/Scripts/python.exe --no-deps dist/card_market_tracker-0.1.0-py3-none-any.whl
+uv pip install --python .p8b-evidence/wheel/Scripts/python.exe --no-deps --reinstall dist/card_market_tracker-0.1.0-py3-none-any.whl
 .p8b-evidence/wheel/Scripts/python.exe scripts/prepare_telegram_live_gate.py --directory .p8b-evidence/live --fixtures tests/fixtures
 $p8bLocal = (Resolve-Path .p8b-evidence/live).Path
 $p8bSelection = Get-Content "$p8bLocal/selection.json" -Raw | ConvertFrom-Json

@@ -820,7 +820,7 @@ def destination_validated(
             previous = _load_destination(db, alias, budget)
             if previous["bot_id"] != bot_id or previous["chat_id"] != chat_id:
                 raise DeliveryError("conflict")
-            result = "replay" if previous["validated_at"] is not None else "validated"
+            result = "replay" if previous["validated_at"] is not None else "ok"
             if previous["validated_at"] is None:
                 _execute(
                     db,

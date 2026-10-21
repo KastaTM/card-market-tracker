@@ -16,6 +16,10 @@ def main() -> int:
     parser.add_argument("--operation", choices=("validate", "send", "replay"), required=True)
     parser.add_argument("--operator-authorized", action="store_true", required=True)
     args = parser.parse_args()
+    import card_market_tracker
+
+    if not Path(card_market_tracker.__file__).is_relative_to(Path(sys.prefix)):
+        raise RuntimeError("qualification_requires_installed_wheel")
     from card_market_tracker.cli import main as cli_main
     from card_market_tracker.telegram_delivery import application, storage
     from card_market_tracker.telegram_delivery.transport import TelegramTransport
