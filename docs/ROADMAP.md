@@ -1,5 +1,28 @@
 # Roadmap
 
+## Orchestrator chat decision: P4c closed, P8a open (2026-10-20)
+
+The supplied [P8a contract](phases/P8A_OFFLINE_ALERT_OUTBOX_CONTRACT.md) records
+the Orchestrator's acceptance and closure of P4c in chat and opens P8a Offline
+Alert Outbox. [PR12](https://github.com/KastaTM/card-market-tracker/pull/12) is
+merged at `b89fff319a94e5eb6e4b7bdad944e879bad371f6`, tree
+`8f62a1d85b375ee839dcd95e09a578cb643c85b6`, ordered parents
+`de63457bd6de26874a30d2afd688dcd8901e01ff` and
+`9fb53144dec521d0dde49c02d41022be831421c2`. Local Git objects and live main
+were checked before edits. No GitHub closure comment is asserted. Historical
+[P4c main CI](https://github.com/KastaTM/card-market-tracker/actions/runs/39462043464)
+is not P8a evidence.
+
+P8a authorizes a separate pending offline outbox, deterministic identity per
+destination/event, complete evidence per comparison, origin recomputation,
+read-only preview and local recovery. Acquisition budget is zero. Captures
+schema2, journal schema1, existing comparators/identities and exact R0/R1 plus
+synthetic constraints remain. P2, P6a and retail Discovery remain BLOCKED;
+P5/P8b are not open. TD-001 through TD-005 remain OPEN. The
+[P8a report](phases/P8A_OFFLINE_ALERT_OUTBOX.md) records executable evidence;
+only the Orchestrator may accept or close the phase. Merge is not authorized.
+Earlier entries below preserve historical decisions.
+
 ## Orchestrator chat decision: P1c closed, P4c open (2026-10-19)
 
 The supplied [P4c contract](phases/P4C_DISCOVERY_RESULT_JOURNAL_CONTRACT.md)

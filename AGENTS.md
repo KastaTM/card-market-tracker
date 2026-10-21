@@ -1,5 +1,11 @@
 # Agent map
 
+- [P8a contract](docs/phases/P8A_OFFLINE_ALERT_OUTBOX_CONTRACT.md),
+  [ownership](docs/phases/P8A_OWNERSHIP.md),
+  [evidence](docs/phases/P8A_OFFLINE_ALERT_OUTBOX.md): separate offline outbox v1,
+  original-capture verified journal comparisons, destination/event deduplication,
+  full evidence per comparison; no transport, source, comparator or prior DB changes.
+
 - [P4c contract](docs/phases/P4C_DISCOVERY_RESULT_JOURNAL_CONTRACT.md),
   [ownership](docs/phases/P4C_OWNERSHIP.md), [evidence](docs/phases/P4C_DISCOVERY_RESULT_JOURNAL.md):
   separate journal v1, verified v3 request/captures only, comparison/event

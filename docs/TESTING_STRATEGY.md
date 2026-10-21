@@ -1,5 +1,30 @@
 # Testing strategy
 
+## P8a requirements
+
+Test public explicit comparison admission against original captures, including
+coherently modified journal evidence and forged or mutated receipts/JSON/DTOs.
+Derive alt1 independently. Check one evt3 in two cmp3 windows retains one alert
+and two complete associations, two destinations remain distinct, replay preserves
+messages/evidence/first clocks and intrinsic conflicts roll back all rows.
+Four reviewed real R0-to-R1 units produce zero alerts; positive events use only
+the authorized synthetic profile. No new source acquisition is permitted.
+
+Exercise strict intent/event validation, duplicate/nonfinite/oversized JSON,
+hostile SQLite cells guarded before loading, inventory/FK/digest/version
+corruption, Unicode/control/bidi rendering, aliases/links/sidecars, bounded keyset
+pages during insertion, shared deadlines and locks. Preview and recompute must
+be read-only; distinguish local consistency from origin-backed equality.
+Temporary SQLite tests use real writer processes, termination inside a write
+transaction, rollback, reopen and consistent SQLite backup/restore. These prove
+neither physical power-loss durability nor native Raspberry Pi behavior.
+
+The eighth installed-process harness joins all seven previous harnesses in wheel,
+Compose and both architecture jobs, preserving runtime network/UID/fixture/data
+restrictions. Independent QA derives additional probes and its own hash oracle;
+a different REVIEWER audits final source/contracts/security and all four CI logs.
+Both attest the exact frozen candidate SHA/tree. Author tests are separate evidence.
+
 ## P4c journal requirements
 
 Test the public request+verified-captures admission, not manufactured result JSON.

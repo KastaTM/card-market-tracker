@@ -1,5 +1,42 @@
 # Initial threat model
 
+## P8a offline outbox boundaries (2026-10-20)
+
+The new assets are logical destination aliases, immutable pending intentions,
+plain text previews and complete per-comparison evidence. Anyone with local
+read access can inspect these and stdout/backups; private directories and host
+ACLs remain the authorization boundary. No contacts, credentials or transport
+are introduced. Historical future Telegram assignments below do not authorize it.
+
+Journal self-consistency is insufficient admission: retain one complete pair,
+recompute from original verified captures with the unchanged comparator, require
+full canonical equality and bind every consumed field into a private receipt.
+That boundary rejects caller declarations and later mutation but is not a
+signature against privileged Python. Sources are read-only snapshots; origin
+verification precedes outbox commit and assumes immutable source evidence.
+Coherent administrator replacement of all sources is outside authentication.
+
+Exact CMTA ownership/schema, bounded SQL scalar guards before materialization,
+strict JSON/identity/digest/renderer checks and parent/evidence correspondence
+detect local inconsistencies. BEGIN IMMEDIATE, unique event/destination and
+alert/comparison keys provide atomic deduplication, replay and conflict rollback.
+SQLite handles process-interruption recovery; never delete sidecars or silently
+repair records. Copy into exclusively reserved targets, validate and reopen.
+
+Renderer escapes controls, line breaks, bidi and nonprintable input, caps UTF-8
+messages at4096 bytes, labels synthetic/candidates and qualifies selected-window
+novelty. It fabricates no names, URLs or commercial facts. Original values remain
+in frozen evidence. Structured logs allow only fixed operation/category/result,
+run ID, duration and bounded counts, excluding destinations, messages, references,
+paths, SQL and raw exceptions. Explicit stdout remains protected untrusted data.
+
+One comparison/1000 events/16MiB preparation, bounded summary pages and one
+cooperative2s budget (explicit max5s) limit ordinary work. Timeout is failure,
+never partial PASS; blocked OS IO remains outside hard deadline guarantees.
+Trusted-directory races, global capacity, legacy scope and native Pi durability
+remain TD-001 through TD-005. See [the recovery runbook](../runbooks/ALERT_OUTBOX_RECOVERY.md)
+and [phase evidence](../phases/P8A_OFFLINE_ALERT_OUTBOX.md) for executed checks.
+
 ## P4c journal boundaries (2026-10-19)
 
 Public admission accepts only strict v3 requests plus original verified capture
@@ -324,7 +361,7 @@ P0 handles local configuration, CLI output, build dependencies, CI, and a non-ro
 
 | Boundary | Threat and impact | P0 control | Later owner/control |
 | --- | --- | --- | --- |
-| Local config / secrets | A path, token, or secret enters Git, an error, or logs. | Sanitized `.env.example`; local-file exclusions; config errors omit values; JSON allowlist ignores messages and arbitrary extras; secret scan. | P8a: Telegram secret injection, rotation, and delivery redaction. |
+| Local config / secrets | A path, token, or secret enters Git, an error, or logs. | Sanitized `.env.example`; local-file exclusions; config errors omit values; secret scan. | Future P8b, if authorized: Telegram secret injection, rotation, and delivery redaction. |
 | Dependency / CI | Malicious or vulnerable package, workflow permission, or unreviewed lock update. | Frozen lock; no runtime deps; read-only workflow content permission; dependency audit and secret scan gates. | Each dependency update: review provenance, findings, and exceptions. |
 | External provider -> domain | Malformed/poisoned price or identifier yields false value/opportunity. | No ingestion in P0; documented validation boundary. | P0.5/P1a/P2/P6a/P9: source approval, validation, provenance, anomaly handling, rate limits. |
 | Pi host / network / storage | Unauthorized access, exposed ports, lost data after outage, or home-network attack. | Container UID 10001 and no published ports. | P3a/P9.5: file permissions, backup/restore, access policy, recovery and native Pi tests. |

@@ -1,2 +1,3 @@
 /src/card_market_tracker/pinned_repository/MIT_NOTICE.txt text eol=lf
 /tests/fixtures/pinned_repository_MIT_NOTICE.txt text eol=lf
+/docs/phases/P8A_OFFLINE_ALERT_OUTBOX_CONTRACT.md -text whitespace=cr-at-eol

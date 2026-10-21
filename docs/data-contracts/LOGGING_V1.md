@@ -1,5 +1,17 @@
 # Logging contract v1
 
+## Compatible P8a extension (2026-10-20)
+
+`alert.outbox.completed` identifies the independent offline outbox CLI. Fixed
+operations have prefix `alert_outbox_` and suffix arguments/init/enqueue/get/list/
+evidence_list/evidence_get/preview/verify/recompute/backup/restore. Component cli,
+run_id, duration_ms and fixed result/category semantics remain. Counts
+outbox_alerts_count and outbox_associations_count are strict integers0..100000000;
+outbox_events_count is0..1000. Invalid, boolean, unknown and out-of-bound fields
+are omitted. Error counts are unknown and omitted. No destinations, message text,
+references, paths, SQL, payloads or raw exceptions enter logs. Explicit stdout,
+outbox files and backups contain contracted evidence and require host protection.
+
 ## Compatible P4c extension (2026-10-19)
 
 `discovery.journal.completed` identifies the separate journal CLI. Component
