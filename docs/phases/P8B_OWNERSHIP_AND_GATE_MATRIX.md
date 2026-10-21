@@ -1,6 +1,11 @@
-# P8b — Ownership and acceptance matrix (pre-implementation)
+# P8b — Original Phase Lead ownership and acceptance matrix
 
-**Status:** DESIGN ONLY. No Codex subagents, independent QA or reviewer have executed; no source branch or PR created because GitHub integration returned 403 on create_branch.
+**Provenance:** original pre-implementation Phase Lead handoff, retained below as
+a historical planning matrix. Its NOT RUN/BLOCKED statements describe that prior
+environment, not the current engineering run. Current exclusive ownership and
+model selections are in [implementation plan](P8B_IMPLEMENTATION_PLAN.md);
+current code/evidence map is [P8b engineering report](P8B_TELEGRAM_ALERT_DELIVERY.md).
+Final exact-candidate CI/reviews and verdict belong in the unmerged PR ledger.
 
 | Domain / files | Assigned future owner | Independent check |
 | --- | --- | --- |

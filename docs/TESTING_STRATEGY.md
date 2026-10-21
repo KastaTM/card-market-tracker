@@ -1,5 +1,21 @@
 # Testing strategy
 
+## P8b requirements
+
+Fake transport tests cover frozen text, private binding/original recompute,
+strict receipts, TLS/no proxy/redirect/retry, reflected secrets, malformed JSON,
+oversize/truncation and supervised DNS/read/drip deadlines. Independent processes
+exercise claim concurrency, interruption, rollback/restart, old-owner fencing,
+stale backups and whole-ledger quarantine including absent deliveries. Distinguish
+local history checks from opaque source commitment recomputation. Simulated IO
+and QEMU do not prove native Pi electrical durability.
+
+The ninth installed-process harness joins every existing wheel/Compose/AMD64/
+ARM64 smoke offline with fake transport only. QA derives its own oracles/probes;
+a distinct REVIEWER audits final SHA/tree and all four complete CI logs. Author
+tests remain separate evidence. Manual T17 is outside CI and requires specific
+operator authorization; green CI never substitutes for real receipt evidence.
+
 ## P8a requirements
 
 Test public explicit comparison admission against original captures, including

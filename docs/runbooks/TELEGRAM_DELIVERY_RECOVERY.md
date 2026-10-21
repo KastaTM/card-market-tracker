@@ -1,6 +1,63 @@
-# P8b Telegram manual-delivery recovery runbook — DRAFT
+# P8b Telegram manual-delivery recovery runbook
 
-**Not executable until P8b code exists and gates pass.** Commands below use the proposed CLI, not a claimed available release.
+Implementation v1. Execute live qualification only after exact-candidate offline
+gates/reviews and authorization of the specific private destination and alert.
+Code existing is not proof of a live gate.
+
+## Concrete local qualification sequence (PowerShell)
+
+Pin the reviewed PR head/tree and install its wheel in an isolated environment.
+The preparation script does not read a token or contact Telegram. It uses normal
+synthetic capture -> journal -> P8a outbox APIs, selects one of two synthetic
+alerts and creates an empty ledger. It refuses an existing directory. If
+engineering already prepared it, reuse selection.json; do not generate another
+alert for qualification. The fixed alias is operator-private.
+
+```powershell
+uv build --no-build-isolation
+uv venv --python 3.13 .p8b-evidence/wheel
+uv pip install --python .p8b-evidence/wheel/Scripts/python.exe --no-deps dist/card_market_tracker-0.1.0-py3-none-any.whl
+.p8b-evidence/wheel/Scripts/python.exe scripts/prepare_telegram_live_gate.py --directory .p8b-evidence/live --fixtures tests/fixtures
+$p8bLocal = (Resolve-Path .p8b-evidence/live).Path
+$p8bSelection = Get-Content "$p8bLocal/selection.json" -Raw | ConvertFrom-Json
+$p8bCli = (Resolve-Path .p8b-evidence/wheel/Scripts/cmt.exe).Path
+$p8bPython = (Resolve-Path .p8b-evidence/wheel/Scripts/python.exe).Path
+```
+
+Obtain your bot ID and private chat ID locally through your authorized setup.
+Set local CMT_GATE_BOT_ID/CMT_GATE_CHAT_ID accordingly. Never send those values or
+the token to this chat. Inject CMT_TELEGRAM_BOT_TOKEN from local secret storage
+into this process only; never CLI args/files/copied shell history/transcripts.
+Confirm that this is your private chat and you authorize this exact selected
+alert/message digest before continuing.
+
+Metadata validation performs at most2 requests; send at most1 getMe plus1
+sendMessage. The total metadata bound3 is below8. The wrapper records safe
+invocation counts and durable receipt/history, reserves evidence before network
+and refuses another qualification send on a used delivery. A failed or ambiguous
+send does not authorize another attempt. Stop and escalate in that case.
+
+```powershell
+& $p8bCli telegram-delivery destination-add --ledger-db "$p8bLocal/ledger.sqlite3" --alias operator-private --bot-id $env:CMT_GATE_BOT_ID --chat-id $env:CMT_GATE_CHAT_ID --operator-private-owned
+& $p8bPython scripts/telegram_live_gate.py --directory $p8bLocal --operation validate --operator-authorized
+& $p8bCli telegram-delivery prepare --ledger-db "$p8bLocal/ledger.sqlite3" --captures-db "$p8bLocal/multi.sqlite3" --journal-db "$p8bLocal/journal.sqlite3" --outbox-db "$p8bLocal/outbox.sqlite3" --alert-id $p8bSelection.alert_id --comparison-id $p8bSelection.comparison_id --alias operator-private --timeout 5
+& $p8bPython scripts/telegram_live_gate.py --directory $p8bLocal --operation send --operator-authorized
+```
+
+Run each next command only if the previous exit code was0. After send reports
+confirmed, remove the token and start the separate replay process. Its wrapper
+forbids transport calls and requires replay with zero invocations. Preserve
+live-validate.json, live-send.json and live-replay.json privately. Publish only
+their reviewed redacted projection together with exact SHA/tree. Human
+observation, if supplied, is separate evidence from API acceptance.
+
+```powershell
+Remove-Item Env:CMT_TELEGRAM_BOT_TOKEN
+& $p8bPython scripts/telegram_live_gate.py --directory $p8bLocal --operation replay --operator-authorized
+```
+
+The kickoff supplies no specific recipient authorization or production token.
+T17 remains BLOCKED / LIVE_UNVERIFIED until this sequence actually succeeds.
 
 ## Operator prerequisites
 

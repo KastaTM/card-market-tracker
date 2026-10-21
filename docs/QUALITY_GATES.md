@@ -1,5 +1,23 @@
 # Quality gates
 
+## P8b mandatory gates
+
+AC-T01..T18 require original-backed one-shot delivery, private-route validation,
+durable claim/receipt/fencing, ambiguous no-resend, valid429 cooldown/max3 and
+globally quarantined restore. Preserve frozen install/Ruff/mypy/full pytest/
+85% line/80% branch/build/audit/secret gates. Ninth harness
+`scripts/telegram_delivery_smoke.py` joins all eight earlier installed-process
+smokes in wheel, Compose and linux/amd64 + ARM64 QEMU. Runtime remains offline,
+fixtures read-only, product UID10001/data private. Exactly four CI jobs remain;
+inspect complete final-candidate logs.
+
+Distinct nonauthor QA/REVIEWER attest exact SHA/tree with own probes/audit.
+Substantive edits renew checks/reviews. Real T17 is mandatory for readiness: one
+specifically authorized synthetic alert, durable receipt, separate-process replay,
+<=8 metadata requests and exactly1 send attempt. Missing destination authorization
+or credentials means BLOCKED / LIVE_UNVERIFIED; complete offline work and name
+the dependency. Engineering cannot authorize merge or phase closure.
+
 ## P8a mandatory gates
 
 [AC-A01 through AC-A16](phases/P8A_OFFLINE_ALERT_OUTBOX_CONTRACT.md) add
