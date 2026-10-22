@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import logging
+import re
 import sys
 from datetime import UTC, datetime
 from uuid import UUID, uuid4
@@ -21,6 +22,7 @@ _EVENTS = frozenset(
         "discovery.multi.completed",
         "discovery.journal.completed",
         "alert.outbox.completed",
+        "telegram.delivery.completed",
     }
 )
 
@@ -95,6 +97,31 @@ class JsonFormatter(logging.Formatter):
             "invalid_profile",
             "storage_missing",
             "recompute_mismatch",
+            "invalid_destination",
+            "not_validated",
+            "send_quarantined",
+            "delivery_blocked",
+            "retry_not_due",
+            "attempt_limit",
+            "stale_attempt",
+            "token_configuration",
+            "bot_mismatch",
+            "destination_mismatch",
+            "transport_timeout",
+            "transport_failure",
+            "provider_rejection",
+            "provider_rate_limit",
+            "provider_invalid",
+            "confirmation_failed",
+            "provider_rejected",
+            "rate_limited",
+            "retry_exhausted",
+            "network_uncertain",
+            "malformed_response",
+            "deadline_exceeded",
+            "recovered",
+            "local_commit_failed",
+            "clock_skew",
         }:
             payload["error_category"] = category
         result = getattr(record, "result", None)
@@ -148,6 +175,19 @@ class JsonFormatter(logging.Formatter):
             "alert_outbox_recompute",
             "alert_outbox_backup",
             "alert_outbox_restore",
+            "telegram_delivery_arguments",
+            "telegram_delivery_init",
+            "telegram_delivery_destination_add",
+            "telegram_delivery_destination_validate",
+            "telegram_delivery_prepare",
+            "telegram_delivery_send",
+            "telegram_delivery_get",
+            "telegram_delivery_list",
+            "telegram_delivery_verify",
+            "telegram_delivery_recompute",
+            "telegram_delivery_recover",
+            "telegram_delivery_backup",
+            "telegram_delivery_restore",
         }:
             payload["operation"] = operation
         duration = getattr(record, "duration_ms", None)
@@ -181,6 +221,18 @@ class JsonFormatter(logging.Formatter):
             value = getattr(record, field, None)
             if type(value) is int and 0 <= value <= maximum:
                 payload[field] = value
+        for field, prefix in (("delivery_id", "tdl1:"), ("attempt_id", "tat1:")):
+            value = getattr(record, field, None)
+            if type(value) is str and re.fullmatch(prefix + r"[0-9a-f]{64}", value):
+                payload[field] = value
+        states = {"ready", "in_flight", "retryable", "confirmed", "permanent_failure", "uncertain"}
+        for field in ("state", "previous_state"):
+            value = getattr(record, field, None)
+            if type(value) is str and value in states:
+                payload[field] = value
+        attempts = getattr(record, "attempt_count", None)
+        if type(attempts) is int and 0 <= attempts <= 3:
+            payload["attempt_count"] = attempts
         return json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
 
 

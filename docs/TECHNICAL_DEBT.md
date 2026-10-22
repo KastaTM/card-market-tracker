@@ -1,5 +1,12 @@
 # Technical debt register
 
+P8b (2026-10-21) preserves TD-001..TD-005 with existing owners/exits. Separate
+delivery history and restore quarantine do not qualify physical power loss,
+authenticate privileged rewrites or add retention/capacity. Correct host UTC is
+required for persistent retry cooldown. Uncertain no-resend and permanent restore
+quarantine are intentional safety behavior; reconciliation/automatic operation
+requires a new Orchestrator contract, not a force bypass.
+
 P8a (2026-10-20) adds an independent bounded append-only pending outbox and
 per-window evidence. TD-001 through TD-005 remain OPEN with their existing
 owners, exits and review horizons. Local consistency and source recomputation

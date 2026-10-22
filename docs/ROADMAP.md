@@ -1,5 +1,18 @@
 # Roadmap
 
+## Orchestrator chat decision: P8a closed, P8b open (2026-10-21)
+
+The supplied [P8b contract](phases/P8B_TELEGRAM_ALERT_DELIVERY_CONTRACT.md)
+records the Orchestrator chat decision accepting/closing P8a and opening P8b
+manual private Telegram delivery. This attributes the decision to that contract;
+it does not claim a new approval was published to GitHub. Verified baseline is
+main `ac35d4df0f3a006ff60bb026de992c366e19cc09`, tree
+`d604d3b8362c30af8b5dd516eddc0d8095fe7bf9`. P8b uses an independent ledger
+and preserves outbox/capture/journal bytes, identities and schemas. No scheduler,
+source acquisition or commercial signal expansion. P2/P6a/retail Discovery remain
+BLOCKED; P5 stays unopened; TD-001..TD-005 remain OPEN. Merge and phase acceptance
+are separate Orchestrator decisions. See [engineering plan](phases/P8B_IMPLEMENTATION_PLAN.md).
+
 ## Orchestrator chat decision: P4c closed, P8a open (2026-10-20)
 
 The supplied [P8a contract](phases/P8A_OFFLINE_ALERT_OUTBOX_CONTRACT.md) records

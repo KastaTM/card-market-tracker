@@ -1,5 +1,12 @@
 # Agent map
 
+- [P8b contract](docs/phases/P8B_TELEGRAM_ALERT_DELIVERY_CONTRACT.md),
+  [engineering brief](docs/phases/P8B_CODEX_ENGINEERING_BRIEF.md),
+  [ownership/protocol](docs/phases/P8B_IMPLEMENTATION_PLAN.md): manual one-shot
+  private Telegram delivery, separate ledger, original-capture recompute,
+  claim before send, uncertain never resends, all restored ledgers quarantined.
+  No prior DB/schema/identity mutations or merge authorization.
+
 - [P8a contract](docs/phases/P8A_OFFLINE_ALERT_OUTBOX_CONTRACT.md),
   [ownership](docs/phases/P8A_OWNERSHIP.md),
   [evidence](docs/phases/P8A_OFFLINE_ALERT_OUTBOX.md): separate offline outbox v1,

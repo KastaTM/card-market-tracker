@@ -27,4 +27,5 @@ python3 scripts/scoped_capture_discovery_smoke.py --mode docker --image "$image"
 python3 scripts/multi_revision_metadata_smoke.py --mode docker --image "$image" --platform "$platform" --fixtures tests/fixtures
 python3 scripts/discovery_journal_smoke.py --mode docker --image "$image" --platform "$platform" --fixtures tests/fixtures
 python3 scripts/alert_outbox_smoke.py --mode docker --image "$image" --platform "$platform" --fixtures tests/fixtures
+python3 scripts/telegram_delivery_smoke.py --mode docker --image "$image" --platform "$platform" --fixtures tests/fixtures
 echo "$platform smoke PASS; uid=$uid"

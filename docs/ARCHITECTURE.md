@@ -1,5 +1,29 @@
 # Architecture
 
+## P8b manual Telegram delivery
+
+`telegram_delivery.application` reuses original-capture outbox recomputation,
+freezes the whole selected alert and comparison association, and issues a private
+content-bound receipt. Ten commitments plus an immutable private route bind one
+tdl1 delivery; provider/event uniqueness also prevents alternate aliases from
+duplicating the same event. Earlier DBs, schemas, comparators and identities stay
+unchanged and read-only.
+
+CMTD/schema1 owns five STRICT tables: metadata, destinations, deliveries,
+immutable attempt claims and immutable results. BEGIN IMMEDIATE commits claim
+and unpredictable attempt ownership before sendMessage. No SQL transaction spans
+network. Finish uses delivery/attempt/state CAS; local verification reconstructs
+history. Opaque source commitments require origin recompute. Hashes and private
+receipts do not authenticate privileged host code or replacement of all originals.
+
+Stdlib official HTTPS, strict TLS/JSON/receipt checks, no proxy/redirect/retries,
+and a supervised worker bound DNS/network time. Validated acceptance plus durable
+local receipt means confirmed; ambiguity forbids resend. Only explicit later
+valid429 retries are eligible, max3. Restore quarantines the whole ledger before
+its final path can expose a usable snapshot. No P8b bypass. See
+[ADR0011](adr/0011-telegram-manual-delivery-ledger.md) and
+[storage](data-contracts/TELEGRAM_DELIVERY_STORAGE_V1.md).
+
 ## P8a offline alert outbox
 
 Three explicit independent database paths and one cmp3 plus local destination

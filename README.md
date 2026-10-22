@@ -1,5 +1,14 @@
 # Card Market Tracker
 
+P8b adds `cmt telegram-delivery`: one explicit private Telegram delivery of an
+original-capture-verified P8a alert. A separate ledger preserves claims and
+receipts; confirmed replay makes no network call, uncertain outcomes cannot
+resend, and every restored ledger is globally quarantined. See the
+[CLI/API](docs/data-contracts/TELEGRAM_DELIVERY_V1.md),
+[operator runbook](docs/runbooks/TELEGRAM_DELIVERY_RECOVERY.md) and
+[phase evidence](docs/phases/P8B_TELEGRAM_ALERT_DELIVERY.md). Live qualification
+requires specific operator authorization. No scheduler or arbitrary-text command.
+
 P8a adds `cmt alert-outbox`: an independent offline SQLite outbox that prepares
 pending alerts from an explicit journal comparison after recomputing it against
 original captures. One event/destination keeps one immutable message and full

@@ -1,5 +1,17 @@
 # Logging contract v1
 
+## Compatible P8b extension (2026-10-21)
+
+Event telegram.delivery.completed; fixed operations telegram_delivery_ plus
+arguments/init/destination_add/destination_validate/prepare/send/get/list/verify/
+recompute/recover/backup/restore. Optional delivery_id/attempt_id must match
+tdl1:/tat1: plus64 lowercase hex. State/previous_state values are ready,
+in_flight,retryable,confirmed,permanent_failure,uncertain. attempt_count is strict
+integer0..3. Delivery result is ok/inserted/replay/error. New fixed categories
+are listed in [API](TELEGRAM_DELIVERY_V1.md). No bot/chat IDs, messages, tokens,
+paths, provider bodies/URLs or raw exceptions. Unknown/malformed fields are
+omitted. Ordinary CLI stdout is also redacted; private route IDs live in ledger.
+
 ## Compatible P8a extension (2026-10-20)
 
 `alert.outbox.completed` identifies the independent offline outbox CLI. Fixed

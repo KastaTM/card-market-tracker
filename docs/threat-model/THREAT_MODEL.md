@@ -1,5 +1,33 @@
 # Initial threat model
 
+## P8b delivery boundaries (2026-10-21)
+
+Private ownership requires operator attestation plus getMe/getChat identity
+verification; API access alone proves no human ownership. Route is immutable.
+Provider/event and provider/alert uniqueness resist route-change duplicates.
+Each attempt repeats original-capture proof and freezes exact P8a message bytes.
+
+Claim commits before HTTP; attempt ownership and CAS fence stale finishers.
+Explicit quiescence recovery only yields uncertain. Crash/ambiguous success/
+timeout/5xx/failed receipt commit never authorize resend. This can omit alerts;
+it is not exactly-once. Old backups may omit later sends, so every restore is
+globally quarantined, including absent rows. Only already-quarantined staging
+content reaches the final restore path. A single trusted ledger is required;
+arbitrary external clones are not coordinated.
+
+Tokens stay in local environment; never arguments/DB/results/logs. Fixed official
+TLS, no inherited proxy/redirect/retries, 64KiB strict UTF8/JSON/depth/types and
+exact sender/recipient/text/date checks constrain untrusted HTTP. Raw provider
+bodies/exceptions never cross worker IPC. Supervision bounds stalled DNS/drip/
+reads with bounded cleanup overhead. Logs and ordinary CLI stdout exclude
+bot/chat IDs, message text, secrets, authenticated URLs and raw exceptions.
+
+Trusted directories/ACLs, correct UTC for cooldown, capacity, OS/device IO stalls,
+privileged tampering and native Pi power loss remain limitations. TD-001..TD-005
+stay OPEN. Fake tests cannot prove live acceptance; T17 needs specific operator
+authorization and observed receipt/replay. The qualification wrapper observes
+production entry calls and reserves its one-attempt evidence before network.
+
 ## P8a offline outbox boundaries (2026-10-20)
 
 The new assets are logical destination aliases, immutable pending intentions,
