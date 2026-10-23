@@ -82,7 +82,7 @@ def main() -> int:
                     capture_output=True,
                     text=True,
                     env=environment,
-                    cwd=outside,
+                    cwd=outside if args.mode == "installed" else None,
                     timeout=120,
                 )
                 assert completed.returncode == code, (completed.stdout, completed.stderr)
