@@ -1,5 +1,23 @@
 # Quality gates
 
+## P5b mandatory gates
+
+AC-S01..S18 in the opening contract require exact baseline/archived contract,
+original revision admission, isolated bounded synthetic retention, independent
+identity vectors, strict sequence/replay/transitions, atomic concurrent append,
+deep full-fold verification, original-backed recompute, bounded safe CLI/recovery
+and documentation. Keep frozen lock/install, Ruff format/check, strict mypy,
+complete pytest, line coverage >=85% and branch coverage >=80%, sdist/wheel,
+outside-source installed wheel, dependency audit and secret scan unchanged.
+
+The eleventh watchlist-journal harness runs alongside all ten previous harnesses
+with product networking denied. Exactly four CI jobs remain Quality, Compose,
+AMD64 and ARM64/QEMU. Inspect complete logs tied to the final commit/tree.
+Distinct non-author QA and REVIEWER must attest that same candidate with their
+own published probes; fixes require renewed probes. Unrun checks remain blocked,
+and only all-green applicable evidence permits READY_FOR_ORCHESTRATOR_REVIEW.
+Engineering does not merge, accept or close P5b; no live Telegram gate applies.
+
 ## P5a mandatory gates
 
 AC-W01..W18 require exact baseline/provenance, canonical target identity,

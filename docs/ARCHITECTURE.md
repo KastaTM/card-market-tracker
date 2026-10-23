@@ -1,5 +1,28 @@
 # Architecture
 
+## P5b synthetic evaluation journal
+
+Original full MANIFEST_V1 + exact P5a immutable revision + explicit synthetic
+samples/as_of -> original identity admission -> normalized snapshot -> private
+storage boundary -> BEGIN IMMEDIATE replay/head check -> recalculated per-rule
+signals + evaluation + head committed atomically in independent CMTQ/schema1.
+P5a retains preferences only; its evaluator, validation and store are unchanged.
+There is no distributed origin/journal commit; immutable origin revisions are
+an operational assumption. Local equality hashes are not origin authentication.
+
+Four STRICT tables retain sequences, evaluations, signals and metadata. First
+record is a signal-free baseline. Exact historical replay preserves head/time;
+new appends require exact supplied previous, strictly advancing observed_at,
+nondecreasing as_of and unused current sample ID. Independent rules emit only
+fresh NO_MATCH-to-MATCH; uncertainty and stale predecessors break continuity.
+Local verification reconstructs every P5a result, link, fold and head; explicit
+recompute separately re-admits a selected evaluation against original P5a.
+Bounded one-shot CLI and verified exclusive recovery use shared safety patterns.
+No product sockets, outbox coupling or transport is introduced. See
+[ADR0013](adr/0013-watchlist-synthetic-journal.md),
+[freeze](phases/P5B_DESIGN_FREEZE.md) and
+[journal API](data-contracts/WATCHLIST_JOURNAL_V1.md).
+
 ## P5a offline watchlist
 
 Complete MANIFEST_V1 validation -> printing/sealed target plus exact canonical

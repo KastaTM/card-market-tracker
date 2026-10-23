@@ -1,0 +1,171 @@
+{
+  "vectors": {
+    "baseline": {
+      "domain": "CMT_WATCHLIST_JOURNAL_EVALUATION_V1",
+      "id": "wje1_411e24c6f8f6cf4089d335f5c1886b4f71b34cae34f69a9e54251007863aa284",
+      "object": {
+        "as_of": "2026-10-23T11:00:00Z",
+        "current": {
+          "cmt_id": "541b9d13-9669-4973-8413-397bea14c045",
+          "currency": "EUR",
+          "observed_at": "2026-10-23T11:00:00Z",
+          "provenance": "synthetic",
+          "sample_id": "synthetic-previous",
+          "series_key": "synthetic-series",
+          "shipping_minor": null,
+          "stock": "OUT_OF_STOCK",
+          "unit_price_minor": null,
+          "version": 1
+        },
+        "entry": {
+          "canonical_identity": {
+            "parents": [
+              {
+                "card_number": "001",
+                "cmt_id": "70bf03c9-a465-4299-a4fc-adfb70de757d",
+                "kind": "card",
+                "set_id": "f9743b79-20e3-4815-98d3-bb06f0c8195f"
+              },
+              {
+                "cmt_id": "f9743b79-20e3-4815-98d3-bb06f0c8195f",
+                "kind": "set"
+              }
+            ],
+            "target": {
+              "card_id": "70bf03c9-a465-4299-a4fc-adfb70de757d",
+              "cmt_id": "541b9d13-9669-4973-8413-397bea14c045",
+              "kind": "printing",
+              "language": "es",
+              "variant": "normal"
+            },
+            "version": 1
+          },
+          "cmt_id": "541b9d13-9669-4973-8413-397bea14c045",
+          "enabled": true,
+          "identity_digest": "6851dd085c9769e1df357e3ff330a02ea815baa48f60d8556f9f173f87c488de",
+          "max_age_seconds": 86400,
+          "priority": "high",
+          "restock_enabled": true,
+          "revision": 1,
+          "target_price_minor": 1000,
+          "version": 1,
+          "watch_id": "wlt1_3fd89463c0b769769b7ace4993c3baee6e4e0cbead43856fdb50d42db4787cc0"
+        },
+        "policy_version": "watchlist-rules-v1",
+        "previous": null,
+        "sequence_id": "wjs1_380dce2c23fa07657ddf95adac1c9f96c36c8449235e3462140dd88b684e676f",
+        "version": 1
+      },
+      "preimage_text": "CMT_WATCHLIST_JOURNAL_EVALUATION_V1\u0000{\"as_of\":\"2026-10-23T11:00:00Z\",\"current\":{\"cmt_id\":\"541b9d13-9669-4973-8413-397bea14c045\",\"currency\":\"EUR\",\"observed_at\":\"2026-10-23T11:00:00Z\",\"provenance\":\"synthetic\",\"sample_id\":\"synthetic-previous\",\"series_key\":\"synthetic-series\",\"shipping_minor\":null,\"stock\":\"OUT_OF_STOCK\",\"unit_price_minor\":null,\"version\":1},\"entry\":{\"canonical_identity\":{\"parents\":[{\"card_number\":\"001\",\"cmt_id\":\"70bf03c9-a465-4299-a4fc-adfb70de757d\",\"kind\":\"card\",\"set_id\":\"f9743b79-20e3-4815-98d3-bb06f0c8195f\"},{\"cmt_id\":\"f9743b79-20e3-4815-98d3-bb06f0c8195f\",\"kind\":\"set\"}],\"target\":{\"card_id\":\"70bf03c9-a465-4299-a4fc-adfb70de757d\",\"cmt_id\":\"541b9d13-9669-4973-8413-397bea14c045\",\"kind\":\"printing\",\"language\":\"es\",\"variant\":\"normal\"},\"version\":1},\"cmt_id\":\"541b9d13-9669-4973-8413-397bea14c045\",\"enabled\":true,\"identity_digest\":\"6851dd085c9769e1df357e3ff330a02ea815baa48f60d8556f9f173f87c488de\",\"max_age_seconds\":86400,\"priority\":\"high\",\"restock_enabled\":true,\"revision\":1,\"target_price_minor\":1000,\"version\":1,\"watch_id\":\"wlt1_3fd89463c0b769769b7ace4993c3baee6e4e0cbead43856fdb50d42db4787cc0\"},\"policy_version\":\"watchlist-rules-v1\",\"previous\":null,\"sequence_id\":\"wjs1_380dce2c23fa07657ddf95adac1c9f96c36c8449235e3462140dd88b684e676f\",\"version\":1}"
+    },
+    "second": {
+      "domain": "CMT_WATCHLIST_JOURNAL_EVALUATION_V1",
+      "id": "wje1_017178f97a80245df9bb2e997afef80e17894af07380621530c290ccc30f5b33",
+      "object": {
+        "as_of": "2026-10-23T12:00:00Z",
+        "current": {
+          "cmt_id": "541b9d13-9669-4973-8413-397bea14c045",
+          "currency": "EUR",
+          "observed_at": "2026-10-23T12:00:00Z",
+          "provenance": "synthetic",
+          "sample_id": "synthetic-current",
+          "series_key": "synthetic-series",
+          "shipping_minor": 100,
+          "stock": "AVAILABLE",
+          "unit_price_minor": 900,
+          "version": 1
+        },
+        "entry": {
+          "canonical_identity": {
+            "parents": [
+              {
+                "card_number": "001",
+                "cmt_id": "70bf03c9-a465-4299-a4fc-adfb70de757d",
+                "kind": "card",
+                "set_id": "f9743b79-20e3-4815-98d3-bb06f0c8195f"
+              },
+              {
+                "cmt_id": "f9743b79-20e3-4815-98d3-bb06f0c8195f",
+                "kind": "set"
+              }
+            ],
+            "target": {
+              "card_id": "70bf03c9-a465-4299-a4fc-adfb70de757d",
+              "cmt_id": "541b9d13-9669-4973-8413-397bea14c045",
+              "kind": "printing",
+              "language": "es",
+              "variant": "normal"
+            },
+            "version": 1
+          },
+          "cmt_id": "541b9d13-9669-4973-8413-397bea14c045",
+          "enabled": true,
+          "identity_digest": "6851dd085c9769e1df357e3ff330a02ea815baa48f60d8556f9f173f87c488de",
+          "max_age_seconds": 86400,
+          "priority": "high",
+          "restock_enabled": true,
+          "revision": 1,
+          "target_price_minor": 1000,
+          "version": 1,
+          "watch_id": "wlt1_3fd89463c0b769769b7ace4993c3baee6e4e0cbead43856fdb50d42db4787cc0"
+        },
+        "policy_version": "watchlist-rules-v1",
+        "previous": {
+          "cmt_id": "541b9d13-9669-4973-8413-397bea14c045",
+          "currency": "EUR",
+          "observed_at": "2026-10-23T11:00:00Z",
+          "provenance": "synthetic",
+          "sample_id": "synthetic-previous",
+          "series_key": "synthetic-series",
+          "shipping_minor": null,
+          "stock": "OUT_OF_STOCK",
+          "unit_price_minor": null,
+          "version": 1
+        },
+        "sequence_id": "wjs1_380dce2c23fa07657ddf95adac1c9f96c36c8449235e3462140dd88b684e676f",
+        "version": 1
+      },
+      "preimage_text": "CMT_WATCHLIST_JOURNAL_EVALUATION_V1\u0000{\"as_of\":\"2026-10-23T12:00:00Z\",\"current\":{\"cmt_id\":\"541b9d13-9669-4973-8413-397bea14c045\",\"currency\":\"EUR\",\"observed_at\":\"2026-10-23T12:00:00Z\",\"provenance\":\"synthetic\",\"sample_id\":\"synthetic-current\",\"series_key\":\"synthetic-series\",\"shipping_minor\":100,\"stock\":\"AVAILABLE\",\"unit_price_minor\":900,\"version\":1},\"entry\":{\"canonical_identity\":{\"parents\":[{\"card_number\":\"001\",\"cmt_id\":\"70bf03c9-a465-4299-a4fc-adfb70de757d\",\"kind\":\"card\",\"set_id\":\"f9743b79-20e3-4815-98d3-bb06f0c8195f\"},{\"cmt_id\":\"f9743b79-20e3-4815-98d3-bb06f0c8195f\",\"kind\":\"set\"}],\"target\":{\"card_id\":\"70bf03c9-a465-4299-a4fc-adfb70de757d\",\"cmt_id\":\"541b9d13-9669-4973-8413-397bea14c045\",\"kind\":\"printing\",\"language\":\"es\",\"variant\":\"normal\"},\"version\":1},\"cmt_id\":\"541b9d13-9669-4973-8413-397bea14c045\",\"enabled\":true,\"identity_digest\":\"6851dd085c9769e1df357e3ff330a02ea815baa48f60d8556f9f173f87c488de\",\"max_age_seconds\":86400,\"priority\":\"high\",\"restock_enabled\":true,\"revision\":1,\"target_price_minor\":1000,\"version\":1,\"watch_id\":\"wlt1_3fd89463c0b769769b7ace4993c3baee6e4e0cbead43856fdb50d42db4787cc0\"},\"policy_version\":\"watchlist-rules-v1\",\"previous\":{\"cmt_id\":\"541b9d13-9669-4973-8413-397bea14c045\",\"currency\":\"EUR\",\"observed_at\":\"2026-10-23T11:00:00Z\",\"provenance\":\"synthetic\",\"sample_id\":\"synthetic-previous\",\"series_key\":\"synthetic-series\",\"shipping_minor\":null,\"stock\":\"OUT_OF_STOCK\",\"unit_price_minor\":null,\"version\":1},\"sequence_id\":\"wjs1_380dce2c23fa07657ddf95adac1c9f96c36c8449235e3462140dd88b684e676f\",\"version\":1}"
+    },
+    "sequence": {
+      "domain": "CMT_WATCHLIST_JOURNAL_SEQUENCE_V1",
+      "id": "wjs1_380dce2c23fa07657ddf95adac1c9f96c36c8449235e3462140dd88b684e676f",
+      "object": {
+        "policy_version": "watchlist-rules-v1",
+        "revision": 1,
+        "series_key": "synthetic-series",
+        "watch_id": "wlt1_3fd89463c0b769769b7ace4993c3baee6e4e0cbead43856fdb50d42db4787cc0"
+      },
+      "preimage_text": "CMT_WATCHLIST_JOURNAL_SEQUENCE_V1\u0000{\"policy_version\":\"watchlist-rules-v1\",\"revision\":1,\"series_key\":\"synthetic-series\",\"watch_id\":\"wlt1_3fd89463c0b769769b7ace4993c3baee6e4e0cbead43856fdb50d42db4787cc0\"}"
+    },
+    "signal_price": {
+      "domain": "CMT_WATCHLIST_SIGNAL_V1",
+      "id": "wsig1_d9f9c7f0d4ca8767a6cdb9a917cc27a61c369cecea629c790ed42fd4421bf4f0",
+      "object": {
+        "from_evaluation_id": "wje1_411e24c6f8f6cf4089d335f5c1886b4f71b34cae34f69a9e54251007863aa284",
+        "kind": "WATCHLIST_RULE_ENTERED_MATCH",
+        "mode": "synthetic",
+        "rule": "price",
+        "sequence_id": "wjs1_380dce2c23fa07657ddf95adac1c9f96c36c8449235e3462140dd88b684e676f",
+        "to_evaluation_id": "wje1_017178f97a80245df9bb2e997afef80e17894af07380621530c290ccc30f5b33",
+        "version": 1
+      },
+      "preimage_text": "CMT_WATCHLIST_SIGNAL_V1\u0000{\"from_evaluation_id\":\"wje1_411e24c6f8f6cf4089d335f5c1886b4f71b34cae34f69a9e54251007863aa284\",\"kind\":\"WATCHLIST_RULE_ENTERED_MATCH\",\"mode\":\"synthetic\",\"rule\":\"price\",\"sequence_id\":\"wjs1_380dce2c23fa07657ddf95adac1c9f96c36c8449235e3462140dd88b684e676f\",\"to_evaluation_id\":\"wje1_017178f97a80245df9bb2e997afef80e17894af07380621530c290ccc30f5b33\",\"version\":1}"
+    },
+    "signal_restock": {
+      "domain": "CMT_WATCHLIST_SIGNAL_V1",
+      "id": "wsig1_4bd7f7a2ca57d7e8c9e340dc5f3c27aa5f3dbe433c7ef01a0ac897675e4e8bd4",
+      "object": {
+        "from_evaluation_id": "wje1_411e24c6f8f6cf4089d335f5c1886b4f71b34cae34f69a9e54251007863aa284",
+        "kind": "WATCHLIST_RULE_ENTERED_MATCH",
+        "mode": "synthetic",
+        "rule": "restock",
+        "sequence_id": "wjs1_380dce2c23fa07657ddf95adac1c9f96c36c8449235e3462140dd88b684e676f",
+        "to_evaluation_id": "wje1_017178f97a80245df9bb2e997afef80e17894af07380621530c290ccc30f5b33",
+        "version": 1
+      },
+      "preimage_text": "CMT_WATCHLIST_SIGNAL_V1\u0000{\"from_evaluation_id\":\"wje1_411e24c6f8f6cf4089d335f5c1886b4f71b34cae34f69a9e54251007863aa284\",\"kind\":\"WATCHLIST_RULE_ENTERED_MATCH\",\"mode\":\"synthetic\",\"rule\":\"restock\",\"sequence_id\":\"wjs1_380dce2c23fa07657ddf95adac1c9f96c36c8449235e3462140dd88b684e676f\",\"to_evaluation_id\":\"wje1_017178f97a80245df9bb2e997afef80e17894af07380621530c290ccc30f5b33\",\"version\":1}"
+    }
+  },
+  "version": 1
+}

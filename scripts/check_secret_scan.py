@@ -36,6 +36,9 @@ _BUNDLE_V2 = (
 )
 _R1_ORIGINALS = _ARTIFACTS | {_R1}
 _R1_PACKAGE = _R1_ORIGINALS | {_PROJECTION}
+_P5B_IDENTITY = (
+    "6851dd085c9769e1df357e3ff330a02ea815baa48f60d8556f9f173f87c488de"  # pragma: allowlist secret
+)
 _PUBLIC_DIGESTS = {
     "docs/sources/P1B_REQUEST_LEDGER.json": _ORIGINALS,
     "src/card_market_tracker/pinned_repository/approved_bundle_v1.json": _PACKAGE,
@@ -46,6 +49,7 @@ _PUBLIC_DIGESTS = {
     "src/card_market_tracker/pinned_repository/approved_bundle_v2.json": _R1_PACKAGE,
     "tests/fixtures/pinned_repository_bundle_v2.json": _R1_PACKAGE,
     "src/card_market_tracker/pinned_repository/bundle_v2.py": {_R1, _BUNDLE_V2},
+    "tests/fixtures/p5b_identity_vectors_v1.json": {_P5B_IDENTITY},
 }
 
 

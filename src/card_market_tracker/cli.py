@@ -39,6 +39,7 @@ from card_market_tracker.persistence.sqlite_repository import (
 )
 from card_market_tracker.telegram_delivery import cli as telegram_cli
 from card_market_tracker.watchlist import cli as watchlist_cli
+from card_market_tracker.watchlist_journal import cli as watchlist_journal_cli
 
 
 class _Parser(argparse.ArgumentParser):
@@ -112,6 +113,7 @@ def _parser() -> _Parser:
     outbox_cli.register(commands)
     telegram_cli.register(commands)
     watchlist_cli.register(commands)
+    watchlist_journal_cli.register(commands)
     return parser
 
 
@@ -490,6 +492,8 @@ def main(argv: list[str] | None = None) -> int:
             return telegram_cli.dispatch(args, started)
         if args.command == "watchlist":
             return watchlist_cli.dispatch(args, started)
+        if args.command == "watchlist-journal":
+            return watchlist_journal_cli.dispatch(args, started)
         if args.command == "discover-scoped":
             return _discover_scoped(args.db, args.request, started)
         if args.command == "discover-multi-revision":
@@ -520,6 +524,8 @@ def main(argv: list[str] | None = None) -> int:
         print("diagnose: ok (configuration, local work directory)")
         return 0
     except ConfigurationError:
+        if actual_argv and actual_argv[0] == "watchlist-journal":
+            return watchlist_journal_cli.invalid_arguments(started)
         if actual_argv and actual_argv[0] == "watchlist":
             return watchlist_cli.invalid_arguments(started)
         if actual_argv and actual_argv[0] == "telegram-delivery":

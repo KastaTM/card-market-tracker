@@ -1,5 +1,16 @@
 # Agent map
 
+- [P5b contract](docs/phases/P5B_WATCHLIST_EVALUATION_JOURNAL_CONTRACT.md),
+  [brief](docs/phases/P5B_CODEX_ENGINEERING_BRIEF.md),
+  [ownership](docs/phases/P5B_OWNERSHIP.md),
+  [freeze](docs/phases/P5B_DESIGN_FREEZE.md),
+  [ADR](docs/adr/0013-watchlist-synthetic-journal.md): independent synthetic
+  journal CMTQ/schema1; exact original P5a revision/manifest admission,
+  immutable snapshots, ancient replay, explicit previous/head CAS and per-rule
+  fresh NO_MATCH-to-MATCH signals. Deep local fold verification differs from
+  origin recompute. No product network or outbox/delivery bridge; preserve P5a
+  and all prior schemas/identities. P5b OPEN; only Orchestrator accepts/closes.
+
 - [P5a brief/ownership](docs/phases/P5A_CODEX_ENGINEERING_BRIEF.md),
   [ADR](docs/adr/0012-watchlist-offline-rules.md),
   [watchlist](docs/data-contracts/WATCHLIST_V1.md),
@@ -8,7 +19,8 @@
   separate offline watchlist, complete manifest identity checks, immutable
   revisions/CAS/replay, pure explicit-time synthetic evaluation, no persisted
   samples/results or product network. Preserve prior DBs/schemas/identities.
-  OPEN; only Orchestrator accepts/integrates/closes. TD-001..005 remain OPEN.
+  P5a closed by the supplied P5b opening contract's Orchestrator chat decision;
+  historical evidence remains in its report. TD-001..005 remain OPEN.
 
 - [P8b contract](docs/phases/P8B_TELEGRAM_ALERT_DELIVERY_CONTRACT.md),
   [engineering brief](docs/phases/P8B_CODEX_ENGINEERING_BRIEF.md),
