@@ -1,5 +1,45 @@
 # Initial threat model
 
+## P5a watchlist boundaries (2026-10-23)
+
+Assets are canonical targets, private operator preferences, immutable revision/
+request history and backup copies. Host authorization, trusted directories and
+ACLs control access; no multiuser service, credential, listener, collector or
+transport is introduced. Product Internet calls, including Telegram, are zero.
+Query stdout intentionally contains preferences/identity and must be protected;
+logs admit only fixed operations/categories/results, duration and bounded counts.
+
+Complete manifest parsing at public add/update/evaluate boundaries prevents UUID
+syntax or fabricated dataclasses from bypassing curated membership. Exact parent
+closure preserves language/variant/null/unknown and detects retargeting under an
+existing CMT ID. Names and external aliases have no authority. Canonical hashes
+test local equivalence, not independent curator or privileged-host authenticity.
+Synthetic provenance is an operator declaration: reviewed authored fixtures are
+required; relabeling real data creates no authorization or provenance proof.
+
+Strict JSON/type/amount/token/time limits constrain hostile evidence. Validate
+context, supplied previous ordering and future timestamps before disabled SKIPPED.
+Required freshness precedes stock decisions. Explicit as_of and pure evaluation
+exclude hidden clock, source IO and mutations. Samples/results/observed prices
+never enter SQLite and MATCH creates no event or notification authority.
+
+Exact owner/schema/inventory checks, parameterized SQL, scalar guards and deep
+canonical/history/request/current validation detect accidental/hostile local
+inconsistency. BEGIN IMMEDIATE and expected-revision CAS prevent lost updates;
+complete command replay prevents token reuse conflicts and old replay rollback.
+The manifest read and SQLite commit are separate operations without distributed
+atomicity. A coherent administrator rewrite is outside authentication guarantees.
+
+One shared default2s/max5s budget, bounded pages and byte caps constrain ordinary
+work; blocked OS/device calls remain outside cooperative deadlines. Trusted
+ancestor/inode/sidecar checks and exclusive copy destinations prevent ordinary
+path collisions; hostile ancestor races/Windows ACLs remain TD-003. Backup and
+restore fully verify a consistent copy before exposing a new destination; never
+delete valid journals, overwrite existing targets or alter earlier databases.
+History growth/copy headroom (TD-004) and native Pi electrical durability (TD-002)
+remain open, along with all TD-001..TD-005 owners/exits. No P5a gate is certified
+by this analysis; independent QA/REVIEWER must test the final SHA/tree.
+
 ## P8b delivery boundaries (2026-10-21)
 
 Private ownership requires operator attestation plus getMe/getChat identity

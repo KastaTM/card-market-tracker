@@ -1,5 +1,27 @@
 # Logging contract v1
 
+## Compatible P5a extension (2026-10-23)
+
+Event `watchlist.completed`; component cli, per-invocation UUID run_id and
+nonnegative duration_ms retain existing meanings. Fixed operations are
+watchlist_arguments/init/add/get/list/update/enable/disable/history/evaluate/
+verify/backup/restore (each carries the full watchlist_ prefix). Log result is
+ok/replay/error, distinct from evaluation's stdout rule aggregate. Optional
+watchlist_entries_count is an exact integer0..1000 describing returned list or
+history page entries; bool/invalid/unknown fields are omitted. Errors omit counts.
+
+Fixed categories add no_rules, invalid_timestamp, invalid_target,
+incompatible_context, future_sample, invalid_chronology, revision_conflict,
+already_exists, not_found and invalid_cursor; shared unsupported_evidence,
+replay_conflict, catalog/input/path/storage categories remain. No watch/CMT/sample
+IDs, rule reasons, preferences, amounts, request tokens, canonical projections,
+manifest/sample payloads, paths, SQL or raw exception text enter watchlist logs.
+Explicit query/history stdout contains contracted preferences/identity/tokens and
+requires local protection. Evaluation stdout additionally carries synthetic sample
+references/digests and explanations. Logs do not persist either evidence payload.
+Formatter/CLI tests and final-candidate evidence are required; this addendum
+does not certify a gate.
+
 ## Compatible P8b extension (2026-10-21)
 
 Event telegram.delivery.completed; fixed operations telegram_delivery_ plus

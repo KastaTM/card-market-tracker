@@ -1,5 +1,38 @@
 # Testing strategy
 
+## P5a requirements
+
+Test full manifest parsing and public Python revalidation: fabricated DTOs,
+missing UUIDs, non-sellable targets/candidates, languages/finishes/homonyms,
+null/unknown, sealed optional set and incompatible parent changes. Independently
+derive wlt1_ and canonical identity digests. Names/dates/aliases/unrelated valid
+changes must preserve identity while unrelated invalid manifest content fails.
+
+Exercise complete config/type/money bounds, threshold and +/-1 cent, free/null
+shipping, exact sum arithmetic, all stock pairs, missing/stale prior, inclusive
+freshness at0/max-age, future/unordered samples, explicit UTC/offset equivalence,
+disabled invalid input, per-rule reasons and OR. Repeat canonical outputs and
+deny sockets on imports, pure evaluation, CLI and smokes. Reject real provenance,
+URL-like tokens, unknown fields, duplicate/nonfinite/large/deep JSON and bool-as-int.
+Check evaluation leaves watchlist and all prior database bytes/logical content
+unchanged and stores neither samples nor derived observed prices/results.
+
+Use actual independent writer processes for CAS races, replay/token conflicts,
+old replay after newer revisions, rollback/process interruption/reopen. Corrupt
+schema inventory, owner/version, identity, full history, request command/digest,
+ordinal/current pointer and foreign keys; coherently hashed invalid data must
+still fail. Test hostile stored sizes/types before materialization, bound/filter
+keyset cursors, locks and one total budget. Inject copy/IO failure, existing
+destination/sidecar collisions, links and exclusive validated restore; preserve
+unrelated files. Recovery tests establish local process behavior, not electrical
+power-loss durability or authentication of coherent privileged tampering.
+
+The tenth watchlist harness runs with every prior harness through an installed
+wheel outside the checkout, Compose and both architecture jobs. Runtime remains
+offline. QA and a separate REVIEWER derive additional probes on the exact final
+SHA/tree and inspect all four full CI logs. Author tests/docs are distinct evidence;
+substantive fixes require renewed final-candidate checks and attestations.
+
 ## P8b requirements
 
 Fake transport tests cover frozen text, private binding/original recompute,

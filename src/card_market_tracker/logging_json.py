@@ -23,6 +23,7 @@ _EVENTS = frozenset(
         "discovery.journal.completed",
         "alert.outbox.completed",
         "telegram.delivery.completed",
+        "watchlist.completed",
     }
 )
 
@@ -122,6 +123,16 @@ class JsonFormatter(logging.Formatter):
             "recovered",
             "local_commit_failed",
             "clock_skew",
+            "revision_conflict",
+            "future_sample",
+            "no_rules",
+            "invalid_timestamp",
+            "invalid_target",
+            "incompatible_context",
+            "invalid_chronology",
+            "already_exists",
+            "not_found",
+            "invalid_cursor",
         }:
             payload["error_category"] = category
         result = getattr(record, "result", None)
@@ -188,6 +199,19 @@ class JsonFormatter(logging.Formatter):
             "telegram_delivery_recover",
             "telegram_delivery_backup",
             "telegram_delivery_restore",
+            "watchlist_arguments",
+            "watchlist_init",
+            "watchlist_add",
+            "watchlist_get",
+            "watchlist_list",
+            "watchlist_update",
+            "watchlist_enable",
+            "watchlist_disable",
+            "watchlist_history",
+            "watchlist_evaluate",
+            "watchlist_verify",
+            "watchlist_backup",
+            "watchlist_restore",
         }:
             payload["operation"] = operation
         duration = getattr(record, "duration_ms", None)
@@ -217,6 +241,7 @@ class JsonFormatter(logging.Formatter):
             ("outbox_alerts_count", 100000000),
             ("outbox_associations_count", 100000000),
             ("outbox_events_count", 1000),
+            ("watchlist_entries_count", 1000),
         ):
             value = getattr(record, field, None)
             if type(value) is int and 0 <= value <= maximum:

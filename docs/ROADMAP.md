@@ -1,5 +1,17 @@
 # Roadmap
 
+## Orchestrator chat decision: P8b closed, P5a open (2026-10-23)
+
+The user-supplied P5a opening contract records the Orchestrator decision that P8b
+is ACCEPTED / PHASE CLOSED following PR #14 integration at
+`d1038df1625a9727b44760866266b7124bb1d91a` (tree
+`2bb06b79a04fefdc945f754e3611d5862192f5dc`). P5a Watchlist Core and Offline Rule
+Evaluation is OPEN / IMPLEMENTATION AUTHORIZED on that baseline. This entry
+records that chat decision under its explicit documentary authorization; the
+earlier connector 403 did not publish it remotely. P5a does not close all P5 or
+authorize real price monitoring. P2, P6a and retail Discovery remain BLOCKED;
+TD-001 through TD-005 remain OPEN. Historical records below remain intact.
+
 ## Orchestrator chat decision: P8a closed, P8b open (2026-10-21)
 
 The supplied [P8b contract](phases/P8B_TELEGRAM_ALERT_DELIVERY_CONTRACT.md)

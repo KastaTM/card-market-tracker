@@ -1,5 +1,29 @@
 # Quality gates
 
+## P5a mandatory gates
+
+AC-W01..W18 require exact baseline/provenance, canonical target identity,
+strict rules, atomic revisions/CAS/replay, synthetic-only ephemeral evaluation,
+exact money/time semantics, explanations, bounded CLI, deep recovery, compatibility,
+zero product network and complete documentation. Preserve frozen install,
+Ruff format/check, strict mypy, full pytest, line coverage >=85% and branch
+coverage >=80% (or any stricter project threshold), sdist/wheel, external installed
+wheel, dependency audit and secret scan gates. No P5a live/product-network gate
+exists; historical P8b T17 evidence is neither rerun authority nor a P5a prerequisite.
+
+The tenth `scripts/watchlist_smoke.py` joins all nine previous installed-process
+harnesses in wheel, Compose and linux/amd64 plus ARM64/QEMU validation. Preserve
+all four existing CI jobs, offline product invocations, read-only fixtures,
+UID10001 and private persistent data. Inspect complete logs on the final candidate;
+QEMU does not qualify native Pi hardware or physical power-loss recovery.
+
+Author != independent QA != distinct final REVIEWER. Both nonauthors derive
+their own probes/review and attest the same final SHA/tree. Substantive changes
+renew checks and attestations. Each AC and gate needs a reproducible result tied
+to the reviewed candidate, with FAIL/BLOCKED/unexecuted stated accurately.
+Requirements here certify no PASS. The Engineering Lead cannot merge, accept or
+close the phase; only a fully evidenced candidate may be recommended for review.
+
 ## P8b mandatory gates
 
 AC-T01..T18 require original-backed one-shot delivery, private-route validation,
