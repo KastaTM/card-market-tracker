@@ -98,3 +98,13 @@ Programmatic tests author generic synthetic sealed observations, malicious
 dataclass constructions and hostile strings in memory without retaining raw
 invalid payloads. Safe `RecordError` values are trusted producer rejection
 assertions, not a retained quarantine or independently reconstructed raw input.
+# P5a synthetic watchlist simulation
+
+`synthetic_watchlist_config.json`, `synthetic_watchlist_current.json` and
+`synthetic_watchlist_previous.json` are wholly invented operator preferences and
+simulation samples. Their product UUID reuses the synthetic printing in
+`synthetic_manifest.json`. Times, series, prices and stock are fabricated; no
+retailer, market observation, source URL, seller or provider response contributed.
+The synthetic declaration is a simulation contract, not origin authentication or
+permission to import real data. Samples are ephemeral and never stored in SQLite.
+

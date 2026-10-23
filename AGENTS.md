@@ -1,5 +1,15 @@
 # Agent map
 
+- [P5a brief/ownership](docs/phases/P5A_CODEX_ENGINEERING_BRIEF.md),
+  [ADR](docs/adr/0012-watchlist-offline-rules.md),
+  [watchlist](docs/data-contracts/WATCHLIST_V1.md),
+  [storage](docs/data-contracts/WATCHLIST_STORAGE_V1.md),
+  [synthetic evaluation](docs/data-contracts/WATCHLIST_SYNTHETIC_EVALUATION_V1.md):
+  separate offline watchlist, complete manifest identity checks, immutable
+  revisions/CAS/replay, pure explicit-time synthetic evaluation, no persisted
+  samples/results or product network. Preserve prior DBs/schemas/identities.
+  OPEN; only Orchestrator accepts/integrates/closes. TD-001..005 remain OPEN.
+
 - [P8b contract](docs/phases/P8B_TELEGRAM_ALERT_DELIVERY_CONTRACT.md),
   [engineering brief](docs/phases/P8B_CODEX_ENGINEERING_BRIEF.md),
   [ownership/protocol](docs/phases/P8B_IMPLEMENTATION_PLAN.md): manual one-shot

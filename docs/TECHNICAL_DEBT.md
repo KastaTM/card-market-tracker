@@ -1,5 +1,15 @@
 # Technical debt register
 
+P5a (2026-10-23) preserves TD-001..TD-005 OPEN with their existing owners,
+review horizons and exits. The separate append-only watchlist adds preferences,
+request history and recovery copies but no retention/quota or native Pi power-loss
+qualification. Whole-history verification uses a finite budget and can reject a
+growing valid file; operators must monitor capacity and recovery headroom.
+Trusted directory/ACL assumptions remain TD-003. Canonical hashes, synthetic
+declarations and local integrity do not authenticate privileged producers. No
+legacy scope or source-health fix is claimed. Real observations, delivery,
+scheduling and distributed atomicity are excluded scope, not invented debt.
+
 P8b (2026-10-21) preserves TD-001..TD-005 with existing owners/exits. Separate
 delivery history and restore quarantine do not qualify physical power loss,
 authenticate privileged rewrites or add retention/capacity. Correct host UTC is

@@ -1,5 +1,35 @@
 # Architecture
 
+## P5a offline watchlist
+
+Complete MANIFEST_V1 validation -> printing/sealed target plus exact canonical
+parent closure -> bounded typed preferences -> separate CMTW/schema1 watchlist.
+One stable wlt1_ key per existing CMT ID creates no product identity. Names,
+dates, aliases and unrelated entities do not change the frozen identity;
+canonical relation/language/variant changes conflict. Public Python values are
+revalidated at admission. Existing catalog/capture/Discovery/journal/outbox/
+delivery schemas, identities and algorithms remain unchanged.
+
+BEGIN IMMEDIATE commits immutable revision, request replay and current pointer
+together. Expected revision provides CAS. Complete normalized command equality
+provides replay; old replay returns the original operation without reverting
+newer state. Manifest input and watchlist transaction have no distributed commit.
+Deep local verification, consistent backup and validated exclusive restore use
+the existing trusted-directory path/inode/sidecar pattern. Prior stores have
+separate recovery workflows and are never written by watchlist operations.
+
+Frozen revision + validated manifest + ephemeral synthetic current/prior samples
++ explicit as_of -> pure deterministic rule evaluation. EUR integer cents,
+inclusive freshness, per-rule reasons and OR produce MATCH/NO_MATCH/
+INDETERMINATE or validated disabled SKIPPED. Evaluation has no SQLite, clock or
+network dependency and persists no sample, price or result. Matches authorize no
+event/transport. CLI operations are bounded explicit one-shot invocations; the
+product network budget is zero. See [ADR0012](adr/0012-watchlist-offline-rules.md),
+[API](data-contracts/WATCHLIST_V1.md),
+[policy](data-contracts/WATCHLIST_SYNTHETIC_EVALUATION_V1.md) and
+[recovery](runbooks/WATCHLIST_RECOVERY.md). P5a acceptance and gate evidence are
+separate Orchestrator review concerns; sections below retain historical scopes.
+
 ## P8b manual Telegram delivery
 
 `telegram_delivery.application` reuses original-capture outbox recomputation,
