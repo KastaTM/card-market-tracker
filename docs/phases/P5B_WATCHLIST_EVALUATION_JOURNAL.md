@@ -36,8 +36,9 @@ head together. Deep read-only verification reconstructs all snapshots/results,
 links/ordinals, exact signals and heads; result hashes are not verdict authority.
 Explicit original-backed recompute separately reopens P5a and full manifest.
 Verified exclusive backup/restore publishes a new inode only after full copy
-verification/reopen/fsync. All prior packages, DB schemas, identities and the
-lockfile are preserved; root CLI registration/logging are additive only.
+verification/reopen/fsync. All prior product packages, DB schemas and identities
+are preserved; root CLI registration/logging are additive only. The only locked
+dependency change is the development-only filelock security correction below.
 
 The CLI is `cmt watchlist-journal init|record|get|list|signal-get|signal-list|
 verify|recompute|backup|restore`, with explicit paths/IDs/revision/as_of. Inputs,
@@ -89,6 +90,18 @@ no automatic quota/retention. Recovery ends at the backup point and does not
 coordinate earlier DBs or change Telegram quarantine. TD-001..TD-005 remain OPEN
 with existing owners/exits. Process restart and ARM64/QEMU do not certify native
 Pi hardware or electrical power-loss durability. No new runtime dependency exists.
+
+Initial candidate `8265ce8282432c8efbb2207bfb6456b12bffab5a` passed all local
+gates and both independent probes, but CI run 40032573864 correctly failed its
+dependency audit: filelock4.0.12, CVE-2026-112940, fixed4.2.1. That candidate was
+not ready, and its local audit result did not override the Linux CI finding.
+The narrow correction uses `uv lock --upgrade-package filelock==4.2.1`, changing
+only that existing transitive development package's version/artifacts/hashes.
+No direct/runtime dependency or gate waiver is added. The
+[maintainer advisory](https://github.com/tox-dev/filelock/security/advisories/GHSA-v4x8-3wr5-3wq8)
+and [4.2.1 release](https://github.com/tox-dev/filelock/releases/tag/4.2.1)
+identify the correction. All final local gates, QA/REVIEWER and four CI jobs
+must run again on the corrected head/tree; earlier evidence remains historical.
 
 The secret scanner retains every detector and tracked file. One exact public
 synthetic projection digest in the supplied fixture is reviewed via the existing

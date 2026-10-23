@@ -23,6 +23,12 @@ remain TD-004/TD-002. All TD-001..005 stay OPEN. No product sockets, destination
 outbox bridge, scheduler or delivery authority is added; restore touches only
 this history as of backup time, without changing Telegram quarantine.
 
+Development tooling remains a supply-chain boundary. Initial P5b Linux CI found
+CVE-2026-112940 in transitive filelock4.0.12 despite a passing local audit; the
+narrow lock update to4.2.1 follows the maintainer advisory, without adding runtime
+dependencies or suppressing findings. A local audit alone cannot override a
+different applicable CI result; the corrected candidate requires all gates again.
+
 ## P5a watchlist boundaries (2026-10-23)
 
 Assets are canonical targets, private operator preferences, immutable revision/
