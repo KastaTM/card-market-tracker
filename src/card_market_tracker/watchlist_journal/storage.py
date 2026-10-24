@@ -6,6 +6,7 @@ import json
 import math
 import os
 import sqlite3
+import stat
 import time
 import uuid
 from collections.abc import Iterator
@@ -248,7 +249,7 @@ def _load_evaluation(db: sqlite3.Connection, budget: Budget, key: str) -> dict[s
         current = cast(dict[str, object], snapshot["current"])
         if (
             row[0] != key
-            or identity.evaluation_id(snapshot) != key
+            or identity._evaluation_id(snapshot) != key
             or row[1] != snapshot["sequence_id"]
             or row[2] != current["sample_id"]
             or row[4] != _canonical(snapshot)
@@ -355,6 +356,7 @@ def _verify(db: sqlite3.Connection, budget: Budget) -> dict[str, int]:
                 raise JournalError("storage_corrupt")
             previous: dict[str, object] | None = None
             previous_id: str | None = None
+            previous_point: transitions._FoldPoint | None = None
             ordinal = 0
             sample_ids: set[str] = set()
             for row in _execute(
@@ -384,12 +386,16 @@ def _verify(db: sqlite3.Connection, budget: Budget) -> dict[str, int]:
                 ):
                     raise JournalError("storage_corrupt")
                 sample_ids.add(sample_id)
-                expected = transitions.derive_signals(previous, snapshot)
+                # Each row's snapshot, recomputed result and ID were checked by _load_evaluation.
+                # Reuse them only in this fold; source, copy and reopen each start from fresh rows.
+                point = (snapshot, cast(dict[str, object], loaded["evaluation_result"]), eid)
+                expected = transitions._derive_normalized_signals(previous_point, point)
                 actual = _signals_for(db, budget, eid)
                 if sorted(expected, key=lambda item: cast(str, item["signal_id"])) != actual:
                     raise JournalError("storage_corrupt")
                 counts["signals"] += len(actual)
                 previous, previous_id = snapshot, eid
+                previous_point = point
             if previous is None:
                 raise JournalError("storage_corrupt")
             current = cast(dict[str, object], previous["current"])
@@ -850,6 +856,22 @@ def initialize(path: Path, *, timeout: float = DEFAULT_TIMEOUT) -> dict[str, obj
             _cleanup_reserved(target, identity)
 
 
+def _rollback_publication(provisional: Path, destination: Path, identity: tuple[int, int]) -> None:
+    """Remove only our new link when the verified inode still has both names."""
+    with suppress(OSError):
+        for name in (provisional, destination):
+            information = name.lstat()
+            if (
+                (information.st_dev, information.st_ino) != identity
+                or information.st_nlink != 2
+                or not stat.S_ISREG(information.st_mode)
+                or getattr(information, "st_file_attributes", 0) & stat.FILE_ATTRIBUTE_REPARSE_POINT
+                or any(paths._exists(sidecar) for sidecar in paths._sidecars(name))
+            ):
+                return
+        destination.unlink()
+
+
 def _publish(provisional: Path, destination: Path, identity: tuple[int, int]) -> None:
     """Expose only a verified complete file, atomically and without replacement."""
     target = _path(destination, new=True)
@@ -864,7 +886,11 @@ def _publish(provisional: Path, destination: Path, identity: tuple[int, int]) ->
         os.link(provisional, target)
     except FileExistsError:
         raise JournalError("unsafe_destination") from None
-    provisional.unlink()
+    try:
+        provisional.unlink()
+    except OSError:
+        _rollback_publication(provisional, target, identity)
+        raise
 
 
 def _copy(source: Path, destination: Path, operation: str, timeout: float) -> dict[str, object]:

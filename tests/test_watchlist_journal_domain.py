@@ -77,6 +77,36 @@ def test_golden_preimage_bytes_and_independent_hashes() -> None:
         assert identity.signal_id(body) == signal["signal_id"]
 
 
+@pytest.mark.parametrize("name", ["baseline", "second"])
+def test_snapshot_recomputes_once_per_call_without_cross_call_cache(monkeypatch, name) -> None:
+    row = snapshot(name)
+    original = copy.deepcopy(row)
+    evaluate = identity.evaluation.evaluate
+    expected = evaluate(row["entry"], row["current"], row["previous"], as_of=row["as_of"])
+    calls = 0
+
+    def counted(*args, **kwargs):
+        nonlocal calls
+        calls += 1
+        return evaluate(*args, **kwargs)
+
+    monkeypatch.setattr(identity.evaluation, "evaluate", counted)
+    normalized, result = identity.validate_snapshot(row)
+    assert result == expected
+    assert normalized == original and row == original
+    assert calls == 1
+
+    # A later caller must recompute its own changed evidence, never reuse a cached verdict.
+    row["current"].update(stock="AVAILABLE", unit_price_minor=2000, shipping_minor=100)
+    changed, changed_result = identity.validate_snapshot(row)
+    assert calls == 2
+    assert changed["current"] != normalized["current"]
+    assert changed_result == evaluate(
+        changed["entry"], changed["current"], changed["previous"], as_of=changed["as_of"]
+    )
+    assert changed_result["rules"][0]["result"] == "NO_MATCH"
+
+
 @pytest.mark.parametrize(
     "field,value",
     [

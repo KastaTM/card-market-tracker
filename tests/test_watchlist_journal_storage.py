@@ -559,3 +559,144 @@ def test_failed_restore_never_exposes_corrupt_provisional_copy(populated, tmp_pa
     category("storage_corrupt", lambda: storage.restore(populated[0], destination))
     assert not destination.exists()
     assert not list(tmp_path.glob(".cmt-watchlist-journal-*.tmp"))
+
+
+@pytest.mark.parametrize("operation", [storage.backup, storage.restore])
+def test_post_link_unlink_failure_rolls_back_owned_publication(
+    populated, tmp_path, monkeypatch, operation
+):
+    source = populated[0]
+    before = source.read_bytes()
+    destination = tmp_path / "failed-publication.db"
+    unlink = Path.unlink
+    injected = False
+
+    def interrupted(path, *args, **kwargs):
+        nonlocal injected
+        if not injected and path.name.startswith(".cmt-watchlist-journal-"):
+            assert destination.exists() and path.stat().st_nlink == 2
+            injected = True
+            raise OSError("synthetic post-link unlink failure")
+        return unlink(path, *args, **kwargs)
+
+    monkeypatch.setattr(Path, "unlink", interrupted)
+    category("storage_io", lambda: operation(source, destination, timeout=5))
+    assert injected
+    assert source.read_bytes() == before
+    assert not destination.exists()
+    assert not list(tmp_path.glob(".cmt-watchlist-journal-*.tmp"))
+    assert storage.verify(source, timeout=5)["counts"] == {
+        "sequences": 1,
+        "evaluations": 2,
+        "signals": 2,
+    }
+    assert operation(source, destination, timeout=5)["result"] == "ok"
+    assert storage.verify(destination, timeout=5) == storage.verify(source, timeout=5)
+
+
+@pytest.mark.parametrize("stage", [1, 2, 3])
+def test_copy_deadline_at_each_fold_keeps_source_and_no_destination(
+    populated, tmp_path, monkeypatch, stage
+):
+    source = populated[0]
+    before = source.read_bytes()
+    destination = tmp_path / "expired.db"
+    verify = storage._verify
+    calls = 0
+
+    def expired(db, budget):
+        nonlocal calls
+        calls += 1
+        if calls == stage:
+            budget.deadline = 0
+        return verify(db, budget)
+
+    with monkeypatch.context() as scoped:
+        scoped.setattr(storage, "_verify", expired)
+        category("storage_timeout", lambda: storage.backup(source, destination, timeout=5))
+    assert calls == stage
+    assert source.read_bytes() == before
+    assert not destination.exists()
+    assert not list(tmp_path.glob(".cmt-watchlist-journal-*.tmp"))
+    assert storage.verify(source, timeout=5)["result"] == "ok"
+
+
+@pytest.mark.parametrize("operation", [storage.backup, storage.restore])
+def test_copy_recomputes_every_row_once_in_each_independent_fold(
+    populated, tmp_path, monkeypatch, operation
+):
+    source = populated[0]
+    before = source.read_bytes()
+    verify, evaluate = storage._verify, identity.evaluation.evaluate
+    calls = 0
+    per_fold = []
+    connections = []
+
+    def counted(*args, **kwargs):
+        nonlocal calls
+        calls += 1
+        return evaluate(*args, **kwargs)
+
+    def measured(db, budget):
+        start = calls
+        connections.append(db)
+        counts = verify(db, budget)
+        per_fold.append(calls - start)
+        assert counts == {"sequences": 1, "evaluations": 2, "signals": 2}
+        return counts
+
+    destination = tmp_path / "independent.db"
+    with monkeypatch.context() as scoped:
+        scoped.setattr(identity.evaluation, "evaluate", counted)
+        scoped.setattr(storage, "_verify", measured)
+        assert operation(source, destination, timeout=5)["result"] == "ok"
+    assert per_fold == [2, 2, 2]
+    assert len({id(db) for db in connections}) == 3
+    assert source.read_bytes() == before
+    assert storage.verify(destination, timeout=5) == storage.verify(source, timeout=5)
+
+
+def test_post_link_rollback_preserves_replacement_destination(populated, tmp_path, monkeypatch):
+    destination = tmp_path / "substituted.db"
+    unlink = Path.unlink
+    injected = False
+
+    def replaced(path, *args, **kwargs):
+        nonlocal injected
+        if not injected and path.name.startswith(".cmt-watchlist-journal-"):
+            injected = True
+            unlink(destination)
+            destination.write_bytes(b"foreign replacement must survive")
+            raise OSError("synthetic replacement during publication")
+        return unlink(path, *args, **kwargs)
+
+    monkeypatch.setattr(Path, "unlink", replaced)
+    category("storage_io", lambda: storage.backup(populated[0], destination, timeout=5))
+    assert destination.read_bytes() == b"foreign replacement must survive"
+    assert not list(tmp_path.glob(".cmt-watchlist-journal-*.tmp"))
+
+
+@pytest.mark.parametrize("sidecar_owner", ["destination", "provisional"])
+def test_post_link_rollback_preserves_recovery_sidecars(
+    populated, tmp_path, monkeypatch, sidecar_owner
+):
+    destination = tmp_path / "sidecar.db"
+    unlink = Path.unlink
+    sidecar = None
+
+    def interrupted(path, *args, **kwargs):
+        nonlocal sidecar
+        if path.name.startswith(".cmt-watchlist-journal-") and destination.exists():
+            owner = destination if sidecar_owner == "destination" else path
+            sidecar = Path(str(owner) + "-journal")
+            sidecar.write_bytes(b"foreign recovery evidence")
+            raise OSError("synthetic recovery sidecar during publication")
+        return unlink(path, *args, **kwargs)
+
+    with monkeypatch.context() as scoped:
+        scoped.setattr(Path, "unlink", interrupted)
+        category("storage_io", lambda: storage.restore(populated[0], destination, timeout=5))
+    assert sidecar is not None and sidecar.read_bytes() == b"foreign recovery evidence"
+    assert destination.exists()
+    assert len(list(tmp_path.glob(".cmt-watchlist-journal-*.tmp"))) == 1
+    assert storage.verify(populated[0], timeout=5)["result"] == "ok"

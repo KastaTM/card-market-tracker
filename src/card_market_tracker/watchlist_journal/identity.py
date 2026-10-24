@@ -92,9 +92,9 @@ def sequence_id(entry: object, current: object) -> str:
     )
 
 
-def normalized_snapshot(
+def _normalized_snapshot(
     entry: object, current: object, previous: object = None, *, as_of: object
-) -> dict[str, object]:
+) -> tuple[dict[str, object], dict[str, object]]:
     """Validate all evidence and derive the exact evaluation identity object."""
     try:
         watch = validation.parse_entry(entry)
@@ -119,7 +119,14 @@ def normalized_snapshot(
         > MAX_SNAPSHOT_BYTES
     ):
         raise JournalError("input_limit")
-    return snapshot
+    return snapshot, result
+
+
+def normalized_snapshot(
+    entry: object, current: object, previous: object = None, *, as_of: object
+) -> dict[str, object]:
+    """Validate evidence while keeping the public snapshot-only return shape."""
+    return _normalized_snapshot(entry, current, previous, as_of=as_of)[0]
 
 
 def validate_snapshot(value: object) -> tuple[dict[str, object], dict[str, object]]:
@@ -129,22 +136,21 @@ def validate_snapshot(value: object) -> tuple[dict[str, object], dict[str, objec
         raise JournalError("unsupported_version")
     if row["policy_version"] != POLICY_VERSION:
         raise JournalError("unsupported_version")
-    snapshot = normalized_snapshot(
+    snapshot, result = _normalized_snapshot(
         row["entry"], row["current"], row["previous"], as_of=row["as_of"]
     )
     if row["sequence_id"] != snapshot["sequence_id"]:
         raise JournalError("identity_conflict")
-    try:
-        result = evaluation.evaluate(
-            snapshot["entry"], snapshot["current"], snapshot["previous"], as_of=snapshot["as_of"]
-        )
-    except WatchlistError as error:
-        raise JournalError(error.category) from None
     return snapshot, result
 
 
 def evaluation_id(snapshot: object) -> str:
     normalized, _ = validate_snapshot(snapshot)
+    return _evaluation_id(normalized)
+
+
+def _evaluation_id(normalized: dict[str, object]) -> str:
+    """Hash a snapshot already normalized within the current private operation."""
     return _identity("wje1_", EVALUATION_DOMAIN, normalized)
 
 
