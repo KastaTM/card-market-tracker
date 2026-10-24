@@ -66,22 +66,42 @@ Linux/aarch64, Python 3.13.16, SQLite 3.46.1, matching the pinned CI image.
 Independent profiling explains a concrete source of excess work: each
 `validate_snapshot()` executed the identical pure P5a evaluator twice. A
 five-checkpoint backup executed 210 evaluator calls across its three independent
-folds. The correction reuses the result already calculated during that call's
-normalization and canonical size check. It retains all 105 snapshot validations
-and all three deep folds, reducing evaluator calls to 105. Public normalization
-and validation shapes, rejection checks and deterministic identities are
-unchanged. There is no cache between calls or verification stages.
+folds. An initial minimal correction reused the result already calculated during
+normalization and canonical size checking. It reduced evaluator calls to 105,
+retaining the repeated snapshot validations and all three deep folds.
 
-Paired ARM64 measurements on the same image and fixtures passed three of three
-corrected backups in 3,992–4,037 ms; all three independent folds completed, with
-valid source and destination verification and no residuals. This demonstrates
-the cause and correction of the locally reproduced budget exhaustion. The
-original CI failure's exact stage was not logged, and arbitrary larger histories
-or slower hosts can still legitimately exhaust the bounded operation budget.
-QEMU slowness alone is not presented as root cause. Cooperative deadlines cannot
-preempt a blocked filesystem syscall. Raw stage measurements and paired profiles
-are retained under `arm64-integrated/`, `arm64-candidate/` and `db-owner/` in the
-ignored evidence directory.
+Paired ARM64 measurements for that first optimization passed three of three
+backups in 3,992–4,037 ms, and its installed ARM64 journal harness passed locally.
+However, its fresh remote ARM64 CI still exhausted the budget at 5,140 ms. The
+local margin was insufficient evidence of remote readiness; all failed logs
+remain preserved.
+
+The final fold correction removes repeated internal normalization of the same
+locally owned snapshot. `_load_evaluation` still recomputes and validates every
+snapshot/result and compares its canonical bytes, ID and columns. Within that
+single fold, the previous/current normalized snapshots, recomputed results and
+verified IDs supply the same continuity, freshness and per-rule signal predicates.
+Public APIs still validate raw callers. These private values never authorize
+admission, persist between operations or cross source/copy/reopen boundaries.
+
+Each verification now recomputes each of the five rows once: 15 evaluations and
+15 full snapshot validations across three independent folds, instead of 210
+evaluations caused by nested repeated validation. Schema, integrity/FK, canonical
+content/results/IDs, sequence/ordinal/predecessor, sample uniqueness, continuity,
+freshness, exact signals, heads and total-count checks remain present. The shared
+five-second budget and progress checks are unchanged.
+
+Paired final ARM64 controls passed three of three backups in 906–928 ms, with
+each full fold taking approximately 292–309 ms. Source/destination verification
+remained valid and no provisional remained. Independent DB profiling confirmed
+15 evaluations, 15 snapshot validations and three folds; differential probes
+preserved 240 public transition operations and 26 identity cases, including errors.
+The original CI failure's exact stage was not logged, and arbitrary larger
+histories or slower hosts can still exhaust the bounded operation budget. QEMU
+slowness alone is not presented as root cause. Cooperative deadlines cannot
+preempt a blocked filesystem syscall. Raw measurements and profiles are retained
+under `arm64-integrated/`, `arm64-candidate/`, `arm64-fold-candidate/` and `db-owner/`
+in the ignored evidence directory.
 
 ## RW-02: one authorized retry
 
@@ -98,9 +118,10 @@ the preceding ten harnesses passed. No further retry was attempted. The three
 successful original jobs remain preserved separately with their original IDs
 and complete logs. GitHub's attempt-2 listing creates inherited entries with
 new IDs and their original execution timestamps; these are not new executions.
-The first PR #17 candidate also failed its ARM64 backup at 5,159 ms; that run
-and its complete failed log are preserved. The next candidate must receive
-fresh CI after the correction, rather than rerunning either failed execution.
+The first PR #17 candidate also failed its ARM64 backup at 5,159 ms; its next
+normalization-only candidate failed at 5,140 ms. Both runs and their complete
+failed logs are preserved. The fold candidate must receive fresh CI after its
+new commit, rather than rerunning any failed execution.
 
 ## RW-03: demonstrated distinct publication defect
 
@@ -121,7 +142,7 @@ The operation reports its original error; it does not retry copy or publication.
 The existing finally cleanup still attempts removal of its owned provisional
 after compensation makes the single-link state safe.
 
-Together with the normalization-result reuse above, all three deep verifications,
+Together with the operation-local fold reuse above, all three deep verifications,
 exclusive creation, the shared maximum of five seconds, prior storage owners,
 schemas, identities, fixtures and CI checks remain unchanged. Foreign replacements
 and recovery evidence are preserved. Persistent
@@ -134,14 +155,18 @@ Reproduce the focused regression and deadline/safety cases:
 uv run --frozen pytest tests/test_watchlist_journal_storage.py -q
 ```
 
-The corrected storage suite passed 60 cases locally, including post-link failure
+The corrected storage suite passed 62 cases locally, including post-link failure
 for backup/restore, each verification-stage deadline, a substituted destination,
 and recovery sidecars at either name. Full gates and distinct non-author QA and
 REVIEWER evidence must bind the final candidate SHA/tree in the new PR handoff.
 Domain regressions compare exact recomputation results against the pure evaluator
 and frozen vectors, enforce one evaluation per snapshot validation and prove
 that later mutable evidence is recomputed independently. The combined domain
-and storage subset passed 106 cases after both corrections.
+and storage subset passed 108 cases after the fold correction. Additional backup
+and restore regressions require one recomputation per row in each of three
+distinct connections, proving that no verification reuses a previous fold's
+results. Independent probes must also check copy corruption between verification
+stages and fresh verification after later privileged mutation.
 This branch is a proposal only; it must not be merged without new acceptance.
 
 ## Model profile and ownership

@@ -621,6 +621,41 @@ def test_copy_deadline_at_each_fold_keeps_source_and_no_destination(
     assert storage.verify(source, timeout=5)["result"] == "ok"
 
 
+@pytest.mark.parametrize("operation", [storage.backup, storage.restore])
+def test_copy_recomputes_every_row_once_in_each_independent_fold(
+    populated, tmp_path, monkeypatch, operation
+):
+    source = populated[0]
+    before = source.read_bytes()
+    verify, evaluate = storage._verify, identity.evaluation.evaluate
+    calls = 0
+    per_fold = []
+    connections = []
+
+    def counted(*args, **kwargs):
+        nonlocal calls
+        calls += 1
+        return evaluate(*args, **kwargs)
+
+    def measured(db, budget):
+        start = calls
+        connections.append(db)
+        counts = verify(db, budget)
+        per_fold.append(calls - start)
+        assert counts == {"sequences": 1, "evaluations": 2, "signals": 2}
+        return counts
+
+    destination = tmp_path / "independent.db"
+    with monkeypatch.context() as scoped:
+        scoped.setattr(identity.evaluation, "evaluate", counted)
+        scoped.setattr(storage, "_verify", measured)
+        assert operation(source, destination, timeout=5)["result"] == "ok"
+    assert per_fold == [2, 2, 2]
+    assert len({id(db) for db in connections}) == 3
+    assert source.read_bytes() == before
+    assert storage.verify(destination, timeout=5) == storage.verify(source, timeout=5)
+
+
 def test_post_link_rollback_preserves_replacement_destination(populated, tmp_path, monkeypatch):
     destination = tmp_path / "substituted.db"
     unlink = Path.unlink

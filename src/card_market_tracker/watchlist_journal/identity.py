@@ -146,6 +146,11 @@ def validate_snapshot(value: object) -> tuple[dict[str, object], dict[str, objec
 
 def evaluation_id(snapshot: object) -> str:
     normalized, _ = validate_snapshot(snapshot)
+    return _evaluation_id(normalized)
+
+
+def _evaluation_id(normalized: dict[str, object]) -> str:
+    """Hash a snapshot already normalized within the current private operation."""
     return _identity("wje1_", EVALUATION_DOMAIN, normalized)
 
 
