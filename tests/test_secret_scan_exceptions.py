@@ -35,6 +35,7 @@ def test_exact_path_detector_and_public_value_only():
         ("src/card_market_tracker/pinned_repository/approved_bundle_v2.json", "_PROJECTION"),
         ("tests/fixtures/pinned_repository_bundle_v2.json", "_R1"),
         ("src/card_market_tracker/pinned_repository/bundle_v2.py", "_BUNDLE_V2"),
+        ("tests/fixtures/p5b_identity_vectors_v1.json", "_P5B_IDENTITY"),
     ],
 )
 def test_p1c_exceptions_are_exact_path_detector_value(path, value):

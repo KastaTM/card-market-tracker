@@ -1,5 +1,16 @@
 # Narrow reviewed public-digest scanner exceptions
 
+P5b adds exactly one detector/path/value match for the supplied identity fixture
+`tests/fixtures/p5b_identity_vectors_v1.json`: its synthetic canonical parent
+projection SHA256 (registry name `_P5B_IDENTITY`). Engineering independently
+recalculated it using stdlib sorted/ASCII/compact JSON and hashlib.sha256 over the
+fixture's canonical_identity. QA/REVIEWER recheck that identity on the final tree.
+It is a public synthetic equality digest, not a credential. Wrong paths, modified
+values, different detectors and unknown findings continue to fail; all tracked
+files and detectors remain enabled. Owner Engineering Lead/SEC; revisit when
+fixture projection, path, value or detector semantics change. The scanner-source
+registry's exact literal alone carries a local annotation, as in prior phases.
+
 P1c extends the same exact detector/path/value mechanism to four additional paths:
 `docs/sources/P1C_REQUEST_LEDGER.json` (R1 revision + original blob/content digests),
 `src/card_market_tracker/pinned_repository/approved_bundle_v2.json` and

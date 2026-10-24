@@ -1,5 +1,26 @@
 # Testing strategy
 
+## P5b requirements
+
+Test original full manifest and selected immutable revision admission, malformed
+disabled evidence, exact independent golden identity bytes, per-rule two episodes
+and simultaneous transitions, inclusive freshness, unknown/SKIPPED continuity,
+explicit previous/time/as_of/sample uniqueness, cross-series revision identity,
+old replay without head/clock changes and conflicts without partial writes.
+Use separate writer processes, injected failures between evaluation/signals/head,
+rehashed result/signal/head tampering, exact SQL/FK inventory, local verification
+versus missing/mutated origin, bounded pages/cursors/deadlines and hostile inputs.
+Recovery probes cover exclusive destinations, sidecar/inode/link protection,
+copy failure and restart. Deny sockets and check original stores are unchanged.
+
+The eleventh `scripts/watchlist_journal_smoke.py` joins the ten existing installed
+wheel/process harnesses in Quality, Compose, AMD64 and ARM64/QEMU. Each smoke
+uses separate offline invocations and durable data across restart. Non-author QA
+and a distinct REVIEWER produce own reproducible probes on the frozen candidate
+commit/tree; author tests and the supplied eight design tests remain separate.
+Unexecuted gates are not PASS. QEMU and process tests do not qualify native Pi
+hardware or electrical power-loss durability.
+
 ## P5a requirements
 
 Test full manifest parsing and public Python revalidation: fabricated DTOs,

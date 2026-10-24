@@ -18,3 +18,4 @@ env -u PYTHONPATH "$outside/venv/bin/python" "$repo/scripts/discovery_journal_sm
 env -u PYTHONPATH "$outside/venv/bin/python" "$repo/scripts/alert_outbox_smoke.py" --mode installed --executable "$outside/venv/bin/cmt" --fixtures "$repo/tests/fixtures"
 env -u PYTHONPATH "$outside/venv/bin/python" "$repo/scripts/telegram_delivery_smoke.py" --mode installed --executable "$outside/venv/bin/cmt" --fixtures "$repo/tests/fixtures"
 env -u PYTHONPATH "$outside/venv/bin/python" "$repo/scripts/watchlist_smoke.py" --mode installed --executable "$outside/venv/bin/cmt" --fixtures "$repo/tests/fixtures"
+env -u PYTHONPATH "$outside/venv/bin/python" "$repo/scripts/watchlist_journal_smoke.py" --mode installed --executable "$outside/venv/bin/cmt" --fixtures "$repo/tests/fixtures"

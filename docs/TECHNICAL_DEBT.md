@@ -1,5 +1,18 @@
 # Technical debt register
 
+P5b (2026-10-24) preserves TD-001..TD-005 OPEN with existing owners/exits.
+The independent append-only journal adds synthetic snapshots and backup headroom
+without automatic quotas/retention (TD-004). Finite whole-history verification
+may time out on a growing valid file. Trusted ancestors/Windows ACLs remain
+TD-003; native Pi electrical durability remains TD-002. No privileged source
+authentication, distributed commit or legacy-scope fix is claimed. Product
+networking, commercial evidence and delivery bridges remain excluded scope.
+
+P5b's initial Linux CI dependency audit found CVE-2026-112940 in the existing
+development-only filelock4.0.12. The lock is narrowly upgraded to4.2.1 and all
+candidate gates/reviews repeated. This is a corrected gate finding, not an audit
+exception or a new runtime dependency; TD-001..TD-005 remain unchanged.
+
 P5a (2026-10-23) preserves TD-001..TD-005 OPEN with their existing owners,
 review horizons and exits. The separate append-only watchlist adds preferences,
 request history and recovery copies but no retention/quota or native Pi power-loss

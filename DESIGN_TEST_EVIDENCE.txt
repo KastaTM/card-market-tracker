@@ -1,0 +1,22 @@
+2026-10-23 — offline local design verification, NOT P5b product/CI evidence.
+Working directory: portable bundle /mnt/data/p5b_handoff
+Interpreter: Python 3.13 (compileall output cpython-313)
+
+Command: python -m unittest discover -s tests -p 'test_p5b_*_reference.py' -v
+Result: 8 tests PASS, 0 failures, 0 errors.
+Tests:
+- test_mutation_changes_semantic_identity
+- test_sha256_preimages_and_normalization
+- test_first_match_is_baseline
+- test_freshness_age_inclusive
+- test_no_or_aggregate_suppression
+- test_two_episodes_one_rule
+- test_two_rules_and_persistent_match
+- test_unknown_disabled_indeterminate_interrupt
+
+Command: python scripts/p5b_identity_oracle.py
+Result: PASS all five frozen synthetic identity digests; preimage output matches fixture.
+
+No P5b source implementation tested. No repo ruff/mypy/pytest/coverage, wheel, compose,
+AMD64, ARM64, CI, independently executed agent probes or PR. Baseline-only remote
+read verifies main sha/tree/parents; GitHub branch creation forbidden (403).

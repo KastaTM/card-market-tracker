@@ -2,3 +2,4 @@
 /tests/fixtures/pinned_repository_MIT_NOTICE.txt text eol=lf
 /docs/phases/P8A_OFFLINE_ALERT_OUTBOX_CONTRACT.md -text whitespace=cr-at-eol
 /docs/phases/P8B_TELEGRAM_ALERT_DELIVERY_CONTRACT.md -text whitespace=cr-at-eol
+/docs/phases/P5B_WATCHLIST_EVALUATION_JOURNAL_CONTRACT.md -text whitespace=cr-at-eol

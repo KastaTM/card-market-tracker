@@ -7,6 +7,7 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 .coverage
+.coverage.*
 coverage.xml
 coverage.json
 secret-scan.json
@@ -35,3 +36,4 @@ build/
 .p8a-evidence/
 .p8b-evidence/
 .p5a-evidence/
+.p5b-evidence/

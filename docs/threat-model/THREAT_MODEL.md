@@ -1,5 +1,34 @@
 # Initial threat model
 
+## P5b journal boundaries (2026-10-24)
+
+The new CMTQ journal alone retains bounded normalized synthetic samples and
+immutable P5a revision snapshots. Full original manifest admission and exact
+revision reread prevent caller verdict/DTO authority. Storage reparses/recalculates
+inputs and derives signals under BEGIN IMMEDIATE; replay never moves head.
+Cross-series immutable revision equality, unique current sample, exact previous,
+time/as_of monotonicity and per-rule freshness constrain false episode signals.
+Deep verify reconstructs snapshots, results, complete fold and heads, detecting
+inconsistency even after local hashes are recalculated. Original-backed recompute
+is separate. Hashes/provenance declarations authenticate no commercial source or
+privileged consistent rewrite; no distributed origin/journal atomicity exists.
+
+Trusted directories, inode/link/sidecar checks and exclusive provisional verified
+recovery protect ordinary local paths; preserve evidence on error. Synthetic
+preferences/samples/stdout/backups need host ACLs. Default2s/max5s cooperative
+deadlines, byte/node/depth/page caps and exact SQL inventory bound ordinary work;
+blocked OS/device calls and hostile administrator ancestor races remain outside
+guarantees (TD-003). Capacity/retention and native Pi power-loss qualification
+remain TD-004/TD-002. All TD-001..005 stay OPEN. No product sockets, destination,
+outbox bridge, scheduler or delivery authority is added; restore touches only
+this history as of backup time, without changing Telegram quarantine.
+
+Development tooling remains a supply-chain boundary. Initial P5b Linux CI found
+CVE-2026-112940 in transitive filelock4.0.12 despite a passing local audit; the
+narrow lock update to4.2.1 follows the maintainer advisory, without adding runtime
+dependencies or suppressing findings. A local audit alone cannot override a
+different applicable CI result; the corrected candidate requires all gates again.
+
 ## P5a watchlist boundaries (2026-10-23)
 
 Assets are canonical targets, private operator preferences, immutable revision/

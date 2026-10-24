@@ -1,5 +1,17 @@
 # Logging contract v1
 
+## Compatible P5b extension (2026-10-24)
+
+Event `watchlist.journal.completed`; operation prefix `watchlist_journal_` plus
+arguments/init/record/get/list/signal_get/signal_list/verify/recompute/backup/restore.
+Component cli, UUID run_id, nonnegative duration_ms, fixed error categories and
+ok/replay/error results retain their existing meanings. Optional strict integer
+journal_evaluations_count and journal_signals_count are bounded0..100000000.
+No watch/sequence/evaluation/sample IDs, snapshots, amounts, preferences, names,
+paths or raw exceptions enter logs. Explicit stdout, DB and backups contain
+contracted operator evidence and require private filesystem access. Record stdout
+uses recorded/replayed, while logs use ok/replay. This contract is not gate evidence.
+
 ## Compatible P5a extension (2026-10-23)
 
 Event `watchlist.completed`; component cli, per-invocation UUID run_id and

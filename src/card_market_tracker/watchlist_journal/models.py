@@ -1,0 +1,14 @@
+"""Frozen P5b contract constants; dictionaries carry no admission authority."""
+
+from ..watchlist.models import POLICY_VERSION
+
+VERSION = 1
+MAX_SNAPSHOT_BYTES = 65_536
+SEQUENCE_DOMAIN = "CMT_WATCHLIST_JOURNAL_SEQUENCE_V1"
+EVALUATION_DOMAIN = "CMT_WATCHLIST_JOURNAL_EVALUATION_V1"
+SIGNAL_DOMAIN = "CMT_WATCHLIST_SIGNAL_V1"
+SIGNAL_KIND = "WATCHLIST_RULE_ENTERED_MATCH"
+SIGNAL_MODE = "synthetic"
+RULES = ("price", "restock")
+
+__all__ = ["POLICY_VERSION"]
