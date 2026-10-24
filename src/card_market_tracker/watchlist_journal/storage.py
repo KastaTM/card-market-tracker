@@ -6,6 +6,7 @@ import json
 import math
 import os
 import sqlite3
+import stat
 import time
 import uuid
 from collections.abc import Iterator
@@ -850,6 +851,22 @@ def initialize(path: Path, *, timeout: float = DEFAULT_TIMEOUT) -> dict[str, obj
             _cleanup_reserved(target, identity)
 
 
+def _rollback_publication(provisional: Path, destination: Path, identity: tuple[int, int]) -> None:
+    """Remove only our new link when the verified inode still has both names."""
+    with suppress(OSError):
+        for name in (provisional, destination):
+            information = name.lstat()
+            if (
+                (information.st_dev, information.st_ino) != identity
+                or information.st_nlink != 2
+                or not stat.S_ISREG(information.st_mode)
+                or getattr(information, "st_file_attributes", 0) & stat.FILE_ATTRIBUTE_REPARSE_POINT
+                or any(paths._exists(sidecar) for sidecar in paths._sidecars(name))
+            ):
+                return
+        destination.unlink()
+
+
 def _publish(provisional: Path, destination: Path, identity: tuple[int, int]) -> None:
     """Expose only a verified complete file, atomically and without replacement."""
     target = _path(destination, new=True)
@@ -864,7 +881,11 @@ def _publish(provisional: Path, destination: Path, identity: tuple[int, int]) ->
         os.link(provisional, target)
     except FileExistsError:
         raise JournalError("unsafe_destination") from None
-    provisional.unlink()
+    try:
+        provisional.unlink()
+    except OSError:
+        _rollback_publication(provisional, target, identity)
+        raise
 
 
 def _copy(source: Path, destination: Path, operation: str, timeout: float) -> dict[str, object]:
