@@ -1,0 +1,5 @@
+{"command": [".venv/Scripts/python.exe", "-m", "pip_audit", "-r", "requirements-audit.txt"], "time_utc": "20261027T211056630094Z", "exit_code": 0}
+STDOUT
+
+STDERR
+No known vulnerabilities found

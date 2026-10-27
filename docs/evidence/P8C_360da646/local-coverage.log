@@ -1,0 +1,6 @@
+{"command": [".venv/Scripts/python.exe", "scripts/check_coverage.py", "coverage.json"], "time_utc": "20261027T212912370292Z", "exit_code": 0}
+STDOUT
+runtime lines: 94.14% (required >=85%)
+runtime branches: 88.30% (required >=80%)
+
+STDERR

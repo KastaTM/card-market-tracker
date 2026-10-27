@@ -1,0 +1,35 @@
+{"command": [".venv/Scripts/python.exe", "-m", "pytest", "-q", "tests/test_watchlist_alert_cli.py::test_deadline_exhausted_by_logging_cannot_emit_success"], "time_utc": "20261027T211930846642Z", "exit_code": 1}
+STDOUT
+F                                                                        [100%]
+================================== FAILURES ===================================
+___________ test_deadline_exhausted_by_logging_cannot_emit_success ____________
+
+capsys = <_pytest.capture.CaptureFixture object at 0x000001A764DD8050>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001A764FD35C0>
+
+    def test_deadline_exhausted_by_logging_cannot_emit_success(capsys, monkeypatch):
+        from card_market_tracker.watchlist_alerts import cli
+        from card_market_tracker.watchlist_journal.storage import Budget
+    
+        budget = Budget(5)
+        logged = []
+    
+        def exhaust_budget(_logger, _level, _message, *, extra):
+            logged.append(extra["result"])
+            budget.deadline = 0
+    
+        monkeypatch.setattr(logging.Logger, "log", exhaust_budget)
+        code = cli._report(
+            {"version": 1, "operation": "verify", "result": "ok"},
+            "verify", time.perf_counter(), 0, budget=budget,
+        )
+        output = json.loads(capsys.readouterr().out)
+>       assert code == 1
+E       assert 0 == 1
+
+tests\test_watchlist_alert_cli.py:356: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_watchlist_alert_cli.py::test_deadline_exhausted_by_logging_cannot_emit_success
+1 failed in 0.28s
+
+STDERR

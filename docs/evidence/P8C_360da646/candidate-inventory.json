@@ -1,0 +1,226 @@
+{
+  "head": "360da646892e46545ca70e8838bc3a2a89e460a3",
+  "tree": "3ce94d6e214de74889475753807122b526085b98",
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "git_blob": "e0363435a921197ea0fcb9e99b5bb2b1a65714fd",
+      "blob_sha256": "78b64c1de1a710dac95fb0f8b6fe2d886ab6eb16b2a168258ad8071826b259ed"
+    },
+    {
+      "path": ".gitignore",
+      "git_blob": "013aaebe048b3927e40efe073142db897bbd6232",
+      "blob_sha256": "57592e3527e2d65f17fd3aed4c2ac3ca65fce212a27328aefbbc31ad516b4ab1"
+    },
+    {
+      "path": "AGENTS.md",
+      "git_blob": "e56b2d13fb6d3fd184e3fbef3d08c133c1fb95a4",
+      "blob_sha256": "a128735a3844459e40ebf2994ee066fafff09100aee0508bf443605dfdba2a8c"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "git_blob": "a5f87845070532f87e89c27e5d65f1a034644749",
+      "blob_sha256": "3261238878568d902df335bf23857cc4b51f059461d479f22e9767a48c342205"
+    },
+    {
+      "path": "docs/QUALITY_GATES.md",
+      "git_blob": "45549f220a32e4ffed4b7b597e08d8911b4aedcf",
+      "blob_sha256": "1d744cadca79ad7d582f9eb830153e9cc6cd195e051b7a426e2defd912ce748a"
+    },
+    {
+      "path": "docs/ROADMAP.md",
+      "git_blob": "f7ae270b0f736a9571bf9fd501d60c85fedf8210",
+      "blob_sha256": "79d2e91435c3819a87aa42f9b8ac421181aa91d8522c7e2b99ff8df9f009ce3a"
+    },
+    {
+      "path": "docs/TESTING_STRATEGY.md",
+      "git_blob": "afe3ef36c3d5c7748fb6cfcf7816492f45726962",
+      "blob_sha256": "2ca376be81bd5444be7214f8b253f4f1195983943d619991d58cdc137afb784a"
+    },
+    {
+      "path": "docs/adr/0014-offline-watchlist-signal-outbox.md",
+      "git_blob": "1bdc741153576e05bc8458a00a851f3d8de321ec",
+      "blob_sha256": "79d2194800d3ae2e88b35669ff2cd6b8603d99210d25c6dccaa723292c6debd3"
+    },
+    {
+      "path": "docs/data-contracts/LOGGING_V1.md",
+      "git_blob": "57af2cdaefb1bd76382b3fbb0a7288dd2f5ce8b8",
+      "blob_sha256": "1f8e3f9f7a705da61cf5d4e8b979e9cbd79758963aff0ba63ae51597dae56146"
+    },
+    {
+      "path": "docs/data-contracts/WATCHLIST_ALERT_OUTBOX_STORAGE_V1.md",
+      "git_blob": "6fd0062671af5edcf7a4e230ad6f11e188c34b09",
+      "blob_sha256": "60aa73f5d12f3f6cc3df5c509f5a094fe71083e6808fd00c0fe740738b313ebf"
+    },
+    {
+      "path": "docs/data-contracts/WATCHLIST_ALERT_OUTBOX_V1.md",
+      "git_blob": "de4487b6bd4247f6b9c6b6281560b9c88f2fbf36",
+      "blob_sha256": "acc47dcb491841851544db11da96dd58b4bb23f174a09a966207e9fa24ceae31"
+    },
+    {
+      "path": "docs/phases/P8C_ACCEPTANCE_EVIDENCE_TEMPLATE.md",
+      "git_blob": "3877c87a4f46fba63449dbd61845ea8ed5c43066",
+      "blob_sha256": "a01bf8081c3ccaeb890c0f333ac6b1822158cee82a0ad8c02de7a19630863cc2"
+    },
+    {
+      "path": "docs/phases/P8C_CODEX_ENGINEERING_BRIEF.md",
+      "git_blob": "1235e07a80e15c19a0ae66f6913d65be70c9d3a0",
+      "blob_sha256": "9656b8454b187a888f617b46fa81ba9913bafd262eb37035b06d44e009cb9399"
+    },
+    {
+      "path": "docs/phases/P8C_IMPLEMENTATION_AND_INTEGRATION.md",
+      "git_blob": "b1e6e0a9f3eec6d16b7f19614ce079b851b13300",
+      "blob_sha256": "989541bc99d8c7b18e4eab8202d58932abfd1b269f96d5afe834211980c3e7fb"
+    },
+    {
+      "path": "docs/phases/P8C_OFFLINE_WATCHLIST_SIGNAL_OUTBOX_CONTRACT.md",
+      "git_blob": "44b070600dc525bcf735176f951ab79749ffccb1",
+      "blob_sha256": "e5af71ad901460abc5bdff1474c7230eaa781d70c2f67c46dd0ec43a70223e14"
+    },
+    {
+      "path": "docs/phases/P8C_OWNERSHIP.md",
+      "git_blob": "4c01900d2b7b0fab0bdb2447f9bb5cafbc584c73",
+      "blob_sha256": "f1cea383e72979303d190d0e7ad9840bd44e3f90fb4842ea9ff3bdddc46fde72"
+    },
+    {
+      "path": "docs/runbooks/WATCHLIST_ALERT_OUTBOX_RECOVERY.md",
+      "git_blob": "7bad061e13b2ef6ce9110453ab6e5e22cd2b2638",
+      "blob_sha256": "779e696bf5cbaefb32188e44d2af0eace7b64cd888f06474f35dbda79ff632d2"
+    },
+    {
+      "path": "docs/threat-model/THREAT_MODEL.md",
+      "git_blob": "f5ddea4365e5c347fab6983aef17b108777e9f15",
+      "blob_sha256": "c6b093e18dfaefd1ad0b6d5c9c1721e9119012643317ca18252372301dae2ada"
+    },
+    {
+      "path": "scripts/container_smoke.sh",
+      "git_blob": "b8904acefe037d955be24fa5766352f375e0ae1d",
+      "blob_sha256": "5b738d95ca5dfcc6da48a3932ee469465ae377cf447f9c80f62aeb95b9cb5c71"
+    },
+    {
+      "path": "scripts/p8c_identity_oracle.py",
+      "git_blob": "8ac6172c3d3462f4a5396d5f16523a1dacc14ddb",
+      "blob_sha256": "8b71e47a247d36c833ba79f2eac97de7e3e0d98837c86966677c953fe1bc91e2"
+    },
+    {
+      "path": "scripts/p8c_qa_probe.py",
+      "git_blob": "5ee701dd46da121c13f69c010e75a5d973e76621",
+      "blob_sha256": "a9bfa7316c1250717387c5a0c5b71f59b49199b9ed041887bc858db15f84ecc1"
+    },
+    {
+      "path": "scripts/p8c_reviewer_probe.py",
+      "git_blob": "f51254d5acde652f8aa578abb220e0eaf32c88e3",
+      "blob_sha256": "2a9115d5a108eb9ffaee6e335ed464c9bd3885eb1423572dfd9d446891817b03"
+    },
+    {
+      "path": "scripts/watchlist_alert_outbox_smoke.py",
+      "git_blob": "e36447ad11a4a92a32f28de9078556ba62f83663",
+      "blob_sha256": "f81f8210c6a6a324d65eaeafabc97db09ddafd4429cb60608ce2baf11b0af81a"
+    },
+    {
+      "path": "scripts/wheel_smoke.sh",
+      "git_blob": "476770d6a1ef1beccedece7b1cc47226042efb61",
+      "blob_sha256": "cb5f2c764f19ab78718e8126315147ec8172b450baf309df3606abfb306a71bc"
+    },
+    {
+      "path": "src/card_market_tracker/cli.py",
+      "git_blob": "a95a072e8107eca30f10635e69335b8e9e9ed813",
+      "blob_sha256": "39c6df38badc1fffe8bb32185c76f981c08479f694a7b7f6d593d2222cd0e5d8"
+    },
+    {
+      "path": "src/card_market_tracker/logging_json.py",
+      "git_blob": "05a783e2e4066c0e2821216497a8a4372fbd8020",
+      "blob_sha256": "e87f7ebc29902854c8f29679f74c9885af47f299f713cd5e1cbedfe3bff3be96"
+    },
+    {
+      "path": "src/card_market_tracker/watchlist_alerts/__init__.py",
+      "git_blob": "dd309eec7b2642df58a425f5754161b5021006ad",
+      "blob_sha256": "baf51fba82304cde3eb92faeba8c23794e06b9c4976795669d3a9adbac8c05c0"
+    },
+    {
+      "path": "src/card_market_tracker/watchlist_alerts/application.py",
+      "git_blob": "df38813c0a83c3f16740eae6798eb35b6325ad34",
+      "blob_sha256": "d37bf1baf31db637c5f9b02be31e72e5aefacdc9d2740c126e2d48a40a2db0c6"
+    },
+    {
+      "path": "src/card_market_tracker/watchlist_alerts/cli.py",
+      "git_blob": "5462d203b21e935cc1545ddf49bea520dbb63d5e",
+      "blob_sha256": "93cc62e3a6b322f70765b415b2dd43b01aa2332b29cfa2303656738ab3a42c6f"
+    },
+    {
+      "path": "src/card_market_tracker/watchlist_alerts/errors.py",
+      "git_blob": "3bf5248472286f680eb127c1d70afd8aeb2a2e70",
+      "blob_sha256": "bdaf3c382131bbb2fc0be42ed598b093d41d1d708922cb9fd9f7d85e82091fec"
+    },
+    {
+      "path": "src/card_market_tracker/watchlist_alerts/models.py",
+      "git_blob": "5376b929ba2efd47a31a5c6d6ab3af6179620505",
+      "blob_sha256": "65ae31b15c5483f9260a2bcdef5ad9bfa7c822f35171da98301c34f9725d05d3"
+    },
+    {
+      "path": "src/card_market_tracker/watchlist_alerts/policy.py",
+      "git_blob": "392c1713c950079fbfb9774da8f8b911dc59592a",
+      "blob_sha256": "4cf770fba6df69495a804e4d1d8770cc612d741ba31c39c6a2a5392dc4a8dbcf"
+    },
+    {
+      "path": "src/card_market_tracker/watchlist_alerts/render.py",
+      "git_blob": "82eebb732178db4153ae811b69f11761fa51ba7d",
+      "blob_sha256": "616d1b32e770744399ac0789af6b042f395d92009f5a0d18d5201f97298113bf"
+    },
+    {
+      "path": "src/card_market_tracker/watchlist_alerts/schema.py",
+      "git_blob": "d71512f084de5b9c0ef9f2041227b6c62cc47b50",
+      "blob_sha256": "17f4b91f48cfb967b0ecdb0a7b6f45342398d21a73b9c3162a61f05d62952511"
+    },
+    {
+      "path": "src/card_market_tracker/watchlist_alerts/storage.py",
+      "git_blob": "64568c641f66a7f23d665d446d74b3c0748be9c9",
+      "blob_sha256": "3d85513a8f2e6355caf28e5829d0fce12365884bf04a0d64b9672e5ac564fe79"
+    },
+    {
+      "path": "src/card_market_tracker/watchlist_journal/storage.py",
+      "git_blob": "72020140998d816dc24b6b9e2d6c2e1d4db77bfd",
+      "blob_sha256": "34b9bb5d3115317715c7cd3bb7c19a0899c8cb70515d418f4eb1830ea7a75135"
+    },
+    {
+      "path": "tests/fixtures/p8c_identity_vectors_v1.json",
+      "git_blob": "f043650f9b9dc4a898c0fb0dab429d91ac4212ec",
+      "blob_sha256": "2dd72cbb190d3a03fafb00f0ec81518c78515c983acc136aa44a7e022f48c9eb"
+    },
+    {
+      "path": "tests/test_watchlist_alert_application.py",
+      "git_blob": "858f22a0a556dee3ee4efb8cadafefcb53e4219c",
+      "blob_sha256": "fc11652463ed9b7b4d5d4e7ee81e0e671dc22217a15292fd2e0ccfd2cb8cdd5c"
+    },
+    {
+      "path": "tests/test_watchlist_alert_cli.py",
+      "git_blob": "80aa0f3563ad19220dd1a9c2791e2819d95bc49a",
+      "blob_sha256": "3a1add133c4937d965b7d17729a327da8f1418493def31acf281aa3d2f68be24"
+    },
+    {
+      "path": "tests/test_watchlist_alert_concurrency.py",
+      "git_blob": "d919047f257c1e378d2d7d3b2c6aca2aece64880",
+      "blob_sha256": "83287b0393dfabc43560a425a12699884713fdac54abf06d0e3795f7fb20d6ac"
+    },
+    {
+      "path": "tests/test_watchlist_alert_domain.py",
+      "git_blob": "884be81c60f0277a0a675b3431f4029af5dc22d6",
+      "blob_sha256": "8bbab6cbdbf07df0b13d71837edb9c383a7bde296e8ece456f62a137db7d7be0"
+    },
+    {
+      "path": "tests/test_watchlist_alert_recovery.py",
+      "git_blob": "d64652b2a3a79568e11907e9d78c645a94aaa196",
+      "blob_sha256": "0e124f864e672eec375f359c47658bdfaf4451851800e94186c1c9efc31f0c19"
+    },
+    {
+      "path": "tests/test_watchlist_alert_source.py",
+      "git_blob": "30c183a86478bb5bbc07ee3f6430720b76b72c3a",
+      "blob_sha256": "9a1abe5aeac74d5742359a31565a7e560c5f66873078d7ad62d0a068633bd5bf"
+    },
+    {
+      "path": "tests/test_watchlist_alert_storage.py",
+      "git_blob": "63ba722a413ba4937b06e673a332e06f7505c1b8",
+      "blob_sha256": "a01ee29906b2a485bbb38c3069659782574855545665c2530d8a109950fad6ff"
+    }
+  ]
+}

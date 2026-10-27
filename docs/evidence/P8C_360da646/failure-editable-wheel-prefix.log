@@ -1,0 +1,15 @@
+{"command": [".venv/Scripts/python.exe", "scripts/watchlist_alert_outbox_smoke.py", "--mode", "installed", "--executable", ".venv/Scripts/cmt.exe", "--fixtures", "tests/fixtures"], "time_utc": "20261027T210438592742Z", "exit_code": 1}
+STDOUT
+
+STDERR
+Traceback (most recent call last):
+  File "<WORKTREE>\scripts\watchlist_alert_outbox_smoke.py", line 316, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "<WORKTREE>\scripts\watchlist_alert_outbox_smoke.py", line 100, in main
+    run([*python, "-c", OFFLINE + SEED, source, data])
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<WORKTREE>\scripts\watchlist_alert_outbox_smoke.py", line 97, in run
+    assert completed.returncode == 0, (completed.stdout, completed.stderr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('', 'Traceback (most recent call last):\n  File "<string>", line 7, in <module>\n    assert Path(card_market_tracker.__file__).is_relative_to(Path(sys.prefix))\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^\nAssertionError\n')

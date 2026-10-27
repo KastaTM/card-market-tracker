@@ -1,0 +1,6 @@
+{"command": ["docker", "info", "--format", "{{.ServerVersion}}"], "time_utc": "20261027T210844337864Z", "exit_code": 1}
+STDOUT
+
+
+STDERR
+failed to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine; check if the path is correct and if the daemon is running: open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.

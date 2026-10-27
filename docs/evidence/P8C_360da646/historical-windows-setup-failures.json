@@ -1,0 +1,20 @@
+{
+  "historical_working_tree_attempts": [
+    {
+      "source_log": "20261027T210344989182Z-p8c-all-tests.log",
+      "source_sha256": "33bdadee7338d242386d11c3656f02943cfb5525215d757ae340a06a731bde2a",
+      "summary": "103passed,2setup errors; oversized automatic parameter ID",
+      "raw_retained_locally": true,
+      "not_a_final_candidate_gate": true,
+      "public_reproduction_note": "Windows PYTEST_CURRENT_TEST exceeds32767; final source keeps large payloads with explicit short IDs."
+    },
+    {
+      "source_log": "20261027T210745784275Z-full-suite.log",
+      "source_sha256": "4995d7be67d40897a1ab46e7f79989a037c1f6362fddf7c74c56c8cb51604900",
+      "summary": "2145passed,1skip,2setup errors; oversized automatic parameter ID",
+      "raw_retained_locally": true,
+      "not_a_final_candidate_gate": true,
+      "public_reproduction_note": "Windows PYTEST_CURRENT_TEST exceeds32767; final source keeps large payloads with explicit short IDs."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{"command": [".venv/Scripts/python.exe", "-m", "pytest", "-q", "-rs", "tests/test_persistence_storage_backup.py::test_symlink_final_ancestor_dangling_and_journal_refused"], "time_utc": "20261027T213416580333Z", "exit_code": 0}
+STDOUT
+s                                                                        [100%]
+=========================== short test summary info ===========================
+SKIPPED [1] tests\test_persistence_storage_backup.py:130: Host cannot create symlinks: OSError
+1 skipped in 0.15s
+
+STDERR
