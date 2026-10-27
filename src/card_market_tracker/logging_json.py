@@ -25,6 +25,7 @@ _EVENTS = frozenset(
         "telegram.delivery.completed",
         "watchlist.completed",
         "watchlist.journal.completed",
+        "watchlist.alert_outbox.completed",
     }
 )
 
@@ -134,6 +135,7 @@ class JsonFormatter(logging.Formatter):
             "already_exists",
             "not_found",
             "invalid_cursor",
+            "invalid_transition",
         }:
             payload["error_category"] = category
         result = getattr(record, "result", None)
@@ -224,6 +226,17 @@ class JsonFormatter(logging.Formatter):
             "watchlist_journal_recompute",
             "watchlist_journal_backup",
             "watchlist_journal_restore",
+            "watchlist_alert_outbox_arguments",
+            "watchlist_alert_outbox_init",
+            "watchlist_alert_outbox_enqueue",
+            "watchlist_alert_outbox_get",
+            "watchlist_alert_outbox_list",
+            "watchlist_alert_outbox_evidence_get",
+            "watchlist_alert_outbox_preview",
+            "watchlist_alert_outbox_verify",
+            "watchlist_alert_outbox_recompute",
+            "watchlist_alert_outbox_backup",
+            "watchlist_alert_outbox_restore",
         }:
             payload["operation"] = operation
         duration = getattr(record, "duration_ms", None)
@@ -256,6 +269,8 @@ class JsonFormatter(logging.Formatter):
             ("watchlist_entries_count", 1000),
             ("journal_evaluations_count", 100000000),
             ("journal_signals_count", 100000000),
+            ("watchlist_alerts_count", 100000000),
+            ("watchlist_alert_evidence_count", 100000000),
         ):
             value = getattr(record, field, None)
             if type(value) is int and 0 <= value <= maximum:
@@ -272,6 +287,35 @@ class JsonFormatter(logging.Formatter):
         attempts = getattr(record, "attempt_count", None)
         if type(attempts) is int and 0 <= attempts <= 3:
             payload["attempt_count"] = attempts
+        if payload["event"] == "watchlist.alert_outbox.completed":
+            from .watchlist_alerts.errors import ERROR_CATEGORIES
+
+            allowed = {
+                "timestamp",
+                "level",
+                "event",
+                "component",
+                "run_id",
+                "operation",
+                "duration_ms",
+                "result",
+                "error_category",
+                "watchlist_alerts_count",
+                "watchlist_alert_evidence_count",
+            }
+            payload = {key: value for key, value in payload.items() if key in allowed}
+            if payload.get("result") not in {"ok", "replay", "error"}:
+                payload.pop("result", None)
+            if (
+                payload.get("result") != "error"
+                or payload.get("error_category") not in ERROR_CATEGORIES
+            ):
+                payload.pop("error_category", None)
+            if not str(payload.get("operation", "")).startswith("watchlist_alert_outbox_"):
+                payload.pop("operation", None)
+            if payload.get("result") not in {"ok", "replay"}:
+                payload.pop("watchlist_alerts_count", None)
+                payload.pop("watchlist_alert_evidence_count", None)
         return json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
 
 

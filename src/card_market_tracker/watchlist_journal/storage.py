@@ -625,6 +625,65 @@ def signal_get(
     return {"version": 1, "operation": "signal-get", "result": "ok", "signal": signal}
 
 
+def _verified_signal_bundle(path: Path, signal_id: object, *, _budget: Budget) -> dict[str, object]:
+    """Read one deeply verified original signal/pair under a single ro snapshot."""
+    key = identity.validate_id(signal_id, "wsig1_")
+    _budget.remaining()
+    with _connect(path, _budget) as db, _transaction(db, _budget):
+        _verify(db, _budget)
+        row = _execute(
+            db,
+            _budget,
+            "SELECT " + _text("to_eval_id", 69) + " FROM wl_journal_signals WHERE signal_id=?",
+            (key,),
+        ).fetchone()
+        if row is None:
+            raise JournalError("not_found")
+        actual = _signals_for(db, _budget, row[0])
+        selected = next((item for item in actual if item["signal_id"] == key), None)
+        if selected is None:
+            raise JournalError("storage_corrupt")
+        before = _load_evaluation(db, _budget, cast(str, selected["from_evaluation_id"]))
+        after = _load_evaluation(db, _budget, cast(str, selected["to_evaluation_id"]))
+        if before is None or after is None:
+            raise JournalError("storage_corrupt")
+        expected = transitions._derive_normalized_signals(
+            (
+                cast(dict[str, object], before["snapshot"]),
+                cast(dict[str, object], before["evaluation_result"]),
+                cast(str, before["evaluation_id"]),
+            ),
+            (
+                cast(dict[str, object], after["snapshot"]),
+                cast(dict[str, object], after["evaluation_result"]),
+                cast(str, after["evaluation_id"]),
+            ),
+        )
+        if (
+            after["predecessor_evaluation_id"] != before["evaluation_id"]
+            or after["ordinal"] != cast(int, before["ordinal"]) + 1
+            or selected not in expected
+        ):
+            raise JournalError("storage_corrupt")
+        fields = (
+            "evaluation_id",
+            "sequence_id",
+            "ordinal",
+            "predecessor_evaluation_id",
+            "snapshot",
+            "evaluation_result",
+        )
+        bundle = {
+            "version": 1,
+            "signal": selected,
+            "predecessor": {name: before[name] for name in fields},
+            "current": {name: after[name] for name in fields},
+        }
+        _canonical(bundle, 262144)
+        _budget.remaining()
+    return bundle
+
+
 def _encode_cursor(binding: dict[str, object], last: str) -> str:
     return base64.urlsafe_b64encode(
         _canonical({"binding": binding, "last": last}).encode()

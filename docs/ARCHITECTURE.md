@@ -1,5 +1,31 @@
 # Architecture
 
+## P8c offline Watchlist signal outbox
+
+Complete MANIFEST_V1 plus explicit original P5a/P5b paths and one wsig1_ select
+a historical simulation. The additive P5b reader performs one accepted full deep
+fold and reads the selected signal/from/to in one read transaction. P8c rechecks
+the exact historical P5a revision and recomputes both results and the individual
+fresh NO_MATCH-to-MATCH transition, then derives bounded evidence, intent and
+pure deterministic plaintext.
+
+A private receipt binds canonical content, exact issued instance, issuing Budget
+and single use. Independent CMTY/schema1 revalidates semantics and commits alert
+plus evidence under BEGIN IMMEDIATE. Equal alias/signal replays original bytes
+and first time; conflicts never overwrite. Local verify reconstructs semantics;
+origin recompute independently re-admits originals. Three fresh recovery folds
+precede fsync/exclusive publication and safe owned-link compensation.
+
+P5a/P5b remain read-only origins with immutable-source/trusted-directory assumptions,
+no distributed transaction or authenticated producer. Root CLI defers Telegram
+loading so P8c help/errors/commands import no Telegram and access no transport or
+credentials. P8a/P8b admission stays unchanged. See
+[ADR](adr/0014-offline-watchlist-signal-outbox.md),
+[API](data-contracts/WATCHLIST_ALERT_OUTBOX_V1.md),
+[storage](data-contracts/WATCHLIST_ALERT_OUTBOX_STORAGE_V1.md) and
+[recovery](runbooks/WATCHLIST_ALERT_OUTBOX_RECOVERY.md).
+These boundaries certify no gates; candidate evidence is recorded separately.
+
 ## P5b synthetic evaluation journal
 
 Original full MANIFEST_V1 + exact P5a immutable revision + explicit synthetic

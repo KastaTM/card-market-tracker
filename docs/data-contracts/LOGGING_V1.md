@@ -1,5 +1,22 @@
 # Logging contract v1
 
+## Compatible P8c extension (2026-10-27)
+
+Event watchlist.alert_outbox.completed; component cli; operation prefix
+watchlist_alert_outbox_ plus arguments/init/enqueue/get/list/evidence_get/preview/
+verify/recompute/backup/restore. Existing timestamp, UUID run_id and nonnegative
+integer duration_ms remain. Results only ok/replay/error; recorded maps to ok,
+replayed to replay. Error category uses the closed P8c enum, only on errors.
+Optional watchlist_alerts_count/watchlist_alert_evidence_count are nonbool
+integers0..100000000, successful work only. No IDs, aliases, cursors, samples,
+amounts, messages, paths, SQL, transport metadata or arbitrary extras. The new
+event has its own field filter independent of historical-event allowances.
+See [API](WATCHLIST_ALERT_OUTBOX_V1.md); requirements are not gate evidence.
+P8c fully encodes and checks its shared deadline immediately before the first
+stdout byte, then emits one completion log for that response/exit outcome.
+Completion reporting after stdout cannot retroactively change emitted JSON;
+blocking stream/device writes are outside cooperative hard preemption.
+
 ## Compatible P5b extension (2026-10-24)
 
 Event `watchlist.journal.completed`; operation prefix `watchlist_journal_` plus

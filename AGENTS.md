@@ -1,5 +1,15 @@
 # Agent map
 
+- [P8c contract](docs/phases/P8C_OFFLINE_WATCHLIST_SIGNAL_OUTBOX_CONTRACT.md),
+  [brief](docs/phases/P8C_CODEX_ENGINEERING_BRIEF.md),
+  [ownership](docs/phases/P8C_OWNERSHIP.md),
+  [ADR](docs/adr/0014-offline-watchlist-signal-outbox.md): independent CMTY/schema1
+  offline preview outbox; original complete manifest, exact P5a revision and
+  single-transaction deeply verified P5b signal bundle. Immutable per-alias/signal
+  intentions/replay; local verify differs from original recompute. Exclusive
+  three-fold recovery. Only additive read-only P5b helper; prior writers/schemas/
+  identities unchanged. P8c OPEN; no product network/transport or merge authority.
+
 - [P5b contract](docs/phases/P5B_WATCHLIST_EVALUATION_JOURNAL_CONTRACT.md),
   [brief](docs/phases/P5B_CODEX_ENGINEERING_BRIEF.md),
   [ownership](docs/phases/P5B_OWNERSHIP.md),
@@ -9,7 +19,8 @@
   immutable snapshots, ancient replay, explicit previous/head CAS and per-rule
   fresh NO_MATCH-to-MATCH signals. Deep local fold verification differs from
   origin recompute. No product network or outbox/delivery bridge; preserve P5a
-  and all prior schemas/identities. P5b OPEN; only Orchestrator accepts/closes.
+  and all prior schemas/identities. P5b closed by the supplied P8c opening
+  contract's Orchestrator chat decision; historical evidence remains unchanged.
 
 - [P5a brief/ownership](docs/phases/P5A_CODEX_ENGINEERING_BRIEF.md),
   [ADR](docs/adr/0012-watchlist-offline-rules.md),
