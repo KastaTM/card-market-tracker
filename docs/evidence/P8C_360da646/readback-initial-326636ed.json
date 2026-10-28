@@ -1,0 +1,219 @@
+{
+  "evidence_commit": "326636edf639219ef36e8390432082a5667e7acd",
+  "candidate_head": "360da646892e46545ca70e8838bc3a2a89e460a3",
+  "candidate_tree": "3ce94d6e214de74889475753807122b526085b98",
+  "files_verified": 30,
+  "public_repository": true,
+  "complete_blob_readback": [
+    {
+      "path": "docs/evidence/P8C_360da646/.gitattributes",
+      "git_blob": "fa1385d99a319b43c06f5309d1aae9fdd3adea46",
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "bytes": 8,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/README.md",
+      "git_blob": "a113435eb58e11b63fa85337c8b0b397b9a256a5",
+      "sha256": "ac05dd4d67263ac3d633bb134f6aadf3852dcb831e3ba3d99e2124f32189a02c",
+      "bytes": 4724,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/candidate-inventory.json",
+      "git_blob": "8ba691f688f92984519cd73e235a98811dda531d",
+      "sha256": "35ba0e5f5e11bb79aeaa6f825b183e48cdfb87bd3ddfbd22ae73a3d7ed7bfd27",
+      "bytes": 9756,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/ci-completed-jobs-before-arm64.json",
+      "git_blob": "3e51de0b5c4b9bfb5b1f74a1c3a67bbf5d77d466",
+      "sha256": "f6ce5304835654336403bd6c6db7e53150c9dd95afe96a5c5e5b22491abff6d0",
+      "bytes": 910,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/ci-compose.log",
+      "git_blob": "3dc1510f5163594a98791ce3b21f6eb92b8d1e57",
+      "sha256": "b108d2769b9a81400d3ae84e95bfe9d37450528dca5fb968d7587bd677bc1783",
+      "bytes": 41260,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/ci-container-amd64.log",
+      "git_blob": "69da8846e15799d1b55ed68caafd31ff39d84900",
+      "sha256": "cbabb4305f653e1b63ce0797d9f52d4b3e6a26a10651b90b404b5a5deee122ac",
+      "bytes": 60496,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/ci-quality.log",
+      "git_blob": "e1d140d2410991adde1f577d5d109e95a994a188",
+      "sha256": "d72a5ca3d3d4b3ab1c8d67f454157eed9b24e1c35ed3eb4a980c8d897ac0acba",
+      "bytes": 46616,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/collect_ci.py",
+      "git_blob": "ae50105e237023178ce7b59999b8dd341f9f5c18",
+      "sha256": "d266d8a3f1101a38467c7c318bc569ebcb2c413a613267d8ea33707f96de22cb",
+      "bytes": 4627,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/failure-editable-wheel-prefix.log",
+      "git_blob": "fdeac37a52ab77043d2fe631c7ccf51df6534640",
+      "sha256": "96175f6748cbd2fcafde8a2b1b14a1a6b1dc27eed28fcdf902c22336be6ddc6c",
+      "bytes": 1095,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/failure-environment-secret-scan.log",
+      "git_blob": "0873d831507300ad844a75d49af5cae592ba2176",
+      "sha256": "24a8ad2db802235c6d6849b10a6cedf563527a60ed7d8e1c3000b16e1aedc200",
+      "bytes": 1915,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/failure-foreign-hot-journal-author-transcript.md",
+      "git_blob": "498ad12297dec3b34826dbf20bfa5187afc80237",
+      "sha256": "3cc1eeaaf7feae8b152a20d1b1b7058e05f3a444a234c90ebdc95f6efd59f710",
+      "bytes": 899,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/failure-local-docker-build.log",
+      "git_blob": "404adf36fbc18b56c4d97795dc6fe07e5d55bf09",
+      "sha256": "2c36891070525662115b048035b8bd47a1b66dcf91e5414d299bcf6cf60af66d",
+      "bytes": 428,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/failure-local-docker-info.log",
+      "git_blob": "43b1f4c40995147578dc8a0272d7214428e28377",
+      "sha256": "388e843ecafc9b3e50e7fad5c59f2b512040c350391b4f91843958aa553e6ed3",
+      "bytes": 366,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/failure-logging-before-fix.log",
+      "git_blob": "741d921b2f4f1175631787e4aaf6c5b7506d29d8",
+      "sha256": "f1785702ad995a7f20565894947bb30c75e2ea3160ce0434c3789dd66b0d4394",
+      "bytes": 1655,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/failure-p5a-deadline-before-fix.log",
+      "git_blob": "b340190850b0615c812aa0d8d9b40d1a72fa463e",
+      "sha256": "8abcb9d2e7934a024a03cad27bb561643cd91a45cf06c58a41d4d3b1646be223",
+      "bytes": 14176,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/historical-windows-setup-failures.json",
+      "git_blob": "408fd8733cab7df2796c925fdc339ee74698dc83",
+      "sha256": "92b5be5b1b38b460bc9faaf43a8c8fdee4b9da5ee67645a06a35a820e14b8397",
+      "bytes": 973,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/local-build.log",
+      "git_blob": "ef71bbcb683ad5a9dc68118f506f147f4b843c8a",
+      "sha256": "c65079f6be86c2a094695a4aa9624f94322357cfb364d42b13bb9eb93714c2a7",
+      "bytes": 343,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/local-coverage.log",
+      "git_blob": "ae7c0c30ab6166660059d4eb2aa7706a2801c628",
+      "sha256": "0e3ffb396c4381d0308ca712d0da99d2c7d2a42bacb23223fb17938a43e50459",
+      "bytes": 244,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/local-dependency-audit.log",
+      "git_blob": "166c9f4be2044007a379dc325e95a6c711724967",
+      "sha256": "527b920815e78550d0f8b782b994448f410cf7d62926864c2357c9caa01e3b6a",
+      "bytes": 198,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/local-evidence-manifest.json",
+      "git_blob": "ad2c39b47b201380826f8c26d07db1c19a48d5c2",
+      "sha256": "7b8e5a15c4c5c9379b933207ebcf675870c1f0cf49f162cc4291aea0d78359f5",
+      "bytes": 4835,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/local-existing-skip.log",
+      "git_blob": "4c46e793c56f701db71907261b6eb1f596baafc8",
+      "sha256": "45ca31e1d9f67e6d7d13a6337141485d08f08ef8ec84c3aca17c353a799153db",
+      "bytes": 524,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/local-final-suite.log",
+      "git_blob": "5fede65c2a32fd6044518f8a34901a8d1dda7efe",
+      "sha256": "e09f96d9deceabdcfc8e98f19760580313a8fc7c9bd17a256dffee8d5ac687ef",
+      "bytes": 2729,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/local-secret-scan.log",
+      "git_blob": "ff07f4e793814dd48499d88bcc157ef7b5a66652",
+      "sha256": "ec1eee56366d7e40be701bf867a6df195025f713313ca250223b8cf6a6d2276a",
+      "bytes": 225,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/local-wheel-p8c.log",
+      "git_blob": "7c22e6bc50c468acb768f14dae12cdc2745e2411",
+      "sha256": "8971e4c32e8f55bf8cc5686b408637eccfa6e01414a1e3ff74b7ec412659d36b",
+      "bytes": 557,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/model-profile.json",
+      "git_blob": "3b6c50ab819d752073f994cb2c3509396c7c13df",
+      "sha256": "0e1f8ea9316fd4e64fc09b0754ee034b0a70dcfff5c213431411dc40be7f7c4d",
+      "bytes": 1859,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/qa-deadline-boundaries.json",
+      "git_blob": "2f9235507c3a35d680c6b5f80df88d7449f82315",
+      "sha256": "915d9be3e8ba1b6c3041386278463d88ecad58ee2006aabbfa64ecffc4354ad4",
+      "bytes": 2613,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/qa-final.json",
+      "git_blob": "13eaa612acbb69ffe55c0ec8b935ecff43f5dba5",
+      "sha256": "497d0f821649c48eb66c00c68f329687a54db81528fba92ecff79c6b687ac132",
+      "bytes": 4508,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/qa-prior-boundaries-attempt1.json",
+      "git_blob": "13a04f188eada9432f8f37c44e6190e214a41cb1",
+      "sha256": "7c7abfe409e784092a5929f741e51024ee5b7af90248896a59f2fc94df4d1375",
+      "bytes": 3907,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/qa-prior-boundaries.json",
+      "git_blob": "1865a7561a8af02ca72190192e60f56ba6ab19e3",
+      "sha256": "ab2a8de32fcf2fc5daff070b8981c1adba4a83c5dab23a5c115b3bd5fe20a429",
+      "bytes": 4939,
+      "matches_local": true
+    },
+    {
+      "path": "docs/evidence/P8C_360da646/reviewer-final.json",
+      "git_blob": "8df744850d1aedcc11dccfee3ddbe784f1ea1b72",
+      "sha256": "081e4544c3e6a36e5bec9da30689d1cd10069ddab0c31c9fa79f228339e20ba1",
+      "bytes": 547,
+      "matches_local": true
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "ci-compose.log": {
+    "bytes": 41260,
+    "raw_sha256": "12a42269c4750ccdad3f2fa1466d09969819619a91b807ce85cb37e2c1232830",
+    "removed_terminal_escape_sequences": 30,
+    "sha256": "b108d2769b9a81400d3ae84e95bfe9d37450528dca5fb968d7587bd677bc1783"
+  },
+  "ci-container-amd64.log": {
+    "bytes": 60496,
+    "raw_sha256": "481e38facecc8493b67c4104c37f12c5f34c6bc34768f799e1339781662836d6",
+    "removed_terminal_escape_sequences": 2,
+    "sha256": "cbabb4305f653e1b63ce0797d9f52d4b3e6a26a10651b90b404b5a5deee122ac"
+  },
+  "ci-container-arm64.log": {
+    "bytes": 59775,
+    "raw_sha256": "1dcd038184866eb0cc9a20ba6ed1ad44b28749890d21d17d618de4ea1cc22e7e",
+    "removed_terminal_escape_sequences": 2,
+    "sha256": "b0e272503daf3be60f22a785447dc0669b17d6d40bd8622ef7a297ba9bb43a75"
+  },
+  "ci-metadata.json": {
+    "bytes": 41973,
+    "sha256": "544e595e865c2a09b9a5546908bbf2b70fb370d7aeefc25f4e671c4d58098fd3"
+  },
+  "ci-quality.log": {
+    "bytes": 46616,
+    "raw_sha256": "ee61a19d414ab610a825dea3d53f598321279ff2d84ba4505903345e5e504e57",
+    "removed_terminal_escape_sequences": 30,
+    "sha256": "d72a5ca3d3d4b3ab1c8d67f454157eed9b24e1c35ed3eb4a980c8d897ac0acba"
+  }
+}

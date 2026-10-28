@@ -1,8 +1,8 @@
-# P8c candidate evidence - publication in progress
+# P8c final candidate evidence
 
 Candidate HEAD:360da646892e46545ca70e8838bc3a2a89e460a3.
 Candidate tree:3ce94d6e214de74889475753807122b526085b98.
-[PR18](https://github.com/KastaTM/card-market-tracker/pull/18) remains OPEN/draft.
+[PR18](https://github.com/KastaTM/card-market-tracker/pull/18) remains OPEN/unmerged.
 This separate evidence branch changes documentation/artifacts only and never
 changes the reviewed PR candidate. No merge or phase acceptance/closure.
 
@@ -16,9 +16,11 @@ scanner/gate weakening. The single Windows skip is existing symlink privilege
 limitation, reproduced separately without changing permissions.
 
 CI run40586563511,attempt1, associated head equals candidate.
-Quality, Compose and AMD64 PASS; ARM64/QEMU IN_PROGRESS at this publication.
-Mandatory four-job completion is not yet satisfied. The final complete report
-will follow after all logs/markers are checked. No READY assertion now.
+Quality, Compose, AMD64 and ARM64/QEMU all PASS in attempt1. All48 harness
+markers verified (12per environment). See the [complete final report](PHASE_COMPLETION_REPORT.md)
+and [independent attestations](INDEPENDENT_REVIEWS.md). Engineering readiness
+recommendation requires final publication/readback recorded in the PR ledger.
+The initial326636ed evidence snapshot correctly preserved ARM64 pending then.
 
 Actual Actions PR checkout:c08800bc7a255255a287ddce884ebe7ee749722f,
 a test merge with parents baseline228d5c8d and candidate360da646. Its exact tree
