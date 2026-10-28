@@ -1,6 +1,6 @@
 # P8c RW-01 Corrective Implementation Report
 
-2026-10-28. **P8c OPEN ? REWORK_REQUIRED**, pending Phase Lead review.
+2026-10-28. **P8c OPEN - REWORK_REQUIRED**, pending Phase Lead review.
 Engineering correction and all applicable gates PASS. This does not automatically
 restore the previous READY recommendation, accept the phase, authorize merge or
 declare PHASE CLOSED. Stop for Phase Lead review after the final PR ledger
@@ -247,7 +247,7 @@ is recorded by the PR ledger; no phase acceptance follows.
 | AC-WA13 | PASS | verify/backup/restore healthy after rejected attempt;fresh3recovery folds |
 | AC-WA14 | PASS | zero product sockets,unchanged prior owners/schemas/writers/transport boundaries |
 | AC-WA15 | PASS | allowlisted identity_conflict logging/privacy/threat/secret scan |
-| AC-WA16 | PASS | 12harnesses?4environments and4explicit RW01 rejection markers |
+| AC-WA16 | PASS | 12 harnesses in each of 4 environments and4explicit RW01 rejection markers |
 | AC-WA17 | PASS | 2250fulltests,94.15/88.31coverage,all format/type/build/audit/security gates |
 | AC-WA18 | PASS | freshQA17+REVIEWER28/all13files on exactclean d82/dfd,own public probes/readbacks |
 | AC-WA19 | PASS | RWdocs/ownership/roadmap/runbook;four frozen documents unchanged |
@@ -289,5 +289,5 @@ The final PR comment must bind its immutable evidence commit and exact bytewise
 readback. Artifact-only commits never change the reviewed product SHA/tree.
 
 RW-01 corrective engineering work/gates complete. Submit this report for Phase
-Lead review. P8c remains OPEN?REWORK_REQUIRED until that decision; old READY is
+Lead review. P8c remains OPEN - REWORK_REQUIRED until that decision; old READY is
 not silently restored. No merge,PHASE CLOSED or new phase. Stop after report.
