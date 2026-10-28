@@ -1,0 +1,83 @@
+{
+  "run_id": 40737659939,
+  "event": "push",
+  "branch": "main",
+  "checkout": "9dda9fba0aa9646a67596657d4ae9a7088903808",
+  "source_tree": "dfd0414242cff364aad6082411ae88aef728783e",
+  "jobs": {
+    "compose": {
+      "job_id": 122990457419,
+      "harnesses": {
+        "alert_outbox": true,
+        "catalog": true,
+        "discovery": true,
+        "discovery_journal": true,
+        "multi_revision": true,
+        "persistence": true,
+        "pinned": true,
+        "scoped": true,
+        "telegram_fake": true,
+        "watchlist": true,
+        "watchlist_alert_outbox": true,
+        "watchlist_journal": true
+      },
+      "rw01_incompatible_originals_rejected_without_mutation": true
+    },
+    "quality": {
+      "job_id": 122990457834,
+      "harnesses": {
+        "alert_outbox": true,
+        "catalog": true,
+        "discovery": true,
+        "discovery_journal": true,
+        "multi_revision": true,
+        "persistence": true,
+        "pinned": true,
+        "scoped": true,
+        "telegram_fake": true,
+        "watchlist": true,
+        "watchlist_alert_outbox": true,
+        "watchlist_journal": true
+      },
+      "rw01_incompatible_originals_rejected_without_mutation": true
+    },
+    "container (linux/arm64)": {
+      "job_id": 122990458373,
+      "harnesses": {
+        "alert_outbox": true,
+        "catalog": true,
+        "discovery": true,
+        "discovery_journal": true,
+        "multi_revision": true,
+        "persistence": true,
+        "pinned": true,
+        "scoped": true,
+        "telegram_fake": true,
+        "watchlist": true,
+        "watchlist_alert_outbox": true,
+        "watchlist_journal": true
+      },
+      "rw01_incompatible_originals_rejected_without_mutation": true
+    },
+    "container (linux/amd64)": {
+      "job_id": 122990459543,
+      "harnesses": {
+        "alert_outbox": true,
+        "catalog": true,
+        "discovery": true,
+        "discovery_journal": true,
+        "multi_revision": true,
+        "persistence": true,
+        "pinned": true,
+        "scoped": true,
+        "telegram_fake": true,
+        "watchlist": true,
+        "watchlist_alert_outbox": true,
+        "watchlist_journal": true
+      },
+      "rw01_incompatible_originals_rejected_without_mutation": true
+    }
+  },
+  "total_harness_passes": 48,
+  "rw01_environments": 4
+}

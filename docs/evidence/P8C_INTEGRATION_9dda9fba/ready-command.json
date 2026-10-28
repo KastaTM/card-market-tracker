@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-28T17:38:00.091754+00:00",
+  "command": [
+    "gh",
+    "pr",
+    "ready",
+    "18",
+    "--repo",
+    "KastaTM/card-market-tracker"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "\u2713 Pull request KastaTM/card-market-tracker#18 is marked as \"ready for review\"\n",
+  "authorization": "Orchestrator explicit PR18 integration authorization"
+}

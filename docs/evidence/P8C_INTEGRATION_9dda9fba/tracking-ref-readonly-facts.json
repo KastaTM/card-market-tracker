@@ -1,0 +1,54 @@
+{
+  "utc": "2026-10-28T18:43:04.836513+00:00",
+  "observation": "Only origin/main tracking target advanced to authorized integration; origin/HEAD symbolic target unchanged",
+  "actor": "not established",
+  "recorded_lead_fetch_commands": 0,
+  "commands": [
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "reflog",
+        "show",
+        "--date=iso-strict",
+        "--format=%H%x09%gD%x09%gs",
+        "-n",
+        "5",
+        "refs/remotes/origin/main"
+      ],
+      "exit_code": 0,
+      "stdout": "9dda9fba0aa9646a67596657d4ae9a7088903808\trefs/remotes/origin/main@{2026-10-28T19:33:00+01:00}\tfetch: fast-forward\n228d5c8d0d91edf03ddb86a489c8232eeb7c08bc\trefs/remotes/origin/main@{2026-10-25T11:57:58+01:00}\tfetch origin main: fast-forward\n62ecd7ab792a93a6071b83277d870f1d95f61f9f\trefs/remotes/origin/main@{2026-10-24T12:06:18+02:00}\tfetch origin main: fast-forward\nddd5fe3bbc7e40947bd838f71ee25e7046ff1b7e\trefs/remotes/origin/main@{2026-10-23T17:30:36+02:00}\tfetch origin main: fast-forward\nd1038df1625a9727b44760866266b7124bb1d91a\trefs/remotes/origin/main@{2026-10-22T23:28:36+02:00}\tfetch --no-tags origin main: fast-forward\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "symbolic-ref",
+        "refs/remotes/origin/HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "refs/remotes/origin/main\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "for-each-ref",
+        "--format=%(refname) %(objectname)",
+        "refs/heads"
+      ],
+      "exit_code": 0,
+      "stdout": "refs/heads/chore/p0-foundation 49dc0792d210bbc56e164587319186c75e04a631\nrefs/heads/docs/p0-5-integration-record 253a5354d8645fa8c72cbd7038e213832ab8ce18\nrefs/heads/docs/p0-5-source-feasibility 61ab2fcb630e2504869b68c97ea8cd1385e4ee00\nrefs/heads/docs/p0-completion-report 9dbe338cb6bd33fb96e21417bb66248ce9de45ba\nrefs/heads/docs/p05b-real-source-qualification 302e8d3f3155c14091d26841b8a230791109f220\nrefs/heads/evidence/p8c-360da646 82570887057a1421ca24d2d8ceea09eb2db7e706\nrefs/heads/evidence/p8c-rw01-d82aba73 57bdf94391be307197df2a59526acf59bc6ff681\nrefs/heads/feat/p1a-catalog-core 93a17711cb75f91816e41279fe76069055391e50\nrefs/heads/feat/p1b-pinned-metadata-ingestion 252c394141948e3ab77a54bcf628e4290ba69652\nrefs/heads/feat/p1c-multi-revision-metadata-capture 8af647697dd67859b38fc007d493a54642a1d62f\nrefs/heads/feat/p3a-observation-persistence e9c5f02e7f093dedff55b67f137c4446f22e8735\nrefs/heads/feat/p4a-offline-temporal-discovery c5ed228af831a2a6ed8a12c7072777d3908296a5\nrefs/heads/feat/p4b-scoped-capture-discovery ab5e0fa7d4225c2ce137ce2261cd9686ef765a32\nrefs/heads/feat/p4c-discovery-result-journal 9fb53144dec521d0dde49c02d41022be831421c2\nrefs/heads/feat/p5a-offline-watchlist 02ab89677afe11901ea5a2b1b8826604ce543c2f\nrefs/heads/feat/p5b-watchlist-signal-journal 150a611717df5a287eee66a036ee6417b70780d4\nrefs/heads/feat/p8a-offline-alert-outbox cf3c8f17128a5459d4d0f9228b2f1456e120817b\nrefs/heads/feat/p8b-telegram-alert-delivery 9dab8a9b31dcc93cced8e90da20f81dae685661b\nrefs/heads/feat/p8c-watchlist-signal-outbox d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\nrefs/heads/main 5175d5b09e8d412e11b2ddf4c24bff41df133843\nrefs/heads/rework/p5b-rw03-publication-rollback f80bc8cdb877946f37d76b09212d68dd8da3e246\n",
+      "stderr": ""
+    }
+  ],
+  "merge": "9dda9fba0aa9646a67596657d4ae9a7088903808"
+}

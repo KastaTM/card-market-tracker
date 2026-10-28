@@ -1,0 +1,522 @@
+﻿2026-10-28T17:38:41.4528872Z Current runner version: '2.338.0'
+2026-10-28T17:38:41.4552248Z ##[group]Runner Image Provisioner
+2026-10-28T17:38:41.4553236Z Hosted Compute Agent
+2026-10-28T17:38:41.4553880Z Version: 20261021.618
+2026-10-28T17:38:41.4554493Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-10-28T17:38:41.4555302Z Build Date: 2026-10-21T00:45:21Z
+2026-10-28T17:38:41.4555990Z Worker ID: {d40f6a06-e29d-4e56-b414-64c423ca21ec}
+2026-10-28T17:38:41.4557121Z Region: westus
+2026-10-28T17:38:41.4557750Z Cloud: Azure
+2026-10-28T17:38:41.4558287Z ##[endgroup]
+2026-10-28T17:38:41.4559833Z ##[group]Operating System
+2026-10-28T17:38:41.4560732Z Ubuntu
+2026-10-28T17:38:41.4561320Z 24.04.5
+2026-10-28T17:38:41.4561900Z LTS
+2026-10-28T17:38:41.4562408Z ##[endgroup]
+2026-10-28T17:38:41.4563048Z ##[group]Runner Image
+2026-10-28T17:38:41.4563702Z Image: ubuntu-24.04
+2026-10-28T17:38:41.4564275Z Version: 20261025.353.1
+2026-10-28T17:38:41.4565602Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261025.353/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-28T17:38:41.4567184Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261025.353
+2026-10-28T17:38:41.4568139Z ##[endgroup]
+2026-10-28T17:38:41.4569311Z ##[group]GITHUB_TOKEN Permissions
+2026-10-28T17:38:41.4571366Z Contents: read
+2026-10-28T17:38:41.4571962Z Metadata: read
+2026-10-28T17:38:41.4572638Z ##[endgroup]
+2026-10-28T17:38:41.4574614Z Secret source: Actions
+2026-10-28T17:38:41.4575702Z Cache mode: write
+2026-10-28T17:38:41.4576390Z Prepare workflow directory
+2026-10-28T17:38:41.5583269Z Prepare all required actions
+2026-10-28T17:38:41.5630663Z Getting action download info
+2026-10-28T17:38:41.9624717Z Download action repository 'actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2026-10-28T17:38:42.1060052Z Download action repository 'astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4' (SHA:bec219d24cd3e171d82865faccec33120bb574f4)
+2026-10-28T17:38:42.7718330Z Complete job name: quality
+2026-10-28T17:38:43.0188400Z ##[group]Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+2026-10-28T17:38:43.0189475Z with:
+2026-10-28T17:38:43.0189938Z   repository: KastaTM/card-market-tracker
+2026-10-28T17:38:43.0194199Z   token: ***
+2026-10-28T17:38:43.0194628Z   ssh-strict: true
+2026-10-28T17:38:43.0195049Z   ssh-user: git
+2026-10-28T17:38:43.0195485Z   persist-credentials: true
+2026-10-28T17:38:43.0195953Z   clean: true
+2026-10-28T17:38:43.0196389Z   sparse-checkout-cone-mode: true
+2026-10-28T17:38:43.0196889Z   fetch-depth: 1
+2026-10-28T17:38:43.0197313Z   fetch-tags: false
+2026-10-28T17:38:43.0197744Z   show-progress: true
+2026-10-28T17:38:43.0198174Z   lfs: false
+2026-10-28T17:38:43.0198565Z   submodules: false
+2026-10-28T17:38:43.0198995Z   set-safe-directory: true
+2026-10-28T17:38:43.0199716Z ##[endgroup]
+2026-10-28T17:38:43.2911309Z Syncing repository: KastaTM/card-market-tracker
+2026-10-28T17:38:43.2913574Z ##[group]Getting Git version info
+2026-10-28T17:38:43.2915017Z Working directory is '/home/runner/work/card-market-tracker/card-market-tracker'
+2026-10-28T17:38:43.2916937Z [command]/usr/bin/git version
+2026-10-28T17:38:43.3019054Z git version 2.56.0
+2026-10-28T17:38:43.3026994Z ##[endgroup]
+2026-10-28T17:38:43.3044819Z Temporarily overriding HOME='/home/runner/work/_temp/e92c328b-0d5f-49c8-a885-654bf7a891eb' before making global git config changes
+2026-10-28T17:38:43.3047218Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-28T17:38:43.3049428Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/card-market-tracker/card-market-tracker
+2026-10-28T17:38:43.3101648Z Deleting the contents of '/home/runner/work/card-market-tracker/card-market-tracker'
+2026-10-28T17:38:43.3106277Z ##[group]Initializing the repository
+2026-10-28T17:38:43.3111521Z [command]/usr/bin/git init /home/runner/work/card-market-tracker/card-market-tracker
+2026-10-28T17:38:43.3217761Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-28T17:38:43.3219768Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-28T17:38:43.3221079Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-28T17:38:43.3222162Z hint: call:
+2026-10-28T17:38:43.3222960Z hint:
+2026-10-28T17:38:43.3223906Z hint: 	git config --global init.defaultBranch <name>
+2026-10-28T17:38:43.3224850Z hint:
+2026-10-28T17:38:43.3226220Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-28T17:38:43.3236439Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-28T17:38:43.3237510Z hint:
+2026-10-28T17:38:43.3238278Z hint: 	git branch -m <name>
+2026-10-28T17:38:43.3239160Z hint:
+2026-10-28T17:38:43.3240422Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-28T17:38:43.3242421Z Initialized empty Git repository in /home/runner/work/card-market-tracker/card-market-tracker/.git/
+2026-10-28T17:38:43.3247725Z [command]/usr/bin/git remote add origin https://github.com/KastaTM/card-market-tracker
+2026-10-28T17:38:43.3296196Z ##[endgroup]
+2026-10-28T17:38:43.3297432Z ##[group]Disabling automatic garbage collection
+2026-10-28T17:38:43.3300967Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-28T17:38:43.3336530Z ##[endgroup]
+2026-10-28T17:38:43.3337705Z ##[group]Setting up auth
+2026-10-28T17:38:43.3345121Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-28T17:38:43.3382354Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-28T17:38:43.3782321Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-28T17:38:43.3831445Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-28T17:38:43.4085183Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-28T17:38:43.4134974Z ##[endgroup]
+2026-10-28T17:38:43.4136218Z ##[group]Fetching the repository
+2026-10-28T17:38:43.4148598Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +9dda9fba0aa9646a67596657d4ae9a7088903808:refs/remotes/origin/main
+2026-10-28T17:38:45.5185806Z From https://github.com/KastaTM/card-market-tracker
+2026-10-28T17:38:45.5187114Z  * [new ref]         9dda9fba0aa9646a67596657d4ae9a7088903808 -> origin/main
+2026-10-28T17:38:45.5191281Z ##[endgroup]
+2026-10-28T17:38:45.5192107Z ##[group]Determining the checkout info
+2026-10-28T17:38:45.5194384Z ##[endgroup]
+2026-10-28T17:38:45.5199910Z [command]/usr/bin/git sparse-checkout disable
+2026-10-28T17:38:45.5264345Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-28T17:38:45.5303577Z ##[group]Checking out the ref
+2026-10-28T17:38:45.5307895Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-28T17:38:45.5657961Z Switched to a new branch 'main'
+2026-10-28T17:38:45.5665206Z branch 'main' set up to track 'origin/main'.
+2026-10-28T17:38:45.5671430Z ##[endgroup]
+2026-10-28T17:38:45.5724120Z [command]/usr/bin/git log -1 --format=%H
+2026-10-28T17:38:45.5765962Z 9dda9fba0aa9646a67596657d4ae9a7088903808
+2026-10-28T17:38:45.8008237Z ##[group]Run astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4
+2026-10-28T17:38:45.8008831Z with:
+2026-10-28T17:38:45.8009117Z   version: 0.12.10
+2026-10-28T17:38:45.8009419Z   python-version: 3.13
+2026-10-28T17:38:45.8009760Z   activate-environment: false
+2026-10-28T17:38:45.8010106Z   no-project: false
+2026-10-28T17:38:45.8010780Z   working-directory: /home/runner/work/card-market-tracker/card-market-tracker
+2026-10-28T17:38:45.8014577Z   github-token: ***
+2026-10-28T17:38:45.8015159Z   enable-cache: auto
+2026-10-28T17:38:45.8015882Z   cache-dependency-glob: **/*requirements*.txt
+**/*requirements*.in
+**/*constraints*.txt
+**/*constraints*.in
+**/pyproject.toml
+**/uv.lock
+**/*.py.lock
+
+2026-10-28T17:38:45.8016667Z   restore-cache: true
+2026-10-28T17:38:45.8016978Z   save-cache: true
+2026-10-28T17:38:45.8017272Z   prune-cache: false
+2026-10-28T17:38:45.8017575Z   cache-python: false
+2026-10-28T17:38:45.8017901Z   ignore-nothing-to-cache: false
+2026-10-28T17:38:45.8018314Z   ignore-empty-workdir: false
+2026-10-28T17:38:45.8018707Z   download-from-astral-mirror: true
+2026-10-28T17:38:45.8019073Z   add-problem-matchers: true
+2026-10-28T17:38:45.8019395Z   quiet: false
+2026-10-28T17:38:45.8019682Z   resolution-strategy: highest
+2026-10-28T17:38:45.8020010Z ##[endgroup]
+2026-10-28T17:38:45.9926671Z Fetching manifest data from https://raw.githubusercontent.com/astral-sh/versions/main/v1/uv.ndjson ...
+2026-10-28T17:38:46.0721886Z Downloading uv from "https://releases.astral.sh/github/uv/releases/download/0.12.10/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2026-10-28T17:38:46.4268396Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/9d3b4ecf-6464-430d-99c9-ff90c50d7375 -f /home/runner/work/_temp/eb2e6d6a-ba16-4c46-b870-2ae1c40875e2
+2026-10-28T17:38:46.8081206Z Added /home/runner/.local/bin to the path
+2026-10-28T17:38:46.8085533Z Added /opt/hostedtoolcache/uv/0.12.10/x86_64 to the path
+2026-10-28T17:38:46.8087491Z Set UV_PYTHON_INSTALL_DIR to /home/runner/work/_temp/uv-python-dir
+2026-10-28T17:38:46.8088513Z Added /home/runner/work/_temp/uv-python-dir to the path
+2026-10-28T17:38:46.8089253Z Set UV_PYTHON to 3.13
+2026-10-28T17:38:46.8112076Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2026-10-28T17:38:46.8112733Z Successfully installed uv version 0.12.10
+2026-10-28T17:38:46.8115286Z Searching files using cache dependency glob: /home/runner/work/card-market-tracker/card-market-tracker/**/*requirements*.txt,/home/runner/work/card-market-tracker/card-market-tracker/**/*requirements*.in,/home/runner/work/card-market-tracker/card-market-tracker/**/*constraints*.txt,/home/runner/work/card-market-tracker/card-market-tracker/**/*constraints*.in,/home/runner/work/card-market-tracker/card-market-tracker/**/pyproject.toml,/home/runner/work/card-market-tracker/card-market-tracker/**/uv.lock,/home/runner/work/card-market-tracker/card-market-tracker/**/*.py.lock
+2026-10-28T17:38:46.8574534Z /home/runner/work/card-market-tracker/card-market-tracker/pyproject.toml
+2026-10-28T17:38:46.8829469Z /home/runner/work/card-market-tracker/card-market-tracker/uv.lock
+2026-10-28T17:38:46.8836895Z Found 2 files to hash.
+2026-10-28T17:38:46.8924860Z Trying to restore cache from GitHub Actions cache with key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-24.04-3.13-d2edd6c0a108e684ea8a124297d070cb3f1582b1dfbe1743d101b8ef042af5f7
+2026-10-28T17:38:47.1401638Z Cache hit for: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-24.04-3.13-d2edd6c0a108e684ea8a124297d070cb3f1582b1dfbe1743d101b8ef042af5f7
+2026-10-28T17:38:48.5624774Z Received 0 of 33601454 (0.0%), 0.0 MBs/sec
+2026-10-28T17:38:49.5633528Z Received 29407150 of 33601454 (87.5%), 14.0 MBs/sec
+2026-10-28T17:38:50.1484294Z Received 33601454 of 33601454 (100.0%), 12.4 MBs/sec
+2026-10-28T17:38:50.1486041Z Cache Size: ~32 MB (33601454 B)
+2026-10-28T17:38:50.1524443Z [command]/usr/bin/tar -xf /home/runner/work/_temp/46f6c6ec-0e74-4991-b0b0-be5d29b7bd65/cache.tzst -P -C /home/runner/work/card-market-tracker/card-market-tracker --use-compress-program unzstd
+2026-10-28T17:38:50.4748518Z Cache restored successfully
+2026-10-28T17:38:50.4771298Z cache restored from GitHub Actions cache with key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-24.04-3.13-d2edd6c0a108e684ea8a124297d070cb3f1582b1dfbe1743d101b8ef042af5f7
+2026-10-28T17:38:50.6439267Z ##[group]Run uv sync --frozen --no-install-project
+2026-10-28T17:38:50.6439741Z [36;1muv sync --frozen --no-install-project[0m
+2026-10-28T17:38:50.6464627Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:38:50.6464923Z env:
+2026-10-28T17:38:50.6465426Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-28T17:38:50.6465801Z   UV_PYTHON: 3.13
+2026-10-28T17:38:50.6466069Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-28T17:38:50.6466378Z ##[endgroup]
+2026-10-28T17:38:50.8952578Z Downloading cpython-3.13.15-linux-x86_64-gnu (download) (33.2MiB)
+2026-10-28T17:38:51.8828061Z  Downloaded cpython-3.13.15-linux-x86_64-gnu (download)
+2026-10-28T17:38:52.0305478Z Using CPython 3.13.15
+2026-10-28T17:38:52.0306095Z Creating virtual environment at: .venv
+2026-10-28T17:38:52.1141182Z Installed 46 packages in 80ms
+2026-10-28T17:38:52.1141757Z  + boolean-py==5.0
+2026-10-28T17:38:52.1142147Z  + build==1.6.1
+2026-10-28T17:38:52.1142579Z  + cachecontrol==0.14.4
+2026-10-28T17:38:52.1143211Z  + certifi==2026.10.19
+2026-10-28T17:38:52.1143731Z  + charset-normalizer==3.5.2
+2026-10-28T17:38:52.1144256Z  + coverage==7.16.2
+2026-10-28T17:38:52.1144762Z  + cyclonedx-python-lib==11.12.0
+2026-10-28T17:38:52.1145322Z  + defusedxml==0.7.1
+2026-10-28T17:38:52.1145848Z  + detect-secrets==1.5.0
+2026-10-28T17:38:52.1146419Z  + editables==0.5
+2026-10-28T17:38:52.1146942Z  + filelock==4.2.1
+2026-10-28T17:38:52.1147449Z  + hatchling==1.32.4
+2026-10-28T17:38:52.1147967Z  + idna==3.20
+2026-10-28T17:38:52.1148460Z  + iniconfig==2.3.0
+2026-10-28T17:38:52.1148960Z  + librt==0.16.0
+2026-10-28T17:38:52.1149491Z  + license-expression==30.4.4
+2026-10-28T17:38:52.1150079Z  + markdown-it-py==4.2.0
+2026-10-28T17:38:52.1150901Z  + mdurl==0.1.2
+2026-10-28T17:38:52.1151379Z  + msgpack==1.2.3
+2026-10-28T17:38:52.1151890Z  + mypy==1.20.2
+2026-10-28T17:38:52.1152405Z  + mypy-extensions==1.1.0
+2026-10-28T17:38:52.1152976Z  + packageurl-python==0.17.6
+2026-10-28T17:38:52.1153567Z  + packaging==26.3
+2026-10-28T17:38:52.1154118Z  + pathspec==1.1.1
+2026-10-28T17:38:52.1154620Z  + pip==26.2.1
+2026-10-28T17:38:52.1155492Z  + pip-api==0.0.35
+2026-10-28T17:38:52.1156085Z  + pip-audit==2.10.1
+2026-10-28T17:38:52.1156776Z  + pip-requirements-parser==32.0.1
+2026-10-28T17:38:52.1157329Z  + platformdirs==4.12.3
+2026-10-28T17:38:52.1157762Z  + pluggy==1.6.0
+2026-10-28T17:38:52.1158149Z  + py-serializable==2.1.0
+2026-10-28T17:38:52.1158569Z  + pygments==2.21.0
+2026-10-28T17:38:52.1158945Z  + pyparsing==3.3.3
+2026-10-28T17:38:52.1159364Z  + pyproject-hooks==1.3.3
+2026-10-28T17:38:52.1159776Z  + pytest==9.1.1
+2026-10-28T17:38:52.1160148Z  + pyyaml==6.0.3
+2026-10-28T17:38:52.1160839Z  + requests==2.34.2
+2026-10-28T17:38:52.1161246Z  + rich==15.0.0
+2026-10-28T17:38:52.1161684Z  + ruff==0.13.3
+2026-10-28T17:38:52.1162057Z  + sortedcontainers==2.4.0
+2026-10-28T17:38:52.1162480Z  + tomli==2.4.1
+2026-10-28T17:38:52.1162824Z  + tomli-w==1.2.0
+2026-10-28T17:38:52.1163202Z  + tomlkit==0.15.1
+2026-10-28T17:38:52.1163599Z  + trove-classifiers==2026.9.21.13
+2026-10-28T17:38:52.1164092Z  + typing-extensions==4.16.0
+2026-10-28T17:38:52.1164581Z  + urllib3==2.8.0
+2026-10-28T17:38:52.1288232Z ##[group]Run uv sync --frozen --no-build-isolation
+2026-10-28T17:38:52.1288648Z [36;1muv sync --frozen --no-build-isolation[0m
+2026-10-28T17:38:52.1309553Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:38:52.1309812Z env:
+2026-10-28T17:38:52.1310098Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-28T17:38:52.1310791Z   UV_PYTHON: 3.13
+2026-10-28T17:38:52.1311060Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-28T17:38:52.1311363Z ##[endgroup]
+2026-10-28T17:38:52.2878655Z    Building card-market-tracker @ file:///home/runner/work/card-market-tracker/card-market-tracker
+2026-10-28T17:38:52.7271269Z       Built card-market-tracker @ file:///home/runner/work/card-market-tracker/card-market-tracker
+2026-10-28T17:38:52.7294915Z Prepared 1 package in 442ms
+2026-10-28T17:38:52.7315060Z Installed 1 package in 1ms
+2026-10-28T17:38:52.7315907Z  + card-market-tracker==0.1.0 (from file:///home/runner/work/card-market-tracker/card-market-tracker)
+2026-10-28T17:38:52.7445126Z ##[group]Run uv run --frozen ruff format --check .
+2026-10-28T17:38:52.7445969Z [36;1muv run --frozen ruff format --check .[0m
+2026-10-28T17:38:52.7470807Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:38:52.7471375Z env:
+2026-10-28T17:38:52.7472004Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-28T17:38:52.7472529Z   UV_PYTHON: 3.13
+2026-10-28T17:38:52.7472886Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-28T17:38:52.7473630Z ##[endgroup]
+2026-10-28T17:38:52.8217410Z 178 files already formatted
+2026-10-28T17:38:52.8336986Z ##[group]Run uv run --frozen ruff check .
+2026-10-28T17:38:52.8337333Z [36;1muv run --frozen ruff check .[0m
+2026-10-28T17:38:52.8357306Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:38:52.8357559Z env:
+2026-10-28T17:38:52.8357838Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-28T17:38:52.8358190Z   UV_PYTHON: 3.13
+2026-10-28T17:38:52.8358448Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-28T17:38:52.8358758Z ##[endgroup]
+2026-10-28T17:38:52.9053963Z All checks passed!
+2026-10-28T17:38:52.9195233Z ##[group]Run uv run --frozen mypy src
+2026-10-28T17:38:52.9195597Z [36;1muv run --frozen mypy src[0m
+2026-10-28T17:38:52.9215155Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:38:52.9215406Z env:
+2026-10-28T17:38:52.9215684Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-28T17:38:52.9216030Z   UV_PYTHON: 3.13
+2026-10-28T17:38:52.9216299Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-28T17:38:52.9216601Z ##[endgroup]
+2026-10-28T17:38:55.1848339Z Success: no issues found in 90 source files
+2026-10-28T17:38:55.2041061Z ##[group]Run uv run --frozen coverage run -m pytest
+2026-10-28T17:38:55.2041495Z [36;1muv run --frozen coverage run -m pytest[0m
+2026-10-28T17:38:55.2060981Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:38:55.2061236Z env:
+2026-10-28T17:38:55.2061515Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-28T17:38:55.2061859Z   UV_PYTHON: 3.13
+2026-10-28T17:38:55.2062120Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-28T17:38:55.2062423Z ##[endgroup]
+2026-10-28T17:38:58.6251167Z ============================= test session starts ==============================
+2026-10-28T17:38:58.6251807Z platform linux -- Python 3.13.15, pytest-9.1.1, pluggy-1.6.0
+2026-10-28T17:38:58.6252504Z rootdir: /home/runner/work/card-market-tracker/card-market-tracker
+2026-10-28T17:38:58.6253025Z configfile: pyproject.toml
+2026-10-28T17:38:58.6253341Z testpaths: tests
+2026-10-28T17:38:58.6253633Z plugins: platformdirs-4.12.3
+2026-10-28T17:38:58.6253957Z collected 2251 items
+2026-10-28T17:38:58.6254209Z 
+2026-10-28T17:39:04.5601162Z tests/test_alert_outbox_application.py ................................. [  1%]
+2026-10-28T17:39:05.4080770Z ...                                                                      [  1%]
+2026-10-28T17:39:06.6188401Z tests/test_alert_outbox_cli.py ........                                  [  1%]
+2026-10-28T17:39:06.6507698Z tests/test_alert_outbox_logging.py .....................                 [  2%]
+2026-10-28T17:39:07.7321606Z tests/test_alert_outbox_policy.py ...................................... [  4%]
+2026-10-28T17:39:10.2239073Z ........................                                                 [  5%]
+2026-10-28T17:39:18.0819968Z tests/test_alert_outbox_storage.py ..................................... [  7%]
+2026-10-28T17:39:23.4179570Z ...........................                                              [  8%]
+2026-10-28T17:39:24.3279404Z tests/test_bundle_cli.py ........                                        [  8%]
+2026-10-28T17:39:26.8287749Z tests/test_capture_storage.py .....................................      [ 10%]
+2026-10-28T17:39:27.3202735Z tests/test_catalog_cli.py ..........                                     [ 10%]
+2026-10-28T17:39:27.5905020Z tests/test_catalog_core.py ............................................. [ 12%]
+2026-10-28T17:39:27.7939242Z ........................................................                 [ 15%]
+2026-10-28T17:39:27.8032982Z tests/test_catalog_logging.py ......                                     [ 15%]
+2026-10-28T17:39:27.9931310Z tests/test_cli_acceptance.py ......                                      [ 15%]
+2026-10-28T17:39:28.0089070Z tests/test_config_acceptance.py ........                                 [ 16%]
+2026-10-28T17:39:29.8093951Z tests/test_discovery_cli.py ................                             [ 17%]
+2026-10-28T17:39:29.9107353Z tests/test_discovery_core.py ........................................... [ 18%]
+2026-10-28T17:39:43.7790870Z .................................................                        [ 21%]
+2026-10-28T17:39:44.4152619Z tests/test_discovery_input.py .......................................... [ 22%]
+2026-10-28T17:39:45.0124477Z ...............                                                          [ 23%]
+2026-10-28T17:39:48.1205681Z tests/test_discovery_journal_application.py ............................ [ 24%]
+2026-10-28T17:39:49.1979557Z .................                                                        [ 25%]
+2026-10-28T17:39:52.3768255Z tests/test_discovery_journal_storage.py ................................ [ 27%]
+2026-10-28T17:39:54.3360951Z .........................                                                [ 28%]
+2026-10-28T17:39:54.3457332Z tests/test_discovery_logging.py .......                                  [ 28%]
+2026-10-28T17:39:57.7287214Z tests/test_discovery_storage.py ............................             [ 29%]
+2026-10-28T17:39:57.7375708Z tests/test_logging_acceptance.py ......                                  [ 29%]
+2026-10-28T17:39:58.7677268Z tests/test_migration_capture.py .........                                [ 30%]
+2026-10-28T17:39:59.4728405Z tests/test_multi_revision_cli.py ..........                              [ 30%]
+2026-10-28T17:40:03.6675682Z tests/test_multi_revision_discovery.py ................................. [ 32%]
+2026-10-28T17:40:03.7363363Z .                                                                        [ 32%]
+2026-10-28T17:40:05.6316045Z tests/test_multi_revision_storage.py ................                    [ 33%]
+2026-10-28T17:40:05.6358039Z tests/test_p5b_identity_vectors_reference.py ..                          [ 33%]
+2026-10-28T17:40:05.6432748Z tests/test_p5b_transition_policy_reference.py ......                     [ 33%]
+2026-10-28T17:40:07.8015290Z tests/test_persistence_cli.py ............................               [ 34%]
+2026-10-28T17:40:08.8552931Z tests/test_persistence_input.py ........................................ [ 36%]
+2026-10-28T17:40:09.4764384Z ........                                                                 [ 36%]
+2026-10-28T17:40:10.1774614Z tests/test_persistence_input_forgery.py ................................ [ 38%]
+2026-10-28T17:40:10.4332398Z .............                                                            [ 38%]
+2026-10-28T17:40:10.4600758Z tests/test_persistence_logging.py ..................                     [ 39%]
+2026-10-28T17:40:13.0077944Z tests/test_persistence_storage.py ................................       [ 41%]
+2026-10-28T17:40:14.6829187Z tests/test_persistence_storage_backup.py ...............s.......         [ 42%]
+2026-10-28T17:40:15.0120118Z tests/test_pinned_repository.py ........................................ [ 43%]
+2026-10-28T17:40:15.2169151Z .....................................................................    [ 46%]
+2026-10-28T17:40:16.0456986Z tests/test_scoped_discovery_cli.py .....................                 [ 47%]
+2026-10-28T17:40:17.8937605Z tests/test_scoped_discovery_core.py .................................... [ 49%]
+2026-10-28T17:40:18.2267792Z .................                                                        [ 50%]
+2026-10-28T17:40:18.2875621Z tests/test_scoped_discovery_input.py ................................... [ 51%]
+2026-10-28T17:40:18.9016295Z ..........................                                               [ 52%]
+2026-10-28T17:40:18.9445411Z tests/test_scoped_discovery_logging.py ................................. [ 54%]
+2026-10-28T17:40:18.9497544Z ....                                                                     [ 54%]
+2026-10-28T17:40:19.7657318Z tests/test_scoped_discovery_qa.py .........................              [ 55%]
+2026-10-28T17:40:22.8761707Z tests/test_scoped_discovery_storage.py ..............................    [ 56%]
+2026-10-28T17:40:22.8863905Z tests/test_secret_scan_exceptions.py ........                            [ 57%]
+2026-10-28T17:40:22.9464567Z tests/test_tcgdex_adapter.py ........................................... [ 59%]
+2026-10-28T17:40:22.9960643Z ......................................                                   [ 60%]
+2026-10-28T17:40:33.5611500Z tests/test_telegram_delivery_application.py ............................ [ 62%]
+2026-10-28T17:40:36.6876202Z ............                                                             [ 62%]
+2026-10-28T17:40:39.7210999Z tests/test_telegram_delivery_cli.py .................................... [ 64%]
+2026-10-28T17:40:39.7706073Z ............................................                             [ 66%]
+2026-10-28T17:40:40.7321339Z tests/test_telegram_delivery_storage.py ................................ [ 67%]
+2026-10-28T17:40:41.0446917Z ........................                                                 [ 68%]
+2026-10-28T17:40:41.0804961Z tests/test_telegram_delivery_transport.py .............................. [ 70%]
+2026-10-28T17:40:47.4868189Z ........................................................................ [ 73%]
+2026-10-28T17:40:47.5287668Z ...........................                                              [ 74%]
+2026-10-28T17:40:57.2137508Z tests/test_watchlist_alert_application.py .....................          [ 75%]
+2026-10-28T17:41:03.1525911Z tests/test_watchlist_alert_cli.py ............................           [ 76%]
+2026-10-28T17:41:06.8224458Z tests/test_watchlist_alert_concurrency.py .....                          [ 76%]
+2026-10-28T17:41:10.7610622Z tests/test_watchlist_alert_domain.py ................................... [ 78%]
+2026-10-28T17:41:11.8506799Z ...............                                                          [ 79%]
+2026-10-28T17:41:23.0487410Z tests/test_watchlist_alert_recovery.py ...........................       [ 80%]
+2026-10-28T17:42:26.5211072Z tests/test_watchlist_alert_rw01.py ...................................   [ 81%]
+2026-10-28T17:42:27.0757008Z tests/test_watchlist_alert_source.py ..                                  [ 81%]
+2026-10-28T17:42:37.3899410Z tests/test_watchlist_alert_storage.py .................................. [ 83%]
+2026-10-28T17:42:37.8099187Z ......                                                                   [ 83%]
+2026-10-28T17:42:39.0918119Z tests/test_watchlist_application.py ..............                       [ 84%]
+2026-10-28T17:42:40.5621821Z tests/test_watchlist_cli.py ...............                              [ 84%]
+2026-10-28T17:42:40.7160159Z tests/test_watchlist_domain.py ......................................... [ 86%]
+2026-10-28T17:42:41.9791634Z .........................................................                [ 89%]
+2026-10-28T17:42:45.6977973Z tests/test_watchlist_journal_application.py ............................ [ 90%]
+2026-10-28T17:42:45.9116784Z ......                                                                   [ 90%]
+2026-10-28T17:42:48.0873552Z tests/test_watchlist_journal_cli.py ...............                      [ 91%]
+2026-10-28T17:42:49.2440487Z tests/test_watchlist_journal_domain.py ................................. [ 92%]
+2026-10-28T17:42:49.2771851Z .............                                                            [ 93%]
+2026-10-28T17:42:54.2980768Z tests/test_watchlist_journal_storage.py ................................ [ 94%]
+2026-10-28T17:42:59.9403811Z ..............................                                           [ 96%]
+2026-10-28T17:43:02.0732105Z tests/test_watchlist_storage.py ........................................ [ 98%]
+2026-10-28T17:43:35.9786317Z ...........................................                              [100%]
+2026-10-28T17:43:35.9787298Z 
+2026-10-28T17:43:35.9787622Z ================= 2250 passed, 1 skipped in 280.08s (0:04:40) ==================
+2026-10-28T17:43:36.1498618Z ##[group]Run uv run --frozen coverage json -o coverage.json
+2026-10-28T17:43:36.1499101Z [36;1muv run --frozen coverage json -o coverage.json[0m
+2026-10-28T17:43:36.1519194Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:43:36.1519447Z env:
+2026-10-28T17:43:36.1519728Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-28T17:43:36.1520075Z   UV_PYTHON: 3.13
+2026-10-28T17:43:36.1520620Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-28T17:43:36.1520944Z ##[endgroup]
+2026-10-28T17:43:37.0519655Z Wrote JSON report to coverage.json
+2026-10-28T17:43:37.0808419Z ##[group]Run uv run --frozen python scripts/check_coverage.py coverage.json
+2026-10-28T17:43:37.0808974Z [36;1muv run --frozen python scripts/check_coverage.py coverage.json[0m
+2026-10-28T17:43:37.0828735Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:43:37.0828996Z env:
+2026-10-28T17:43:37.0829274Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-28T17:43:37.0829613Z   UV_PYTHON: 3.13
+2026-10-28T17:43:37.0829868Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-28T17:43:37.0830317Z ##[endgroup]
+2026-10-28T17:43:37.1270045Z runtime lines: 94.15% (required >=85%)
+2026-10-28T17:43:37.1270864Z runtime branches: 88.31% (required >=80%)
+2026-10-28T17:43:37.1426123Z ##[group]Run uv run --frozen python scripts/p8c_qa_probe.py --fixtures tests/fixtures --timeout 5
+2026-10-28T17:43:37.1426847Z [36;1muv run --frozen python scripts/p8c_qa_probe.py --fixtures tests/fixtures --timeout 5[0m
+2026-10-28T17:43:37.1446331Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:43:37.1446578Z env:
+2026-10-28T17:43:37.1446861Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-28T17:43:37.1447205Z   UV_PYTHON: 3.13
+2026-10-28T17:43:37.1447463Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-28T17:43:37.1447770Z ##[endgroup]
+2026-10-28T17:43:41.4379560Z {"candidate":{"clean":true,"head":"9dda9fba0aa9646a67596657d4ae9a7088903808","status_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","tree":"dfd0414242cff364aad6082411ae88aef728783e","working_bytes_sha256":"3c3070bf164756fc385a41958e22bb4fa67423a3488e3187aa9e691ffb410801"},"check_count":101,"checks":["independent_frozen_vector_0","independent_frozen_vector_1","independent_frozen_vector_2","checkpoint_identity_0","checkpoint_signals_0","checkpoint_identity_1","checkpoint_signals_1","checkpoint_identity_2","checkpoint_signals_2","checkpoint_identity_3","checkpoint_signals_3","checkpoint_identity_4","checkpoint_signals_4","five_checkpoints_four_signals","independent_id_0_local-preview","independent_content_0_local-preview","independent_evidence_0_local-preview","independent_id_0_qa-preview","independent_content_0_qa-preview","independent_evidence_0_qa-preview","independent_id_1_local-preview","independent_content_1_local-preview","independent_evidence_1_local-preview","independent_id_1_qa-preview","independent_content_1_qa-preview","independent_evidence_1_qa-preview","independent_id_2_local-preview","independent_content_2_local-preview","independent_evidence_2_local-preview","independent_id_2_qa-preview","independent_content_2_qa-preview","independent_evidence_2_qa-preview","independent_id_3_local-preview","independent_content_3_local-preview","independent_evidence_3_local-preview","independent_id_3_qa-preview","independent_content_3_qa-preview","independent_evidence_3_qa-preview","alias_rule_episode_isolation","ancient_bytes_before_revision","ancient_replay_after_append_revision","origin_recompute_historical_revision","replay_rejects_unrelated_duplicate_id","replay_rejects_unrelated_broken_relation","replay_rejects_selected_identity_change","replay_rejects_unrelated_binding_invalid","replay_rejects_strict_manifest_version","different_exact_original_revision","fabricated_baseline_signal","same_source_paths","invalid_alias_50","invalid_alias_51","invalid_alias_52","invalid_alias_53","invalid_alias_54","detached_manifest_callback","single_held_journal_fold","authority_plain_dictionary","authority_counterfeit_receipt","authority_copied_receipt","authority_different_budget","authority_mutation","authority_genuine_once","authority_single_use","authority_issued_deadline","independent_cursor_bytes","cursor_filter_binding","rehashed_invalid_result_local_fold","local_coherent_ancestry_is_not_origin_proof","coherent_local_origin_mismatch","recovery_no_early_publication_0","recovery_no_early_publication_1","recovery_no_early_publication_2","three_fresh_recovery_fold_connections","exclusive_recovery_contents","recovery_no_overwrite","quiescent_source_bytes","local_preview_without_originals","missing_originals_replay_rejected","missing_originals_recompute_rejected","isolation_evaluation_base0","isolation_evaluation_base1","isolation_alert_base_price","isolation_alert_base_restock","isolation_evaluation_revision0","isolation_evaluation_revision1","isolation_alert_revision_price","isolation_alert_revision_restock","isolation_evaluation_series0","isolation_evaluation_series1","isolation_alert_series_price","isolation_alert_series_restock","isolation_evaluation_product0","isolation_evaluation_product1","isolation_alert_product_price","isolation_alert_product_restock","revision_series_product_isolation","cli_import_socket_tripwire_97","cli_import_socket_tripwire_98","cli_import_socket_tripwire_99","zero_sockets_telegram_imports"],"completed_utc":"2026-10-28T17:43:41.417143+00:00","final_qa_acceptance":false,"fresh_cli_processes":[{"case":"help","status":"observations_pass","tripwires":{"socket":0,"telegram_import":0}},{"case":"invalid","status":"observations_pass","tripwires":{"socket":0,"telegram_import":0}},{"case":"init","status":"observations_pass","tripwires":{"socket":0,"telegram_import":0}}],"head_stable":true,"independent_reference_scope":"fresh synthetic fixtures; exact hashes, identities, full results and renderer bytes","limits":["no Docker or CI execution","no physical Pi qualification","final candidate attestation required"],"platform":"Linux-7.0.0-1017-azure-x86_64-with-glibc2.39","python":"3.13.15","script_sha256":"a9bfa7316c1250717387c5a0c5b71f59b49199b9ed041887bc858db15f84ecc1","started_utc":"2026-10-28T17:43:37.307612+00:00","status":"preliminary_observations_pass","sut_location":"managed interpreter import; no expected-value production helpers","tripwires":{"socket":0,"telegram_import":0},"working_bytes_stable":true}
+2026-10-28T17:43:41.4658286Z ##[group]Run uv run --frozen python scripts/p8c_reviewer_probe.py --fixtures tests/fixtures --timeout 5
+2026-10-28T17:43:41.4659040Z [36;1muv run --frozen python scripts/p8c_reviewer_probe.py --fixtures tests/fixtures --timeout 5[0m
+2026-10-28T17:43:41.4678560Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:43:41.4678805Z env:
+2026-10-28T17:43:41.4679082Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-28T17:43:41.4679427Z   UV_PYTHON: 3.13
+2026-10-28T17:43:41.4679686Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-28T17:43:41.4679994Z ##[endgroup]
+2026-10-28T17:43:42.3705134Z {"checks":["deadline-at-first-stdout-byte-single-completion-log","serialization-expiry-no-partial-success-or-error-counts","independent-identity-and-both-renderer-byte-oracles","nullable-money-free-shipping-replay-source-byte-nonmutation","foreign-hot-journal-preserved-genuine-owner-recovery","issuing-budget-authority-before-writer-and-expiration","three-distinct-folds-expiry-before-publication","disk-full-publication-safe-cleanup-and-retry","local-verification-is-not-original-authority"],"probe":"p8c-independent-reviewer","result":"PASS"}
+2026-10-28T17:43:42.3988764Z ##[group]Run uv run --frozen python scripts/p8c_rw01_invariant_probe.py --fixtures tests/fixtures --timeout 5
+2026-10-28T17:43:42.3989563Z [36;1muv run --frozen python scripts/p8c_rw01_invariant_probe.py --fixtures tests/fixtures --timeout 5[0m
+2026-10-28T17:43:42.4009492Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:43:42.4009742Z env:
+2026-10-28T17:43:42.4010469Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-28T17:43:42.4010831Z   UV_PYTHON: 3.13
+2026-10-28T17:43:42.4011087Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-28T17:43:42.4011397Z ##[endgroup]
+2026-10-28T17:43:42.8330874Z {"all_four_sources_bytes_preserved":true,"backup":{"response":{"counts":{"alerts":1,"evidence":1},"operation":"backup","result":"ok","version":1}},"candidate":{"head":"9dda9fba0aa9646a67596657d4ae9a7088903808","product_diff":"","tree":"dfd0414242cff364aad6082411ae88aef728783e"},"completed_utc":"2026-10-28T17:43:42.832262+00:00","defect_reproduced":false,"different_full_entries":true,"different_signal_ids":true,"first_alert_timestamp_preserved":true,"first_enqueue":{"alert_id":"walt1_263b42cb9cd79f807ac735a14432cc5e69b661900c4ca79c36011ede81e5ecbb","destination_key":"rw01-preview","operation":"enqueue","result":"recorded","signal_id":"wsig1_87de1db270668d50d907c8263726baf845202e87657d38a5a2475a6f01587e17","version":1},"first_evidence_preserved":true,"head_stable":true,"invariant_test":"PASS","outbox_bytes_preserved":true,"probe":"P8c-RW01-public-originals","probe_sha256":"1e5ae0b4ab65dbaf27548d32b3cb788838afebf663af4f667c6043484c7379e6","public_APIs_only":true,"python":"3.13.15","same_watch_revision":true,"second_enqueue":{"error_category":"identity_conflict","exit_code":2},"signal_ids":["wsig1_87de1db270668d50d907c8263726baf845202e87657d38a5a2475a6f01587e17","wsig1_85fec839c2214231544091e7edc867f0419659b3aed6a06e750f90e6b70c4e2c"],"socket_attempts":0,"source_sha256":{"a-journal.sqlite":"209c89da1ce43f995f0e76d4bfbe410dd34e47eaf5f7aa6a11be0c1df8689753","a-watch.sqlite":"ea447359c10d49ce850f145b118fc0f0d221630a5e4b0fc8b54600645ac74aa7","b-journal.sqlite":"9b450ff6d162e71cccf699e249753a17a06a1614260af2001e7149fb80632fc8","b-watch.sqlite":"ad45a709f6aa486f3997e8897a4ddf5a8806bc9afeaa10a8e1a11dfd33663de7"},"sqlite":"3.53.1","started_utc":"2026-10-28T17:43:42.505391+00:00","target_price_minor":[900,1000],"verify":{"response":{"counts":{"alerts":1,"evidence":1},"level":"local","operation":"verify","result":"ok","version":1}}}
+2026-10-28T17:43:42.8558625Z ##[group]Run uv run --frozen python scripts/p8c_rw01_qa_probe.py --fixtures tests/fixtures --timeout 5
+2026-10-28T17:43:42.8559368Z [36;1muv run --frozen python scripts/p8c_rw01_qa_probe.py --fixtures tests/fixtures --timeout 5[0m
+2026-10-28T17:43:42.8579150Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:43:42.8579399Z env:
+2026-10-28T17:43:42.8579685Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-28T17:43:42.8580029Z   UV_PYTHON: 3.13
+2026-10-28T17:43:42.8580581Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-28T17:43:42.8580889Z ##[endgroup]
+2026-10-28T17:43:48.3381669Z {"checks":["target-conflict-preserves-healthy-store","destination-conflict-preserves-healthy-store","series-conflict-preserves-healthy-store","priority-conflict-preserves-healthy-store","freshness-conflict-preserves-healthy-store","rule-config-conflict-preserves-healthy-store","compatible-alias","compatible-series","compatible-samples","different-revision","different-product","ancient-replay","real-process-conflicting-race","negative-outbox-corruption-priority","negative-local-valid-replay-conflict","precommit-stdlib-write-failure-rollback","unchanged-budget-limits-and-expiry"],"checks_count":17,"fault_scope":"stdlib-sqlite-connection-injected-before-evidence-insert","finished_at":"2026-10-28T17:43:48.337310+00:00","negative_sql_scope":"outbox-negative-fixtures-and-race-lock-only","oracle":"independent-stdlib-canonicalization-hashes-and-complete-entry-equality","original_fixture_authority":"public-P5a-P5b-APIs-only","probe":"p8c-rw01-independent-qa","python":"3.13.15","result":"PASS","sqlite":"3.53.1","started_at":"2026-10-28T17:43:42.973945+00:00","timeout":5.0,"version":1}
+2026-10-28T17:43:48.3704144Z ##[group]Run uv run --frozen python scripts/p8c_rw01_reviewer_probe.py --fixtures tests/fixtures --timeout 5
+2026-10-28T17:43:48.3704930Z [36;1muv run --frozen python scripts/p8c_rw01_reviewer_probe.py --fixtures tests/fixtures --timeout 5[0m
+2026-10-28T17:43:48.3724867Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:43:48.3725122Z env:
+2026-10-28T17:43:48.3725408Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-28T17:43:48.3725757Z   UV_PYTHON: 3.13
+2026-10-28T17:43:48.3726011Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-28T17:43:48.3726327Z ##[endgroup]
+2026-10-28T17:43:56.8931948Z {"checks":["target-signal","target-destination","target-series","priority-signal","priority-destination","priority-series","freshness-signal","freshness-destination","freshness-series","restock-signal","restock-destination","restock-series","canonical-identity-signal","canonical-identity-destination","canonical-identity-series","same-semantic-destination","same-semantic-signal","same-semantic-series","revision","product","ancient-replay","same-id-replay-conflict-precedence","atomic-process-race","preexisting-corruption-precedence","precommit-io-INSERT INTO watchlist_alerts","precommit-io-INSERT INTO watchlist_alert_evidence","precommit-io-COMMIT","precommit-timeout-INSERT INTO watchlist_alert_evidence"],"count":28,"python":"3.13.15","result":"PASS","sqlite":"3.53.1"}
+2026-10-28T17:43:56.9255830Z ##[group]Run uv build --no-build-isolation
+2026-10-28T17:43:56.9256219Z [36;1muv build --no-build-isolation[0m
+2026-10-28T17:43:56.9275993Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:43:56.9276249Z env:
+2026-10-28T17:43:56.9276542Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-28T17:43:56.9276887Z   UV_PYTHON: 3.13
+2026-10-28T17:43:56.9277149Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-28T17:43:56.9277448Z ##[endgroup]
+2026-10-28T17:43:56.9387809Z Building source distribution...
+2026-10-28T17:43:57.1605546Z Building wheel from source distribution...
+2026-10-28T17:43:57.2833891Z Successfully built dist/card_market_tracker-0.1.0.tar.gz
+2026-10-28T17:43:57.2834927Z Successfully built dist/card_market_tracker-0.1.0-py3-none-any.whl
+2026-10-28T17:43:57.2942978Z ##[group]Run sh scripts/wheel_smoke.sh
+2026-10-28T17:43:57.2943365Z [36;1msh scripts/wheel_smoke.sh[0m
+2026-10-28T17:43:57.2962806Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:43:57.2963059Z env:
+2026-10-28T17:43:57.2963345Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-28T17:43:57.2963700Z   UV_PYTHON: 3.13
+2026-10-28T17:43:57.2963959Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-28T17:43:57.2964258Z ##[endgroup]
+2026-10-28T17:43:57.3474618Z Using CPython 3.13.15
+2026-10-28T17:43:57.3475229Z Creating virtual environment at: /tmp/tmp.zFghsbaXOu/venv
+2026-10-28T17:43:57.3483187Z Activate with: /tmp/tmp.zFghsbaXOu/venv/bin/activate
+2026-10-28T17:43:57.3944236Z Using Python 3.13.15 environment at: /tmp/tmp.zFghsbaXOu/venv
+2026-10-28T17:43:57.3966330Z Resolved 1 package in 1ms
+2026-10-28T17:43:57.4071944Z Prepared 1 package in 10ms
+2026-10-28T17:43:57.4105191Z Installed 1 package in 3ms
+2026-10-28T17:43:57.4106761Z  + card-market-tracker==0.1.0 (from file:///home/runner/work/card-market-tracker/card-market-tracker/dist/card_market_tracker-0.1.0-py3-none-any.whl)
+2026-10-28T17:43:57.6299647Z {"timestamp":"2026-10-28T17:43:57.629768Z","level":"INFO","event":"cli.version","component":"cli","run_id":"7df8c076-19c9-464d-9ddd-f076775961af"}
+2026-10-28T17:43:57.6300946Z cmt 0.1.0
+2026-10-28T17:43:57.7551316Z {"timestamp":"2026-10-28T17:43:57.754858Z","level":"INFO","event":"diagnose.completed","component":"cli","run_id":"482d5ef2-6858-4328-a04c-68333e4d4bef","result":"ok","duration_ms":28}
+2026-10-28T17:43:57.7552771Z diagnose: ok (configuration, local work directory)
+2026-10-28T17:43:58.5512106Z catalog installed valid: PASS (exit 0)
+2026-10-28T17:43:58.5512775Z catalog installed mixed: PASS (exit 3)
+2026-10-28T17:43:58.5513327Z catalog installed empty: PASS (exit 0)
+2026-10-28T17:43:58.5513887Z catalog installed invalid: PASS (exit 2)
+2026-10-28T17:43:58.5514478Z catalog installed candidates: PASS (exit 3)
+2026-10-28T17:44:02.4028362Z persistence installed: PASS (durable reopen/replay/later/mixed/empty/conflict/synthetic-only/bounds/integrity/backup/restore; distinct invocations)
+2026-10-28T17:44:04.4950672Z discovery installed: PASS (new set alias/targetless candidate/baseline/no discoveries/attested empty/incomplete/context/replay/nonmutation/backup restore; distinct processes)
+2026-10-28T17:44:07.5379639Z pinned installed smoke PASS; separate processes, migration, replay and recovery
+2026-10-28T17:44:10.2114616Z seed complete; synthetic transitions and fixed real baselines
+2026-10-28T17:44:10.2115442Z verified backup/restore: explicit 5s budget; CLI/read default remains 2s
+2026-10-28T17:44:10.2116627Z scoped installed smoke PASS; separate offline processes, real baseline only, synthetic transitions, v1 guard, nonmutation and restore
+2026-10-28T17:44:13.2224448Z seed: reviewed real unchanged pair and explicit synthetic transitions
+2026-10-28T17:44:13.2225018Z verified backup/restore: explicit 5s budget; CLI/read default remains 2s
+2026-10-28T17:44:13.2225879Z multi-revision installed smoke PASS; separate offline processes, real unchanged pair, synthetic transitions, v2 guard, replay, chronology, nonmutation and restore
+2026-10-28T17:44:18.0365417Z seed: reviewed real unchanged pair and explicit synthetic transitions
+2026-10-28T17:44:18.0366814Z discovery journal installed smoke PASS; seven comparisons, repeated event windows, replay, local verify, source recompute, recovery; separate offline processes
+2026-10-28T17:44:23.4999309Z seed: reviewed real unchanged pair and explicit synthetic transitions
+2026-10-28T17:44:23.5000558Z alert outbox installed smoke PASS; two synthetic alerts, four window associations, four real zero-alert comparisons, preview, replay, origin recompute and recovery; separate offline processes
+2026-10-28T17:44:27.8224704Z telegram delivery installed smoke PASS; normal synthetic pipeline, exact text, durable receipt/replay, interrupted worker/recovery, stale restore global quarantine; separate offline installed processes, fake transport only
+2026-10-28T17:44:30.9947612Z watchlist smoke PASS; synthetic-only, no sockets, separate processes and recovery
+2026-10-28T17:44:34.4095917Z watchlist journal smoke PASS; two episodes, 4 signals, old replay, no sockets, recovery
+2026-10-28T17:44:41.4983222Z watchlist alert outbox smoke PASS; five checkpoints, four signals, four previews, replay, recompute, no sockets, exclusive recovery; RW-01 incompatible originals rejected without mutation
+2026-10-28T17:44:41.5144999Z ##[group]Run uv export --frozen --all-groups --no-emit-project -o requirements-audit.txt > /dev/null
+2026-10-28T17:44:41.5145734Z [36;1muv export --frozen --all-groups --no-emit-project -o requirements-audit.txt > /dev/null[0m
+2026-10-28T17:44:41.5165580Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:44:41.5165832Z env:
+2026-10-28T17:44:41.5166118Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-28T17:44:41.5166467Z   UV_PYTHON: 3.13
+2026-10-28T17:44:41.5166726Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-28T17:44:41.5167033Z ##[endgroup]
+2026-10-28T17:44:41.5463657Z ##[group]Run uv run --frozen pip-audit -r requirements-audit.txt
+2026-10-28T17:44:41.5464572Z [36;1muv run --frozen pip-audit -r requirements-audit.txt[0m
+2026-10-28T17:44:41.5489743Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:44:41.5490007Z env:
+2026-10-28T17:44:41.5490631Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-28T17:44:41.5491006Z   UV_PYTHON: 3.13
+2026-10-28T17:44:41.5491265Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-28T17:44:41.5491577Z ##[endgroup]
+2026-10-28T17:44:49.9574459Z No known vulnerabilities found
+2026-10-28T17:44:50.0084089Z ##[group]Run uv run --frozen python scripts/check_secret_scan.py
+2026-10-28T17:44:50.0084593Z [36;1muv run --frozen python scripts/check_secret_scan.py[0m
+2026-10-28T17:44:50.0104276Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:44:50.0104539Z env:
+2026-10-28T17:44:50.0104831Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-28T17:44:50.0105174Z   UV_PYTHON: 3.13
+2026-10-28T17:44:50.0105624Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-28T17:44:50.0105923Z ##[endgroup]
+2026-10-28T17:44:58.9353455Z Secret scan: PASS (no unreviewed candidates; 64 exact public digest matches)
+2026-10-28T17:44:58.9989351Z Post job cleanup.
+2026-10-28T17:44:59.1106262Z UV_CACHE_DIR is already set to /home/runner/work/_temp/setup-uv-cache
+2026-10-28T17:44:59.1112392Z UV_PYTHON_INSTALL_DIR is already set to /home/runner/work/_temp/uv-python-dir
+2026-10-28T17:44:59.1115056Z Cache hit occurred on key setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-24.04-3.13-d2edd6c0a108e684ea8a124297d070cb3f1582b1dfbe1743d101b8ef042af5f7, not saving cache.
+2026-10-28T17:44:59.2655842Z Post job cleanup.
+2026-10-28T17:44:59.3550139Z [command]/usr/bin/git version
+2026-10-28T17:44:59.3594621Z git version 2.56.0
+2026-10-28T17:44:59.3644529Z Temporarily overriding HOME='/home/runner/work/_temp/b0faf1f5-d050-451c-aa3b-fac87cb4de0f' before making global git config changes
+2026-10-28T17:44:59.3651948Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-28T17:44:59.3653349Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/card-market-tracker/card-market-tracker
+2026-10-28T17:44:59.3703399Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-28T17:44:59.3741497Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-28T17:44:59.4011878Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-28T17:44:59.4041449Z http.https://github.com/.extraheader
+2026-10-28T17:44:59.4053440Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-28T17:44:59.4091123Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-28T17:44:59.4607965Z Cleaning up orphan processes
+2026-10-28T17:44:59.5064996Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

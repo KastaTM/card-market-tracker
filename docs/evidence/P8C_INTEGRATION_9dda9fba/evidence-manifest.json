@@ -1,0 +1,138 @@
+{
+  "files": {
+    "ORCHESTRATOR_INTEGRATION_AUTHORIZATION.txt": {
+      "bytes": 5822,
+      "sha256": "aedc73836ac649e6cb3290f72d4d643d3c77992acf2f8a56dc713702004adc92"
+    },
+    "P8C_INTEGRATION_COMPLETION_REPORT.md": {
+      "bytes": 12530,
+      "sha256": "5fdccc6030eca206bfe28f4e2571c05620a5226b9bd716022a7e9865b7154375"
+    },
+    "accepted-head-to-merge.diff": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ci-compose.log": {
+      "bytes": 40295,
+      "sha256": "cebc7ba7d8c9d5e6c4ff248403de5a8e88895f3b0717f2ff5457792bc7b43ddc"
+    },
+    "ci-compose.raw.log": {
+      "bytes": 40460,
+      "sha256": "6cfdaa857ce7c2e46b01419732f3a6a270832d126b08c73731ee3d9e9b4e0a1b"
+    },
+    "ci-container-amd64.log": {
+      "bytes": 58961,
+      "sha256": "cdba735b4cf68d2703cfa1a74f300b7a2d96a414dbcb4e46ec9cacd8bfaf3018"
+    },
+    "ci-container-amd64.raw.log": {
+      "bytes": 58972,
+      "sha256": "104820944e8c8c6ba9412694fb654133f394fcb75e450fd346f27f3d1480c783"
+    },
+    "ci-container-arm64.log": {
+      "bytes": 59196,
+      "sha256": "6db1b7482b815d31ee3b182dde6b9045c6fb8c56a5ed3b5bc41880c668428b82"
+    },
+    "ci-container-arm64.raw.log": {
+      "bytes": 59207,
+      "sha256": "7182d2aa6c48ab400bed7df393839ef320fb4f30234f88430940a1828d6b5417"
+    },
+    "ci-log-manifest.json": {
+      "bytes": 2181,
+      "sha256": "b6c3749fa8de0241d0cd2303ec67bcb3059eec15d06a056e2a0499e858803751"
+    },
+    "ci-metadata.json": {
+      "bytes": 42328,
+      "sha256": "645db7ee5527d9b416cbd1c39c9efcae2583f07f27d608402c5ef33fdbf62057"
+    },
+    "ci-quality.log": {
+      "bytes": 51514,
+      "sha256": "ac11d95aefacf1a6a4eeff57adde1a3eeb6fc3cb0c0f8c29a2046fda361e2ca2"
+    },
+    "ci-quality.raw.log": {
+      "bytes": 51712,
+      "sha256": "b7bd936e5ab37ff0367ee263d5b726a5156435a9767cc84214a3ba1b63f3814a"
+    },
+    "collect_integration_ci.py": {
+      "bytes": 4673,
+      "sha256": "23537b3174c53b0ab50da623c2bc28a22398a40a1fcbe531ab956baf70b7a7fb"
+    },
+    "freeze-integrity.json": {
+      "bytes": 1039,
+      "sha256": "0831d479ed8c71372492af14f73541212da24f45d257eefb299960cc6f52853a"
+    },
+    "harness-matrix.json": {
+      "bytes": 2413,
+      "sha256": "ace136892fe0847ef04a635d746664bdbf4695d2dc63cd3da3951dbd5927385b"
+    },
+    "historical-evidence-ledger.json": {
+      "bytes": 1434,
+      "sha256": "310f22373da299f8860cfcbec18da72866db34b130f702598f132a1a5a48e1a6"
+    },
+    "integration-readonly-review.json": {
+      "bytes": 2072,
+      "sha256": "08f46011473a521cdecf48a00f52981f8a77a2157643b54ae5d667a316f68216"
+    },
+    "integration-state.json": {
+      "bytes": 286,
+      "sha256": "978646eb1c27a4961ffcd14bc6fc4457c4ed09d7cbe9956e53d8aaa4144304c1"
+    },
+    "local-preservation-final.json": {
+      "bytes": 72224,
+      "sha256": "b9e67ec9b69aff665a45d3d1184a704672caf23f1e5b6e36c820bfa317d7eef5"
+    },
+    "local-preservation-initial-assertion-failure.json": {
+      "bytes": 529,
+      "sha256": "5ef1847a338876b0ef34280e1a0ec50e03b06ca59e1c67637cd04c0892988a49"
+    },
+    "local-ref-anomaly.json": {
+      "bytes": 5439,
+      "sha256": "914982ce53190f7c31324839c7ff717e90e6a383ae31319c370eb91ea833e202"
+    },
+    "merge-command.json": {
+      "bytes": 362,
+      "sha256": "4299f015aff3883efe6209621d6f4bd6b7d65613cf8e7c9e8e69080d59d04c6b"
+    },
+    "model-profile.json": {
+      "bytes": 1055,
+      "sha256": "926087052617c8294abf70c11fc2fd0ad4c52c547a705d72fea9184c491c1e69"
+    },
+    "post-ready-premerge.json": {
+      "bytes": 90098,
+      "sha256": "d2c4e0ffe8dbc1c4fccc361f3e329495b5211dd39e49a8b41d73fd4c5bcbf3cb"
+    },
+    "postmerge-structural-verification.json": {
+      "bytes": 143303,
+      "sha256": "416fdbf968f1d4a054a2d5a07d365fe2896c36c4955c7824b0adae082f0e9ef7"
+    },
+    "preflight.json": {
+      "bytes": 148306,
+      "sha256": "07e61813de65a5256139b8f6dcbaea8dc295469dc83ac2c709d4bcfc042c891d"
+    },
+    "privileged-readonly-worktree-statuses.json": {
+      "bytes": 18695,
+      "sha256": "5e714ce9f800fbcfe9941ba898c7eeb5458a2958e587f3835d562a0809189446"
+    },
+    "quality-gate-summary.json": {
+      "bytes": 16121,
+      "sha256": "8d1c4bf678e1575ffbdfc45bbed43d0cbb6c3c7cf9f6026f9f0805284effd9d0"
+    },
+    "readback_integration_evidence.py": {
+      "bytes": 3942,
+      "sha256": "31b1973915ea53ed175636b5e658c85f54553e43065345cc7a4e7e03c5ca176f"
+    },
+    "ready-command.json": {
+      "bytes": 385,
+      "sha256": "6947b369b312cb57cf320eb42b172e152d65776b436001b5f9504ec9e61e4687"
+    },
+    "tracking-ref-readonly-facts.json": {
+      "bytes": 3759,
+      "sha256": "8686f41c232cd29806d985f1586a3f39e5e078ad448e236f30da193596757614"
+    }
+  },
+  "manifest_excludes_itself": true,
+  "merge": "9dda9fba0aa9646a67596657d4ae9a7088903808",
+  "prefix": "docs/evidence/P8C_INTEGRATION_9dda9fba",
+  "repository": "KastaTM/card-market-tracker",
+  "source_tree": "dfd0414242cff364aad6082411ae88aef728783e",
+  "version": 1
+}

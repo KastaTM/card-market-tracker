@@ -1,0 +1,532 @@
+﻿2026-10-28T17:38:41.2164758Z Current runner version: '2.338.0'
+2026-10-28T17:38:41.2199996Z ##[group]Runner Image Provisioner
+2026-10-28T17:38:41.2201499Z Hosted Compute Agent
+2026-10-28T17:38:41.2202964Z Version: 20261021.618
+2026-10-28T17:38:41.2204040Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-10-28T17:38:41.2205293Z Build Date: 2026-10-21T00:45:21Z
+2026-10-28T17:38:41.2206409Z Worker ID: {7617d8ab-f4c0-4951-a65b-553d762584d7}
+2026-10-28T17:38:41.2207563Z Region: centralus
+2026-10-28T17:38:41.2208530Z Cloud: Azure
+2026-10-28T17:38:41.2209443Z ##[endgroup]
+2026-10-28T17:38:41.2211708Z ##[group]Operating System
+2026-10-28T17:38:41.2213182Z Ubuntu
+2026-10-28T17:38:41.2214075Z 24.04.5
+2026-10-28T17:38:41.2215393Z LTS
+2026-10-28T17:38:41.2216300Z ##[endgroup]
+2026-10-28T17:38:41.2217164Z ##[group]Runner Image
+2026-10-28T17:38:41.2218222Z Image: ubuntu-24.04
+2026-10-28T17:38:41.2219129Z Version: 20261025.353.1
+2026-10-28T17:38:41.2221449Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261025.353/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-28T17:38:41.2224635Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261025.353
+2026-10-28T17:38:41.2226711Z ##[endgroup]
+2026-10-28T17:38:41.2228506Z ##[group]GITHUB_TOKEN Permissions
+2026-10-28T17:38:41.2231543Z Contents: read
+2026-10-28T17:38:41.2232891Z Metadata: read
+2026-10-28T17:38:41.2234011Z ##[endgroup]
+2026-10-28T17:38:41.2236987Z Secret source: Actions
+2026-10-28T17:38:41.2238886Z Cache mode: write
+2026-10-28T17:38:41.2240619Z Prepare workflow directory
+2026-10-28T17:38:41.3714873Z Prepare all required actions
+2026-10-28T17:38:41.3762456Z Getting action download info
+2026-10-28T17:38:41.5924765Z Download action repository 'actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2026-10-28T17:38:41.9127517Z Complete job name: compose
+2026-10-28T17:38:42.1594607Z ##[group]Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+2026-10-28T17:38:42.1595685Z with:
+2026-10-28T17:38:42.1596165Z   repository: KastaTM/card-market-tracker
+2026-10-28T17:38:42.1599863Z   token: ***
+2026-10-28T17:38:42.1600285Z   ssh-strict: true
+2026-10-28T17:38:42.1600709Z   ssh-user: git
+2026-10-28T17:38:42.1601146Z   persist-credentials: true
+2026-10-28T17:38:42.1601620Z   clean: true
+2026-10-28T17:38:42.1602053Z   sparse-checkout-cone-mode: true
+2026-10-28T17:38:42.1602784Z   fetch-depth: 1
+2026-10-28T17:38:42.1603199Z   fetch-tags: false
+2026-10-28T17:38:42.1603620Z   show-progress: true
+2026-10-28T17:38:42.1604042Z   lfs: false
+2026-10-28T17:38:42.1604435Z   submodules: false
+2026-10-28T17:38:42.1604863Z   set-safe-directory: true
+2026-10-28T17:38:42.1605594Z ##[endgroup]
+2026-10-28T17:38:42.4242056Z Syncing repository: KastaTM/card-market-tracker
+2026-10-28T17:38:42.4245401Z ##[group]Getting Git version info
+2026-10-28T17:38:42.4246348Z Working directory is '/home/runner/work/card-market-tracker/card-market-tracker'
+2026-10-28T17:38:42.4247786Z [command]/usr/bin/git version
+2026-10-28T17:38:42.4359028Z git version 2.56.0
+2026-10-28T17:38:42.4384625Z ##[endgroup]
+2026-10-28T17:38:42.4400332Z Temporarily overriding HOME='/home/runner/work/_temp/2d005151-f871-4d72-9ccc-177ccb502311' before making global git config changes
+2026-10-28T17:38:42.4402511Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-28T17:38:42.4405665Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/card-market-tracker/card-market-tracker
+2026-10-28T17:38:42.4463606Z Deleting the contents of '/home/runner/work/card-market-tracker/card-market-tracker'
+2026-10-28T17:38:42.4468096Z ##[group]Initializing the repository
+2026-10-28T17:38:42.4494543Z [command]/usr/bin/git init /home/runner/work/card-market-tracker/card-market-tracker
+2026-10-28T17:38:42.4601567Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-28T17:38:42.4603166Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-28T17:38:42.4604412Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-28T17:38:42.4605154Z hint: call:
+2026-10-28T17:38:42.4605550Z hint:
+2026-10-28T17:38:42.4606074Z hint: 	git config --global init.defaultBranch <name>
+2026-10-28T17:38:42.4606689Z hint:
+2026-10-28T17:38:42.4607271Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-28T17:38:42.4608196Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-28T17:38:42.4608923Z hint:
+2026-10-28T17:38:42.4609336Z hint: 	git branch -m <name>
+2026-10-28T17:38:42.4609811Z hint:
+2026-10-28T17:38:42.4610426Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-28T17:38:42.4623769Z Initialized empty Git repository in /home/runner/work/card-market-tracker/card-market-tracker/.git/
+2026-10-28T17:38:42.4650648Z [command]/usr/bin/git remote add origin https://github.com/KastaTM/card-market-tracker
+2026-10-28T17:38:42.4694222Z ##[endgroup]
+2026-10-28T17:38:42.4695736Z ##[group]Disabling automatic garbage collection
+2026-10-28T17:38:42.4699227Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-28T17:38:42.4747178Z ##[endgroup]
+2026-10-28T17:38:42.4748598Z ##[group]Setting up auth
+2026-10-28T17:38:42.4758768Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-28T17:38:42.4810218Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-28T17:38:42.5229738Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-28T17:38:42.5285732Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-28T17:38:42.5524821Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-28T17:38:42.5574645Z ##[endgroup]
+2026-10-28T17:38:42.5575612Z ##[group]Fetching the repository
+2026-10-28T17:38:42.5588334Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +9dda9fba0aa9646a67596657d4ae9a7088903808:refs/remotes/origin/main
+2026-10-28T17:38:44.6438558Z From https://github.com/KastaTM/card-market-tracker
+2026-10-28T17:38:44.6440734Z  * [new ref]         9dda9fba0aa9646a67596657d4ae9a7088903808 -> origin/main
+2026-10-28T17:38:44.6446662Z ##[endgroup]
+2026-10-28T17:38:44.6448277Z ##[group]Determining the checkout info
+2026-10-28T17:38:44.6450195Z ##[endgroup]
+2026-10-28T17:38:44.6455651Z [command]/usr/bin/git sparse-checkout disable
+2026-10-28T17:38:44.6528989Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-28T17:38:44.6585817Z ##[group]Checking out the ref
+2026-10-28T17:38:44.6587375Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-28T17:38:44.6941428Z Switched to a new branch 'main'
+2026-10-28T17:38:44.6946587Z branch 'main' set up to track 'origin/main'.
+2026-10-28T17:38:44.6954047Z ##[endgroup]
+2026-10-28T17:38:44.7014419Z [command]/usr/bin/git log -1 --format=%H
+2026-10-28T17:38:44.7049818Z 9dda9fba0aa9646a67596657d4ae9a7088903808
+2026-10-28T17:38:44.7698860Z ##[group]Run docker compose run --build --rm version
+2026-10-28T17:38:44.7700614Z docker compose run --build --rm version
+2026-10-28T17:38:44.7727109Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:38:44.7728297Z ##[endgroup]
+2026-10-28T17:38:45.3781621Z #1 [internal] load local bake definitions
+2026-10-28T17:38:45.4888105Z #1 reading from stdin 432B done
+2026-10-28T17:38:45.4888784Z #1 DONE 0.0s
+2026-10-28T17:38:45.6108485Z 
+2026-10-28T17:38:45.6109208Z #2 [internal] load build definition from Dockerfile
+2026-10-28T17:38:45.6109956Z #2 transferring dockerfile: 1.01kB done
+2026-10-28T17:38:45.6110566Z #2 DONE 0.0s
+2026-10-28T17:38:45.6110820Z 
+2026-10-28T17:38:45.6111583Z #3 [auth] library/python:pull token for registry-1.docker.io
+2026-10-28T17:38:45.7611638Z #3 DONE 0.0s
+2026-10-28T17:38:45.7612195Z 
+2026-10-28T17:38:45.7613150Z #4 [internal] load metadata for ghcr.io/astral-sh/uv:0.12.10@sha256:2bb3ebca0a796a155094a27773d290c4b074572e6107f171d88d086682fd2500
+2026-10-28T17:38:45.9992828Z #4 DONE 0.5s
+2026-10-28T17:38:45.9993274Z 
+2026-10-28T17:38:45.9994554Z #5 [internal] load metadata for docker.io/library/python:3.13-slim@sha256:bf44cdfcb76cd3b41e879bc058fc37ec5872002ccfde7fcb765e218cde0cd79c
+2026-10-28T17:38:46.1134856Z #5 DONE 0.6s
+2026-10-28T17:38:46.1135266Z 
+2026-10-28T17:38:46.1135500Z #6 [internal] load .dockerignore
+2026-10-28T17:38:46.1136198Z #6 transferring context: 103B done
+2026-10-28T17:38:46.1136537Z #6 DONE 0.0s
+2026-10-28T17:38:46.1136680Z 
+2026-10-28T17:38:46.1137051Z #7 [uv 1/1] FROM ghcr.io/astral-sh/uv:0.12.10@sha256:2bb3ebca0a796a155094a27773d290c4b074572e6107f171d88d086682fd2500
+2026-10-28T17:38:46.1137850Z #7 resolve ghcr.io/astral-sh/uv:0.12.10@sha256:2bb3ebca0a796a155094a27773d290c4b074572e6107f171d88d086682fd2500 done
+2026-10-28T17:38:46.2881477Z #7 ...
+2026-10-28T17:38:46.2886465Z 
+2026-10-28T17:38:46.2886758Z #8 [internal] load build context
+2026-10-28T17:38:46.2887409Z #8 transferring context: 786.42kB 0.0s done
+2026-10-28T17:38:46.2888090Z #8 DONE 0.0s
+2026-10-28T17:38:46.2888348Z 
+2026-10-28T17:38:46.2889127Z #7 [uv 1/1] FROM ghcr.io/astral-sh/uv:0.12.10@sha256:2bb3ebca0a796a155094a27773d290c4b074572e6107f171d88d086682fd2500
+2026-10-28T17:38:46.2890676Z #7 sha256:2bb3ebca0a796a155094a27773d290c4b074572e6107f171d88d086682fd2500 2.20kB / 2.20kB done
+2026-10-28T17:38:46.2891860Z #7 sha256:34c0f9a55abeb840c34391bb7b63a1a06f8cb9281e028f27757a01a1a8a2d461 669B / 669B done
+2026-10-28T17:38:46.2893408Z #7 sha256:0d84b70a5418728b74f19aa09d543db74ba466e1a7f9521b7010a4016b26e99d 1.30kB / 1.30kB done
+2026-10-28T17:38:46.2894615Z #7 sha256:a3ca80cfbbd0a2643f858cae52b596a1f8eb2d0dbb5f529c44568c6ba6d9959f 0B / 23.00MB 0.1s
+2026-10-28T17:38:46.2895764Z #7 sha256:3bf5a1739ff9d32bbbc9c446873d6ccac733ae8c071cd561506c2c218fbd37f9 0B / 98B 0.1s
+2026-10-28T17:38:46.3945409Z #7 sha256:a3ca80cfbbd0a2643f858cae52b596a1f8eb2d0dbb5f529c44568c6ba6d9959f 23.00MB / 23.00MB 0.2s done
+2026-10-28T17:38:46.3947529Z #7 sha256:3bf5a1739ff9d32bbbc9c446873d6ccac733ae8c071cd561506c2c218fbd37f9 98B / 98B 0.2s done
+2026-10-28T17:38:46.3948531Z #7 extracting sha256:a3ca80cfbbd0a2643f858cae52b596a1f8eb2d0dbb5f529c44568c6ba6d9959f 0.1s
+2026-10-28T17:38:46.6187834Z #7 extracting sha256:a3ca80cfbbd0a2643f858cae52b596a1f8eb2d0dbb5f529c44568c6ba6d9959f 0.3s done
+2026-10-28T17:38:46.7754561Z #7 extracting sha256:3bf5a1739ff9d32bbbc9c446873d6ccac733ae8c071cd561506c2c218fbd37f9 done
+2026-10-28T17:38:46.7755865Z #7 DONE 0.6s
+2026-10-28T17:38:46.7756384Z 
+2026-10-28T17:38:46.7757267Z #9 [build 1/6] FROM docker.io/library/python:3.13-slim@sha256:bf44cdfcb76cd3b41e879bc058fc37ec5872002ccfde7fcb765e218cde0cd79c
+2026-10-28T17:38:46.7759729Z #9 resolve docker.io/library/python:3.13-slim@sha256:bf44cdfcb76cd3b41e879bc058fc37ec5872002ccfde7fcb765e218cde0cd79c done
+2026-10-28T17:38:46.7761239Z #9 sha256:bf44cdfcb76cd3b41e879bc058fc37ec5872002ccfde7fcb765e218cde0cd79c 10.37kB / 10.37kB done
+2026-10-28T17:38:46.7766445Z #9 sha256:8fb4cfa1a2616d7b8e0c2175cc6ad68f5729c34ea8488c0b360d2934b7be9024 1.75kB / 1.75kB done
+2026-10-28T17:38:46.7768010Z #9 sha256:ce3ff9524414289fc922d9d5dc1de87abc77a39ff2ff5007435839f2af1d7569 5.51kB / 5.51kB done
+2026-10-28T17:38:46.7769350Z #9 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 29.84MB / 29.84MB 0.2s done
+2026-10-28T17:38:46.7770720Z #9 sha256:65a67aec859c5fafe6ca38c2ed07825c97acf3febdcf62b79441a1bfca4f3a4a 1.29MB / 1.29MB 0.2s done
+2026-10-28T17:38:46.7773602Z #9 extracting sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 0.4s
+2026-10-28T17:38:46.7774877Z #9 sha256:3a5db7051419a594a866378c5d2c422e3d282d69e6792b3213772cb1349da446 11.92MB / 11.92MB 0.3s done
+2026-10-28T17:38:46.7776173Z #9 sha256:2f5b06adfd9138ef928aaf8b34f3fecf122b137a537133dfe421509dd57b4a47 250B / 250B 0.3s done
+2026-10-28T17:38:47.3869122Z #9 extracting sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 1.0s done
+2026-10-28T17:38:47.3870073Z #9 extracting sha256:65a67aec859c5fafe6ca38c2ed07825c97acf3febdcf62b79441a1bfca4f3a4a
+2026-10-28T17:38:47.6525382Z #9 extracting sha256:65a67aec859c5fafe6ca38c2ed07825c97acf3febdcf62b79441a1bfca4f3a4a 0.1s done
+2026-10-28T17:38:47.6527165Z #9 extracting sha256:3a5db7051419a594a866378c5d2c422e3d282d69e6792b3213772cb1349da446 0.1s
+2026-10-28T17:38:48.1734945Z #9 extracting sha256:3a5db7051419a594a866378c5d2c422e3d282d69e6792b3213772cb1349da446 0.5s done
+2026-10-28T17:38:48.1735840Z #9 extracting sha256:2f5b06adfd9138ef928aaf8b34f3fecf122b137a537133dfe421509dd57b4a47 done
+2026-10-28T17:38:48.1736365Z #9 DONE 2.1s
+2026-10-28T17:38:48.2842542Z 
+2026-10-28T17:38:48.2843281Z #10 [build 2/6] COPY --from=uv /uv /uvx /usr/local/bin/
+2026-10-28T17:38:48.2844119Z #10 DONE 0.1s
+2026-10-28T17:38:48.2844444Z 
+2026-10-28T17:38:48.2844666Z #11 [build 3/6] WORKDIR /app
+2026-10-28T17:38:48.2845219Z #11 DONE 0.0s
+2026-10-28T17:38:48.2845470Z 
+2026-10-28T17:38:48.2845757Z #12 [build 4/6] COPY pyproject.toml uv.lock README.md ./
+2026-10-28T17:38:48.2846424Z #12 DONE 0.0s
+2026-10-28T17:38:48.2846678Z 
+2026-10-28T17:38:48.2847522Z #13 [stage-2 2/4] RUN groupadd --gid 10001 cmt && useradd --uid 10001 --gid 10001 --create-home cmt     && install -d -m 0700 -o 10001 -g 10001 /data
+2026-10-28T17:38:48.3967568Z #13 DONE 0.2s
+2026-10-28T17:38:48.3970456Z 
+2026-10-28T17:38:48.3970957Z #14 [build 5/6] COPY src/ ./src/
+2026-10-28T17:38:48.3971523Z #14 DONE 0.0s
+2026-10-28T17:38:48.3971752Z 
+2026-10-28T17:38:48.3973753Z #15 [build 6/6] RUN uv sync --frozen --no-install-project     && uv build --no-build-isolation --wheel --out-dir /wheels     && uv venv --python /usr/local/bin/python3 /app/runtime     && uv pip install --python /app/runtime/bin/python --no-deps /wheels/*.whl
+2026-10-28T17:38:48.5654733Z #15 ...
+2026-10-28T17:38:48.5655050Z 
+2026-10-28T17:38:48.5655273Z #16 [stage-2 3/4] WORKDIR /app
+2026-10-28T17:38:48.5655835Z #16 DONE 0.0s
+2026-10-28T17:38:48.6271012Z 
+2026-10-28T17:38:48.6272590Z #15 [build 6/6] RUN uv sync --frozen --no-install-project     && uv build --no-build-isolation --wheel --out-dir /wheels     && uv venv --python /usr/local/bin/python3 /app/runtime     && uv pip install --python /app/runtime/bin/python --no-deps /wheels/*.whl
+2026-10-28T17:38:48.6273884Z #15 0.317 Using CPython 3.13.16 interpreter at: /usr/local/bin/python3
+2026-10-28T17:38:48.6274421Z #15 0.317 Creating virtual environment at: .venv
+2026-10-28T17:38:48.7389655Z #15 0.429 Downloading pygments (1.2MiB)
+2026-10-28T17:38:48.8999859Z #15 0.430 Downloading ruff (12.8MiB)
+2026-10-28T17:38:48.9000386Z #15 0.433 Downloading mypy (14.0MiB)
+2026-10-28T17:38:48.9000823Z #15 0.439 Downloading pip (1.7MiB)
+2026-10-28T17:38:49.0235694Z #15 0.713  Downloaded pygments
+2026-10-28T17:38:49.1949764Z #15 0.734  Downloaded pip
+2026-10-28T17:38:49.2148242Z #15 0.904  Downloaded ruff
+2026-10-28T17:38:49.3772594Z #15 0.997  Downloaded mypy
+2026-10-28T17:38:49.3773208Z #15 0.997 Prepared 46 packages in 677ms
+2026-10-28T17:38:49.3773702Z #15 1.066 Installed 46 packages in 68ms
+2026-10-28T17:38:49.5287749Z #15 1.066  + boolean-py==5.0
+2026-10-28T17:38:49.5288693Z #15 1.066  + build==1.6.1
+2026-10-28T17:38:49.5289124Z #15 1.068  + cachecontrol==0.14.4
+2026-10-28T17:38:49.5289846Z #15 1.068  + certifi==2026.10.19
+2026-10-28T17:38:49.5290419Z #15 1.068  + charset-normalizer==3.5.2
+2026-10-28T17:38:49.5290981Z #15 1.068  + coverage==7.16.2
+2026-10-28T17:38:49.5291519Z #15 1.068  + cyclonedx-python-lib==11.12.0
+2026-10-28T17:38:49.5292322Z #15 1.068  + defusedxml==0.7.1
+2026-10-28T17:38:49.5292873Z #15 1.068  + detect-secrets==1.5.0
+2026-10-28T17:38:49.5293397Z #15 1.068  + editables==0.5
+2026-10-28T17:38:49.5293883Z #15 1.068  + filelock==4.2.1
+2026-10-28T17:38:49.5294388Z #15 1.068  + hatchling==1.32.4
+2026-10-28T17:38:49.5294879Z #15 1.068  + idna==3.20
+2026-10-28T17:38:49.5295677Z #15 1.068  + iniconfig==2.3.0
+2026-10-28T17:38:49.5296159Z #15 1.068  + librt==0.16.0
+2026-10-28T17:38:49.5296688Z #15 1.068  + license-expression==30.4.4
+2026-10-28T17:38:49.5297252Z #15 1.068  + markdown-it-py==4.2.0
+2026-10-28T17:38:49.5297768Z #15 1.068  + mdurl==0.1.2
+2026-10-28T17:38:49.5298246Z #15 1.068  + msgpack==1.2.3
+2026-10-28T17:38:49.5298713Z #15 1.068  + mypy==1.20.2
+2026-10-28T17:38:49.5299185Z #15 1.068  + mypy-extensions==1.1.0
+2026-10-28T17:38:49.5299730Z #15 1.068  + packageurl-python==0.17.6
+2026-10-28T17:38:49.5300274Z #15 1.068  + packaging==26.3
+2026-10-28T17:38:49.5300797Z #15 1.068  + pathspec==1.1.1
+2026-10-28T17:38:49.5301303Z #15 1.068  + pip==26.2.1
+2026-10-28T17:38:49.5301787Z #15 1.068  + pip-api==0.0.35
+2026-10-28T17:38:49.5302606Z #15 1.068  + pip-audit==2.10.1
+2026-10-28T17:38:49.5303346Z #15 1.068  + pip-requirements-parser==32.0.1
+2026-10-28T17:38:49.5303894Z #15 1.068  + platformdirs==4.12.3
+2026-10-28T17:38:49.5304331Z #15 1.068  + pluggy==1.6.0
+2026-10-28T17:38:49.5304753Z #15 1.068  + py-serializable==2.1.0
+2026-10-28T17:38:49.5305212Z #15 1.068  + pygments==2.21.0
+2026-10-28T17:38:49.5305612Z #15 1.068  + pyparsing==3.3.3
+2026-10-28T17:38:49.5306190Z #15 1.068  + pyproject-hooks==1.3.3
+2026-10-28T17:38:49.5306710Z #15 1.068  + pytest==9.1.1
+2026-10-28T17:38:49.5307090Z #15 1.068  + pyyaml==6.0.3
+2026-10-28T17:38:49.5307466Z #15 1.068  + requests==2.34.2
+2026-10-28T17:38:49.5307857Z #15 1.068  + rich==15.0.0
+2026-10-28T17:38:49.5308238Z #15 1.068  + ruff==0.13.3
+2026-10-28T17:38:49.5308630Z #15 1.068  + sortedcontainers==2.4.0
+2026-10-28T17:38:49.5309092Z #15 1.068  + tomli==2.4.1
+2026-10-28T17:38:49.5309542Z #15 1.068  + tomli-w==1.2.0
+2026-10-28T17:38:49.5309927Z #15 1.068  + tomlkit==0.15.1
+2026-10-28T17:38:49.5310356Z #15 1.068  + trove-classifiers==2026.9.21.13
+2026-10-28T17:38:49.5310861Z #15 1.068  + typing-extensions==4.16.0
+2026-10-28T17:38:49.5311312Z #15 1.068  + urllib3==2.8.0
+2026-10-28T17:38:49.5507442Z #15 1.240 Building wheel...
+2026-10-28T17:38:50.0745391Z #15 1.764 Successfully built /wheels/card_market_tracker-0.1.0-py3-none-any.whl
+2026-10-28T17:38:50.2750010Z #15 1.770 Using CPython 3.13.16 interpreter at: /usr/local/bin/python3
+2026-10-28T17:38:50.2750936Z #15 1.770 Creating virtual environment at: runtime
+2026-10-28T17:38:50.2751623Z #15 1.832 Using Python 3.13.16 environment at: runtime
+2026-10-28T17:38:50.2751970Z #15 1.834 Resolved 1 package in 1ms
+2026-10-28T17:38:50.2752541Z #15 1.845 Prepared 1 package in 10ms
+2026-10-28T17:38:50.2752836Z #15 1.850 Installed 1 package in 4ms
+2026-10-28T17:38:50.2753345Z #15 1.850  + card-market-tracker==0.1.0 (from file:///wheels/card_market_tracker-0.1.0-py3-none-any.whl)
+2026-10-28T17:38:50.2753866Z #15 DONE 2.0s
+2026-10-28T17:38:50.3772997Z 
+2026-10-28T17:38:50.3773570Z #17 [stage-2 4/4] COPY --from=build /app/runtime /app/runtime
+2026-10-28T17:38:50.3774132Z #17 DONE 0.0s
+2026-10-28T17:38:50.5283733Z 
+2026-10-28T17:38:50.5284482Z #18 exporting to image
+2026-10-28T17:38:50.5284974Z #18 exporting layers
+2026-10-28T17:38:51.0121444Z #18 exporting layers 0.6s done
+2026-10-28T17:38:51.0445549Z #18 writing image sha256:0549401548d6c656aa497b3e4229a08dbe8a494d51aba4ee730e95ab505a7e40 done
+2026-10-28T17:38:51.0446566Z #18 naming to docker.io/library/card-market-tracker-version done
+2026-10-28T17:38:51.0447464Z #18 DONE 0.6s
+2026-10-28T17:38:51.0447675Z 
+2026-10-28T17:38:51.0447864Z #19 resolving provenance for metadata file
+2026-10-28T17:38:51.0448339Z #19 DONE 0.0s
+2026-10-28T17:38:51.7725881Z {"timestamp":"2026-10-28T17:38:51.771979Z","level":"INFO","event":"cli.version","component":"cli","run_id":"21649600-681f-42e1-a830-9999b75c0658"}
+2026-10-28T17:38:51.7726841Z cmt 0.1.0
+2026-10-28T17:38:51.8785308Z ##[group]Run docker compose run --build --rm diagnose
+2026-10-28T17:38:51.8785751Z docker compose run --build --rm diagnose
+2026-10-28T17:38:51.8806103Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:38:51.8806370Z ##[endgroup]
+2026-10-28T17:38:52.0359241Z #1 [internal] load local bake definitions
+2026-10-28T17:38:52.1199490Z #1 reading from stdin 435B done
+2026-10-28T17:38:52.1199927Z #1 DONE 0.0s
+2026-10-28T17:38:52.1200165Z 
+2026-10-28T17:38:52.1200395Z #2 [internal] load build definition from Dockerfile
+2026-10-28T17:38:52.1200791Z #2 transferring dockerfile: 1.01kB done
+2026-10-28T17:38:52.1201069Z #2 DONE 0.0s
+2026-10-28T17:38:52.1201239Z 
+2026-10-28T17:38:52.1201910Z #3 [internal] load metadata for ghcr.io/astral-sh/uv:0.12.10@sha256:2bb3ebca0a796a155094a27773d290c4b074572e6107f171d88d086682fd2500
+2026-10-28T17:38:52.1203075Z #3 DONE 0.0s
+2026-10-28T17:38:52.1203299Z 
+2026-10-28T17:38:52.1204199Z #4 [internal] load metadata for docker.io/library/python:3.13-slim@sha256:bf44cdfcb76cd3b41e879bc058fc37ec5872002ccfde7fcb765e218cde0cd79c
+2026-10-28T17:38:52.1205308Z #4 DONE 0.0s
+2026-10-28T17:38:52.1205482Z 
+2026-10-28T17:38:52.1205585Z #5 [internal] load .dockerignore
+2026-10-28T17:38:52.1205853Z #5 transferring context: 103B done
+2026-10-28T17:38:52.1206108Z #5 DONE 0.0s
+2026-10-28T17:38:52.1206237Z 
+2026-10-28T17:38:52.1206747Z #6 [uv 1/1] FROM ghcr.io/astral-sh/uv:0.12.10@sha256:2bb3ebca0a796a155094a27773d290c4b074572e6107f171d88d086682fd2500
+2026-10-28T17:38:52.1207243Z #6 DONE 0.0s
+2026-10-28T17:38:52.1207463Z 
+2026-10-28T17:38:52.1208117Z #7 [build 1/6] FROM docker.io/library/python:3.13-slim@sha256:bf44cdfcb76cd3b41e879bc058fc37ec5872002ccfde7fcb765e218cde0cd79c
+2026-10-28T17:38:52.1208683Z #7 DONE 0.0s
+2026-10-28T17:38:52.1208793Z 
+2026-10-28T17:38:52.1208891Z #8 [internal] load build context
+2026-10-28T17:38:52.1209322Z #8 transferring context: 7.07kB done
+2026-10-28T17:38:52.1209713Z #8 DONE 0.0s
+2026-10-28T17:38:52.1209894Z 
+2026-10-28T17:38:52.1210580Z #9 [stage-2 2/4] RUN groupadd --gid 10001 cmt && useradd --uid 10001 --gid 10001 --create-home cmt     && install -d -m 0700 -o 10001 -g 10001 /data
+2026-10-28T17:38:52.1211531Z #9 CACHED
+2026-10-28T17:38:52.1211734Z 
+2026-10-28T17:38:52.1211885Z #10 [build 2/6] COPY --from=uv /uv /uvx /usr/local/bin/
+2026-10-28T17:38:52.1212641Z #10 CACHED
+2026-10-28T17:38:52.1212787Z 
+2026-10-28T17:38:52.1212989Z #11 [build 5/6] COPY src/ ./src/
+2026-10-28T17:38:52.1213417Z #11 CACHED
+2026-10-28T17:38:52.1213604Z 
+2026-10-28T17:38:52.1213777Z #12 [build 4/6] COPY pyproject.toml uv.lock README.md ./
+2026-10-28T17:38:52.1214196Z #12 CACHED
+2026-10-28T17:38:52.1214346Z 
+2026-10-28T17:38:52.1214434Z #13 [build 3/6] WORKDIR /app
+2026-10-28T17:38:52.1214655Z #13 CACHED
+2026-10-28T17:38:52.1214760Z 
+2026-10-28T17:38:52.1215552Z #14 [build 6/6] RUN uv sync --frozen --no-install-project     && uv build --no-build-isolation --wheel --out-dir /wheels     && uv venv --python /usr/local/bin/python3 /app/runtime     && uv pip install --python /app/runtime/bin/python --no-deps /wheels/*.whl
+2026-10-28T17:38:52.1216817Z #14 CACHED
+2026-10-28T17:38:52.1216917Z 
+2026-10-28T17:38:52.1217011Z #15 [stage-2 3/4] WORKDIR /app
+2026-10-28T17:38:52.1217234Z #15 CACHED
+2026-10-28T17:38:52.1217329Z 
+2026-10-28T17:38:52.1217485Z #16 [stage-2 4/4] COPY --from=build /app/runtime /app/runtime
+2026-10-28T17:38:52.1217803Z #16 CACHED
+2026-10-28T17:38:52.1217903Z 
+2026-10-28T17:38:52.1217986Z #17 exporting to image
+2026-10-28T17:38:52.1218205Z #17 exporting layers done
+2026-10-28T17:38:52.1218617Z #17 writing image sha256:0549401548d6c656aa497b3e4229a08dbe8a494d51aba4ee730e95ab505a7e40 done
+2026-10-28T17:38:52.1219161Z #17 naming to docker.io/library/card-market-tracker-diagnose done
+2026-10-28T17:38:52.1219505Z #17 DONE 0.0s
+2026-10-28T17:38:52.1219613Z 
+2026-10-28T17:38:52.1219724Z #18 resolving provenance for metadata file
+2026-10-28T17:38:52.1219990Z #18 DONE 0.0s
+2026-10-28T17:38:52.8200537Z {"timestamp":"2026-10-28T17:38:52.819480Z","level":"INFO","event":"diagnose.completed","component":"cli","run_id":"189f6380-0932-43d4-bfc7-2c81928dbb9b","result":"ok","duration_ms":126}
+2026-10-28T17:38:52.8202659Z diagnose: ok (configuration, local work directory)
+2026-10-28T17:38:52.8898606Z ##[group]Run docker compose build catalog persistence discovery pinned scoped
+2026-10-28T17:38:52.8899247Z docker compose build catalog persistence discovery pinned scoped
+2026-10-28T17:38:52.8919269Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:38:52.8919533Z ##[endgroup]
+2026-10-28T17:38:53.0522711Z #1 [internal] load local bake definitions
+2026-10-28T17:38:53.1529814Z #1 reading from stdin 1.82kB done
+2026-10-28T17:38:53.1530564Z #1 DONE 0.0s
+2026-10-28T17:38:53.1530760Z 
+2026-10-28T17:38:53.1531027Z #2 [catalog internal] load build definition from Dockerfile
+2026-10-28T17:38:53.1531627Z #2 transferring dockerfile: 1.01kB done
+2026-10-28T17:38:53.1532060Z #2 DONE 0.0s
+2026-10-28T17:38:53.1532482Z 
+2026-10-28T17:38:53.1533245Z #3 [pinned internal] load metadata for ghcr.io/astral-sh/uv:0.12.10@sha256:2bb3ebca0a796a155094a27773d290c4b074572e6107f171d88d086682fd2500
+2026-10-28T17:38:53.1534284Z #3 DONE 0.0s
+2026-10-28T17:38:53.1534473Z 
+2026-10-28T17:38:53.1535370Z #4 [catalog internal] load metadata for docker.io/library/python:3.13-slim@sha256:bf44cdfcb76cd3b41e879bc058fc37ec5872002ccfde7fcb765e218cde0cd79c
+2026-10-28T17:38:53.1536554Z #4 DONE 0.0s
+2026-10-28T17:38:53.1536750Z 
+2026-10-28T17:38:53.1536928Z #5 [discovery internal] load .dockerignore
+2026-10-28T17:38:53.1537427Z #5 transferring context: 103B done
+2026-10-28T17:38:53.1537844Z #5 DONE 0.0s
+2026-10-28T17:38:53.1538034Z 
+2026-10-28T17:38:53.1538635Z #6 [pinned uv 1/1] FROM ghcr.io/astral-sh/uv:0.12.10@sha256:2bb3ebca0a796a155094a27773d290c4b074572e6107f171d88d086682fd2500
+2026-10-28T17:38:53.1539538Z #6 DONE 0.0s
+2026-10-28T17:38:53.1539756Z 
+2026-10-28T17:38:53.1540462Z #7 [pinned build 1/6] FROM docker.io/library/python:3.13-slim@sha256:bf44cdfcb76cd3b41e879bc058fc37ec5872002ccfde7fcb765e218cde0cd79c
+2026-10-28T17:38:53.1541492Z #7 DONE 0.0s
+2026-10-28T17:38:53.1541688Z 
+2026-10-28T17:38:53.1541878Z #8 [persistence internal] load build context
+2026-10-28T17:38:53.2396615Z  pinned  Built
+2026-10-28T17:38:53.2396944Z #8 transferring context: 7.07kB done
+2026-10-28T17:38:53.2397246Z  scoped  Built
+2026-10-28T17:38:53.2397454Z  catalog  Built
+2026-10-28T17:38:53.2397677Z  persistence  Built
+2026-10-28T17:38:53.2397898Z  discovery  Built
+2026-10-28T17:38:53.2399957Z #8 DONE 0.0s
+2026-10-28T17:38:53.2400288Z 
+2026-10-28T17:38:53.2400755Z #9 [persistence build 5/6] COPY src/ ./src/
+2026-10-28T17:38:53.2401222Z #9 CACHED
+2026-10-28T17:38:53.2401336Z 
+2026-10-28T17:38:53.2403048Z #10 [persistence build 6/6] RUN uv sync --frozen --no-install-project     && uv build --no-build-isolation --wheel --out-dir /wheels     && uv venv --python /usr/local/bin/python3 /app/runtime     && uv pip install --python /app/runtime/bin/python --no-deps /wheels/*.whl
+2026-10-28T17:38:53.2404705Z #10 CACHED
+2026-10-28T17:38:53.2404849Z 
+2026-10-28T17:38:53.2405056Z #11 [persistence build 4/6] COPY pyproject.toml uv.lock README.md ./
+2026-10-28T17:38:53.2405436Z #11 CACHED
+2026-10-28T17:38:53.2405545Z 
+2026-10-28T17:38:53.2405666Z #12 [persistence build 3/6] WORKDIR /app
+2026-10-28T17:38:53.2405933Z #12 CACHED
+2026-10-28T17:38:53.2406039Z 
+2026-10-28T17:38:53.2406512Z #13 [persistence stage-2 2/4] RUN groupadd --gid 10001 cmt && useradd --uid 10001 --gid 10001 --create-home cmt     && install -d -m 0700 -o 10001 -g 10001 /data
+2026-10-28T17:38:53.2407150Z #13 CACHED
+2026-10-28T17:38:53.2407264Z 
+2026-10-28T17:38:53.2407369Z #14 [persistence stage-2 3/4] WORKDIR /app
+2026-10-28T17:38:53.2407633Z #14 CACHED
+2026-10-28T17:38:53.2407735Z 
+2026-10-28T17:38:53.2407916Z #15 [persistence build 2/6] COPY --from=uv /uv /uvx /usr/local/bin/
+2026-10-28T17:38:53.2408261Z #15 CACHED
+2026-10-28T17:38:53.2408358Z 
+2026-10-28T17:38:53.2408553Z #16 [persistence stage-2 4/4] COPY --from=build /app/runtime /app/runtime
+2026-10-28T17:38:53.2408923Z #16 CACHED
+2026-10-28T17:38:53.2409024Z 
+2026-10-28T17:38:53.2409128Z #17 [persistence] exporting to image
+2026-10-28T17:38:53.2409394Z #17 exporting layers done
+2026-10-28T17:38:53.2410068Z #17 writing image sha256:0549401548d6c656aa497b3e4229a08dbe8a494d51aba4ee730e95ab505a7e40 done
+2026-10-28T17:38:53.2410631Z #17 naming to docker.io/library/card-market-tracker-persistence done
+2026-10-28T17:38:53.2411130Z #17 DONE 0.0s
+2026-10-28T17:38:53.2411248Z 
+2026-10-28T17:38:53.2411345Z #18 [scoped] exporting to image
+2026-10-28T17:38:53.2411593Z #18 exporting layers done
+2026-10-28T17:38:53.2411991Z #18 writing image sha256:0549401548d6c656aa497b3e4229a08dbe8a494d51aba4ee730e95ab505a7e40 done
+2026-10-28T17:38:53.2412924Z #18 naming to docker.io/library/card-market-tracker-scoped done
+2026-10-28T17:38:53.2413272Z #18 DONE 0.0s
+2026-10-28T17:38:53.2413388Z 
+2026-10-28T17:38:53.2413477Z #19 [pinned] exporting to image
+2026-10-28T17:38:53.2413714Z #19 exporting layers done
+2026-10-28T17:38:53.2414111Z #19 writing image sha256:0549401548d6c656aa497b3e4229a08dbe8a494d51aba4ee730e95ab505a7e40 done
+2026-10-28T17:38:53.2414641Z #19 naming to docker.io/library/card-market-tracker-pinned done
+2026-10-28T17:38:53.2414984Z #19 DONE 0.0s
+2026-10-28T17:38:53.2415099Z 
+2026-10-28T17:38:53.2415199Z #20 [catalog] exporting to image
+2026-10-28T17:38:53.2415443Z #20 exporting layers done
+2026-10-28T17:38:53.2415836Z #20 writing image sha256:0549401548d6c656aa497b3e4229a08dbe8a494d51aba4ee730e95ab505a7e40 done
+2026-10-28T17:38:53.2416354Z #20 naming to docker.io/library/card-market-tracker-catalog done
+2026-10-28T17:38:53.2416680Z #20 DONE 0.0s
+2026-10-28T17:38:53.2416791Z 
+2026-10-28T17:38:53.2416886Z #21 [discovery] exporting to image
+2026-10-28T17:38:53.2417136Z #21 exporting layers done
+2026-10-28T17:38:53.2417525Z #21 writing image sha256:0549401548d6c656aa497b3e4229a08dbe8a494d51aba4ee730e95ab505a7e40 done
+2026-10-28T17:38:53.2418049Z #21 naming to docker.io/library/card-market-tracker-discovery done
+2026-10-28T17:38:53.2418383Z #21 DONE 0.0s
+2026-10-28T17:38:53.2418488Z 
+2026-10-28T17:38:53.2418619Z #22 [pinned] resolving provenance for metadata file
+2026-10-28T17:38:53.2418909Z #22 DONE 0.0s
+2026-10-28T17:38:53.2419014Z 
+2026-10-28T17:38:53.2419159Z #23 [persistence] resolving provenance for metadata file
+2026-10-28T17:38:53.2419452Z #23 DONE 0.0s
+2026-10-28T17:38:53.2419560Z 
+2026-10-28T17:38:53.2419683Z #24 [scoped] resolving provenance for metadata file
+2026-10-28T17:38:53.2419965Z #24 DONE 0.0s
+2026-10-28T17:38:53.2420072Z 
+2026-10-28T17:38:53.2420199Z #25 [discovery] resolving provenance for metadata file
+2026-10-28T17:38:53.2420498Z #25 DONE 0.0s
+2026-10-28T17:38:53.2420597Z 
+2026-10-28T17:38:53.2420724Z #26 [catalog] resolving provenance for metadata file
+2026-10-28T17:38:53.2421005Z #26 DONE 0.0s
+2026-10-28T17:38:53.2566489Z ##[group]Run python3 scripts/catalog_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:38:53.2567130Z python3 scripts/catalog_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:38:53.2587289Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:38:53.2587546Z ##[endgroup]
+2026-10-28T17:38:58.2968791Z catalog compose valid: PASS (exit 0)
+2026-10-28T17:38:58.2969155Z catalog compose mixed: PASS (exit 3)
+2026-10-28T17:38:58.2969453Z catalog compose empty: PASS (exit 0)
+2026-10-28T17:38:58.2969739Z catalog compose invalid: PASS (exit 2)
+2026-10-28T17:38:58.2970070Z catalog compose candidates: PASS (exit 3)
+2026-10-28T17:38:58.3177011Z ##[group]Run python3 scripts/observation_persistence_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:38:58.3177803Z python3 scripts/observation_persistence_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:38:58.3197271Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:38:58.3197535Z ##[endgroup]
+2026-10-28T17:39:23.8314629Z persistence compose runtime: 3.13.16 3.46.1 uid=10001 data=0700
+2026-10-28T17:39:23.8315481Z persistence compose: PASS (durable reopen/replay/later/mixed/empty/conflict/synthetic-only/bounds/integrity/backup/restore; distinct invocations)
+2026-10-28T17:39:23.8481967Z ##[group]Run python3 scripts/discovery_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:39:23.8483039Z python3 scripts/discovery_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:39:23.8502529Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:39:23.8502816Z ##[endgroup]
+2026-10-28T17:39:38.0718874Z discovery compose runtime: 3.13.16 3.46.1 uid=10001 data=0700
+2026-10-28T17:39:38.0719929Z discovery compose: PASS (new set alias/targetless candidate/baseline/no discoveries/attested empty/incomplete/context/replay/nonmutation/backup restore; distinct processes)
+2026-10-28T17:39:38.0905517Z ##[group]Run python3 scripts/pinned_repository_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:39:38.0906247Z python3 scripts/pinned_repository_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:39:38.0925863Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:39:38.0926123Z ##[endgroup]
+2026-10-28T17:39:56.7501228Z pinned compose smoke PASS; separate processes, migration, replay and recovery
+2026-10-28T17:39:56.7667511Z ##[group]Run python3 scripts/scoped_capture_discovery_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:39:56.7668272Z python3 scripts/scoped_capture_discovery_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:39:56.7690320Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:39:56.7690580Z ##[endgroup]
+2026-10-28T17:40:12.7002798Z seed complete; synthetic transitions and fixed real baselines
+2026-10-28T17:40:12.7003418Z 3.13.16 3.46.1 uid=10001
+2026-10-28T17:40:12.7003841Z verified backup/restore: explicit 5s budget; CLI/read default remains 2s
+2026-10-28T17:40:12.7004598Z scoped compose smoke PASS; separate offline processes, real baseline only, synthetic transitions, v1 guard, nonmutation and restore
+2026-10-28T17:40:12.7208047Z ##[group]Run python3 scripts/multi_revision_metadata_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:40:12.7209223Z python3 scripts/multi_revision_metadata_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:40:12.7229202Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:40:12.7229464Z ##[endgroup]
+2026-10-28T17:40:30.6234620Z seed: reviewed real unchanged pair and explicit synthetic transitions
+2026-10-28T17:40:30.6235066Z 3.13.16 3.46.1 uid=10001
+2026-10-28T17:40:30.6235461Z verified backup/restore: explicit 5s budget; CLI/read default remains 2s
+2026-10-28T17:40:30.6236266Z multi-revision compose smoke PASS; separate offline processes, real unchanged pair, synthetic transitions, v2 guard, replay, chronology, nonmutation and restore
+2026-10-28T17:40:30.6480123Z ##[group]Run python3 scripts/discovery_journal_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:40:30.6481434Z python3 scripts/discovery_journal_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:40:30.6501468Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:40:30.6501727Z ##[endgroup]
+2026-10-28T17:40:59.3192411Z seed: reviewed real unchanged pair and explicit synthetic transitions
+2026-10-28T17:40:59.3192942Z 3.13.16 3.46.1 uid=10001
+2026-10-28T17:40:59.3193674Z discovery journal compose smoke PASS; seven comparisons, repeated event windows, replay, local verify, source recompute, recovery; separate offline processes
+2026-10-28T17:40:59.3373532Z ##[group]Run python3 scripts/alert_outbox_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:40:59.3374223Z python3 scripts/alert_outbox_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:40:59.3394073Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:40:59.3394333Z ##[endgroup]
+2026-10-28T17:41:32.6942536Z seed: reviewed real unchanged pair and explicit synthetic transitions
+2026-10-28T17:41:32.6943023Z 3.13.16 3.46.1 uid=10001
+2026-10-28T17:41:32.6943809Z alert outbox compose smoke PASS; two synthetic alerts, four window associations, four real zero-alert comparisons, preview, replay, origin recompute and recovery; separate offline processes
+2026-10-28T17:41:32.7115315Z ##[group]Run python3 scripts/telegram_delivery_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:41:32.7116049Z python3 scripts/telegram_delivery_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:41:32.7135692Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:41:32.7135950Z ##[endgroup]
+2026-10-28T17:41:58.7223486Z telegram delivery compose smoke PASS; normal synthetic pipeline, exact text, durable receipt/replay, interrupted worker/recovery, stale restore global quarantine; separate offline installed processes, fake transport only
+2026-10-28T17:41:58.7433583Z ##[group]Run python3 scripts/watchlist_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:41:58.7434257Z python3 scripts/watchlist_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:41:58.7453978Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:41:58.7454239Z ##[endgroup]
+2026-10-28T17:42:18.8278256Z watchlist smoke PASS; synthetic-only, no sockets, separate processes and recovery
+2026-10-28T17:42:18.8438237Z ##[group]Run python3 scripts/watchlist_journal_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:42:18.8438943Z python3 scripts/watchlist_journal_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:42:18.8458396Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:42:18.8458658Z ##[endgroup]
+2026-10-28T17:42:39.0319063Z watchlist journal smoke PASS; two episodes, 4 signals, old replay, no sockets, recovery
+2026-10-28T17:42:39.0579240Z ##[group]Run python3 scripts/watchlist_alert_outbox_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:42:39.0580647Z python3 scripts/watchlist_alert_outbox_smoke.py --mode compose --fixtures tests/fixtures
+2026-10-28T17:42:39.0609996Z shell: /usr/bin/bash -e {0}
+2026-10-28T17:42:39.0610427Z ##[endgroup]
+2026-10-28T17:43:21.6991246Z watchlist alert outbox smoke PASS; five checkpoints, four signals, four previews, replay, recompute, no sockets, exclusive recovery; RW-01 incompatible originals rejected without mutation
+2026-10-28T17:43:21.7548704Z Post job cleanup.
+2026-10-28T17:43:21.8422945Z [command]/usr/bin/git version
+2026-10-28T17:43:21.8467848Z git version 2.56.0
+2026-10-28T17:43:21.8507254Z Temporarily overriding HOME='/home/runner/work/_temp/1d4732a2-1cf9-428d-8c3a-fc34fb908e28' before making global git config changes
+2026-10-28T17:43:21.8508726Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-28T17:43:21.8512735Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/card-market-tracker/card-market-tracker
+2026-10-28T17:43:21.8555062Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-28T17:43:21.8593274Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-28T17:43:21.8877191Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-28T17:43:21.8905867Z http.https://github.com/.extraheader
+2026-10-28T17:43:21.8918046Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-28T17:43:21.8955849Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-28T17:43:21.9406935Z Cleaning up orphan processes
+2026-10-28T17:43:21.9856560Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

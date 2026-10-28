@@ -1,0 +1,10 @@
+{
+  "command": "python snapshot_preservation.py (original private assertion)",
+  "observed_exit_code": 1,
+  "exception": "AssertionError",
+  "assertion": "all refs/heads and refs/remotes byte-identical to preflight",
+  "stage": "Before publication, after all4newCIjobs passed",
+  "actual_counterexample": "local-ref-anomaly.json",
+  "resolution": "Independent readonly review confirms local branches/worktrees preserved; record exact tracking refresh separately, no Git restoration",
+  "product_or_CI_failure": false
+}

@@ -1,0 +1,30 @@
+{
+  "result": "PASS",
+  "files": [
+    {
+      "path": "docs/adr/0014-offline-watchlist-signal-outbox.md",
+      "bytes": 14995,
+      "sha256": "79d2194800d3ae2e88b35669ff2cd6b8603d99210d25c6dccaa723292c6debd3",
+      "matches_accepted_freeze": true
+    },
+    {
+      "path": "docs/data-contracts/WATCHLIST_ALERT_OUTBOX_V1.md",
+      "bytes": 31638,
+      "sha256": "acc47dcb491841851544db11da96dd58b4bb23f174a09a966207e9fa24ceae31",
+      "matches_accepted_freeze": true
+    },
+    {
+      "path": "docs/data-contracts/WATCHLIST_ALERT_OUTBOX_STORAGE_V1.md",
+      "bytes": 20489,
+      "sha256": "60aa73f5d12f3f6cc3df5c509f5a094fe71083e6808fd00c0fe740738b313ebf",
+      "matches_accepted_freeze": true
+    },
+    {
+      "path": "docs/phases/P8C_OFFLINE_WATCHLIST_SIGNAL_OUTBOX_CONTRACT.md",
+      "bytes": 27428,
+      "sha256": "e5af71ad901460abc5bdff1474c7230eaa781d70c2f67c46dd0ec43a70223e14",
+      "matches_accepted_freeze": true
+    }
+  ],
+  "normative_contract_byte_equal_original_handoff": true
+}

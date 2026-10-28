@@ -1,0 +1,2565 @@
+{
+  "checked_utc": "2026-10-28T17:37:42.317275+00:00",
+  "result": "PASS",
+  "repo": "KastaTM/card-market-tracker",
+  "base": "228d5c8d0d91edf03ddb86a489c8232eeb7c08bc",
+  "head": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+  "tree": "dfd0414242cff364aad6082411ae88aef728783e",
+  "authorization_sha256": "aedc73836ac649e6cb3290f72d4d643d3c77992acf2f8a56dc713702004adc92",
+  "local_refs": "refs/heads/chore/p0-foundation 49dc0792d210bbc56e164587319186c75e04a631\nrefs/heads/docs/p0-5-integration-record 253a5354d8645fa8c72cbd7038e213832ab8ce18\nrefs/heads/docs/p0-5-source-feasibility 61ab2fcb630e2504869b68c97ea8cd1385e4ee00\nrefs/heads/docs/p0-completion-report 9dbe338cb6bd33fb96e21417bb66248ce9de45ba\nrefs/heads/docs/p05b-real-source-qualification 302e8d3f3155c14091d26841b8a230791109f220\nrefs/heads/evidence/p8c-360da646 82570887057a1421ca24d2d8ceea09eb2db7e706\nrefs/heads/evidence/p8c-rw01-d82aba73 57bdf94391be307197df2a59526acf59bc6ff681\nrefs/heads/feat/p1a-catalog-core 93a17711cb75f91816e41279fe76069055391e50\nrefs/heads/feat/p1b-pinned-metadata-ingestion 252c394141948e3ab77a54bcf628e4290ba69652\nrefs/heads/feat/p1c-multi-revision-metadata-capture 8af647697dd67859b38fc007d493a54642a1d62f\nrefs/heads/feat/p3a-observation-persistence e9c5f02e7f093dedff55b67f137c4446f22e8735\nrefs/heads/feat/p4a-offline-temporal-discovery c5ed228af831a2a6ed8a12c7072777d3908296a5\nrefs/heads/feat/p4b-scoped-capture-discovery ab5e0fa7d4225c2ce137ce2261cd9686ef765a32\nrefs/heads/feat/p4c-discovery-result-journal 9fb53144dec521d0dde49c02d41022be831421c2\nrefs/heads/feat/p5a-offline-watchlist 02ab89677afe11901ea5a2b1b8826604ce543c2f\nrefs/heads/feat/p5b-watchlist-signal-journal 150a611717df5a287eee66a036ee6417b70780d4\nrefs/heads/feat/p8a-offline-alert-outbox cf3c8f17128a5459d4d0f9228b2f1456e120817b\nrefs/heads/feat/p8b-telegram-alert-delivery 9dab8a9b31dcc93cced8e90da20f81dae685661b\nrefs/heads/feat/p8c-watchlist-signal-outbox d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\nrefs/heads/main 5175d5b09e8d412e11b2ddf4c24bff41df133843\nrefs/heads/rework/p5b-rw03-publication-rollback f80bc8cdb877946f37d76b09212d68dd8da3e246\nrefs/remotes/origin/HEAD 228d5c8d0d91edf03ddb86a489c8232eeb7c08bc\nrefs/remotes/origin/chore/p0-foundation 49dc0792d210bbc56e164587319186c75e04a631\nrefs/remotes/origin/docs/p0-5-integration-record 253a5354d8645fa8c72cbd7038e213832ab8ce18\nrefs/remotes/origin/docs/p0-5-source-feasibility 61ab2fcb630e2504869b68c97ea8cd1385e4ee00\nrefs/remotes/origin/docs/p0-completion-report 9dbe338cb6bd33fb96e21417bb66248ce9de45ba\nrefs/remotes/origin/docs/p05b-real-source-qualification 302e8d3f3155c14091d26841b8a230791109f220\nrefs/remotes/origin/evidence/p8c-360da646 82570887057a1421ca24d2d8ceea09eb2db7e706\nrefs/remotes/origin/evidence/p8c-rw01-d82aba73 57bdf94391be307197df2a59526acf59bc6ff681\nrefs/remotes/origin/feat/p1a-catalog-core 93a17711cb75f91816e41279fe76069055391e50\nrefs/remotes/origin/feat/p1b-pinned-metadata-ingestion 252c394141948e3ab77a54bcf628e4290ba69652\nrefs/remotes/origin/feat/p1c-multi-revision-metadata-capture 8af647697dd67859b38fc007d493a54642a1d62f\nrefs/remotes/origin/feat/p3a-observation-persistence e9c5f02e7f093dedff55b67f137c4446f22e8735\nrefs/remotes/origin/feat/p4a-offline-temporal-discovery c5ed228af831a2a6ed8a12c7072777d3908296a5\nrefs/remotes/origin/feat/p4b-scoped-capture-discovery ab5e0fa7d4225c2ce137ce2261cd9686ef765a32\nrefs/remotes/origin/feat/p4c-discovery-result-journal 9fb53144dec521d0dde49c02d41022be831421c2\nrefs/remotes/origin/feat/p5a-offline-watchlist 02ab89677afe11901ea5a2b1b8826604ce543c2f\nrefs/remotes/origin/feat/p5b-watchlist-signal-journal 150a611717df5a287eee66a036ee6417b70780d4\nrefs/remotes/origin/feat/p8a-offline-alert-outbox cf3c8f17128a5459d4d0f9228b2f1456e120817b\nrefs/remotes/origin/feat/p8b-telegram-alert-delivery 9dab8a9b31dcc93cced8e90da20f81dae685661b\nrefs/remotes/origin/feat/p8c-watchlist-signal-outbox d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\nrefs/remotes/origin/main 228d5c8d0d91edf03ddb86a489c8232eeb7c08bc\nrefs/remotes/origin/rework/p5b-rw03-publication-rollback f80bc8cdb877946f37d76b09212d68dd8da3e246",
+  "worktree_porcelain": "worktree C:/Projects/card-market-tracker\nHEAD f80bc8cdb877946f37d76b09212d68dd8da3e246\nbranch refs/heads/rework/p5b-rw03-publication-rollback\n\nworktree C:/Projects/card-market-tracker/.p1b-evidence/qa\nHEAD 252c394141948e3ab77a54bcf628e4290ba69652\ndetached\n\nworktree C:/Projects/card-market-tracker/.p1b-evidence/reviewer\nHEAD 252c394141948e3ab77a54bcf628e4290ba69652\ndetached\n\nworktree C:/Projects/card-market-tracker/.p1c-evidence/qa-final\nHEAD d3dbd96c930599a29756476c1101e0ae599f2efa\ndetached\n\nworktree C:/Projects/card-market-tracker/.p1c-evidence/qa-final-v2\nHEAD 8af647697dd67859b38fc007d493a54642a1d62f\ndetached\n\nworktree C:/Projects/card-market-tracker/.p1c-evidence/reviewer-final\nHEAD d3dbd96c930599a29756476c1101e0ae599f2efa\ndetached\n\nworktree C:/Projects/card-market-tracker/.p1c-evidence/reviewer-final-v2\nHEAD 8af647697dd67859b38fc007d493a54642a1d62f\ndetached\n\nworktree C:/Projects/card-market-tracker/.p3a-evidence/qa\nHEAD e9c5f02e7f093dedff55b67f137c4446f22e8735\ndetached\n\nworktree C:/Projects/card-market-tracker/.p3a-evidence/reviewer\nHEAD e9c5f02e7f093dedff55b67f137c4446f22e8735\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4a-evidence/p05b/qa\nHEAD 302e8d3f3155c14091d26841b8a230791109f220\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4a-evidence/p05b/reviewer\nHEAD 302e8d3f3155c14091d26841b8a230791109f220\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4a-evidence/qa\nHEAD c5ed228af831a2a6ed8a12c7072777d3908296a5\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4a-evidence/reviewer\nHEAD c5ed228af831a2a6ed8a12c7072777d3908296a5\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4b-evidence/qa\nHEAD 775c106fa9aeee96bf5a637937526047fa4df7b3\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4b-evidence/qa-v2\nHEAD ab5e0fa7d4225c2ce137ce2261cd9686ef765a32\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4b-evidence/reviewer\nHEAD 775c106fa9aeee96bf5a637937526047fa4df7b3\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4b-evidence/reviewer-v2\nHEAD ab5e0fa7d4225c2ce137ce2261cd9686ef765a32\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4c-evidence/qa-final\nHEAD 9f4a280bf2b20294cecd656d11fc9a527ecadc45\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4c-evidence/qa-final-v2\nHEAD 9fb53144dec521d0dde49c02d41022be831421c2\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4c-evidence/reviewer-final\nHEAD 9f4a280bf2b20294cecd656d11fc9a527ecadc45\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4c-evidence/reviewer-final-v2\nHEAD 9fb53144dec521d0dde49c02d41022be831421c2\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5a-evidence/qa-final\nHEAD dd35bc87bc98ed0189051f7d01611803b25e9970\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5a-evidence/qa-final-v2\nHEAD 02ab89677afe11901ea5a2b1b8826604ce543c2f\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5a-evidence/reviewer-final\nHEAD dd35bc87bc98ed0189051f7d01611803b25e9970\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5a-evidence/reviewer-final-v2\nHEAD 02ab89677afe11901ea5a2b1b8826604ce543c2f\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5b-evidence/qa-final\nHEAD 8265ce8282432c8efbb2207bfb6456b12bffab5a\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5b-evidence/qa-final-v2\nHEAD 150a611717df5a287eee66a036ee6417b70780d4\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5b-evidence/reviewer-final\nHEAD 8265ce8282432c8efbb2207bfb6456b12bffab5a\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5b-evidence/reviewer-final-v2\nHEAD 150a611717df5a287eee66a036ee6417b70780d4\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5b-evidence/rw01-integrated\nHEAD 62ecd7ab792a93a6071b83277d870f1d95f61f9f\ndetached\n\nworktree C:/Projects/card-market-tracker/.p8b-evidence/qa-final\nHEAD 56e3e01956fe71a66456b92c23e2a86ec7e602eb\ndetached\n\nworktree C:/Projects/card-market-tracker/.p8b-evidence/qa-final-v2\nHEAD 9dab8a9b31dcc93cced8e90da20f81dae685661b\ndetached\n\nworktree C:/Projects/card-market-tracker/.p8b-evidence/reviewer-final\nHEAD 56e3e01956fe71a66456b92c23e2a86ec7e602eb\ndetached\n\nworktree C:/Projects/card-market-tracker/.p8b-evidence/reviewer-final-v2\nHEAD 9dab8a9b31dcc93cced8e90da20f81dae685661b\ndetached\n\nworktree C:/Projects/card-market-tracker-p8c\nHEAD d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\nbranch refs/heads/feat/p8c-watchlist-signal-outbox\n\nworktree C:/Projects/card-market-tracker-p8c-evidence-360da646\nHEAD 82570887057a1421ca24d2d8ceea09eb2db7e706\nbranch refs/heads/evidence/p8c-360da646\n\nworktree C:/Projects/card-market-tracker-p8c-rw01-evidence-d82aba73\nHEAD 57bdf94391be307197df2a59526acf59bc6ff681\nbranch refs/heads/evidence/p8c-rw01-d82aba73",
+  "worktrees": [
+    {
+      "worktree": "C:/Projects/card-market-tracker",
+      "HEAD": "f80bc8cdb877946f37d76b09212d68dd8da3e246",
+      "branch": "refs/heads/rework/p5b-rw03-publication-rollback",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p1b-evidence/qa",
+      "HEAD": "252c394141948e3ab77a54bcf628e4290ba69652",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p1b-evidence/reviewer",
+      "HEAD": "252c394141948e3ab77a54bcf628e4290ba69652",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p1c-evidence/qa-final",
+      "HEAD": "d3dbd96c930599a29756476c1101e0ae599f2efa",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p1c-evidence/qa-final-v2",
+      "HEAD": "8af647697dd67859b38fc007d493a54642a1d62f",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p1c-evidence/reviewer-final",
+      "HEAD": "d3dbd96c930599a29756476c1101e0ae599f2efa",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p1c-evidence/reviewer-final-v2",
+      "HEAD": "8af647697dd67859b38fc007d493a54642a1d62f",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p3a-evidence/qa",
+      "HEAD": "e9c5f02e7f093dedff55b67f137c4446f22e8735",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p3a-evidence/reviewer",
+      "HEAD": "e9c5f02e7f093dedff55b67f137c4446f22e8735",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p4a-evidence/p05b/qa",
+      "HEAD": "302e8d3f3155c14091d26841b8a230791109f220",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p4a-evidence/p05b/reviewer",
+      "HEAD": "302e8d3f3155c14091d26841b8a230791109f220",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p4a-evidence/qa",
+      "HEAD": "c5ed228af831a2a6ed8a12c7072777d3908296a5",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p4a-evidence/reviewer",
+      "HEAD": "c5ed228af831a2a6ed8a12c7072777d3908296a5",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p4b-evidence/qa",
+      "HEAD": "775c106fa9aeee96bf5a637937526047fa4df7b3",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p4b-evidence/qa-v2",
+      "HEAD": "ab5e0fa7d4225c2ce137ce2261cd9686ef765a32",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p4b-evidence/reviewer",
+      "HEAD": "775c106fa9aeee96bf5a637937526047fa4df7b3",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p4b-evidence/reviewer-v2",
+      "HEAD": "ab5e0fa7d4225c2ce137ce2261cd9686ef765a32",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p4c-evidence/qa-final",
+      "HEAD": "9f4a280bf2b20294cecd656d11fc9a527ecadc45",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p4c-evidence/qa-final-v2",
+      "HEAD": "9fb53144dec521d0dde49c02d41022be831421c2",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p4c-evidence/reviewer-final",
+      "HEAD": "9f4a280bf2b20294cecd656d11fc9a527ecadc45",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p4c-evidence/reviewer-final-v2",
+      "HEAD": "9fb53144dec521d0dde49c02d41022be831421c2",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p5a-evidence/qa-final",
+      "HEAD": "dd35bc87bc98ed0189051f7d01611803b25e9970",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p5a-evidence/qa-final-v2",
+      "HEAD": "02ab89677afe11901ea5a2b1b8826604ce543c2f",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p5a-evidence/reviewer-final",
+      "HEAD": "dd35bc87bc98ed0189051f7d01611803b25e9970",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p5a-evidence/reviewer-final-v2",
+      "HEAD": "02ab89677afe11901ea5a2b1b8826604ce543c2f",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p5b-evidence/qa-final",
+      "HEAD": "8265ce8282432c8efbb2207bfb6456b12bffab5a",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p5b-evidence/qa-final-v2",
+      "HEAD": "150a611717df5a287eee66a036ee6417b70780d4",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p5b-evidence/reviewer-final",
+      "HEAD": "8265ce8282432c8efbb2207bfb6456b12bffab5a",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p5b-evidence/reviewer-final-v2",
+      "HEAD": "150a611717df5a287eee66a036ee6417b70780d4",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p5b-evidence/rw01-integrated",
+      "HEAD": "62ecd7ab792a93a6071b83277d870f1d95f61f9f",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p8b-evidence/qa-final",
+      "HEAD": "56e3e01956fe71a66456b92c23e2a86ec7e602eb",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p8b-evidence/qa-final-v2",
+      "HEAD": "9dab8a9b31dcc93cced8e90da20f81dae685661b",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p8b-evidence/reviewer-final",
+      "HEAD": "56e3e01956fe71a66456b92c23e2a86ec7e602eb",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker/.p8b-evidence/reviewer-final-v2",
+      "HEAD": "9dab8a9b31dcc93cced8e90da20f81dae685661b",
+      "detached": "",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker-p8c",
+      "HEAD": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+      "branch": "refs/heads/feat/p8c-watchlist-signal-outbox",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker-p8c-evidence-360da646",
+      "HEAD": "82570887057a1421ca24d2d8ceea09eb2db7e706",
+      "branch": "refs/heads/evidence/p8c-360da646",
+      "clean": true,
+      "status": ""
+    },
+    {
+      "worktree": "C:/Projects/card-market-tracker-p8c-rw01-evidence-d82aba73",
+      "HEAD": "57bdf94391be307197df2a59526acf59bc6ff681",
+      "branch": "refs/heads/evidence/p8c-rw01-d82aba73",
+      "clean": true,
+      "status": ""
+    }
+  ],
+  "worktree_count": 37,
+  "origin": "https://github.com/KastaTM/card-market-tracker.git",
+  "pr": {
+    "url": "https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18",
+    "id": 5041353067,
+    "node_id": "PR_kwDOU-pCa88AAAABLHzxaw",
+    "html_url": "https://github.com/KastaTM/card-market-tracker/pull/18",
+    "diff_url": "https://github.com/KastaTM/card-market-tracker/pull/18.diff",
+    "patch_url": "https://github.com/KastaTM/card-market-tracker/pull/18.patch",
+    "issue_url": "https://api.github.com/repos/KastaTM/card-market-tracker/issues/18",
+    "commits_url": "https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18/commits",
+    "review_comments_url": "https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18/comments",
+    "review_comment_url": "https://api.github.com/repos/KastaTM/card-market-tracker/pulls/comments{/number}",
+    "comments_url": "https://api.github.com/repos/KastaTM/card-market-tracker/issues/18/comments",
+    "statuses_url": "https://api.github.com/repos/KastaTM/card-market-tracker/statuses/d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+    "number": 18,
+    "state": "open",
+    "locked": false,
+    "title": "P8c: offline Watchlist signal outbox",
+    "user": {
+      "login": "KastaTM",
+      "id": 71529686,
+      "node_id": "MDQ6VXNlcjcxNTI5Njg2",
+      "avatar_url": "https://avatars.githubusercontent.com/u/71529686?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/KastaTM",
+      "html_url": "https://github.com/KastaTM",
+      "followers_url": "https://api.github.com/users/KastaTM/followers",
+      "following_url": "https://api.github.com/users/KastaTM/following{/other_user}",
+      "gists_url": "https://api.github.com/users/KastaTM/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/KastaTM/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/KastaTM/subscriptions",
+      "organizations_url": "https://api.github.com/users/KastaTM/orgs",
+      "repos_url": "https://api.github.com/users/KastaTM/repos",
+      "events_url": "https://api.github.com/users/KastaTM/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/KastaTM/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "RW-01 fixes a writer/verifier invariant mismatch: independently valid P5a/P5b sources with the same watch_id/revision but different complete entries could both record and make verify/backup fail. The writer now completes one semantic fold inside BEGIN IMMEDIATE and rejects new incompatible entries with identity_conflict/exit2 before insertion. Corruption and same-ID replay conflict precedence are preserved; frozen schemas/identities/deadlines and prior source writers are unchanged.\n\nCorrected candidate d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c, tree dfd0414242cff364aad6082411ae88aef728783e. Exact unchanged pre-fix executable now passes;35new regressions,2250fulltests/1existing platform skip,94.15%line/88.31%branch. New independent QA17cases(default2/explicit5) and distinct REVIEWER28(default2)/all13files PASS.\n\nFour new jobs PASS in attempt1, all12harnesses and RW01 rejection in wheel/Compose/AMD64/ARM64-QEMU. [New CI](https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482), [complete corrective report](https://github.com/KastaTM/card-market-tracker/blob/57bdf94391be307197df2a59526acf59bc6ff681/docs/evidence/P8C_RW01_d82aba73/RW01_CORRECTIVE_IMPLEMENTATION_REPORT.md), [fresh reviews](https://github.com/KastaTM/card-market-tracker/blob/57bdf94391be307197df2a59526acf59bc6ff681/docs/evidence/P8C_RW01_d82aba73/INDEPENDENT_REVIEWS.md).\nLead publicly read back58artifacts and49changed source/document blobs byte-for-byte. Evidence is separate; source HEAD is unchanged.\n\nLocalQEMU timing unavailable at documented Docker check; physicalPi not certified. Full write-time fold may timeout at capacity under unchanged2s/5s Budget. Previously corrupt stores are not repaired automatically. Old candidate/CI/READY records remain historical and superseded.\n\nP8c OPEN / REWORK_REQUIRED, awaiting Phase Lead review. Prior READY is not automatically restored. PR retained draft/unmerged; no phase closure or new phase.\n",
+    "labels": [],
+    "milestone": null,
+    "active_lock_reason": null,
+    "created_at": "2026-10-27T21:24:40Z",
+    "updated_at": "2026-10-28T15:40:37Z",
+    "closed_at": null,
+    "merged_at": null,
+    "merge_commit_sha": "edbd41c4cf118dbf462674738ddfa05513a92379",
+    "assignee": null,
+    "assignees": [],
+    "requested_reviewers": [],
+    "requested_teams": [],
+    "head": {
+      "label": "KastaTM:feat/p8c-watchlist-signal-outbox",
+      "ref": "feat/p8c-watchlist-signal-outbox",
+      "repo": {
+        "id": 1407861355,
+        "node_id": "R_kgDOU-pCaw",
+        "name": "card-market-tracker",
+        "full_name": "KastaTM/card-market-tracker",
+        "owner": {
+          "login": "KastaTM",
+          "id": 71529686,
+          "node_id": "MDQ6VXNlcjcxNTI5Njg2",
+          "avatar_url": "https://avatars.githubusercontent.com/u/71529686?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/KastaTM",
+          "html_url": "https://github.com/KastaTM",
+          "followers_url": "https://api.github.com/users/KastaTM/followers",
+          "following_url": "https://api.github.com/users/KastaTM/following{/other_user}",
+          "gists_url": "https://api.github.com/users/KastaTM/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/KastaTM/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/KastaTM/subscriptions",
+          "organizations_url": "https://api.github.com/users/KastaTM/orgs",
+          "repos_url": "https://api.github.com/users/KastaTM/repos",
+          "events_url": "https://api.github.com/users/KastaTM/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/KastaTM/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "private": false,
+        "fork": false,
+        "archived": false,
+        "disabled": false,
+        "description": null,
+        "homepage": null,
+        "language": "Python",
+        "visibility": "public",
+        "is_template": false,
+        "topics": [],
+        "forks_count": 0,
+        "forks": 0,
+        "stargazers_count": 0,
+        "watchers_count": 0,
+        "watchers": 0,
+        "open_issues_count": 1,
+        "open_issues": 1,
+        "size": 1880,
+        "default_branch": "main",
+        "has_issues": true,
+        "has_projects": true,
+        "has_wiki": true,
+        "has_pages": false,
+        "has_downloads": false,
+        "has_discussions": false,
+        "has_pull_requests": true,
+        "pushed_at": "2026-10-28T15:34:50Z",
+        "created_at": "2026-10-06T20:01:24Z",
+        "updated_at": "2026-10-25T10:57:17Z",
+        "allow_forking": true,
+        "web_commit_signoff_required": false,
+        "pull_request_creation_policy": "all",
+        "license": null,
+        "url": "https://api.github.com/repos/KastaTM/card-market-tracker",
+        "html_url": "https://github.com/KastaTM/card-market-tracker",
+        "archive_url": "https://api.github.com/repos/KastaTM/card-market-tracker/{archive_format}{/ref}",
+        "assignees_url": "https://api.github.com/repos/KastaTM/card-market-tracker/assignees{/user}",
+        "blobs_url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/blobs{/sha}",
+        "branches_url": "https://api.github.com/repos/KastaTM/card-market-tracker/branches{/branch}",
+        "collaborators_url": "https://api.github.com/repos/KastaTM/card-market-tracker/collaborators{/collaborator}",
+        "comments_url": "https://api.github.com/repos/KastaTM/card-market-tracker/comments{/number}",
+        "commits_url": "https://api.github.com/repos/KastaTM/card-market-tracker/commits{/sha}",
+        "compare_url": "https://api.github.com/repos/KastaTM/card-market-tracker/compare/{base}...{head}",
+        "contents_url": "https://api.github.com/repos/KastaTM/card-market-tracker/contents/{+path}",
+        "contributors_url": "https://api.github.com/repos/KastaTM/card-market-tracker/contributors",
+        "deployments_url": "https://api.github.com/repos/KastaTM/card-market-tracker/deployments",
+        "downloads_url": "https://api.github.com/repos/KastaTM/card-market-tracker/downloads",
+        "events_url": "https://api.github.com/repos/KastaTM/card-market-tracker/events",
+        "forks_url": "https://api.github.com/repos/KastaTM/card-market-tracker/forks",
+        "git_commits_url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/commits{/sha}",
+        "git_refs_url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/refs{/sha}",
+        "git_tags_url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/tags{/sha}",
+        "git_url": "git://github.com/KastaTM/card-market-tracker.git",
+        "issue_comment_url": "https://api.github.com/repos/KastaTM/card-market-tracker/issues/comments{/number}",
+        "issue_events_url": "https://api.github.com/repos/KastaTM/card-market-tracker/issues/events{/number}",
+        "issues_url": "https://api.github.com/repos/KastaTM/card-market-tracker/issues{/number}",
+        "keys_url": "https://api.github.com/repos/KastaTM/card-market-tracker/keys{/key_id}",
+        "labels_url": "https://api.github.com/repos/KastaTM/card-market-tracker/labels{/name}",
+        "languages_url": "https://api.github.com/repos/KastaTM/card-market-tracker/languages",
+        "merges_url": "https://api.github.com/repos/KastaTM/card-market-tracker/merges",
+        "milestones_url": "https://api.github.com/repos/KastaTM/card-market-tracker/milestones{/number}",
+        "notifications_url": "https://api.github.com/repos/KastaTM/card-market-tracker/notifications{?since,all,participating}",
+        "pulls_url": "https://api.github.com/repos/KastaTM/card-market-tracker/pulls{/number}",
+        "releases_url": "https://api.github.com/repos/KastaTM/card-market-tracker/releases{/id}",
+        "ssh_url": "git@github.com:KastaTM/card-market-tracker.git",
+        "stargazers_url": "https://api.github.com/repos/KastaTM/card-market-tracker/stargazers",
+        "statuses_url": "https://api.github.com/repos/KastaTM/card-market-tracker/statuses/{sha}",
+        "subscribers_url": "https://api.github.com/repos/KastaTM/card-market-tracker/subscribers",
+        "subscription_url": "https://api.github.com/repos/KastaTM/card-market-tracker/subscription",
+        "tags_url": "https://api.github.com/repos/KastaTM/card-market-tracker/tags",
+        "teams_url": "https://api.github.com/repos/KastaTM/card-market-tracker/teams",
+        "trees_url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/trees{/sha}",
+        "clone_url": "https://github.com/KastaTM/card-market-tracker.git",
+        "mirror_url": null,
+        "hooks_url": "https://api.github.com/repos/KastaTM/card-market-tracker/hooks",
+        "svn_url": "https://github.com/KastaTM/card-market-tracker"
+      },
+      "sha": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+      "user": {
+        "login": "KastaTM",
+        "id": 71529686,
+        "node_id": "MDQ6VXNlcjcxNTI5Njg2",
+        "avatar_url": "https://avatars.githubusercontent.com/u/71529686?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/KastaTM",
+        "html_url": "https://github.com/KastaTM",
+        "followers_url": "https://api.github.com/users/KastaTM/followers",
+        "following_url": "https://api.github.com/users/KastaTM/following{/other_user}",
+        "gists_url": "https://api.github.com/users/KastaTM/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/KastaTM/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/KastaTM/subscriptions",
+        "organizations_url": "https://api.github.com/users/KastaTM/orgs",
+        "repos_url": "https://api.github.com/users/KastaTM/repos",
+        "events_url": "https://api.github.com/users/KastaTM/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/KastaTM/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      }
+    },
+    "base": {
+      "label": "KastaTM:main",
+      "ref": "main",
+      "repo": {
+        "id": 1407861355,
+        "node_id": "R_kgDOU-pCaw",
+        "name": "card-market-tracker",
+        "full_name": "KastaTM/card-market-tracker",
+        "owner": {
+          "login": "KastaTM",
+          "id": 71529686,
+          "node_id": "MDQ6VXNlcjcxNTI5Njg2",
+          "avatar_url": "https://avatars.githubusercontent.com/u/71529686?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/KastaTM",
+          "html_url": "https://github.com/KastaTM",
+          "followers_url": "https://api.github.com/users/KastaTM/followers",
+          "following_url": "https://api.github.com/users/KastaTM/following{/other_user}",
+          "gists_url": "https://api.github.com/users/KastaTM/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/KastaTM/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/KastaTM/subscriptions",
+          "organizations_url": "https://api.github.com/users/KastaTM/orgs",
+          "repos_url": "https://api.github.com/users/KastaTM/repos",
+          "events_url": "https://api.github.com/users/KastaTM/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/KastaTM/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "private": false,
+        "fork": false,
+        "archived": false,
+        "disabled": false,
+        "description": null,
+        "homepage": null,
+        "language": "Python",
+        "visibility": "public",
+        "is_template": false,
+        "topics": [],
+        "forks_count": 0,
+        "forks": 0,
+        "stargazers_count": 0,
+        "watchers_count": 0,
+        "watchers": 0,
+        "open_issues_count": 1,
+        "open_issues": 1,
+        "size": 1880,
+        "default_branch": "main",
+        "has_issues": true,
+        "has_projects": true,
+        "has_wiki": true,
+        "has_pages": false,
+        "has_downloads": false,
+        "has_discussions": false,
+        "has_pull_requests": true,
+        "pushed_at": "2026-10-28T15:34:50Z",
+        "created_at": "2026-10-06T20:01:24Z",
+        "updated_at": "2026-10-25T10:57:17Z",
+        "allow_forking": true,
+        "web_commit_signoff_required": false,
+        "pull_request_creation_policy": "all",
+        "license": null,
+        "url": "https://api.github.com/repos/KastaTM/card-market-tracker",
+        "html_url": "https://github.com/KastaTM/card-market-tracker",
+        "archive_url": "https://api.github.com/repos/KastaTM/card-market-tracker/{archive_format}{/ref}",
+        "assignees_url": "https://api.github.com/repos/KastaTM/card-market-tracker/assignees{/user}",
+        "blobs_url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/blobs{/sha}",
+        "branches_url": "https://api.github.com/repos/KastaTM/card-market-tracker/branches{/branch}",
+        "collaborators_url": "https://api.github.com/repos/KastaTM/card-market-tracker/collaborators{/collaborator}",
+        "comments_url": "https://api.github.com/repos/KastaTM/card-market-tracker/comments{/number}",
+        "commits_url": "https://api.github.com/repos/KastaTM/card-market-tracker/commits{/sha}",
+        "compare_url": "https://api.github.com/repos/KastaTM/card-market-tracker/compare/{base}...{head}",
+        "contents_url": "https://api.github.com/repos/KastaTM/card-market-tracker/contents/{+path}",
+        "contributors_url": "https://api.github.com/repos/KastaTM/card-market-tracker/contributors",
+        "deployments_url": "https://api.github.com/repos/KastaTM/card-market-tracker/deployments",
+        "downloads_url": "https://api.github.com/repos/KastaTM/card-market-tracker/downloads",
+        "events_url": "https://api.github.com/repos/KastaTM/card-market-tracker/events",
+        "forks_url": "https://api.github.com/repos/KastaTM/card-market-tracker/forks",
+        "git_commits_url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/commits{/sha}",
+        "git_refs_url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/refs{/sha}",
+        "git_tags_url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/tags{/sha}",
+        "git_url": "git://github.com/KastaTM/card-market-tracker.git",
+        "issue_comment_url": "https://api.github.com/repos/KastaTM/card-market-tracker/issues/comments{/number}",
+        "issue_events_url": "https://api.github.com/repos/KastaTM/card-market-tracker/issues/events{/number}",
+        "issues_url": "https://api.github.com/repos/KastaTM/card-market-tracker/issues{/number}",
+        "keys_url": "https://api.github.com/repos/KastaTM/card-market-tracker/keys{/key_id}",
+        "labels_url": "https://api.github.com/repos/KastaTM/card-market-tracker/labels{/name}",
+        "languages_url": "https://api.github.com/repos/KastaTM/card-market-tracker/languages",
+        "merges_url": "https://api.github.com/repos/KastaTM/card-market-tracker/merges",
+        "milestones_url": "https://api.github.com/repos/KastaTM/card-market-tracker/milestones{/number}",
+        "notifications_url": "https://api.github.com/repos/KastaTM/card-market-tracker/notifications{?since,all,participating}",
+        "pulls_url": "https://api.github.com/repos/KastaTM/card-market-tracker/pulls{/number}",
+        "releases_url": "https://api.github.com/repos/KastaTM/card-market-tracker/releases{/id}",
+        "ssh_url": "git@github.com:KastaTM/card-market-tracker.git",
+        "stargazers_url": "https://api.github.com/repos/KastaTM/card-market-tracker/stargazers",
+        "statuses_url": "https://api.github.com/repos/KastaTM/card-market-tracker/statuses/{sha}",
+        "subscribers_url": "https://api.github.com/repos/KastaTM/card-market-tracker/subscribers",
+        "subscription_url": "https://api.github.com/repos/KastaTM/card-market-tracker/subscription",
+        "tags_url": "https://api.github.com/repos/KastaTM/card-market-tracker/tags",
+        "teams_url": "https://api.github.com/repos/KastaTM/card-market-tracker/teams",
+        "trees_url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/trees{/sha}",
+        "clone_url": "https://github.com/KastaTM/card-market-tracker.git",
+        "mirror_url": null,
+        "hooks_url": "https://api.github.com/repos/KastaTM/card-market-tracker/hooks",
+        "svn_url": "https://github.com/KastaTM/card-market-tracker"
+      },
+      "sha": "228d5c8d0d91edf03ddb86a489c8232eeb7c08bc",
+      "user": {
+        "login": "KastaTM",
+        "id": 71529686,
+        "node_id": "MDQ6VXNlcjcxNTI5Njg2",
+        "avatar_url": "https://avatars.githubusercontent.com/u/71529686?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/KastaTM",
+        "html_url": "https://github.com/KastaTM",
+        "followers_url": "https://api.github.com/users/KastaTM/followers",
+        "following_url": "https://api.github.com/users/KastaTM/following{/other_user}",
+        "gists_url": "https://api.github.com/users/KastaTM/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/KastaTM/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/KastaTM/subscriptions",
+        "organizations_url": "https://api.github.com/users/KastaTM/orgs",
+        "repos_url": "https://api.github.com/users/KastaTM/repos",
+        "events_url": "https://api.github.com/users/KastaTM/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/KastaTM/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      }
+    },
+    "_links": {
+      "comments": {
+        "href": "https://api.github.com/repos/KastaTM/card-market-tracker/issues/18/comments"
+      },
+      "commits": {
+        "href": "https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18/commits"
+      },
+      "statuses": {
+        "href": "https://api.github.com/repos/KastaTM/card-market-tracker/statuses/d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c"
+      },
+      "html": {
+        "href": "https://github.com/KastaTM/card-market-tracker/pull/18"
+      },
+      "issue": {
+        "href": "https://api.github.com/repos/KastaTM/card-market-tracker/issues/18"
+      },
+      "review_comments": {
+        "href": "https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18/comments"
+      },
+      "review_comment": {
+        "href": "https://api.github.com/repos/KastaTM/card-market-tracker/pulls/comments{/number}"
+      },
+      "self": {
+        "href": "https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18"
+      }
+    },
+    "author_association": "OWNER",
+    "auto_merge": null,
+    "draft": true,
+    "merged": false,
+    "mergeable": true,
+    "rebaseable": true,
+    "mergeable_state": "clean",
+    "merged_by": null,
+    "comments": 5,
+    "review_comments": 0,
+    "maintainer_can_modify": false,
+    "commits": 2,
+    "additions": 9906,
+    "deletions": 4,
+    "changed_files": 49
+  },
+  "accepted_commit": {
+    "sha": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+    "node_id": "C_kwDOU-pCa9oAKGQ4MmFiYTczZDliYzBlYjQ1NWY4NjY0ZTNjY2RkYzAxMzRlYTlkOWM",
+    "url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/commits/d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+    "html_url": "https://github.com/KastaTM/card-market-tracker/commit/d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+    "author": {
+      "name": "Rodrigo Casta\u00f1\u00f3n Mart\u00ednez",
+      "email": "rodrikasta@gmail.com",
+      "date": "2026-10-28T12:08:16Z"
+    },
+    "committer": {
+      "name": "Rodrigo Casta\u00f1\u00f3n Mart\u00ednez",
+      "email": "rodrikasta@gmail.com",
+      "date": "2026-10-28T12:08:16Z"
+    },
+    "tree": {
+      "sha": "dfd0414242cff364aad6082411ae88aef728783e",
+      "url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/trees/dfd0414242cff364aad6082411ae88aef728783e"
+    },
+    "message": "fix: preserve watchlist entry invariant on outbox admission",
+    "parents": [
+      {
+        "sha": "360da646892e46545ca70e8838bc3a2a89e460a3",
+        "url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/commits/360da646892e46545ca70e8838bc3a2a89e460a3",
+        "html_url": "https://github.com/KastaTM/card-market-tracker/commit/360da646892e46545ca70e8838bc3a2a89e460a3"
+      }
+    ],
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "live_main": {
+    "ref": "refs/heads/main",
+    "node_id": "REF_kwDOU-pCa69yZWZzL2hlYWRzL21haW4",
+    "url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/refs/heads/main",
+    "object": {
+      "sha": "228d5c8d0d91edf03ddb86a489c8232eeb7c08bc",
+      "type": "commit",
+      "url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/commits/228d5c8d0d91edf03ddb86a489c8232eeb7c08bc"
+    }
+  },
+  "candidate_checks": {
+    "total_count": 4,
+    "check_runs": [
+      {
+        "id": 122806861943,
+        "name": "container (linux/amd64)",
+        "node_id": "CR_kwDOU-pCa88AAAAcl9wAdw",
+        "head_sha": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+        "external_id": "f562a053-ffd8-53e7-a681-53c14f2b5881",
+        "url": "https://api.github.com/repos/KastaTM/card-market-tracker/check-runs/122806861943",
+        "html_url": "https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482/job/122806861943",
+        "details_url": "https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482/job/122806861943",
+        "status": "completed",
+        "conclusion": "success",
+        "started_at": "2026-10-28T12:09:44Z",
+        "completed_at": "2026-10-28T12:14:13Z",
+        "output": {
+          "title": null,
+          "summary": null,
+          "text": null,
+          "annotations_count": 2,
+          "annotations_url": "https://api.github.com/repos/KastaTM/card-market-tracker/check-runs/122806861943/annotations"
+        },
+        "check_suite": {
+          "id": 110277251454
+        },
+        "app": {
+          "id": 15368,
+          "client_id": "Iv1.05c79e9ad1f6bdfa",
+          "slug": "github-actions",
+          "node_id": "MDM6QXBwMTUzNjg=",
+          "owner": {
+            "login": "github",
+            "id": 9919,
+            "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/github",
+            "html_url": "https://github.com/github",
+            "followers_url": "https://api.github.com/users/github/followers",
+            "following_url": "https://api.github.com/users/github/following{/other_user}",
+            "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+            "organizations_url": "https://api.github.com/users/github/orgs",
+            "repos_url": "https://api.github.com/users/github/repos",
+            "events_url": "https://api.github.com/users/github/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/github/received_events",
+            "type": "Organization",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "name": "GitHub Actions",
+          "description": "Automate your workflow from idea to production",
+          "external_url": "https://help.github.com/en/actions",
+          "html_url": "https://github.com/apps/github-actions",
+          "created_at": "2018-07-30T09:30:17Z",
+          "updated_at": "2026-06-18T16:17:48Z",
+          "permissions": {
+            "actions": "write",
+            "administration": "read",
+            "artifact_metadata": "write",
+            "attestations": "write",
+            "checks": "write",
+            "code_quality": "write",
+            "contents": "write",
+            "copilot_requests": "write",
+            "deployments": "write",
+            "discussions": "write",
+            "drives": "write",
+            "issues": "write",
+            "merge_queues": "write",
+            "metadata": "read",
+            "models": "read",
+            "packages": "write",
+            "pages": "write",
+            "pull_requests": "write",
+            "repository_hooks": "write",
+            "repository_projects": "write",
+            "security_events": "write",
+            "statuses": "write",
+            "vulnerability_alerts": "read"
+          },
+          "events": [
+            "branch_protection_rule",
+            "check_run",
+            "check_suite",
+            "create",
+            "delete",
+            "deployment",
+            "deployment_status",
+            "discussion",
+            "discussion_comment",
+            "fork",
+            "gollum",
+            "issues",
+            "issue_comment",
+            "label",
+            "merge_group",
+            "milestone",
+            "page_build",
+            "public",
+            "pull_request",
+            "pull_request_review",
+            "pull_request_review_comment",
+            "push",
+            "registry_package",
+            "release",
+            "repository",
+            "repository_dispatch",
+            "status",
+            "watch",
+            "workflow_dispatch",
+            "workflow_run"
+          ]
+        },
+        "pull_requests": [
+          {
+            "url": "https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18",
+            "id": 5041353067,
+            "number": 18,
+            "head": {
+              "ref": "feat/p8c-watchlist-signal-outbox",
+              "sha": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+              "repo": {
+                "id": 1407861355,
+                "url": "https://api.github.com/repos/KastaTM/card-market-tracker",
+                "name": "card-market-tracker"
+              }
+            },
+            "base": {
+              "ref": "main",
+              "sha": "228d5c8d0d91edf03ddb86a489c8232eeb7c08bc",
+              "repo": {
+                "id": 1407861355,
+                "url": "https://api.github.com/repos/KastaTM/card-market-tracker",
+                "name": "card-market-tracker"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": 122806861716,
+        "name": "container (linux/arm64)",
+        "node_id": "CR_kwDOU-pCa88AAAAcl9v_lA",
+        "head_sha": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+        "external_id": "9c6dc4f4-625e-5ddb-9f3e-76d114d3429d",
+        "url": "https://api.github.com/repos/KastaTM/card-market-tracker/check-runs/122806861716",
+        "html_url": "https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482/job/122806861716",
+        "details_url": "https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482/job/122806861716",
+        "status": "completed",
+        "conclusion": "success",
+        "started_at": "2026-10-28T12:09:44Z",
+        "completed_at": "2026-10-28T13:09:09Z",
+        "output": {
+          "title": null,
+          "summary": null,
+          "text": null,
+          "annotations_count": 2,
+          "annotations_url": "https://api.github.com/repos/KastaTM/card-market-tracker/check-runs/122806861716/annotations"
+        },
+        "check_suite": {
+          "id": 110277251454
+        },
+        "app": {
+          "id": 15368,
+          "client_id": "Iv1.05c79e9ad1f6bdfa",
+          "slug": "github-actions",
+          "node_id": "MDM6QXBwMTUzNjg=",
+          "owner": {
+            "login": "github",
+            "id": 9919,
+            "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/github",
+            "html_url": "https://github.com/github",
+            "followers_url": "https://api.github.com/users/github/followers",
+            "following_url": "https://api.github.com/users/github/following{/other_user}",
+            "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+            "organizations_url": "https://api.github.com/users/github/orgs",
+            "repos_url": "https://api.github.com/users/github/repos",
+            "events_url": "https://api.github.com/users/github/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/github/received_events",
+            "type": "Organization",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "name": "GitHub Actions",
+          "description": "Automate your workflow from idea to production",
+          "external_url": "https://help.github.com/en/actions",
+          "html_url": "https://github.com/apps/github-actions",
+          "created_at": "2018-07-30T09:30:17Z",
+          "updated_at": "2026-06-18T16:17:48Z",
+          "permissions": {
+            "actions": "write",
+            "administration": "read",
+            "artifact_metadata": "write",
+            "attestations": "write",
+            "checks": "write",
+            "code_quality": "write",
+            "contents": "write",
+            "copilot_requests": "write",
+            "deployments": "write",
+            "discussions": "write",
+            "drives": "write",
+            "issues": "write",
+            "merge_queues": "write",
+            "metadata": "read",
+            "models": "read",
+            "packages": "write",
+            "pages": "write",
+            "pull_requests": "write",
+            "repository_hooks": "write",
+            "repository_projects": "write",
+            "security_events": "write",
+            "statuses": "write",
+            "vulnerability_alerts": "read"
+          },
+          "events": [
+            "branch_protection_rule",
+            "check_run",
+            "check_suite",
+            "create",
+            "delete",
+            "deployment",
+            "deployment_status",
+            "discussion",
+            "discussion_comment",
+            "fork",
+            "gollum",
+            "issues",
+            "issue_comment",
+            "label",
+            "merge_group",
+            "milestone",
+            "page_build",
+            "public",
+            "pull_request",
+            "pull_request_review",
+            "pull_request_review_comment",
+            "push",
+            "registry_package",
+            "release",
+            "repository",
+            "repository_dispatch",
+            "status",
+            "watch",
+            "workflow_dispatch",
+            "workflow_run"
+          ]
+        },
+        "pull_requests": [
+          {
+            "url": "https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18",
+            "id": 5041353067,
+            "number": 18,
+            "head": {
+              "ref": "feat/p8c-watchlist-signal-outbox",
+              "sha": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+              "repo": {
+                "id": 1407861355,
+                "url": "https://api.github.com/repos/KastaTM/card-market-tracker",
+                "name": "card-market-tracker"
+              }
+            },
+            "base": {
+              "ref": "main",
+              "sha": "228d5c8d0d91edf03ddb86a489c8232eeb7c08bc",
+              "repo": {
+                "id": 1407861355,
+                "url": "https://api.github.com/repos/KastaTM/card-market-tracker",
+                "name": "card-market-tracker"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": 122806861711,
+        "name": "quality",
+        "node_id": "CR_kwDOU-pCa88AAAAcl9v_jw",
+        "head_sha": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+        "external_id": "8f0bd636-8744-56b7-9706-ea1e530108a0",
+        "url": "https://api.github.com/repos/KastaTM/card-market-tracker/check-runs/122806861711",
+        "html_url": "https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482/job/122806861711",
+        "details_url": "https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482/job/122806861711",
+        "status": "completed",
+        "conclusion": "success",
+        "started_at": "2026-10-28T12:09:43Z",
+        "completed_at": "2026-10-28T12:15:57Z",
+        "output": {
+          "title": null,
+          "summary": null,
+          "text": null,
+          "annotations_count": 2,
+          "annotations_url": "https://api.github.com/repos/KastaTM/card-market-tracker/check-runs/122806861711/annotations"
+        },
+        "check_suite": {
+          "id": 110277251454
+        },
+        "app": {
+          "id": 15368,
+          "client_id": "Iv1.05c79e9ad1f6bdfa",
+          "slug": "github-actions",
+          "node_id": "MDM6QXBwMTUzNjg=",
+          "owner": {
+            "login": "github",
+            "id": 9919,
+            "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/github",
+            "html_url": "https://github.com/github",
+            "followers_url": "https://api.github.com/users/github/followers",
+            "following_url": "https://api.github.com/users/github/following{/other_user}",
+            "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+            "organizations_url": "https://api.github.com/users/github/orgs",
+            "repos_url": "https://api.github.com/users/github/repos",
+            "events_url": "https://api.github.com/users/github/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/github/received_events",
+            "type": "Organization",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "name": "GitHub Actions",
+          "description": "Automate your workflow from idea to production",
+          "external_url": "https://help.github.com/en/actions",
+          "html_url": "https://github.com/apps/github-actions",
+          "created_at": "2018-07-30T09:30:17Z",
+          "updated_at": "2026-06-18T16:17:48Z",
+          "permissions": {
+            "actions": "write",
+            "administration": "read",
+            "artifact_metadata": "write",
+            "attestations": "write",
+            "checks": "write",
+            "code_quality": "write",
+            "contents": "write",
+            "copilot_requests": "write",
+            "deployments": "write",
+            "discussions": "write",
+            "drives": "write",
+            "issues": "write",
+            "merge_queues": "write",
+            "metadata": "read",
+            "models": "read",
+            "packages": "write",
+            "pages": "write",
+            "pull_requests": "write",
+            "repository_hooks": "write",
+            "repository_projects": "write",
+            "security_events": "write",
+            "statuses": "write",
+            "vulnerability_alerts": "read"
+          },
+          "events": [
+            "branch_protection_rule",
+            "check_run",
+            "check_suite",
+            "create",
+            "delete",
+            "deployment",
+            "deployment_status",
+            "discussion",
+            "discussion_comment",
+            "fork",
+            "gollum",
+            "issues",
+            "issue_comment",
+            "label",
+            "merge_group",
+            "milestone",
+            "page_build",
+            "public",
+            "pull_request",
+            "pull_request_review",
+            "pull_request_review_comment",
+            "push",
+            "registry_package",
+            "release",
+            "repository",
+            "repository_dispatch",
+            "status",
+            "watch",
+            "workflow_dispatch",
+            "workflow_run"
+          ]
+        },
+        "pull_requests": [
+          {
+            "url": "https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18",
+            "id": 5041353067,
+            "number": 18,
+            "head": {
+              "ref": "feat/p8c-watchlist-signal-outbox",
+              "sha": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+              "repo": {
+                "id": 1407861355,
+                "url": "https://api.github.com/repos/KastaTM/card-market-tracker",
+                "name": "card-market-tracker"
+              }
+            },
+            "base": {
+              "ref": "main",
+              "sha": "228d5c8d0d91edf03ddb86a489c8232eeb7c08bc",
+              "repo": {
+                "id": 1407861355,
+                "url": "https://api.github.com/repos/KastaTM/card-market-tracker",
+                "name": "card-market-tracker"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": 122806861332,
+        "name": "compose",
+        "node_id": "CR_kwDOU-pCa88AAAAcl9v-FA",
+        "head_sha": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+        "external_id": "c1539731-baa3-5013-a743-cbff285bba41",
+        "url": "https://api.github.com/repos/KastaTM/card-market-tracker/check-runs/122806861332",
+        "html_url": "https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482/job/122806861332",
+        "details_url": "https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482/job/122806861332",
+        "status": "completed",
+        "conclusion": "success",
+        "started_at": "2026-10-28T12:09:43Z",
+        "completed_at": "2026-10-28T12:13:18Z",
+        "output": {
+          "title": null,
+          "summary": null,
+          "text": null,
+          "annotations_count": 2,
+          "annotations_url": "https://api.github.com/repos/KastaTM/card-market-tracker/check-runs/122806861332/annotations"
+        },
+        "check_suite": {
+          "id": 110277251454
+        },
+        "app": {
+          "id": 15368,
+          "client_id": "Iv1.05c79e9ad1f6bdfa",
+          "slug": "github-actions",
+          "node_id": "MDM6QXBwMTUzNjg=",
+          "owner": {
+            "login": "github",
+            "id": 9919,
+            "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/github",
+            "html_url": "https://github.com/github",
+            "followers_url": "https://api.github.com/users/github/followers",
+            "following_url": "https://api.github.com/users/github/following{/other_user}",
+            "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+            "organizations_url": "https://api.github.com/users/github/orgs",
+            "repos_url": "https://api.github.com/users/github/repos",
+            "events_url": "https://api.github.com/users/github/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/github/received_events",
+            "type": "Organization",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "name": "GitHub Actions",
+          "description": "Automate your workflow from idea to production",
+          "external_url": "https://help.github.com/en/actions",
+          "html_url": "https://github.com/apps/github-actions",
+          "created_at": "2018-07-30T09:30:17Z",
+          "updated_at": "2026-06-18T16:17:48Z",
+          "permissions": {
+            "actions": "write",
+            "administration": "read",
+            "artifact_metadata": "write",
+            "attestations": "write",
+            "checks": "write",
+            "code_quality": "write",
+            "contents": "write",
+            "copilot_requests": "write",
+            "deployments": "write",
+            "discussions": "write",
+            "drives": "write",
+            "issues": "write",
+            "merge_queues": "write",
+            "metadata": "read",
+            "models": "read",
+            "packages": "write",
+            "pages": "write",
+            "pull_requests": "write",
+            "repository_hooks": "write",
+            "repository_projects": "write",
+            "security_events": "write",
+            "statuses": "write",
+            "vulnerability_alerts": "read"
+          },
+          "events": [
+            "branch_protection_rule",
+            "check_run",
+            "check_suite",
+            "create",
+            "delete",
+            "deployment",
+            "deployment_status",
+            "discussion",
+            "discussion_comment",
+            "fork",
+            "gollum",
+            "issues",
+            "issue_comment",
+            "label",
+            "merge_group",
+            "milestone",
+            "page_build",
+            "public",
+            "pull_request",
+            "pull_request_review",
+            "pull_request_review_comment",
+            "push",
+            "registry_package",
+            "release",
+            "repository",
+            "repository_dispatch",
+            "status",
+            "watch",
+            "workflow_dispatch",
+            "workflow_run"
+          ]
+        },
+        "pull_requests": [
+          {
+            "url": "https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18",
+            "id": 5041353067,
+            "number": 18,
+            "head": {
+              "ref": "feat/p8c-watchlist-signal-outbox",
+              "sha": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+              "repo": {
+                "id": 1407861355,
+                "url": "https://api.github.com/repos/KastaTM/card-market-tracker",
+                "name": "card-market-tracker"
+              }
+            },
+            "base": {
+              "ref": "main",
+              "sha": "228d5c8d0d91edf03ddb86a489c8232eeb7c08bc",
+              "repo": {
+                "id": 1407861355,
+                "url": "https://api.github.com/repos/KastaTM/card-market-tracker",
+                "name": "card-market-tracker"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "repository_settings": {
+    "allow_merge_commit": true,
+    "delete_branch_on_merge": false
+  },
+  "commands": [
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "exit_code": 0,
+      "stdout": "https://github.com/KastaTM/card-market-tracker.git\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "branch",
+        "--show-current"
+      ],
+      "exit_code": 0,
+      "stdout": "feat/p8c-watchlist-signal-outbox\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "exit_code": 0,
+      "stdout": "dfd0414242cff364aad6082411ae88aef728783e\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "for-each-ref",
+        "--format=%(refname) %(objectname)",
+        "refs/heads",
+        "refs/remotes"
+      ],
+      "exit_code": 0,
+      "stdout": "refs/heads/chore/p0-foundation 49dc0792d210bbc56e164587319186c75e04a631\nrefs/heads/docs/p0-5-integration-record 253a5354d8645fa8c72cbd7038e213832ab8ce18\nrefs/heads/docs/p0-5-source-feasibility 61ab2fcb630e2504869b68c97ea8cd1385e4ee00\nrefs/heads/docs/p0-completion-report 9dbe338cb6bd33fb96e21417bb66248ce9de45ba\nrefs/heads/docs/p05b-real-source-qualification 302e8d3f3155c14091d26841b8a230791109f220\nrefs/heads/evidence/p8c-360da646 82570887057a1421ca24d2d8ceea09eb2db7e706\nrefs/heads/evidence/p8c-rw01-d82aba73 57bdf94391be307197df2a59526acf59bc6ff681\nrefs/heads/feat/p1a-catalog-core 93a17711cb75f91816e41279fe76069055391e50\nrefs/heads/feat/p1b-pinned-metadata-ingestion 252c394141948e3ab77a54bcf628e4290ba69652\nrefs/heads/feat/p1c-multi-revision-metadata-capture 8af647697dd67859b38fc007d493a54642a1d62f\nrefs/heads/feat/p3a-observation-persistence e9c5f02e7f093dedff55b67f137c4446f22e8735\nrefs/heads/feat/p4a-offline-temporal-discovery c5ed228af831a2a6ed8a12c7072777d3908296a5\nrefs/heads/feat/p4b-scoped-capture-discovery ab5e0fa7d4225c2ce137ce2261cd9686ef765a32\nrefs/heads/feat/p4c-discovery-result-journal 9fb53144dec521d0dde49c02d41022be831421c2\nrefs/heads/feat/p5a-offline-watchlist 02ab89677afe11901ea5a2b1b8826604ce543c2f\nrefs/heads/feat/p5b-watchlist-signal-journal 150a611717df5a287eee66a036ee6417b70780d4\nrefs/heads/feat/p8a-offline-alert-outbox cf3c8f17128a5459d4d0f9228b2f1456e120817b\nrefs/heads/feat/p8b-telegram-alert-delivery 9dab8a9b31dcc93cced8e90da20f81dae685661b\nrefs/heads/feat/p8c-watchlist-signal-outbox d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\nrefs/heads/main 5175d5b09e8d412e11b2ddf4c24bff41df133843\nrefs/heads/rework/p5b-rw03-publication-rollback f80bc8cdb877946f37d76b09212d68dd8da3e246\nrefs/remotes/origin/HEAD 228d5c8d0d91edf03ddb86a489c8232eeb7c08bc\nrefs/remotes/origin/chore/p0-foundation 49dc0792d210bbc56e164587319186c75e04a631\nrefs/remotes/origin/docs/p0-5-integration-record 253a5354d8645fa8c72cbd7038e213832ab8ce18\nrefs/remotes/origin/docs/p0-5-source-feasibility 61ab2fcb630e2504869b68c97ea8cd1385e4ee00\nrefs/remotes/origin/docs/p0-completion-report 9dbe338cb6bd33fb96e21417bb66248ce9de45ba\nrefs/remotes/origin/docs/p05b-real-source-qualification 302e8d3f3155c14091d26841b8a230791109f220\nrefs/remotes/origin/evidence/p8c-360da646 82570887057a1421ca24d2d8ceea09eb2db7e706\nrefs/remotes/origin/evidence/p8c-rw01-d82aba73 57bdf94391be307197df2a59526acf59bc6ff681\nrefs/remotes/origin/feat/p1a-catalog-core 93a17711cb75f91816e41279fe76069055391e50\nrefs/remotes/origin/feat/p1b-pinned-metadata-ingestion 252c394141948e3ab77a54bcf628e4290ba69652\nrefs/remotes/origin/feat/p1c-multi-revision-metadata-capture 8af647697dd67859b38fc007d493a54642a1d62f\nrefs/remotes/origin/feat/p3a-observation-persistence e9c5f02e7f093dedff55b67f137c4446f22e8735\nrefs/remotes/origin/feat/p4a-offline-temporal-discovery c5ed228af831a2a6ed8a12c7072777d3908296a5\nrefs/remotes/origin/feat/p4b-scoped-capture-discovery ab5e0fa7d4225c2ce137ce2261cd9686ef765a32\nrefs/remotes/origin/feat/p4c-discovery-result-journal 9fb53144dec521d0dde49c02d41022be831421c2\nrefs/remotes/origin/feat/p5a-offline-watchlist 02ab89677afe11901ea5a2b1b8826604ce543c2f\nrefs/remotes/origin/feat/p5b-watchlist-signal-journal 150a611717df5a287eee66a036ee6417b70780d4\nrefs/remotes/origin/feat/p8a-offline-alert-outbox cf3c8f17128a5459d4d0f9228b2f1456e120817b\nrefs/remotes/origin/feat/p8b-telegram-alert-delivery 9dab8a9b31dcc93cced8e90da20f81dae685661b\nrefs/remotes/origin/feat/p8c-watchlist-signal-outbox d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\nrefs/remotes/origin/main 228d5c8d0d91edf03ddb86a489c8232eeb7c08bc\nrefs/remotes/origin/rework/p5b-rw03-publication-rollback f80bc8cdb877946f37d76b09212d68dd8da3e246\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "worktree",
+        "list",
+        "--porcelain"
+      ],
+      "exit_code": 0,
+      "stdout": "worktree C:/Projects/card-market-tracker\nHEAD f80bc8cdb877946f37d76b09212d68dd8da3e246\nbranch refs/heads/rework/p5b-rw03-publication-rollback\n\nworktree C:/Projects/card-market-tracker/.p1b-evidence/qa\nHEAD 252c394141948e3ab77a54bcf628e4290ba69652\ndetached\n\nworktree C:/Projects/card-market-tracker/.p1b-evidence/reviewer\nHEAD 252c394141948e3ab77a54bcf628e4290ba69652\ndetached\n\nworktree C:/Projects/card-market-tracker/.p1c-evidence/qa-final\nHEAD d3dbd96c930599a29756476c1101e0ae599f2efa\ndetached\n\nworktree C:/Projects/card-market-tracker/.p1c-evidence/qa-final-v2\nHEAD 8af647697dd67859b38fc007d493a54642a1d62f\ndetached\n\nworktree C:/Projects/card-market-tracker/.p1c-evidence/reviewer-final\nHEAD d3dbd96c930599a29756476c1101e0ae599f2efa\ndetached\n\nworktree C:/Projects/card-market-tracker/.p1c-evidence/reviewer-final-v2\nHEAD 8af647697dd67859b38fc007d493a54642a1d62f\ndetached\n\nworktree C:/Projects/card-market-tracker/.p3a-evidence/qa\nHEAD e9c5f02e7f093dedff55b67f137c4446f22e8735\ndetached\n\nworktree C:/Projects/card-market-tracker/.p3a-evidence/reviewer\nHEAD e9c5f02e7f093dedff55b67f137c4446f22e8735\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4a-evidence/p05b/qa\nHEAD 302e8d3f3155c14091d26841b8a230791109f220\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4a-evidence/p05b/reviewer\nHEAD 302e8d3f3155c14091d26841b8a230791109f220\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4a-evidence/qa\nHEAD c5ed228af831a2a6ed8a12c7072777d3908296a5\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4a-evidence/reviewer\nHEAD c5ed228af831a2a6ed8a12c7072777d3908296a5\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4b-evidence/qa\nHEAD 775c106fa9aeee96bf5a637937526047fa4df7b3\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4b-evidence/qa-v2\nHEAD ab5e0fa7d4225c2ce137ce2261cd9686ef765a32\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4b-evidence/reviewer\nHEAD 775c106fa9aeee96bf5a637937526047fa4df7b3\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4b-evidence/reviewer-v2\nHEAD ab5e0fa7d4225c2ce137ce2261cd9686ef765a32\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4c-evidence/qa-final\nHEAD 9f4a280bf2b20294cecd656d11fc9a527ecadc45\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4c-evidence/qa-final-v2\nHEAD 9fb53144dec521d0dde49c02d41022be831421c2\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4c-evidence/reviewer-final\nHEAD 9f4a280bf2b20294cecd656d11fc9a527ecadc45\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4c-evidence/reviewer-final-v2\nHEAD 9fb53144dec521d0dde49c02d41022be831421c2\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5a-evidence/qa-final\nHEAD dd35bc87bc98ed0189051f7d01611803b25e9970\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5a-evidence/qa-final-v2\nHEAD 02ab89677afe11901ea5a2b1b8826604ce543c2f\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5a-evidence/reviewer-final\nHEAD dd35bc87bc98ed0189051f7d01611803b25e9970\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5a-evidence/reviewer-final-v2\nHEAD 02ab89677afe11901ea5a2b1b8826604ce543c2f\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5b-evidence/qa-final\nHEAD 8265ce8282432c8efbb2207bfb6456b12bffab5a\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5b-evidence/qa-final-v2\nHEAD 150a611717df5a287eee66a036ee6417b70780d4\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5b-evidence/reviewer-final\nHEAD 8265ce8282432c8efbb2207bfb6456b12bffab5a\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5b-evidence/reviewer-final-v2\nHEAD 150a611717df5a287eee66a036ee6417b70780d4\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5b-evidence/rw01-integrated\nHEAD 62ecd7ab792a93a6071b83277d870f1d95f61f9f\ndetached\n\nworktree C:/Projects/card-market-tracker/.p8b-evidence/qa-final\nHEAD 56e3e01956fe71a66456b92c23e2a86ec7e602eb\ndetached\n\nworktree C:/Projects/card-market-tracker/.p8b-evidence/qa-final-v2\nHEAD 9dab8a9b31dcc93cced8e90da20f81dae685661b\ndetached\n\nworktree C:/Projects/card-market-tracker/.p8b-evidence/reviewer-final\nHEAD 56e3e01956fe71a66456b92c23e2a86ec7e602eb\ndetached\n\nworktree C:/Projects/card-market-tracker/.p8b-evidence/reviewer-final-v2\nHEAD 9dab8a9b31dcc93cced8e90da20f81dae685661b\ndetached\n\nworktree C:/Projects/card-market-tracker-p8c\nHEAD d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\nbranch refs/heads/feat/p8c-watchlist-signal-outbox\n\nworktree C:/Projects/card-market-tracker-p8c-evidence-360da646\nHEAD 82570887057a1421ca24d2d8ceea09eb2db7e706\nbranch refs/heads/evidence/p8c-360da646\n\nworktree C:/Projects/card-market-tracker-p8c-rw01-evidence-d82aba73\nHEAD 57bdf94391be307197df2a59526acf59bc6ff681\nbranch refs/heads/evidence/p8c-rw01-d82aba73\n\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker",
+        "-C",
+        "C:\\Projects\\card-market-tracker",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "f80bc8cdb877946f37d76b09212d68dd8da3e246\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1c-evidence/qa-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1c-evidence\\qa-final",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "d3dbd96c930599a29756476c1101e0ae599f2efa\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1b-evidence/qa",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1b-evidence\\qa",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "252c394141948e3ab77a54bcf628e4290ba69652\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1b-evidence/reviewer",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1b-evidence\\reviewer",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "252c394141948e3ab77a54bcf628e4290ba69652\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1c-evidence/qa-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1c-evidence\\qa-final",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker",
+        "-C",
+        "C:\\Projects\\card-market-tracker",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1b-evidence/reviewer",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1b-evidence\\reviewer",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1b-evidence/qa",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1b-evidence\\qa",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1c-evidence/reviewer-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1c-evidence\\reviewer-final-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "8af647697dd67859b38fc007d493a54642a1d62f\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1c-evidence/qa-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1c-evidence\\qa-final-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "8af647697dd67859b38fc007d493a54642a1d62f\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p3a-evidence/qa",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p3a-evidence\\qa",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "e9c5f02e7f093dedff55b67f137c4446f22e8735\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1c-evidence/reviewer-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1c-evidence\\reviewer-final",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "d3dbd96c930599a29756476c1101e0ae599f2efa\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1c-evidence/qa-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1c-evidence\\qa-final-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1c-evidence/reviewer-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1c-evidence\\reviewer-final",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1c-evidence/reviewer-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1c-evidence\\reviewer-final-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p3a-evidence/qa",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p3a-evidence\\qa",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4a-evidence/p05b/qa",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4a-evidence\\p05b\\qa",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "302e8d3f3155c14091d26841b8a230791109f220\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4a-evidence/p05b/reviewer",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4a-evidence\\p05b\\reviewer",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "302e8d3f3155c14091d26841b8a230791109f220\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4a-evidence/qa",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4a-evidence\\qa",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "c5ed228af831a2a6ed8a12c7072777d3908296a5\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p3a-evidence/reviewer",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p3a-evidence\\reviewer",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "e9c5f02e7f093dedff55b67f137c4446f22e8735\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4a-evidence/p05b/qa",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4a-evidence\\p05b\\qa",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4a-evidence/p05b/reviewer",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4a-evidence\\p05b\\reviewer",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4a-evidence/qa",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4a-evidence\\qa",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p3a-evidence/reviewer",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p3a-evidence\\reviewer",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4b-evidence/reviewer",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4b-evidence\\reviewer",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "775c106fa9aeee96bf5a637937526047fa4df7b3\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4b-evidence/qa-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4b-evidence\\qa-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "ab5e0fa7d4225c2ce137ce2261cd9686ef765a32\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4b-evidence/qa",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4b-evidence\\qa",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "775c106fa9aeee96bf5a637937526047fa4df7b3\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4a-evidence/reviewer",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4a-evidence\\reviewer",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "c5ed228af831a2a6ed8a12c7072777d3908296a5\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4b-evidence/qa",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4b-evidence\\qa",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4a-evidence/reviewer",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4a-evidence\\reviewer",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4b-evidence/reviewer",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4b-evidence\\reviewer",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4b-evidence/qa-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4b-evidence\\qa-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4c-evidence/qa-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4c-evidence\\qa-final-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "9fb53144dec521d0dde49c02d41022be831421c2\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4c-evidence/reviewer-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4c-evidence\\reviewer-final",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "9f4a280bf2b20294cecd656d11fc9a527ecadc45\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4b-evidence/reviewer-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4b-evidence\\reviewer-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "ab5e0fa7d4225c2ce137ce2261cd9686ef765a32\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4c-evidence/qa-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4c-evidence\\qa-final",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "9f4a280bf2b20294cecd656d11fc9a527ecadc45\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4c-evidence/qa-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4c-evidence\\qa-final-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4c-evidence/reviewer-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4c-evidence\\reviewer-final",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4c-evidence/qa-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4c-evidence\\qa-final",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4b-evidence/reviewer-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4b-evidence\\reviewer-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4c-evidence/reviewer-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4c-evidence\\reviewer-final-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "9fb53144dec521d0dde49c02d41022be831421c2\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5a-evidence/qa-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5a-evidence\\qa-final-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "02ab89677afe11901ea5a2b1b8826604ce543c2f\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5a-evidence/qa-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5a-evidence\\qa-final",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "dd35bc87bc98ed0189051f7d01611803b25e9970\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5a-evidence/reviewer-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5a-evidence\\reviewer-final",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "dd35bc87bc98ed0189051f7d01611803b25e9970\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5a-evidence/reviewer-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5a-evidence\\reviewer-final",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4c-evidence/reviewer-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4c-evidence\\reviewer-final-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5a-evidence/qa-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5a-evidence\\qa-final",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5a-evidence/qa-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5a-evidence\\qa-final-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5a-evidence/reviewer-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5a-evidence\\reviewer-final-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "02ab89677afe11901ea5a2b1b8826604ce543c2f\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5b-evidence/qa-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5b-evidence\\qa-final",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "8265ce8282432c8efbb2207bfb6456b12bffab5a\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5b-evidence/qa-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5b-evidence\\qa-final-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "150a611717df5a287eee66a036ee6417b70780d4\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5b-evidence/reviewer-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5b-evidence\\reviewer-final",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "8265ce8282432c8efbb2207bfb6456b12bffab5a\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5a-evidence/reviewer-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5a-evidence\\reviewer-final-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5b-evidence/reviewer-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5b-evidence\\reviewer-final",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5b-evidence/qa-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5b-evidence\\qa-final",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5b-evidence/qa-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5b-evidence\\qa-final-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5b-evidence/reviewer-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5b-evidence\\reviewer-final-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "150a611717df5a287eee66a036ee6417b70780d4\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p8b-evidence/qa-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p8b-evidence\\qa-final-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "9dab8a9b31dcc93cced8e90da20f81dae685661b\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p8b-evidence/qa-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p8b-evidence\\qa-final",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "56e3e01956fe71a66456b92c23e2a86ec7e602eb\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5b-evidence/rw01-integrated",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5b-evidence\\rw01-integrated",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "62ecd7ab792a93a6071b83277d870f1d95f61f9f\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p8b-evidence/qa-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p8b-evidence\\qa-final",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p8b-evidence/qa-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p8b-evidence\\qa-final-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5b-evidence/rw01-integrated",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5b-evidence\\rw01-integrated",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5b-evidence/reviewer-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5b-evidence\\reviewer-final-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p8b-evidence/reviewer-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p8b-evidence\\reviewer-final-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "9dab8a9b31dcc93cced8e90da20f81dae685661b\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c-evidence-360da646",
+        "-C",
+        "C:\\Projects\\card-market-tracker-p8c-evidence-360da646",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "82570887057a1421ca24d2d8ceea09eb2db7e706\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p8b-evidence/reviewer-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p8b-evidence\\reviewer-final",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "56e3e01956fe71a66456b92c23e2a86ec7e602eb\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "-C",
+        "C:\\Projects\\card-market-tracker-p8c",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p8b-evidence/reviewer-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p8b-evidence\\reviewer-final-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p8b-evidence/reviewer-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p8b-evidence\\reviewer-final",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "-C",
+        "C:\\Projects\\card-market-tracker-p8c",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c-evidence-360da646",
+        "-C",
+        "C:\\Projects\\card-market-tracker-p8c-evidence-360da646",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c-rw01-evidence-d82aba73",
+        "-C",
+        "C:\\Projects\\card-market-tracker-p8c-rw01-evidence-d82aba73",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "57bdf94391be307197df2a59526acf59bc6ff681\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c-rw01-evidence-d82aba73",
+        "-C",
+        "C:\\Projects\\card-market-tracker-p8c-rw01-evidence-d82aba73",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/KastaTM/card-market-tracker/pulls/18"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18\",\"id\":5041353067,\"node_id\":\"PR_kwDOU-pCa88AAAABLHzxaw\",\"html_url\":\"https://github.com/KastaTM/card-market-tracker/pull/18\",\"diff_url\":\"https://github.com/KastaTM/card-market-tracker/pull/18.diff\",\"patch_url\":\"https://github.com/KastaTM/card-market-tracker/pull/18.patch\",\"issue_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/issues/18\",\"commits_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18/commits\",\"review_comments_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18/comments\",\"review_comment_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls/comments{/number}\",\"comments_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/issues/18/comments\",\"statuses_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/statuses/d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\",\"number\":18,\"state\":\"open\",\"locked\":false,\"title\":\"P8c: offline Watchlist signal outbox\",\"user\":{\"login\":\"KastaTM\",\"id\":71529686,\"node_id\":\"MDQ6VXNlcjcxNTI5Njg2\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/71529686?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/KastaTM\",\"html_url\":\"https://github.com/KastaTM\",\"followers_url\":\"https://api.github.com/users/KastaTM/followers\",\"following_url\":\"https://api.github.com/users/KastaTM/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/KastaTM/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/KastaTM/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/KastaTM/subscriptions\",\"organizations_url\":\"https://api.github.com/users/KastaTM/orgs\",\"repos_url\":\"https://api.github.com/users/KastaTM/repos\",\"events_url\":\"https://api.github.com/users/KastaTM/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/KastaTM/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"body\":\"RW-01 fixes a writer/verifier invariant mismatch: independently valid P5a/P5b sources with the same watch_id/revision but different complete entries could both record and make verify/backup fail. The writer now completes one semantic fold inside BEGIN IMMEDIATE and rejects new incompatible entries with identity_conflict/exit2 before insertion. Corruption and same-ID replay conflict precedence are preserved; frozen schemas/identities/deadlines and prior source writers are unchanged.\\n\\nCorrected candidate d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c, tree dfd0414242cff364aad6082411ae88aef728783e. Exact unchanged pre-fix executable now passes;35new regressions,2250fulltests/1existing platform skip,94.15%line/88.31%branch. New independent QA17cases(default2/explicit5) and distinct REVIEWER28(default2)/all13files PASS.\\n\\nFour new jobs PASS in attempt1, all12harnesses and RW01 rejection in wheel/Compose/AMD64/ARM64-QEMU. [New CI](https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482), [complete corrective report](https://github.com/KastaTM/card-market-tracker/blob/57bdf94391be307197df2a59526acf59bc6ff681/docs/evidence/P8C_RW01_d82aba73/RW01_CORRECTIVE_IMPLEMENTATION_REPORT.md), [fresh reviews](https://github.com/KastaTM/card-market-tracker/blob/57bdf94391be307197df2a59526acf59bc6ff681/docs/evidence/P8C_RW01_d82aba73/INDEPENDENT_REVIEWS.md).\\nLead publicly read back58artifacts and49changed source/document blobs byte-for-byte. Evidence is separate; source HEAD is unchanged.\\n\\nLocalQEMU timing unavailable at documented Docker check; physicalPi not certified. Full write-time fold may timeout at capacity under unchanged2s/5s Budget. Previously corrupt stores are not repaired automatically. Old candidate/CI/READY records remain historical and superseded.\\n\\nP8c OPEN / REWORK_REQUIRED, awaiting Phase Lead review. Prior READY is not automatically restored. PR retained draft/unmerged; no phase closure or new phase.\\n\",\"labels\":[],\"milestone\":null,\"active_lock_reason\":null,\"created_at\":\"2026-10-27T21:24:40Z\",\"updated_at\":\"2026-10-28T15:40:37Z\",\"closed_at\":null,\"merged_at\":null,\"merge_commit_sha\":\"edbd41c4cf118dbf462674738ddfa05513a92379\",\"assignee\":null,\"assignees\":[],\"requested_reviewers\":[],\"requested_teams\":[],\"head\":{\"label\":\"KastaTM:feat/p8c-watchlist-signal-outbox\",\"ref\":\"feat/p8c-watchlist-signal-outbox\",\"repo\":{\"id\":1407861355,\"node_id\":\"R_kgDOU-pCaw\",\"name\":\"card-market-tracker\",\"full_name\":\"KastaTM/card-market-tracker\",\"owner\":{\"login\":\"KastaTM\",\"id\":71529686,\"node_id\":\"MDQ6VXNlcjcxNTI5Njg2\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/71529686?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/KastaTM\",\"html_url\":\"https://github.com/KastaTM\",\"followers_url\":\"https://api.github.com/users/KastaTM/followers\",\"following_url\":\"https://api.github.com/users/KastaTM/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/KastaTM/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/KastaTM/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/KastaTM/subscriptions\",\"organizations_url\":\"https://api.github.com/users/KastaTM/orgs\",\"repos_url\":\"https://api.github.com/users/KastaTM/repos\",\"events_url\":\"https://api.github.com/users/KastaTM/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/KastaTM/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"private\":false,\"fork\":false,\"archived\":false,\"disabled\":false,\"description\":null,\"homepage\":null,\"language\":\"Python\",\"visibility\":\"public\",\"is_template\":false,\"topics\":[],\"forks_count\":0,\"forks\":0,\"stargazers_count\":0,\"watchers_count\":0,\"watchers\":0,\"open_issues_count\":1,\"open_issues\":1,\"size\":1880,\"default_branch\":\"main\",\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":false,\"has_discussions\":false,\"has_pull_requests\":true,\"pushed_at\":\"2026-10-28T15:34:50Z\",\"created_at\":\"2026-10-06T20:01:24Z\",\"updated_at\":\"2026-10-25T10:57:17Z\",\"allow_forking\":true,\"web_commit_signoff_required\":false,\"pull_request_creation_policy\":\"all\",\"license\":null,\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker\",\"html_url\":\"https://github.com/KastaTM/card-market-tracker\",\"archive_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/contributors\",\"deployments_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/deployments\",\"downloads_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/downloads\",\"events_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/events\",\"forks_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/forks\",\"git_commits_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/tags{/sha}\",\"git_url\":\"git://github.com/KastaTM/card-market-tracker.git\",\"issue_comment_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/languages\",\"merges_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/merges\",\"milestones_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/releases{/id}\",\"ssh_url\":\"git@github.com:KastaTM/card-market-tracker.git\",\"stargazers_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/stargazers\",\"statuses_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/subscribers\",\"subscription_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/subscription\",\"tags_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/tags\",\"teams_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/teams\",\"trees_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/trees{/sha}\",\"clone_url\":\"https://github.com/KastaTM/card-market-tracker.git\",\"mirror_url\":null,\"hooks_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/hooks\",\"svn_url\":\"https://github.com/KastaTM/card-market-tracker\"},\"sha\":\"d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\",\"user\":{\"login\":\"KastaTM\",\"id\":71529686,\"node_id\":\"MDQ6VXNlcjcxNTI5Njg2\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/71529686?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/KastaTM\",\"html_url\":\"https://github.com/KastaTM\",\"followers_url\":\"https://api.github.com/users/KastaTM/followers\",\"following_url\":\"https://api.github.com/users/KastaTM/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/KastaTM/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/KastaTM/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/KastaTM/subscriptions\",\"organizations_url\":\"https://api.github.com/users/KastaTM/orgs\",\"repos_url\":\"https://api.github.com/users/KastaTM/repos\",\"events_url\":\"https://api.github.com/users/KastaTM/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/KastaTM/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false}},\"base\":{\"label\":\"KastaTM:main\",\"ref\":\"main\",\"repo\":{\"id\":1407861355,\"node_id\":\"R_kgDOU-pCaw\",\"name\":\"card-market-tracker\",\"full_name\":\"KastaTM/card-market-tracker\",\"owner\":{\"login\":\"KastaTM\",\"id\":71529686,\"node_id\":\"MDQ6VXNlcjcxNTI5Njg2\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/71529686?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/KastaTM\",\"html_url\":\"https://github.com/KastaTM\",\"followers_url\":\"https://api.github.com/users/KastaTM/followers\",\"following_url\":\"https://api.github.com/users/KastaTM/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/KastaTM/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/KastaTM/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/KastaTM/subscriptions\",\"organizations_url\":\"https://api.github.com/users/KastaTM/orgs\",\"repos_url\":\"https://api.github.com/users/KastaTM/repos\",\"events_url\":\"https://api.github.com/users/KastaTM/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/KastaTM/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"private\":false,\"fork\":false,\"archived\":false,\"disabled\":false,\"description\":null,\"homepage\":null,\"language\":\"Python\",\"visibility\":\"public\",\"is_template\":false,\"topics\":[],\"forks_count\":0,\"forks\":0,\"stargazers_count\":0,\"watchers_count\":0,\"watchers\":0,\"open_issues_count\":1,\"open_issues\":1,\"size\":1880,\"default_branch\":\"main\",\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":false,\"has_discussions\":false,\"has_pull_requests\":true,\"pushed_at\":\"2026-10-28T15:34:50Z\",\"created_at\":\"2026-10-06T20:01:24Z\",\"updated_at\":\"2026-10-25T10:57:17Z\",\"allow_forking\":true,\"web_commit_signoff_required\":false,\"pull_request_creation_policy\":\"all\",\"license\":null,\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker\",\"html_url\":\"https://github.com/KastaTM/card-market-tracker\",\"archive_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/contributors\",\"deployments_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/deployments\",\"downloads_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/downloads\",\"events_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/events\",\"forks_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/forks\",\"git_commits_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/tags{/sha}\",\"git_url\":\"git://github.com/KastaTM/card-market-tracker.git\",\"issue_comment_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/languages\",\"merges_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/merges\",\"milestones_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/releases{/id}\",\"ssh_url\":\"git@github.com:KastaTM/card-market-tracker.git\",\"stargazers_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/stargazers\",\"statuses_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/subscribers\",\"subscription_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/subscription\",\"tags_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/tags\",\"teams_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/teams\",\"trees_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/trees{/sha}\",\"clone_url\":\"https://github.com/KastaTM/card-market-tracker.git\",\"mirror_url\":null,\"hooks_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/hooks\",\"svn_url\":\"https://github.com/KastaTM/card-market-tracker\"},\"sha\":\"228d5c8d0d91edf03ddb86a489c8232eeb7c08bc\",\"user\":{\"login\":\"KastaTM\",\"id\":71529686,\"node_id\":\"MDQ6VXNlcjcxNTI5Njg2\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/71529686?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/KastaTM\",\"html_url\":\"https://github.com/KastaTM\",\"followers_url\":\"https://api.github.com/users/KastaTM/followers\",\"following_url\":\"https://api.github.com/users/KastaTM/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/KastaTM/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/KastaTM/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/KastaTM/subscriptions\",\"organizations_url\":\"https://api.github.com/users/KastaTM/orgs\",\"repos_url\":\"https://api.github.com/users/KastaTM/repos\",\"events_url\":\"https://api.github.com/users/KastaTM/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/KastaTM/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false}},\"_links\":{\"comments\":{\"href\":\"https://api.github.com/repos/KastaTM/card-market-tracker/issues/18/comments\"},\"commits\":{\"href\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18/commits\"},\"statuses\":{\"href\":\"https://api.github.com/repos/KastaTM/card-market-tracker/statuses/d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\"},\"html\":{\"href\":\"https://github.com/KastaTM/card-market-tracker/pull/18\"},\"issue\":{\"href\":\"https://api.github.com/repos/KastaTM/card-market-tracker/issues/18\"},\"review_comments\":{\"href\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18/comments\"},\"review_comment\":{\"href\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls/comments{/number}\"},\"self\":{\"href\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18\"}},\"author_association\":\"OWNER\",\"auto_merge\":null,\"draft\":true,\"merged\":false,\"mergeable\":true,\"rebaseable\":true,\"mergeable_state\":\"clean\",\"merged_by\":null,\"comments\":5,\"review_comments\":0,\"maintainer_can_modify\":false,\"commits\":2,\"additions\":9906,\"deletions\":4,\"changed_files\":49}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/KastaTM/card-market-tracker"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"id\":1407861355,\"node_id\":\"R_kgDOU-pCaw\",\"name\":\"card-market-tracker\",\"full_name\":\"KastaTM/card-market-tracker\",\"private\":false,\"owner\":{\"login\":\"KastaTM\",\"id\":71529686,\"node_id\":\"MDQ6VXNlcjcxNTI5Njg2\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/71529686?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/KastaTM\",\"html_url\":\"https://github.com/KastaTM\",\"followers_url\":\"https://api.github.com/users/KastaTM/followers\",\"following_url\":\"https://api.github.com/users/KastaTM/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/KastaTM/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/KastaTM/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/KastaTM/subscriptions\",\"organizations_url\":\"https://api.github.com/users/KastaTM/orgs\",\"repos_url\":\"https://api.github.com/users/KastaTM/repos\",\"events_url\":\"https://api.github.com/users/KastaTM/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/KastaTM/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"html_url\":\"https://github.com/KastaTM/card-market-tracker\",\"description\":null,\"fork\":false,\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker\",\"forks_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/forks\",\"keys_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/keys{/key_id}\",\"collaborators_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/collaborators{/collaborator}\",\"teams_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/teams\",\"hooks_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/hooks\",\"issue_events_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/issues/events{/number}\",\"events_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/events\",\"assignees_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/assignees{/user}\",\"branches_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/branches{/branch}\",\"tags_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/tags\",\"blobs_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/blobs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/tags{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/refs{/sha}\",\"trees_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/trees{/sha}\",\"statuses_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/statuses/{sha}\",\"languages_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/languages\",\"stargazers_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/stargazers\",\"contributors_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/contributors\",\"subscribers_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/subscribers\",\"subscription_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/subscription\",\"commits_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/commits{/sha}\",\"git_commits_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/commits{/sha}\",\"comments_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/comments{/number}\",\"issue_comment_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/issues/comments{/number}\",\"contents_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/contents/{+path}\",\"compare_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/compare/{base}...{head}\",\"merges_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/merges\",\"archive_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/{archive_format}{/ref}\",\"downloads_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/downloads\",\"issues_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/issues{/number}\",\"pulls_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls{/number}\",\"milestones_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/notifications{?since,all,participating}\",\"labels_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/labels{/name}\",\"releases_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/releases{/id}\",\"deployments_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/deployments\",\"created_at\":\"2026-10-06T20:01:24Z\",\"updated_at\":\"2026-10-25T10:57:17Z\",\"pushed_at\":\"2026-10-28T15:34:50Z\",\"git_url\":\"git://github.com/KastaTM/card-market-tracker.git\",\"ssh_url\":\"git@github.com:KastaTM/card-market-tracker.git\",\"clone_url\":\"https://github.com/KastaTM/card-market-tracker.git\",\"svn_url\":\"https://github.com/KastaTM/card-market-tracker\",\"homepage\":null,\"size\":1880,\"stargazers_count\":0,\"watchers_count\":0,\"language\":\"Python\",\"has_issues\":true,\"has_projects\":true,\"has_downloads\":false,\"has_wiki\":true,\"has_pages\":false,\"has_discussions\":false,\"forks_count\":0,\"mirror_url\":null,\"archived\":false,\"disabled\":false,\"open_issues_count\":1,\"license\":null,\"allow_forking\":true,\"is_template\":false,\"web_commit_signoff_required\":false,\"has_pull_requests\":true,\"pull_request_creation_policy\":\"all\",\"topics\":[],\"visibility\":\"public\",\"forks\":0,\"open_issues\":1,\"watchers\":0,\"default_branch\":\"main\",\"permissions\":{\"admin\":true,\"maintain\":true,\"push\":true,\"triage\":true,\"pull\":true},\"temp_clone_token\":\"\",\"allow_squash_merge\":true,\"allow_merge_commit\":true,\"allow_rebase_merge\":true,\"allow_auto_merge\":false,\"delete_branch_on_merge\":false,\"allow_update_branch\":false,\"use_squash_pr_title_as_default\":false,\"squash_merge_commit_message\":\"COMMIT_MESSAGES\",\"squash_merge_commit_title\":\"COMMIT_OR_PR_TITLE\",\"merge_commit_message\":\"PR_TITLE\",\"merge_commit_title\":\"MERGE_MESSAGE\",\"security_and_analysis\":{\"secret_scanning\":{\"status\":\"enabled\"},\"secret_scanning_push_protection\":{\"status\":\"enabled\"},\"dependabot_security_updates\":{\"status\":\"disabled\"},\"secret_scanning_non_provider_patterns\":{\"status\":\"disabled\"},\"secret_scanning_validity_checks\":{\"status\":\"disabled\"}},\"network_count\":0,\"subscribers_count\":0}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/KastaTM/card-market-tracker/git/commits/d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"sha\":\"d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\",\"node_id\":\"C_kwDOU-pCa9oAKGQ4MmFiYTczZDliYzBlYjQ1NWY4NjY0ZTNjY2RkYzAxMzRlYTlkOWM\",\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/commits/d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\",\"html_url\":\"https://github.com/KastaTM/card-market-tracker/commit/d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\",\"author\":{\"name\":\"Rodrigo Casta\u00f1\u00f3n Mart\u00ednez\",\"email\":\"rodrikasta@gmail.com\",\"date\":\"2026-10-28T12:08:16Z\"},\"committer\":{\"name\":\"Rodrigo Casta\u00f1\u00f3n Mart\u00ednez\",\"email\":\"rodrikasta@gmail.com\",\"date\":\"2026-10-28T12:08:16Z\"},\"tree\":{\"sha\":\"dfd0414242cff364aad6082411ae88aef728783e\",\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/trees/dfd0414242cff364aad6082411ae88aef728783e\"},\"message\":\"fix: preserve watchlist entry invariant on outbox admission\",\"parents\":[{\"sha\":\"360da646892e46545ca70e8838bc3a2a89e460a3\",\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/commits/360da646892e46545ca70e8838bc3a2a89e460a3\",\"html_url\":\"https://github.com/KastaTM/card-market-tracker/commit/360da646892e46545ca70e8838bc3a2a89e460a3\"}],\"verification\":{\"verified\":false,\"reason\":\"unsigned\",\"signature\":null,\"payload\":null,\"verified_at\":null}}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/KastaTM/card-market-tracker/git/ref/heads/main"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"ref\":\"refs/heads/main\",\"node_id\":\"REF_kwDOU-pCa69yZWZzL2hlYWRzL21haW4\",\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/refs/heads/main\",\"object\":{\"sha\":\"228d5c8d0d91edf03ddb86a489c8232eeb7c08bc\",\"type\":\"commit\",\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/commits/228d5c8d0d91edf03ddb86a489c8232eeb7c08bc\"}}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/KastaTM/card-market-tracker/commits/d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c/check-runs"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"total_count\":4,\"check_runs\":[{\"id\":122806861943,\"name\":\"container (linux/amd64)\",\"node_id\":\"CR_kwDOU-pCa88AAAAcl9wAdw\",\"head_sha\":\"d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\",\"external_id\":\"f562a053-ffd8-53e7-a681-53c14f2b5881\",\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/check-runs/122806861943\",\"html_url\":\"https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482/job/122806861943\",\"details_url\":\"https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482/job/122806861943\",\"status\":\"completed\",\"conclusion\":\"success\",\"started_at\":\"2026-10-28T12:09:44Z\",\"completed_at\":\"2026-10-28T12:14:13Z\",\"output\":{\"title\":null,\"summary\":null,\"text\":null,\"annotations_count\":2,\"annotations_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/check-runs/122806861943/annotations\"},\"check_suite\":{\"id\":110277251454},\"app\":{\"id\":15368,\"client_id\":\"Iv1.05c79e9ad1f6bdfa\",\"slug\":\"github-actions\",\"node_id\":\"MDM6QXBwMTUzNjg=\",\"owner\":{\"login\":\"github\",\"id\":9919,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjk5MTk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/9919?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/github\",\"html_url\":\"https://github.com/github\",\"followers_url\":\"https://api.github.com/users/github/followers\",\"following_url\":\"https://api.github.com/users/github/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/github/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/github/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/github/subscriptions\",\"organizations_url\":\"https://api.github.com/users/github/orgs\",\"repos_url\":\"https://api.github.com/users/github/repos\",\"events_url\":\"https://api.github.com/users/github/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/github/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"GitHub Actions\",\"description\":\"Automate your workflow from idea to production\",\"external_url\":\"https://help.github.com/en/actions\",\"html_url\":\"https://github.com/apps/github-actions\",\"created_at\":\"2018-07-30T09:30:17Z\",\"updated_at\":\"2026-06-18T16:17:48Z\",\"permissions\":{\"actions\":\"write\",\"administration\":\"read\",\"artifact_metadata\":\"write\",\"attestations\":\"write\",\"checks\":\"write\",\"code_quality\":\"write\",\"contents\":\"write\",\"copilot_requests\":\"write\",\"deployments\":\"write\",\"discussions\":\"write\",\"drives\":\"write\",\"issues\":\"write\",\"merge_queues\":\"write\",\"metadata\":\"read\",\"models\":\"read\",\"packages\":\"write\",\"pages\":\"write\",\"pull_requests\":\"write\",\"repository_hooks\":\"write\",\"repository_projects\":\"write\",\"security_events\":\"write\",\"statuses\":\"write\",\"vulnerability_alerts\":\"read\"},\"events\":[\"branch_protection_rule\",\"check_run\",\"check_suite\",\"create\",\"delete\",\"deployment\",\"deployment_status\",\"discussion\",\"discussion_comment\",\"fork\",\"gollum\",\"issues\",\"issue_comment\",\"label\",\"merge_group\",\"milestone\",\"page_build\",\"public\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\",\"registry_package\",\"release\",\"repository\",\"repository_dispatch\",\"status\",\"watch\",\"workflow_dispatch\",\"workflow_run\"]},\"pull_requests\":[{\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18\",\"id\":5041353067,\"number\":18,\"head\":{\"ref\":\"feat/p8c-watchlist-signal-outbox\",\"sha\":\"d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\",\"repo\":{\"id\":1407861355,\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker\",\"name\":\"card-market-tracker\"}},\"base\":{\"ref\":\"main\",\"sha\":\"228d5c8d0d91edf03ddb86a489c8232eeb7c08bc\",\"repo\":{\"id\":1407861355,\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker\",\"name\":\"card-market-tracker\"}}}]},{\"id\":122806861716,\"name\":\"container (linux/arm64)\",\"node_id\":\"CR_kwDOU-pCa88AAAAcl9v_lA\",\"head_sha\":\"d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\",\"external_id\":\"9c6dc4f4-625e-5ddb-9f3e-76d114d3429d\",\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/check-runs/122806861716\",\"html_url\":\"https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482/job/122806861716\",\"details_url\":\"https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482/job/122806861716\",\"status\":\"completed\",\"conclusion\":\"success\",\"started_at\":\"2026-10-28T12:09:44Z\",\"completed_at\":\"2026-10-28T13:09:09Z\",\"output\":{\"title\":null,\"summary\":null,\"text\":null,\"annotations_count\":2,\"annotations_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/check-runs/122806861716/annotations\"},\"check_suite\":{\"id\":110277251454},\"app\":{\"id\":15368,\"client_id\":\"Iv1.05c79e9ad1f6bdfa\",\"slug\":\"github-actions\",\"node_id\":\"MDM6QXBwMTUzNjg=\",\"owner\":{\"login\":\"github\",\"id\":9919,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjk5MTk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/9919?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/github\",\"html_url\":\"https://github.com/github\",\"followers_url\":\"https://api.github.com/users/github/followers\",\"following_url\":\"https://api.github.com/users/github/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/github/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/github/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/github/subscriptions\",\"organizations_url\":\"https://api.github.com/users/github/orgs\",\"repos_url\":\"https://api.github.com/users/github/repos\",\"events_url\":\"https://api.github.com/users/github/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/github/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"GitHub Actions\",\"description\":\"Automate your workflow from idea to production\",\"external_url\":\"https://help.github.com/en/actions\",\"html_url\":\"https://github.com/apps/github-actions\",\"created_at\":\"2018-07-30T09:30:17Z\",\"updated_at\":\"2026-06-18T16:17:48Z\",\"permissions\":{\"actions\":\"write\",\"administration\":\"read\",\"artifact_metadata\":\"write\",\"attestations\":\"write\",\"checks\":\"write\",\"code_quality\":\"write\",\"contents\":\"write\",\"copilot_requests\":\"write\",\"deployments\":\"write\",\"discussions\":\"write\",\"drives\":\"write\",\"issues\":\"write\",\"merge_queues\":\"write\",\"metadata\":\"read\",\"models\":\"read\",\"packages\":\"write\",\"pages\":\"write\",\"pull_requests\":\"write\",\"repository_hooks\":\"write\",\"repository_projects\":\"write\",\"security_events\":\"write\",\"statuses\":\"write\",\"vulnerability_alerts\":\"read\"},\"events\":[\"branch_protection_rule\",\"check_run\",\"check_suite\",\"create\",\"delete\",\"deployment\",\"deployment_status\",\"discussion\",\"discussion_comment\",\"fork\",\"gollum\",\"issues\",\"issue_comment\",\"label\",\"merge_group\",\"milestone\",\"page_build\",\"public\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\",\"registry_package\",\"release\",\"repository\",\"repository_dispatch\",\"status\",\"watch\",\"workflow_dispatch\",\"workflow_run\"]},\"pull_requests\":[{\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18\",\"id\":5041353067,\"number\":18,\"head\":{\"ref\":\"feat/p8c-watchlist-signal-outbox\",\"sha\":\"d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\",\"repo\":{\"id\":1407861355,\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker\",\"name\":\"card-market-tracker\"}},\"base\":{\"ref\":\"main\",\"sha\":\"228d5c8d0d91edf03ddb86a489c8232eeb7c08bc\",\"repo\":{\"id\":1407861355,\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker\",\"name\":\"card-market-tracker\"}}}]},{\"id\":122806861711,\"name\":\"quality\",\"node_id\":\"CR_kwDOU-pCa88AAAAcl9v_jw\",\"head_sha\":\"d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\",\"external_id\":\"8f0bd636-8744-56b7-9706-ea1e530108a0\",\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/check-runs/122806861711\",\"html_url\":\"https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482/job/122806861711\",\"details_url\":\"https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482/job/122806861711\",\"status\":\"completed\",\"conclusion\":\"success\",\"started_at\":\"2026-10-28T12:09:43Z\",\"completed_at\":\"2026-10-28T12:15:57Z\",\"output\":{\"title\":null,\"summary\":null,\"text\":null,\"annotations_count\":2,\"annotations_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/check-runs/122806861711/annotations\"},\"check_suite\":{\"id\":110277251454},\"app\":{\"id\":15368,\"client_id\":\"Iv1.05c79e9ad1f6bdfa\",\"slug\":\"github-actions\",\"node_id\":\"MDM6QXBwMTUzNjg=\",\"owner\":{\"login\":\"github\",\"id\":9919,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjk5MTk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/9919?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/github\",\"html_url\":\"https://github.com/github\",\"followers_url\":\"https://api.github.com/users/github/followers\",\"following_url\":\"https://api.github.com/users/github/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/github/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/github/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/github/subscriptions\",\"organizations_url\":\"https://api.github.com/users/github/orgs\",\"repos_url\":\"https://api.github.com/users/github/repos\",\"events_url\":\"https://api.github.com/users/github/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/github/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"GitHub Actions\",\"description\":\"Automate your workflow from idea to production\",\"external_url\":\"https://help.github.com/en/actions\",\"html_url\":\"https://github.com/apps/github-actions\",\"created_at\":\"2018-07-30T09:30:17Z\",\"updated_at\":\"2026-06-18T16:17:48Z\",\"permissions\":{\"actions\":\"write\",\"administration\":\"read\",\"artifact_metadata\":\"write\",\"attestations\":\"write\",\"checks\":\"write\",\"code_quality\":\"write\",\"contents\":\"write\",\"copilot_requests\":\"write\",\"deployments\":\"write\",\"discussions\":\"write\",\"drives\":\"write\",\"issues\":\"write\",\"merge_queues\":\"write\",\"metadata\":\"read\",\"models\":\"read\",\"packages\":\"write\",\"pages\":\"write\",\"pull_requests\":\"write\",\"repository_hooks\":\"write\",\"repository_projects\":\"write\",\"security_events\":\"write\",\"statuses\":\"write\",\"vulnerability_alerts\":\"read\"},\"events\":[\"branch_protection_rule\",\"check_run\",\"check_suite\",\"create\",\"delete\",\"deployment\",\"deployment_status\",\"discussion\",\"discussion_comment\",\"fork\",\"gollum\",\"issues\",\"issue_comment\",\"label\",\"merge_group\",\"milestone\",\"page_build\",\"public\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\",\"registry_package\",\"release\",\"repository\",\"repository_dispatch\",\"status\",\"watch\",\"workflow_dispatch\",\"workflow_run\"]},\"pull_requests\":[{\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18\",\"id\":5041353067,\"number\":18,\"head\":{\"ref\":\"feat/p8c-watchlist-signal-outbox\",\"sha\":\"d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\",\"repo\":{\"id\":1407861355,\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker\",\"name\":\"card-market-tracker\"}},\"base\":{\"ref\":\"main\",\"sha\":\"228d5c8d0d91edf03ddb86a489c8232eeb7c08bc\",\"repo\":{\"id\":1407861355,\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker\",\"name\":\"card-market-tracker\"}}}]},{\"id\":122806861332,\"name\":\"compose\",\"node_id\":\"CR_kwDOU-pCa88AAAAcl9v-FA\",\"head_sha\":\"d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\",\"external_id\":\"c1539731-baa3-5013-a743-cbff285bba41\",\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/check-runs/122806861332\",\"html_url\":\"https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482/job/122806861332\",\"details_url\":\"https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482/job/122806861332\",\"status\":\"completed\",\"conclusion\":\"success\",\"started_at\":\"2026-10-28T12:09:43Z\",\"completed_at\":\"2026-10-28T12:13:18Z\",\"output\":{\"title\":null,\"summary\":null,\"text\":null,\"annotations_count\":2,\"annotations_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/check-runs/122806861332/annotations\"},\"check_suite\":{\"id\":110277251454},\"app\":{\"id\":15368,\"client_id\":\"Iv1.05c79e9ad1f6bdfa\",\"slug\":\"github-actions\",\"node_id\":\"MDM6QXBwMTUzNjg=\",\"owner\":{\"login\":\"github\",\"id\":9919,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjk5MTk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/9919?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/github\",\"html_url\":\"https://github.com/github\",\"followers_url\":\"https://api.github.com/users/github/followers\",\"following_url\":\"https://api.github.com/users/github/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/github/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/github/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/github/subscriptions\",\"organizations_url\":\"https://api.github.com/users/github/orgs\",\"repos_url\":\"https://api.github.com/users/github/repos\",\"events_url\":\"https://api.github.com/users/github/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/github/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"GitHub Actions\",\"description\":\"Automate your workflow from idea to production\",\"external_url\":\"https://help.github.com/en/actions\",\"html_url\":\"https://github.com/apps/github-actions\",\"created_at\":\"2018-07-30T09:30:17Z\",\"updated_at\":\"2026-06-18T16:17:48Z\",\"permissions\":{\"actions\":\"write\",\"administration\":\"read\",\"artifact_metadata\":\"write\",\"attestations\":\"write\",\"checks\":\"write\",\"code_quality\":\"write\",\"contents\":\"write\",\"copilot_requests\":\"write\",\"deployments\":\"write\",\"discussions\":\"write\",\"drives\":\"write\",\"issues\":\"write\",\"merge_queues\":\"write\",\"metadata\":\"read\",\"models\":\"read\",\"packages\":\"write\",\"pages\":\"write\",\"pull_requests\":\"write\",\"repository_hooks\":\"write\",\"repository_projects\":\"write\",\"security_events\":\"write\",\"statuses\":\"write\",\"vulnerability_alerts\":\"read\"},\"events\":[\"branch_protection_rule\",\"check_run\",\"check_suite\",\"create\",\"delete\",\"deployment\",\"deployment_status\",\"discussion\",\"discussion_comment\",\"fork\",\"gollum\",\"issues\",\"issue_comment\",\"label\",\"merge_group\",\"milestone\",\"page_build\",\"public\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\",\"registry_package\",\"release\",\"repository\",\"repository_dispatch\",\"status\",\"watch\",\"workflow_dispatch\",\"workflow_run\"]},\"pull_requests\":[{\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18\",\"id\":5041353067,\"number\":18,\"head\":{\"ref\":\"feat/p8c-watchlist-signal-outbox\",\"sha\":\"d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\",\"repo\":{\"id\":1407861355,\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker\",\"name\":\"card-market-tracker\"}},\"base\":{\"ref\":\"main\",\"sha\":\"228d5c8d0d91edf03ddb86a489c8232eeb7c08bc\",\"repo\":{\"id\":1407861355,\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker\",\"name\":\"card-market-tracker\"}}}]}]}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "ls-remote",
+        "origin",
+        "refs/heads/main",
+        "refs/heads/feat/p8c-watchlist-signal-outbox"
+      ],
+      "exit_code": 0,
+      "stdout": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\trefs/heads/feat/p8c-watchlist-signal-outbox\n228d5c8d0d91edf03ddb86a489c8232eeb7c08bc\trefs/heads/main\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "exit_code": 0,
+      "stdout": "https://github.com/KastaTM/card-market-tracker.git\n",
+      "stderr": ""
+    }
+  ],
+  "corrected_readonly_tool_endpoint_error": {
+    "initial_endpoint": "repos/KastaTM/card-market-tracker/",
+    "initial_result": "HTTP404",
+    "fixed_endpoint": "repos/KastaTM/card-market-tracker",
+    "no_GitHub_mutation_before_full_PASS": true
+  }
+}

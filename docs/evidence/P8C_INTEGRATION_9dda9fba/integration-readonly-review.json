@@ -1,0 +1,41 @@
+{
+  "utc_recorded": "2026-10-28T18:46:07.756493+00:00",
+  "reviewer": "/root/p8c_integration_ref_review",
+  "role": "Independent READ-ONLY Git preservation reviewer; no product authorship or final QA acceptance",
+  "requested_selector": "gpt-6.1-sol",
+  "requested_effort": "high",
+  "observable_tool_submission": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "high",
+    "spawn_accepted": true
+  },
+  "effective_backend": "unverified",
+  "writes_performed_by_specialist": false,
+  "conclusion": "PASS with transparent observation for the Git preservation criterion. This is not final integration acceptance.",
+  "scope_reason": "Exact postmerge section4.6 forbids historical branch/worktree deletion or destructive modification. All21refs/heads and all37worktree registrations/branches/HEADs equal preflight. Expected tracking fastforward invalidates private blanket refs/heads+refs/remotes equality, not preservation criterion.",
+  "tracking": {
+    "ref": "refs/remotes/origin/main",
+    "before": "228d5c8d0d91edf03ddb86a489c8232eeb7c08bc",
+    "after": "9dda9fba0aa9646a67596657d4ae9a7088903808",
+    "reflog_utc": "2026-10-28T18:33:00Z",
+    "reflog_message": "fetch: fast-forward",
+    "origin_HEAD_symbolic_target": "refs/remotes/origin/main",
+    "origin_HEAD_file_unchanged": true,
+    "actor": "unknown; reflog committer does not identify process/person"
+  },
+  "specialist_sandbox_status_observation": {
+    "all37_exit0": true,
+    "all37_empty_porcelain": true,
+    "warning_path": "C:/Projects/card-market-tracker/.p4a-evidence/reviewer",
+    "stderr": "warning: could not open directory 'pytest-cache/': Permission denied",
+    "no_exhaustive_cache_claim_from_this_sandbox_sweep": true
+  },
+  "lead_approved_read_resolution": {
+    "evidence": "privileged-readonly-worktree-statuses.json",
+    "utc": "2026-10-28T18:44:57.619758+00:00",
+    "all37_exit0": true,
+    "all37_empty_stdout_and_stderr": true,
+    "ACL_or_config_changes": false
+  },
+  "no_restoration_or_suppression_of_tracking_refresh": true
+}

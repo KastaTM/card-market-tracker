@@ -1,0 +1,25 @@
+{
+  "requested_lead_selector": "gpt-6.1-sol",
+  "requested_effort": "medium",
+  "actual_root_selector": "not exposed by this session",
+  "actual_root_effort": "not independently exposed",
+  "backend": "unverified",
+  "specialist_sessions_started_for_integration": [
+    {
+      "task": "/root/p8c_integration_ref_review",
+      "role": "Independent READ-ONLY Git preservation reviewer; no product authorship or final QA acceptance",
+      "requested_selector": "gpt-6.1-sol",
+      "requested_effort": "high",
+      "observable_tool_submission": {
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "high",
+        "spawn_accepted": true
+      },
+      "backend": "unverified"
+    }
+  ],
+  "prior_specialist_sessions": "Historical RW01 authors/QA/finalreviewer are not re-run; one new readonly integration-ref specialist is recorded separately",
+  "new_product_code": false,
+  "phase_lead_requested_profile": "GPT-6 / High",
+  "phase_lead_chat_model": "User reports GPT-6; model selection not independently verifiable"
+}

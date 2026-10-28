@@ -1,0 +1,1492 @@
+{
+  "utc": "2026-10-28T18:47:14.032447+00:00",
+  "result": "PASS",
+  "local_refs_byte_identical_preflight": false,
+  "local_branch_heads_byte_identical_preflight": true,
+  "local_branch_count": 21,
+  "remote_tracking_changes": {
+    "refs/remotes/origin/HEAD": {
+      "before": "228d5c8d0d91edf03ddb86a489c8232eeb7c08bc",
+      "after": "9dda9fba0aa9646a67596657d4ae9a7088903808"
+    },
+    "refs/remotes/origin/main": {
+      "before": "228d5c8d0d91edf03ddb86a489c8232eeb7c08bc",
+      "after": "9dda9fba0aa9646a67596657d4ae9a7088903808"
+    }
+  },
+  "tracking_refresh_actor": "unverified; Lead recorded no fetch command",
+  "worktree_registration_byte_identical_preflight": true,
+  "worktrees": [
+    {
+      "path": "C:\\Projects\\card-market-tracker",
+      "head": "f80bc8cdb877946f37d76b09212d68dd8da3e246",
+      "branch": "refs/heads/rework/p5b-rw03-publication-rollback",
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p1b-evidence\\qa",
+      "head": "252c394141948e3ab77a54bcf628e4290ba69652",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p1b-evidence\\reviewer",
+      "head": "252c394141948e3ab77a54bcf628e4290ba69652",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p1c-evidence\\qa-final",
+      "head": "d3dbd96c930599a29756476c1101e0ae599f2efa",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p1c-evidence\\qa-final-v2",
+      "head": "8af647697dd67859b38fc007d493a54642a1d62f",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p1c-evidence\\reviewer-final",
+      "head": "d3dbd96c930599a29756476c1101e0ae599f2efa",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p1c-evidence\\reviewer-final-v2",
+      "head": "8af647697dd67859b38fc007d493a54642a1d62f",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p3a-evidence\\qa",
+      "head": "e9c5f02e7f093dedff55b67f137c4446f22e8735",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p3a-evidence\\reviewer",
+      "head": "e9c5f02e7f093dedff55b67f137c4446f22e8735",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p4a-evidence\\p05b\\qa",
+      "head": "302e8d3f3155c14091d26841b8a230791109f220",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p4a-evidence\\p05b\\reviewer",
+      "head": "302e8d3f3155c14091d26841b8a230791109f220",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p4a-evidence\\qa",
+      "head": "c5ed228af831a2a6ed8a12c7072777d3908296a5",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p4a-evidence\\reviewer",
+      "head": "c5ed228af831a2a6ed8a12c7072777d3908296a5",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p4b-evidence\\qa",
+      "head": "775c106fa9aeee96bf5a637937526047fa4df7b3",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p4b-evidence\\qa-v2",
+      "head": "ab5e0fa7d4225c2ce137ce2261cd9686ef765a32",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p4b-evidence\\reviewer",
+      "head": "775c106fa9aeee96bf5a637937526047fa4df7b3",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p4b-evidence\\reviewer-v2",
+      "head": "ab5e0fa7d4225c2ce137ce2261cd9686ef765a32",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p4c-evidence\\qa-final",
+      "head": "9f4a280bf2b20294cecd656d11fc9a527ecadc45",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p4c-evidence\\qa-final-v2",
+      "head": "9fb53144dec521d0dde49c02d41022be831421c2",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p4c-evidence\\reviewer-final",
+      "head": "9f4a280bf2b20294cecd656d11fc9a527ecadc45",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p4c-evidence\\reviewer-final-v2",
+      "head": "9fb53144dec521d0dde49c02d41022be831421c2",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p5a-evidence\\qa-final",
+      "head": "dd35bc87bc98ed0189051f7d01611803b25e9970",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p5a-evidence\\qa-final-v2",
+      "head": "02ab89677afe11901ea5a2b1b8826604ce543c2f",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p5a-evidence\\reviewer-final",
+      "head": "dd35bc87bc98ed0189051f7d01611803b25e9970",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p5a-evidence\\reviewer-final-v2",
+      "head": "02ab89677afe11901ea5a2b1b8826604ce543c2f",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p5b-evidence\\qa-final",
+      "head": "8265ce8282432c8efbb2207bfb6456b12bffab5a",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p5b-evidence\\qa-final-v2",
+      "head": "150a611717df5a287eee66a036ee6417b70780d4",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p5b-evidence\\reviewer-final",
+      "head": "8265ce8282432c8efbb2207bfb6456b12bffab5a",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p5b-evidence\\reviewer-final-v2",
+      "head": "150a611717df5a287eee66a036ee6417b70780d4",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p5b-evidence\\rw01-integrated",
+      "head": "62ecd7ab792a93a6071b83277d870f1d95f61f9f",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p8b-evidence\\qa-final",
+      "head": "56e3e01956fe71a66456b92c23e2a86ec7e602eb",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p8b-evidence\\qa-final-v2",
+      "head": "9dab8a9b31dcc93cced8e90da20f81dae685661b",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p8b-evidence\\reviewer-final",
+      "head": "56e3e01956fe71a66456b92c23e2a86ec7e602eb",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker\\.p8b-evidence\\reviewer-final-v2",
+      "head": "9dab8a9b31dcc93cced8e90da20f81dae685661b",
+      "branch": null,
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker-p8c",
+      "head": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+      "branch": "refs/heads/feat/p8c-watchlist-signal-outbox",
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker-p8c-evidence-360da646",
+      "head": "82570887057a1421ca24d2d8ceea09eb2db7e706",
+      "branch": "refs/heads/evidence/p8c-360da646",
+      "clean": true
+    },
+    {
+      "path": "C:\\Projects\\card-market-tracker-p8c-rw01-evidence-d82aba73",
+      "head": "57bdf94391be307197df2a59526acf59bc6ff681",
+      "branch": "refs/heads/evidence/p8c-rw01-d82aba73",
+      "clean": true
+    }
+  ],
+  "all_clean": true,
+  "count": 37,
+  "live_main": "9dda9fba0aa9646a67596657d4ae9a7088903808",
+  "source_branch": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+  "historical_remote_evidence_refs_preserved": {
+    "evidence/p8c-360da646": "82570887057a1421ca24d2d8ceea09eb2db7e706",
+    "evidence/p8c-rw01-d82aba73": "57bdf94391be307197df2a59526acf59bc6ff681"
+  },
+  "commands": [
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "for-each-ref",
+        "--format=%(refname) %(objectname)",
+        "refs/heads",
+        "refs/remotes"
+      ],
+      "exit_code": 0,
+      "stdout": "refs/heads/chore/p0-foundation 49dc0792d210bbc56e164587319186c75e04a631\nrefs/heads/docs/p0-5-integration-record 253a5354d8645fa8c72cbd7038e213832ab8ce18\nrefs/heads/docs/p0-5-source-feasibility 61ab2fcb630e2504869b68c97ea8cd1385e4ee00\nrefs/heads/docs/p0-completion-report 9dbe338cb6bd33fb96e21417bb66248ce9de45ba\nrefs/heads/docs/p05b-real-source-qualification 302e8d3f3155c14091d26841b8a230791109f220\nrefs/heads/evidence/p8c-360da646 82570887057a1421ca24d2d8ceea09eb2db7e706\nrefs/heads/evidence/p8c-rw01-d82aba73 57bdf94391be307197df2a59526acf59bc6ff681\nrefs/heads/feat/p1a-catalog-core 93a17711cb75f91816e41279fe76069055391e50\nrefs/heads/feat/p1b-pinned-metadata-ingestion 252c394141948e3ab77a54bcf628e4290ba69652\nrefs/heads/feat/p1c-multi-revision-metadata-capture 8af647697dd67859b38fc007d493a54642a1d62f\nrefs/heads/feat/p3a-observation-persistence e9c5f02e7f093dedff55b67f137c4446f22e8735\nrefs/heads/feat/p4a-offline-temporal-discovery c5ed228af831a2a6ed8a12c7072777d3908296a5\nrefs/heads/feat/p4b-scoped-capture-discovery ab5e0fa7d4225c2ce137ce2261cd9686ef765a32\nrefs/heads/feat/p4c-discovery-result-journal 9fb53144dec521d0dde49c02d41022be831421c2\nrefs/heads/feat/p5a-offline-watchlist 02ab89677afe11901ea5a2b1b8826604ce543c2f\nrefs/heads/feat/p5b-watchlist-signal-journal 150a611717df5a287eee66a036ee6417b70780d4\nrefs/heads/feat/p8a-offline-alert-outbox cf3c8f17128a5459d4d0f9228b2f1456e120817b\nrefs/heads/feat/p8b-telegram-alert-delivery 9dab8a9b31dcc93cced8e90da20f81dae685661b\nrefs/heads/feat/p8c-watchlist-signal-outbox d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\nrefs/heads/main 5175d5b09e8d412e11b2ddf4c24bff41df133843\nrefs/heads/rework/p5b-rw03-publication-rollback f80bc8cdb877946f37d76b09212d68dd8da3e246\nrefs/remotes/origin/HEAD 9dda9fba0aa9646a67596657d4ae9a7088903808\nrefs/remotes/origin/chore/p0-foundation 49dc0792d210bbc56e164587319186c75e04a631\nrefs/remotes/origin/docs/p0-5-integration-record 253a5354d8645fa8c72cbd7038e213832ab8ce18\nrefs/remotes/origin/docs/p0-5-source-feasibility 61ab2fcb630e2504869b68c97ea8cd1385e4ee00\nrefs/remotes/origin/docs/p0-completion-report 9dbe338cb6bd33fb96e21417bb66248ce9de45ba\nrefs/remotes/origin/docs/p05b-real-source-qualification 302e8d3f3155c14091d26841b8a230791109f220\nrefs/remotes/origin/evidence/p8c-360da646 82570887057a1421ca24d2d8ceea09eb2db7e706\nrefs/remotes/origin/evidence/p8c-rw01-d82aba73 57bdf94391be307197df2a59526acf59bc6ff681\nrefs/remotes/origin/feat/p1a-catalog-core 93a17711cb75f91816e41279fe76069055391e50\nrefs/remotes/origin/feat/p1b-pinned-metadata-ingestion 252c394141948e3ab77a54bcf628e4290ba69652\nrefs/remotes/origin/feat/p1c-multi-revision-metadata-capture 8af647697dd67859b38fc007d493a54642a1d62f\nrefs/remotes/origin/feat/p3a-observation-persistence e9c5f02e7f093dedff55b67f137c4446f22e8735\nrefs/remotes/origin/feat/p4a-offline-temporal-discovery c5ed228af831a2a6ed8a12c7072777d3908296a5\nrefs/remotes/origin/feat/p4b-scoped-capture-discovery ab5e0fa7d4225c2ce137ce2261cd9686ef765a32\nrefs/remotes/origin/feat/p4c-discovery-result-journal 9fb53144dec521d0dde49c02d41022be831421c2\nrefs/remotes/origin/feat/p5a-offline-watchlist 02ab89677afe11901ea5a2b1b8826604ce543c2f\nrefs/remotes/origin/feat/p5b-watchlist-signal-journal 150a611717df5a287eee66a036ee6417b70780d4\nrefs/remotes/origin/feat/p8a-offline-alert-outbox cf3c8f17128a5459d4d0f9228b2f1456e120817b\nrefs/remotes/origin/feat/p8b-telegram-alert-delivery 9dab8a9b31dcc93cced8e90da20f81dae685661b\nrefs/remotes/origin/feat/p8c-watchlist-signal-outbox d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\nrefs/remotes/origin/main 9dda9fba0aa9646a67596657d4ae9a7088903808\nrefs/remotes/origin/rework/p5b-rw03-publication-rollback f80bc8cdb877946f37d76b09212d68dd8da3e246\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "symbolic-ref",
+        "refs/remotes/origin/HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "refs/remotes/origin/main\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "worktree",
+        "list",
+        "--porcelain"
+      ],
+      "exit_code": 0,
+      "stdout": "worktree C:/Projects/card-market-tracker\nHEAD f80bc8cdb877946f37d76b09212d68dd8da3e246\nbranch refs/heads/rework/p5b-rw03-publication-rollback\n\nworktree C:/Projects/card-market-tracker/.p1b-evidence/qa\nHEAD 252c394141948e3ab77a54bcf628e4290ba69652\ndetached\n\nworktree C:/Projects/card-market-tracker/.p1b-evidence/reviewer\nHEAD 252c394141948e3ab77a54bcf628e4290ba69652\ndetached\n\nworktree C:/Projects/card-market-tracker/.p1c-evidence/qa-final\nHEAD d3dbd96c930599a29756476c1101e0ae599f2efa\ndetached\n\nworktree C:/Projects/card-market-tracker/.p1c-evidence/qa-final-v2\nHEAD 8af647697dd67859b38fc007d493a54642a1d62f\ndetached\n\nworktree C:/Projects/card-market-tracker/.p1c-evidence/reviewer-final\nHEAD d3dbd96c930599a29756476c1101e0ae599f2efa\ndetached\n\nworktree C:/Projects/card-market-tracker/.p1c-evidence/reviewer-final-v2\nHEAD 8af647697dd67859b38fc007d493a54642a1d62f\ndetached\n\nworktree C:/Projects/card-market-tracker/.p3a-evidence/qa\nHEAD e9c5f02e7f093dedff55b67f137c4446f22e8735\ndetached\n\nworktree C:/Projects/card-market-tracker/.p3a-evidence/reviewer\nHEAD e9c5f02e7f093dedff55b67f137c4446f22e8735\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4a-evidence/p05b/qa\nHEAD 302e8d3f3155c14091d26841b8a230791109f220\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4a-evidence/p05b/reviewer\nHEAD 302e8d3f3155c14091d26841b8a230791109f220\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4a-evidence/qa\nHEAD c5ed228af831a2a6ed8a12c7072777d3908296a5\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4a-evidence/reviewer\nHEAD c5ed228af831a2a6ed8a12c7072777d3908296a5\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4b-evidence/qa\nHEAD 775c106fa9aeee96bf5a637937526047fa4df7b3\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4b-evidence/qa-v2\nHEAD ab5e0fa7d4225c2ce137ce2261cd9686ef765a32\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4b-evidence/reviewer\nHEAD 775c106fa9aeee96bf5a637937526047fa4df7b3\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4b-evidence/reviewer-v2\nHEAD ab5e0fa7d4225c2ce137ce2261cd9686ef765a32\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4c-evidence/qa-final\nHEAD 9f4a280bf2b20294cecd656d11fc9a527ecadc45\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4c-evidence/qa-final-v2\nHEAD 9fb53144dec521d0dde49c02d41022be831421c2\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4c-evidence/reviewer-final\nHEAD 9f4a280bf2b20294cecd656d11fc9a527ecadc45\ndetached\n\nworktree C:/Projects/card-market-tracker/.p4c-evidence/reviewer-final-v2\nHEAD 9fb53144dec521d0dde49c02d41022be831421c2\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5a-evidence/qa-final\nHEAD dd35bc87bc98ed0189051f7d01611803b25e9970\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5a-evidence/qa-final-v2\nHEAD 02ab89677afe11901ea5a2b1b8826604ce543c2f\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5a-evidence/reviewer-final\nHEAD dd35bc87bc98ed0189051f7d01611803b25e9970\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5a-evidence/reviewer-final-v2\nHEAD 02ab89677afe11901ea5a2b1b8826604ce543c2f\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5b-evidence/qa-final\nHEAD 8265ce8282432c8efbb2207bfb6456b12bffab5a\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5b-evidence/qa-final-v2\nHEAD 150a611717df5a287eee66a036ee6417b70780d4\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5b-evidence/reviewer-final\nHEAD 8265ce8282432c8efbb2207bfb6456b12bffab5a\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5b-evidence/reviewer-final-v2\nHEAD 150a611717df5a287eee66a036ee6417b70780d4\ndetached\n\nworktree C:/Projects/card-market-tracker/.p5b-evidence/rw01-integrated\nHEAD 62ecd7ab792a93a6071b83277d870f1d95f61f9f\ndetached\n\nworktree C:/Projects/card-market-tracker/.p8b-evidence/qa-final\nHEAD 56e3e01956fe71a66456b92c23e2a86ec7e602eb\ndetached\n\nworktree C:/Projects/card-market-tracker/.p8b-evidence/qa-final-v2\nHEAD 9dab8a9b31dcc93cced8e90da20f81dae685661b\ndetached\n\nworktree C:/Projects/card-market-tracker/.p8b-evidence/reviewer-final\nHEAD 56e3e01956fe71a66456b92c23e2a86ec7e602eb\ndetached\n\nworktree C:/Projects/card-market-tracker/.p8b-evidence/reviewer-final-v2\nHEAD 9dab8a9b31dcc93cced8e90da20f81dae685661b\ndetached\n\nworktree C:/Projects/card-market-tracker-p8c\nHEAD d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\nbranch refs/heads/feat/p8c-watchlist-signal-outbox\n\nworktree C:/Projects/card-market-tracker-p8c-evidence-360da646\nHEAD 82570887057a1421ca24d2d8ceea09eb2db7e706\nbranch refs/heads/evidence/p8c-360da646\n\nworktree C:/Projects/card-market-tracker-p8c-rw01-evidence-d82aba73\nHEAD 57bdf94391be307197df2a59526acf59bc6ff681\nbranch refs/heads/evidence/p8c-rw01-d82aba73\n\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker",
+        "-C",
+        "C:\\Projects\\card-market-tracker",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "f80bc8cdb877946f37d76b09212d68dd8da3e246\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1b-evidence/qa",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1b-evidence\\qa",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "252c394141948e3ab77a54bcf628e4290ba69652\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1b-evidence/reviewer",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1b-evidence\\reviewer",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "252c394141948e3ab77a54bcf628e4290ba69652\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1c-evidence/qa-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1c-evidence\\qa-final",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "d3dbd96c930599a29756476c1101e0ae599f2efa\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1c-evidence/qa-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1c-evidence\\qa-final",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker",
+        "-C",
+        "C:\\Projects\\card-market-tracker",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1b-evidence/qa",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1b-evidence\\qa",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1b-evidence/reviewer",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1b-evidence\\reviewer",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1c-evidence/reviewer-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1c-evidence\\reviewer-final",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "d3dbd96c930599a29756476c1101e0ae599f2efa\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1c-evidence/reviewer-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1c-evidence\\reviewer-final-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "8af647697dd67859b38fc007d493a54642a1d62f\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1c-evidence/qa-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1c-evidence\\qa-final-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "8af647697dd67859b38fc007d493a54642a1d62f\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p3a-evidence/qa",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p3a-evidence\\qa",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "e9c5f02e7f093dedff55b67f137c4446f22e8735\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1c-evidence/qa-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1c-evidence\\qa-final-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1c-evidence/reviewer-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1c-evidence\\reviewer-final-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p1c-evidence/reviewer-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p1c-evidence\\reviewer-final",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p3a-evidence/qa",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p3a-evidence\\qa",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4a-evidence/qa",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4a-evidence\\qa",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "c5ed228af831a2a6ed8a12c7072777d3908296a5\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p3a-evidence/reviewer",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p3a-evidence\\reviewer",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "e9c5f02e7f093dedff55b67f137c4446f22e8735\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4a-evidence/p05b/reviewer",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4a-evidence\\p05b\\reviewer",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "302e8d3f3155c14091d26841b8a230791109f220\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4a-evidence/p05b/qa",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4a-evidence\\p05b\\qa",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "302e8d3f3155c14091d26841b8a230791109f220\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4a-evidence/p05b/qa",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4a-evidence\\p05b\\qa",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4a-evidence/p05b/reviewer",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4a-evidence\\p05b\\reviewer",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4a-evidence/qa",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4a-evidence\\qa",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p3a-evidence/reviewer",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p3a-evidence\\reviewer",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4b-evidence/qa-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4b-evidence\\qa-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "ab5e0fa7d4225c2ce137ce2261cd9686ef765a32\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4b-evidence/reviewer",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4b-evidence\\reviewer",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "775c106fa9aeee96bf5a637937526047fa4df7b3\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4a-evidence/reviewer",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4a-evidence\\reviewer",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "c5ed228af831a2a6ed8a12c7072777d3908296a5\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4b-evidence/qa",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4b-evidence\\qa",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "775c106fa9aeee96bf5a637937526047fa4df7b3\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4a-evidence/reviewer",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4a-evidence\\reviewer",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4b-evidence/qa-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4b-evidence\\qa-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4b-evidence/reviewer",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4b-evidence\\reviewer",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4b-evidence/qa",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4b-evidence\\qa",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4c-evidence/qa-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4c-evidence\\qa-final-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "9fb53144dec521d0dde49c02d41022be831421c2\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4c-evidence/reviewer-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4c-evidence\\reviewer-final",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "9f4a280bf2b20294cecd656d11fc9a527ecadc45\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4b-evidence/reviewer-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4b-evidence\\reviewer-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "ab5e0fa7d4225c2ce137ce2261cd9686ef765a32\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4c-evidence/qa-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4c-evidence\\qa-final",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "9f4a280bf2b20294cecd656d11fc9a527ecadc45\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4c-evidence/reviewer-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4c-evidence\\reviewer-final",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4c-evidence/qa-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4c-evidence\\qa-final-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4b-evidence/reviewer-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4b-evidence\\reviewer-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4c-evidence/qa-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4c-evidence\\qa-final",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5a-evidence/qa-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5a-evidence\\qa-final-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "02ab89677afe11901ea5a2b1b8826604ce543c2f\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5a-evidence/reviewer-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5a-evidence\\reviewer-final",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "dd35bc87bc98ed0189051f7d01611803b25e9970\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5a-evidence/qa-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5a-evidence\\qa-final",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "dd35bc87bc98ed0189051f7d01611803b25e9970\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4c-evidence/reviewer-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4c-evidence\\reviewer-final-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "9fb53144dec521d0dde49c02d41022be831421c2\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5a-evidence/qa-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5a-evidence\\qa-final-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5a-evidence/reviewer-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5a-evidence\\reviewer-final",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p4c-evidence/reviewer-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p4c-evidence\\reviewer-final-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5a-evidence/qa-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5a-evidence\\qa-final",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5b-evidence/qa-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5b-evidence\\qa-final-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "150a611717df5a287eee66a036ee6417b70780d4\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5b-evidence/qa-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5b-evidence\\qa-final",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "8265ce8282432c8efbb2207bfb6456b12bffab5a\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5a-evidence/reviewer-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5a-evidence\\reviewer-final-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "02ab89677afe11901ea5a2b1b8826604ce543c2f\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5b-evidence/reviewer-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5b-evidence\\reviewer-final",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "8265ce8282432c8efbb2207bfb6456b12bffab5a\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5b-evidence/qa-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5b-evidence\\qa-final",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5b-evidence/reviewer-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5b-evidence\\reviewer-final",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5b-evidence/qa-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5b-evidence\\qa-final-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5a-evidence/reviewer-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5a-evidence\\reviewer-final-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5b-evidence/reviewer-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5b-evidence\\reviewer-final-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "150a611717df5a287eee66a036ee6417b70780d4\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p8b-evidence/qa-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p8b-evidence\\qa-final",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "56e3e01956fe71a66456b92c23e2a86ec7e602eb\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p8b-evidence/qa-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p8b-evidence\\qa-final-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "9dab8a9b31dcc93cced8e90da20f81dae685661b\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5b-evidence/rw01-integrated",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5b-evidence\\rw01-integrated",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "62ecd7ab792a93a6071b83277d870f1d95f61f9f\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p8b-evidence/qa-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p8b-evidence\\qa-final-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5b-evidence/rw01-integrated",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5b-evidence\\rw01-integrated",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p8b-evidence/qa-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p8b-evidence\\qa-final",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p5b-evidence/reviewer-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p5b-evidence\\reviewer-final-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c-evidence-360da646",
+        "-C",
+        "C:\\Projects\\card-market-tracker-p8c-evidence-360da646",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "82570887057a1421ca24d2d8ceea09eb2db7e706\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p8b-evidence/reviewer-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p8b-evidence\\reviewer-final",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "56e3e01956fe71a66456b92c23e2a86ec7e602eb\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "-C",
+        "C:\\Projects\\card-market-tracker-p8c",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p8b-evidence/reviewer-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p8b-evidence\\reviewer-final-v2",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "9dab8a9b31dcc93cced8e90da20f81dae685661b\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p8b-evidence/reviewer-final-v2",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p8b-evidence\\reviewer-final-v2",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker/.p8b-evidence/reviewer-final",
+        "-C",
+        "C:\\Projects\\card-market-tracker\\.p8b-evidence\\reviewer-final",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "-C",
+        "C:\\Projects\\card-market-tracker-p8c",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c-evidence-360da646",
+        "-C",
+        "C:\\Projects\\card-market-tracker-p8c-evidence-360da646",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c-rw01-evidence-d82aba73",
+        "-C",
+        "C:\\Projects\\card-market-tracker-p8c-rw01-evidence-d82aba73",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "57bdf94391be307197df2a59526acf59bc6ff681\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c-rw01-evidence-d82aba73",
+        "-C",
+        "C:\\Projects\\card-market-tracker-p8c-rw01-evidence-d82aba73",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/KastaTM/card-market-tracker/git/ref/heads/main"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"ref\":\"refs/heads/main\",\"node_id\":\"REF_kwDOU-pCa69yZWZzL2hlYWRzL21haW4\",\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/refs/heads/main\",\"object\":{\"sha\":\"9dda9fba0aa9646a67596657d4ae9a7088903808\",\"type\":\"commit\",\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/commits/9dda9fba0aa9646a67596657d4ae9a7088903808\"}}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/KastaTM/card-market-tracker/git/ref/heads/feat/p8c-watchlist-signal-outbox"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"ref\":\"refs/heads/feat/p8c-watchlist-signal-outbox\",\"node_id\":\"REF_kwDOU-pCa9oAK3JlZnMvaGVhZHMvZmVhdC9wOGMtd2F0Y2hsaXN0LXNpZ25hbC1vdXRib3g\",\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/refs/heads/feat/p8c-watchlist-signal-outbox\",\"object\":{\"sha\":\"d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\",\"type\":\"commit\",\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/commits/d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\"}}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/KastaTM/card-market-tracker/pulls/18"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18\",\"id\":5041353067,\"node_id\":\"PR_kwDOU-pCa88AAAABLHzxaw\",\"html_url\":\"https://github.com/KastaTM/card-market-tracker/pull/18\",\"diff_url\":\"https://github.com/KastaTM/card-market-tracker/pull/18.diff\",\"patch_url\":\"https://github.com/KastaTM/card-market-tracker/pull/18.patch\",\"issue_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/issues/18\",\"commits_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18/commits\",\"review_comments_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18/comments\",\"review_comment_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls/comments{/number}\",\"comments_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/issues/18/comments\",\"statuses_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/statuses/d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\",\"number\":18,\"state\":\"closed\",\"locked\":false,\"title\":\"P8c: offline Watchlist signal outbox\",\"user\":{\"login\":\"KastaTM\",\"id\":71529686,\"node_id\":\"MDQ6VXNlcjcxNTI5Njg2\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/71529686?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/KastaTM\",\"html_url\":\"https://github.com/KastaTM\",\"followers_url\":\"https://api.github.com/users/KastaTM/followers\",\"following_url\":\"https://api.github.com/users/KastaTM/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/KastaTM/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/KastaTM/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/KastaTM/subscriptions\",\"organizations_url\":\"https://api.github.com/users/KastaTM/orgs\",\"repos_url\":\"https://api.github.com/users/KastaTM/repos\",\"events_url\":\"https://api.github.com/users/KastaTM/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/KastaTM/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"body\":\"RW-01 fixes a writer/verifier invariant mismatch: independently valid P5a/P5b sources with the same watch_id/revision but different complete entries could both record and make verify/backup fail. The writer now completes one semantic fold inside BEGIN IMMEDIATE and rejects new incompatible entries with identity_conflict/exit2 before insertion. Corruption and same-ID replay conflict precedence are preserved; frozen schemas/identities/deadlines and prior source writers are unchanged.\\n\\nCorrected candidate d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c, tree dfd0414242cff364aad6082411ae88aef728783e. Exact unchanged pre-fix executable now passes;35new regressions,2250fulltests/1existing platform skip,94.15%line/88.31%branch. New independent QA17cases(default2/explicit5) and distinct REVIEWER28(default2)/all13files PASS.\\n\\nFour new jobs PASS in attempt1, all12harnesses and RW01 rejection in wheel/Compose/AMD64/ARM64-QEMU. [New CI](https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482), [complete corrective report](https://github.com/KastaTM/card-market-tracker/blob/57bdf94391be307197df2a59526acf59bc6ff681/docs/evidence/P8C_RW01_d82aba73/RW01_CORRECTIVE_IMPLEMENTATION_REPORT.md), [fresh reviews](https://github.com/KastaTM/card-market-tracker/blob/57bdf94391be307197df2a59526acf59bc6ff681/docs/evidence/P8C_RW01_d82aba73/INDEPENDENT_REVIEWS.md).\\nLead publicly read back58artifacts and49changed source/document blobs byte-for-byte. Evidence is separate; source HEAD is unchanged.\\n\\nLocalQEMU timing unavailable at documented Docker check; physicalPi not certified. Full write-time fold may timeout at capacity under unchanged2s/5s Budget. Previously corrupt stores are not repaired automatically. Old candidate/CI/READY records remain historical and superseded.\\n\\nP8c OPEN / REWORK_REQUIRED, awaiting Phase Lead review. Prior READY is not automatically restored. PR retained draft/unmerged; no phase closure or new phase.\\n\",\"labels\":[],\"milestone\":null,\"active_lock_reason\":null,\"created_at\":\"2026-10-27T21:24:40Z\",\"updated_at\":\"2026-10-28T17:38:34Z\",\"closed_at\":\"2026-10-28T17:38:33Z\",\"merged_at\":\"2026-10-28T17:38:33Z\",\"merge_commit_sha\":\"9dda9fba0aa9646a67596657d4ae9a7088903808\",\"assignee\":null,\"assignees\":[],\"requested_reviewers\":[],\"requested_teams\":[],\"head\":{\"label\":\"KastaTM:feat/p8c-watchlist-signal-outbox\",\"ref\":\"feat/p8c-watchlist-signal-outbox\",\"repo\":{\"id\":1407861355,\"node_id\":\"R_kgDOU-pCaw\",\"name\":\"card-market-tracker\",\"full_name\":\"KastaTM/card-market-tracker\",\"owner\":{\"login\":\"KastaTM\",\"id\":71529686,\"node_id\":\"MDQ6VXNlcjcxNTI5Njg2\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/71529686?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/KastaTM\",\"html_url\":\"https://github.com/KastaTM\",\"followers_url\":\"https://api.github.com/users/KastaTM/followers\",\"following_url\":\"https://api.github.com/users/KastaTM/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/KastaTM/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/KastaTM/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/KastaTM/subscriptions\",\"organizations_url\":\"https://api.github.com/users/KastaTM/orgs\",\"repos_url\":\"https://api.github.com/users/KastaTM/repos\",\"events_url\":\"https://api.github.com/users/KastaTM/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/KastaTM/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"private\":false,\"fork\":false,\"archived\":false,\"disabled\":false,\"description\":null,\"homepage\":null,\"language\":\"Python\",\"visibility\":\"public\",\"is_template\":false,\"topics\":[],\"forks_count\":0,\"forks\":0,\"stargazers_count\":0,\"watchers_count\":0,\"watchers\":0,\"open_issues_count\":0,\"open_issues\":0,\"size\":1880,\"default_branch\":\"main\",\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":false,\"has_discussions\":false,\"has_pull_requests\":true,\"pushed_at\":\"2026-10-28T17:38:33Z\",\"created_at\":\"2026-10-06T20:01:24Z\",\"updated_at\":\"2026-10-28T17:38:39Z\",\"allow_forking\":true,\"web_commit_signoff_required\":false,\"pull_request_creation_policy\":\"all\",\"license\":null,\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker\",\"html_url\":\"https://github.com/KastaTM/card-market-tracker\",\"archive_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/contributors\",\"deployments_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/deployments\",\"downloads_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/downloads\",\"events_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/events\",\"forks_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/forks\",\"git_commits_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/tags{/sha}\",\"git_url\":\"git://github.com/KastaTM/card-market-tracker.git\",\"issue_comment_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/languages\",\"merges_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/merges\",\"milestones_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/releases{/id}\",\"ssh_url\":\"git@github.com:KastaTM/card-market-tracker.git\",\"stargazers_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/stargazers\",\"statuses_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/subscribers\",\"subscription_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/subscription\",\"tags_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/tags\",\"teams_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/teams\",\"trees_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/trees{/sha}\",\"clone_url\":\"https://github.com/KastaTM/card-market-tracker.git\",\"mirror_url\":null,\"hooks_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/hooks\",\"svn_url\":\"https://github.com/KastaTM/card-market-tracker\"},\"sha\":\"d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\",\"user\":{\"login\":\"KastaTM\",\"id\":71529686,\"node_id\":\"MDQ6VXNlcjcxNTI5Njg2\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/71529686?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/KastaTM\",\"html_url\":\"https://github.com/KastaTM\",\"followers_url\":\"https://api.github.com/users/KastaTM/followers\",\"following_url\":\"https://api.github.com/users/KastaTM/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/KastaTM/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/KastaTM/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/KastaTM/subscriptions\",\"organizations_url\":\"https://api.github.com/users/KastaTM/orgs\",\"repos_url\":\"https://api.github.com/users/KastaTM/repos\",\"events_url\":\"https://api.github.com/users/KastaTM/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/KastaTM/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false}},\"base\":{\"label\":\"KastaTM:main\",\"ref\":\"main\",\"repo\":{\"id\":1407861355,\"node_id\":\"R_kgDOU-pCaw\",\"name\":\"card-market-tracker\",\"full_name\":\"KastaTM/card-market-tracker\",\"owner\":{\"login\":\"KastaTM\",\"id\":71529686,\"node_id\":\"MDQ6VXNlcjcxNTI5Njg2\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/71529686?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/KastaTM\",\"html_url\":\"https://github.com/KastaTM\",\"followers_url\":\"https://api.github.com/users/KastaTM/followers\",\"following_url\":\"https://api.github.com/users/KastaTM/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/KastaTM/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/KastaTM/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/KastaTM/subscriptions\",\"organizations_url\":\"https://api.github.com/users/KastaTM/orgs\",\"repos_url\":\"https://api.github.com/users/KastaTM/repos\",\"events_url\":\"https://api.github.com/users/KastaTM/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/KastaTM/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"private\":false,\"fork\":false,\"archived\":false,\"disabled\":false,\"description\":null,\"homepage\":null,\"language\":\"Python\",\"visibility\":\"public\",\"is_template\":false,\"topics\":[],\"forks_count\":0,\"forks\":0,\"stargazers_count\":0,\"watchers_count\":0,\"watchers\":0,\"open_issues_count\":0,\"open_issues\":0,\"size\":1880,\"default_branch\":\"main\",\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":false,\"has_discussions\":false,\"has_pull_requests\":true,\"pushed_at\":\"2026-10-28T17:38:33Z\",\"created_at\":\"2026-10-06T20:01:24Z\",\"updated_at\":\"2026-10-28T17:38:39Z\",\"allow_forking\":true,\"web_commit_signoff_required\":false,\"pull_request_creation_policy\":\"all\",\"license\":null,\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker\",\"html_url\":\"https://github.com/KastaTM/card-market-tracker\",\"archive_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/contributors\",\"deployments_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/deployments\",\"downloads_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/downloads\",\"events_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/events\",\"forks_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/forks\",\"git_commits_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/tags{/sha}\",\"git_url\":\"git://github.com/KastaTM/card-market-tracker.git\",\"issue_comment_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/languages\",\"merges_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/merges\",\"milestones_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/releases{/id}\",\"ssh_url\":\"git@github.com:KastaTM/card-market-tracker.git\",\"stargazers_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/stargazers\",\"statuses_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/subscribers\",\"subscription_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/subscription\",\"tags_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/tags\",\"teams_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/teams\",\"trees_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/trees{/sha}\",\"clone_url\":\"https://github.com/KastaTM/card-market-tracker.git\",\"mirror_url\":null,\"hooks_url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/hooks\",\"svn_url\":\"https://github.com/KastaTM/card-market-tracker\"},\"sha\":\"228d5c8d0d91edf03ddb86a489c8232eeb7c08bc\",\"user\":{\"login\":\"KastaTM\",\"id\":71529686,\"node_id\":\"MDQ6VXNlcjcxNTI5Njg2\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/71529686?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/KastaTM\",\"html_url\":\"https://github.com/KastaTM\",\"followers_url\":\"https://api.github.com/users/KastaTM/followers\",\"following_url\":\"https://api.github.com/users/KastaTM/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/KastaTM/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/KastaTM/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/KastaTM/subscriptions\",\"organizations_url\":\"https://api.github.com/users/KastaTM/orgs\",\"repos_url\":\"https://api.github.com/users/KastaTM/repos\",\"events_url\":\"https://api.github.com/users/KastaTM/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/KastaTM/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false}},\"_links\":{\"comments\":{\"href\":\"https://api.github.com/repos/KastaTM/card-market-tracker/issues/18/comments\"},\"commits\":{\"href\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18/commits\"},\"statuses\":{\"href\":\"https://api.github.com/repos/KastaTM/card-market-tracker/statuses/d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\"},\"html\":{\"href\":\"https://github.com/KastaTM/card-market-tracker/pull/18\"},\"issue\":{\"href\":\"https://api.github.com/repos/KastaTM/card-market-tracker/issues/18\"},\"review_comments\":{\"href\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18/comments\"},\"review_comment\":{\"href\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls/comments{/number}\"},\"self\":{\"href\":\"https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18\"}},\"author_association\":\"OWNER\",\"auto_merge\":null,\"draft\":false,\"merged\":true,\"mergeable\":true,\"rebaseable\":false,\"mergeable_state\":\"clean\",\"merged_by\":{\"login\":\"KastaTM\",\"id\":71529686,\"node_id\":\"MDQ6VXNlcjcxNTI5Njg2\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/71529686?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/KastaTM\",\"html_url\":\"https://github.com/KastaTM\",\"followers_url\":\"https://api.github.com/users/KastaTM/followers\",\"following_url\":\"https://api.github.com/users/KastaTM/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/KastaTM/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/KastaTM/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/KastaTM/subscriptions\",\"organizations_url\":\"https://api.github.com/users/KastaTM/orgs\",\"repos_url\":\"https://api.github.com/users/KastaTM/repos\",\"events_url\":\"https://api.github.com/users/KastaTM/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/KastaTM/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"comments\":5,\"review_comments\":0,\"maintainer_can_modify\":false,\"commits\":2,\"additions\":9906,\"deletions\":4,\"changed_files\":49}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/KastaTM/card-market-tracker/git/ref/heads/evidence/p8c-360da646"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"ref\":\"refs/heads/evidence/p8c-360da646\",\"node_id\":\"REF_kwDOU-pCa9oAIHJlZnMvaGVhZHMvZXZpZGVuY2UvcDhjLTM2MGRhNjQ2\",\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/refs/heads/evidence/p8c-360da646\",\"object\":{\"sha\":\"82570887057a1421ca24d2d8ceea09eb2db7e706\",\"type\":\"commit\",\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/commits/82570887057a1421ca24d2d8ceea09eb2db7e706\"}}",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/KastaTM/card-market-tracker/git/ref/heads/evidence/p8c-rw01-d82aba73"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"ref\":\"refs/heads/evidence/p8c-rw01-d82aba73\",\"node_id\":\"REF_kwDOU-pCa9oAJXJlZnMvaGVhZHMvZXZpZGVuY2UvcDhjLXJ3MDEtZDgyYWJhNzM\",\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/refs/heads/evidence/p8c-rw01-d82aba73\",\"object\":{\"sha\":\"57bdf94391be307197df2a59526acf59bc6ff681\",\"type\":\"commit\",\"url\":\"https://api.github.com/repos/KastaTM/card-market-tracker/git/commits/57bdf94391be307197df2a59526acf59bc6ff681\"}}",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+# P8c — ORCHESTRATOR INTEGRATION AUTHORIZATION
+
+## MODEL PROFILE
+
+**ChatGPT Phase Lead:** GPT-6 / High, para supervisión y revisión final.
+
+**Codex Engineering Lead:** `gpt-6.1-sol` / Medium.
+
+**Escalado a High:** discrepancias Git, anomalías del merge, CI fallido, árboles diferentes, problemas de recuperación o integridad.
+
+Utilizar especialistas independientes de solo lectura cuando sean necesarios para revisar la integración, sin delegar simultáneamente escrituras Git.
+
+## 1. Decisión vinculante del Orchestrator
+
+El Orchestrator ha emitido:
+
+- **RW-01: RESOLVED — PASS**
+- **P8c candidate: ACCEPTED**
+- **INTEGRATION_AUTHORIZED — PR #18 mediante merge commit**
+
+Autorización limitada al candidato y base exactos:
+
+```text
+Repository: KastaTM/card-market-tracker
+PR: 18
+Base/main: 228d5c8d0d91edf03ddb86a489c8232eeb7c08bc
+HEAD: d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c
+Tree: dfd0414242cff364aad6082411ae88aef728783e
+```
+
+El Phase Lead ha comprobado nuevamente las identidades remotas y los cuatro jobs PASS.
+
+**P8c continúa OPEN hasta la revisión de integración.**
+
+## 2. Preflight local y remoto obligatorio
+
+Antes de realizar ninguna operación que modifique GitHub:
+
+- Comprobar repository origin, PR #18, rama, base, HEAD, árbol, estado mergeable y ausencia de merge previo.
+- Revalidar live `main` y el HEAD del PR contra los SHA autorizados.
+- Comprobar los checks obligatorios asociados al candidato exacto.
+- Comprobar los worktrees locales: P8c, checkout original y worktrees históricos. Deben conservarse sin operaciones destructivas.
+- Verificar que el checkout P8c está limpio.
+- Comprobar que no existen cambios de producto o documentación posteriores al candidato aceptado.
+- No actualizar, resetear, eliminar, podar ni reescribir ramas/worktrees.
+- No modificar ACL, propietarios, configuración global Git ni branch protection.
+- Usar `safe.directory` específico por invocación únicamente si continúa siendo necesario.
+
+Si algún dato cambia o no se puede comprobar, detenerse antes de modificar el PR y emitir BLOCKED con la discrepancia exacta.
+
+No interpretar los checks del PR como checks posteriores al merge.
+
+## 3. Integración autorizada
+
+Solo cuando todo el preflight sea PASS:
+
+```powershell
+gh pr ready 18 --repo KastaTM/card-market-tracker
+```
+
+Comprobar que el PR ha salido de draft y que `main`, HEAD, árbol y checks continúan cumpliendo las condiciones autorizadas.
+
+Después, ejecutar exactamente:
+
+```powershell
+gh pr merge 18 --repo KastaTM/card-market-tracker --merge --match-head-commit d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c
+```
+
+No utilizar squash, rebase, force push, auto-merge ni eliminación de ramas.
+
+Si GitHub rechaza el merge, **no reintentarlo automáticamente**. Registrar respuesta y estado remoto.
+
+## 4. Verificación estructural posterior al merge
+
+Obtener el SHA real de integración desde GitHub y verificar:
+
+1. El nuevo commit tiene exactamente dos padres, en este orden:
+   - `228d5c8d0d91edf03ddb86a489c8232eeb7c08bc`
+   - `d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c`
+2. Su árbol es exactamente `dfd0414242cff364aad6082411ae88aef728783e`.
+3. El diff de contenido entre HEAD aceptado y merge es vacío.
+4. `refs/heads/main` remoto apunta exactamente al merge real.
+5. El PR #18 figura como merged mediante merge commit.
+6. Los worktrees y ramas históricas no han sido eliminados ni modificados destructivamente.
+
+No asumir PASS basándose únicamente en que `gh pr merge` devuelva exit 0.
+
+## 5. Nuevo CI de push/main
+
+Identificar la ejecución generada por el merge real y comprobar que está asociada al commit integrado, no al antiguo test-merge del PR.
+
+Los cuatro jobs obligatorios deben estar completados correctamente:
+
+- Quality.
+- Docker Compose.
+- Linux AMD64.
+- Linux ARM64/QEMU.
+
+Exigir doce harnesses PASS por entorno, incluidos el harness Watchlist Signal Outbox y la regresión RW-01.
+
+Quality debe conservar Ruff, mypy, pytest completo, cobertura, build, auditoría y secret scan, sin reducir umbrales ni introducir skips.
+
+No reutilizar como evidencia de push/main el run histórico `40685550482`.
+
+Si falla un job, conservar el fallo y detener la aceptación de integración. No autorizar reruns automáticos.
+
+## 6. Publicación y readback
+
+Elaborar un **P8c Integration Completion Report** que incluya:
+
+- Autorización y alcance.
+- Preflight local/remoto.
+- PR, base, HEAD y árbol autorizados.
+- Comandos efectivamente ejecutados y sus salidas.
+- Merge real y padres ordenados.
+- Identidad del árbol y diff vacío.
+- `main` remoto actualizado.
+- Nuevo run push/main y sus cuatro logs completos.
+- Evidencias de los 48 harnesses.
+- Quality Gates PASS/FAIL.
+- Preservación de worktrees y ramas.
+- Evidencias históricas RW-01 conservadas.
+- Limitaciones y cualquier fallo residual.
+
+Publicar el informe y las evidencias en la ubicación documental establecida sin introducir cambios adicionales no autorizados en `main`.
+
+Recuperar lo publicado desde GitHub y comprobar byte a byte los artefactos contra su manifiesto.
+
+Registrar enlaces inmutables, commit de evidencia y readback.
+
+## 7. Handoff
+
+Devolver al Phase Lead el informe completo con una de estas conclusiones:
+
+**INTEGRATION_VERIFIED — PASS**, únicamente si todas las condiciones anteriores están acreditadas.
+
+**INTEGRATION_BLOCKED**, ante discrepancias de identidad, falta de evidencia o fallos de gates.
+
+No declarar PHASE CLOSED ni abrir fases adicionales.
+
+Mantener P5 global, TD-001–TD-005 y los bloqueos de fuentes en sus estados existentes. No habilitar entrega real de alertas Watchlist a Telegram.
+
+Detenerse después de publicar el Integration Completion Report y obtener su readback.

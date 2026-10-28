@@ -1,0 +1,28 @@
+{
+  "rw01_resolution": "RESOLVED - PASS by supplied Orchestrator authorization",
+  "candidate_acceptance": "ACCEPTED by supplied Orchestrator authorization",
+  "historical_defective_candidate": {
+    "head": "360da646892e46545ca70e8838bc3a2a89e460a3",
+    "pr_run": 40586563511,
+    "evidence_commit": "82570887057a1421ca24d2d8ceea09eb2db7e706",
+    "meaning": "Historical green CI did not detect RW01; never integration evidence"
+  },
+  "accepted_rw01_candidate": {
+    "head": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+    "tree": "dfd0414242cff364aad6082411ae88aef728783e",
+    "pr_run": 40685550482,
+    "virtual_merge": "edbd41c4cf118dbf462674738ddfa05513a92379",
+    "evidence_commit": "57bdf94391be307197df2a59526acf59bc6ff681",
+    "report": "docs/evidence/P8C_RW01_d82aba73/RW01_CORRECTIVE_IMPLEMENTATION_REPORT.md",
+    "final_readback_comment": "https://github.com/KastaTM/card-market-tracker/pull/18#issuecomment-6473461601",
+    "meaning": "Accepted correction, independent QA/reviewer and retained failure-first evidence; not push/main proof"
+  },
+  "new_integration": {
+    "merge": "9dda9fba0aa9646a67596657d4ae9a7088903808",
+    "run": 40737659939,
+    "event": "push",
+    "branch": "main"
+  },
+  "historical_records_not_overwritten": true,
+  "prior_connected_app_branch_creation_HTTP403": "Historical supplied fact, no remote write; not reproduced during this normal gh integration"
+}
