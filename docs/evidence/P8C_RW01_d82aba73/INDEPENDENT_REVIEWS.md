@@ -39,3 +39,19 @@ rebuilt/ran12harnesses outside source. Role attestations are agent executions,
 not human GitHub approval reviews. No QA/Reviewer authored product or reused
 old360attestations. CI remains separate and ARM64 pending at this snapshot.
 Requested/observable specialist arguments gpt-6.1-sol/high; backend unverified.
+
+## Completed additional public readback
+
+[QA public record](qa-public-readback-5872a891.json): independently fetched
+immutable source/final artifact via GitHub, checked exact canonical hashes and
+ACTUALLY replayed the downloaded complete archive-loader at12:32:21..23UTC.
+Original360probe failed as expected; no private helper or changed product used.
+
+[REVIEWER public record](reviewer-public-readback-5872a891.json):14selected
+published artifacts verified; all3then-complete raw Actions logs exactly match
+published full logs after documented sanitization;36harness and3RW01markers.
+Actual testmerge source/tree verified through live GitHub API. No findings.
+Its snapshot correctly leaves ARM64 pending; Lead final collector/readback verifies
+the later completed fourth job. No retroactive specialist ARM64 execution claim.
+
+All mandatory remote4jobs subsequently PASS. Product candidate unchanged.

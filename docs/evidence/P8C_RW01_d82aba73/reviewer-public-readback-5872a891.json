@@ -1,0 +1,277 @@
+﻿{
+  "version": 1,
+  "role": "independent-final-reviewer-publication-readback",
+  "agent": "/root/p8c_rw01_reviewer",
+  "evidence_commit": "5872a89191f817583fe5c23989ffa0f6a58c8be0",
+  "candidate_head": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+  "candidate_tree": "dfd0414242cff364aad6082411ae88aef728783e",
+  "checked_utc": "2026-10-28 12:32:59 UTC",
+  "method": "Independent GitHub connector reads; full direct Actions log fetches compared with public sanitized artifacts; standard SHA256 independently implemented with empty/abc known-answer self-tests",
+  "artifacts": [
+    {
+      "url": "https://github.com/KastaTM/card-market-tracker/blob/5872a89191f817583fe5c23989ffa0f6a58c8be0/docs/evidence/P8C_RW01_d82aba73/README.md",
+      "actual": "913a19a8d2e7b82b0e3fb11cd0b3cc807885c0257a4e08b94b7d32b303335d2a",
+      "expected": "913a19a8d2e7b82b0e3fb11cd0b3cc807885c0257a4e08b94b7d32b303335d2a",
+      "match": true
+    },
+    {
+      "url": "https://github.com/KastaTM/card-market-tracker/blob/5872a89191f817583fe5c23989ffa0f6a58c8be0/docs/evidence/P8C_RW01_d82aba73/INDEPENDENT_REVIEWS.md",
+      "actual": "3513ee6b80f8ee50bd011a154b8dc5a80a86de3a8484bb158e7e1828b4ca8ca3",
+      "expected": "3513ee6b80f8ee50bd011a154b8dc5a80a86de3a8484bb158e7e1828b4ca8ca3",
+      "match": true
+    },
+    {
+      "url": "https://github.com/KastaTM/card-market-tracker/blob/5872a89191f817583fe5c23989ffa0f6a58c8be0/docs/evidence/P8C_RW01_d82aba73/reviewer-final.json",
+      "actual": "e06f983e388695520dca48bcae3767620b603eb92d60e68723a191080529b1bb",
+      "expected": "e06f983e388695520dca48bcae3767620b603eb92d60e68723a191080529b1bb",
+      "match": true
+    },
+    {
+      "url": "https://github.com/KastaTM/card-market-tracker/blob/5872a89191f817583fe5c23989ffa0f6a58c8be0/docs/evidence/P8C_RW01_d82aba73/ci-completed-before-arm64.json",
+      "actual": "038276ef1246117b4cabfd89400b1199b297bb3946402fb7236bc46218a2e742",
+      "expected": "038276ef1246117b4cabfd89400b1199b297bb3946402fb7236bc46218a2e742",
+      "match": true
+    },
+    {
+      "url": "https://github.com/KastaTM/card-market-tracker/blob/5872a89191f817583fe5c23989ffa0f6a58c8be0/docs/evidence/P8C_RW01_d82aba73/ci-quality.log",
+      "actual": "8a1c944c9bbd7b3de056da2f29c0725c66e9dcd96caed28fbda13d76ab0fd0d0",
+      "expected": "8a1c944c9bbd7b3de056da2f29c0725c66e9dcd96caed28fbda13d76ab0fd0d0",
+      "match": true
+    },
+    {
+      "url": "https://github.com/KastaTM/card-market-tracker/blob/5872a89191f817583fe5c23989ffa0f6a58c8be0/docs/evidence/P8C_RW01_d82aba73/ci-compose.log",
+      "actual": "89c5e8e1e2f28c0bcd5cd3ae316ccf82cd20a56da5a586629b408e843dd52142",
+      "expected": "89c5e8e1e2f28c0bcd5cd3ae316ccf82cd20a56da5a586629b408e843dd52142",
+      "match": true
+    },
+    {
+      "url": "https://github.com/KastaTM/card-market-tracker/blob/5872a89191f817583fe5c23989ffa0f6a58c8be0/docs/evidence/P8C_RW01_d82aba73/ci-container-amd64.log",
+      "actual": "3b14b50da3955c48e8832a39efa788511caf4ffdff9e357a2085fa5e605537cf",
+      "expected": "3b14b50da3955c48e8832a39efa788511caf4ffdff9e357a2085fa5e605537cf",
+      "match": true
+    },
+    {
+      "url": "https://github.com/KastaTM/card-market-tracker/blob/5872a89191f817583fe5c23989ffa0f6a58c8be0/docs/evidence/P8C_RW01_d82aba73/pre-fix-public-invariant-probe.py",
+      "actual": "2d849cdbeae6b19395eb9c00520755a07748d0d1c3ddbb0373d1d1aa5c149725",
+      "expected": "2d849cdbeae6b19395eb9c00520755a07748d0d1c3ddbb0373d1d1aa5c149725",
+      "match": true
+    },
+    {
+      "url": "https://github.com/KastaTM/card-market-tracker/blob/5872a89191f817583fe5c23989ffa0f6a58c8be0/docs/evidence/P8C_RW01_d82aba73/pre-fix-public-originals.log",
+      "actual": "ba51fdf1e6642567493ece2e1c529c36ef846c1504290bc042c27633b9a15695",
+      "expected": "ba51fdf1e6642567493ece2e1c529c36ef846c1504290bc042c27633b9a15695",
+      "match": true
+    },
+    {
+      "url": "https://github.com/KastaTM/card-market-tracker/blob/5872a89191f817583fe5c23989ffa0f6a58c8be0/docs/evidence/P8C_RW01_d82aba73/post-fix-exact-same-probe.log",
+      "actual": "1806eb80ea199b8eb7ff366262e457eeccbf0ea93379e87bb6e76f6490985369",
+      "expected": "1806eb80ea199b8eb7ff366262e457eeccbf0ea93379e87bb6e76f6490985369",
+      "match": true
+    },
+    {
+      "url": "https://github.com/KastaTM/card-market-tracker/blob/5872a89191f817583fe5c23989ffa0f6a58c8be0/docs/evidence/P8C_RW01_d82aba73/qa-final.json",
+      "actual": "46c270f8b55c8096152594a5f0ffe7bd0df8c1f036a7cacd4c59fc53b5473b33",
+      "expected": "46c270f8b55c8096152594a5f0ffe7bd0df8c1f036a7cacd4c59fc53b5473b33",
+      "match": true
+    },
+    {
+      "url": "https://github.com/KastaTM/card-market-tracker/blob/5872a89191f817583fe5c23989ffa0f6a58c8be0/docs/evidence/P8C_RW01_d82aba73/collect_ci.py",
+      "actual": "fe36dac75eafd8a57eff67ed696b8ade35868c3970eed04c506fd610ba0c43ad",
+      "expected": "fe36dac75eafd8a57eff67ed696b8ade35868c3970eed04c506fd610ba0c43ad",
+      "match": true
+    },
+    {
+      "url": "https://github.com/KastaTM/card-market-tracker/blob/5872a89191f817583fe5c23989ffa0f6a58c8be0/docs/evidence/P8C_RW01_d82aba73/full-suite.log",
+      "actual": "adc8871242be2920c5d5179f950fe431d6d286a4b60c955aedf32da9d9a81ea4",
+      "expected": "adc8871242be2920c5d5179f950fe431d6d286a4b60c955aedf32da9d9a81ea4",
+      "match": true
+    },
+    {
+      "url": "https://github.com/KastaTM/card-market-tracker/blob/5872a89191f817583fe5c23989ffa0f6a58c8be0/docs/evidence/P8C_RW01_d82aba73/coverage.log",
+      "actual": "64f91615ef781eb5d177e53e47d48b85081122d68392c661a8753b50de4a9aa0",
+      "expected": "64f91615ef781eb5d177e53e47d48b85081122d68392c661a8753b50de4a9aa0",
+      "match": true
+    }
+  ],
+  "canonical_reviewer_probe": {
+    "url": "https://github.com/KastaTM/card-market-tracker/blob/d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c/scripts/p8c_rw01_reviewer_probe.py",
+    "sha256": "599c99623f0083841d47b073d4a44c733277a87aca0497716510ca3daa276e17",
+    "matches_reviewed_code": true
+  },
+  "pr_comment": {
+    "url": "https://github.com/KastaTM/card-market-tracker/pull/18#issuecomment-6468979547",
+    "id": 6468979547,
+    "correct_candidate_and_suspended_readiness": true
+  },
+  "full_direct_api_job_logs": [
+    {
+      "job": 122806861711,
+      "raw_sha256": "a60b8641a0c16cdc6af6a8f22fe14a0d4f59e21dd4d8c968dd15bbcd2f0782de",
+      "published_sha256": "8a1c944c9bbd7b3de056da2f29c0725c66e9dcd96caed28fbda13d76ab0fd0d0",
+      "exact_sanitized_match": true,
+      "repository_artifact": "https://github.com/KastaTM/card-market-tracker/blob/5872a89191f817583fe5c23989ffa0f6a58c8be0/docs/evidence/P8C_RW01_d82aba73/ci-quality.log"
+    },
+    {
+      "job": 122806861332,
+      "raw_sha256": "721520716391d8bb41d538808f594cbf8154cc11182e00bbeda48c0432d07f6c",
+      "published_sha256": "89c5e8e1e2f28c0bcd5cd3ae316ccf82cd20a56da5a586629b408e843dd52142",
+      "exact_sanitized_match": true,
+      "repository_artifact": "https://github.com/KastaTM/card-market-tracker/blob/5872a89191f817583fe5c23989ffa0f6a58c8be0/docs/evidence/P8C_RW01_d82aba73/ci-compose.log"
+    },
+    {
+      "job": 122806861943,
+      "raw_sha256": "437702eae72a534ff9098376611ad35fea636bef28f6aa4e8d0bc4a0994a132b",
+      "published_sha256": "3b14b50da3955c48e8832a39efa788511caf4ffdff9e357a2085fa5e605537cf",
+      "exact_sanitized_match": true,
+      "repository_artifact": "https://github.com/KastaTM/card-market-tracker/blob/5872a89191f817583fe5c23989ffa0f6a58c8be0/docs/evidence/P8C_RW01_d82aba73/ci-container-amd64.log"
+    }
+  ],
+  "harness_markers": {
+    "ci-quality.log": {
+      "markers": {
+        "catalog": true,
+        "persistence": true,
+        "discovery": true,
+        "pinned": true,
+        "scoped": true,
+        "multi_revision": true,
+        "discovery_journal": true,
+        "alert_outbox": true,
+        "telegram_fake": true,
+        "watchlist": true,
+        "watchlist_journal": true,
+        "watchlist_alert_outbox": true
+      },
+      "rw01_marker": true,
+      "checkout": true,
+      "complete_cleanup": true
+    },
+    "ci-compose.log": {
+      "markers": {
+        "catalog": true,
+        "persistence": true,
+        "discovery": true,
+        "pinned": true,
+        "scoped": true,
+        "multi_revision": true,
+        "discovery_journal": true,
+        "alert_outbox": true,
+        "telegram_fake": true,
+        "watchlist": true,
+        "watchlist_journal": true,
+        "watchlist_alert_outbox": true
+      },
+      "rw01_marker": true,
+      "checkout": true,
+      "complete_cleanup": true
+    },
+    "ci-container-amd64.log": {
+      "markers": {
+        "catalog": true,
+        "persistence": true,
+        "discovery": true,
+        "pinned": true,
+        "scoped": true,
+        "multi_revision": true,
+        "discovery_journal": true,
+        "alert_outbox": true,
+        "telegram_fake": true,
+        "watchlist": true,
+        "watchlist_journal": true,
+        "watchlist_alert_outbox": true
+      },
+      "rw01_marker": true,
+      "checkout": true,
+      "complete_cleanup": true
+    }
+  },
+  "actual_checkout": {
+    "url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/commits/edbd41c4cf118dbf462674738ddfa05513a92379",
+    "sha": "edbd41c4cf118dbf462674738ddfa05513a92379",
+    "tree": "dfd0414242cff364aad6082411ae88aef728783e",
+    "parents": [
+      "228d5c8d0d91edf03ddb86a489c8232eeb7c08bc",
+      "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c"
+    ]
+  },
+  "live_jobs_url": "https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482",
+  "live_jobs": [
+    {
+      "id": 122806861332,
+      "name": "compose",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 122806861711,
+      "name": "quality",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 122806861716,
+      "name": "container (linux/arm64)",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 122806861943,
+      "name": "container (linux/amd64)",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "runtime_evidence": {
+    "quality": {
+      "python": "3.13.15",
+      "sqlite": "3.53.1"
+    },
+    "compose": {
+      "python": "3.13.16",
+      "sqlite": "3.46.1"
+    },
+    "amd64": {
+      "python": "3.13.16",
+      "sqlite": "3.46.1"
+    }
+  },
+  "primary_reproduction": {
+    "source_sha256": "2d849cdbeae6b19395eb9c00520755a07748d0d1c3ddbb0373d1d1aa5c149725",
+    "same_executable_before_after": true,
+    "before": {
+      "head": "360da646892e46545ca70e8838bc3a2a89e460a3",
+      "two_recorded": true,
+      "verify": "storage_corrupt",
+      "backup": "storage_corrupt"
+    },
+    "after": {
+      "head": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+      "second_enqueue": {
+        "error_category": "identity_conflict",
+        "exit_code": 2
+      },
+      "verify": "ok",
+      "backup": "ok",
+      "preserved": true,
+      "zero_product_sockets": true
+    }
+  },
+  "publication_source_completeness": {
+    "original_probe_complete": true,
+    "canonical_qa_and_reviewer_probe_helpers_in_candidate": true,
+    "qa_historical_control_archive_loader_complete": true,
+    "no_private_path_only_reproduction": true
+  },
+  "local_gate_claims_verified_from_published_logs": {
+    "unfiltered_native_suite": "2250 passed, 1 skipped, 8 subtests passed in 324.50s",
+    "runtime_lines": "94.15%",
+    "runtime_branches": "88.31%"
+  },
+  "findings": [],
+  "verdict": "PASS for this published subset and three completed CI jobs; prior exact-candidate code verdict retained",
+  "limitations": [
+    "ARM64/QEMU still in_progress at direct API read; no four-job/overall readiness claim",
+    "reviewed 14 selected artifacts, not a claim of independently comparing all 50",
+    "no new suite run, product change, merge, phase acceptance or closure"
+  ]
+}

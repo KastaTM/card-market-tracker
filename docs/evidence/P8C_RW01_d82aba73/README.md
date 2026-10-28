@@ -1,4 +1,4 @@
-# P8c RW-01 evidence - new candidate, ARM64 pending
+# P8c RW-01 final corrective evidence
 
 Prepared2026-10-28. P8c OPEN / REWORK_REQUIRED.
 Old engineering READY recommendation suspended by Orchestrator/Phase Lead.
@@ -73,8 +73,9 @@ First11harness Git blobs unchanged.
 
 New run40685550482 attempt1, associated head d82aba73.
 [quality](ci-quality.log),[Compose](ci-compose.log),[AMD64](ci-container-amd64.log) PASS.
-ARM64/QEMU is pending at this publication; final mandatory four-job gate not yet
-complete. No READY claim. [Completed-job digests](ci-completed-before-arm64.json).
+ARM64/QEMU now also PASS in attempt1: all4jobs complete,48harness markers and
+4RW01 markers verified. See [full corrective report](RW01_CORRECTIVE_IMPLEMENTATION_REPORT.md).
+The initial5872a891 snapshot correctly recorded ARM64 pending at that time. [Completed-job digests](ci-completed-before-arm64.json).
 [Collector](collect_ci.py) validates actual testcheckoutedbd41c4cf118dbf462674738ddfa05513a92379,
 whose tree is exactlydfd04142, parentsbaseline228/candidated82. No merge into main.
 
@@ -97,7 +98,7 @@ No original failure/code/CI overwritten.
 
 Local Docker info still fails absent dockerDesktopLinuxEngine pipe despite
 punctual escalation. No local container/image/config/ACL change; localQEMU timing
-unavailable. Mandatory remoteARM64 still required; no physicalPi certification.
+unavailable. Required remoteARM64 now PASS separately; no physicalPi certification.
 Trusted directories/immutable revisions; no global multiDB atomicity/authenticated
 producer/dedup acrosscopies or send consent. Preexisting contradictory stores
 remain corruption, never auto-repaired/migrated/pruned. Only verified good backup

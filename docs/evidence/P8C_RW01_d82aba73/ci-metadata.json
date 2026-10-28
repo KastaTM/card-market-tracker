@@ -1,0 +1,957 @@
+{
+  "actual_pr_checkout": {
+    "author": {
+      "date": "2026-10-28T12:09:39Z",
+      "email": "71529686+KastaTM@users.noreply.github.com",
+      "name": "Rodrigo Casta\u00f1\u00f3n Mart\u00ednez"
+    },
+    "committer": {
+      "date": "2026-10-28T12:09:39Z",
+      "email": "noreply@github.com",
+      "name": "GitHub"
+    },
+    "html_url": "https://github.com/KastaTM/card-market-tracker/commit/edbd41c4cf118dbf462674738ddfa05513a92379",
+    "message": "Merge d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c into 228d5c8d0d91edf03ddb86a489c8232eeb7c08bc",
+    "node_id": "C_kwDOU-pCa9oAKGVkYmQ0MWM0Y2YxMThkYmY0NjI2NzQ3MzhkZGZhMDU1MTNhOTIzNzk",
+    "parents": [
+      {
+        "html_url": "https://github.com/KastaTM/card-market-tracker/commit/228d5c8d0d91edf03ddb86a489c8232eeb7c08bc",
+        "sha": "228d5c8d0d91edf03ddb86a489c8232eeb7c08bc",
+        "url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/commits/228d5c8d0d91edf03ddb86a489c8232eeb7c08bc"
+      },
+      {
+        "html_url": "https://github.com/KastaTM/card-market-tracker/commit/d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+        "sha": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+        "url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/commits/d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c"
+      }
+    ],
+    "sha": "edbd41c4cf118dbf462674738ddfa05513a92379",
+    "tree": {
+      "sha": "dfd0414242cff364aad6082411ae88aef728783e",
+      "url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/trees/dfd0414242cff364aad6082411ae88aef728783e"
+    },
+    "url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/commits/edbd41c4cf118dbf462674738ddfa05513a92379",
+    "verification": {
+      "payload": "tree dfd0414242cff364aad6082411ae88aef728783e\nparent 228d5c8d0d91edf03ddb86a489c8232eeb7c08bc\nparent d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\nauthor Rodrigo Casta\u00f1\u00f3n Mart\u00ednez <71529686+KastaTM@users.noreply.github.com> 1793189379 +0100\ncommitter GitHub <noreply@github.com> 1793189379 +0100\n\nMerge d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c into 228d5c8d0d91edf03ddb86a489c8232eeb7c08bc\n",
+      "reason": "valid",
+      "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJq4eYDCRC1aQ7uu5UhlAAAR4gQAKPWeHcu4OClxIEJNkmI6k95\nnZgAq2Hj7onEZJ3WXroSwwffIcvl7W09XWq2935UJjwnZULKicQSpey+X5bziChk\nm6w+qLkDchx6j5/Aai5fP5YQSMhkW6ch98T/YIze5nnGn0ITnS4F7GO59Hi/0wQv\nesKtoQifMnMIu1m268jSkH5LAuf8BXwi3B8Ee+FEizbO0nAAycQi6YH1ClQBj1jF\nMlXFm76eI5Gp8J8mosBkurudczRSpeuzVdgFIWjYv6l2vSZQRxIw9uz1PQEsaVQR\n38kgam40iR0D0bHT5VGvXL5xKyQJJAg3fWs979JwgrAQzjX1kmy7kbISnKHljO3r\nntdGR0hkVb02GLJ7ic3mbMtG25A/HRG/hdZ1UACkL2cEOtJ/rXIt376lF5kue3e2\nZc0Xjg/PKTXGm6PJiZ+OQHV0TGF411GgxBwpQz4hKerA3Tm3cTaMFot44lJ7TZ8g\nw5F2l6QCVQc2O/KX75ZWQkhWujeDH5VahSPjpgPcP3NoVP3LCtOq9nXJo4+aT6zT\nKKiXbtRA+F9j/NjgoMfy6h1TL6oylBfc3+ZzN6yOpvke0kmK7H4WSyk9Yt42HEyi\nBHzEUwNYRWwqCO4hlNgbGIuq/aS29coWJ2gXQU+MIYoxKJSy/PdB0QMt77FVHy7K\n7gUEQ1FbrK11qRawzPwG\n=/hOL\n-----END PGP SIGNATURE-----\n",
+      "verified": true,
+      "verified_at": "2026-10-28T12:09:40Z"
+    }
+  },
+  "candidate_head": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+  "candidate_tree": "dfd0414242cff364aad6082411ae88aef728783e",
+  "checkout_tree_equals_candidate": true,
+  "github_masks_credentials_before_log_export": true,
+  "jobs": [
+    {
+      "check_run_url": "https://api.github.com/repos/KastaTM/card-market-tracker/check-runs/122806861332",
+      "completed_at": "2026-10-28T12:13:18Z",
+      "conclusion": "success",
+      "created_at": "2026-10-28T12:09:41Z",
+      "harness_markers": {
+        "alert_outbox": true,
+        "catalog": true,
+        "discovery": true,
+        "discovery_journal": true,
+        "multi_revision": true,
+        "persistence": true,
+        "pinned": true,
+        "scoped": true,
+        "telegram_fake": true,
+        "watchlist": true,
+        "watchlist_alert_outbox": true,
+        "watchlist_journal": true
+      },
+      "head_branch": "feat/p8c-watchlist-signal-outbox",
+      "head_sha": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+      "html_url": "https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482/job/122806861332",
+      "id": 122806861332,
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "name": "compose",
+      "node_id": "CR_kwDOU-pCa88AAAAcl9v-FA",
+      "run_attempt": 1,
+      "run_id": 40685550482,
+      "run_url": "https://api.github.com/repos/KastaTM/card-market-tracker/actions/runs/40685550482",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions",
+      "runner_id": 1000000479,
+      "runner_name": "GitHub Actions 1000000479",
+      "rw01_rejection_marker": true,
+      "started_at": "2026-10-28T12:09:43Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completed_at": "2026-10-28T12:09:45Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "started_at": "2026-10-28T12:09:44Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:09:46Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+          "number": 2,
+          "started_at": "2026-10-28T12:09:45Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:09:53Z",
+          "conclusion": "success",
+          "name": "Run docker compose run --build --rm version",
+          "number": 3,
+          "started_at": "2026-10-28T12:09:46Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:09:54Z",
+          "conclusion": "success",
+          "name": "Run docker compose run --build --rm diagnose",
+          "number": 4,
+          "started_at": "2026-10-28T12:09:53Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:09:54Z",
+          "conclusion": "success",
+          "name": "Run docker compose build catalog persistence discovery pinned scoped",
+          "number": 5,
+          "started_at": "2026-10-28T12:09:54Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:09:58Z",
+          "conclusion": "success",
+          "name": "Run python3 scripts/catalog_smoke.py --mode compose --fixtures tests/fixtures",
+          "number": 6,
+          "started_at": "2026-10-28T12:09:54Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:10:17Z",
+          "conclusion": "success",
+          "name": "Run python3 scripts/observation_persistence_smoke.py --mode compose --fixtures tests/fixtures",
+          "number": 7,
+          "started_at": "2026-10-28T12:09:58Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:10:28Z",
+          "conclusion": "success",
+          "name": "Run python3 scripts/discovery_smoke.py --mode compose --fixtures tests/fixtures",
+          "number": 8,
+          "started_at": "2026-10-28T12:10:17Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:10:42Z",
+          "conclusion": "success",
+          "name": "Run python3 scripts/pinned_repository_smoke.py --mode compose --fixtures tests/fixtures",
+          "number": 9,
+          "started_at": "2026-10-28T12:10:28Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:10:54Z",
+          "conclusion": "success",
+          "name": "Run python3 scripts/scoped_capture_discovery_smoke.py --mode compose --fixtures tests/fixtures",
+          "number": 10,
+          "started_at": "2026-10-28T12:10:42Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:11:09Z",
+          "conclusion": "success",
+          "name": "Run python3 scripts/multi_revision_metadata_smoke.py --mode compose --fixtures tests/fixtures",
+          "number": 11,
+          "started_at": "2026-10-28T12:10:54Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:11:32Z",
+          "conclusion": "success",
+          "name": "Run python3 scripts/discovery_journal_smoke.py --mode compose --fixtures tests/fixtures",
+          "number": 12,
+          "started_at": "2026-10-28T12:11:09Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:11:56Z",
+          "conclusion": "success",
+          "name": "Run python3 scripts/alert_outbox_smoke.py --mode compose --fixtures tests/fixtures",
+          "number": 13,
+          "started_at": "2026-10-28T12:11:32Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:12:15Z",
+          "conclusion": "success",
+          "name": "Run python3 scripts/telegram_delivery_smoke.py --mode compose --fixtures tests/fixtures",
+          "number": 14,
+          "started_at": "2026-10-28T12:11:56Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:12:29Z",
+          "conclusion": "success",
+          "name": "Run python3 scripts/watchlist_smoke.py --mode compose --fixtures tests/fixtures",
+          "number": 15,
+          "started_at": "2026-10-28T12:12:15Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:12:44Z",
+          "conclusion": "success",
+          "name": "Run python3 scripts/watchlist_journal_smoke.py --mode compose --fixtures tests/fixtures",
+          "number": 16,
+          "started_at": "2026-10-28T12:12:29Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:13:16Z",
+          "conclusion": "success",
+          "name": "Run python3 scripts/watchlist_alert_outbox_smoke.py --mode compose --fixtures tests/fixtures",
+          "number": 17,
+          "started_at": "2026-10-28T12:12:44Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:13:16Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+          "number": 34,
+          "started_at": "2026-10-28T12:13:16Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:13:16Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 35,
+          "started_at": "2026-10-28T12:13:16Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://api.github.com/repos/KastaTM/card-market-tracker/actions/jobs/122806861332",
+      "workflow_name": "Foundation, Catalog, Persistence and Scoped Discovery"
+    },
+    {
+      "check_run_url": "https://api.github.com/repos/KastaTM/card-market-tracker/check-runs/122806861711",
+      "completed_at": "2026-10-28T12:15:57Z",
+      "conclusion": "success",
+      "created_at": "2026-10-28T12:09:41Z",
+      "harness_markers": {
+        "alert_outbox": true,
+        "catalog": true,
+        "discovery": true,
+        "discovery_journal": true,
+        "multi_revision": true,
+        "persistence": true,
+        "pinned": true,
+        "scoped": true,
+        "telegram_fake": true,
+        "watchlist": true,
+        "watchlist_alert_outbox": true,
+        "watchlist_journal": true
+      },
+      "head_branch": "feat/p8c-watchlist-signal-outbox",
+      "head_sha": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+      "html_url": "https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482/job/122806861711",
+      "id": 122806861711,
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "name": "quality",
+      "node_id": "CR_kwDOU-pCa88AAAAcl9v_jw",
+      "run_attempt": 1,
+      "run_id": 40685550482,
+      "run_url": "https://api.github.com/repos/KastaTM/card-market-tracker/actions/runs/40685550482",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions",
+      "runner_id": 1000000481,
+      "runner_name": "GitHub Actions 1000000481",
+      "rw01_rejection_marker": true,
+      "started_at": "2026-10-28T12:09:43Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completed_at": "2026-10-28T12:09:46Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "started_at": "2026-10-28T12:09:44Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:09:47Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+          "number": 2,
+          "started_at": "2026-10-28T12:09:46Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:09:51Z",
+          "conclusion": "success",
+          "name": "Run astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4",
+          "number": 3,
+          "started_at": "2026-10-28T12:09:47Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:09:52Z",
+          "conclusion": "success",
+          "name": "Run uv sync --frozen --no-install-project",
+          "number": 4,
+          "started_at": "2026-10-28T12:09:51Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:09:52Z",
+          "conclusion": "success",
+          "name": "Run uv sync --frozen --no-build-isolation",
+          "number": 5,
+          "started_at": "2026-10-28T12:09:52Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:09:53Z",
+          "conclusion": "success",
+          "name": "Run uv run --frozen ruff format --check .",
+          "number": 6,
+          "started_at": "2026-10-28T12:09:52Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:09:53Z",
+          "conclusion": "success",
+          "name": "Run uv run --frozen ruff check .",
+          "number": 7,
+          "started_at": "2026-10-28T12:09:53Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:09:55Z",
+          "conclusion": "success",
+          "name": "Run uv run --frozen mypy src",
+          "number": 8,
+          "started_at": "2026-10-28T12:09:53Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:14:32Z",
+          "conclusion": "success",
+          "name": "Run uv run --frozen coverage run -m pytest",
+          "number": 9,
+          "started_at": "2026-10-28T12:09:55Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:14:33Z",
+          "conclusion": "success",
+          "name": "Run uv run --frozen coverage json -o coverage.json",
+          "number": 10,
+          "started_at": "2026-10-28T12:14:32Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:14:33Z",
+          "conclusion": "success",
+          "name": "Run uv run --frozen python scripts/check_coverage.py coverage.json",
+          "number": 11,
+          "started_at": "2026-10-28T12:14:33Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:14:37Z",
+          "conclusion": "success",
+          "name": "Run uv run --frozen python scripts/p8c_qa_probe.py --fixtures tests/fixtures --timeout 5",
+          "number": 12,
+          "started_at": "2026-10-28T12:14:33Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:14:38Z",
+          "conclusion": "success",
+          "name": "Run uv run --frozen python scripts/p8c_reviewer_probe.py --fixtures tests/fixtures --timeout 5",
+          "number": 13,
+          "started_at": "2026-10-28T12:14:37Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:14:38Z",
+          "conclusion": "success",
+          "name": "Run uv run --frozen python scripts/p8c_rw01_invariant_probe.py --fixtures tests/fixtures --timeout 5",
+          "number": 14,
+          "started_at": "2026-10-28T12:14:38Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:14:43Z",
+          "conclusion": "success",
+          "name": "Run uv run --frozen python scripts/p8c_rw01_qa_probe.py --fixtures tests/fixtures --timeout 5",
+          "number": 15,
+          "started_at": "2026-10-28T12:14:38Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:14:51Z",
+          "conclusion": "success",
+          "name": "Run uv run --frozen python scripts/p8c_rw01_reviewer_probe.py --fixtures tests/fixtures --timeout 5",
+          "number": 16,
+          "started_at": "2026-10-28T12:14:43Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:14:52Z",
+          "conclusion": "success",
+          "name": "Run uv build --no-build-isolation",
+          "number": 17,
+          "started_at": "2026-10-28T12:14:51Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:15:36Z",
+          "conclusion": "success",
+          "name": "Run sh scripts/wheel_smoke.sh",
+          "number": 18,
+          "started_at": "2026-10-28T12:14:52Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:15:36Z",
+          "conclusion": "success",
+          "name": "Run uv export --frozen --all-groups --no-emit-project -o requirements-audit.txt > /dev/null",
+          "number": 19,
+          "started_at": "2026-10-28T12:15:36Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:15:45Z",
+          "conclusion": "success",
+          "name": "Run uv run --frozen pip-audit -r requirements-audit.txt",
+          "number": 20,
+          "started_at": "2026-10-28T12:15:36Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:15:54Z",
+          "conclusion": "success",
+          "name": "Run uv run --frozen python scripts/check_secret_scan.py",
+          "number": 21,
+          "started_at": "2026-10-28T12:15:45Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:15:54Z",
+          "conclusion": "success",
+          "name": "Post Run astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4",
+          "number": 41,
+          "started_at": "2026-10-28T12:15:54Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:15:54Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+          "number": 42,
+          "started_at": "2026-10-28T12:15:54Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:15:54Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 43,
+          "started_at": "2026-10-28T12:15:54Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://api.github.com/repos/KastaTM/card-market-tracker/actions/jobs/122806861711",
+      "workflow_name": "Foundation, Catalog, Persistence and Scoped Discovery"
+    },
+    {
+      "check_run_url": "https://api.github.com/repos/KastaTM/card-market-tracker/check-runs/122806861716",
+      "completed_at": "2026-10-28T13:09:09Z",
+      "conclusion": "success",
+      "created_at": "2026-10-28T12:09:41Z",
+      "harness_markers": {
+        "alert_outbox": true,
+        "catalog": true,
+        "discovery": true,
+        "discovery_journal": true,
+        "multi_revision": true,
+        "persistence": true,
+        "pinned": true,
+        "scoped": true,
+        "telegram_fake": true,
+        "watchlist": true,
+        "watchlist_alert_outbox": true,
+        "watchlist_journal": true
+      },
+      "head_branch": "feat/p8c-watchlist-signal-outbox",
+      "head_sha": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+      "html_url": "https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482/job/122806861716",
+      "id": 122806861716,
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "name": "container (linux/arm64)",
+      "node_id": "CR_kwDOU-pCa88AAAAcl9v_lA",
+      "run_attempt": 1,
+      "run_id": 40685550482,
+      "run_url": "https://api.github.com/repos/KastaTM/card-market-tracker/actions/runs/40685550482",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions",
+      "runner_id": 1000000480,
+      "runner_name": "GitHub Actions 1000000480",
+      "rw01_rejection_marker": true,
+      "started_at": "2026-10-28T12:09:44Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completed_at": "2026-10-28T12:09:47Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "started_at": "2026-10-28T12:09:45Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:09:48Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+          "number": 2,
+          "started_at": "2026-10-28T12:09:47Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:09:55Z",
+          "conclusion": "success",
+          "name": "Run docker/setup-qemu-action@c7c53464625b32c7a7e944ae62b3e17d2b600130",
+          "number": 3,
+          "started_at": "2026-10-28T12:09:48Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:10:00Z",
+          "conclusion": "success",
+          "name": "Run docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f",
+          "number": 4,
+          "started_at": "2026-10-28T12:09:55Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T13:09:04Z",
+          "conclusion": "success",
+          "name": "Run sh scripts/container_smoke.sh cmt-p0-smoke:arm64 linux/arm64",
+          "number": 5,
+          "started_at": "2026-10-28T12:10:00Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T13:09:06Z",
+          "conclusion": "success",
+          "name": "Post Run docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f",
+          "number": 8,
+          "started_at": "2026-10-28T13:09:04Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T13:09:07Z",
+          "conclusion": "success",
+          "name": "Post Run docker/setup-qemu-action@c7c53464625b32c7a7e944ae62b3e17d2b600130",
+          "number": 9,
+          "started_at": "2026-10-28T13:09:06Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T13:09:07Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+          "number": 10,
+          "started_at": "2026-10-28T13:09:07Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T13:09:07Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 11,
+          "started_at": "2026-10-28T13:09:07Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://api.github.com/repos/KastaTM/card-market-tracker/actions/jobs/122806861716",
+      "workflow_name": "Foundation, Catalog, Persistence and Scoped Discovery"
+    },
+    {
+      "check_run_url": "https://api.github.com/repos/KastaTM/card-market-tracker/check-runs/122806861943",
+      "completed_at": "2026-10-28T12:14:13Z",
+      "conclusion": "success",
+      "created_at": "2026-10-28T12:09:41Z",
+      "harness_markers": {
+        "alert_outbox": true,
+        "catalog": true,
+        "discovery": true,
+        "discovery_journal": true,
+        "multi_revision": true,
+        "persistence": true,
+        "pinned": true,
+        "scoped": true,
+        "telegram_fake": true,
+        "watchlist": true,
+        "watchlist_alert_outbox": true,
+        "watchlist_journal": true
+      },
+      "head_branch": "feat/p8c-watchlist-signal-outbox",
+      "head_sha": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+      "html_url": "https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482/job/122806861943",
+      "id": 122806861943,
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "name": "container (linux/amd64)",
+      "node_id": "CR_kwDOU-pCa88AAAAcl9wAdw",
+      "run_attempt": 1,
+      "run_id": 40685550482,
+      "run_url": "https://api.github.com/repos/KastaTM/card-market-tracker/actions/runs/40685550482",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions",
+      "runner_id": 1000000482,
+      "runner_name": "GitHub Actions 1000000482",
+      "rw01_rejection_marker": true,
+      "started_at": "2026-10-28T12:09:44Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completed_at": "2026-10-28T12:09:47Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "started_at": "2026-10-28T12:09:45Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:09:49Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+          "number": 2,
+          "started_at": "2026-10-28T12:09:47Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:09:55Z",
+          "conclusion": "success",
+          "name": "Run docker/setup-qemu-action@c7c53464625b32c7a7e944ae62b3e17d2b600130",
+          "number": 3,
+          "started_at": "2026-10-28T12:09:49Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:09:59Z",
+          "conclusion": "success",
+          "name": "Run docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f",
+          "number": 4,
+          "started_at": "2026-10-28T12:09:55Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:14:07Z",
+          "conclusion": "success",
+          "name": "Run sh scripts/container_smoke.sh cmt-p0-smoke:amd64 linux/amd64",
+          "number": 5,
+          "started_at": "2026-10-28T12:09:59Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:14:09Z",
+          "conclusion": "success",
+          "name": "Post Run docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f",
+          "number": 8,
+          "started_at": "2026-10-28T12:14:07Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:14:10Z",
+          "conclusion": "success",
+          "name": "Post Run docker/setup-qemu-action@c7c53464625b32c7a7e944ae62b3e17d2b600130",
+          "number": 9,
+          "started_at": "2026-10-28T12:14:09Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:14:10Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+          "number": 10,
+          "started_at": "2026-10-28T12:14:10Z",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-10-28T12:14:10Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 11,
+          "started_at": "2026-10-28T12:14:10Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://api.github.com/repos/KastaTM/card-market-tracker/actions/jobs/122806861943",
+      "workflow_name": "Foundation, Catalog, Persistence and Scoped Discovery"
+    }
+  ],
+  "logs_are_complete_api_job_output_ansi_sanitized": true,
+  "run": {
+    "actor": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/71529686?v=4",
+      "events_url": "https://api.github.com/users/KastaTM/events{/privacy}",
+      "followers_url": "https://api.github.com/users/KastaTM/followers",
+      "following_url": "https://api.github.com/users/KastaTM/following{/other_user}",
+      "gists_url": "https://api.github.com/users/KastaTM/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/KastaTM",
+      "id": 71529686,
+      "login": "KastaTM",
+      "node_id": "MDQ6VXNlcjcxNTI5Njg2",
+      "organizations_url": "https://api.github.com/users/KastaTM/orgs",
+      "received_events_url": "https://api.github.com/users/KastaTM/received_events",
+      "repos_url": "https://api.github.com/users/KastaTM/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/KastaTM/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/KastaTM/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/KastaTM",
+      "user_view_type": "public"
+    },
+    "artifacts_url": "https://api.github.com/repos/KastaTM/card-market-tracker/actions/runs/40685550482/artifacts",
+    "cancel_url": "https://api.github.com/repos/KastaTM/card-market-tracker/actions/runs/40685550482/cancel",
+    "check_suite_id": 110277251454,
+    "check_suite_node_id": "CS_kwDOU-pCa88AAAAZrQlRfg",
+    "check_suite_url": "https://api.github.com/repos/KastaTM/card-market-tracker/check-suites/110277251454",
+    "conclusion": "success",
+    "created_at": "2026-10-28T12:09:41Z",
+    "display_title": "P8c: offline Watchlist signal outbox",
+    "event": "pull_request",
+    "head_branch": "feat/p8c-watchlist-signal-outbox",
+    "head_commit": {
+      "author": {
+        "email": "rodrikasta@gmail.com",
+        "name": "Rodrigo Casta\u00f1\u00f3n Mart\u00ednez"
+      },
+      "committer": {
+        "email": "rodrikasta@gmail.com",
+        "name": "Rodrigo Casta\u00f1\u00f3n Mart\u00ednez"
+      },
+      "id": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+      "message": "fix: preserve watchlist entry invariant on outbox admission",
+      "timestamp": "2026-10-28T12:08:16Z",
+      "tree_id": "dfd0414242cff364aad6082411ae88aef728783e"
+    },
+    "head_repository": {
+      "archive_url": "https://api.github.com/repos/KastaTM/card-market-tracker/{archive_format}{/ref}",
+      "assignees_url": "https://api.github.com/repos/KastaTM/card-market-tracker/assignees{/user}",
+      "blobs_url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/blobs{/sha}",
+      "branches_url": "https://api.github.com/repos/KastaTM/card-market-tracker/branches{/branch}",
+      "collaborators_url": "https://api.github.com/repos/KastaTM/card-market-tracker/collaborators{/collaborator}",
+      "comments_url": "https://api.github.com/repos/KastaTM/card-market-tracker/comments{/number}",
+      "commits_url": "https://api.github.com/repos/KastaTM/card-market-tracker/commits{/sha}",
+      "compare_url": "https://api.github.com/repos/KastaTM/card-market-tracker/compare/{base}...{head}",
+      "contents_url": "https://api.github.com/repos/KastaTM/card-market-tracker/contents/{+path}",
+      "contributors_url": "https://api.github.com/repos/KastaTM/card-market-tracker/contributors",
+      "deployments_url": "https://api.github.com/repos/KastaTM/card-market-tracker/deployments",
+      "description": null,
+      "downloads_url": "https://api.github.com/repos/KastaTM/card-market-tracker/downloads",
+      "events_url": "https://api.github.com/repos/KastaTM/card-market-tracker/events",
+      "fork": false,
+      "forks_url": "https://api.github.com/repos/KastaTM/card-market-tracker/forks",
+      "full_name": "KastaTM/card-market-tracker",
+      "git_commits_url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/commits{/sha}",
+      "git_refs_url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/refs{/sha}",
+      "git_tags_url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/tags{/sha}",
+      "hooks_url": "https://api.github.com/repos/KastaTM/card-market-tracker/hooks",
+      "html_url": "https://github.com/KastaTM/card-market-tracker",
+      "id": 1407861355,
+      "issue_comment_url": "https://api.github.com/repos/KastaTM/card-market-tracker/issues/comments{/number}",
+      "issue_events_url": "https://api.github.com/repos/KastaTM/card-market-tracker/issues/events{/number}",
+      "issues_url": "https://api.github.com/repos/KastaTM/card-market-tracker/issues{/number}",
+      "keys_url": "https://api.github.com/repos/KastaTM/card-market-tracker/keys{/key_id}",
+      "labels_url": "https://api.github.com/repos/KastaTM/card-market-tracker/labels{/name}",
+      "languages_url": "https://api.github.com/repos/KastaTM/card-market-tracker/languages",
+      "merges_url": "https://api.github.com/repos/KastaTM/card-market-tracker/merges",
+      "milestones_url": "https://api.github.com/repos/KastaTM/card-market-tracker/milestones{/number}",
+      "name": "card-market-tracker",
+      "node_id": "R_kgDOU-pCaw",
+      "notifications_url": "https://api.github.com/repos/KastaTM/card-market-tracker/notifications{?since,all,participating}",
+      "owner": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/71529686?v=4",
+        "events_url": "https://api.github.com/users/KastaTM/events{/privacy}",
+        "followers_url": "https://api.github.com/users/KastaTM/followers",
+        "following_url": "https://api.github.com/users/KastaTM/following{/other_user}",
+        "gists_url": "https://api.github.com/users/KastaTM/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/KastaTM",
+        "id": 71529686,
+        "login": "KastaTM",
+        "node_id": "MDQ6VXNlcjcxNTI5Njg2",
+        "organizations_url": "https://api.github.com/users/KastaTM/orgs",
+        "received_events_url": "https://api.github.com/users/KastaTM/received_events",
+        "repos_url": "https://api.github.com/users/KastaTM/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/KastaTM/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/KastaTM/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/KastaTM",
+        "user_view_type": "public"
+      },
+      "private": false,
+      "pulls_url": "https://api.github.com/repos/KastaTM/card-market-tracker/pulls{/number}",
+      "releases_url": "https://api.github.com/repos/KastaTM/card-market-tracker/releases{/id}",
+      "stargazers_url": "https://api.github.com/repos/KastaTM/card-market-tracker/stargazers",
+      "statuses_url": "https://api.github.com/repos/KastaTM/card-market-tracker/statuses/{sha}",
+      "subscribers_url": "https://api.github.com/repos/KastaTM/card-market-tracker/subscribers",
+      "subscription_url": "https://api.github.com/repos/KastaTM/card-market-tracker/subscription",
+      "tags_url": "https://api.github.com/repos/KastaTM/card-market-tracker/tags",
+      "teams_url": "https://api.github.com/repos/KastaTM/card-market-tracker/teams",
+      "trees_url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/trees{/sha}",
+      "url": "https://api.github.com/repos/KastaTM/card-market-tracker"
+    },
+    "head_sha": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+    "html_url": "https://github.com/KastaTM/card-market-tracker/actions/runs/40685550482",
+    "id": 40685550482,
+    "jobs_url": "https://api.github.com/repos/KastaTM/card-market-tracker/actions/runs/40685550482/jobs",
+    "logs_url": "https://api.github.com/repos/KastaTM/card-market-tracker/actions/runs/40685550482/logs",
+    "name": "Foundation, Catalog, Persistence and Scoped Discovery",
+    "node_id": "WFR_kwLOU-pCa88AAAAJeQw7kg",
+    "path": ".github/workflows/ci.yml",
+    "previous_attempt_url": null,
+    "pull_requests": [
+      {
+        "base": {
+          "ref": "main",
+          "repo": {
+            "id": 1407861355,
+            "name": "card-market-tracker",
+            "url": "https://api.github.com/repos/KastaTM/card-market-tracker"
+          },
+          "sha": "228d5c8d0d91edf03ddb86a489c8232eeb7c08bc"
+        },
+        "head": {
+          "ref": "feat/p8c-watchlist-signal-outbox",
+          "repo": {
+            "id": 1407861355,
+            "name": "card-market-tracker",
+            "url": "https://api.github.com/repos/KastaTM/card-market-tracker"
+          },
+          "sha": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c"
+        },
+        "id": 5041353067,
+        "number": 18,
+        "url": "https://api.github.com/repos/KastaTM/card-market-tracker/pulls/18"
+      }
+    ],
+    "referenced_workflows": [],
+    "repository": {
+      "archive_url": "https://api.github.com/repos/KastaTM/card-market-tracker/{archive_format}{/ref}",
+      "assignees_url": "https://api.github.com/repos/KastaTM/card-market-tracker/assignees{/user}",
+      "blobs_url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/blobs{/sha}",
+      "branches_url": "https://api.github.com/repos/KastaTM/card-market-tracker/branches{/branch}",
+      "collaborators_url": "https://api.github.com/repos/KastaTM/card-market-tracker/collaborators{/collaborator}",
+      "comments_url": "https://api.github.com/repos/KastaTM/card-market-tracker/comments{/number}",
+      "commits_url": "https://api.github.com/repos/KastaTM/card-market-tracker/commits{/sha}",
+      "compare_url": "https://api.github.com/repos/KastaTM/card-market-tracker/compare/{base}...{head}",
+      "contents_url": "https://api.github.com/repos/KastaTM/card-market-tracker/contents/{+path}",
+      "contributors_url": "https://api.github.com/repos/KastaTM/card-market-tracker/contributors",
+      "deployments_url": "https://api.github.com/repos/KastaTM/card-market-tracker/deployments",
+      "description": null,
+      "downloads_url": "https://api.github.com/repos/KastaTM/card-market-tracker/downloads",
+      "events_url": "https://api.github.com/repos/KastaTM/card-market-tracker/events",
+      "fork": false,
+      "forks_url": "https://api.github.com/repos/KastaTM/card-market-tracker/forks",
+      "full_name": "KastaTM/card-market-tracker",
+      "git_commits_url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/commits{/sha}",
+      "git_refs_url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/refs{/sha}",
+      "git_tags_url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/tags{/sha}",
+      "hooks_url": "https://api.github.com/repos/KastaTM/card-market-tracker/hooks",
+      "html_url": "https://github.com/KastaTM/card-market-tracker",
+      "id": 1407861355,
+      "issue_comment_url": "https://api.github.com/repos/KastaTM/card-market-tracker/issues/comments{/number}",
+      "issue_events_url": "https://api.github.com/repos/KastaTM/card-market-tracker/issues/events{/number}",
+      "issues_url": "https://api.github.com/repos/KastaTM/card-market-tracker/issues{/number}",
+      "keys_url": "https://api.github.com/repos/KastaTM/card-market-tracker/keys{/key_id}",
+      "labels_url": "https://api.github.com/repos/KastaTM/card-market-tracker/labels{/name}",
+      "languages_url": "https://api.github.com/repos/KastaTM/card-market-tracker/languages",
+      "merges_url": "https://api.github.com/repos/KastaTM/card-market-tracker/merges",
+      "milestones_url": "https://api.github.com/repos/KastaTM/card-market-tracker/milestones{/number}",
+      "name": "card-market-tracker",
+      "node_id": "R_kgDOU-pCaw",
+      "notifications_url": "https://api.github.com/repos/KastaTM/card-market-tracker/notifications{?since,all,participating}",
+      "owner": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/71529686?v=4",
+        "events_url": "https://api.github.com/users/KastaTM/events{/privacy}",
+        "followers_url": "https://api.github.com/users/KastaTM/followers",
+        "following_url": "https://api.github.com/users/KastaTM/following{/other_user}",
+        "gists_url": "https://api.github.com/users/KastaTM/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/KastaTM",
+        "id": 71529686,
+        "login": "KastaTM",
+        "node_id": "MDQ6VXNlcjcxNTI5Njg2",
+        "organizations_url": "https://api.github.com/users/KastaTM/orgs",
+        "received_events_url": "https://api.github.com/users/KastaTM/received_events",
+        "repos_url": "https://api.github.com/users/KastaTM/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/KastaTM/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/KastaTM/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/KastaTM",
+        "user_view_type": "public"
+      },
+      "private": false,
+      "pulls_url": "https://api.github.com/repos/KastaTM/card-market-tracker/pulls{/number}",
+      "releases_url": "https://api.github.com/repos/KastaTM/card-market-tracker/releases{/id}",
+      "stargazers_url": "https://api.github.com/repos/KastaTM/card-market-tracker/stargazers",
+      "statuses_url": "https://api.github.com/repos/KastaTM/card-market-tracker/statuses/{sha}",
+      "subscribers_url": "https://api.github.com/repos/KastaTM/card-market-tracker/subscribers",
+      "subscription_url": "https://api.github.com/repos/KastaTM/card-market-tracker/subscription",
+      "tags_url": "https://api.github.com/repos/KastaTM/card-market-tracker/tags",
+      "teams_url": "https://api.github.com/repos/KastaTM/card-market-tracker/teams",
+      "trees_url": "https://api.github.com/repos/KastaTM/card-market-tracker/git/trees{/sha}",
+      "url": "https://api.github.com/repos/KastaTM/card-market-tracker"
+    },
+    "rerun_url": "https://api.github.com/repos/KastaTM/card-market-tracker/actions/runs/40685550482/rerun",
+    "run_attempt": 1,
+    "run_number": 51,
+    "run_started_at": "2026-10-28T12:09:41Z",
+    "status": "completed",
+    "triggering_actor": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/71529686?v=4",
+      "events_url": "https://api.github.com/users/KastaTM/events{/privacy}",
+      "followers_url": "https://api.github.com/users/KastaTM/followers",
+      "following_url": "https://api.github.com/users/KastaTM/following{/other_user}",
+      "gists_url": "https://api.github.com/users/KastaTM/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/KastaTM",
+      "id": 71529686,
+      "login": "KastaTM",
+      "node_id": "MDQ6VXNlcjcxNTI5Njg2",
+      "organizations_url": "https://api.github.com/users/KastaTM/orgs",
+      "received_events_url": "https://api.github.com/users/KastaTM/received_events",
+      "repos_url": "https://api.github.com/users/KastaTM/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/KastaTM/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/KastaTM/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/KastaTM",
+      "user_view_type": "public"
+    },
+    "updated_at": "2026-10-28T13:09:09Z",
+    "url": "https://api.github.com/repos/KastaTM/card-market-tracker/actions/runs/40685550482",
+    "workflow_id": 377227770,
+    "workflow_url": "https://api.github.com/repos/KastaTM/card-market-tracker/actions/workflows/377227770"
+  }
+}

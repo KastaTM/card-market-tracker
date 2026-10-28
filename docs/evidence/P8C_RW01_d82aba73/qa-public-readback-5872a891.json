@@ -1,0 +1,75 @@
+{
+  "actual_public_loader_replay": {
+    "command": [
+      "<PYTHON>",
+      "-c",
+      "<exact public historical_control_complete_reproducer.python_code>"
+    ],
+    "exit_code": 0,
+    "interpretation": "Actual rerun of GitHub-downloaded loader; uses local original Git object and local checked-in probe verified byte-equal to public probe after LF normalization. No 17-case corrected-product rerun.",
+    "loader_sha256": "acf189b5730fa4b93bf43b74240f8b3853806faaa3a5087c5866388084578613",
+    "started_at": "2026-10-28T12:32:21.878440+00:00",
+    "stderr": "",
+    "stdout": {
+      "candidate_sha": "360da646892e46545ca70e8838bc3a2a89e460a3",
+      "command": [
+        "<PYTHON>",
+        "scripts/p8c_rw01_qa_probe.py",
+        "--fixtures",
+        "tests/fixtures",
+        "--timeout",
+        "5"
+      ],
+      "exit_code": 1,
+      "original_package_import_verified": true,
+      "result": "EXPECTED_FAIL",
+      "source_archive_sha256": "d0b4e2dc23d5c9afb494bfda7b5153bac39a337bc289218203cd6660eae0d82f",
+      "stderr": "Traceback (most recent call last):\n  File \"<REPOSITORY>\\scripts\\p8c_rw01_qa_probe.py\", line 597, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"<REPOSITORY>\\scripts\\p8c_rw01_qa_probe.py\", line 552, in main\n    conflict_case(root, manifest, args.timeout, name, change, **options)\n    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<REPOSITORY>\\scripts\\p8c_rw01_qa_probe.py\", line 258, in conflict_case\n    error(lambda: right.enqueue(box, alias), \"identity_conflict\", 2)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<REPOSITORY>\\scripts\\p8c_rw01_qa_probe.py\", line 60, in error\n    raise AssertionError(\"expected \" + category)\nAssertionError: expected identity_conflict\n",
+      "stdout": ""
+    }
+  },
+  "candidate": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+  "evidence_commit": "5872a89191f817583fe5c23989ffa0f6a58c8be0",
+  "finished_at": "2026-10-28T12:32:23.139807+00:00",
+  "limitations": [
+    "Publication readback is not CI acceptance or a new product review.",
+    "Public loader replay relies on original Git commit being present locally; git archive reconstructs source read-only.",
+    "No anonymous-access assertion beyond connected GitHub readback."
+  ],
+  "local_worktree_after": {
+    "head_and_tree": [
+      "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+      "dfd0414242cff364aad6082411ae88aef728783e"
+    ],
+    "status_porcelain": ""
+  },
+  "published_hashes": {
+    "probe_git_blob_sha1": "af5d4cade6e7f4cc2eff713f9cf64d0ca9d23e26",
+    "probe_sha256": "9ca1dda5f17b3e6883426972ab1fcf11e4d66a99eaa2424336b5d1a9d6af827e",
+    "qa_final_git_blob_sha1": "705ccd2e2a0a6d711abf6c1607132f51a5e445e6",
+    "qa_final_sha256": "46c270f8b55c8096152594a5f0ffe7bd0df8c1f036a7cacd4c59fc53b5473b33"
+  },
+  "recoverability_checks": {
+    "candidate_before_after_clean_matches": true,
+    "complete_historical_loader_code_compiles": true,
+    "complete_main_probe_python_parsed": true,
+    "complete_qa_final_json_parsed": true,
+    "current_probe_LF_normalized_equals_downloaded_code": true,
+    "full_expected_failure_traceback_present": true,
+    "historical_loader_equals_recorded_command": true,
+    "historical_recorded_stdout_equals_full_control": true,
+    "no_private_helper_required": true,
+    "two_full_commands_and_results_match_summary": true
+  },
+  "result": "PASS",
+  "retrieval": "GitHub connector fetch_file at immutable refs; artifact base64 preserves exact bytes",
+  "scope": "PUBLIC_READBACK_ONLY_NO_NEW_PRODUCT_REVIEW",
+  "started_at": "2026-10-28T12:32:21.873639+00:00",
+  "tree": "dfd0414242cff364aad6082411ae88aef728783e",
+  "urls": {
+    "pr_comment": "https://github.com/KastaTM/card-market-tracker/pull/18#issuecomment-6468979547",
+    "probe": "https://github.com/KastaTM/card-market-tracker/blob/d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c/scripts/p8c_rw01_qa_probe.py",
+    "qa_final": "https://github.com/KastaTM/card-market-tracker/blob/5872a89191f817583fe5c23989ffa0f6a58c8be0/docs/evidence/P8C_RW01_d82aba73/qa-final.json"
+  },
+  "version": 1
+}
