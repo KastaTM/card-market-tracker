@@ -1,5 +1,26 @@
 # Testing strategy
 
+## P8c requirements
+
+AC-WA01..20 require original-source admission on every ancient replay; one ro
+journal transaction/full fold; exact historical identity/config; independent
+walt1_ vectors and rule/alias/episode isolation. Exercise strict keysets, sealed
+receipt copies/mutation/new-budget/second-use rejection, full semantic local fold
+versus original recompute, rehashed invalid content and restored triggers.
+
+Use real processes for races and transaction interruption/reopen; inject lock,
+ENOSPC, deadline, fsync/link/unlink, between-fold corruption, replacements, extra
+hardlinks and sidecars. Check quiescent prior-source bytes. Fresh-process import
+blockers must precede root import and deny Telegram/sockets, including help and
+invalid args. Check nullable money, free shipping, reasons, controls/bidi,
+4096-byte bound, all CLI DTOs/exits, canonical filter-bound cursors, no partial
+success, parsing-to-serialization budget and logging privacy sentinels.
+
+Twelfth watchlist_alert_outbox_smoke.py joins all eleven original harnesses in
+outside-checkout wheel, Compose, AMD64 and ARM64/QEMU; retain five checkpoints/
+four signals. Separate nonauthor QA and final REVIEWER publish own rerunnable
+probes on final SHA/tree. This document asserts no execution or PASS.
+
 ## P5b requirements
 
 Test original full manifest and selected immutable revision admission, malformed

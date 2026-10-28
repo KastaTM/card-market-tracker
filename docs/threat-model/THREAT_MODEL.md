@@ -1,5 +1,26 @@
 # Initial threat model
 
+## P8c Watchlist preview boundaries (2026-10-27)
+
+Original manifest/revision admission and one deeply verified journal snapshot
+prevent caller DTO/hash/verified authority. A content/instance/Budget-bound one-use
+receipt protects ordinary application calls, not privileged Python. Independent
+CMTY exact inventory, guarded cells, canonical documents, reconstructed semantics
+and immutable triggers detect invalid rehashed content. BEGIN IMMEDIATE commits
+dedup/replay atomically. Historical simulation is not current notification consent.
+
+Fresh-process Telegram-import/socket guards cover help/errors/commands. Logs
+exclude IDs, aliases, evidence, prices, messages, paths, SQL and exceptions.
+Explicit stdout/backups/preferences remain private operator data. Shared2/max5s
+cooperative deadlines and byte/page caps fail closed without partial verify.
+Three independent folds precede recovery publication; compensation removes only
+safe owned links and preserves foreign/sidecar evidence. Complete commit/
+publication may precede a failed response; exact replay/verify resolves it.
+
+Trusted ancestors/ACLs, capacity, native Pi durability, privileged rewrites and
+lack of global three-store atomicity retain existing limitations; TD-001..005
+remain OPEN. No transport, credentials, new debt or quarantine bypass is added.
+
 ## P5b journal boundaries (2026-10-24)
 
 The new CMTQ journal alone retains bounded normalized synthetic samples and

@@ -1,5 +1,30 @@
 # Roadmap
 
+## 2026-10-28 - P8c RW-01 OPEN / REWORK_REQUIRED
+
+Orchestrator rework decision, accepted by Phase Lead: writer/verifier complete
+Watchlist-entry consistency must hold transactionally for each watch_id/revision.
+Prior P8c engineering readiness suspended. Corrective implementation and fresh
+independent reviews/gates authorized; no merge, closure or new phase. Historical
+reports/CI preserved. P5global and TD-001..005 remain OPEN.
+
+## Orchestrator decision: P5b closed, P8c open (recorded 2026-10-27)
+
+The unchanged [P8c contract](phases/P8C_OFFLINE_WATCHLIST_SIGNAL_OUTBOX_CONTRACT.md)
+records the Orchestrator's 2026-10-25 P5b ACCEPTED / PHASE CLOSED decision and opens
+P8c Offline Watchlist Signal Outbox. Attribution is to the supplied chat contract;
+no new remote closure comment is asserted. Baseline:
+228d5c8d0d91edf03ddb86a489c8232eeb7c08bc, tree
+dde865b6d215efc4075918088d6deddfe7cdeb1f. Historical PR17/main CI is not P8c evidence.
+
+[ADR-0014](adr/0014-offline-watchlist-signal-outbox.md) design was accepted by
+Phase Lead. Implementation is authorized and under validation; P8c remains OPEN.
+Merge, candidate acceptance and closure require separate Orchestrator decisions.
+P5 global and TD-001..TD-005 remain OPEN; P2/P6a/retail Discovery remain BLOCKED.
+This route prepares synthetic offline previews and preserves prior schemas,
+identities, writers, transport admission and Telegram quarantine.
+Earlier dated entries remain historical snapshots.
+
 ## Orchestrator chat decision: P5a closed, P5b open (2026-10-23)
 
 The supplied [P5b contract](phases/P5B_WATCHLIST_EVALUATION_JOURNAL_CONTRACT.md)

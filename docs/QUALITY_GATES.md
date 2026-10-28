@@ -1,5 +1,20 @@
 # Quality gates
 
+## P8c mandatory gates
+
+[AC-WA01..20](phases/P8C_OFFLINE_WATCHLIST_SIGNAL_OUTBOX_CONTRACT.md) require
+exact-candidate evidence. Preserve frozen installs, Ruff format/check, strict
+mypy, complete pytest, separate line>=85%/branch>=80% coverage, sdist/wheel,
+outside-source installation, audit and secret scan; no weakened thresholds,
+broad exceptions or collection filters.
+
+All twelve harnesses run in wheel/Compose/AMD64/ARM64-QEMU, product offline with
+read-only fixtures and UID10001/private data as applicable. Preserve four jobs
+and full final-SHA/tree logs; retain failures, no same-SHA failed-job reruns
+without authority. Corrective commits get fresh CI and renewed affected reviews.
+Distinct nonauthor QA/REVIEWER provide public probes/helpers/oracles. Unrun gates
+are explicit; engineering cannot merge or close P8c.
+
 ## P5b mandatory gates
 
 AC-S01..S18 in the opening contract require exact baseline/archived contract,

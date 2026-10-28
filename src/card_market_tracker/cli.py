@@ -37,7 +37,6 @@ from card_market_tracker.persistence.sqlite_repository import (
     restore,
     verify,
 )
-from card_market_tracker.telegram_delivery import cli as telegram_cli
 from card_market_tracker.watchlist import cli as watchlist_cli
 from card_market_tracker.watchlist_journal import cli as watchlist_journal_cli
 
@@ -48,10 +47,15 @@ class _Parser(argparse.ArgumentParser):
         raise ConfigurationError("arguments: invalid")
 
 
-def _parser() -> _Parser:
+def _parser(*, watchlist_alert_only: bool = False) -> _Parser:
     parser = _Parser(prog="cmt", add_help=True)
     parser.add_argument("--version", action="store_true")
     commands = parser.add_subparsers(dest="command", parser_class=_Parser)
+    if watchlist_alert_only:
+        from card_market_tracker.watchlist_alerts import cli as watchlist_alert_cli
+
+        watchlist_alert_cli.register(commands)
+        return parser
     diagnose = commands.add_parser("diagnose")
     diagnose.add_argument("--env-file", type=Path)
     catalog = commands.add_parser("catalog")
@@ -111,9 +115,13 @@ def _parser() -> _Parser:
             command.add_argument("--destination", type=Path, required=True)
     journal_cli.register(commands)
     outbox_cli.register(commands)
+    from card_market_tracker.telegram_delivery import cli as telegram_cli
+    from card_market_tracker.watchlist_alerts import cli as watchlist_alert_cli
+
     telegram_cli.register(commands)
     watchlist_cli.register(commands)
     watchlist_journal_cli.register(commands)
+    watchlist_alert_cli.register(commands)
     return parser
 
 
@@ -472,16 +480,24 @@ def _pinned_multi(args: argparse.Namespace, started: float) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
+    started_monotonic = time.monotonic()
     started = time.perf_counter()
     run_id = str(uuid4())
     logger = configure_logging(run_id)
     actual_argv = sys.argv[1:] if argv is None else argv
     try:
-        args = _parser().parse_args(actual_argv)
+        selected = next((value for value in actual_argv if value != "--version"), None)
+        args = _parser(watchlist_alert_only=selected == "watchlist-alert-outbox").parse_args(
+            actual_argv
+        )
         if args.version:
             print(f"cmt {__version__}")
             logger.info("", extra={"event": "cli.version", "component": "cli"})
             return 0
+        if args.command == "watchlist-alert-outbox":
+            from card_market_tracker.watchlist_alerts import cli as watchlist_alert_cli
+
+            return watchlist_alert_cli.dispatch(args, started, started_monotonic=started_monotonic)
         if args.command == "catalog":
             return _catalog(args.input, args.manifest, started)
         if args.command == "discovery-journal":
@@ -489,6 +505,8 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "alert-outbox":
             return outbox_cli.dispatch(args, started)
         if args.command == "telegram-delivery":
+            from card_market_tracker.telegram_delivery import cli as telegram_cli
+
             return telegram_cli.dispatch(args, started)
         if args.command == "watchlist":
             return watchlist_cli.dispatch(args, started)
@@ -524,11 +542,18 @@ def main(argv: list[str] | None = None) -> int:
         print("diagnose: ok (configuration, local work directory)")
         return 0
     except ConfigurationError:
+        selected = next((value for value in actual_argv if value != "--version"), None)
+        if selected == "watchlist-alert-outbox":
+            from card_market_tracker.watchlist_alerts import cli as watchlist_alert_cli
+
+            return watchlist_alert_cli.invalid_arguments(started)
         if actual_argv and actual_argv[0] == "watchlist-journal":
             return watchlist_journal_cli.invalid_arguments(started)
         if actual_argv and actual_argv[0] == "watchlist":
             return watchlist_cli.invalid_arguments(started)
         if actual_argv and actual_argv[0] == "telegram-delivery":
+            from card_market_tracker.telegram_delivery import cli as telegram_cli
+
             return telegram_cli.invalid_arguments(started)
         if actual_argv and actual_argv[0] == "alert-outbox":
             return outbox_cli.invalid_arguments(started)
