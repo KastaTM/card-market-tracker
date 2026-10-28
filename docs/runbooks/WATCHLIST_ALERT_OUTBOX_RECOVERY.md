@@ -28,3 +28,15 @@ preview, never send authority. Protect DB/backups/stdout as private operator dat
 Backups preserve first time/pending state and end at their snapshot. No global
 multi-DB recovery/copy dedup, Telegram bridge or quarantine lifting is implied.
 Process tests and QEMU do not qualify physical Pi electrical durability.
+
+
+RW-01: writer admission checks the complete retained semantic state within its
+write transaction. A new incompatible complete entry for an existing
+(watch_id, revision) fails identity_conflict/exit2, even for another alias/series.
+The previously healthy store remains byte-identical and verifiable/backupable.
+A preexisting contradiction is storage_corrupt, including on replay; no repair,
+row deletion, migration or automatic preference rewrite is attempted. Preserve
+the store/originals and use only a separately verified known-good backup at a NEW
+restore path. Never weaken verify to make an already contradictory store pass.
+The full write-time fold shares the original2s/max5s Budget; a large history can
+legitimately time out with rollback before COMMIT rather than accept unchecked data.

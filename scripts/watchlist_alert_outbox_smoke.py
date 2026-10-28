@@ -21,6 +21,9 @@ for index, stock in enumerate(('OUT_OF_STOCK','AVAILABLE','AVAILABLE','OUT_OF_ST
     sample = dict(base, sample_id='journal-smoke-'+str(index), stock=stock,
                   observed_at='2026-10-23T12:0'+str(index)+':00Z')
     (data/('sample-'+str(index)+'.json')).write_text(json.dumps(sample),encoding='utf-8')
+config = json.loads((fixtures/'synthetic_watchlist_config.json').read_text())
+config['target_price_minor'] += 100
+(data/'rw01-config.json').write_text(json.dumps(config),encoding='utf-8')
 print('seeded synthetic checkpoints')
 """
 
@@ -85,7 +88,7 @@ def main() -> int:
                 ]
         try:
 
-            def run(command):
+            def run(command, expected=0):
                 completed = subprocess.run(
                     command,
                     capture_output=True,
@@ -94,7 +97,7 @@ def main() -> int:
                     cwd=outside if args.mode == "installed" else None,
                     timeout=120,
                 )
-                assert completed.returncode == 0, (completed.stdout, completed.stderr)
+                assert completed.returncode == expected, (completed.stdout, completed.stderr)
                 return completed
 
             run([*python, "-c", OFFLINE + SEED, source, data])
@@ -108,7 +111,7 @@ def main() -> int:
             outbox = f"{data}/outbox.sqlite3"
             manifest = f"{source}/synthetic_manifest.json"
 
-            def call(group, operation, *flags, target=None):
+            def call(group, operation, *flags, target=None, expected=0):
                 database, db_flag = {
                     "watchlist": (watchlist, "--watchlist-db"),
                     "watchlist-journal": (journal, "--journal-db"),
@@ -124,7 +127,8 @@ def main() -> int:
                         "--timeout",
                         "5",
                         *map(str, flags),
-                    ]
+                    ],
+                    expected=expected,
                 )
                 payload, log = json.loads(completed.stdout), json.loads(completed.stderr)
                 assert payload["version"] == 1
@@ -276,6 +280,84 @@ def main() -> int:
                 "--manifest",
                 manifest,
             )
+            # RW-01: a second genuine source pair shares the historical key but
+            # has incompatible preferences. Different alias/IDs grant no exception.
+            conflicting_watch = f"{data}/rw01-watchlist.sqlite3"
+            conflicting_journal = f"{data}/rw01-journal.sqlite3"
+            call("watchlist", "init", target=conflicting_watch)
+            conflicting_entry = call(
+                "watchlist",
+                "add",
+                "--manifest",
+                manifest,
+                "--cmt-id",
+                entry["cmt_id"],
+                "--input",
+                f"{data}/rw01-config.json",
+                "--request-token",
+                "rw01-independent",
+                target=conflicting_watch,
+            )["entry"]
+            assert conflicting_entry["watch_id"] == entry["watch_id"]
+            assert conflicting_entry["revision"] == entry["revision"] == 1
+            assert conflicting_entry != entry
+            call("watchlist-journal", "init", target=conflicting_journal)
+            for index in (0, 1):
+                flags = [
+                    "--watchlist-db",
+                    conflicting_watch,
+                    "--manifest",
+                    manifest,
+                    "--watch-id",
+                    conflicting_entry["watch_id"],
+                    "--revision",
+                    "1",
+                    "--sample",
+                    f"{data}/sample-{index}.json",
+                    "--as-of",
+                    f"2026-10-23T12:0{index}:00Z",
+                ]
+                if index:
+                    flags += ["--previous", f"{data}/sample-0.json"]
+                conflicting_point = call(
+                    "watchlist-journal",
+                    "record",
+                    *flags,
+                    target=conflicting_journal,
+                )
+            conflicting_signal = conflicting_point["signal_ids"][0]
+            assert conflicting_signal not in {item["signal_id"] for item in prepared}
+            conflicting_bytes = (fingerprint(conflicting_watch), fingerprint(conflicting_journal))
+            rejected = call(
+                "watchlist-alert-outbox",
+                "enqueue",
+                "--watchlist-db",
+                conflicting_watch,
+                "--journal-db",
+                conflicting_journal,
+                "--manifest",
+                manifest,
+                "--signal-id",
+                conflicting_signal,
+                "--destination-key",
+                "rw01-other",
+                expected=2,
+            )
+            assert rejected["result"] == "error"
+            assert rejected["error_category"] == "identity_conflict"
+            assert fingerprint(outbox) == original_outbox
+            assert call("watchlist-alert-outbox", "get", "--alert-id", selected) == frozen
+            assert (
+                call("watchlist-alert-outbox", "evidence-get", "--alert-id", selected) == evidence
+            )
+            assert call("watchlist-alert-outbox", "verify")["counts"] == {
+                "alerts": 4,
+                "evidence": 4,
+            }
+            assert conflicting_bytes == (
+                fingerprint(conflicting_watch),
+                fingerprint(conflicting_journal),
+            )
             backup, restored = f"{data}/backup.sqlite3", f"{data}/restored.sqlite3"
             call("watchlist-alert-outbox", "backup", "--destination", backup)
             call("watchlist-alert-outbox", "restore", "--destination", restored, target=backup)
@@ -302,7 +384,8 @@ assert sys.argv[2]=='installed' or os.getuid()==10001
             run([*python, "-c", OFFLINE + inspection, restored, args.mode])
             print(
                 "watchlist alert outbox smoke PASS; five checkpoints, four signals, "
-                "four previews, replay, recompute, no sockets, exclusive recovery"
+                "four previews, replay, recompute, no sockets, exclusive recovery; "
+                "RW-01 incompatible originals rejected without mutation"
             )
         finally:
             if created:

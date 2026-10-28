@@ -1,5 +1,13 @@
 # Roadmap
 
+## 2026-10-28 - P8c RW-01 OPEN / REWORK_REQUIRED
+
+Orchestrator rework decision, accepted by Phase Lead: writer/verifier complete
+Watchlist-entry consistency must hold transactionally for each watch_id/revision.
+Prior P8c engineering readiness suspended. Corrective implementation and fresh
+independent reviews/gates authorized; no merge, closure or new phase. Historical
+reports/CI preserved. P5global and TD-001..005 remain OPEN.
+
 ## Orchestrator decision: P5b closed, P8c open (recorded 2026-10-27)
 
 The unchanged [P8c contract](phases/P8C_OFFLINE_WATCHLIST_SIGNAL_OUTBOX_CONTRACT.md)

@@ -9,6 +9,9 @@
   intentions/replay; local verify differs from original recompute. Exclusive
   three-fold recovery. Only additive read-only P5b helper; prior writers/schemas/
   identities unchanged. P8c OPEN; no product network/transport or merge authority.
+  RW-01 is OPEN/REWORK_REQUIRED: preserve complete entry equality for each
+  watch_id/revision transactionally; earlier readiness is suspended pending
+  corrected-candidate gates and fresh independent review.
 
 - [P5b contract](docs/phases/P5B_WATCHLIST_EVALUATION_JOURNAL_CONTRACT.md),
   [brief](docs/phases/P5B_CODEX_ENGINEERING_BRIEF.md),

@@ -1,5 +1,10 @@
 # P8c Implementation and Integration - candidate record
 
+> RW-01 (2026-10-28): Orchestrator REWORK_REQUIRED, accepted by Phase Lead.
+> Prior readiness for360da646/tree3ce94d6e is suspended. Historical evidence below
+> remains intact; corrected candidate evidence belongs to P8C_RW01_CORRECTIVE_IMPLEMENTATION.md
+> and the new PR18 ledger. No merge or phase closure.
+
 Date: 2026-10-27. Phase OPEN / IMPLEMENTATION AUTHORIZED. Design accepted by
 Phase Lead only. No merge authorization; only Orchestrator accepts/closes.
 This committed record describes implementation and the reproducible validation

@@ -27,6 +27,9 @@ jobs:
       - run: uv run --frozen python scripts/check_coverage.py coverage.json
       - run: uv run --frozen python scripts/p8c_qa_probe.py --fixtures tests/fixtures --timeout 5
       - run: uv run --frozen python scripts/p8c_reviewer_probe.py --fixtures tests/fixtures --timeout 5
+      - run: uv run --frozen python scripts/p8c_rw01_invariant_probe.py --fixtures tests/fixtures --timeout 5
+      - run: uv run --frozen python scripts/p8c_rw01_qa_probe.py --fixtures tests/fixtures --timeout 5
+      - run: uv run --frozen python scripts/p8c_rw01_reviewer_probe.py --fixtures tests/fixtures --timeout 5
       - run: uv build --no-build-isolation
       - run: sh scripts/wheel_smoke.sh
       - run: uv export --frozen --all-groups --no-emit-project -o requirements-audit.txt > /dev/null

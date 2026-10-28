@@ -382,9 +382,9 @@ def _enqueue_verified(path: Path, receipt: object, budget: Budget) -> dict[str, 
             _connect(path, budget, writable=True, _expected_identity=physical_owner) as db,
             _transaction(db, budget, write=True),
         ):
-            _schema(db, budget)
-            _integrity(db, budget)
-            previous = _load_pair(db, budget, key)
+            # Finish the existing semantic fold before classifying the new
+            # candidate: preexisting corruption must never look like a conflict.
+            _, entries, previous = _fold(db, budget, selected=key)
             duplicate = _execute(
                 db,
                 budget,
@@ -399,6 +399,9 @@ def _enqueue_verified(path: Path, receipt: object, budget: Budget) -> dict[str, 
                 if any(previous[0][field] != expected[field] for field in _PREPARED_FIELDS):
                     raise OutboxError("replay_conflict")
             else:
+                entry_key, entry_json = _entry_identity(cast(dict[str, object], evidence), budget)
+                if entry_key in entries and entries[entry_key] != entry_json:
+                    raise OutboxError("identity_conflict")
                 stamp = datetime.now(UTC).isoformat(timespec="microseconds").replace("+00:00", "Z")
                 values = tuple(expected[field] for field in _ALERT_FIELDS[:-1]) + (_stamp(stamp),)
                 _execute(
@@ -503,11 +506,27 @@ def preview(
     raise AssertionError("unreachable")
 
 
-def _verify(db: sqlite3.Connection, budget: Budget) -> dict[str, int]:
+def _entry_identity(evidence: dict[str, object], budget: Budget) -> tuple[tuple[str, int], str]:
+    """Project an entry only after its complete evidence was reconstructed."""
+    snapshot = cast(dict[str, object], cast(dict[str, object], evidence["current"])["snapshot"])
+    entry = cast(dict[str, object], snapshot["entry"])
+    key = (cast(str, entry["watch_id"]), cast(int, entry["revision"]))
+    return key, policy.canonical(entry, check=budget.remaining)
+
+
+def _fold(
+    db: sqlite3.Connection, budget: Budget, *, selected: str | None = None
+) -> tuple[
+    dict[str, int],
+    dict[tuple[str, int], str],
+    tuple[dict[str, object], dict[str, object]] | None,
+]:
+    """Verify one snapshot fully, retaining only this operation's entry map/pair."""
     _schema(db, budget)
     _integrity(db, budget)
     count = 0
     entries: dict[tuple[str, int], str] = {}
+    selected_pair = None
     for row in _execute(
         db, budget, "SELECT " + _text("alert_id", 70) + " FROM watchlist_alerts ORDER BY alert_id"
     ):
@@ -518,12 +537,11 @@ def _verify(db: sqlite3.Connection, budget: Budget) -> dict[str, int]:
         if pair is None:
             raise OutboxError("storage_corrupt")
         _, evidence = pair
-        snapshot = cast(dict[str, object], cast(dict[str, object], evidence["current"])["snapshot"])
-        entry = cast(dict[str, object], snapshot["entry"])
-        key = (cast(str, entry["watch_id"]), cast(int, entry["revision"]))
-        entry_json = policy.canonical(entry, check=budget.remaining)
+        key, entry_json = _entry_identity(evidence, budget)
         if entries.setdefault(key, entry_json) != entry_json:
             raise OutboxError("storage_corrupt")
+        if row[0] == selected:
+            selected_pair = pair
         count += 1
     counts: dict[str, int] = {}
     for suffix in ("alerts", "evidence"):
@@ -533,6 +551,11 @@ def _verify(db: sqlite3.Connection, budget: Budget) -> dict[str, int]:
             raise OutboxError("storage_corrupt")
         counts[suffix] = total
     budget.remaining()
+    return counts, entries, selected_pair
+
+
+def _verify(db: sqlite3.Connection, budget: Budget) -> dict[str, int]:
+    counts, _, _ = _fold(db, budget)
     return counts
 
 
