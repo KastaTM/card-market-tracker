@@ -1,0 +1,8 @@
+{"command": ["uv", "--no-cache", "build", "--no-build-isolation"], "time_utc": "20261028T120935554388Z", "exit_code": 0}
+STDOUT
+
+STDERR
+Building source distribution...
+Building wheel from source distribution...
+Successfully built dist\card_market_tracker-0.1.0.tar.gz
+Successfully built dist\card_market_tracker-0.1.0-py3-none-any.whl

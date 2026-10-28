@@ -1,0 +1,5 @@
+{"command": ["C:\\Users\\Rodrigo\\AppData\\Local\\Temp\\cmt-p8c-wheel-3dd76353b9b740868ce187db9b03362c\\Scripts\\python.exe", "scripts/observation_persistence_smoke.py", "--mode", "installed", "--executable", "C:\\Users\\Rodrigo\\AppData\\Local\\Temp\\cmt-p8c-wheel-3dd76353b9b740868ce187db9b03362c\\Scripts\\cmt.exe", "--fixtures", "tests/fixtures"], "time_utc": "20261028T120939097793Z", "exit_code": 0}
+STDOUT
+persistence installed: PASS (durable reopen/replay/later/mixed/empty/conflict/synthetic-only/bounds/integrity/backup/restore; distinct invocations)
+
+STDERR

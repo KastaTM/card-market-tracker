@@ -1,0 +1,6 @@
+{"command": ["C:\\Users\\Rodrigo\\AppData\\Local\\Temp\\cmt-p8c-wheel-3dd76353b9b740868ce187db9b03362c\\Scripts\\python.exe", "scripts/alert_outbox_smoke.py", "--mode", "installed", "--executable", "C:\\Users\\Rodrigo\\AppData\\Local\\Temp\\cmt-p8c-wheel-3dd76353b9b740868ce187db9b03362c\\Scripts\\cmt.exe", "--fixtures", "tests/fixtures"], "time_utc": "20261028T121023381554Z", "exit_code": 0}
+STDOUT
+seed: reviewed real unchanged pair and explicit synthetic transitions
+alert outbox installed smoke PASS; two synthetic alerts, four window associations, four real zero-alert comparisons, preview, replay, origin recompute and recovery; separate offline processes
+
+STDERR

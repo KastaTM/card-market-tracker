@@ -1,0 +1,54 @@
+{
+  "lead": {
+    "requested_model": "gpt-6.1-sol",
+    "requested_effort": "Medium; High for critical integrity decisions",
+    "observable_selector": null,
+    "effective_backend": "unverified"
+  },
+  "phase_lead": {
+    "user_reported_profile": "GPT-6 / High",
+    "independently_verified": false
+  },
+  "specialists": [
+    {
+      "session": "/root/p8c_rw01_db",
+      "role": "product author",
+      "requested_selector": "gpt-6.1-sol",
+      "observable_spawn_selector": "gpt-6.1-sol",
+      "observable_spawn_effort": "high",
+      "effective_backend": "unverified"
+    },
+    {
+      "session": "/root/p8c_rw01_arq",
+      "role": "read-only architecture",
+      "requested_selector": "gpt-6.1-sol",
+      "observable_spawn_selector": "gpt-6.1-sol",
+      "observable_spawn_effort": "high",
+      "effective_backend": "unverified"
+    },
+    {
+      "session": "/root/p8c_rw01_sec",
+      "role": "read-only security",
+      "requested_selector": "gpt-6.1-sol",
+      "observable_spawn_selector": "gpt-6.1-sol",
+      "observable_spawn_effort": "high",
+      "effective_backend": "unverified"
+    },
+    {
+      "session": "/root/p8c_rw01_qa",
+      "role": "new independent QA",
+      "requested_selector": "gpt-6.1-sol",
+      "observable_spawn_selector": "gpt-6.1-sol",
+      "observable_spawn_effort": "high",
+      "effective_backend": "unverified"
+    },
+    {
+      "session": "/root/p8c_rw01_reviewer",
+      "role": "new distinct final reviewer",
+      "requested_selector": "gpt-6.1-sol",
+      "observable_spawn_selector": "gpt-6.1-sol",
+      "observable_spawn_effort": "high",
+      "effective_backend": "unverified"
+    }
+  ]
+}

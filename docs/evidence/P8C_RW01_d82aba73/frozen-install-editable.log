@@ -1,0 +1,9 @@
+{"command": ["uv", "--no-cache", "sync", "--frozen", "--no-build-isolation", "--python", ".venv/Scripts/python.exe"], "time_utc": "20261028T120046943398Z", "exit_code": 0}
+STDOUT
+
+STDERR
+   Building card-market-tracker @ file:///<WORKTREE>
+      Built card-market-tracker @ file:///<WORKTREE>
+Prepared 1 package in 277ms
+Installed 1 package in 48ms
+ + card-market-tracker==0.1.0 (from file:///<WORKTREE>)

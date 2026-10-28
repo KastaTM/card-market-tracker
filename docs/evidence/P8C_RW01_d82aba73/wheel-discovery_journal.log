@@ -1,0 +1,6 @@
+{"command": ["C:\\Users\\Rodrigo\\AppData\\Local\\Temp\\cmt-p8c-wheel-3dd76353b9b740868ce187db9b03362c\\Scripts\\python.exe", "scripts/discovery_journal_smoke.py", "--mode", "installed", "--executable", "C:\\Users\\Rodrigo\\AppData\\Local\\Temp\\cmt-p8c-wheel-3dd76353b9b740868ce187db9b03362c\\Scripts\\cmt.exe", "--fixtures", "tests/fixtures"], "time_utc": "20261028T121012831955Z", "exit_code": 0}
+STDOUT
+seed: reviewed real unchanged pair and explicit synthetic transitions
+discovery journal installed smoke PASS; seven comparisons, repeated event windows, replay, local verify, source recompute, recovery; separate offline processes
+
+STDERR

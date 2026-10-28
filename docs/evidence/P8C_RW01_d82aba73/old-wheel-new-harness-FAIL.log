@@ -1,0 +1,24 @@
+{"command": ["C:\\Users\\Rodrigo\\AppData\\Local\\Temp\\cmt-p8c-wheel-3dd76353b9b740868ce187db9b03362c\\Scripts\\python.exe", "scripts/watchlist_alert_outbox_smoke.py", "--mode", "installed", "--fixtures", "tests/fixtures"], "time_utc": "20261028T120620296678Z", "exit_code": 1}
+STDOUT
+
+STDERR
+Traceback (most recent call last):
+  File "<WORKTREE>\scripts\watchlist_alert_outbox_smoke.py", line 399, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "<WORKTREE>\scripts\watchlist_alert_outbox_smoke.py", line 331, in main
+    rejected = call(
+        "watchlist-alert-outbox",
+    ...<11 lines>...
+        expected=2,
+    )
+  File "<WORKTREE>\scripts\watchlist_alert_outbox_smoke.py", line 120, in call
+    completed = run(
+        [
+    ...<9 lines>...
+        expected=expected,
+    )
+  File "<WORKTREE>\scripts\watchlist_alert_outbox_smoke.py", line 100, in run
+    assert completed.returncode == expected, (completed.stdout, completed.stderr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('{"alert_id":"walt1_af1cb163becf3cacaebe257d8055235ef6cebe0a6198ccbd63db4296413df986","destination_key":"rw01-other","operation":"enqueue","result":"recorded","signal_id":"wsig1_c503d1a4ea410b09a15adf1ab43615a0538ab520fda5af718c0311a4eff8d31e","version":1}\n', '{"timestamp":"2026-10-28T12:06:31.911624Z","level":"INFO","event":"watchlist.alert_outbox.completed","component":"cli","run_id":"b6f0f6ff-451d-4441-a278-67b59aadd254","result":"ok","operation":"watchlist_alert_outbox_enqueue","duration_ms":91}\n')

@@ -1,0 +1,5 @@
+{"command": ["C:\\Users\\Rodrigo\\AppData\\Local\\Temp\\cmt-p8c-wheel-3dd76353b9b740868ce187db9b03362c\\Scripts\\python.exe", "scripts/pinned_repository_smoke.py", "--mode", "installed", "--executable", "C:\\Users\\Rodrigo\\AppData\\Local\\Temp\\cmt-p8c-wheel-3dd76353b9b740868ce187db9b03362c\\Scripts\\cmt.exe", "--fixtures", "tests/fixtures"], "time_utc": "20261028T120953539616Z", "exit_code": 0}
+STDOUT
+pinned installed smoke PASS; separate processes, migration, replay and recovery
+
+STDERR

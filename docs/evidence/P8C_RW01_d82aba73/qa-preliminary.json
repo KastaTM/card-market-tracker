@@ -1,0 +1,71 @@
+{
+  "corrected_working_tree_probe": {
+    "checks": [
+      "target-conflict-preserves-healthy-store",
+      "destination-conflict-preserves-healthy-store",
+      "series-conflict-preserves-healthy-store",
+      "priority-conflict-preserves-healthy-store",
+      "freshness-conflict-preserves-healthy-store",
+      "rule-config-conflict-preserves-healthy-store",
+      "compatible-alias",
+      "compatible-series",
+      "compatible-samples",
+      "different-revision",
+      "different-product",
+      "ancient-replay",
+      "real-process-conflicting-race",
+      "negative-outbox-corruption-priority",
+      "negative-local-valid-replay-conflict",
+      "precommit-stdlib-write-failure-rollback",
+      "unchanged-budget-limits-and-expiry"
+    ],
+    "checks_count": 17,
+    "fault_scope": "stdlib-sqlite-connection-injected-before-evidence-insert",
+    "finished_at": "2026-10-28T12:04:26.447775+00:00",
+    "negative_sql_scope": "outbox-negative-fixtures-and-race-lock-only",
+    "oracle": "independent-stdlib-canonicalization-hashes-and-complete-entry-equality",
+    "original_fixture_authority": "public-P5a-P5b-APIs-only",
+    "probe": "p8c-rw01-independent-qa",
+    "python": "3.13.15",
+    "result": "PASS",
+    "sqlite": "3.53.1",
+    "started_at": "2026-10-28T12:04:18.178768+00:00",
+    "timeout": 5.0,
+    "version": 1
+  },
+  "defective_candidate_control": {
+    "failure": "AssertionError: expected identity_conflict",
+    "interpretation": "same independent probe fails first genuine public-source conflict against original defective product",
+    "isolated_original_source_import_verified": true,
+    "probe_exit_code": 1,
+    "sha": "360da646892e46545ca70e8838bc3a2a89e460a3",
+    "source_archive_sha256": "d0b4e2dc23d5c9afb494bfda7b5153bac39a337bc289218203cd6660eae0d82f",
+    "tree": "3ce94d6e214de74889475753807122b526085b98"
+  },
+  "head": "360da646892e46545ca70e8838bc3a2a89e460a3",
+  "model_profile": {
+    "backend_verified": false,
+    "observable_selection": "gpt-6.1-sol/high as assigned by Engineering Lead",
+    "requested": "gpt-6.1-sol/high"
+  },
+  "probe_development_incident": "Initial run failed Windows temporary-directory cleanup because negative-fixture SQLite context managers did not close connections; explicit close fixed the probe. No product failure or waiver.",
+  "recorded_at": "2026-10-28T12:04:27.627607+00:00",
+  "script_sha256": "3a51e46de2efbe6b00f63b4b49a9a5672f2b90d563c0db721d8019500564543f",
+  "stage": "PRELIMINARY_WORKING_TREE_NOT_FINAL_ATTESTATION",
+  "tree": "3ce94d6e214de74889475753807122b526085b98",
+  "version": 1,
+  "working_tree_storage_sha256": "5d920411a869d58212912982e65946a728051bee92e5ef161d74c1c3eea5ac40",
+  "worktree_status": [
+    "M .github/workflows/ci.yml",
+    " M docs/ROADMAP.md",
+    " M docs/phases/P8C_IMPLEMENTATION_AND_INTEGRATION.md",
+    " M docs/phases/P8C_OWNERSHIP.md",
+    " M docs/runbooks/WATCHLIST_ALERT_OUTBOX_RECOVERY.md",
+    " M scripts/watchlist_alert_outbox_smoke.py",
+    " M src/card_market_tracker/watchlist_alerts/storage.py",
+    "?? scripts/p8c_rw01_invariant_probe.py",
+    "?? scripts/p8c_rw01_qa_probe.py",
+    "?? scripts/p8c_rw01_reviewer_probe.py",
+    "?? tests/test_watchlist_alert_rw01.py"
+  ]
+}

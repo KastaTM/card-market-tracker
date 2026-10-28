@@ -1,0 +1,316 @@
+{
+  "baseline": "228d5c8d0d91edf03ddb86a489c8232eeb7c08bc",
+  "candidate_after": {
+    "git_crlf_count": 0,
+    "head": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+    "probe_git_blob_content_sha256": "9ca1dda5f17b3e6883426972ab1fcf11e4d66a99eaa2424336b5d1a9d6af827e",
+    "probe_git_blob_sha1": "af5d4cade6e7f4cc2eff713f9cf64d0ca9d23e26",
+    "probe_working_file_sha256": "3a51e46de2efbe6b00f63b4b49a9a5672f2b90d563c0db721d8019500564543f",
+    "probe_working_git_blob_sha1": "af5d4cade6e7f4cc2eff713f9cf64d0ca9d23e26",
+    "status_porcelain": "",
+    "tree": "dfd0414242cff364aad6082411ae88aef728783e",
+    "working_LF_normalized_equals_git": true,
+    "working_crlf_count": 597
+  },
+  "candidate_before": {
+    "git_crlf_count": 0,
+    "head": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c",
+    "probe_git_blob_content_sha256": "9ca1dda5f17b3e6883426972ab1fcf11e4d66a99eaa2424336b5d1a9d6af827e",
+    "probe_git_blob_sha1": "af5d4cade6e7f4cc2eff713f9cf64d0ca9d23e26",
+    "probe_working_file_sha256": "3a51e46de2efbe6b00f63b4b49a9a5672f2b90d563c0db721d8019500564543f",
+    "probe_working_git_blob_sha1": "af5d4cade6e7f4cc2eff713f9cf64d0ca9d23e26",
+    "status_porcelain": "",
+    "tree": "dfd0414242cff364aad6082411ae88aef728783e",
+    "working_LF_normalized_equals_git": true,
+    "working_crlf_count": 597
+  },
+  "commands_and_complete_results": [
+    {
+      "argv": [
+        "git",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "rev-parse",
+        "HEAD",
+        "HEAD^{tree}",
+        "HEAD:scripts/p8c_rw01_qa_probe.py"
+      ],
+      "exit_code": 0,
+      "finished_at": "2026-10-28T12:10:22.814094+00:00",
+      "started_at": "2026-10-28T12:10:22.785423+00:00",
+      "stderr": "",
+      "stdout": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\ndfd0414242cff364aad6082411ae88aef728783e\naf5d4cade6e7f4cc2eff713f9cf64d0ca9d23e26\n"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "finished_at": "2026-10-28T12:10:22.845492+00:00",
+      "started_at": "2026-10-28T12:10:22.814107+00:00",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "hash-object",
+        "--",
+        "scripts/p8c_rw01_qa_probe.py"
+      ],
+      "exit_code": 0,
+      "finished_at": "2026-10-28T12:10:22.870826+00:00",
+      "started_at": "2026-10-28T12:10:22.845505+00:00",
+      "stderr": "",
+      "stdout": "af5d4cade6e7f4cc2eff713f9cf64d0ca9d23e26\n"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "show",
+        "HEAD:scripts/p8c_rw01_qa_probe.py"
+      ],
+      "exit_code": 0,
+      "finished_at": "2026-10-28T12:10:22.899272+00:00",
+      "started_at": "2026-10-28T12:10:22.870837+00:00",
+      "stderr": "",
+      "stdout_bytes": 22894,
+      "stdout_sha256": "9ca1dda5f17b3e6883426972ab1fcf11e4d66a99eaa2424336b5d1a9d6af827e"
+    },
+    {
+      "argv": [
+        "<REPOSITORY>\\.venv\\Scripts\\python.exe",
+        "scripts/p8c_rw01_qa_probe.py",
+        "--fixtures",
+        "tests/fixtures"
+      ],
+      "exit_code": 0,
+      "finished_at": "2026-10-28T12:10:31.927164+00:00",
+      "started_at": "2026-10-28T12:10:22.899590+00:00",
+      "stderr": "",
+      "stdout": "{\"checks\":[\"target-conflict-preserves-healthy-store\",\"destination-conflict-preserves-healthy-store\",\"series-conflict-preserves-healthy-store\",\"priority-conflict-preserves-healthy-store\",\"freshness-conflict-preserves-healthy-store\",\"rule-config-conflict-preserves-healthy-store\",\"compatible-alias\",\"compatible-series\",\"compatible-samples\",\"different-revision\",\"different-product\",\"ancient-replay\",\"real-process-conflicting-race\",\"negative-outbox-corruption-priority\",\"negative-local-valid-replay-conflict\",\"precommit-stdlib-write-failure-rollback\",\"unchanged-budget-limits-and-expiry\"],\"checks_count\":17,\"fault_scope\":\"stdlib-sqlite-connection-injected-before-evidence-insert\",\"finished_at\":\"2026-10-28T12:10:31.907404+00:00\",\"negative_sql_scope\":\"outbox-negative-fixtures-and-race-lock-only\",\"oracle\":\"independent-stdlib-canonicalization-hashes-and-complete-entry-equality\",\"original_fixture_authority\":\"public-P5a-P5b-APIs-only\",\"probe\":\"p8c-rw01-independent-qa\",\"python\":\"3.13.15\",\"result\":\"PASS\",\"sqlite\":\"3.53.1\",\"started_at\":\"2026-10-28T12:10:23.163333+00:00\",\"timeout\":2.0,\"version\":1}\n"
+    },
+    {
+      "argv": [
+        "<REPOSITORY>\\.venv\\Scripts\\python.exe",
+        "scripts/p8c_rw01_qa_probe.py",
+        "--fixtures",
+        "tests/fixtures",
+        "--timeout",
+        "5"
+      ],
+      "exit_code": 0,
+      "finished_at": "2026-10-28T12:10:41.007208+00:00",
+      "started_at": "2026-10-28T12:10:31.927200+00:00",
+      "stderr": "",
+      "stdout": "{\"checks\":[\"target-conflict-preserves-healthy-store\",\"destination-conflict-preserves-healthy-store\",\"series-conflict-preserves-healthy-store\",\"priority-conflict-preserves-healthy-store\",\"freshness-conflict-preserves-healthy-store\",\"rule-config-conflict-preserves-healthy-store\",\"compatible-alias\",\"compatible-series\",\"compatible-samples\",\"different-revision\",\"different-product\",\"ancient-replay\",\"real-process-conflicting-race\",\"negative-outbox-corruption-priority\",\"negative-local-valid-replay-conflict\",\"precommit-stdlib-write-failure-rollback\",\"unchanged-budget-limits-and-expiry\"],\"checks_count\":17,\"fault_scope\":\"stdlib-sqlite-connection-injected-before-evidence-insert\",\"finished_at\":\"2026-10-28T12:10:40.988458+00:00\",\"negative_sql_scope\":\"outbox-negative-fixtures-and-race-lock-only\",\"oracle\":\"independent-stdlib-canonicalization-hashes-and-complete-entry-equality\",\"original_fixture_authority\":\"public-P5a-P5b-APIs-only\",\"probe\":\"p8c-rw01-independent-qa\",\"python\":\"3.13.15\",\"result\":\"PASS\",\"sqlite\":\"3.53.1\",\"started_at\":\"2026-10-28T12:10:32.189664+00:00\",\"timeout\":5.0,\"version\":1}\n"
+    },
+    {
+      "argv": [
+        "<REPOSITORY>\\.venv\\Scripts\\python.exe",
+        "-c",
+        "import hashlib, io, json, os, subprocess, sys, tempfile, zipfile\nfrom pathlib import Path\nroot = Path.cwd()\noldsha = \"360da646892e46545ca70e8838bc3a2a89e460a3\"\ngit = [\"git\", \"-c\", \"safe.directory=\" + root.as_posix()]\narchive = subprocess.run(git + [\"archive\", \"--format=zip\", oldsha, \"src/card_market_tracker\"], cwd=root, capture_output=True, check=True).stdout\nwith tempfile.TemporaryDirectory(prefix=\"cmt-rw01-independent-qa-original-\") as temporary:\n    folder = Path(temporary)\n    zipfile.ZipFile(io.BytesIO(archive)).extractall(folder)\n    env = dict(os.environ, PYTHONDONTWRITEBYTECODE=\"1\", PYTHONPATH=str(folder / \"src\"))\n    origin = subprocess.run([sys.executable, \"-c\", \"import card_market_tracker.watchlist_alerts.storage as s; print(s.__file__)\"], cwd=root, env=env, capture_output=True, text=True, check=True)\n    assert str(folder).lower() in origin.stdout.lower()\n    args = [sys.executable, \"scripts/p8c_rw01_qa_probe.py\", \"--fixtures\", \"tests/fixtures\", \"--timeout\", \"5\"]\n    result = subprocess.run(args, cwd=root, env=env, capture_output=True, text=True)\n    assert result.returncode == 1\n    assert result.stderr.rstrip().endswith(\"AssertionError: expected identity_conflict\")\n    safe = lambda value: value.replace(str(root), \"<REPOSITORY>\").replace(str(folder), \"<ORIGINAL-SOURCE-TEMP>\")\n    print(json.dumps({\"candidate_sha\": oldsha, \"source_archive_sha256\": hashlib.sha256(archive).hexdigest(), \"original_package_import_verified\": True, \"command\": [\"<PYTHON>\", *args[1:]], \"exit_code\": result.returncode, \"stdout\": safe(result.stdout), \"stderr\": safe(result.stderr), \"result\": \"EXPECTED_FAIL\"}, sort_keys=True))\n"
+      ],
+      "exit_code": 0,
+      "finished_at": "2026-10-28T12:10:42.285472+00:00",
+      "started_at": "2026-10-28T12:10:41.007249+00:00",
+      "stderr": "",
+      "stdout": "{\"candidate_sha\": \"360da646892e46545ca70e8838bc3a2a89e460a3\", \"command\": [\"<PYTHON>\", \"scripts/p8c_rw01_qa_probe.py\", \"--fixtures\", \"tests/fixtures\", \"--timeout\", \"5\"], \"exit_code\": 1, \"original_package_import_verified\": true, \"result\": \"EXPECTED_FAIL\", \"source_archive_sha256\": \"d0b4e2dc23d5c9afb494bfda7b5153bac39a337bc289218203cd6660eae0d82f\", \"stderr\": \"Traceback (most recent call last):\\n  File \\\"<REPOSITORY>\\\\scripts\\\\p8c_rw01_qa_probe.py\\\", line 597, in <module>\\n    raise SystemExit(main())\\n                     ~~~~^^\\n  File \\\"<REPOSITORY>\\\\scripts\\\\p8c_rw01_qa_probe.py\\\", line 552, in main\\n    conflict_case(root, manifest, args.timeout, name, change, **options)\\n    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"<REPOSITORY>\\\\scripts\\\\p8c_rw01_qa_probe.py\\\", line 258, in conflict_case\\n    error(lambda: right.enqueue(box, alias), \\\"identity_conflict\\\", 2)\\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"<REPOSITORY>\\\\scripts\\\\p8c_rw01_qa_probe.py\\\", line 60, in error\\n    raise AssertionError(\\\"expected \\\" + category)\\nAssertionError: expected identity_conflict\\n\", \"stdout\": \"\"}\n"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "rev-parse",
+        "HEAD",
+        "HEAD^{tree}",
+        "HEAD:scripts/p8c_rw01_qa_probe.py"
+      ],
+      "exit_code": 0,
+      "finished_at": "2026-10-28T12:10:42.313704+00:00",
+      "started_at": "2026-10-28T12:10:42.285508+00:00",
+      "stderr": "",
+      "stdout": "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c\ndfd0414242cff364aad6082411ae88aef728783e\naf5d4cade6e7f4cc2eff713f9cf64d0ca9d23e26\n"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "finished_at": "2026-10-28T12:10:42.344798+00:00",
+      "started_at": "2026-10-28T12:10:42.313721+00:00",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "hash-object",
+        "--",
+        "scripts/p8c_rw01_qa_probe.py"
+      ],
+      "exit_code": 0,
+      "finished_at": "2026-10-28T12:10:42.369605+00:00",
+      "started_at": "2026-10-28T12:10:42.344810+00:00",
+      "stderr": "",
+      "stdout": "af5d4cade6e7f4cc2eff713f9cf64d0ca9d23e26\n"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "safe.directory=C:/Projects/card-market-tracker-p8c",
+        "show",
+        "HEAD:scripts/p8c_rw01_qa_probe.py"
+      ],
+      "exit_code": 0,
+      "finished_at": "2026-10-28T12:10:42.397713+00:00",
+      "started_at": "2026-10-28T12:10:42.369621+00:00",
+      "stderr": "",
+      "stdout_bytes": 22894,
+      "stdout_sha256": "9ca1dda5f17b3e6883426972ab1fcf11e4d66a99eaa2424336b5d1a9d6af827e"
+    }
+  ],
+  "defective_candidate_control": {
+    "candidate_sha": "360da646892e46545ca70e8838bc3a2a89e460a3",
+    "command": [
+      "<PYTHON>",
+      "scripts/p8c_rw01_qa_probe.py",
+      "--fixtures",
+      "tests/fixtures",
+      "--timeout",
+      "5"
+    ],
+    "exit_code": 1,
+    "original_package_import_verified": true,
+    "result": "EXPECTED_FAIL",
+    "source_archive_sha256": "d0b4e2dc23d5c9afb494bfda7b5153bac39a337bc289218203cd6660eae0d82f",
+    "stderr": "Traceback (most recent call last):\n  File \"<REPOSITORY>\\scripts\\p8c_rw01_qa_probe.py\", line 597, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"<REPOSITORY>\\scripts\\p8c_rw01_qa_probe.py\", line 552, in main\n    conflict_case(root, manifest, args.timeout, name, change, **options)\n    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<REPOSITORY>\\scripts\\p8c_rw01_qa_probe.py\", line 258, in conflict_case\n    error(lambda: right.enqueue(box, alias), \"identity_conflict\", 2)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<REPOSITORY>\\scripts\\p8c_rw01_qa_probe.py\", line 60, in error\n    raise AssertionError(\"expected \" + category)\nAssertionError: expected identity_conflict\n",
+    "stdout": ""
+  },
+  "defective_parent": "360da646892e46545ca70e8838bc3a2a89e460a3",
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "platform": "win32",
+    "python": "3.13.15",
+    "sqlite": "3.53.1"
+  },
+  "finished_at": "2026-10-28T12:10:42.398045+00:00",
+  "historical_control_complete_reproducer": {
+    "instructions": "From corrected repository root, run .venv/Scripts/python.exe -c with this complete code. It exports the original committed package into a temporary directory, verifies import origin, then runs this checked-in independent probe. No private archive/helper is needed.",
+    "python_code": "import hashlib, io, json, os, subprocess, sys, tempfile, zipfile\nfrom pathlib import Path\nroot = Path.cwd()\noldsha = \"360da646892e46545ca70e8838bc3a2a89e460a3\"\ngit = [\"git\", \"-c\", \"safe.directory=\" + root.as_posix()]\narchive = subprocess.run(git + [\"archive\", \"--format=zip\", oldsha, \"src/card_market_tracker\"], cwd=root, capture_output=True, check=True).stdout\nwith tempfile.TemporaryDirectory(prefix=\"cmt-rw01-independent-qa-original-\") as temporary:\n    folder = Path(temporary)\n    zipfile.ZipFile(io.BytesIO(archive)).extractall(folder)\n    env = dict(os.environ, PYTHONDONTWRITEBYTECODE=\"1\", PYTHONPATH=str(folder / \"src\"))\n    origin = subprocess.run([sys.executable, \"-c\", \"import card_market_tracker.watchlist_alerts.storage as s; print(s.__file__)\"], cwd=root, env=env, capture_output=True, text=True, check=True)\n    assert str(folder).lower() in origin.stdout.lower()\n    args = [sys.executable, \"scripts/p8c_rw01_qa_probe.py\", \"--fixtures\", \"tests/fixtures\", \"--timeout\", \"5\"]\n    result = subprocess.run(args, cwd=root, env=env, capture_output=True, text=True)\n    assert result.returncode == 1\n    assert result.stderr.rstrip().endswith(\"AssertionError: expected identity_conflict\")\n    safe = lambda value: value.replace(str(root), \"<REPOSITORY>\").replace(str(folder), \"<ORIGINAL-SOURCE-TEMP>\")\n    print(json.dumps({\"candidate_sha\": oldsha, \"source_archive_sha256\": hashlib.sha256(archive).hexdigest(), \"original_package_import_verified\": True, \"command\": [\"<PYTHON>\", *args[1:]], \"exit_code\": result.returncode, \"stdout\": safe(result.stdout), \"stderr\": safe(result.stderr), \"result\": \"EXPECTED_FAIL\"}, sort_keys=True))\n"
+  },
+  "independence": {
+    "fault_injection": "stdlib sqlite3 connection raises before evidence INSERT, after alert INSERT; byte-exact rollback and fresh re-admission checked",
+    "final_rerun_source_writes": false,
+    "negative_sql": "explicit local-outbox-only union/replay fixtures and race lock coordination",
+    "oracle": "own stdlib canonical JSON, SHA256/domain-separated identity and complete-entry equality; no author/root probes or production hash/renderer expected values",
+    "role": "new independent RW01 QA distinct from product author and final reviewer",
+    "source_creation": "public P5a add/update and P5b record only",
+    "tracked_write_ownership": "scripts/p8c_rw01_qa_probe.py only; relinquished before commit"
+  },
+  "limitations": [
+    "No full-suite duplicate, CI verdict, hardware or power-loss claim.",
+    "The real-process race observes one recorded and one identity_conflict; OS controls scheduling.",
+    "Negative corruption fixtures modify only local outboxes, never original sources.",
+    "Invalid limits and tiny-budget expiry checked; injected failure targets evidence INSERT boundary."
+  ],
+  "model_profile": {
+    "backend_verified": false,
+    "observable_selector": "gpt-6.1-sol/high as assigned by Engineering Lead",
+    "requested": "gpt-6.1-sol/high"
+  },
+  "phase_recommendation": "NONE: no CI/READY/closure assertion",
+  "probe_coordinator_incident": "Initial final coordinator stopped before tests because raw CRLF working bytes differed from canonical Git LF bytes. Git hash-object matches tracked blob and LF-normalized bytes match exactly. This corrected evidence records both hashes; no probe/product files changed.",
+  "results": [
+    {
+      "checks": [
+        "target-conflict-preserves-healthy-store",
+        "destination-conflict-preserves-healthy-store",
+        "series-conflict-preserves-healthy-store",
+        "priority-conflict-preserves-healthy-store",
+        "freshness-conflict-preserves-healthy-store",
+        "rule-config-conflict-preserves-healthy-store",
+        "compatible-alias",
+        "compatible-series",
+        "compatible-samples",
+        "different-revision",
+        "different-product",
+        "ancient-replay",
+        "real-process-conflicting-race",
+        "negative-outbox-corruption-priority",
+        "negative-local-valid-replay-conflict",
+        "precommit-stdlib-write-failure-rollback",
+        "unchanged-budget-limits-and-expiry"
+      ],
+      "checks_count": 17,
+      "fault_scope": "stdlib-sqlite-connection-injected-before-evidence-insert",
+      "finished_at": "2026-10-28T12:10:31.907404+00:00",
+      "negative_sql_scope": "outbox-negative-fixtures-and-race-lock-only",
+      "oracle": "independent-stdlib-canonicalization-hashes-and-complete-entry-equality",
+      "original_fixture_authority": "public-P5a-P5b-APIs-only",
+      "probe": "p8c-rw01-independent-qa",
+      "python": "3.13.15",
+      "result": "PASS",
+      "sqlite": "3.53.1",
+      "started_at": "2026-10-28T12:10:23.163333+00:00",
+      "timeout": 2.0,
+      "version": 1
+    },
+    {
+      "checks": [
+        "target-conflict-preserves-healthy-store",
+        "destination-conflict-preserves-healthy-store",
+        "series-conflict-preserves-healthy-store",
+        "priority-conflict-preserves-healthy-store",
+        "freshness-conflict-preserves-healthy-store",
+        "rule-config-conflict-preserves-healthy-store",
+        "compatible-alias",
+        "compatible-series",
+        "compatible-samples",
+        "different-revision",
+        "different-product",
+        "ancient-replay",
+        "real-process-conflicting-race",
+        "negative-outbox-corruption-priority",
+        "negative-local-valid-replay-conflict",
+        "precommit-stdlib-write-failure-rollback",
+        "unchanged-budget-limits-and-expiry"
+      ],
+      "checks_count": 17,
+      "fault_scope": "stdlib-sqlite-connection-injected-before-evidence-insert",
+      "finished_at": "2026-10-28T12:10:40.988458+00:00",
+      "negative_sql_scope": "outbox-negative-fixtures-and-race-lock-only",
+      "oracle": "independent-stdlib-canonicalization-hashes-and-complete-entry-equality",
+      "original_fixture_authority": "public-P5a-P5b-APIs-only",
+      "probe": "p8c-rw01-independent-qa",
+      "python": "3.13.15",
+      "result": "PASS",
+      "sqlite": "3.53.1",
+      "started_at": "2026-10-28T12:10:32.189664+00:00",
+      "timeout": 5.0,
+      "version": 1
+    }
+  ],
+  "scope_verdict": "PASS: all 17 independent RW01 cases at default2 and explicit5; no product findings",
+  "stage": "FINAL_INDEPENDENT_QA_EXACT_CANDIDATE",
+  "started_at": "2026-10-28T12:10:22.785413+00:00",
+  "version": 1
+}

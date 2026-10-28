@@ -1,0 +1,5 @@
+{"command": [".venv/Scripts/python.exe", "-m", "ruff", "format", "--check", "."], "time_utc": "20261028T120652874652Z", "exit_code": 0}
+STDOUT
+178 files already formatted
+
+STDERR

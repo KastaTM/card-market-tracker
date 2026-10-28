@@ -1,0 +1,7 @@
+{"command": ["C:\\Users\\Rodrigo\\AppData\\Local\\Temp\\cmt-p8c-wheel-3dd76353b9b740868ce187db9b03362c\\Scripts\\python.exe", "scripts/scoped_capture_discovery_smoke.py", "--mode", "installed", "--executable", "C:\\Users\\Rodrigo\\AppData\\Local\\Temp\\cmt-p8c-wheel-3dd76353b9b740868ce187db9b03362c\\Scripts\\cmt.exe", "--fixtures", "tests/fixtures"], "time_utc": "20261028T121000550088Z", "exit_code": 0}
+STDOUT
+seed complete; synthetic transitions and fixed real baselines
+verified backup/restore: explicit 5s budget; CLI/read default remains 2s
+scoped installed smoke PASS; separate offline processes, real baseline only, synthetic transitions, v1 guard, nonmutation and restore
+
+STDERR

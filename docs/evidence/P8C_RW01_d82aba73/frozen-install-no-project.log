@@ -1,0 +1,6 @@
+{"command": ["uv", "--no-cache", "sync", "--frozen", "--no-install-project"], "time_utc": "20261028T120045481473Z", "exit_code": 0}
+STDOUT
+
+STDERR
+Uninstalled 1 package in 8ms
+ - card-market-tracker==0.1.0 (from file:///<WORKTREE>)

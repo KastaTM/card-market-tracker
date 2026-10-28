@@ -1,0 +1,183 @@
+# MODEL PROFILE
+
+**ChatGPT Phase Lead:** GPT-6 / High para revisión de integridad, arquitectura y aceptación.
+
+**Codex Engineering Lead:** `gpt-6.1-sol` / Medium para coordinación e integración.
+
+**Codex especialistas críticos:** `gpt-6.1-sol` / High para DB-OWNER, ARQ/BE, QA y REVIEWER, cuando esté disponible.
+
+**Escalado:** High ante inconsistencias de datos, semántica transaccional, fallos concurrentes, recuperación o incompatibilidades de contratos.
+
+Registrar modelo solicitado, selección observable y limitaciones de verificación. No afirmar un backend no comprobado.
+
+# P8c — RW-01: Writer/Verifier Invariant Mismatch
+
+## Decisión y estado
+
+El Orchestrator ha emitido **REWORK_REQUIRED** sobre P8c.
+
+El Phase Lead ha revisado y aceptado RW-01.
+
+La recomendación anterior READY_FOR_ORCHESTRATOR_REVIEW queda suspendida hasta que la corrección y las nuevas evidencias estén completas.
+
+**PR existente:** https://github.com/KastaTM/card-market-tracker/pull/18
+
+**Candidato defectuoso:**
+- HEAD: `360da646892e46545ca70e8838bc3a2a89e460a3`
+- Tree: `3ce94d6e214de74889475753807122b526085b98`
+- Baseline: `228d5c8d0d91edf03ddb86a489c8232eeb7c08bc`
+
+No hacer merge, no declarar PHASE CLOSED y no abrir una fase nueva.
+
+## 1. Problema normativo
+
+Dos pares independientes de bases P5a/P5b pueden contener originales válidos con el mismo `(watch_id, revision)` y entradas Watchlist diferentes.
+
+Ambos pueden generar señales originales válidas e identidades `walt1_` diferentes.
+
+Actualmente, el writer permite que ambas se inserten en el mismo outbox. Después, `_verify()` detecta la contradicción entre entradas y rechaza el almacenamiento.
+
+**Invariante obligatorio:**
+
+Toda escritura `recorded` debe preservar las propiedades semánticas exigidas por el verificador completo.
+
+En particular, para cualquier clave `(watch_id, revision)` almacenada, todas sus evidencias deben mantener la misma entrada Watchlist canónica completa.
+
+## 2. Reproducción obligatoria
+
+Antes de corregir:
+
+1. Verificar HEAD/tree y estado de trabajo.
+2. Reproducir el escenario público descrito por el Orchestrator utilizando Python 3.13 soportado.
+3. Utilizar dos pares originales genuinos, con el mismo watch_id/revision y diferentes `target_price_minor`.
+4. Ejecutar exclusivamente las APIs públicas para crear las fuentes y admitir las señales.
+5. Confirmar el defecto original: dos `recorded`, seguidos de fallo de `verify` y `backup`.
+6. Preservar código del probe, salida, versión Python/SQLite y SHA/tree del candidato defectuoso.
+
+No emplear DTO falsificados, mutaciones SQL, acceso directo al writer ni modificaciones de fuentes para fabricar el caso.
+
+No sobrescribir el resultado pre-fix después de corregirlo.
+
+## 3. Corrección autorizada
+
+Owner principal: **DB-OWNER**.
+
+ARQ/BE debe revisar la semántica de conflicto e identidad. SEC/SRE revisará la atomicidad y los failure modes.
+
+Implementar una validación transaccional que:
+
+- Se ejecute dentro del mismo `BEGIN IMMEDIATE` de `_enqueue_verified()`.
+- Compare la nueva entrada Watchlist contra todas las entradas existentes que compartan `(watch_id, revision)`.
+- Utilice la representación completa, normalizada y canónica de la entrada.
+- Rechace una incompatibilidad antes del COMMIT, sin modificar el outbox previamente sano.
+- Mantenga una categoría pública de conflicto documentada y estable. Para una misma identidad histórica con contenido incompatible, evaluar `identity_conflict` (exit 2), manteniendo `replay_conflict` para los conflictos ya definidos de un mismo alert ID.
+- Distinga corrupción preexistente (`storage_corrupt`) de un nuevo intento incompatible.
+- Respete un único Budget compartido, default 2 y máximo 5 segundos.
+
+La validación debe usar lecturas acotadas y verificadas. No aceptar JSON almacenado como autoridad sin reconstrucción semántica.
+
+**Prohibido:**
+- Eliminar o debilitar el invariante del verificador.
+- Modificar identidades `walt1_`, `wsig1_` o anteriores.
+- Cambiar esquemas SQLite ya congelados.
+- Aumentar deadlines.
+- Introducir retries que oculten conflictos.
+- Modificar fuentes P5a/P5b.
+- Ampliar el alcance de la fase.
+
+Si alguna de estas restricciones resultara incompatible con una corrección correcta, detener el trabajo afectado y elevar la decisión al Phase Lead.
+
+## 4. Regresiones obligatorias
+
+Desarrollar pruebas automatizadas para:
+
+1. Mismo watch_id/revision, distinta entrada y diferente signal_id.
+2. El mismo caso con destination_key diferente.
+3. El mismo caso con series diferentes.
+4. Dos procesos concurrentes intentando introducir configuraciones incompatibles.
+5. Dos copias independientes de fuentes con la misma configuración semántica: deben coexistir cuando sus señales/destinos sean distintos.
+6. Revisiones diferentes: no provocar conflictos artificiales.
+7. Productos y watch_id distintos: independencia preservada.
+8. Replay antiguo válido: comportamiento original inalterado.
+9. Tras rechazo: bytes, cardinalidad, evidencia y first_prepared_at originales inalterados.
+10. Tras rechazo: `verify` y `backup` continúan funcionando.
+11. Bases P5a/P5b originales: bytes inalterados.
+12. Timeout o error entre comprobación y escritura: rollback sin estado parcialmente confirmado.
+
+Incluir una prueba con fuentes legítimas, no solo mocks ni fixtures construidas mediante helpers de producción.
+
+El test debe fallar contra el candidato defectuoso y pasar contra la corrección.
+
+## 5. Organización multiagente
+
+Engineering Lead debe inspeccionar primero el estado actual y asignar ownership.
+
+- **DB-OWNER:** corrección del writer y tests transaccionales.
+- **ARQ/BE:** análisis independiente de compatibilidad con identidades y contratos; cambios solo si son imprescindibles y sin solapar archivos.
+- **SEC/SRE:** auditoría read-only de concurrencia, corrupción, deadlines y persistencia.
+- **QA:** nuevas pruebas independientes sobre el candidato corregido.
+- **REVIEWER:** revisión final distinta de autores y QA, incluyendo regresión del finding y análisis del diff.
+
+Author ≠ QA ≠ Final Reviewer.
+
+No reutilizar sin más las atestaciones anteriores como aceptación del nuevo candidato.
+
+## 6. Quality Gates obligatorios
+
+Tras integrar la corrección:
+
+- Ruff format/check.
+- mypy strict.
+- pytest completo, sin filtros ni nuevos skips.
+- Cobertura mínima original: 85 % líneas / 80 % ramas.
+- Tests de integración, concurrencia, contratos, corrupción y recuperación.
+- Auditoría de dependencias y secret scan.
+- Wheel/sdist e instalación fuera del source.
+- Doce harnesses, incluidos los once anteriores sin debilitarlos.
+- CI normal sobre el nuevo SHA: Quality, Compose, AMD64 y ARM64/QEMU.
+- QA y REVIEWER independientes sobre el nuevo SHA/tree exactos.
+
+Preservar íntegramente los fallos anteriores y la ejecución CI del candidato original. Los nuevos gates deben corresponder al commit corregido.
+
+No recurrir a reruns de jobs fallidos sobre el mismo SHA sin autorización.
+
+## 7. Documentación y publicación
+
+Registrar RW-01 como rework dentro de P8c, conservando la evidencia histórica.
+
+Actualizar cuando corresponda:
+
+- Informe de fase e integración P8c.
+- Matriz AC-WA07/08/10/13 y AC relacionados.
+- Pruebas y evidencia independiente.
+- Contratos y ADR únicamente si se detecta una incompatibilidad real; el objetivo es preservar el diseño congelado.
+- Documentación de fallo reproducido, corrección, pruebas y resultados.
+
+Actualizar el **PR #18 existente** con el nuevo candidato. No crear un PR alternativo sin motivo justificado.
+
+Publicar el nuevo SHA/tree, informe, evidencias QA/REVIEWER, cuatro logs completos y readback verificable de los artefactos.
+
+## 8. Entregable
+
+Presentar un **P8c RW-01 Corrective Implementation Report**:
+
+- Estado y baseline.
+- SHA/tree anterior y corregido.
+- MODEL PROFILE USED.
+- Especialistas, ownership y revisión independiente.
+- Reproducción pre-fix sobre Python 3.13.
+- Causa raíz confirmada.
+- Diff y corrección implementada.
+- Tests de regresión y controles negativos.
+- Verificación de bytes, timestamps, counts, verify y backup.
+- Quality Gates PASS/FAIL/BLOCKED.
+- Nuevo CI de cuatro jobs y doce harnesses.
+- Actualización de AC-WA01–20.
+- Publicación y readback del PR #18.
+- Riesgos residuales y fallos conservados.
+
+No declarar READY_FOR_ORCHESTRATOR_REVIEW mientras exista cualquier gate obligatorio o revisión independiente pendiente.
+
+Detenerse después del informe para revisión del Phase Lead.
+
+**P8c permanece OPEN — REWORK_REQUIRED. Sin merge ni cierre.**

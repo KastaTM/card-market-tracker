@@ -1,0 +1,7 @@
+{"command": ["C:\\Users\\Rodrigo\\AppData\\Local\\Temp\\cmt-p8c-wheel-3dd76353b9b740868ce187db9b03362c\\Scripts\\python.exe", "scripts/multi_revision_metadata_smoke.py", "--mode", "installed", "--executable", "C:\\Users\\Rodrigo\\AppData\\Local\\Temp\\cmt-p8c-wheel-3dd76353b9b740868ce187db9b03362c\\Scripts\\cmt.exe", "--fixtures", "tests/fixtures"], "time_utc": "20261028T121006390265Z", "exit_code": 0}
+STDOUT
+seed: reviewed real unchanged pair and explicit synthetic transitions
+verified backup/restore: explicit 5s budget; CLI/read default remains 2s
+multi-revision installed smoke PASS; separate offline processes, real unchanged pair, synthetic transitions, v2 guard, replay, chronology, nonmutation and restore
+
+STDERR

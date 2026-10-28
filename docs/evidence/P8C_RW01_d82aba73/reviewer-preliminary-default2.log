@@ -1,0 +1,5 @@
+﻿PRELIMINARY ONLY: working tree, not final candidate attestation
+exit_code=
+PRELIMINARY ONLY: working tree, not final candidate attestation; PowerShell Tee parameter error corrected before execution
+{"checks":["target-signal","target-destination","target-series","priority-signal","priority-destination","priority-series","freshness-signal","freshness-destination","freshness-series","restock-signal","restock-destination","restock-series","canonical-identity-signal","canonical-identity-destination","canonical-identity-series","same-semantic-destination","same-semantic-signal","same-semantic-series","revision","product","ancient-replay","same-id-replay-conflict-precedence","atomic-process-race","preexisting-corruption-precedence","precommit-io-INSERT INTO watchlist_alerts","precommit-io-INSERT INTO watchlist_alert_evidence","precommit-io-COMMIT","precommit-timeout-INSERT INTO watchlist_alert_evidence"],"count":28,"python":"3.13.15","result":"PASS","sqlite":"3.53.1"}
+exit_code=0
