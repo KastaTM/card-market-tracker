@@ -5,8 +5,8 @@
       "sha256": "aedc73836ac649e6cb3290f72d4d643d3c77992acf2f8a56dc713702004adc92"
     },
     "P8C_INTEGRATION_COMPLETION_REPORT.md": {
-      "bytes": 12530,
-      "sha256": "5fdccc6030eca206bfe28f4e2571c05620a5226b9bd716022a7e9865b7154375"
+      "bytes": 12628,
+      "sha256": "f0c9168de58a016a2b4e9f2bf7a55027b3475ca900eb4b4ee9c91dc89861d8cd"
     },
     "accepted-head-to-merge.diff": {
       "bytes": 0,
@@ -111,6 +111,10 @@
     "privileged-readonly-worktree-statuses.json": {
       "bytes": 18695,
       "sha256": "5e714ce9f800fbcfe9941ba898c7eeb5458a2958e587f3835d562a0809189446"
+    },
+    "public-bundle-readback.json": {
+      "bytes": 9061,
+      "sha256": "8811c1ed7e735be4d62fce4914693fae05d1e0d9396e2cf10f4e0d0df70b280c"
     },
     "quality-gate-summary.json": {
       "bytes": 16121,

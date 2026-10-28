@@ -1,8 +1,8 @@
 # P8c Integration Completion Report
 
-**Status: STRUCTURE / PUSH-MAIN GATES PASS - PUBLIC READBACK PENDING. P8c phase remains OPEN.**
+**Status: INTEGRATION_VERIFIED — PASS. P8c phase remains OPEN.**
 
-Prepared UTC: 2026-10-28T18:47:14.175700+00:00
+Prepared UTC: 2026-10-28T18:49:33.293368+00:00
 
 ## Authorization and scope
 
@@ -100,7 +100,7 @@ python collect_integration_ci.py --state integration-state.json --output reexpor
 python readback_integration_evidence.py --commit EVIDENCE_SHA --prefix docs/evidence/P8C_INTEGRATION_9dda9fba --output downloaded --reference LOCAL_PUBLISHED --receipt readback.json
 ~~~
 
-This prepared report deliberately leaves public readback pending until the first published snapshot has been downloaded and verified. It will be finalized only after that check.
+Public bundle readback: PASS at immutable evidence commit 54dbaab5a5dec17de726f7c10387de7ff9daf8a1, 33 artifacts checked byte for byte. Full receipt: [public-bundle-readback.json](public-bundle-readback.json). The final report snapshot is downloaded and rechecked before the completion comment is posted.
 
 ## Limits and handoff
 
