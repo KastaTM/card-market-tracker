@@ -60,3 +60,34 @@ Live: NOT AUTHORIZED. No getMe/getChat/sendMessage or token access.
 All specialist design files returned to Lead after review. DB/SEC chronology
 revision was explicitly reassigned to those same isolated documents and returned.
 No active specialist owns product files; QA/final REVIEWER remain unactivated.
+
+## Gate C activation - 2026-10-30
+
+The [Phase Lead decision](P8D_DESIGN_ACCEPTANCE.md) supersedes the historical
+Gate A/B-only restrictions above. Frozen design50fcb55a remains unchanged.
+
+| New actor/session | Exclusive current edit targets | Constraints |
+| --- | --- | --- |
+| /root/p8d_be_impl | src/card_market_tracker/watchlist_delivery/application.py, policy.py, models.py, errors.py, budget.py; tests/test_watchlist_delivery_application.py, tests/test_watchlist_delivery_policy.py | Product BE author. Coordinate private writer/policy interfaces with DB before implementation. No Git/shared docs edits. |
+| /root/p8d_db_impl | src/card_market_tracker/watchlist_delivery/schema.py, storage.py; tests/test_watchlist_delivery_storage.py, tests/test_watchlist_delivery_recovery.py, tests/test_watchlist_delivery_concurrency.py | DB author; exact literal accepted DDL, bounded materialization/full folds/CAS/recovery. No Git/shared docs edits. |
+| /root/p8d_qa_independent | scripts/p8d_qa_probe.py and docs/evidence/P8D_QA/ only | Nonauthor QA; no product or author-test edits. Independent probes/oracles. Initial read-only analysis then exact-final-candidate validation. |
+| /root/p8d_final_reviewer (reserved, distinct agent) | scripts/p8d_reviewer_probe.py and docs/evidence/P8D_REVIEWER/ only | Nonauthor final REVIEWER; distinct from authors and QA. Spawn after product integration. |
+| Engineering Lead /root | __init__.py, CLI and narrow transport adapter; root CLI/logging; thirteenth smoke/wheel/container/CI; integration/CLI tests; shared docs/Git/evidence | Sole integrator; no concurrent edits to delegated files without explicit handback. |
+
+All paths are relative to the authorized P8d worktree. All specialists must
+use fake transport only and must not read actual credentials or call Telegram.
+No extra subagents, branch/index/ref mutations or prior-schema/product edits.
+BE and DB may exchange messages/read each other's files; authorship stays exclusive.
+QA/final REVIEWER may not fix product files. A finding goes to Lead/author.
+Requested specialist profile remains gpt-6.1-sol/high; effective backend unverified.
+
+## Narrow qualification tooling assignment - offline authoring only
+
+/root/p8d_be_impl returned its product files to Lead. It is reassigned exclusively
+scripts/watchlist_telegram_qualification.py and
+tests/test_watchlist_delivery_qualification.py to prepare the later AC-WT20
+dossier/cumulative-cap wrapper. Fake-only tests; no real authorization, token
+read or provider invocation by the agent. Lead retains product files and CLI/
+harness/CI; no overlapping edits. Frozen core contracts are unchanged.
+
+Qualification tooling reassignment ended when the BE agent returned a usage-limit error before tests. Lead takes back both assigned wrapper/test paths, preserves the authored draft, completes validation and records this interruption. No product/frozen changes are inferred from an uncompleted agent turn.

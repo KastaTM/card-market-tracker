@@ -8,7 +8,7 @@
   synthetic Watchlist Telegram delivery; exact original P5a/P5b/P8c admission,
   specific content/route consent, provider+signal dedup, durable claim/fencing,
   conservative uncertainty and globally quarantined restores. P8d OPEN;
-  Gate A PASS; Gate B proposed for Phase Lead design acceptance. Live Telegram
+  Gate A PASS; [Gate B ACCEPTED / Gate C offline authorized](docs/phases/P8D_DESIGN_ACCEPTANCE.md). Live Telegram
   NOT AUTHORIZED. Preserve prior authorities/schemas; only Orchestrator closes.
   P8c ACCEPTED / PHASE CLOSED by Orchestrator chat decision 2026-10-28 recorded
   in the P8d contract after PR18 integration; older RW-01 entries remain history.

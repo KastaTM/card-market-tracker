@@ -52,6 +52,79 @@ _PUBLIC_DIGESTS = {
     "tests/fixtures/p5b_identity_vectors_v1.json": {_P5B_IDENTITY},
 }
 
+# P8d exact public Git/content IDs and independently checked synthetic vectors.
+_P8D_BASE = "9dda9fba0aa9646a67596657d4ae9a7088903808"  # pragma: allowlist secret
+_P8D_TREE = "dfd0414242cff364aad6082411ae88aef728783e"  # pragma: allowlist secret
+_P8D_PARENT1 = "228d5c8d0d91edf03ddb86a489c8232eeb7c08bc"  # pragma: allowlist secret
+_P8D_PARENT2 = "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c"  # pragma: allowlist secret
+_P8D_OLDHEAD = "f80bc8cdb877946f37d76b09212d68dd8da3e246"  # pragma: allowlist secret
+_P8D_OLDTREE = "dde865b6d215efc4075918088d6deddfe7cdeb1f"  # pragma: allowlist secret
+_P8D_DESIGNHEAD = "50fcb55a0b0e467bcb9d94561412a0f3c6ebc8f9"  # pragma: allowlist secret
+_P8D_DESIGNTREE = "d8d3eac1580dbfb3fa6aafcf94d033a8781204e2"  # pragma: allowlist secret
+_P8D_AUDIT = (
+    "6aa7e5d706a6492a8947d5bba614ff36c4a96c4460ce3392a018fc5f87e952c4"  # pragma: allowlist secret
+)
+_P8D_BRIEF = (
+    "ed08f263239a8d1e628bd5af1f7efa8fe3329df2901fb5ea03dbc6dae6352cb6"  # pragma: allowlist secret
+)
+_P8D_CONTRACT = (
+    "9b5ec931250fd66f9660c9916153f4594ae021845c6dd9f643264f7df8e8d3e3"  # pragma: allowlist secret
+)
+_P8D_ORACLE_A = (
+    "b08e2920077a2f36ba634b32c0f1215e952063c55cfc99320ab55fbbdf9d36f5"  # pragma: allowlist secret
+)
+_P8D_ORACLE_B = (
+    "810e8528fcea94a8ee848b56cb50ae04ff35bbaef05de8f667bddda896cac9d8"  # pragma: allowlist secret
+)
+_PUBLIC_DIGESTS.update(
+    {
+        "docs/evidence/P8D_GATE_A/baseline.json": {
+            _P8D_BASE,
+            _P8D_TREE,
+            _P8D_PARENT1,
+            _P8D_PARENT2,
+            _P8D_OLDHEAD,
+            _P8D_OLDTREE,
+            _P8D_AUDIT,
+            _P8D_BRIEF,
+            _P8D_CONTRACT,
+        },
+        "docs/evidence/P8D_GATE_B/design_probe.py": {
+            _P8D_BASE,
+            _P8D_TREE,
+            _P8D_AUDIT,
+            _P8D_BRIEF,
+            _P8D_CONTRACT,
+            _P8D_ORACLE_A,
+            _P8D_ORACLE_B,
+        },
+        "docs/evidence/P8D_REVIEWER/INITIAL_PROBE_RESULT.json": {
+            _P8D_DESIGNHEAD,
+            _P8D_DESIGNTREE,
+        },
+        "docs/evidence/P8D_REVIEWER/MANIFEST_CORRECTIVE_PROBE_RESULT.json": {
+            _P8D_DESIGNHEAD,
+            _P8D_DESIGNTREE,
+        },
+        "docs/evidence/P8D_REVIEWER/MANIFEST_GAP_PROBE_RESULT.json": {
+            _P8D_DESIGNHEAD,
+            _P8D_DESIGNTREE,
+        },
+        "scripts/p8d_qa_probe.py": {
+            _P8D_ORACLE_A,
+            _P8D_ORACLE_B,
+        },
+        "scripts/p8d_reviewer_probe.py": {
+            _P8D_ORACLE_A,
+            _P8D_ORACLE_B,
+        },
+        "tests/test_watchlist_delivery_policy.py": {
+            _P8D_ORACLE_A,
+            _P8D_ORACLE_B,
+        },
+    }
+)
+
 
 def _reviewed_public_candidate(path: str, candidate: dict[str, object]) -> bool:
     """No pattern exclusion: detector/path/value must all match a reviewed public ID."""

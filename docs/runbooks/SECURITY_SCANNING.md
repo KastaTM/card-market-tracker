@@ -52,3 +52,35 @@ rights/provenance evidence. Regression tests require same-value/wrong-path,
 wrong detector, unknown/missing hash and replaced-value candidates to fail;
 scanner output never prints candidate values. A real secret finding remains a
 failed gate and must be corrected; this exception does not permit credentials.
+
+## P8d exact public-identifier review (2026-10-30)
+
+The initial complete tracked-file scan failed on28 candidates across8 paths.
+Every candidate was Hex High Entropy String and was verified as a public Git
+commit/tree, exact unedited handoff content hash or the two fixed164-byte/NUL
+synthetic identity vectors. No credential candidate was dismissed.
+The scanner keeps all files/detectors and requires the existing exact detector/
+path/value fingerprint match. Wrong path, changed digest, different detector
+and missing/unknown hashes remain FAIL. No entropy threshold, regex/path exclusion
+or blanket Markdown/JSON exception is introduced. Frozen inputs are not edited.
+
+Exact added paths and permitted public values:
+
+- docs/evidence/P8D_GATE_A/baseline.json: authorized baseline/tree/ordered parents,
+  preserved original checkout head/tree and three original handoff SHA256s.
+- docs/evidence/P8D_GATE_B/design_probe.py: baseline/tree, three handoff hashes,
+  and the two independent format-vector digests.
+- docs/evidence/P8D_REVIEWER/INITIAL_PROBE_RESULT.json,
+  MANIFEST_CORRECTIVE_PROBE_RESULT.json and MANIFEST_GAP_PROBE_RESULT.json:
+  only accepted design commit50fcb55a and treed8d3eac.
+- scripts/p8d_qa_probe.py, scripts/p8d_reviewer_probe.py and
+  tests/test_watchlist_delivery_policy.py: only the two frozen identity digests.
+
+Git values were verified with local cat-file against the authorized history.
+Handoff hashes were recomputed from byte-identical archived originals. Vector
+hashes were recomputed via stdlib literal preimages, independently of product
+identity code. The source registry repeats only those exact values with the
+same per-line annotations as prior phases; all other lines remain scanned.
+Additional regressions require matching path/value/detector and reject changed
+values/paths/types. Owner Engineering Lead/SEC; independent final REVIEWER must
+recheck these additions. Revisit on any path/value/detector-semantic change.

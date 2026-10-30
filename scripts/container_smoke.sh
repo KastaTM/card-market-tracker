@@ -31,4 +31,5 @@ python3 scripts/telegram_delivery_smoke.py --mode docker --image "$image" --plat
 python3 scripts/watchlist_smoke.py --mode docker --image "$image" --platform "$platform" --fixtures tests/fixtures
 python3 scripts/watchlist_journal_smoke.py --mode docker --image "$image" --platform "$platform" --fixtures tests/fixtures
 python3 scripts/watchlist_alert_outbox_smoke.py --mode docker --image "$image" --platform "$platform" --fixtures tests/fixtures
+python3 scripts/watchlist_telegram_delivery_smoke.py --mode docker --image "$image" --platform "$platform" --fixtures tests/fixtures
 echo "$platform smoke PASS; uid=$uid"

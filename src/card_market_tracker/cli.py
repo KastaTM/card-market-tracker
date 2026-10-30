@@ -47,10 +47,20 @@ class _Parser(argparse.ArgumentParser):
         raise ConfigurationError("arguments: invalid")
 
 
-def _parser(*, watchlist_alert_only: bool = False) -> _Parser:
+def _parser(
+    *,
+    watchlist_alert_only: bool = False,
+    watchlist_delivery_only: bool = False,
+    telegram_selected: bool = False,
+) -> _Parser:
     parser = _Parser(prog="cmt", add_help=True)
     parser.add_argument("--version", action="store_true")
     commands = parser.add_subparsers(dest="command", parser_class=_Parser)
+    if watchlist_delivery_only:
+        from card_market_tracker.watchlist_delivery import cli as watchlist_delivery_cli
+
+        watchlist_delivery_cli.register(commands)
+        return parser
     if watchlist_alert_only:
         from card_market_tracker.watchlist_alerts import cli as watchlist_alert_cli
 
@@ -115,13 +125,20 @@ def _parser(*, watchlist_alert_only: bool = False) -> _Parser:
             command.add_argument("--destination", type=Path, required=True)
     journal_cli.register(commands)
     outbox_cli.register(commands)
-    from card_market_tracker.telegram_delivery import cli as telegram_cli
     from card_market_tracker.watchlist_alerts import cli as watchlist_alert_cli
+    from card_market_tracker.watchlist_delivery import cli as watchlist_delivery_cli
 
-    telegram_cli.register(commands)
+    if telegram_selected:
+        from card_market_tracker.telegram_delivery import cli as telegram_cli
+
+        telegram_cli.register(commands)
+    else:
+        # Root help and unrelated offline routes need only this group name.
+        commands.add_parser("telegram-delivery")
     watchlist_cli.register(commands)
     watchlist_journal_cli.register(commands)
     watchlist_alert_cli.register(commands)
+    watchlist_delivery_cli.register(commands)
     return parser
 
 
@@ -487,13 +504,29 @@ def main(argv: list[str] | None = None) -> int:
     actual_argv = sys.argv[1:] if argv is None else argv
     try:
         selected = next((value for value in actual_argv if value != "--version"), None)
-        args = _parser(watchlist_alert_only=selected == "watchlist-alert-outbox").parse_args(
-            actual_argv
-        )
+        try:
+            args = _parser(
+                watchlist_alert_only=selected == "watchlist-alert-outbox",
+                watchlist_delivery_only=selected == "watchlist-telegram-delivery",
+                telegram_selected=selected == "telegram-delivery",
+            ).parse_args(actual_argv)
+        except SystemExit as error:
+            if selected == "watchlist-telegram-delivery" and error.code == 0:
+                from card_market_tracker.watchlist_delivery import cli as watchlist_delivery_cli
+
+                watchlist_delivery_cli.help_completed(started)
+                return 0
+            raise
         if args.version:
             print(f"cmt {__version__}")
             logger.info("", extra={"event": "cli.version", "component": "cli"})
             return 0
+        if args.command == "watchlist-telegram-delivery":
+            from card_market_tracker.watchlist_delivery import cli as watchlist_delivery_cli
+
+            return watchlist_delivery_cli.dispatch(
+                args, started, started_monotonic=started_monotonic
+            )
         if args.command == "watchlist-alert-outbox":
             from card_market_tracker.watchlist_alerts import cli as watchlist_alert_cli
 
@@ -543,6 +576,10 @@ def main(argv: list[str] | None = None) -> int:
         return 0
     except ConfigurationError:
         selected = next((value for value in actual_argv if value != "--version"), None)
+        if selected == "watchlist-telegram-delivery":
+            from card_market_tracker.watchlist_delivery import cli as watchlist_delivery_cli
+
+            return watchlist_delivery_cli.invalid_arguments(started)
         if selected == "watchlist-alert-outbox":
             from card_market_tracker.watchlist_alerts import cli as watchlist_alert_cli
 

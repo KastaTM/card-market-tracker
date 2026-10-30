@@ -26,6 +26,7 @@ _EVENTS = frozenset(
         "watchlist.completed",
         "watchlist.journal.completed",
         "watchlist.alert_outbox.completed",
+        "watchlist.telegram_delivery.completed",
     }
 )
 
@@ -237,6 +238,20 @@ class JsonFormatter(logging.Formatter):
             "watchlist_alert_outbox_recompute",
             "watchlist_alert_outbox_backup",
             "watchlist_alert_outbox_restore",
+            "watchlist_telegram_delivery_arguments",
+            "watchlist_telegram_delivery_init",
+            "watchlist_telegram_delivery_destination_add",
+            "watchlist_telegram_delivery_destination_validate",
+            "watchlist_telegram_delivery_review",
+            "watchlist_telegram_delivery_prepare",
+            "watchlist_telegram_delivery_send",
+            "watchlist_telegram_delivery_get",
+            "watchlist_telegram_delivery_list",
+            "watchlist_telegram_delivery_verify",
+            "watchlist_telegram_delivery_recompute",
+            "watchlist_telegram_delivery_recover",
+            "watchlist_telegram_delivery_backup",
+            "watchlist_telegram_delivery_restore",
         }:
             payload["operation"] = operation
         duration = getattr(record, "duration_ms", None)
@@ -271,11 +286,17 @@ class JsonFormatter(logging.Formatter):
             ("journal_signals_count", 100000000),
             ("watchlist_alerts_count", 100000000),
             ("watchlist_alert_evidence_count", 100000000),
+            ("delivery_count", 100000000),
         ):
             value = getattr(record, field, None)
             if type(value) is int and 0 <= value <= maximum:
                 payload[field] = value
-        for field, prefix in (("delivery_id", "tdl1:"), ("attempt_id", "tat1:")):
+        identity_prefixes = (
+            (("delivery_id", "wtdl1_"), ("attempt_id", "wtat1_"))
+            if payload["event"] == "watchlist.telegram_delivery.completed"
+            else (("delivery_id", "tdl1:"), ("attempt_id", "tat1:"))
+        )
+        for field, prefix in identity_prefixes:
             value = getattr(record, field, None)
             if type(value) is str and re.fullmatch(prefix + r"[0-9a-f]{64}", value):
                 payload[field] = value
@@ -316,6 +337,39 @@ class JsonFormatter(logging.Formatter):
             if payload.get("result") not in {"ok", "replay"}:
                 payload.pop("watchlist_alerts_count", None)
                 payload.pop("watchlist_alert_evidence_count", None)
+        if payload["event"] == "watchlist.telegram_delivery.completed":
+            from .watchlist_delivery.errors import ERROR_CATEGORIES
+
+            category = getattr(record, "error_category", None)
+            if type(category) is str and category in ERROR_CATEGORIES:
+                payload["error_category"] = category
+            allowed = {
+                "timestamp",
+                "level",
+                "event",
+                "component",
+                "run_id",
+                "operation",
+                "duration_ms",
+                "result",
+                "error_category",
+                "delivery_id",
+                "attempt_id",
+                "state",
+                "previous_state",
+                "attempt_count",
+                "delivery_count",
+            }
+            payload = {key: value for key, value in payload.items() if key in allowed}
+            if payload.get("result") not in {"ok", "inserted", "replay", "error"}:
+                payload.pop("result", None)
+            if (
+                payload.get("result") != "error"
+                or payload.get("error_category") not in ERROR_CATEGORIES
+            ):
+                payload.pop("error_category", None)
+            if not str(payload.get("operation", "")).startswith("watchlist_telegram_delivery_"):
+                payload.pop("operation", None)
         return json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
 
 
