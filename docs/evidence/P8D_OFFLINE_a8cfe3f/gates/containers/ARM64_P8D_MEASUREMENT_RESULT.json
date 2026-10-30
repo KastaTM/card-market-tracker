@@ -1,0 +1,19 @@
+{
+  "head": "a8cfe3f4e9e2bc50558f3a9aee13a1fbd9bf6abd",
+  "tree": "820ddbdfc278ada9b2d713a1c0b834f5d59e5dbd",
+  "command": [
+    "C:\\Projects\\card-market-tracker-p8d\\.venv\\Scripts\\python.exe",
+    "C:\\Projects\\card-market-tracker-p8d\\scripts\\watchlist_telegram_delivery_smoke.py",
+    "--mode",
+    "docker",
+    "--image",
+    "cmt-p8d-a8cfe3f:arm64",
+    "--platform",
+    "linux/arm64",
+    "--fixtures",
+    "C:\\Projects\\card-market-tracker-p8d\\tests\\fixtures"
+  ],
+  "exit": 0,
+  "seconds": 106.191,
+  "scope": "local QEMU full-five-checkpoint/four-signal P8d timing controls; remote CI independently retains all13harnesses perenvironment"
+}

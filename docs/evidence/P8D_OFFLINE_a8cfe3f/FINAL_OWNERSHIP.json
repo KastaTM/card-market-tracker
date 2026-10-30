@@ -1,0 +1,21 @@
+{
+  "candidate": "a8cfe3f4e9e2bc50558f3a9aee13a1fbd9bf6abd",
+  "tree": "820ddbdfc278ada9b2d713a1c0b834f5d59e5dbd",
+  "qa": {
+    "actor": "/root/p8d_qa_independent",
+    "exclusive_reports": "C:\\Projects\\card-market-tracker-p8d\\.p8d-evidence\\final\\qa",
+    "tracked_edits": false
+  },
+  "reviewer": {
+    "actor": "/root/p8d_final_reviewer",
+    "exclusive_reports": "C:\\Projects\\card-market-tracker-p8d\\.p8d-evidence\\final\\reviewer",
+    "tracked_edits": false
+  },
+  "lead": {
+    "exclusive": "C:\\Projects\\card-market-tracker-p8d\\.p8d-evidence\\final\\gates",
+    "tracked_edits": "None while final gates run; corrective source commit required for any material finding."
+  },
+  "scope": "Fake-only; no token or provider invocation; existing own probes read-only, extra probes only assigned ignored report directory.",
+  "source_frozen": true,
+  "order": "Reviewer then QA for pristine before/after; runtime tests may run concurrently, ignored caches only."
+}

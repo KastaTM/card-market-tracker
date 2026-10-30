@@ -1,0 +1,7 @@
+{
+  "destination": "KastaTM/card-market-tracker, new evidence/p8d-offline-a8cfe3f branch linked from authorized draftPR20",
+  "allowed": "sanitized Markdown reports, fake-only independent probe Python source, result JSON and public tracked-source hashes",
+  "excluded": "all raw logs, all ZIP/wheel/sdist/binary artifacts, real source databases, actual credentials, route IDs and remote HTTP bodies",
+  "existing_remote_evidence": "Full product source in a8cfe3f candidate; complete final and historical failed job logs already available in GitHub Actions; linked directly.",
+  "approval_rejection_preserved": "Complete bundle push was rejected by automatic approval review; no such push was executed. This is a narrower documents-only alternative, not a retry of that export."
+}

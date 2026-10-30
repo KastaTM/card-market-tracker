@@ -1,0 +1,359 @@
+{
+  "candidate": "a8cfe3f4e9e2bc50558f3a9aee13a1fbd9bf6abd",
+  "tree": "820ddbdfc278ada9b2d713a1c0b834f5d59e5dbd",
+  "jobs": [
+    {
+      "job": "compose",
+      "id": 124290271458,
+      "conclusion": "success",
+      "url": "https://github.com/KastaTM/card-market-tracker/actions/runs/41122041749/job/124290271458",
+      "full_log_bytes": 78747,
+      "mode": "compose",
+      "all13_markers_present": true
+    },
+    {
+      "job": "container (linux/amd64)",
+      "id": 124290271899,
+      "conclusion": "success",
+      "url": "https://github.com/KastaTM/card-market-tracker/actions/runs/41122041749/job/124290271899",
+      "full_log_bytes": 90918,
+      "mode": "docker",
+      "all13_markers_present": true
+    },
+    {
+      "job": "quality",
+      "id": 124290271910,
+      "conclusion": "success",
+      "url": "https://github.com/KastaTM/card-market-tracker/actions/runs/41122041749/job/124290271910",
+      "full_log_bytes": 99883,
+      "mode": "installed",
+      "all13_markers_present": true
+    },
+    {
+      "job": "container (linux/arm64)",
+      "id": 124290272321,
+      "conclusion": "success",
+      "url": "https://github.com/KastaTM/card-market-tracker/actions/runs/41122041749/job/124290272321",
+      "full_log_bytes": 91117,
+      "mode": "docker",
+      "all13_markers_present": true
+    }
+  ],
+  "pr_checkout_probes": [
+    {
+      "candidate": {
+        "clean": true,
+        "head": "dd9035c3f820f124f32cdbab8c3c210f9286703d",
+        "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tree": "820ddbdfc278ada9b2d713a1c0b834f5d59e5dbd",
+        "working_bytes_sha256": "91145b1b76287ea693ecd85d4f82dee48f8ca950c982a820ffcfa1adf4a98a30"
+      },
+      "check_count": 101,
+      "checks": [
+        "independent_frozen_vector_0",
+        "independent_frozen_vector_1",
+        "independent_frozen_vector_2",
+        "checkpoint_identity_0",
+        "checkpoint_signals_0",
+        "checkpoint_identity_1",
+        "checkpoint_signals_1",
+        "checkpoint_identity_2",
+        "checkpoint_signals_2",
+        "checkpoint_identity_3",
+        "checkpoint_signals_3",
+        "checkpoint_identity_4",
+        "checkpoint_signals_4",
+        "five_checkpoints_four_signals",
+        "independent_id_0_local-preview",
+        "independent_content_0_local-preview",
+        "independent_evidence_0_local-preview",
+        "independent_id_0_qa-preview",
+        "independent_content_0_qa-preview",
+        "independent_evidence_0_qa-preview",
+        "independent_id_1_local-preview",
+        "independent_content_1_local-preview",
+        "independent_evidence_1_local-preview",
+        "independent_id_1_qa-preview",
+        "independent_content_1_qa-preview",
+        "independent_evidence_1_qa-preview",
+        "independent_id_2_local-preview",
+        "independent_content_2_local-preview",
+        "independent_evidence_2_local-preview",
+        "independent_id_2_qa-preview",
+        "independent_content_2_qa-preview",
+        "independent_evidence_2_qa-preview",
+        "independent_id_3_local-preview",
+        "independent_content_3_local-preview",
+        "independent_evidence_3_local-preview",
+        "independent_id_3_qa-preview",
+        "independent_content_3_qa-preview",
+        "independent_evidence_3_qa-preview",
+        "alias_rule_episode_isolation",
+        "ancient_bytes_before_revision",
+        "ancient_replay_after_append_revision",
+        "origin_recompute_historical_revision",
+        "replay_rejects_unrelated_duplicate_id",
+        "replay_rejects_unrelated_broken_relation",
+        "replay_rejects_selected_identity_change",
+        "replay_rejects_unrelated_binding_invalid",
+        "replay_rejects_strict_manifest_version",
+        "different_exact_original_revision",
+        "fabricated_baseline_signal",
+        "same_source_paths",
+        "invalid_alias_50",
+        "invalid_alias_51",
+        "invalid_alias_52",
+        "invalid_alias_53",
+        "invalid_alias_54",
+        "detached_manifest_callback",
+        "single_held_journal_fold",
+        "authority_plain_dictionary",
+        "authority_counterfeit_receipt",
+        "authority_copied_receipt",
+        "authority_different_budget",
+        "authority_mutation",
+        "authority_genuine_once",
+        "authority_single_use",
+        "authority_issued_deadline",
+        "independent_cursor_bytes",
+        "cursor_filter_binding",
+        "rehashed_invalid_result_local_fold",
+        "local_coherent_ancestry_is_not_origin_proof",
+        "coherent_local_origin_mismatch",
+        "recovery_no_early_publication_0",
+        "recovery_no_early_publication_1",
+        "recovery_no_early_publication_2",
+        "three_fresh_recovery_fold_connections",
+        "exclusive_recovery_contents",
+        "recovery_no_overwrite",
+        "quiescent_source_bytes",
+        "local_preview_without_originals",
+        "missing_originals_replay_rejected",
+        "missing_originals_recompute_rejected",
+        "isolation_evaluation_base0",
+        "isolation_evaluation_base1",
+        "isolation_alert_base_price",
+        "isolation_alert_base_restock",
+        "isolation_evaluation_revision0",
+        "isolation_evaluation_revision1",
+        "isolation_alert_revision_price",
+        "isolation_alert_revision_restock",
+        "isolation_evaluation_series0",
+        "isolation_evaluation_series1",
+        "isolation_alert_series_price",
+        "isolation_alert_series_restock",
+        "isolation_evaluation_product0",
+        "isolation_evaluation_product1",
+        "isolation_alert_product_price",
+        "isolation_alert_product_restock",
+        "revision_series_product_isolation",
+        "cli_import_socket_tripwire_97",
+        "cli_import_socket_tripwire_98",
+        "cli_import_socket_tripwire_99",
+        "zero_sockets_telegram_imports"
+      ],
+      "completed_utc": "2026-10-30T20:27:25.632579+00:00",
+      "final_qa_acceptance": false,
+      "fresh_cli_processes": [
+        {
+          "case": "help",
+          "status": "observations_pass",
+          "tripwires": {
+            "socket": 0,
+            "telegram_import": 0
+          }
+        },
+        {
+          "case": "invalid",
+          "status": "observations_pass",
+          "tripwires": {
+            "socket": 0,
+            "telegram_import": 0
+          }
+        },
+        {
+          "case": "init",
+          "status": "observations_pass",
+          "tripwires": {
+            "socket": 0,
+            "telegram_import": 0
+          }
+        }
+      ],
+      "head_stable": true,
+      "independent_reference_scope": "fresh synthetic fixtures; exact hashes, identities, full results and renderer bytes",
+      "limits": [
+        "no Docker or CI execution",
+        "no physical Pi qualification",
+        "final candidate attestation required"
+      ],
+      "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+      "python": "3.13.15",
+      "script_sha256": "a9bfa7316c1250717387c5a0c5b71f59b49199b9ed041887bc858db15f84ecc1",
+      "started_utc": "2026-10-30T20:27:21.488064+00:00",
+      "status": "preliminary_observations_pass",
+      "sut_location": "managed interpreter import; no expected-value production helpers",
+      "tripwires": {
+        "socket": 0,
+        "telegram_import": 0
+      },
+      "working_bytes_stable": true
+    },
+    {
+      "all_four_sources_bytes_preserved": true,
+      "backup": {
+        "response": {
+          "counts": {
+            "alerts": 1,
+            "evidence": 1
+          },
+          "operation": "backup",
+          "result": "ok",
+          "version": 1
+        }
+      },
+      "candidate": {
+        "head": "dd9035c3f820f124f32cdbab8c3c210f9286703d",
+        "product_diff": "",
+        "tree": "820ddbdfc278ada9b2d713a1c0b834f5d59e5dbd"
+      },
+      "completed_utc": "2026-10-30T20:27:27.037517+00:00",
+      "defect_reproduced": false,
+      "different_full_entries": true,
+      "different_signal_ids": true,
+      "first_alert_timestamp_preserved": true,
+      "first_enqueue": {
+        "alert_id": "walt1_263b42cb9cd79f807ac735a14432cc5e69b661900c4ca79c36011ede81e5ecbb",
+        "destination_key": "rw01-preview",
+        "operation": "enqueue",
+        "result": "recorded",
+        "signal_id": "wsig1_87de1db270668d50d907c8263726baf845202e87657d38a5a2475a6f01587e17",
+        "version": 1
+      },
+      "first_evidence_preserved": true,
+      "head_stable": true,
+      "invariant_test": "PASS",
+      "outbox_bytes_preserved": true,
+      "probe": "P8c-RW01-public-originals",
+      "probe_sha256": "1e5ae0b4ab65dbaf27548d32b3cb788838afebf663af4f667c6043484c7379e6",
+      "public_APIs_only": true,
+      "python": "3.13.15",
+      "same_watch_revision": true,
+      "second_enqueue": {
+        "error_category": "identity_conflict",
+        "exit_code": 2
+      },
+      "signal_ids": [
+        "wsig1_87de1db270668d50d907c8263726baf845202e87657d38a5a2475a6f01587e17",
+        "wsig1_85fec839c2214231544091e7edc867f0419659b3aed6a06e750f90e6b70c4e2c"
+      ],
+      "socket_attempts": 0,
+      "source_sha256": {
+        "a-journal.sqlite": "a81eb9d1fd949690554aa565bed62bf19e718ad0bf906ae8b074795825e7cd01",
+        "a-watch.sqlite": "ea447359c10d49ce850f145b118fc0f0d221630a5e4b0fc8b54600645ac74aa7",
+        "b-journal.sqlite": "e2b424d4ecf77a4f70e4e4a3bce69bd626c552ab2cc47f771b25ab2b70c5dbb0",
+        "b-watch.sqlite": "ad45a709f6aa486f3997e8897a4ddf5a8806bc9afeaa10a8e1a11dfd33663de7"
+      },
+      "sqlite": "3.53.1",
+      "started_utc": "2026-10-30T20:27:26.716625+00:00",
+      "target_price_minor": [
+        900,
+        1000
+      ],
+      "verify": {
+        "response": {
+          "counts": {
+            "alerts": 1,
+            "evidence": 1
+          },
+          "level": "local",
+          "operation": "verify",
+          "result": "ok",
+          "version": 1
+        }
+      }
+    },
+    {
+      "checks": [
+        {
+          "probe": "frozen_34_DDL_45_catalog_exact",
+          "result": "PASS"
+        },
+        {
+          "probe": "literal_NUL_identity_oracle",
+          "result": "PASS"
+        },
+        {
+          "probe": "one_global_budget_nonrenewable_origins_reserve",
+          "result": "PASS"
+        },
+        {
+          "probe": "genuine_equivalent_copy_and_incompatible_RW01_rollback",
+          "result": "PASS"
+        },
+        {
+          "probe": "one_use_authority_forgery_copy_budget_deadline",
+          "result": "PASS"
+        },
+        {
+          "probe": "durable_claim_no_SQL_lock_confirmed_replay_global_quarantine",
+          "result": "PASS"
+        },
+        {
+          "probe": "three429_event_watermark_exact_cooldown",
+          "result": "PASS"
+        },
+        {
+          "probe": "durable_error_CLI_exit_log",
+          "result": "PASS"
+        },
+        {
+          "probe": "missing_receipt_uncertain_no_resend",
+          "result": "PASS"
+        },
+        {
+          "probe": "historic_route_validation_snapshot_survives_revalidation",
+          "result": "PASS"
+        },
+        {
+          "probe": "guarded_overlength_tamper",
+          "result": "PASS"
+        },
+        {
+          "probe": "quiesced_recovery_clock_clamp_stale_finish",
+          "result": "PASS"
+        },
+        {
+          "probe": "old_restore_missing_then_new_delivery_quarantined",
+          "result": "PASS"
+        },
+        {
+          "probe": "independent_cursor_canonical_filter_oracle",
+          "result": "PASS"
+        },
+        {
+          "probe": "independent_process_sender_race_and_postclaim_crash",
+          "result": "PASS"
+        },
+        {
+          "probe": "manifest_multiple_hardlinks_refused",
+          "result": "PASS"
+        },
+        {
+          "probe": "catalog_names128_SQL32768_before_materialization",
+          "result": "PASS"
+        },
+        {
+          "probe": "original_source_bytes_unchanged",
+          "result": "PASS"
+        }
+      ],
+      "head": "dd9035c3f820f124f32cdbab8c3c210f9286703d",
+      "python": "3.13.15",
+      "scope": "independent probes; fake transport only; working tree must be matched separately",
+      "sqlite": "3.53.1",
+      "tree": "820ddbdfc278ada9b2d713a1c0b834f5d59e5dbd"
+    }
+  ],
+  "note": "PR run headSha is candidate; checkout may be GitHub synthetic merge, whose tree must exactly match candidate. All full job logs inspected; no same-SHA reruns."
+}

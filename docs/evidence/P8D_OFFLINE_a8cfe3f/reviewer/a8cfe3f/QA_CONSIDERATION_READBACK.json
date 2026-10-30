@@ -1,0 +1,25 @@
+{
+  "QA_committed_groups": 22,
+  "QA_exit_codes": [
+    0,
+    0
+  ],
+  "QA_extra_groups": 6,
+  "QA_pristine_before_after": true,
+  "QA_reviewer_all444_source_hashes_agree": true,
+  "candidate": "a8cfe3f4e9e2bc50558f3a9aee13a1fbd9bf6abd",
+  "own_extra_groups_unchanged": 5,
+  "own_normal_groups_unchanged": 18,
+  "reviewed_QA_artifacts_sha256": {
+    "ATTESTATION.md": "ce4feeadbafccd0ff857baea4a4c09aa13355d9a30cddb52a7a5142b7f8b30bc",
+    "after.json": "d9faf9f6c9bbb079eb566fcd56c841ee094512a33847e3b3bb9e04cf8076e60e",
+    "before.json": "d9faf9f6c9bbb079eb566fcd56c841ee094512a33847e3b3bb9e04cf8076e60e",
+    "committed.stdout.json": "852384a13bbcd34fe4a91d10e6c92a1aa08401796cc410ff304225dd8bf3b966",
+    "executions.json": "6a2929f605f015bce42e500e56386c50ea38531f68ad22a294c7e8046dcfa87a",
+    "extra.stdout.json": "f3fbec2b60efedebc911a6e77c93544899ceca4b1451ddfe23c2e850c73ca612",
+    "extra_probe.py": "f97a310159c5f6bf2bb22f87f2715b43c009ad3bd4cf32ea0628aa667cf2c2f2",
+    "preservation.json": "69169287c81ce68fb4eaca46143a3d871555f434bea3a937a8120b07a9dc601a",
+    "summary.json": "e8b8db71c802c1a57e06e071855a52fe683702138b87411022a8e3f605be1de5"
+  },
+  "tree": "820ddbdfc278ada9b2d713a1c0b834f5d59e5dbd"
+}

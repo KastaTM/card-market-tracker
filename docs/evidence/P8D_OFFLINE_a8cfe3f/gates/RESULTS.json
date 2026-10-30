@@ -1,0 +1,469 @@
+{
+  "head": "a8cfe3f4e9e2bc50558f3a9aee13a1fbd9bf6abd",
+  "tree": "820ddbdfc278ada9b2d713a1c0b834f5d59e5dbd",
+  "before": "",
+  "steps": [
+    {
+      "name": "01-frozen-no-project",
+      "command": [
+        "<USERPROFILE>\\.local\\bin\\uv.exe",
+        "sync",
+        "--frozen",
+        "--no-install-project"
+      ],
+      "exit_code": 0,
+      "seconds": 0.1
+    },
+    {
+      "name": "02-frozen-project",
+      "command": [
+        "<USERPROFILE>\\.local\\bin\\uv.exe",
+        "sync",
+        "--frozen",
+        "--no-build-isolation"
+      ],
+      "exit_code": 0,
+      "seconds": 0.128
+    },
+    {
+      "name": "03-format",
+      "command": [
+        "<USERPROFILE>\\.local\\bin\\uv.exe",
+        "run",
+        "--frozen",
+        "ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "exit_code": 0,
+      "seconds": 0.075
+    },
+    {
+      "name": "04-lint",
+      "command": [
+        "<USERPROFILE>\\.local\\bin\\uv.exe",
+        "run",
+        "--frozen",
+        "ruff",
+        "check",
+        "."
+      ],
+      "exit_code": 0,
+      "seconds": 0.065
+    },
+    {
+      "name": "05-mypy",
+      "command": [
+        "<USERPROFILE>\\.local\\bin\\uv.exe",
+        "run",
+        "--frozen",
+        "mypy",
+        "src"
+      ],
+      "exit_code": 0,
+      "seconds": 0.425
+    },
+    {
+      "name": "06-full-pytest",
+      "command": [
+        "<USERPROFILE>\\.local\\bin\\uv.exe",
+        "run",
+        "--frozen",
+        "coverage",
+        "run",
+        "-m",
+        "pytest"
+      ],
+      "exit_code": 0,
+      "seconds": 640.121
+    },
+    {
+      "name": "07-coverage-json",
+      "command": [
+        "<USERPROFILE>\\.local\\bin\\uv.exe",
+        "run",
+        "--frozen",
+        "coverage",
+        "json",
+        "-o",
+        "C:\\Projects\\card-market-tracker-p8d\\.p8d-evidence\\final\\gates\\a8cfe3f4e9e2\\coverage.json"
+      ],
+      "exit_code": 0,
+      "seconds": 1.542
+    },
+    {
+      "name": "08-coverage-threshold",
+      "command": [
+        "<USERPROFILE>\\.local\\bin\\uv.exe",
+        "run",
+        "--frozen",
+        "python",
+        "scripts/check_coverage.py",
+        "C:\\Projects\\card-market-tracker-p8d\\.p8d-evidence\\final\\gates\\a8cfe3f4e9e2\\coverage.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.141
+    },
+    {
+      "name": "09-p8c-qa",
+      "command": [
+        "<USERPROFILE>\\.local\\bin\\uv.exe",
+        "run",
+        "--frozen",
+        "python",
+        "scripts/p8c_qa_probe.py",
+        "--fixtures",
+        "tests/fixtures",
+        "--timeout",
+        "5"
+      ],
+      "exit_code": 0,
+      "seconds": 6.767
+    },
+    {
+      "name": "09-p8c-reviewer",
+      "command": [
+        "<USERPROFILE>\\.local\\bin\\uv.exe",
+        "run",
+        "--frozen",
+        "python",
+        "scripts/p8c_reviewer_probe.py",
+        "--fixtures",
+        "tests/fixtures",
+        "--timeout",
+        "5"
+      ],
+      "exit_code": 0,
+      "seconds": 1.508
+    },
+    {
+      "name": "09-p8c-invariant",
+      "command": [
+        "<USERPROFILE>\\.local\\bin\\uv.exe",
+        "run",
+        "--frozen",
+        "python",
+        "scripts/p8c_rw01_invariant_probe.py",
+        "--fixtures",
+        "tests/fixtures",
+        "--timeout",
+        "5"
+      ],
+      "exit_code": 0,
+      "seconds": 0.884
+    },
+    {
+      "name": "09-p8c-rw01-qa",
+      "command": [
+        "<USERPROFILE>\\.local\\bin\\uv.exe",
+        "run",
+        "--frozen",
+        "python",
+        "scripts/p8c_rw01_qa_probe.py",
+        "--fixtures",
+        "tests/fixtures",
+        "--timeout",
+        "5"
+      ],
+      "exit_code": 0,
+      "seconds": 8.12
+    },
+    {
+      "name": "09-p8c-rw01-reviewer",
+      "command": [
+        "<USERPROFILE>\\.local\\bin\\uv.exe",
+        "run",
+        "--frozen",
+        "python",
+        "scripts/p8c_rw01_reviewer_probe.py",
+        "--fixtures",
+        "tests/fixtures",
+        "--timeout",
+        "5"
+      ],
+      "exit_code": 0,
+      "seconds": 12.166
+    },
+    {
+      "name": "10-build",
+      "command": [
+        "<USERPROFILE>\\.local\\bin\\uv.exe",
+        "build",
+        "--no-build-isolation"
+      ],
+      "exit_code": 0,
+      "seconds": 1.166
+    },
+    {
+      "name": "11-export",
+      "command": [
+        "<USERPROFILE>\\.local\\bin\\uv.exe",
+        "export",
+        "--frozen",
+        "--all-groups",
+        "--no-emit-project",
+        "-o",
+        "requirements-audit.txt"
+      ],
+      "exit_code": 0,
+      "seconds": 0.03
+    },
+    {
+      "name": "12-audit",
+      "command": [
+        "<USERPROFILE>\\.local\\bin\\uv.exe",
+        "run",
+        "--frozen",
+        "pip-audit",
+        "-r",
+        "requirements-audit.txt"
+      ],
+      "exit_code": 0,
+      "seconds": 20.04
+    },
+    {
+      "name": "13-secrets",
+      "command": [
+        "<USERPROFILE>\\.local\\bin\\uv.exe",
+        "run",
+        "--frozen",
+        "python",
+        "scripts/check_secret_scan.py"
+      ],
+      "exit_code": 0,
+      "seconds": 5.066
+    },
+    {
+      "name": "14-external-install",
+      "command": [
+        "<USERPROFILE>\\.local\\bin\\uv.exe",
+        "pip",
+        "install",
+        "--python",
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\python.exe",
+        "--reinstall",
+        "--no-deps",
+        "C:\\Projects\\card-market-tracker-p8d\\dist\\card_market_tracker-0.1.0-py3-none-any.whl"
+      ],
+      "exit_code": 0,
+      "seconds": 0.495
+    },
+    {
+      "name": "15-wheel-version",
+      "command": [
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\cmt.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "seconds": 0.573
+    },
+    {
+      "name": "16-wheel-diagnose",
+      "command": [
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\cmt.exe",
+        "diagnose"
+      ],
+      "exit_code": 0,
+      "seconds": 0.334
+    },
+    {
+      "name": "17-wheel-01-catalog",
+      "command": [
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\python.exe",
+        "C:\\Projects\\card-market-tracker-p8d\\scripts\\catalog_smoke.py",
+        "--mode",
+        "installed",
+        "--executable",
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\cmt.exe",
+        "--fixtures",
+        "C:\\Projects\\card-market-tracker-p8d\\tests\\fixtures"
+      ],
+      "exit_code": 0,
+      "seconds": 2.03
+    },
+    {
+      "name": "17-wheel-02-observation_persistence",
+      "command": [
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\python.exe",
+        "C:\\Projects\\card-market-tracker-p8d\\scripts\\observation_persistence_smoke.py",
+        "--mode",
+        "installed",
+        "--executable",
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\cmt.exe",
+        "--fixtures",
+        "C:\\Projects\\card-market-tracker-p8d\\tests\\fixtures"
+      ],
+      "exit_code": 0,
+      "seconds": 9.673
+    },
+    {
+      "name": "17-wheel-03-discovery",
+      "command": [
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\python.exe",
+        "C:\\Projects\\card-market-tracker-p8d\\scripts\\discovery_smoke.py",
+        "--mode",
+        "installed",
+        "--executable",
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\cmt.exe",
+        "--fixtures",
+        "C:\\Projects\\card-market-tracker-p8d\\tests\\fixtures"
+      ],
+      "exit_code": 0,
+      "seconds": 5.461
+    },
+    {
+      "name": "17-wheel-04-pinned_repository",
+      "command": [
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\python.exe",
+        "C:\\Projects\\card-market-tracker-p8d\\scripts\\pinned_repository_smoke.py",
+        "--mode",
+        "installed",
+        "--executable",
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\cmt.exe",
+        "--fixtures",
+        "C:\\Projects\\card-market-tracker-p8d\\tests\\fixtures"
+      ],
+      "exit_code": 0,
+      "seconds": 7.408
+    },
+    {
+      "name": "17-wheel-05-scoped_capture_discovery",
+      "command": [
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\python.exe",
+        "C:\\Projects\\card-market-tracker-p8d\\scripts\\scoped_capture_discovery_smoke.py",
+        "--mode",
+        "installed",
+        "--executable",
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\cmt.exe",
+        "--fixtures",
+        "C:\\Projects\\card-market-tracker-p8d\\tests\\fixtures"
+      ],
+      "exit_code": 0,
+      "seconds": 6.193
+    },
+    {
+      "name": "17-wheel-06-multi_revision_metadata",
+      "command": [
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\python.exe",
+        "C:\\Projects\\card-market-tracker-p8d\\scripts\\multi_revision_metadata_smoke.py",
+        "--mode",
+        "installed",
+        "--executable",
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\cmt.exe",
+        "--fixtures",
+        "C:\\Projects\\card-market-tracker-p8d\\tests\\fixtures"
+      ],
+      "exit_code": 0,
+      "seconds": 6.894
+    },
+    {
+      "name": "17-wheel-07-discovery_journal",
+      "command": [
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\python.exe",
+        "C:\\Projects\\card-market-tracker-p8d\\scripts\\discovery_journal_smoke.py",
+        "--mode",
+        "installed",
+        "--executable",
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\cmt.exe",
+        "--fixtures",
+        "C:\\Projects\\card-market-tracker-p8d\\tests\\fixtures"
+      ],
+      "exit_code": 0,
+      "seconds": 11.259
+    },
+    {
+      "name": "17-wheel-08-alert_outbox",
+      "command": [
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\python.exe",
+        "C:\\Projects\\card-market-tracker-p8d\\scripts\\alert_outbox_smoke.py",
+        "--mode",
+        "installed",
+        "--executable",
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\cmt.exe",
+        "--fixtures",
+        "C:\\Projects\\card-market-tracker-p8d\\tests\\fixtures"
+      ],
+      "exit_code": 0,
+      "seconds": 13.254
+    },
+    {
+      "name": "17-wheel-09-telegram_delivery",
+      "command": [
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\python.exe",
+        "C:\\Projects\\card-market-tracker-p8d\\scripts\\telegram_delivery_smoke.py",
+        "--mode",
+        "installed",
+        "--executable",
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\cmt.exe",
+        "--fixtures",
+        "C:\\Projects\\card-market-tracker-p8d\\tests\\fixtures"
+      ],
+      "exit_code": 0,
+      "seconds": 12.619
+    },
+    {
+      "name": "17-wheel-10-watchlist",
+      "command": [
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\python.exe",
+        "C:\\Projects\\card-market-tracker-p8d\\scripts\\watchlist_smoke.py",
+        "--mode",
+        "installed",
+        "--executable",
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\cmt.exe",
+        "--fixtures",
+        "C:\\Projects\\card-market-tracker-p8d\\tests\\fixtures"
+      ],
+      "exit_code": 0,
+      "seconds": 8.773
+    },
+    {
+      "name": "17-wheel-11-watchlist_journal",
+      "command": [
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\python.exe",
+        "C:\\Projects\\card-market-tracker-p8d\\scripts\\watchlist_journal_smoke.py",
+        "--mode",
+        "installed",
+        "--executable",
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\cmt.exe",
+        "--fixtures",
+        "C:\\Projects\\card-market-tracker-p8d\\tests\\fixtures"
+      ],
+      "exit_code": 0,
+      "seconds": 8.855
+    },
+    {
+      "name": "17-wheel-12-watchlist_alert_outbox",
+      "command": [
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\python.exe",
+        "C:\\Projects\\card-market-tracker-p8d\\scripts\\watchlist_alert_outbox_smoke.py",
+        "--mode",
+        "installed",
+        "--executable",
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\cmt.exe",
+        "--fixtures",
+        "C:\\Projects\\card-market-tracker-p8d\\tests\\fixtures"
+      ],
+      "exit_code": 0,
+      "seconds": 20.093
+    },
+    {
+      "name": "17-wheel-13-watchlist_telegram_delivery",
+      "command": [
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\python.exe",
+        "C:\\Projects\\card-market-tracker-p8d\\scripts\\watchlist_telegram_delivery_smoke.py",
+        "--mode",
+        "installed",
+        "--executable",
+        "C:\\Projects\\p8d-handoff\\P8D_RUNTIME_SMOKE\\Scripts\\cmt.exe",
+        "--fixtures",
+        "C:\\Projects\\card-market-tracker-p8d\\tests\\fixtures"
+      ],
+      "exit_code": 0,
+      "seconds": 6.019
+    }
+  ],
+  "after": "",
+  "ending_head": "a8cfe3f4e9e2bc50558f3a9aee13a1fbd9bf6abd",
+  "complete": true
+}

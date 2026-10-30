@@ -1,0 +1,30 @@
+[
+  {
+    "all_groups_pass": true,
+    "command": [
+      "C:\\Projects\\card-market-tracker-p8d\\.venv\\Scripts\\python.exe",
+      "-B",
+      "scripts/p8d_qa_probe.py",
+      "--mode",
+      "all"
+    ],
+    "exit_code": 0,
+    "groups": 22,
+    "label": "committed",
+    "pass_groups": 22,
+    "runtime_seconds": 31.296
+  },
+  {
+    "all_groups_pass": true,
+    "command": [
+      "C:\\Projects\\card-market-tracker-p8d\\.venv\\Scripts\\python.exe",
+      "-B",
+      ".p8d-evidence/final/qa/a8cfe3f/extra_probe.py"
+    ],
+    "exit_code": 0,
+    "groups": 6,
+    "label": "extra",
+    "pass_groups": 6,
+    "runtime_seconds": 3.709
+  }
+]

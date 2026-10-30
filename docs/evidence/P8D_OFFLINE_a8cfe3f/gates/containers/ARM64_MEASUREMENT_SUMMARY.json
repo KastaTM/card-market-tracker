@@ -1,0 +1,22 @@
+{
+  "mode": "docker",
+  "platform": "linux/arm64",
+  "recovery_controls_ms": [
+    {
+      "control": 1,
+      "backup_ms": 1336.804,
+      "restore_ms": 1396.389
+    },
+    {
+      "control": 2,
+      "backup_ms": 1303.862,
+      "restore_ms": 1310.036
+    },
+    {
+      "control": 3,
+      "backup_ms": 1293.124,
+      "restore_ms": 1301.596
+    }
+  ],
+  "local_budget_seconds": 5
+}
