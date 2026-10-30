@@ -18,7 +18,7 @@ All historical worktrees and the original rework checkout are outside edit scope
 | Future independent QA | Not activated; separate future probe files/worktree to be assigned | Must not author product/API/storage. Not a current QA PASS. |
 | Future final REVIEWER | Not activated; distinct future probe files/worktree to be assigned | Must differ from authors and QA. Not a current final review. |
 
-Active agent sessions (spawn results observed 2026-10-30):
+Design agent sessions (spawn results observed 2026-10-30):
 - /root/p8d_arq_design: API document sole author.
 - /root/p8d_db_design: storage document sole author.
 - /root/p8d_sec_design: security report sole author.
@@ -51,7 +51,12 @@ REVIEWER cannot be these authors.
 
 ## Gates
 
-A: preflight and documentation under verification.
+A: PASS at Gate A checkpoint1f3f9cabd9381e8f2833d89dcaf20961cffadac7;
+baseline/handoff/clean-state evidence in P8D_PREFLIGHT and P8D_DESIGN_FREEZE.
 B: proposed design only; Phase Lead design acceptance required.
 C: blocked until B accepted. No writer/schema/definitive identity implementation.
 Live: NOT AUTHORIZED. No getMe/getChat/sendMessage or token access.
+
+All specialist design files returned to Lead after review. DB/SEC chronology
+revision was explicitly reassigned to those same isolated documents and returned.
+No active specialist owns product files; QA/final REVIEWER remain unactivated.

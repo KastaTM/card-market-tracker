@@ -2,11 +2,13 @@
 
 - [P8d contract](docs/phases/P8D_MANUAL_WATCHLIST_TELEGRAM_DELIVERY_CONTRACT.md),
   [brief](docs/phases/P8D_CODEX_ENGINEERING_BRIEF.md),
-  [ownership](docs/phases/P8D_OWNERSHIP.md): independent manual historical
+  [ownership](docs/phases/P8D_OWNERSHIP.md),
+  [design proposal](docs/phases/P8D_DESIGN_FREEZE.md),
+  [ADR](docs/adr/0015-manual-watchlist-telegram-delivery.md): independent manual historical
   synthetic Watchlist Telegram delivery; exact original P5a/P5b/P8c admission,
   specific content/route consent, provider+signal dedup, durable claim/fencing,
   conservative uncertainty and globally quarantined restores. P8d OPEN;
-  Gates A/B documentation only until Phase Lead design acceptance. Live Telegram
+  Gate A PASS; Gate B proposed for Phase Lead design acceptance. Live Telegram
   NOT AUTHORIZED. Preserve prior authorities/schemas; only Orchestrator closes.
   P8c ACCEPTED / PHASE CLOSED by Orchestrator chat decision 2026-10-28 recorded
   in the P8d contract after PR18 integration; older RW-01 entries remain history.

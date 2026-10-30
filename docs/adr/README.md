@@ -1,5 +1,9 @@
 # Architecture decisions
 
+P8d proposes [ADR0015](0015-manual-watchlist-telegram-delivery.md) for independent
+manual historical synthetic Watchlist delivery. Phase Lead design acceptance
+is pending; this entry does not adopt an implementation or close a phase.
+
 P4a adds [ADR-0005](0005-offline-temporal-discovery.md): explicit offline
 temporal windows, deterministic reference events, consistent snapshot read and
 honestly attested empty capture scope, without schema changes.

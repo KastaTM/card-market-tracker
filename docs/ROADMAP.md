@@ -11,7 +11,9 @@ P8d OPEN / IMPLEMENTATION AUTHORIZED for offline scope. Phase Lead authorized
 an isolated worktree and handoff copies on 2026-10-30, exclusively from
 9dda9fba0aa9646a67596657d4ae9a7088903808, tree
 dfd0414242cff364aad6082411ae88aef728783e.
-Gate A and proposed Design Freeze are being prepared; no schema/writer or
+Gate A completed with documentary checkpoint1f3f9cabd9381e8f2833d89dcaf20961cffadac7.
+The [proposed Design Freeze](phases/P8D_DESIGN_FREEZE.md) awaits Phase Lead
+acceptance; no schema/writer or
 definitive identity implementation before Phase Lead design acceptance.
 LIVE TELEGRAM NOT AUTHORIZED; merge/phase closure remain Orchestrator-only.
 P5 global and TD-001..TD-005 OPEN; P2/P6a/retail Discovery BLOCKED.

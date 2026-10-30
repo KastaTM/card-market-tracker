@@ -35,10 +35,11 @@ extraction/configuration changes or network fallback writes were used.
 
 Downloads supplied all three files; each SHA256 matched its ZIP entry before
 copying. New C:/Projects/p8d-handoff copies and docs/phases archives match bytes.
-Git newline normalization was detected during archive verification. The initial
-documentary commit is retained; a follow-up adds three narrowly scoped -text
-attributes (the same pattern as prior archived contracts) and re-stages the
-original bytes. Raw Git blob comparison is required as well as file equality.
+Git newline-conversion warnings prompted explicit archive verification. Raw
+blob comparison confirmed the initial commit already preserved all source bytes.
+A follow-up adds three narrowly scoped -text attributes (the same pattern as
+prior archived contracts) to preserve that property on future checkouts. The
+archive itself needed no byte correction. Raw blob equality is checked too.
 The complete Orchestrator contract is archived unedited; Brief and historical
 audit are separately attributed, not treated as new user authorization.
 
