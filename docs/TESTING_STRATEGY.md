@@ -1,5 +1,33 @@
 # Testing strategy
 
+## P8d proposed requirements (2026-10-30)
+
+[AC-WT01..21](phases/P8D_MANUAL_WATCHLIST_TELEGRAM_DELIVERY_CONTRACT.md) require
+failure-first original P5a/P5b/P8c admission, exact content/route consent, sealed
+authority forgery/copy/mutation/Budget-renewal rejection, independent literal-NUL
+identity vectors and provider+signal alias/route conflicts. Genuine incompatible
+watch/revision bundles must fail second prepare/claim without corrupting verify/
+backup; race real processes and preserve equivalent-copy acceptance.
+
+Observe durable in_flight before fake HTTP; inject crash before/after claim,
+acceptance/receipt failure, stale owner CAS and explicit quiesced recovery.
+Test valid429/cooldown/attempt3 exhaustion versus ambiguous HTTP/TLS/timeout/
+malformed receipts; confirmed replay after process restart has no originals,
+token, Telegram imports or sockets, but global quarantine still blocks send.
+Restore an old snapshot and attempt a post-backup unknown signal; quarantine
+must remain global and irreversible. Exercise SQL cell guards, rehashed
+corruption, full inventory, lock/ENOSPC, symlink/hardlink/reparse/sidecar/
+publication/unlink failure and aggregate deadlines without renewal.
+
+Future thirteenth harness constructs five checkpoints/four genuine synthetic
+signals, picks one, fake sends, persists/reopens/replays/recomputes/recovers/
+restores and proves source nonmutation in wheel/Compose/AMD64/ARM64-QEMU.
+Preserve all twelve prior harnesses, fixtures and thresholds. Author tests are
+not nonauthor QA or final REVIEWER probes. Current docs-only memory/format probes
+are design checks, not an executed P8d runtime acceptance suite.
+No real transport or credentials in automated tests/CI. AC-WT20 needs later
+specific authorization; fake, CI and P8b-T17 cannot substitute for it.
+
 ## P8c requirements
 
 AC-WA01..20 require original-source admission on every ancient replay; one ro

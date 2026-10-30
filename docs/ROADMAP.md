@@ -1,5 +1,23 @@
 # Roadmap
 
+## 2026-10-30 - P8d Gate A authorized; P8c closure attributed
+
+The supplied [P8d Orchestrator contract](phases/P8D_MANUAL_WATCHLIST_TELEGRAM_DELIVERY_CONTRACT.md)
+records P8c ACCEPTED / PHASE CLOSED on 2026-10-28 after PR18 integration.
+This entry attributes that chat decision; it does not invent a remote closure
+comment or replace the historical RW-01 evidence/status entries below.
+
+P8d OPEN / IMPLEMENTATION AUTHORIZED for offline scope. Phase Lead authorized
+an isolated worktree and handoff copies on 2026-10-30, exclusively from
+9dda9fba0aa9646a67596657d4ae9a7088903808, tree
+dfd0414242cff364aad6082411ae88aef728783e.
+Gate A completed with documentary checkpoint1f3f9cabd9381e8f2833d89dcaf20961cffadac7.
+The [proposed Design Freeze](phases/P8D_DESIGN_FREEZE.md) awaits Phase Lead
+acceptance; no schema/writer or
+definitive identity implementation before Phase Lead design acceptance.
+LIVE TELEGRAM NOT AUTHORIZED; merge/phase closure remain Orchestrator-only.
+P5 global and TD-001..TD-005 OPEN; P2/P6a/retail Discovery BLOCKED.
+
 ## 2026-10-28 - P8c RW-01 OPEN / REWORK_REQUIRED
 
 Orchestrator rework decision, accepted by Phase Lead: writer/verifier complete

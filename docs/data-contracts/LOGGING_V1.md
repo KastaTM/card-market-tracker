@@ -1,5 +1,23 @@
 # Logging contract v1
 
+## Proposed additive P8d producer (2026-10-30; not implemented)
+
+The new CLI will emit one watchlist.telegram_delivery.completed event per
+invocation with component=cli, UUID run_id, UTC timestamp and nonnegative
+duration_ms. Exact closed operations/results/errors and redacted DTO fields are
+proposed in [delivery API](WATCHLIST_TELEGRAM_DELIVERY_V1.md). Existing producers,
+events, fields and bounds are unchanged; no runtime logging code is added here.
+
+Allow only grammar-validated delivery_id/attempt_id, state/previous_state,
+strict attempt_count0..3 and delivery_count0..100000000 where the API permits
+them. No alert/signal/watch IDs or other source identifiers are log fields. Never log alias,
+route/binding/consent/evidence/message commitments, bot/chat IDs, receipt details,
+preferences, amounts, paths, token, payload, SQL, URL or raw exception.
+Ordinary stdout is also sanitized; private review of the original P8c preview
+uses its accepted local interface. Unknown fields are omitted, error counters
+are unknown, and a postclaim error does not prove absence of a remote effect.
+Formatter/CLI tests and exact-candidate evidence must precede claiming support.
+
 ## Compatible P8c extension (2026-10-27)
 
 Event watchlist.alert_outbox.completed; component cli; operation prefix

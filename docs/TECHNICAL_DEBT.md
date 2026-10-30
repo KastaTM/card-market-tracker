@@ -1,5 +1,18 @@
 # Technical debt register
 
+## P8d design review note (2026-10-30)
+
+Proposed manual Watchlist delivery preserves TD-001..TD-005 OPEN with their
+existing owners, exits and horizons. One trustworthy ledger/immutable originals,
+trusted directories/ACLs, maintained UTC, capacity and physical Pi limits remain.
+Global permanent restore quarantine and uncertain-no-resend are intentional
+safety semantics; reconciliation/automatic operation require a new contract.
+Full original/deep-fold checks may time out at capacity under the unchanged
+2s/max5s local bound and aggregate send-origin ceiling; no partial verify.
+Design-only work introduces no deliberate runtime concession or new debt ID.
+[ADR0015](adr/0015-manual-watchlist-telegram-delivery.md) records the proposed
+boundary and [handoff](phases/P8D_DESIGN_FREEZE.md) distinguishes unrun gates.
+
 P5b (2026-10-24) preserves TD-001..TD-005 OPEN with existing owners/exits.
 The independent append-only journal adds synthetic snapshots and backup headroom
 without automatic quotas/retention (TD-004). Finite whole-history verification
