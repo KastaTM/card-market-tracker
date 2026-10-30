@@ -1,6 +1,6 @@
 # P8d Gate A preflight
 
-Date: 2026-10-30. Status: documentation prepared; final commit/clean check follows.
+Date: 2026-10-30. Status: baseline and handoff checks complete; documentary commit/clean check recorded in the Design Freeze handoff.
 Authority: Phase Lead CONTINUE GATE A authorization, including sibling worktree
 and handoff paths. This resolves the original local-branch mismatch, not any
 future remote-baseline divergence. No product code or live calls authorized here.
@@ -35,6 +35,10 @@ extraction/configuration changes or network fallback writes were used.
 
 Downloads supplied all three files; each SHA256 matched its ZIP entry before
 copying. New C:/Projects/p8d-handoff copies and docs/phases archives match bytes.
+Git newline normalization was detected during archive verification. The initial
+documentary commit is retained; a follow-up adds three narrowly scoped -text
+attributes (the same pattern as prior archived contracts) and re-stages the
+original bytes. Raw Git blob comparison is required as well as file equality.
 The complete Orchestrator contract is archived unedited; Brief and historical
 audit are separately attributed, not treated as new user authorization.
 

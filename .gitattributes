@@ -3,3 +3,6 @@
 /docs/phases/P8A_OFFLINE_ALERT_OUTBOX_CONTRACT.md -text whitespace=cr-at-eol
 /docs/phases/P8B_TELEGRAM_ALERT_DELIVERY_CONTRACT.md -text whitespace=cr-at-eol
 /docs/phases/P5B_WATCHLIST_EVALUATION_JOURNAL_CONTRACT.md -text whitespace=cr-at-eol
+/docs/phases/P8D_MANUAL_WATCHLIST_TELEGRAM_DELIVERY_CONTRACT.md -text whitespace=cr-at-eol
+/docs/phases/P8D_CODEX_ENGINEERING_BRIEF.md -text whitespace=cr-at-eol
+/docs/phases/P8D_BASELINE_AUDIT.md -text whitespace=cr-at-eol
