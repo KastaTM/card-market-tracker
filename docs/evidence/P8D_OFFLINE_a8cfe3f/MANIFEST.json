@@ -60,8 +60,13 @@
     },
     {
       "path": "PHASE_COMPLETION_REPORT.md",
-      "bytes": 17649,
-      "sha256": "a5dc1fe3f119fb413b9258b60f36c1bc83e5404d527beb79dc62023c6052ad6f"
+      "bytes": 17637,
+      "sha256": "12e7f84520e08c10f659d18d6dd2cac0b864235837c9fee2e7afdc359b38be36"
+    },
+    {
+      "path": "PUBLICATION_READBACK.json",
+      "bytes": 11844,
+      "sha256": "93fb9eaae845248ba47117d047f20bef7f12c5fb2707d6b1c0930b681800472d"
     },
     {
       "path": "PUBLICATION_SCOPE.json",
@@ -130,8 +135,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 551,
-      "sha256": "c19d04e9b4583704ed940a309a001864b21baf78543d3f22d1b0d98564a74a8c"
+      "bytes": 556,
+      "sha256": "b1c9da05b929d91059ebc2091b0acc64273dd85a156a65a17d55e4af243dab76"
     },
     {
       "path": "REPRODUCE.md",
@@ -188,5 +193,6 @@
       "bytes": 1700,
       "sha256": "d77c39436b9ffa1e67ca25afcf02dd5d48e0cc5d466b36a6f2a63ba9ade7f059"
     }
-  ]
+  ],
+  "readback": "PUBLICATION_READBACK.json binds first full recovered publication; final documentation update is read back externally without self-referential source changes."
 }

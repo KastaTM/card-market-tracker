@@ -88,17 +88,17 @@ No new design concession, schema adjustment or identity revision was introduced.
 | C | PASS | Offline implementation; no Telegram invocation |
 | D | PASS | Author/fault/concurrency regressions; full local quality and all 13 external-wheel smokes |
 | E | PASS | Independent QA 22 + 6, distinct REVIEWER 18 + 5; exact candidate/pristine444hash proof |
-| F | CI PASS / publication pending | Four final CI jobs and all 13 harnesses pass; separate publication/readback remains pending until receipt |
+| F | PASS | Four final CI jobs and all 13 harnesses PASS; full CI logs inspected at their GitHub URLs; complete document-body readback verified |
 | G | BLOCKED | AC-WT20 LIVE_UNVERIFIED; real qualification not authorized |
 
 Local full suite: **2494 passed, 1 skipped in 638.21s (0:10:38)**. The host-specific skip predates P8d; no new
 skip/filter/threshold reduction was added. Runtime line coverage **93.22%**,
 branch coverage **86.17%**, above unchanged 85/80 thresholds.
 Frozen two-stage install,201-file format/lint,strict 100-source-file mypy,
-build sdist/wheel, installation outside checkout, all 13installed smokes,
+build sdist/wheel, installation outside checkout, all 13 installed smokes,
 dependency audit and secret scan PASS. Scan has 92 exact public digest matches,
 0 unreviewed candidates; narrowly verified path/type/value entries preserve
-wrong-path/type/value rejection. [Full local commands/logs](gates/RESULTS.json).
+wrong-path/type/value rejection. [Local commands/results](gates/RESULTS.json).
 
 [Final CI workflow41122041749](https://github.com/KastaTM/card-market-tracker/actions/runs/41122041749),
 normal attempt 1, on candidate head a8cfe3f4e9e2bc50558f3a9aee13a1fbd9bf6abd:
@@ -190,7 +190,7 @@ separate mandatory real-provider gate.
 | AC-WT18 | PASS | Distinct nonauthor QA 22 + 6 and REVIEWER 18 + 5 on exact source; published runnable extras/results;444hashes stable | [evidence](qa/a8cfe3f/ATTESTATION.md) |
 | AC-WT19 | PASS | Accepted frozen ADR/API/storage unchanged; acceptance, implementation, architecture/threat/logging/debt/runbooks/ownership linked | [evidence](gates/IDENTITY_AND_PRESERVATION.json) |
 | AC-WT20 | BLOCKED | LIVE_UNVERIFIED. No specific operator authorization or provider qualification performed; token/route configuration uninspected | [evidence](../../runbooks/WATCHLIST_TELEGRAM_QUALIFICATION.md) |
-| AC-WT21 | BLOCKED | Initial dossier publication/readback pending; failures retained. A later evidence-only update records completed readback | [evidence](PUBLICATION_READBACK.json) |
+| AC-WT21 | PASS | Complete remote commit/tree and every published document body recovered; source unchanged and failures retained | [evidence](PUBLICATION_READBACK.json) |
 
 ## Live blocker, limits and handoff
 
