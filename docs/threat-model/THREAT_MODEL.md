@@ -1,5 +1,29 @@
 # Initial threat model
 
+## P8d proposed delivery boundary (2026-10-30)
+
+Historical P8c previews are not current consent. Proposed review/prepare binds
+explicit synthetic-history acknowledgement to exact alert/signal/revision,
+message/evidence digests and immutable private route. Source-backed admission,
+consistent pair reads and one-use instance/content/operation/Budget authority
+guard caller forgery; they do not authenticate a malicious host administrator.
+
+Separate CMTZ ledger checks complete retained watch/revision equality under
+prepare/claim transactions. Durable claim precedes HTTP and owner/state CAS
+fences competing/late workers. Uncertain and unfinalized in_flight cannot resend.
+Global quarantine is checked before replay and is durable before restore
+publication, including entries absent from an old backup. No quarantine bypass.
+
+Lazy offline imports/token denial, bounded redacted DTO/log projections,
+unchanged supervised P8b transport, aggregate origin deadline and shared
+finalization reserve require future falsification tests. These are proposed
+controls, not runtime evidence. Trusted ancestors/ACLs, single ledger,
+maintained UTC, capacity and physical Pi durability remain existing limitations;
+TD-001..005 remain OPEN. [SEC design review](../phases/P8D_SECURITY_DESIGN_REVIEW.md),
+[ADR0015](../adr/0015-manual-watchlist-telegram-delivery.md) and
+[runbook](../runbooks/WATCHLIST_TELEGRAM_DELIVERY.md) define review scope.
+LIVE Telegram remains unauthorized.
+
 ## P8c Watchlist preview boundaries (2026-10-27)
 
 Original manifest/revision admission and one deeply verified journal snapshot

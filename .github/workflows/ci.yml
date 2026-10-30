@@ -30,6 +30,8 @@ jobs:
       - run: uv run --frozen python scripts/p8c_rw01_invariant_probe.py --fixtures tests/fixtures --timeout 5
       - run: uv run --frozen python scripts/p8c_rw01_qa_probe.py --fixtures tests/fixtures --timeout 5
       - run: uv run --frozen python scripts/p8c_rw01_reviewer_probe.py --fixtures tests/fixtures --timeout 5
+      - run: uv run --frozen python scripts/p8d_qa_probe.py --fixtures tests/fixtures --mode all
+      - run: uv run --frozen python scripts/p8d_reviewer_probe.py
       - run: uv build --no-build-isolation
       - run: sh scripts/wheel_smoke.sh
       - run: uv export --frozen --all-groups --no-emit-project -o requirements-audit.txt > /dev/null
@@ -67,3 +69,4 @@ jobs:
       - run: python3 scripts/watchlist_smoke.py --mode compose --fixtures tests/fixtures
       - run: python3 scripts/watchlist_journal_smoke.py --mode compose --fixtures tests/fixtures
       - run: python3 scripts/watchlist_alert_outbox_smoke.py --mode compose --fixtures tests/fixtures
+      - run: python3 scripts/watchlist_telegram_delivery_smoke.py --mode compose --fixtures tests/fixtures

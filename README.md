@@ -255,3 +255,16 @@ power loss and unlimited history growth remain operational limits.
 - [Logging contract](docs/data-contracts/LOGGING_V1.md), [threat model](docs/threat-model/THREAT_MODEL.md), and [P0 evidence report](docs/phases/P0_FOUNDATION.md).
 
 P0 completion requires independent review and evidence for every applicable gate. A local run alone does not close the phase.
+
+## P8d manual historical synthetic delivery
+
+The independent `cmt watchlist-telegram-delivery` route implements the accepted
+Design Freeze with exact original P5a/P5b/P8c admission, content-specific
+historical consent, durable claim/fencing and conservative no-resend uncertainty.
+Only fake transport is authorized for current engineering validation; real
+Telegram is NOT AUTHORIZED and AC-WT20 remains BLOCKED - LIVE_UNVERIFIED.
+See [implementation record](docs/phases/P8D_OFFLINE_IMPLEMENTATION.md),
+[accepted API](docs/data-contracts/WATCHLIST_TELEGRAM_DELIVERY_V1.md),
+[storage](docs/data-contracts/WATCHLIST_TELEGRAM_DELIVERY_STORAGE_V1.md) and
+[qualification/operations](docs/runbooks/WATCHLIST_TELEGRAM_QUALIFICATION.md).
+The documentary PR19 and its original whitespace FAIL evidence are preserved.

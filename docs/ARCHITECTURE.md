@@ -1,5 +1,24 @@
 # Architecture
 
+## P8d proposed manual Watchlist delivery (2026-10-30)
+
+Design proposal only; no product code yet. One original P5a revision plus deeply
+verified P5b signal and exact historical P8c preview feeds independent
+watchlist_delivery admission. Content-specific historical consent and immutable
+private route bind provider+signal dedup in proposed CMTZ/schema1.
+BEGIN IMMEDIATE preserves full watch/revision equality and commits fenced
+claim before HTTP; P8b HTTPS transport is reused unchanged through a lazy port.
+Receipt persistence distinguishes confirmed from conservative uncertainty.
+Quarantine precedes confirmed replay; all restores remain globally quarantined.
+No cross-file/remote atomic commit or global clone deduplication is claimed.
+
+See [ADR0015](adr/0015-manual-watchlist-telegram-delivery.md),
+[API](data-contracts/WATCHLIST_TELEGRAM_DELIVERY_V1.md),
+[storage](data-contracts/WATCHLIST_TELEGRAM_DELIVERY_STORAGE_V1.md),
+[runbook](runbooks/WATCHLIST_TELEGRAM_DELIVERY.md).
+Phase Lead design acceptance is pending; historical sections below retain their
+own scope. P8b/P8c and earlier writers/schemas/identities stay unchanged.
+
 ## P8c offline Watchlist signal outbox
 
 Complete MANIFEST_V1 plus explicit original P5a/P5b paths and one wsig1_ select

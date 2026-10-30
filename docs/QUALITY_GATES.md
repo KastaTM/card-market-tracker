@@ -1,5 +1,27 @@
 # Quality gates
 
+## P8d proposed gates (2026-10-30)
+
+[Design handoff](phases/P8D_DESIGN_FREEZE.md) separates Gate A preflight from
+Gate B Phase Lead design acceptance. Product schema/identity/writer work waits
+for B PASS. Current documentation/probes certify no implementation gates.
+
+The later candidate must preserve frozen installs, Ruff format/check, strict
+mypy, complete pytest, line>=85%/branch>=80% coverage, sdist/wheel, installation
+outside checkout, dependency audit and secret scan. Four final jobs (Quality,
+Compose, AMD64 and ARM64/QEMU) and all thirteen applicable harnesses must pass
+on the exact candidate; preserve failures and full logs. No same-SHA failed-job
+reruns just to obtain green, reduced fixtures, suppressed tests or enlarged
+contract timeouts. Measure >=3 backup/restore controls on full fixture in local
+QEMU when available and state unavailability honestly; CI ARM64 is mandatory.
+
+Independent QA and a distinct final REVIEWER must be nonauthors with their own
+published runnable probes/results tied to final HEAD/tree. Draft publication/
+readback follows implementation. AC-WT20 additionally needs specific one-alert/
+private-route live authorization, <=8 metadata and <=1 sendMessage attempt total,
+durable receipt/reopen and separate-process replay with zero token/network.
+Until then BLOCKED - LIVE_UNVERIFIED; no readiness, merge or phase closure.
+
 ## P8c mandatory gates
 
 [AC-WA01..20](phases/P8C_OFFLINE_WATCHLIST_SIGNAL_OUTBOX_CONTRACT.md) require

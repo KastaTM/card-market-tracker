@@ -1,5 +1,10 @@
 # Data contract conventions
 
+P8d proposes [Watchlist Telegram delivery v1](WATCHLIST_TELEGRAM_DELIVERY_V1.md)
+and [independent storage v1](WATCHLIST_TELEGRAM_DELIVERY_STORAGE_V1.md).
+These are review targets, not implemented schemas or new authority for prior
+P8b/P8c routes. Phase Lead must accept the design before writer work.
+
 P4b adds [Discovery v2](DISCOVERY_V2.md) as a separate read-only unit-selection
 route over schema2 capture evidence, with compatible storage/capture read and
 logging extensions. V1 remains synthetic-only. No schema or writer change.

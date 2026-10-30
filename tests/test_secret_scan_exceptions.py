@@ -3,6 +3,7 @@
 import hashlib
 import json
 import runpy
+from hashlib import sha1
 from types import SimpleNamespace
 
 import pytest
@@ -68,3 +69,51 @@ def test_scan_keeps_unknown_findings_failing_and_never_prints_values(monkeypatch
     output = capsys.readouterr().out
     assert "private-value" not in output and SCANNER["_REVISION"] not in output
     assert ("FAIL" if unknown else "PASS") in output
+
+
+@pytest.mark.parametrize(
+    "path,key",
+    [
+        ["docs/evidence/P8D_GATE_A/baseline.json", "_P8D_BASE"],
+        ["docs/evidence/P8D_GATE_A/baseline.json", "_P8D_TREE"],
+        ["docs/evidence/P8D_GATE_A/baseline.json", "_P8D_PARENT1"],
+        ["docs/evidence/P8D_GATE_A/baseline.json", "_P8D_PARENT2"],
+        ["docs/evidence/P8D_GATE_A/baseline.json", "_P8D_OLDHEAD"],
+        ["docs/evidence/P8D_GATE_A/baseline.json", "_P8D_OLDTREE"],
+        ["docs/evidence/P8D_GATE_A/baseline.json", "_P8D_AUDIT"],
+        ["docs/evidence/P8D_GATE_A/baseline.json", "_P8D_BRIEF"],
+        ["docs/evidence/P8D_GATE_A/baseline.json", "_P8D_CONTRACT"],
+        ["docs/evidence/P8D_GATE_B/design_probe.py", "_P8D_BASE"],
+        ["docs/evidence/P8D_GATE_B/design_probe.py", "_P8D_TREE"],
+        ["docs/evidence/P8D_GATE_B/design_probe.py", "_P8D_AUDIT"],
+        ["docs/evidence/P8D_GATE_B/design_probe.py", "_P8D_BRIEF"],
+        ["docs/evidence/P8D_GATE_B/design_probe.py", "_P8D_CONTRACT"],
+        ["docs/evidence/P8D_GATE_B/design_probe.py", "_P8D_ORACLE_A"],
+        ["docs/evidence/P8D_GATE_B/design_probe.py", "_P8D_ORACLE_B"],
+        ["docs/evidence/P8D_REVIEWER/INITIAL_PROBE_RESULT.json", "_P8D_DESIGNHEAD"],
+        ["docs/evidence/P8D_REVIEWER/INITIAL_PROBE_RESULT.json", "_P8D_DESIGNTREE"],
+        ["docs/evidence/P8D_REVIEWER/MANIFEST_CORRECTIVE_PROBE_RESULT.json", "_P8D_DESIGNHEAD"],
+        ["docs/evidence/P8D_REVIEWER/MANIFEST_CORRECTIVE_PROBE_RESULT.json", "_P8D_DESIGNTREE"],
+        ["docs/evidence/P8D_REVIEWER/MANIFEST_GAP_PROBE_RESULT.json", "_P8D_DESIGNHEAD"],
+        ["docs/evidence/P8D_REVIEWER/MANIFEST_GAP_PROBE_RESULT.json", "_P8D_DESIGNTREE"],
+        ["scripts/p8d_qa_probe.py", "_P8D_ORACLE_A"],
+        ["scripts/p8d_qa_probe.py", "_P8D_ORACLE_B"],
+        ["scripts/p8d_reviewer_probe.py", "_P8D_ORACLE_A"],
+        ["scripts/p8d_reviewer_probe.py", "_P8D_ORACLE_B"],
+        ["tests/test_watchlist_delivery_policy.py", "_P8D_ORACLE_A"],
+        ["tests/test_watchlist_delivery_policy.py", "_P8D_ORACLE_B"],
+    ],
+)
+def test_p8d_exact_public_identifier_scope(path, key):
+    value = SCANNER[key]
+    candidate = {
+        "type": "Hex High Entropy String",
+        "hashed_secret": sha1(value.encode()).hexdigest(),
+    }
+    reviewed = SCANNER["_reviewed_public_candidate"]
+    assert reviewed(path, candidate)
+    assert not reviewed("unreviewed/" + path, candidate)
+    assert not reviewed(path, {**candidate, "type": "Secret Keyword"})
+    assert not reviewed(
+        path, {**candidate, "hashed_secret": sha1(b"unknown-public-value").hexdigest()}
+    )
