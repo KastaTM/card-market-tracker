@@ -16,6 +16,7 @@ import sqlite3
 import subprocess
 import sys
 import tempfile
+from datetime import datetime, timedelta
 from pathlib import Path
 from unittest.mock import patch
 
@@ -308,14 +309,21 @@ print("tokenless socketless transportless replay PASS")"""
     return path
 
 
+def operational_time_after(delivery, seconds):
+    retained = datetime.fromisoformat(delivery["updated_at"])
+    advanced = retained + timedelta(seconds=seconds)
+    return advanced.isoformat(timespec="microseconds").replace("+00:00", "Z")
+
+
 def cooldown(directory, source):
     from card_market_tracker.telegram_delivery.transport import TransportResult
 
     path = ledger(directory, "rate.db")
-    did = prepare(path, source)["delivery"]["delivery_id"]
+    prepared = prepare(path, source)["delivery"]
+    did = prepared["delivery_id"]
     retry = Fake(TransportResult("retryable", error_category="provider_rate_limit", retry_after=10))
     for ordinal in (1, 2, 3):
-        moment = f"2026-10-30T18:00:{ordinal * 10:02d}.123456Z"
+        moment = operational_time_after(prepared, ordinal * 10)
         with patch.object(policy, "now", return_value=moment):
             response = send(path, did, source, retry)
         row = response["delivery"]
@@ -468,11 +476,12 @@ def historic_route_snapshot(directory, source):
     from card_market_tracker.telegram_delivery.transport import TransportResult
 
     path = ledger(directory, "snapshot.db")
-    did = prepare(path, source)["delivery"]["delivery_id"]
+    prepared = prepare(path, source)["delivery"]
+    did = prepared["delivery_id"]
     fake = Fake(TransportResult("retryable", error_category="provider_rate_limit", retry_after=1))
-    with patch.object(policy, "now", return_value="2026-10-30T20:00:00.000000Z"):
+    with patch.object(policy, "now", return_value=operational_time_after(prepared, 1)):
         send(path, did, source, fake)
-    with patch.object(policy, "now", return_value="2026-10-30T20:01:00.000000Z"):
+    with patch.object(policy, "now", return_value=operational_time_after(prepared, 61)):
         with patch.object(app, "_transport_factory", return_value=Fake()):
             app.destination_validate(path, "reviewer_private")
         assert app.verify(path)["counts"]["claims"] == 1

@@ -36,3 +36,14 @@ cache (Ruff access denied; mypy internal error). Authorized escalated checks use
 the same unmodified configuration; final checks must record their own results.
 Qualification tests now include reservation-expiry/no provider dispatch and
 separate-process confirmed replay,10 cases total on fake transport only.
+
+## Reviewer temporal fixture correction
+
+On candidate e14f938, the exact independent reviewer probe returned16PASS/2FAIL:
+its cooldown and route-history fixtures used fixed wall times which had become
+older than the freshly initialized ledger. The product correctly rejected clock
+regression. Preserve that raw result and the separately labeled frozen-clock
+18PASS diagnostic. The reviewer corrected only its own probe to derive test
+times from retained delivery.updated_at; the normal unadapted probe then passed
+18/18. No product, frozen SQL, identity, budget or transition changed. Final gates
+and both nonauthor attestations must use the subsequent committed candidate.
