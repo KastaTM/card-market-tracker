@@ -26,3 +26,21 @@ Initial Ruff E501 and new-document EOF/link construction failures are retained
 in the candidate validation history; they were corrected without rule suppression.
 There is no claim full-range whitespace passes or mandatory product gates passed.
 The Phase Lead decides whether the proposed design is accepted after inspection.
+
+## Original checksum sidecar copied byte for byte
+
+An additional publication-range whitespace check returned exit2 for the final
+CR byte in P8D_DESIGN_FREEZE_50fcb55a.zip.sha256 line1. The original locally
+generated checksum sidecar uses CRLF; its unchanged98bytes were copied with
+Git hash-object rather than newline normalization. Classification:
+FAIL_ARCHIVED_CHECKSUM_CRLF - RETAINED. The original sidecar SHA256 is
+1ee321b7264de968cfd8e91b20d4c8823645f25681cd87bad1d941c09b021905.
+This is separate from the seven received Brief Markdown hard breaks above.
+
+The initial publication guard stopped before push; no remote evidence branch
+was written by that failed command. This classification is appended in a later
+documentation commit; original commit/artifacts remain preserved. No rule,
+attribute or byte normalization suppresses either finding. Full-range checks
+remain FAIL with these explicit archival observations; no gate waiver or
+passing-whitespace claim follows. This does not authorize schema/writer,
+definitive identities, Telegram calls or design acceptance.
