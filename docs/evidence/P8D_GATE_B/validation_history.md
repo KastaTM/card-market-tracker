@@ -13,6 +13,7 @@ product acceptance, Gate B acceptance or live qualification.
 | Lead first integrated stdlib probe | exit1 on missing local link docs/QUALITY_GATES.md -> phases/P8D_DESIGN_FREEZE.md | Handoff still under construction; SQL/vector steps completed but no overall PASS; create report/history and rerun |
 | Lead integrated precommit checks | Ruff format/check PASS; stdlib probe PASS on Python3.13.15/SQLite3.53.1:34statements/45objects/35rejections/74new local links; exact input hashes emitted | Working tree deliberately dirty with proposed docs; not exact final-commit evidence |
 | Lead staged whitespace check | exit1: SEC report had one extra blank line at EOF (previous working-tree diff did not include this then-untracked file) | Removed only trailing blank line; staged check rerun required; no substantive security text change |
+| Lead first final whole-base whitespace audit | git diff --check BASE HEAD exit2 on7 received Brief lines with intentional two-space Markdown hard breaks; wrapper stopped before final probes/package | Preserve exact archive bytes; report failure explicitly, separately check newly authored design range; no global whitespace config/rule change |
 | Lead final postcommit check | Required rerun on committed documentation; prints exact HEAD/tree and clean flag | Saved separately in handoff as P8D_GATE_B_VALIDATION.json to avoid circular commit identity |
 
 Source snapshots, API inherited38-category check and complete SQL probe are

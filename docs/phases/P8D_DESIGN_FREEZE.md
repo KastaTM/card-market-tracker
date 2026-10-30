@@ -182,6 +182,14 @@ created. The SQL/vector portions had completed; no partial overall PASS was
 claimed. These construction failures and final results are recorded in
 [validation history](../evidence/P8D_GATE_B/validation_history.md).
 
+An additional full-base-range git diff --check returns exit2 for seven
+intentional Markdown hard-break lines (two trailing spaces) in the byte-exact
+received Engineering Brief. That raw archive is preserved, not edited or silently
+excluded from the observation. This is an extra whitespace observation, not a
+passing full-range check or a waived product/quality gate. The newly authored
+design range from Gate A checkpoint1f3f9ca passes diff --check. The final external
+validation records both results and the unchanged archive SHA256.
+
 From the final documentary commit, run:
 
 ~~~powershell
