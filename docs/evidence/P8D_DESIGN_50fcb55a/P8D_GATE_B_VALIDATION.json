@@ -1,0 +1,175 @@
+{
+  "version": 1,
+  "observation_date": "2026-10-30",
+  "scope": "Final documentary candidate only",
+  "branch": "feat/p8d-watchlist-telegram-delivery",
+  "head": "50fcb55a0b0e467bcb9d94561412a0f3c6ebc8f9",
+  "tree": "d8d3eac1580dbfb3fa6aafcf94d033a8781204e2",
+  "parents": [
+    "c6099612a66d8d1f729b96de2ef37f167313f796"
+  ],
+  "remote_main": "9dda9fba0aa9646a67596657d4ae9a7088903808",
+  "base": "9dda9fba0aa9646a67596657d4ae9a7088903808",
+  "base_tree": "dfd0414242cff364aad6082411ae88aef728783e",
+  "base_parents": [
+    "228d5c8d0d91edf03ddb86a489c8232eeb7c08bc",
+    "d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c"
+  ],
+  "working_tree_clean": true,
+  "original_checkout_clean_and_head_preserved": true,
+  "historical_worktree_heads_preserved": true,
+  "historical_worktrees_checked": 37,
+  "commits_since_base": [
+    "e7519257f435f8c5f8c709a070b9f6603f1ce25e\t120cabf48614c238e99570a4a05fa713ae32476d\t9dda9fba0aa9646a67596657d4ae9a7088903808\tdocs(p8d): record authorized baseline, handoff and Gate A ownership",
+    "1f3f9cabd9381e8f2833d89dcaf20961cffadac7\tc7f7a31767ae5e5ad7fbe90a78d7b15f9d0677f4\te7519257f435f8c5f8c709a070b9f6603f1ce25e\tdocs(p8d): preserve exact handoff bytes in Git archives",
+    "43ee05655bf920a122c47f2c667017a00eb7346c\t40e5928873ffcb6a4cec2be452aab256aa2df858\t1f3f9cabd9381e8f2833d89dcaf20961cffadac7\tdocs(p8d): propose delivery design freeze for Phase Lead review",
+    "c6099612a66d8d1f729b96de2ef37f167313f796\tfc9e8c462adf605f154a06c0fd5a5b163bad8940\t43ee05655bf920a122c47f2c667017a00eb7346c\tdocs(p8d): include reviewed delivery threat boundary",
+    "50fcb55a0b0e467bcb9d94561412a0f3c6ebc8f9\td8d3eac1580dbfb3fa6aafcf94d033a8781204e2\tc6099612a66d8d1f729b96de2ef37f167313f796\tdocs(p8d): distinguish raw handoff whitespace from design checks"
+  ],
+  "targeted_checks": {
+    "full_base_whitespace": {
+      "exit_code": 2,
+      "result": "FAIL_RAW_ARCHIVE_MARKDOWN_HARD_BREAKS",
+      "output": "docs/phases/P8D_CODEX_ENGINEERING_BRIEF.md:9: trailing whitespace.\n+**Phase:** P8d \u00e2\u20ac\u201d Manual Watchlist Telegram Delivery  \ndocs/phases/P8D_CODEX_ENGINEERING_BRIEF.md:10: trailing whitespace.\n+**Contract authority:** `P8D_MANUAL_WATCHLIST_TELEGRAM_DELIVERY_CONTRACT.md` adjunto en este handoff; texto del Orchestrator 2026-10-28. Si hubiera discrepancia, prevalece ese contrato y las decisiones posteriores expresas del Orchestrator.  \ndocs/phases/P8D_CODEX_ENGINEERING_BRIEF.md:11: trailing whitespace.\n+**Status:** OPEN / IMPLEMENTATION AUTHORIZED (offline only); **LIVE EXECUTION NOT AUTHORIZED**.  \ndocs/phases/P8D_CODEX_ENGINEERING_BRIEF.md:12: trailing whitespace.\n+**Repository:** `KastaTM/card-market-tracker`.  \ndocs/phases/P8D_CODEX_ENGINEERING_BRIEF.md:13: trailing whitespace.\n+**Authorized baseline `main`:** `9dda9fba0aa9646a67596657d4ae9a7088903808`  \ndocs/phases/P8D_CODEX_ENGINEERING_BRIEF.md:14: trailing whitespace.\n+**Tree:** `dfd0414242cff364aad6082411ae88aef728783e`  \ndocs/phases/P8D_CODEX_ENGINEERING_BRIEF.md:15: trailing whitespace.\n+**Merge parents, ordered:** `228d5c8d0d91edf03ddb86a489c8232eeb7c08bc`, `d82aba73d9bc0eb455f8664e3ccddc0134ea9d9c`.",
+      "note": "All 7 locations in byte-exact received Brief; preserved unedited, no rule suppression or passing claim."
+    },
+    "authored_design_whitespace": {
+      "exit_code": 0,
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "1f3f9cabd9381e8f2833d89dcaf20961cffadac7",
+        "HEAD"
+      ]
+    },
+    "probe_format": {
+      "command": [
+        "C:\\Projects\\card-market-tracker\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "docs/evidence/P8D_GATE_B/design_probe.py"
+      ],
+      "exit_code": 0,
+      "output": "1 file already formatted"
+    },
+    "probe_lint": {
+      "command": [
+        "C:\\Projects\\card-market-tracker\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "ruff",
+        "check",
+        "docs/evidence/P8D_GATE_B/design_probe.py"
+      ],
+      "exit_code": 0,
+      "output": "All checks passed!"
+    }
+  },
+  "design_probe": {
+    "version": 1,
+    "scope": "Author documentary design checks only; NOT runtime QA or Gate B acceptance",
+    "observed_head": "50fcb55a0b0e467bcb9d94561412a0f3c6ebc8f9",
+    "observed_tree": "d8d3eac1580dbfb3fa6aafcf94d033a8781204e2",
+    "working_tree_clean": true,
+    "python": "3.13.15",
+    "sqlite": "3.53.1",
+    "baseline": "9dda9fba0aa9646a67596657d4ae9a7088903808",
+    "baseline_tree": "dfd0414242cff364aad6082411ae88aef728783e",
+    "prior_product_paths_unchanged": true,
+    "handoff_raw_blobs_match": true,
+    "source_allocations": [
+      {
+        "file": "src/card_market_tracker/alerts/schema.py",
+        "application_id": 1129141313,
+        "owner": "card-market-tracker.alert-outbox"
+      },
+      {
+        "file": "src/card_market_tracker/discovery/journal_schema.py",
+        "application_id": 1129141322,
+        "owner": "card-market-tracker.discovery-journal"
+      },
+      {
+        "file": "src/card_market_tracker/persistence/schema.py",
+        "application_id": 1129141297,
+        "owner": "card-market-tracker"
+      },
+      {
+        "file": "src/card_market_tracker/telegram_delivery/schema.py",
+        "application_id": 1129141316,
+        "owner": "card-market-tracker.telegram-delivery"
+      },
+      {
+        "file": "src/card_market_tracker/watchlist/schema.py",
+        "application_id": 1129141335,
+        "owner": "card-market-tracker.watchlist"
+      },
+      {
+        "file": "src/card_market_tracker/watchlist_alerts/schema.py",
+        "application_id": 1129141337,
+        "owner": "card-market-tracker.watchlist-alert-outbox"
+      },
+      {
+        "file": "src/card_market_tracker/watchlist_journal/schema.py",
+        "application_id": 1129141329,
+        "owner": "card-market-tracker.watchlist-journal"
+      }
+    ],
+    "candidate_application_id": {
+      "ascii": "CMTZ",
+      "hex": "0x434D545A",
+      "decimal": 1129141338
+    },
+    "identity_format_vectors": [
+      {
+        "example": "0",
+        "preimage_bytes": 164,
+        "sha256": "b08e2920077a2f36ba634b32c0f1215e952063c55cfc99320ab55fbbdf9d36f5"
+      },
+      {
+        "example": "f",
+        "preimage_bytes": 164,
+        "sha256": "810e8528fcea94a8ee848b56cb50ae04ff35bbaef05de8f667bddda896cac9d8"
+      }
+    ],
+    "ddl_statements": 34,
+    "inventory": {
+      "tables": 7,
+      "indexes": 14,
+      "triggers": 24,
+      "objects": 45
+    },
+    "literal_catalog_sha256": "e3dfada7bfc95e4f3de65ee808c50bddc280bc01f37defc1a220595d2f855059",
+    "sql_author_probe_stdout": "3.53.1 34 45 literal inventory/STRICT/integrity/FK matched; rejected 35 invalid SQL actions; confirmed/all uncertain/permanent/three429 outcomes and historical validation snapshots coherent",
+    "sql_author_negative_actions_rejected": 35,
+    "new_local_links_checked": 77,
+    "design_document_sha256": {
+      "docs/adr/0015-manual-watchlist-telegram-delivery.md": "34cb34a1b38ac35c5be33ff331c7f8144bea6045265fffba516be1971860cf36",
+      "docs/data-contracts/WATCHLIST_TELEGRAM_DELIVERY_V1.md": "a444b87af415539122ad20c726f3083256abce458b2c2b420dad9fcfcd737904",
+      "docs/data-contracts/WATCHLIST_TELEGRAM_DELIVERY_STORAGE_V1.md": "0a9be49cb68e5c83885d94d639351e35074de6bc3570200a5ab6ec65b56f2df0",
+      "docs/runbooks/WATCHLIST_TELEGRAM_DELIVERY.md": "c68178f6d7257867b7d0af3c3423fede5f3a2343ccc2f72ac3a17df4e5040562",
+      "docs/phases/P8D_SECURITY_DESIGN_REVIEW.md": "69ae1b29d8f87aeb3c86166f42a264e8900170c6109d2ccabd53236541b05866"
+    },
+    "not_exercised": [
+      "P8d product code/admission/real process races/receipt authority/CLI",
+      "durability/backup/restore/filesystem faults/deadlines",
+      "full suite/coverage/build/install/audit/secret scan/four CI jobs/13 harnesses",
+      "independent QA/final REVIEWER",
+      "Telegram metadata/send/credentials"
+    ],
+    "result": "PASS"
+  },
+  "gate_a": "PASS",
+  "gate_b": "PENDING_PHASE_LEAD_DESIGN_ACCEPTANCE",
+  "gate_c": "NOT_STARTED",
+  "phase_status": "OPEN",
+  "live": "BLOCKED - LIVE_UNVERIFIED",
+  "live_telegram_authorized": false,
+  "telegram_calls_executed": 0,
+  "remote_writes_executed": 0,
+  "publication": "Local review package only; no push/PR/CI publication claimed",
+  "integration_note": "Threat-model update omitted from initial staging was committed separately; final candidate includes it. Raw Brief whitespace failure retained explicitly."
+}
